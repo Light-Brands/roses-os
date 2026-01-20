@@ -120,7 +120,7 @@ export async function POST(request: NextRequest) {
     const buffer = Buffer.from(await file.arrayBuffer());
 
     // Process and optimize images
-    let processedBuffer = buffer;
+    let processedBuffer: Buffer = buffer;
     let width: number | null = null;
     let height: number | null = null;
 
@@ -137,13 +137,14 @@ export async function POST(request: NextRequest) {
           (width && width > IMAGE_OPTIMIZATION.maxWidth) ||
           (height && height > IMAGE_OPTIMIZATION.maxHeight)
         ) {
-          processedBuffer = await image
+          const resizedBuffer = await image
             .resize(IMAGE_OPTIMIZATION.maxWidth, IMAGE_OPTIMIZATION.maxHeight, {
               fit: 'inside',
               withoutEnlargement: true,
             })
             .webp({ quality: IMAGE_OPTIMIZATION.quality })
             .toBuffer();
+          processedBuffer = Buffer.from(resizedBuffer);
 
           // Update dimensions
           const resizedMetadata = await sharp(processedBuffer).metadata();
@@ -151,9 +152,10 @@ export async function POST(request: NextRequest) {
           height = resizedMetadata.height || height;
         } else {
           // Just optimize without resizing
-          processedBuffer = await image
+          const optimizedBuffer = await image
             .webp({ quality: IMAGE_OPTIMIZATION.quality })
             .toBuffer();
+          processedBuffer = Buffer.from(optimizedBuffer);
         }
       } catch (imageError) {
         console.error('Image processing error:', imageError);

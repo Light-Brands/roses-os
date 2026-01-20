@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown, Moon, Sun } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useTheme } from '@/lib/theme';
+import { Logo } from './Logo';
 
 interface NavItem {
   label: string;
@@ -43,7 +45,7 @@ export function Navigation({
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [isDark, setIsDark] = useState(false);
+  const { resolvedTheme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,19 +54,6 @@ export function Navigation({
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setIsDark(document.documentElement.classList.contains('dark'));
-    }
-  }, []);
-
-  const toggleTheme = () => {
-    const newIsDark = !isDark;
-    setIsDark(newIsDark);
-    document.documentElement.classList.toggle('dark', newIsDark);
-    localStorage.setItem('theme', newIsDark ? 'dark' : 'light');
-  };
 
   const navBackground = transparent && !isScrolled
     ? 'bg-transparent'
@@ -84,16 +73,7 @@ export function Navigation({
         <nav className="container-premium">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2 z-10">
-              {logo || (
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-secondary-500" />
-                  <span className="text-xl font-bold text-neutral-900 dark:text-white">
-                    Brand
-                  </span>
-                </div>
-              )}
-            </Link>
+            {logo || <Logo size="md" className="z-10" />}
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-1">
@@ -181,7 +161,7 @@ export function Navigation({
                 )}
                 aria-label="Toggle theme"
               >
-                {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                {resolvedTheme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
               </button>
 
               {/* CTA Button */}

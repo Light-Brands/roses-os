@@ -3,6 +3,7 @@ export { Button } from './Button';
 export { Card, FeatureCard, Interactive3DCard, PricingCard, TestimonialCard } from './Card';
 export { Navigation } from './Navigation';
 export { Footer, FooterMinimal } from './Footer';
+export { Logo } from './Logo';
 
 // Form Components
 export { Input } from './Input';

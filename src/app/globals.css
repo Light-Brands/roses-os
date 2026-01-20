@@ -1,5 +1,17 @@
 @import "tailwindcss";
+
+/* Configure dark mode variant for Tailwind v4 */
+/* This enables the dark: variant to work with the .dark class on html element */
+@variant dark (&:where(.dark, .dark *));
+
 @import "../design-system/theme.css";
+
+/* Ensure body uses CSS variables for theme switching */
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
 
 /* =============================================================================
    TAILWIND THEME CONFIGURATION
@@ -47,14 +59,6 @@
   --color-neutral-900: #171717;
   --color-neutral-950: #0a0a0a;
 
-  /* Semantic Colors */
-  --color-background: var(--color-neutral-0);
-  --color-foreground: var(--color-neutral-900);
-  --color-muted: var(--color-neutral-100);
-  --color-muted-foreground: var(--color-neutral-500);
-  --color-border: var(--color-neutral-200);
-  --color-accent: var(--color-primary-500);
-  --color-accent-foreground: var(--color-neutral-0);
 
   /* Status Colors */
   --color-success: #10b981;

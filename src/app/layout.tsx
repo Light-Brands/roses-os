@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { siteConfig, generateOrganizationSchema, JsonLd } from '@/lib/seo';
+import { ThemeProvider } from '@/lib/theme';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -83,20 +84,29 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               try {
-                if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                  document.documentElement.classList.add('dark')
-                } else {
+                // Default to dark mode unless explicitly set to light
+                if (localStorage.theme === 'light') {
                   document.documentElement.classList.remove('dark')
+                } else {
+                  document.documentElement.classList.add('dark')
                 }
-              } catch (_) {}
+              } catch (_) {
+                document.documentElement.classList.add('dark')
+              }
             `,
           }}
         />
       </head>
       <body
-        className={`${inter.variable} font-sans antialiased bg-background text-foreground`}
+        className={`${inter.variable} font-sans antialiased`}
+        style={{
+          backgroundColor: 'var(--color-background)',
+          color: 'var(--color-foreground)',
+        }}
       >
-        {children}
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Github, Twitter, Linkedin, Mail, ArrowUpRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Logo } from './Logo';
 
 interface FooterLink {
   label: string;
@@ -103,16 +104,7 @@ export function Footer({
             {/* Brand Column */}
             <div className="col-span-2 lg:col-span-2">
               {/* Logo */}
-              <Link href="/" className="inline-flex items-center gap-2 mb-6">
-                {logo || (
-                  <>
-                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-secondary-500" />
-                    <span className="text-xl font-bold text-neutral-900 dark:text-white">
-                      Brand
-                    </span>
-                  </>
-                )}
-              </Link>
+              {logo || <Logo size="md" className="mb-6" />}
 
               {/* Description */}
               <p className="text-neutral-600 dark:text-neutral-400 mb-6 max-w-sm">
@@ -264,16 +256,7 @@ export function FooterMinimal({
       <div className="container-premium">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Logo */}
-          <Link href="/" className="inline-flex items-center gap-2">
-            {logo || (
-              <>
-                <div className="w-6 h-6 rounded-md bg-gradient-to-br from-primary-500 to-secondary-500" />
-                <span className="font-semibold text-neutral-900 dark:text-white">
-                  Brand
-                </span>
-              </>
-            )}
-          </Link>
+          {logo || <Logo size="sm" />}
 
           {/* Links */}
           {links && (

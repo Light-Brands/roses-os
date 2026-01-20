@@ -76,12 +76,13 @@ export function HeroCentered({
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background */}
-      <div className="absolute inset-0 mesh-gradient opacity-50" />
+      <div className="absolute inset-0 bg-neutral-50 dark:bg-neutral-950" />
+      <div className="absolute inset-0 mesh-gradient opacity-70 dark:opacity-50" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white dark:to-neutral-950" />
 
       {/* Decorative elements */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl animate-pulse-glow" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary-500/20 rounded-full blur-3xl animate-pulse-glow delay-1000" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/10 dark:bg-primary-500/20 rounded-full blur-3xl animate-pulse-glow" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary-500/10 dark:bg-secondary-500/20 rounded-full blur-3xl animate-pulse-glow delay-1000" />
 
       <div className="container-premium relative z-10 pt-32 pb-20">
         <div className="max-w-4xl mx-auto text-center">

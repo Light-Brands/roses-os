@@ -28,7 +28,8 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
 
     // Parse query params
-    const status = searchParams.get('status') || 'published';
+    const statusParam = searchParams.get('status') || 'published';
+    const status = statusParam as 'draft' | 'published' | 'archived' | 'all';
     const limit = Math.min(parseInt(searchParams.get('limit') || '10'), 100);
     const offset = parseInt(searchParams.get('offset') || '0');
     const slug = searchParams.get('slug');

@@ -1,0 +1,244 @@
+'use client';
+
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
+import { motion, AnimatePresence } from 'framer-motion';
+import {
+  LayoutDashboard,
+  FileText,
+  Image,
+  Settings,
+  Users,
+  BarChart3,
+  MessageSquare,
+  X,
+} from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { Logo } from '@/components/ui/Logo';
+
+interface AdminSidebarProps {
+  isOpen: boolean;
+  isMobileOpen: boolean;
+  onMobileClose: () => void;
+  isDemo: boolean;
+}
+
+const navItems = [
+  { label: 'Dashboard', href: '/admin', icon: LayoutDashboard },
+  { label: 'Content', href: '/admin/content', icon: FileText },
+  { label: 'Media', href: '/admin/media', icon: Image },
+  { label: 'Users', href: '/admin/users', icon: Users },
+  { label: 'Analytics', href: '/admin/analytics', icon: BarChart3 },
+  { label: 'Feedback', href: '/admin/feedback', icon: MessageSquare },
+  { label: 'Settings', href: '/admin/settings', icon: Settings },
+];
+
+export function AdminSidebar({
+  isOpen,
+  isMobileOpen,
+  onMobileClose,
+  isDemo,
+}: AdminSidebarProps) {
+  const pathname = usePathname();
+
+  const NavItem = ({
+    item,
+    showLabel,
+    onClick,
+  }: {
+    item: (typeof navItems)[0];
+    showLabel: boolean;
+    onClick?: () => void;
+  }) => {
+    const isActive =
+      pathname === item.href ||
+      (item.href !== '/admin' && pathname.startsWith(item.href));
+    const Icon = item.icon;
+
+    return (
+      <Link
+        href={item.href}
+        onClick={onClick}
+        className={cn(
+          'group relative flex items-center gap-3 px-3 py-2.5 rounded-xl',
+          'transition-all duration-200',
+          showLabel ? 'justify-start' : 'justify-center',
+          isActive
+            ? 'bg-neutral-900 dark:bg-white text-white dark:text-neutral-900'
+            : 'text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:text-neutral-900 dark:hover:text-white'
+        )}
+      >
+        {/* Active indicator dot */}
+        {isActive && !showLabel && (
+          <motion.div
+            layoutId="activeIndicator"
+            className="absolute -left-1 top-1/2 -translate-y-1/2 w-1 h-4 bg-primary-500 rounded-full"
+            transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+          />
+        )}
+
+        <Icon
+          className={cn(
+            'w-[18px] h-[18px] flex-shrink-0 transition-transform duration-200',
+            !isActive && 'group-hover:scale-110'
+          )}
+          strokeWidth={isActive ? 2.5 : 2}
+        />
+
+        {showLabel && (
+          <span className="font-medium text-[13px] tracking-tight">{item.label}</span>
+        )}
+
+        {/* Tooltip when collapsed */}
+        {!showLabel && (
+          <div className="absolute left-full ml-3 px-2.5 py-1.5 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 text-xs font-medium rounded-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-200 translate-x-1 group-hover:translate-x-0 whitespace-nowrap z-[100] shadow-lg">
+            {item.label}
+            <div className="absolute top-1/2 -left-1 -translate-y-1/2 w-2 h-2 bg-neutral-900 dark:bg-white rotate-45" />
+          </div>
+        )}
+      </Link>
+    );
+  };
+
+  return (
+    <>
+      {/* Desktop sidebar */}
+      <aside
+        className={cn(
+          'fixed top-0 left-0 h-full',
+          'bg-white dark:bg-neutral-900',
+          'border-r border-neutral-200/80 dark:border-neutral-800',
+          'transition-all duration-300 ease-out',
+          'hidden lg:flex lg:flex-col',
+          'z-40',
+          isOpen ? 'w-56' : 'w-[68px]'
+        )}
+      >
+        {/* Logo */}
+        <div
+          className={cn(
+            'h-16 flex items-center border-b border-neutral-200/80 dark:border-neutral-800',
+            isOpen ? 'px-4' : 'justify-center'
+          )}
+        >
+          <Logo
+            href="/admin"
+            size="md"
+            className={cn('transition-all duration-200', !isOpen && 'justify-center')}
+          />
+        </div>
+
+        {/* Navigation */}
+        <nav className="flex-1 p-2.5 space-y-1 overflow-y-auto admin-scrollbar">
+          {navItems.map((item) => (
+            <NavItem key={item.href} item={item} showLabel={isOpen} />
+          ))}
+        </nav>
+
+        {/* Demo badge */}
+        {isDemo && (
+          <div className="p-2.5 border-t border-neutral-200/80 dark:border-neutral-800">
+            <div
+              className={cn(
+                'rounded-lg bg-amber-50 dark:bg-amber-900/20 border border-amber-200/50 dark:border-amber-800/50',
+                'transition-all duration-200',
+                isOpen ? 'px-3 py-2' : 'py-2'
+              )}
+            >
+              {isOpen ? (
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+                  <span className="text-[11px] font-medium text-amber-700 dark:text-amber-300 uppercase tracking-wider">
+                    Demo
+                  </span>
+                </div>
+              ) : (
+                <div className="flex justify-center">
+                  <div className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+      </aside>
+
+      {/* Mobile overlay */}
+      <AnimatePresence>
+        {isMobileOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 bg-neutral-950/60 backdrop-blur-sm z-50 lg:hidden"
+            onClick={onMobileClose}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Mobile sidebar */}
+      <AnimatePresence>
+        {isMobileOpen && (
+          <motion.aside
+            initial={{ x: '-100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '-100%' }}
+            transition={{ type: 'spring', damping: 30, stiffness: 300 }}
+            className={cn(
+              'fixed top-0 left-0 h-full w-72',
+              'bg-white dark:bg-neutral-900',
+              'flex flex-col',
+              'z-50 lg:hidden',
+              'shadow-2xl shadow-neutral-950/20'
+            )}
+          >
+            {/* Mobile header */}
+            <div className="h-16 flex items-center justify-between px-4 border-b border-neutral-200/80 dark:border-neutral-800">
+              <Logo
+                href="/admin"
+                size="md"
+                onClick={onMobileClose}
+              />
+              <button
+                onClick={onMobileClose}
+                className="p-2 -mr-2 rounded-lg text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+                aria-label="Close menu"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Mobile navigation */}
+            <nav className="flex-1 p-3 space-y-1 overflow-y-auto">
+              {navItems.map((item) => (
+                <NavItem
+                  key={item.href}
+                  item={item}
+                  showLabel={true}
+                  onClick={onMobileClose}
+                />
+              ))}
+            </nav>
+
+            {/* Demo badge */}
+            {isDemo && (
+              <div className="p-3 border-t border-neutral-200/80 dark:border-neutral-800">
+                <div className="px-3 py-2.5 rounded-lg bg-amber-50 dark:bg-amber-900/20 border border-amber-200/50 dark:border-amber-800/50">
+                  <div className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+                    <span className="text-[11px] font-medium text-amber-700 dark:text-amber-300 uppercase tracking-wider">
+                      Demo Mode
+                    </span>
+                  </div>
+                  <p className="text-[11px] text-amber-600/70 dark:text-amber-400/70 mt-1">
+                    Connect Supabase for full features
+                  </p>
+                </div>
+              </div>
+            )}
+          </motion.aside>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}
