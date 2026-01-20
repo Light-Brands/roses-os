@@ -1,0 +1,160 @@
+name: PR Review
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  # Automated PR review with AI assistance
+  ai-review:
+    name: AI Code Review
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v44
+        with:
+          files: |
+            src/**/*.{ts,tsx}
+            app/**/*.{ts,tsx}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Create review summary
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: |
+          echo "## PR Review Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Changed Files (${{ steps.changed-files.outputs.all_changed_files_count }})" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo "- \`$file\`" >> $GITHUB_STEP_SUMMARY
+          done
+
+      # Add AI review comment using Claude (requires ANTHROPIC_API_KEY secret)
+      - name: AI Review Comment
+        if: steps.changed-files.outputs.any_changed == 'true' && env.ANTHROPIC_API_KEY != ''
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          # This is a placeholder for AI review integration
+          # In production, you would call Claude API here to analyze the diff
+          echo "AI review would analyze: ${{ steps.changed-files.outputs.all_changed_files }}"
+
+  # Design token enforcement
+  design-tokens:
+    name: Design Token Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Check for hardcoded values
+        run: |
+          # Check for hardcoded colors in TSX files (excluding design system)
+          echo "Checking for hardcoded colors..."
+          if grep -rn --include="*.tsx" --include="*.ts" \
+            --exclude-dir="design-system" --exclude-dir="node_modules" \
+            -E '#[0-9a-fA-F]{3,8}' src/ 2>/dev/null | grep -v "tokens.ts" | grep -v "theme.css"; then
+            echo "::warning::Found potential hardcoded color values. Please use design tokens."
+          fi
+
+          # Check for hardcoded pixel values
+          echo "Checking for hardcoded pixel values..."
+          if grep -rn --include="*.tsx" \
+            --exclude-dir="node_modules" \
+            -E '\b[1-9][0-9]+px\b' src/components/ 2>/dev/null; then
+            echo "::warning::Found potential hardcoded pixel values. Consider using spacing tokens."
+          fi
+
+  # Accessibility check
+  accessibility:
+    name: Accessibility Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Check for accessibility issues
+        run: |
+          echo "Checking for accessibility patterns..."
+
+          # Check for missing alt text patterns
+          if grep -rn --include="*.tsx" \
+            -E '<img[^>]*(?!alt=)[^>]*>' src/ 2>/dev/null; then
+            echo "::warning::Found img tags that may be missing alt attributes."
+          fi
+
+          # Check for onclick without keyboard handler
+          if grep -rn --include="*.tsx" \
+            -E 'onClick=[^}]*}[^>]*>' src/ 2>/dev/null | grep -v "onKeyDown\|onKeyPress\|role=" | head -5; then
+            echo "::warning::Found onClick handlers without corresponding keyboard handlers."
+          fi
+
+          echo "Accessibility check complete."
+
+  # Label PR based on changes
+  labeler:
+    name: Label PR
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v44
+
+      - name: Add labels
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const changedFiles = `${{ steps.changed-files.outputs.all_changed_files }}`.split(' ');
+            const labels = new Set();
+
+            for (const file of changedFiles) {
+              if (file.startsWith('src/components/')) labels.add('components');
+              if (file.startsWith('src/app/api/')) labels.add('api');
+              if (file.startsWith('src/lib/')) labels.add('library');
+              if (file.startsWith('src/design-system/')) labels.add('design-system');
+              if (file.includes('.test.') || file.includes('.spec.')) labels.add('tests');
+              if (file.endsWith('.md')) labels.add('documentation');
+              if (file.startsWith('.github/')) labels.add('ci/cd');
+            }
+
+            if (labels.size > 0) {
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                labels: Array.from(labels)
+              });
+            }

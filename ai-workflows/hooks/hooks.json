@@ -1,0 +1,82 @@
+{
+  "$schema": "https://claude.ai/schemas/hooks.json",
+  "version": "1.0.0",
+  "description": "Claude Code hooks for Oracle Boilerplate",
+
+  "hooks": {
+    "pre-edit": [
+      {
+        "name": "design-token-check",
+        "description": "Ensure no hardcoded colors or spacing",
+        "command": "node ./ai-workflows/scripts/check-tokens.js",
+        "failOnError": true
+      }
+    ],
+
+    "post-edit": [
+      {
+        "name": "lint-fix",
+        "description": "Auto-fix linting issues",
+        "command": "npm run lint -- --fix",
+        "failOnError": false
+      },
+      {
+        "name": "format",
+        "description": "Format code with Prettier",
+        "command": "npx prettier --write",
+        "args": ["$FILE"],
+        "failOnError": false
+      }
+    ],
+
+    "post-commit": [
+      {
+        "name": "changelog",
+        "description": "Update changelog with commit info",
+        "command": "node ./ai-workflows/scripts/update-changelog.js",
+        "failOnError": false
+      }
+    ],
+
+    "pre-push": [
+      {
+        "name": "type-check",
+        "description": "Run TypeScript type checking",
+        "command": "npm run type-check",
+        "failOnError": true
+      },
+      {
+        "name": "test",
+        "description": "Run test suite",
+        "command": "npm test",
+        "failOnError": true
+      }
+    ],
+
+    "on-demand": {
+      "lighthouse": {
+        "description": "Run Lighthouse audit",
+        "command": "npx lighthouse http://localhost:3000 --output=json --output-path=./reports/lighthouse.json",
+        "requiresServer": true
+      },
+      "bundle-analyze": {
+        "description": "Analyze bundle size",
+        "command": "npm run analyze"
+      },
+      "a11y-audit": {
+        "description": "Run accessibility audit",
+        "command": "npx axe-core http://localhost:3000",
+        "requiresServer": true
+      }
+    }
+  },
+
+  "triggers": {
+    "file-patterns": {
+      "*.tsx": ["lint-fix", "format", "type-check"],
+      "*.ts": ["lint-fix", "format", "type-check"],
+      "*.css": ["format"],
+      "package.json": ["type-check"]
+    }
+  }
+}

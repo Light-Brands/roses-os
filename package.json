@@ -6,12 +6,20 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "type-check": "tsc --noEmit",
+    "setup": "node setup/wizard.mjs",
+    "test": "echo \"No tests yet\" && exit 0"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.27.1",
+    "gsap": "^3.14.2",
+    "lucide-react": "^0.562.0",
     "next": "16.1.4",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
