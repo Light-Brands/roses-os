@@ -47,10 +47,11 @@ See `PASTE-TO-CLAUDE.md` for the full prompt, or `KICKOFF.md` for comprehensive 
 
 - **AI-First Development** - Setup wizard, prompt templates, and guidelines optimized for Claude
 - **Premium Design System** - Apple/Vercel-inspired aesthetics with comprehensive design tokens
+- **Admin Dashboard** - Full-featured admin panel with content, media, users, analytics, and settings
 - **Full-Stack Ready** - Supabase integration for auth, database, and storage
 - **20+ Components** - Button, Card, Input, Modal, Toast, Tabs, Navigation, and more
 - **Hero Sections** - 3 variants with animations (Centered, Split, Minimal)
-- **Dark Mode** - Automatic light/dark with CSS variables
+- **Dark/Light Mode** - Full theme support with toggle, defaults to dark mode
 - **Animations** - GSAP + Framer Motion built-in
 - **TypeScript** - Strict type checking throughout
 - **Performance** - 90+ Lighthouse scores
@@ -86,13 +87,29 @@ src/
 ├── app/                      # Next.js App Router
 │   ├── globals.css           # Global styles + Tailwind config
 │   ├── layout.tsx            # Root layout with SEO
-│   └── page.tsx              # Example landing page
+│   ├── page.tsx              # Example landing page
+│   ├── (admin)/              # Admin route group
+│   │   └── admin/
+│   │       ├── layout.tsx    # Admin layout with sidebar
+│   │       ├── page.tsx      # Dashboard
+│   │       ├── content/      # Content management
+│   │       ├── media/        # Media library
+│   │       ├── users/        # User management
+│   │       ├── analytics/    # Analytics dashboard
+│   │       ├── feedback/     # Feedback management
+│   │       └── settings/     # Settings page
+│   └── api/                  # API routes
 ├── components/
 │   ├── ui/                   # Base UI components
 │   │   ├── Button.tsx        # Button with variants
 │   │   ├── Card.tsx          # Card variants (Feature, Pricing, Testimonial)
-│   │   ├── Navigation.tsx    # Responsive nav with animations
+│   │   ├── Navigation.tsx    # Responsive nav with theme toggle
 │   │   └── Footer.tsx        # Footer with newsletter
+│   ├── admin/                # Admin components
+│   │   ├── AdminSidebar.tsx  # Collapsible sidebar navigation
+│   │   ├── AdminHeader.tsx   # Header with search and user menu
+│   │   ├── DataTable.tsx     # Sortable, filterable data table
+│   │   └── Skeleton.tsx      # Loading skeletons
 │   └── sections/             # Page sections
 │       ├── HeroCentered.tsx  # Centered hero variant
 │       ├── HeroSplit.tsx     # Split layout hero
@@ -104,7 +121,10 @@ src/
 │   └── DESIGN-PRINCIPLES.md  # Design guidelines
 ├── lib/
 │   ├── utils.ts              # Utility functions
-│   └── seo.tsx               # SEO utilities
+│   ├── seo.tsx               # SEO utilities
+│   ├── theme.tsx             # Theme provider and hook
+│   └── admin/
+│       └── auth.tsx          # Admin authentication context
 └── AI-RULES.md               # AI development guidelines
 ```
 
@@ -136,19 +156,35 @@ All design tokens are defined in `src/design-system/tokens.ts`:
 <div style={{ backgroundColor: '#5a6df2', padding: '24px' }}> // Bad
 ```
 
-### Dark Mode
+### Dark/Light Mode
 
-Dark mode is automatic via CSS variables:
+Theme support is built-in with a ThemeProvider context. Dark mode is the default.
 
 ```tsx
 // These automatically adapt to light/dark mode
 <div className="bg-background text-foreground border-border">
+
+// Or use explicit dark: variants
+<div className="bg-white dark:bg-neutral-900 text-neutral-900 dark:text-white">
 ```
 
 Toggle theme programmatically:
 
 ```tsx
-document.documentElement.classList.toggle('dark');
+import { useTheme } from '@/lib/theme';
+
+function MyComponent() {
+  const { resolvedTheme, toggleTheme, setTheme } = useTheme();
+
+  return (
+    <button onClick={toggleTheme}>
+      {resolvedTheme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+    </button>
+  );
+}
+
+// Or set specific theme
+setTheme('light');  // 'light' | 'dark' | 'system'
 ```
 
 ---
@@ -212,6 +248,48 @@ import { CTASection } from '@/components/sections/CTASection';
   primaryCta={{ label: 'Start Free', href: '#' }}
 />
 ```
+
+---
+
+## Admin Dashboard
+
+A full-featured admin panel is included at `/admin`. Features:
+
+- **Dashboard** - Overview with stats, charts, and activity feed
+- **Content Management** - Create, edit, and manage content
+- **Media Library** - Upload and organize images and files
+- **User Management** - View and manage users
+- **Analytics** - Traffic and engagement metrics
+- **Feedback** - Customer feedback and support
+- **Settings** - App configuration
+
+### Accessing Admin
+
+```bash
+# Visit /admin/login
+# Demo credentials are pre-filled - click "Try Demo Mode"
+```
+
+### Admin Authentication
+
+The admin uses a context-based auth system with Supabase integration:
+
+```tsx
+import { useAdminAuth } from '@/lib/admin/auth';
+
+function AdminComponent() {
+  const { user, isLoading, isDemo, logout } = useAdminAuth();
+
+  if (isLoading) return <Loading />;
+  if (!user) return <Redirect to="/admin/login" />;
+
+  return <Dashboard user={user} />;
+}
+```
+
+### Demo Mode
+
+When Supabase is not configured, the admin runs in demo mode with sample data. This allows you to explore the interface without backend setup.
 
 ---
 

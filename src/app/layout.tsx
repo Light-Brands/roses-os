@@ -55,11 +55,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon-16x16.png',
-    apple: '/apple-touch-icon.png',
+    icon: '/oracle-logo.webp',
   },
-  manifest: '/site.webmanifest',
 };
 
 export const viewport: Viewport = {
@@ -98,11 +95,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} font-sans antialiased`}
-        style={{
-          backgroundColor: 'var(--color-background)',
-          color: 'var(--color-foreground)',
-        }}
+        className={`${inter.variable} font-sans antialiased bg-background text-foreground`}
       >
         <ThemeProvider>
           {children}
