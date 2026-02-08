@@ -1,112 +1,99 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef } from 'react';
+
+// =============================================================================
+// PRELOADER — DC logo on black, then slides up to reveal site
+// =============================================================================
+// Matches the page transition visual language: black panel + DC mark.
+// Logo fades in → holds → logo fades out → panel slides up.
+// Total: ~1.6s (vs old geometric preloader at ~2.9s)
+// =============================================================================
+
+const REVEAL_EASE = 'cubic-bezier(0.16, 1, 0.3, 1)';
 
 export function Preloader() {
-  const [phase, setPhase] = useState<'drawing' | 'exiting' | 'done'>('drawing');
-  const bgRef = useRef<HTMLDivElement>(null);
-  const rafRef = useRef(0);
-
-  const reveal = useCallback(() => {
-    const bg = bgRef.current;
-    if (!bg) return;
-
-    const maxSize = Math.hypot(window.innerWidth, window.innerHeight);
-    const duration = 900;
-    const start = performance.now();
-
-    const tick = (now: number) => {
-      const t = Math.min((now - start) / duration, 1);
-      // Ease-out quart for dramatic acceleration
-      const eased = 1 - Math.pow(1 - t, 4);
-      bg.style.setProperty('--reveal-size', `${eased * maxSize}px`);
-
-      if (t < 1) {
-        rafRef.current = requestAnimationFrame(tick);
-      } else {
-        setPhase('done');
-        sessionStorage.setItem('dc-preloader', '1');
-        document.body.style.overflow = '';
-      }
-    };
-
-    rafRef.current = requestAnimationFrame(tick);
-  }, []);
+  const [done, setDone] = useState(false);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const logoRef = useRef<HTMLDivElement>(null);
+  const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
 
   useEffect(() => {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     if (sessionStorage.getItem('dc-preloader') || reducedMotion) {
-      setPhase('done');
+      setDone(true);
       window.dispatchEvent(new Event('preloader:done'));
       return;
     }
 
     document.body.style.overflow = 'hidden';
 
-    // Wait for SVG drawing animations to finish, then exit
-    const timer = setTimeout(() => {
-      setPhase('exiting');
+    const panel = panelRef.current;
+    const logo = logoRef.current;
+    if (!panel || !logo) return;
+
+    const t = (fn: () => void, ms: number) => {
+      timers.current.push(setTimeout(fn, ms));
+    };
+
+    // Logo fades in
+    requestAnimationFrame(() => {
+      logo.style.transition = `opacity 500ms ease, transform 500ms ${REVEAL_EASE}`;
+      logo.style.opacity = '1';
+      logo.style.transform = 'scale(1)';
+    });
+
+    // After hold, begin exit
+    t(() => {
       window.dispatchEvent(new Event('preloader:done'));
 
-      // Start circle reveal after content begins fading
-      setTimeout(() => reveal(), 200);
-    }, 2000);
+      // Fade logo out
+      logo.style.transition = 'opacity 180ms ease';
+      logo.style.opacity = '0';
+
+      // Panel slides up to reveal site
+      t(() => {
+        panel.style.transition = `transform 500ms ${REVEAL_EASE}`;
+        panel.style.transform = 'translateY(-100%)';
+
+        t(() => {
+          setDone(true);
+          sessionStorage.setItem('dc-preloader', '1');
+          document.body.style.overflow = '';
+        }, 500);
+      }, 120);
+    }, 1100);
 
     return () => {
-      clearTimeout(timer);
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      timers.current.forEach(clearTimeout);
       document.body.style.overflow = '';
     };
-  }, [reveal]);
+  }, []);
 
-  if (phase === 'done') return null;
+  if (done) return null;
 
   return (
-    <div className="preloader" aria-hidden="true">
-      {/* Background layer — radial gradient with growing transparent hole */}
-      <div ref={bgRef} className="preloader-bg" />
-
-      {/* Content layer — SVG geometric + brand */}
-      <div className={`preloader-content${phase === 'exiting' ? ' preloader-content-exit' : ''}`}>
-        {/* Architectural geometric — concentric rings, crosshair ticks, center dot */}
+    <div
+      ref={panelRef}
+      className="fixed inset-0 z-[10000] bg-[#0A0A0A]"
+      aria-hidden="true"
+    >
+      <div
+        ref={logoRef}
+        className="absolute inset-0 flex items-center justify-center"
+        style={{ opacity: 0, transform: 'scale(0.88)' }}
+      >
         <svg
-          className="preloader-graphic"
-          viewBox="0 0 200 200"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+          width="52"
+          height="52"
+          viewBox="0 0 107.52 107.55"
+          fill="white"
         >
-          {/* Outer ring — draws stroke clockwise from top */}
-          <circle
-            cx="100" cy="100" r="64"
-            strokeWidth="0.75"
-            className="loader-ring loader-ring-outer"
-          />
-
-          {/* Inner ring — smaller, draws with delay */}
-          <circle
-            cx="100" cy="100" r="32"
-            strokeWidth="0.5"
-            className="loader-ring loader-ring-inner"
-          />
-
-          {/* Crosshair ticks extending beyond outer ring at N, E, S, W */}
-          <line x1="100" y1="22" x2="100" y2="36" strokeWidth="0.5" className="loader-tick loader-tick-1" />
-          <line x1="178" y1="100" x2="164" y2="100" strokeWidth="0.5" className="loader-tick loader-tick-2" />
-          <line x1="100" y1="178" x2="100" y2="164" strokeWidth="0.5" className="loader-tick loader-tick-3" />
-          <line x1="22" y1="100" x2="36" y2="100" strokeWidth="0.5" className="loader-tick loader-tick-4" />
-
-          {/* Diagonal ticks at NE, SE, SW, NW */}
-          <line x1="145" y1="55" x2="152" y2="48" strokeWidth="0.4" className="loader-tick loader-tick-5" />
-          <line x1="145" y1="145" x2="152" y2="152" strokeWidth="0.4" className="loader-tick loader-tick-6" />
-          <line x1="55" y1="145" x2="48" y2="152" strokeWidth="0.4" className="loader-tick loader-tick-7" />
-          <line x1="55" y1="55" x2="48" y2="48" strokeWidth="0.4" className="loader-tick loader-tick-8" />
-
-          {/* Center dot */}
-          <circle cx="100" cy="100" r="2.5" className="loader-center" />
+          <path d="M0,107.53V0c9.92-.18,19.68,2.61,28.06,7.82,21.17,13.16,30.81,38.12,23.36,62.21-6.81,22.03-28.06,38.26-51.42,37.5Z" />
+          <path d="M107.52,107.53h-48.72c-.35-22.93,16.52-43.22,38.87-47.65,2.94-.58,5.31-.76,8.3-.82.34,0,1.55-.44,1.55.11v48.36Z" />
+          <path d="M107.52,0v48.48c-21.14.54-40.51-14.4-46.68-34.32-1.44-4.64-2.11-9.3-2.28-14.16h48.96Z" />
         </svg>
-
-        <span className="preloader-brand">Digital Cultures</span>
       </div>
     </div>
   );
