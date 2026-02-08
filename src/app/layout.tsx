@@ -3,7 +3,9 @@ import { Poppins } from 'next/font/google';
 import './globals.css';
 import { siteConfig, generateOrganizationSchema, JsonLd } from '@/lib/seo';
 import { ThemeProvider } from '@/lib/theme';
+import { TransitionProvider } from '@/lib/transition';
 import { Preloader } from '@/components/ui/Preloader';
+import { PageTransition } from '@/components/ui/PageTransition';
 import { CustomCursor } from '@/components/ui/CustomCursor';
 import { ScrollProgress } from '@/components/ui/ScrollProgress';
 
@@ -108,10 +110,13 @@ export default function RootLayout({
         className={`${poppins.variable} font-sans antialiased bg-background text-foreground`}
       >
         <ThemeProvider>
-          <Preloader />
-          <CustomCursor />
-          <ScrollProgress />
-          {children}
+          <TransitionProvider>
+            <Preloader />
+            <PageTransition />
+            <CustomCursor />
+            <ScrollProgress />
+            {children}
+          </TransitionProvider>
         </ThemeProvider>
       </body>
     </html>
