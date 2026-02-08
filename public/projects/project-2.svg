@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800">
+  <rect width="600" height="800" fill="#1a1a2e"/>
+  <rect x="150" y="250" width="300" height="300" fill="none" stroke="#4a4a6a" stroke-width="1.5" rx="4"/>
+  <line x1="200" y1="350" x2="400" y2="350" stroke="#4a4a6a" stroke-width="1"/>
+  <line x1="200" y1="400" x2="350" y2="400" stroke="#3a3a5a" stroke-width="1"/>
+  <line x1="200" y1="450" x2="380" y2="450" stroke="#3a3a5a" stroke-width="1"/>
+  <text x="300" y="320" text-anchor="middle" font-family="system-ui" font-size="22" font-weight="600" fill="#7a7a9a" letter-spacing="3">WEB</text>
+</svg>

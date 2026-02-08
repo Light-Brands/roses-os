@@ -65,7 +65,7 @@ export default function SettingsPage() {
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold text-neutral-900 dark:text-white">
+        <h1 className="text-2xl text-neutral-900 dark:text-white">
           Settings
         </h1>
         <p className="text-neutral-500 mt-1">
@@ -115,7 +115,7 @@ export default function SettingsPage() {
             {activeTab === 'profile' && (
               <div className="p-6 space-y-6">
                 <div>
-                  <h2 className="text-lg font-semibold text-neutral-900 dark:text-white">
+                  <h2 className="text-lg text-neutral-900 dark:text-white">
                     Profile Settings
                   </h2>
                   <p className="text-sm text-neutral-500 mt-1">
@@ -237,7 +237,7 @@ export default function SettingsPage() {
             {activeTab === 'notifications' && (
               <div className="p-6 space-y-6">
                 <div>
-                  <h2 className="text-lg font-semibold text-neutral-900 dark:text-white">
+                  <h2 className="text-lg text-neutral-900 dark:text-white">
                     Notification Preferences
                   </h2>
                   <p className="text-sm text-neutral-500 mt-1">
@@ -317,7 +317,7 @@ export default function SettingsPage() {
             {activeTab === 'security' && (
               <div className="p-6 space-y-6">
                 <div>
-                  <h2 className="text-lg font-semibold text-neutral-900 dark:text-white">
+                  <h2 className="text-lg text-neutral-900 dark:text-white">
                     Security Settings
                   </h2>
                   <p className="text-sm text-neutral-500 mt-1">
@@ -399,7 +399,7 @@ export default function SettingsPage() {
             {activeTab === 'appearance' && (
               <div className="p-6 space-y-6">
                 <div>
-                  <h2 className="text-lg font-semibold text-neutral-900 dark:text-white">
+                  <h2 className="text-lg text-neutral-900 dark:text-white">
                     Appearance
                   </h2>
                   <p className="text-sm text-neutral-500 mt-1">
@@ -500,7 +500,7 @@ export default function SettingsPage() {
             {activeTab === 'site' && (
               <div className="p-6 space-y-6">
                 <div>
-                  <h2 className="text-lg font-semibold text-neutral-900 dark:text-white">
+                  <h2 className="text-lg text-neutral-900 dark:text-white">
                     Site Settings
                   </h2>
                   <p className="text-sm text-neutral-500 mt-1">
@@ -581,7 +581,7 @@ export default function SettingsPage() {
             {activeTab === 'integrations' && (
               <div className="p-6 space-y-6">
                 <div>
-                  <h2 className="text-lg font-semibold text-neutral-900 dark:text-white">
+                  <h2 className="text-lg text-neutral-900 dark:text-white">
                     Integrations
                   </h2>
                   <p className="text-sm text-neutral-500 mt-1">

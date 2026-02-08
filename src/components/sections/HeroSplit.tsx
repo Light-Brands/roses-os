@@ -102,8 +102,8 @@ export function HeroSplit({
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               className={cn(
-                'text-4xl sm:text-5xl lg:text-6xl',
-                'font-bold tracking-tight leading-tight',
+                'text-3xl sm:text-4xl lg:text-5xl',
+                'tracking-tight leading-tight',
                 'text-neutral-900 dark:text-white'
               )}
             >
@@ -190,7 +190,7 @@ export function HeroSplit({
               >
                 {stats.map((stat, index) => (
                   <div key={index}>
-                    <div className="text-3xl font-bold text-neutral-900 dark:text-white">
+                    <div className="text-3xl font-heading-2 text-neutral-900 dark:text-white">
                       {stat.value}
                     </div>
                     <div className="text-sm text-neutral-500 dark:text-neutral-500">

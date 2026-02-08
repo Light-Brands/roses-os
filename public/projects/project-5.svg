@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800">
+  <rect width="600" height="800" fill="#1e1e28"/>
+  <rect x="180" y="280" width="240" height="240" fill="none" stroke="#4a4a5a" stroke-width="1.5" transform="rotate(15 300 400)"/>
+  <rect x="210" y="310" width="180" height="180" fill="none" stroke="#3a3a4a" stroke-width="1" transform="rotate(15 300 400)"/>
+  <text x="300" y="560" text-anchor="middle" font-family="system-ui" font-size="22" font-weight="600" fill="#7a7a8a" letter-spacing="3">DESIGN</text>
+</svg>

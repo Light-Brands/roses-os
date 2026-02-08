@@ -1,462 +1,211 @@
-# Design Principles
+# Design Principles - Digital Cultures
 
-A comprehensive guide to creating premium, consistent user interfaces with this design system.
-
-## Table of Contents
-
-1. [Design Philosophy](#design-philosophy)
-2. [Spacing System](#spacing-system)
-3. [Typography Hierarchy](#typography-hierarchy)
-4. [Color Usage](#color-usage)
-5. [Interactive States](#interactive-states)
-6. [Animation Guidelines](#animation-guidelines)
-7. [Component Composition](#component-composition)
-8. [Dark Mode](#dark-mode)
-9. [Accessibility](#accessibility)
+A guide to creating the Digital Cultures agency website. Every design decision should trace back to these principles.
 
 ---
 
 ## Design Philosophy
 
-This design system follows these core principles:
+### Core Principles
 
-- **Clarity over decoration** - Every element serves a purpose
-- **Consistency breeds trust** - Predictable patterns create confidence
-- **Progressive disclosure** - Show what's needed, when it's needed
-- **Performance is a feature** - Fast experiences feel premium
+1. **Breathing Minimalism** - Generous whitespace with purposeful focal points. Space is not empty; it's breathing room.
+2. **Typography-First Hierarchy** - Text size and weight create the visual structure. Type IS the design.
+3. **Sophisticated Restraint** - Near-monochrome palette. No bright colors without a strong reason.
+4. **Subtle Motion** - Micro-interactions that enhance, never distract. Felt, not seen.
+5. **Progressive Disclosure** - Reveal information gradually. Don't overwhelm.
 
-### Brand Aesthetic
+### Reference Aesthetic
 
-Modern, clean, and premium - inspired by Apple, Vercel, and Linear. Key characteristics:
-
-- Generous whitespace
-- Subtle gradients and shadows
-- Smooth, purposeful animations
-- High contrast text for readability
-- Glass morphism for depth
+Clean, minimal, confident. The website should feel like visiting a refined gallery - the work is the star, the UI gets out of the way.
 
 ---
 
-## Spacing System
+## Color System
 
-Based on a 4px/8px grid for visual harmony.
+### Monochrome-First Palette
 
-### Base Unit: 4px
+| Role | Light Mode | Dark Mode | Usage |
+|------|-----------|-----------|-------|
+| Page background | #E8E8E8 | #0A0A0A | Main canvas |
+| Surface/cards | #FFFFFF | #1A1A1A | Elevated elements |
+| Subtle sections | #F5F5F5 | #171717 | Alternating backgrounds |
+| Primary text | #1A1A1A | #F5F5F5 | Headings, body |
+| Supporting text | #666666 | #999999 | Secondary info |
+| Caption text | #999999 | #666666 | Metadata, labels |
+| Accent/CTA | #000000 | #FFFFFF | Buttons, emphasis |
+| Borders | #D4D4D4 | #262626 | Dividers |
 
-```
-0.5 = 2px   | Micro spacing (icon gaps)
-1   = 4px   | Tight spacing
-2   = 8px   | Standard small gap
-3   = 12px  | Component internal padding
-4   = 16px  | Standard padding
-6   = 24px  | Section gaps
-8   = 32px  | Component margins
-12  = 48px  | Section padding (mobile)
-16  = 64px  | Section padding (tablet)
-20  = 80px  | Section padding (desktop)
-24  = 96px  | Large section gaps
-```
+### Rules
 
-### Usage Guidelines
-
-| Context | Spacing |
-|---------|---------|
-| Icon to text | `space-2` (8px) |
-| Button padding | `px-6 py-3` (24px/12px) |
-| Card padding | `p-6` (24px) |
-| Section padding | `py-16 lg:py-24` |
-| Container padding | `px-6 lg:px-16` |
-| Component gaps | `gap-4` or `gap-6` |
-| Grid gaps | `gap-6 lg:gap-8` |
-
-### Spacing Rhythm
-
-Maintain vertical rhythm by using consistent multiples:
-
-```jsx
-// Good - consistent rhythm
-<section className="py-24">
-  <h2 className="mb-6">Title</h2>
-  <p className="mb-12">Description</p>
-  <div className="grid gap-8">...</div>
-</section>
-
-// Bad - arbitrary spacing
-<section className="py-[70px]">
-  <h2 className="mb-[18px]">Title</h2>
-  <p className="mb-[45px]">Description</p>
-</section>
-```
+- Background is light grey (#E8E8E8), NOT white. White is reserved for elevated surfaces.
+- No bright colors unless there's a functional reason (status indicators only).
+- Let contrast between text and background do the work.
+- Dark mode inverts the palette with the same restraint.
 
 ---
 
-## Typography Hierarchy
+## Typography
 
-### Scale (Perfect Fourth ~1.333)
+### Type Scale
 
-| Name | Size | Use Case |
-|------|------|----------|
-| `7xl` | 72px | Hero headlines |
-| `6xl` | 60px | Page titles |
-| `5xl` | 48px | Section titles (desktop) |
-| `4xl` | 36px | Section titles (mobile) |
-| `3xl` | 30px | Large subheadings |
-| `2xl` | 24px | Card titles |
-| `xl` | 20px | Subheadings |
-| `lg` | 18px | Lead paragraphs |
-| `base` | 16px | Body text |
-| `sm` | 14px | Secondary text |
-| `xs` | 12px | Captions, labels |
-
-### Weight Guidelines
-
-| Weight | Use Case |
-|--------|----------|
-| `400` (normal) | Body text, paragraphs |
-| `500` (medium) | Buttons, nav links |
-| `600` (semibold) | Subheadings, emphasis |
-| `700` (bold) | Headlines, titles |
-| `800` (extrabold) | Hero text, display |
+| Level | Size | Weight | Line Height | Usage |
+|-------|------|--------|-------------|-------|
+| Display | clamp(48px, 8vw, 96px) | 700 | 1.1 | Hero only |
+| H1 | clamp(36px, 5vw, 64px) | 700 | 1.1 | Page titles |
+| H2 | clamp(28px, 4vw, 48px) | 600 | 1.2 | Section headers |
+| H3 | clamp(20px, 3vw, 32px) | 600 | 1.3 | Subsections |
+| Body large | clamp(18px, 2vw, 24px) | 400 | 1.4 | Intro text |
+| Body | 16px | 400 | 1.6 | Standard text |
+| Body small | 14px | 400 | 1.5 | Supporting text |
+| Caption | 12px | 500 | 1.4 | Labels, metadata |
 
 ### Letter Spacing
 
-| Size | Tracking |
-|------|----------|
-| Display (5xl+) | `-0.025em` (tighter) |
-| Headings (2xl-4xl) | `-0.02em` (tight) |
-| Body (base-xl) | `0` (normal) |
-| Small (xs-sm) | `0.01em` (wide) |
+| Context | Value |
+|---------|-------|
+| Display (5xl+) | -0.025em |
+| Headings (2xl-4xl) | -0.02em |
+| Body | 0 (default) |
+| Captions/labels | 0.02em |
 
-### Line Height
+### Rules
 
-| Context | Line Height |
-|---------|-------------|
-| Display text | `1` - `1.1` |
-| Headings | `1.15` - `1.25` |
-| Body text | `1.6` |
-| UI elements | `1.5` |
-
-### Typography Examples
-
-```jsx
-// Hero headline
-<h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter leading-none">
-  Build faster.
-</h1>
-
-// Section title
-<h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
-  Features
-</h2>
-
-// Body text
-<p className="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
-  Description text here...
-</p>
-
-// Caption
-<span className="text-xs text-neutral-500 tracking-wide uppercase">
-  Label
-</span>
-```
+- **One font family:** Inter. Don't add more.
+- **Max weight: 700 (bold).** Never use extrabold.
+- Headlines should be confident and large. Don't be afraid of scale.
+- Use `text-wrap: balance` on headings.
 
 ---
 
-## Color Usage
+## Spacing
 
-### Semantic Colors
+### 8px Base Grid
 
-| Variable | Light Mode | Dark Mode | Use Case |
-|----------|------------|-----------|----------|
-| `--color-background` | White | #0a0a0a | Page background |
-| `--color-foreground` | #171717 | #fafafa | Primary text |
-| `--color-muted` | #f5f5f5 | #262626 | Secondary backgrounds |
-| `--color-muted-foreground` | #737373 | #a3a3a3 | Secondary text |
-| `--color-border` | #e8e8e8 | #262626 | Borders, dividers |
-| `--color-accent` | Primary 500 | Primary 400 | Interactive elements |
+All spacing is multiples of 8px. This creates visual rhythm.
 
-### Color Application Rules
-
-1. **Primary colors** - CTAs, links, active states
-2. **Secondary colors** - Accents, gradients, highlights
-3. **Neutral colors** - Text, backgrounds, borders
-4. **Status colors** - Feedback (success/warning/error/info)
-
-### Do's and Don'ts
-
-```jsx
-// DO: Use semantic color variables
-<div className="bg-background text-foreground border-border">
-
-// DON'T: Hardcode hex values
-<div className="bg-[#ffffff] text-[#171717] border-[#e8e8e8]">
-
-// DO: Use opacity for subtle variations
-<div className="bg-primary-500/10">
-
-// DON'T: Create new color shades
-<div className="bg-[#5a6df233]">
+```
+xs:   8px    - Tight element spacing
+sm:   16px   - Related elements
+md:   32px   - Component separation
+lg:   64px   - Section breaks
+xl:   128px  - Major section spacing
 ```
 
-### Gradient Usage
+### Safe Margins
 
-| Gradient | Use Case |
-|----------|----------|
-| `gradient-primary` | CTAs, badges, accents |
-| `gradient-secondary` | Decorative elements |
-| `gradient-subtle` | Card backgrounds |
-| `gradient-mesh` | Hero backgrounds |
+| Breakpoint | Side Margin |
+|------------|-------------|
+| Mobile | 40px |
+| Tablet | 80px |
+| Desktop | 120px |
+
+### Section Spacing
+
+| Context | Value |
+|---------|-------|
+| Hero section | min-h-screen, py-32 lg:py-48 |
+| Standard section | py-20 lg:py-32 |
+| Between header & content | mb-16 lg:mb-20 |
+| Card internal padding | p-6 lg:p-8 |
+
+### Rules
+
+- When in doubt, add MORE space. Generous whitespace is the design.
+- Never use arbitrary spacing (`p-[18px]`). Stick to the scale.
+- Asymmetric spacing is OK - it creates visual interest.
 
 ---
 
-## Interactive States
+## Animation
 
-### Button States
+### Philosophy
 
-| State | Visual Change |
-|-------|---------------|
-| Default | Base styling |
-| Hover | Slightly lighter + shadow |
-| Active/Pressed | Slightly darker, scale(0.98) |
-| Focus | Outline ring (2px primary) |
-| Disabled | 50% opacity, no interactions |
-| Loading | Spinner + reduced opacity |
+Animations should be felt, not seen. They guide attention subtly.
 
-### State Transitions
+### Allowed Patterns
 
-```css
-/* Standard interactive element */
-.interactive {
-  transition: all 200ms cubic-bezier(0.25, 0.1, 0.25, 1);
-}
+| Pattern | Implementation |
+|---------|---------------|
+| Entrance | Fade in + translate up (opacity 0→1, y 20→0) |
+| Stagger | 80-100ms delay between children |
+| Image hover | Scale 1.05, transition 400ms |
+| Link hover | Opacity 0.6, transition 200ms |
+| Button hover | Very subtle scale or shadow change |
 
-/* Hover state */
-.interactive:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
-}
+### Timing
 
-/* Active state */
-.interactive:active {
-  transform: scale(0.98);
-}
+| Duration | Use |
+|----------|-----|
+| 100ms | Active/press states |
+| 200ms | Hover transitions |
+| 300ms | Standard transitions |
+| 400ms | Image hover, larger elements |
+| 600ms | Entrance animations |
+
+### Default Easing
+
+```
+cubic-bezier(0.4, 0.0, 0.2, 1) — smooth deceleration
 ```
 
-### Focus States
+### What to Avoid
 
-Always use visible focus indicators for accessibility:
-
-```jsx
-// Standard focus ring
-className="focus-visible:outline-2 focus-visible:outline-primary-500 focus-visible:outline-offset-2"
-
-// Or use the utility class
-className="focus-premium"
-```
+- Bouncing or spring animations with visible overshoot
+- Parallax effects
+- Auto-playing media
+- Scale > 1.05 on hover
+- Duration > 800ms
+- Animations that delay content access
 
 ---
 
-## Animation Guidelines
+## Component Patterns
 
-### Timing Functions
+### Navigation
 
-| Easing | Use Case |
-|--------|----------|
-| `ease-smooth` | General transitions |
-| `ease-smooth-out` | Elements entering |
-| `ease-spring` | Playful interactions |
-| `ease-bounce` | Attention-grabbing |
+- Fixed, translucent with backdrop blur
+- Height: 80px
+- Logo left, nav items right
+- Hover: opacity transition (not color change)
+- Background: rgba(232, 232, 232, 0.8) in light mode
 
-### Duration Guidelines
+### Project Cards (Portfolio)
 
-| Duration | Use Case |
-|----------|----------|
-| `100ms` | Micro-interactions (hover color) |
-| `150ms` | Button states |
-| `200ms` | Standard transitions |
-| `300ms` | Larger element transitions |
-| `400ms` | Page transitions, modals |
-| `500ms+` | Complex animations |
+- Full-bleed image background
+- Overlay gradient bottom-to-top
+- Text: white, bottom-left
+- Hover: image scale 1.05, gradient intensifies
+- Aspect ratio: 4:3 or 16:9
 
-### Animation Principles
+### Buttons
 
-1. **Purposeful** - Every animation should have a reason
-2. **Subtle** - Avoid jarring or excessive movement
-3. **Fast** - Users shouldn't wait for animations
-4. **Interruptible** - Respect user input during animation
+| Variant | Style |
+|---------|-------|
+| Primary | Black bg, white text, rounded-full |
+| Secondary | Border, dark text, rounded-full |
+| Ghost | No border, underline on hover |
 
-### GSAP Animation Patterns
-
-```jsx
-// Fade up on scroll
-gsap.from(element, {
-  y: 40,
-  opacity: 0,
-  duration: 0.8,
-  ease: 'power3.out',
-  scrollTrigger: {
-    trigger: element,
-    start: 'top 80%',
-  },
-});
-
-// Stagger children
-gsap.from(children, {
-  y: 30,
-  opacity: 0,
-  duration: 0.6,
-  stagger: 0.1,
-  ease: 'power2.out',
-});
-```
-
-### Framer Motion Patterns
-
-```jsx
-// Standard fade up
-const fadeUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] },
-};
-
-// Stagger container
-const staggerContainer = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-```
-
-### Reduce Motion Support
-
-Always respect user preferences:
-
-```jsx
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-// In Framer Motion
-<motion.div
-  initial={prefersReducedMotion ? false : { opacity: 0 }}
-  animate={{ opacity: 1 }}
-/>
-```
-
----
-
-## Component Composition
-
-### Anatomy of a Premium Component
+### Section Header
 
 ```
-┌─────────────────────────────────────┐
-│  Padding (p-6 or p-8)               │
-│  ┌───────────────────────────────┐  │
-│  │  Content Area                 │  │
-│  │                               │  │
-│  │  • Proper spacing hierarchy   │  │
-│  │  • Consistent typography      │  │
-│  │  • Semantic colors            │  │
-│  │                               │  │
-│  └───────────────────────────────┘  │
-│  Border Radius (rounded-xl/2xl)     │
-│  Shadow (shadow-lg on hover)        │
-└─────────────────────────────────────┘
-```
-
-### Card Pattern
-
-```jsx
-<div className="
-  relative
-  bg-background
-  border border-border
-  rounded-2xl
-  p-6 lg:p-8
-  shadow-sm
-  transition-all duration-300 ease-smooth
-  hover:shadow-lg hover:-translate-y-1
-">
-  {/* Content */}
-</div>
-```
-
-### Button Variants
-
-```jsx
-// Primary (solid)
-className="bg-primary-500 text-white hover:bg-primary-600 shadow-primary"
-
-// Secondary (outline)
-className="border-2 border-primary-500 text-primary-500 hover:bg-primary-50"
-
-// Ghost (minimal)
-className="text-foreground hover:bg-muted"
-
-// Gradient (premium)
-className="bg-gradient-primary text-white shadow-primary-lg"
-```
-
-### Section Pattern
-
-```jsx
-<section className="section-padding">
-  <div className="container-premium">
-    {/* Section header */}
-    <div className="text-center max-w-3xl mx-auto mb-16">
-      <span className="text-sm font-medium text-primary-500 mb-4 block">
-        Label
-      </span>
-      <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-6">
-        Section Title
-      </h2>
-      <p className="text-lg text-muted-foreground">
-        Section description...
-      </p>
-    </div>
-
-    {/* Section content */}
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {/* Cards */}
-    </div>
-  </div>
-</section>
+[Label - uppercase, small, tracking-wider, muted color]
+[Title - large, bold, tracking-tight]
+[Description - body-lg, muted-foreground]
 ```
 
 ---
 
 ## Dark Mode
 
-### Implementation
-
-Use CSS custom properties that automatically switch:
-
-```jsx
-// Component automatically adapts
-<div className="bg-background text-foreground border-border">
-```
-
-### Dark Mode Adjustments
+Light mode is primary. Dark mode inverts the palette while maintaining the same restraint.
 
 | Element | Light | Dark |
 |---------|-------|------|
-| Background | White | Near-black (#0a0a0a) |
-| Text | Near-black | Near-white |
-| Borders | Light gray | Dark gray |
-| Shadows | Subtle | More pronounced |
-| Accent colors | 500 shade | 400 shade (brighter) |
-
-### Toggle Implementation
-
-```jsx
-// Add 'dark' class to html element
-document.documentElement.classList.toggle('dark');
-
-// Or use data attribute
-document.documentElement.setAttribute('data-theme', 'dark');
-```
+| Background | #E8E8E8 | #0A0A0A |
+| Surface | #FFFFFF | #1A1A1A |
+| Text | #1A1A1A | #F5F5F5 |
+| Accent | #000000 | #FFFFFF |
+| Borders | #D4D4D4 | #262626 |
 
 ---
 
@@ -464,60 +213,44 @@ document.documentElement.setAttribute('data-theme', 'dark');
 
 ### Requirements
 
-- **Color contrast**: 4.5:1 for body text, 3:1 for large text
-- **Focus indicators**: Visible on all interactive elements
-- **Motion**: Respect `prefers-reduced-motion`
-- **Touch targets**: Minimum 44x44px
-- **Semantic HTML**: Use proper heading hierarchy
-
-### Checklist
-
-- [ ] All images have alt text
-- [ ] Form inputs have labels
-- [ ] Links have descriptive text
-- [ ] Color is not the only indicator
-- [ ] Keyboard navigation works
-- [ ] Screen reader tested
-- [ ] Focus order is logical
+- WCAG AA minimum (4.5:1 text contrast, 3:1 large text)
+- Keyboard navigation on all interactive elements
+- Visible focus indicators (2px solid, 4px offset)
+- Alt text on all meaningful images
+- Semantic HTML (proper heading hierarchy)
+- Touch targets minimum 44x44px
+- Respect `prefers-reduced-motion`
 
 ---
 
 ## Quick Reference
 
-### Common Class Combinations
+### Common Classes
 
-```jsx
-// Premium heading
-"text-4xl md:text-5xl font-bold tracking-tight"
+```tsx
+// Hero headline
+"text-5xl md:text-7xl font-bold tracking-tighter leading-[1.1]"
+
+// Section heading
+"text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight"
 
 // Body text
 "text-lg text-muted-foreground leading-relaxed"
 
-// Premium button
-"px-6 py-3 bg-primary-500 text-white rounded-xl font-medium
- shadow-primary hover:shadow-primary-lg hover:bg-primary-600
- transition-all duration-200"
+// Caption / label
+"text-xs font-medium uppercase tracking-wider text-neutral-500"
 
-// Glass card
-"bg-white/80 dark:bg-neutral-900/80 backdrop-blur-lg
- border border-white/20 rounded-2xl shadow-glass"
+// Primary button
+"px-8 py-3 bg-black text-white rounded-full font-medium
+ hover:bg-neutral-800 transition-all duration-200"
 
-// Gradient text
-"bg-gradient-to-r from-primary-500 to-secondary-500
- bg-clip-text text-transparent"
-```
+// Card
+"bg-white dark:bg-neutral-900 rounded-xl p-6 lg:p-8
+ shadow-sm transition-all duration-300 hover:shadow-md"
 
-### File Structure
+// Section wrapper
+"section-padding bg-background"
 
-```
-src/
-├── design-system/
-│   ├── tokens.ts         # Design token definitions
-│   ├── theme.css         # CSS variables
-│   └── DESIGN-PRINCIPLES.md
-├── components/
-│   ├── ui/               # Base components
-│   └── sections/         # Page sections
-└── app/
-    └── globals.css       # Tailwind + theme import
+// Container
+"container-premium"
 ```

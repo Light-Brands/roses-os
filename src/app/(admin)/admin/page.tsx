@@ -148,7 +148,7 @@ export default function AdminDashboard() {
         className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
       >
         <div>
-          <h1 className="text-2xl font-bold text-neutral-900 dark:text-white tracking-tight">
+          <h1 className="text-2xl text-neutral-900 dark:text-white tracking-tight">
             Dashboard
           </h1>
           <p className="text-neutral-500 dark:text-neutral-400 mt-1 text-sm">
@@ -256,7 +256,7 @@ export default function AdminDashboard() {
         >
           {/* Card Header */}
           <div className="p-5 border-b border-neutral-200/60 dark:border-neutral-800/60 flex items-center justify-between">
-            <h2 className="text-base font-semibold text-neutral-900 dark:text-white">
+            <h2 className="text-base text-neutral-900 dark:text-white">
               Recent Activity
             </h2>
             <motion.button
@@ -326,7 +326,7 @@ export default function AdminDashboard() {
             )}
           >
             <div className="p-5 border-b border-neutral-200/60 dark:border-neutral-800/60">
-              <h2 className="text-base font-semibold text-neutral-900 dark:text-white">
+              <h2 className="text-base text-neutral-900 dark:text-white">
                 Quick Actions
               </h2>
             </div>
@@ -382,7 +382,7 @@ export default function AdminDashboard() {
             )}
           >
             <div className="p-5 border-b border-neutral-200/60 dark:border-neutral-800/60">
-              <h2 className="text-base font-semibold text-neutral-900 dark:text-white">
+              <h2 className="text-base text-neutral-900 dark:text-white">
                 Traffic Sources
               </h2>
             </div>

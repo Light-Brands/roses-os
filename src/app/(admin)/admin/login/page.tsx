@@ -80,7 +80,7 @@ export default function AdminLoginPage() {
           </div>
 
           <div className="max-w-md">
-            <h1 className="text-4xl font-bold leading-tight mb-4">
+            <h1 className="text-4xl leading-tight mb-4">
               Welcome to your
               <br />
               <span className="text-white/80">admin dashboard</span>
@@ -113,7 +113,7 @@ export default function AdminLoginPage() {
 
           {/* Form header */}
           <div className="mb-8">
-            <h2 className="text-2xl font-bold text-neutral-900 dark:text-white">
+            <h2 className="text-2xl text-neutral-900 dark:text-white">
               Sign in
             </h2>
             <p className="text-neutral-500 mt-2">

@@ -160,8 +160,8 @@ export function HeroMinimal({
         <h1
           ref={titleRef}
           className={cn(
-            'text-5xl sm:text-6xl md:text-7xl lg:text-8xl',
-            'font-extrabold tracking-tighter',
+            'text-4xl sm:text-5xl md:text-6xl lg:text-7xl',
+            'tracking-tighter',
             'text-neutral-900 dark:text-white',
             'mb-6'
           )}

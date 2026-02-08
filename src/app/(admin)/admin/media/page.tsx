@@ -128,7 +128,7 @@ export default function MediaPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-neutral-900 dark:text-white">
+          <h1 className="text-2xl text-neutral-900 dark:text-white">
             Media Library
           </h1>
           <p className="text-neutral-500 mt-1">
@@ -372,7 +372,7 @@ export default function MediaPage() {
             {/* Details */}
             <div className="p-4 space-y-4">
               <div className="flex items-start justify-between">
-                <h3 className="font-semibold text-neutral-900 dark:text-white break-all pr-2">
+                <h3 className="text-neutral-900 dark:text-white break-all pr-2">
                   {selectedMedia.name}
                 </h3>
                 <button

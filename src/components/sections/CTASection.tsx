@@ -65,7 +65,7 @@ export function CTASection({
                 {eyebrow}
               </span>
             )}
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-neutral-900 dark:text-white mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight text-neutral-900 dark:text-white mb-6">
               {title}
             </h2>
             {description && (
@@ -119,7 +119,7 @@ export function CTASection({
                   {eyebrow}
                 </span>
               )}
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight text-white mb-6">
                 {title}
               </h2>
               {description && (
@@ -179,7 +179,7 @@ export function CTASection({
                   {eyebrow}
                 </span>
               )}
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-neutral-900 dark:text-white mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight text-neutral-900 dark:text-white mb-6">
                 {title}
               </h2>
               {description && (
@@ -215,7 +215,7 @@ export function CTASection({
                       'shadow-sm'
                     )}
                   >
-                    <div className="text-4xl font-bold text-neutral-900 dark:text-white mb-2">
+                    <div className="text-4xl font-heading-2 text-neutral-900 dark:text-white mb-2">
                       {stat.value}
                     </div>
                     <div className="text-sm text-neutral-500 dark:text-neutral-400">
@@ -250,7 +250,7 @@ export function CTASection({
                 {eyebrow}
               </span>
             )}
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight text-white mb-6">
               {title}
             </h2>
             {description && (

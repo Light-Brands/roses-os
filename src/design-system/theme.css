@@ -1,76 +1,76 @@
 /**
- * Theme CSS Variables
- * Premium design system with light/dark mode support
+ * Theme CSS Variables - Digital Cultures
+ * Monochrome design system with light/dark mode support
+ * Light mode is PRIMARY (#E8E8E8 grey background)
  */
 
 /* =============================================================================
-   ROOT VARIABLES - Light Mode (Default)
+   ROOT VARIABLES - Light Mode (Default / Primary)
    ============================================================================= */
 
 :root {
-  /* Color mode */
   color-scheme: light;
 
-  /* Primary Colors */
-  --color-primary-50: #f0f4ff;
-  --color-primary-100: #e0e8ff;
-  --color-primary-200: #c7d4fe;
-  --color-primary-300: #a4b8fc;
-  --color-primary-400: #7c93f8;
-  --color-primary-500: #5a6df2;
-  --color-primary-600: #4450e6;
-  --color-primary-700: #3840cb;
-  --color-primary-800: #3036a4;
-  --color-primary-900: #2d3382;
-  --color-primary-950: #1c1f4d;
+  /* Primary Colors (dark accent scale) */
+  --color-primary-50: #F5F5F5;
+  --color-primary-100: #E8E8E8;
+  --color-primary-200: #D4D4D4;
+  --color-primary-300: #A3A3A3;
+  --color-primary-400: #525252;
+  --color-primary-500: #1A1A1A;
+  --color-primary-600: #0A0A0A;
+  --color-primary-700: #050505;
+  --color-primary-800: #020202;
+  --color-primary-900: #000000;
+  --color-primary-950: #000000;
 
-  /* Secondary Colors */
-  --color-secondary-50: #faf5ff;
-  --color-secondary-100: #f3e8ff;
-  --color-secondary-200: #e9d5ff;
-  --color-secondary-300: #d8b4fe;
-  --color-secondary-400: #c084fc;
-  --color-secondary-500: #a855f7;
-  --color-secondary-600: #9333ea;
-  --color-secondary-700: #7c22ce;
-  --color-secondary-800: #6821a8;
-  --color-secondary-900: #581c87;
-  --color-secondary-950: #3b0764;
+  /* Secondary Colors (neutral mid-tones) */
+  --color-secondary-50: #FAFAFA;
+  --color-secondary-100: #F5F5F5;
+  --color-secondary-200: #E8E8E8;
+  --color-secondary-300: #D4D4D4;
+  --color-secondary-400: #A3A3A3;
+  --color-secondary-500: #666666;
+  --color-secondary-600: #525252;
+  --color-secondary-700: #404040;
+  --color-secondary-800: #262626;
+  --color-secondary-900: #171717;
+  --color-secondary-950: #0A0A0A;
 
   /* Neutral Colors */
-  --color-neutral-0: #ffffff;
-  --color-neutral-50: #fafafa;
-  --color-neutral-100: #f5f5f5;
-  --color-neutral-200: #e8e8e8;
-  --color-neutral-300: #d4d4d4;
-  --color-neutral-400: #a3a3a3;
+  --color-neutral-0: #FFFFFF;
+  --color-neutral-50: #FAFAFA;
+  --color-neutral-100: #F5F5F5;
+  --color-neutral-200: #E8E8E8;
+  --color-neutral-300: #D4D4D4;
+  --color-neutral-400: #A3A3A3;
   --color-neutral-500: #737373;
   --color-neutral-600: #525252;
   --color-neutral-700: #404040;
   --color-neutral-800: #262626;
   --color-neutral-900: #171717;
-  --color-neutral-950: #0a0a0a;
+  --color-neutral-950: #0A0A0A;
 
   /* Semantic Colors - Light Mode */
-  --color-background: var(--color-neutral-0);
-  --color-background-subtle: var(--color-neutral-50);
-  --color-background-muted: var(--color-neutral-100);
-  --color-background-elevated: var(--color-neutral-0);
+  --color-background: #E8E8E8;
+  --color-background-subtle: #F5F5F5;
+  --color-background-muted: #E8E8E8;
+  --color-background-elevated: #FFFFFF;
   --color-background-overlay: rgba(0, 0, 0, 0.5);
 
-  --color-foreground: var(--color-neutral-900);
-  --color-foreground-subtle: var(--color-neutral-700);
-  --color-foreground-muted: var(--color-neutral-500);
-  --color-foreground-faint: var(--color-neutral-400);
+  --color-foreground: #1A1A1A;
+  --color-foreground-subtle: #404040;
+  --color-foreground-muted: #666666;
+  --color-foreground-faint: #999999;
 
-  --color-border: var(--color-neutral-200);
-  --color-border-subtle: var(--color-neutral-100);
-  --color-border-strong: var(--color-neutral-300);
+  --color-border: #D4D4D4;
+  --color-border-subtle: #E8E8E8;
+  --color-border-strong: #A3A3A3;
 
-  --color-accent: var(--color-primary-500);
-  --color-accent-foreground: var(--color-neutral-0);
-  --color-accent-hover: var(--color-primary-600);
-  --color-accent-subtle: var(--color-primary-50);
+  --color-accent: #000000;
+  --color-accent-foreground: #FFFFFF;
+  --color-accent-hover: #1A1A1A;
+  --color-accent-subtle: #F5F5F5;
 
   /* Status Colors */
   --color-success: #10b981;
@@ -79,32 +79,32 @@
   --color-warning-subtle: #fffbeb;
   --color-error: #ef4444;
   --color-error-subtle: #fef2f2;
-  --color-info: #3b82f6;
-  --color-info-subtle: #eff6ff;
+  --color-info: #525252;
+  --color-info-subtle: #F5F5F5;
 
-  /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #5a6df2 0%, #a855f7 100%);
-  --gradient-secondary: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
-  --gradient-subtle: linear-gradient(135deg, #f0f4ff 0%, #faf5ff 100%);
-  --gradient-mesh: radial-gradient(at 40% 20%, rgba(90, 109, 242, 0.15) 0px, transparent 50%),
-                   radial-gradient(at 80% 0%, rgba(168, 85, 247, 0.15) 0px, transparent 50%),
-                   radial-gradient(at 0% 50%, rgba(236, 72, 153, 0.1) 0px, transparent 50%);
+  /* Gradients - monochrome */
+  --gradient-primary: linear-gradient(135deg, #1A1A1A 0%, #000000 100%);
+  --gradient-secondary: linear-gradient(135deg, #404040 0%, #1A1A1A 100%);
+  --gradient-subtle: linear-gradient(135deg, #F5F5F5 0%, #E8E8E8 100%);
 
-  /* Shadows */
-  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-  --shadow-primary: 0 4px 14px 0 rgb(90 109 242 / 0.25);
-  --shadow-primary-lg: 0 10px 40px 0 rgb(90 109 242 / 0.35);
-  --shadow-glass: 0 8px 32px 0 rgb(0 0 0 / 0.08);
+  /* Shadows - pure black, no color tinting */
+  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.04);
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.04);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.06), 0 2px 4px -2px rgb(0 0 0 / 0.04);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.06), 0 4px 6px -4px rgb(0 0 0 / 0.03);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.06), 0 8px 10px -6px rgb(0 0 0 / 0.03);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.15);
+  --shadow-glass: 0 8px 32px 0 rgb(0 0 0 / 0.06);
 
   /* Typography */
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-sans: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-  --font-display: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-weight-heading-1: 400;
+  --font-weight-heading-2: 600;
+  --font-weight-heading-3: 600;
+  --font-weight-heading-4: 600;
+  --font-weight-heading-5: 600;
+  --font-weight-heading-6: 600;
 
   /* Border Radius */
   --radius-xs: 0.125rem;
@@ -119,12 +119,11 @@
   --radius-full: 9999px;
 
   /* Animation */
-  --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
-  --ease-smooth-out: cubic-bezier(0, 0, 0.25, 1);
-  --ease-smooth-in: cubic-bezier(0.25, 0, 1, 1);
-  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  --ease-apple: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-smooth: cubic-bezier(0.4, 0.0, 0.2, 1);
+  --ease-smooth-out: cubic-bezier(0.0, 0.0, 0.2, 1);
+  --ease-smooth-in: cubic-bezier(0.4, 0.0, 1, 1);
+  --ease-hover: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-reveal: cubic-bezier(0.16, 1, 0.3, 1);
 
   --duration-instant: 0ms;
   --duration-faster: 100ms;
@@ -155,8 +154,8 @@
 
   /* Glass Effect */
   --glass-background: rgba(255, 255, 255, 0.8);
-  --glass-border: rgba(255, 255, 255, 0.2);
-  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.06);
 }
 
 /* =============================================================================
@@ -168,64 +167,53 @@
   color-scheme: dark;
 
   /* Semantic Colors - Dark Mode */
-  --color-background: var(--color-neutral-950);
-  --color-background-subtle: var(--color-neutral-900);
-  --color-background-muted: var(--color-neutral-800);
-  --color-background-elevated: var(--color-neutral-900);
+  --color-background: #0A0A0A;
+  --color-background-subtle: #171717;
+  --color-background-muted: #1A1A1A;
+  --color-background-elevated: #1A1A1A;
   --color-background-overlay: rgba(0, 0, 0, 0.7);
 
-  --color-foreground: var(--color-neutral-50);
-  --color-foreground-subtle: var(--color-neutral-200);
-  --color-foreground-muted: var(--color-neutral-400);
-  --color-foreground-faint: var(--color-neutral-500);
+  --color-foreground: #F5F5F5;
+  --color-foreground-subtle: #D4D4D4;
+  --color-foreground-muted: #999999;
+  --color-foreground-faint: #666666;
 
-  --color-border: var(--color-neutral-800);
-  --color-border-subtle: var(--color-neutral-900);
-  --color-border-strong: var(--color-neutral-700);
+  --color-border: #262626;
+  --color-border-subtle: #1A1A1A;
+  --color-border-strong: #404040;
 
-  --color-accent: var(--color-primary-400);
-  --color-accent-foreground: var(--color-neutral-950);
-  --color-accent-hover: var(--color-primary-300);
-  --color-accent-subtle: rgba(90, 109, 242, 0.15);
+  --color-accent: #FFFFFF;
+  --color-accent-foreground: #0A0A0A;
+  --color-accent-hover: #E8E8E8;
+  --color-accent-subtle: rgba(255, 255, 255, 0.08);
 
   /* Status Colors - Dark Mode */
   --color-success-subtle: rgba(16, 185, 129, 0.15);
   --color-warning-subtle: rgba(245, 158, 11, 0.15);
   --color-error-subtle: rgba(239, 68, 68, 0.15);
-  --color-info-subtle: rgba(59, 130, 246, 0.15);
+  --color-info-subtle: rgba(255, 255, 255, 0.08);
 
   /* Gradients - Dark Mode */
-  --gradient-subtle: linear-gradient(135deg, rgba(90, 109, 242, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
-  --gradient-mesh: radial-gradient(at 40% 20%, rgba(90, 109, 242, 0.2) 0px, transparent 50%),
-                   radial-gradient(at 80% 0%, rgba(168, 85, 247, 0.2) 0px, transparent 50%),
-                   radial-gradient(at 0% 50%, rgba(236, 72, 153, 0.15) 0px, transparent 50%);
+  --gradient-subtle: linear-gradient(135deg, #171717 0%, #1A1A1A 100%);
 
   /* Shadows - Dark Mode (more subtle) */
   --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.3);
-  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.4), 0 1px 2px -1px rgb(0 0 0 / 0.4);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.4), 0 8px 10px -6px rgb(0 0 0 / 0.4);
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.4), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.4), 0 8px 10px -6px rgb(0 0 0 / 0.3);
   --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.6);
-  --shadow-primary: 0 4px 14px 0 rgb(90 109 242 / 0.3);
-  --shadow-primary-lg: 0 10px 40px 0 rgb(90 109 242 / 0.4);
   --shadow-glass: 0 8px 32px 0 rgb(0 0 0 / 0.3);
 
   /* Glass Effect - Dark Mode */
   --glass-background: rgba(23, 23, 23, 0.8);
-  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.08);
   --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
 
 /* =============================================================================
    UTILITY CLASSES
    ============================================================================= */
-
-/* Background utilities */
-.bg-gradient-primary { background: var(--gradient-primary); }
-.bg-gradient-secondary { background: var(--gradient-secondary); }
-.bg-gradient-subtle { background: var(--gradient-subtle); }
-.bg-gradient-mesh { background: var(--gradient-mesh); }
 
 /* Glass morphism effect */
 .glass {
@@ -242,23 +230,6 @@
   -webkit-backdrop-filter: blur(var(--blur-2xl));
   border: 1px solid var(--glass-border);
   box-shadow: var(--glass-shadow);
-}
-
-/* Text gradient */
-.text-gradient {
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Premium button glow */
-.glow-primary {
-  box-shadow: var(--shadow-primary);
-}
-
-.glow-primary:hover {
-  box-shadow: var(--shadow-primary-lg);
 }
 
 /* Smooth transitions */
@@ -286,8 +257,8 @@
 }
 
 .focus-ring:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
+  outline: 2px solid var(--color-foreground);
+  outline-offset: 4px;
 }
 
 /* =============================================================================
@@ -311,10 +282,15 @@ body {
   line-height: 1.6;
 }
 
-/* Selection styling */
+/* Selection styling - monochrome */
 ::selection {
-  background-color: var(--color-accent);
-  color: var(--color-accent-foreground);
+  background-color: rgba(0, 0, 0, 0.15);
+  color: inherit;
+}
+
+.dark ::selection {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: inherit;
 }
 
 /* Scrollbar styling */

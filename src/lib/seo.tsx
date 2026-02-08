@@ -6,18 +6,20 @@ import { Metadata } from 'next';
  */
 
 export const siteConfig = {
-  name: 'Brand',
-  description: 'Premium Next.js boilerplate for building beautiful, high-performance websites.',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://example.com',
+  name: 'Digital Cultures',
+  description: 'Marketing, creative, and design agency based in Paphos, Cyprus. We craft digital experiences that elevate brands.',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://digitalcultures.agency',
   ogImage: '/og-image.jpg',
-  creator: '@yourtwitterhandle',
+  creator: '@digitalcultures',
   keywords: [
-    'Next.js',
-    'React',
-    'TypeScript',
-    'Tailwind CSS',
-    'Web Development',
-    'Premium Website',
+    'creative agency',
+    'design agency',
+    'marketing agency',
+    'branding',
+    'web design',
+    'digital marketing',
+    'Paphos',
+    'Cyprus',
   ],
 };
 
@@ -99,9 +101,7 @@ export function generateOrganizationSchema() {
     url: siteConfig.url,
     logo: `${siteConfig.url}/logo.png`,
     sameAs: [
-      // Add your social media URLs
-      // 'https://twitter.com/yourbrand',
-      // 'https://github.com/yourbrand',
+      // TODO: Add Digital Cultures social media URLs
     ],
   };
 }

@@ -118,7 +118,7 @@ export default function ContentPage() {
       {/* Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-neutral-900 dark:text-white">
+          <h1 className="text-2xl text-neutral-900 dark:text-white">
             Content
           </h1>
           <p className="text-neutral-500 mt-1 text-sm">
@@ -200,7 +200,7 @@ export default function ContentPage() {
                 />
                 <div className="flex-1 min-w-0">
                   <div className="flex items-start justify-between gap-2">
-                    <h3 className="font-medium text-neutral-900 dark:text-white">
+                    <h3 className="text-neutral-900 dark:text-white">
                       {item.title}
                     </h3>
                     <span

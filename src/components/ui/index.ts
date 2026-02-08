@@ -1,4 +1,5 @@
 // Core Components
+export { AnimatedNavText } from './AnimatedNavText';
 export { Button } from './Button';
 export { Card, FeatureCard, Interactive3DCard, PricingCard, TestimonialCard } from './Card';
 export { Navigation } from './Navigation';

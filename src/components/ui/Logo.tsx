@@ -14,9 +14,9 @@ interface LogoProps {
 }
 
 const sizeMap = {
-  sm: { image: 120, text: 'text-base' },
-  md: { image: 160, text: 'text-xl' },
-  lg: { image: 240, text: 'text-2xl' },
+  sm: { width: 32, height: 32, text: 'text-sm' },
+  md: { width: 40, height: 40, text: 'text-base' },
+  lg: { width: 56, height: 56, text: 'text-xl' },
 };
 
 export function Logo({
@@ -29,24 +29,24 @@ export function Logo({
 }: LogoProps) {
   const sizes = sizeMap[size];
   const logoContent = (
-    <div className={cn('flex items-center gap-2', className)}>
+    <div className={cn('flex items-center gap-3', className)}>
       <Image
-        src="/oracle-logo.webp"
-        alt="Oracle"
-        width={sizes.image}
-        height={sizes.image}
-        className="object-contain invert dark:invert-0 transition-all duration-200"
+        src="/dc-logo.svg"
+        alt="Digital Cultures"
+        width={sizes.width}
+        height={sizes.height}
+        className="dark:invert transition-all duration-200"
         priority
       />
       {showText && (
         <span
           className={cn(
-            'font-bold text-neutral-900 dark:text-white tracking-tight',
+            'font-medium text-foreground tracking-tight',
             sizes.text,
             textClassName
           )}
         >
-          Oracle
+          Digital Cultures
         </span>
       )}
     </div>

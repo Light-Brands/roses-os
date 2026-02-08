@@ -2,514 +2,463 @@
 
 import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { motion } from 'framer-motion';
-import {
-  Zap,
-  Shield,
-  Palette,
-  Code2,
-  Layers,
-  Sparkles,
-  ArrowRight,
-  Star,
-} from 'lucide-react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import Link from 'next/link';
 
 import { Navigation } from '@/components/ui/Navigation';
-import { Footer } from '@/components/ui/Footer';
-import { Button } from '@/components/ui/Button';
-import { FeatureCard, PricingCard, TestimonialCard } from '@/components/ui/Card';
-import { HeroCentered } from '@/components/sections/HeroCentered';
-import { CTASection } from '@/components/sections/CTASection';
+import HeroSphere from '@/components/three/HeroSphere';
+import SelectedWork from '@/components/sections/SelectedWork';
+import type { Project } from '@/components/sections/SelectedWork';
 import { cn } from '@/lib/utils';
 
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
+// =============================================================================
+// SOCIAL ICONS
+// =============================================================================
+
+function LinkedInIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+      <rect x="2" y="9" width="4" height="12" />
+      <circle cx="4" cy="4" r="2" />
+    </svg>
+  );
 }
 
+function WhatsAppIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  );
+}
+
+function InstagramIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+    </svg>
+  );
+}
+
+// =============================================================================
+// SCROLL INDICATOR
+// =============================================================================
+
+function ScrollIndicator() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 2, duration: 0.6 }}
+      className="flex flex-col items-center gap-2"
+    >
+      <span className="text-[11px] font-medium uppercase tracking-[0.15em] text-neutral-400 dark:text-neutral-500">
+        Scroll
+      </span>
+      <motion.div
+        className="w-[1px] h-8 bg-neutral-300 dark:bg-neutral-700 relative overflow-hidden"
+      >
+        <motion.div
+          className="absolute top-0 left-0 w-full bg-neutral-600 dark:bg-neutral-400"
+          animate={{ height: ['0%', '100%', '0%'], top: ['0%', '0%', '100%'] }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+        />
+      </motion.div>
+    </motion.div>
+  );
+}
+
+// =============================================================================
+// SIDE SOCIAL LINKS
+// =============================================================================
+
+function SocialSidebar() {
+  const socials = [
+    {
+      icon: LinkedInIcon,
+      href: 'https://linkedin.com',
+      label: 'LinkedIn',
+    },
+    {
+      icon: WhatsAppIcon,
+      href: 'https://wa.me/',
+      label: 'WhatsApp',
+    },
+    {
+      icon: InstagramIcon,
+      href: 'https://instagram.com',
+      label: 'Instagram',
+    },
+  ];
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ delay: 1.6, duration: 0.6 }}
+      className="absolute site-edge-left top-1/2 -translate-y-1/2 z-30 hidden md:flex flex-col items-center gap-5"
+    >
+      <div className="w-[1px] h-12 bg-neutral-400 dark:bg-neutral-600" />
+      {socials.map((social) => (
+        <a
+          key={social.label}
+          href={social.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={social.label}
+          className="group"
+        >
+          <social.icon
+            className={cn(
+              'w-[18px] h-[18px]',
+              'text-neutral-500 dark:text-neutral-500',
+              'group-hover:text-neutral-800 dark:group-hover:text-neutral-300',
+              'transition-colors duration-200'
+            )}
+          />
+        </a>
+      ))}
+      <div className="w-[1px] h-12 bg-neutral-400 dark:bg-neutral-600" />
+    </motion.div>
+  );
+}
+
+// =============================================================================
+// VERTICAL TEXT
+// =============================================================================
+
+function VerticalText({
+  text,
+  side,
+}: {
+  text: string;
+  side: 'left' | 'right';
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 1.8, duration: 0.6 }}
+      className={cn(
+        'absolute top-1/2 -translate-y-1/2 z-20 hidden lg:block',
+        side === 'right' ? 'site-edge-right' : 'site-edge-left'
+      )}
+    >
+      <span
+        className={cn(
+          'text-[11px] font-medium uppercase tracking-[0.2em]',
+          'text-neutral-500 dark:text-neutral-500',
+          side === 'right' ? '[writing-mode:vertical-rl]' : '[writing-mode:vertical-lr] rotate-180'
+        )}
+      >
+        {text}
+      </span>
+    </motion.div>
+  );
+}
+
+// =============================================================================
+// MAIN PAGE
+// =============================================================================
+
+const navItems = [
+  { label: 'Work', href: '/work' },
+  { label: 'Services', href: '/services' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
+];
+
+// =============================================================================
+// PROJECT DATA (placeholder — replace with CMS/Supabase data)
+// =============================================================================
+
+const projectCategories = [
+  'Branding',
+  'Art Direction',
+  'Web Design',
+  'Social Media',
+  'Strategy',
+  'Video',
+  'Print',
+  'Photography',
+];
+
+const projects: Project[] = [
+  {
+    id: '1',
+    title: 'Olympus Resort',
+    category: 'Branding',
+    client: 'Branding',
+    image: '/projects/project-1.svg',
+    href: '/work/olympus-resort',
+  },
+  {
+    id: '2',
+    title: 'Kypria Digital',
+    category: 'Web Design',
+    client: 'Web Design',
+    image: '/projects/project-2.svg',
+    href: '/work/kypria-digital',
+  },
+  {
+    id: '3',
+    title: 'Amara Collection',
+    category: 'Art Direction',
+    client: 'Art Direction',
+    image: '/projects/project-3.svg',
+    href: '/work/amara-collection',
+  },
+  {
+    id: '4',
+    title: 'Limassol Marina',
+    category: 'Social Media',
+    client: 'Social Media',
+    image: '/projects/project-4.svg',
+    href: '/work/limassol-marina',
+  },
+  {
+    id: '5',
+    title: 'Paphos Estates',
+    category: 'Photography',
+    client: 'Photography',
+    image: '/projects/project-5.svg',
+    href: '/work/paphos-estates',
+  },
+  {
+    id: '6',
+    title: 'Nea Ventures',
+    category: 'Strategy',
+    client: 'Strategy',
+    image: '/projects/project-6.svg',
+    href: '/work/nea-ventures',
+  },
+  {
+    id: '7',
+    title: 'Kolossi Studio',
+    category: 'Branding',
+    client: 'Branding',
+    image: '/projects/project-1.svg',
+    href: '/work/kolossi-studio',
+  },
+  {
+    id: '8',
+    title: 'Petra & Co',
+    category: 'Video',
+    client: 'Video',
+    image: '/projects/project-2.svg',
+    href: '/work/petra-co',
+  },
+  {
+    id: '9',
+    title: 'Akamas Wild',
+    category: 'Print',
+    client: 'Print',
+    image: '/projects/project-3.svg',
+    href: '/work/akamas-wild',
+  },
+];
+
 export default function Home() {
-  const featuresRef = useRef<HTMLElement>(null);
-  const statsRef = useRef<HTMLElement>(null);
+  const heroRef = useRef<HTMLElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
 
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ['start start', 'end start'],
+  });
+
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const heroY = useTransform(scrollYProgress, [0, 0.5], [0, -60]);
+
+  // GSAP entrance animations
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Animate features on scroll with staggered reveal
-      gsap.from('.feature-card', {
-        y: 48,
-        opacity: 0,
-        duration: 0.7,
-        stagger: 0.08,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: featuresRef.current,
-          start: 'top 80%',
-        },
-      });
+    if (!titleRef.current) return;
 
-      // Animate stats with counter effect
-      gsap.from('.stat-item', {
-        y: 32,
-        opacity: 0,
-        duration: 0.6,
+    const ctx = gsap.context(() => {
+      // Split title into words for staggered animation
+      const title = titleRef.current;
+      if (!title) return;
+
+      const words = title.querySelectorAll('.hero-word');
+      gsap.set(words, { opacity: 0, y: 60, filter: 'blur(6px)' });
+      gsap.to(words, {
+        y: 0,
+        opacity: 1,
+        filter: 'blur(0px)',
+        duration: 0.9,
         stagger: 0.1,
         ease: 'power3.out',
-        scrollTrigger: {
-          trigger: statsRef.current,
-          start: 'top 85%',
-        },
+        delay: 0.5,
       });
     });
 
     return () => ctx.revert();
   }, []);
 
-  const features = [
-    {
-      icon: Zap,
-      title: 'Lightning Fast',
-      description: 'Optimized for Core Web Vitals with 90+ Lighthouse scores out of the box.',
-    },
-    {
-      icon: Palette,
-      title: 'Premium Design',
-      description: 'Apple-inspired aesthetics with carefully crafted design tokens and components.',
-    },
-    {
-      icon: Shield,
-      title: 'Type Safe',
-      description: 'Full TypeScript support with strict type checking for better developer experience.',
-    },
-    {
-      icon: Code2,
-      title: 'AI-First Workflow',
-      description: 'Built-in AI rules and guidelines for consistent, high-quality development.',
-    },
-    {
-      icon: Layers,
-      title: 'Component Library',
-      description: 'Pre-built, animated components that follow design system principles.',
-    },
-    {
-      icon: Sparkles,
-      title: 'Dark Mode Ready',
-      description: 'Seamless light and dark mode support with automatic system detection.',
-    },
-  ];
-
-  const pricingPlans = [
-    {
-      name: 'Starter',
-      description: 'Perfect for side projects',
-      price: 0,
-      period: '/forever',
-      features: [
-        'All core components',
-        'Design system tokens',
-        'Basic documentation',
-        'Community support',
-      ],
-      cta: { label: 'Get Started', href: '#' },
-    },
-    {
-      name: 'Pro',
-      description: 'For professional developers',
-      price: 49,
-      period: '/one-time',
-      features: [
-        'Everything in Starter',
-        'Premium components',
-        'Advanced animations',
-        'Priority support',
-        'Lifetime updates',
-      ],
-      cta: { label: 'Buy Now', href: '#' },
-      popular: true,
-    },
-    {
-      name: 'Enterprise',
-      description: 'For teams and agencies',
-      price: 199,
-      period: '/one-time',
-      features: [
-        'Everything in Pro',
-        'Multiple project license',
-        'Custom component requests',
-        'Dedicated support',
-        'White-label option',
-      ],
-      cta: { label: 'Contact Sales', href: '#' },
-    },
-  ];
-
-  const testimonials = [
-    {
-      quote: 'This boilerplate saved us weeks of development time. The design system is incredibly well thought out.',
-      author: {
-        name: 'Sarah Chen',
-        title: 'Lead Developer at TechCorp',
-      },
-      rating: 5,
-    },
-    {
-      quote: 'The AI-first approach is a game changer. Every component feels premium and consistent.',
-      author: {
-        name: 'Michael Torres',
-        title: 'Founder at StartupX',
-      },
-      rating: 5,
-    },
-    {
-      quote: 'Best boilerplate I have ever used. The attention to detail in animations and accessibility is impressive.',
-      author: {
-        name: 'Emily Johnson',
-        title: 'Senior Engineer at DesignCo',
-      },
-      rating: 5,
-    },
-  ];
-
   return (
     <>
-      <Navigation transparent />
+      {/* Navigation - DC Styled */}
+      <Navigation
+        transparent
+        items={navItems}
+        cta={{ label: 'Get in Touch', href: '/contact' }}
+      />
 
       <main>
-        {/* Hero Section */}
-        <HeroCentered
-          badge={{ text: 'v1.0 Now Available', href: '#' }}
-          title="Build Premium Websites at Lightning Speed"
-          titleHighlight="Lightning Speed"
-          description="A production-ready Next.js boilerplate with a premium design system, AI-first workflows, and beautiful animations. Ship faster, look better."
-          primaryCta={{ label: 'Get Started Free', href: '#' }}
-          secondaryCta={{ label: 'View Demo', href: '#', icon: 'play' }}
-          trustedBy={{
-            label: 'Trusted by developers at',
-            logos: [
-              <span key={1} className="text-neutral-400 font-semibold tracking-tight">Vercel</span>,
-              <span key={2} className="text-neutral-400 font-semibold tracking-tight">Stripe</span>,
-              <span key={3} className="text-neutral-400 font-semibold tracking-tight">Linear</span>,
-              <span key={4} className="text-neutral-400 font-semibold tracking-tight">Notion</span>,
-            ],
-          }}
-        />
-
-        {/* Features Section - Refined with asymmetric header alignment */}
-        <section
-          ref={featuresRef}
-          className="section-padding bg-white dark:bg-neutral-950 relative overflow-hidden"
+        {/* ================================================================
+            HERO SECTION
+            ================================================================ */}
+        <motion.section
+          ref={heroRef}
+          style={{ opacity: heroOpacity, y: heroY }}
+          className="relative min-h-[100svh] min-h-screen flex items-center justify-center"
         >
-          {/* Subtle background accent */}
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-500/[0.02] dark:bg-primary-400/[0.03] rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
+          {/* Side Social Links - fixed to hero only */}
+          <SocialSidebar />
 
-          <div className="container-premium relative">
-            {/* Section Header - Refined with left-aligned option for variation */}
-            <div className="max-w-2xl mb-14 lg:mb-16">
-              <motion.span
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="inline-block text-sm font-semibold text-primary-600 dark:text-primary-400 uppercase tracking-wider mb-3"
-              >
-                Features
-              </motion.span>
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-neutral-900 dark:text-white mb-4 leading-tight"
-              >
-                Everything you need to build premium sites
-              </motion.h2>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed"
-              >
-                A carefully crafted foundation that helps you build beautiful,
-                performant websites without starting from scratch.
-              </motion.p>
-            </div>
+          {/* Vertical Text - fixed to hero only */}
+          <VerticalText text="Digital Cultures — Paphos, Cyprus" side="right" />
 
-            {/* Features Grid - Refined with asymmetric gap */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
-              {features.map((feature, index) => (
-                <div key={index} className="feature-card">
-                  <FeatureCard
-                    icon={feature.icon}
-                    title={feature.title}
-                    description={feature.description}
-                    gradient={index === 0}
-                  />
-                </div>
-              ))}
+          {/* Background - subtle noise texture overlay */}
+          <div
+            className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+              backgroundRepeat: 'repeat',
+              backgroundSize: '128px 128px',
+            }}
+          />
+
+          {/* WebGL Shader Sphere - viewport-centered on both axes, 2x size when fully grown */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute left-1/2 top-[50vh] -translate-x-1/2 -translate-y-1/2 w-[640px] h-[640px] sm:w-[900px] sm:h-[900px] md:w-[1200px] md:h-[1200px] lg:w-[1500px] lg:h-[1500px] xl:w-[1700px] xl:h-[1700px] max-w-[95vmin] max-h-[95vmin]">
+              <HeroSphere />
             </div>
           </div>
-        </section>
 
-        {/* Stats Section - Refined with better visual hierarchy */}
-        <section
-          ref={statsRef}
-          className="py-16 lg:py-20 bg-neutral-50 dark:bg-neutral-900/50 border-y border-neutral-200/50 dark:border-neutral-800/50"
-        >
-          <div className="container-premium">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
-              {[
-                { value: '10k+', label: 'Downloads', suffix: '' },
-                { value: '90+', label: 'Lighthouse Score', suffix: '' },
-                { value: '50+', label: 'Components', suffix: '' },
-                { value: '4.9', label: 'Rating', suffix: '/5' },
-              ].map((stat, index) => (
-                <motion.div
-                  key={index}
-                  className="stat-item text-center"
-                  whileHover={{ y: -2 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <div className="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-1.5 tracking-tight">
-                    {stat.value}
-                    <span className="text-neutral-400 text-2xl md:text-3xl">{stat.suffix}</span>
-                  </div>
-                  <div className="text-sm text-neutral-500 dark:text-neutral-400 font-medium">
-                    {stat.label}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+          {/* Hero Content - centered */}
+          <div className="relative z-10 container-premium flex flex-col items-center text-center">
+            {/* Greeting / Tagline */}
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="text-sm sm:text-base font-medium text-neutral-900 dark:text-white tracking-wide mb-6 lg:mb-8"
+            >
+              Creative Agency — Paphos, Cyprus
+            </motion.p>
 
-        {/* Code Preview Section - Refined with better balance */}
-        <section className="section-padding bg-white dark:bg-neutral-950">
-          <div className="container-premium">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-center">
-              {/* Content */}
-              <motion.div
-                initial={{ opacity: 0, x: -24 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              >
-                <span className="inline-block text-sm font-semibold text-primary-600 dark:text-primary-400 uppercase tracking-wider mb-3">
-                  Developer Experience
-                </span>
-                <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-neutral-900 dark:text-white mb-5 leading-tight">
-                  Build with confidence using our design tokens
-                </h2>
-                <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-8 leading-relaxed">
-                  Never hardcode colors or spacing again. Our design system ensures
-                  consistency across your entire application with a single source of truth.
-                </p>
-                <ul className="space-y-3.5 mb-8">
-                  {[
-                    'Semantic color variables for light/dark mode',
-                    'Consistent spacing based on 4px/8px grid',
-                    'Premium typography with perfect hierarchy',
-                    'Pre-configured animations and transitions',
-                  ].map((item, index) => (
-                    <motion.li
-                      key={index}
-                      initial={{ opacity: 0, x: -16 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.08, duration: 0.4 }}
-                      className="flex items-center gap-3"
-                    >
-                      <div className="w-5 h-5 rounded-full bg-primary-100 dark:bg-primary-900/40 flex items-center justify-center flex-shrink-0">
-                        <Star className="w-3 h-3 text-primary-600 dark:text-primary-400" />
-                      </div>
-                      <span className="text-neutral-700 dark:text-neutral-300">{item}</span>
-                    </motion.li>
-                  ))}
-                </ul>
-                <Button href="#" variant="primary" icon={<ArrowRight className="w-4 h-4" />}>
-                  View Documentation
-                </Button>
-              </motion.div>
+            {/* Main Title */}
+            <h1
+              ref={titleRef}
+              className="text-[clamp(2rem,5.5vw,4.5rem)] leading-[1.05] tracking-tighter text-balance max-w-5xl"
+            >
+              <span className="hero-word inline-block mr-[0.25em]">We</span>
+              <span className="hero-word inline-block mr-[0.25em]">craft</span>
+              <span className="hero-word inline-block mr-[0.25em]">digital</span>
+              <br className="hidden sm:block" />
+              <span className="hero-word inline-block mr-[0.25em]">experiences</span>
+              <span className="hero-word inline-block mr-[0.25em]">that</span>
+              <br className="hidden sm:block" />
+              <span className="hero-word inline-block">resonate.</span>
+            </h1>
 
-              {/* Code Block - Refined styling */}
-              <motion.div
-                initial={{ opacity: 0, x: 24 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+            {/* Subtitle */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2, duration: 0.6 }}
+              className="mt-8 lg:mt-10 text-lg sm:text-xl text-neutral-900 dark:text-white max-w-xl leading-relaxed"
+            >
+              Marketing, creative &amp; design for brands that dare to be different.
+            </motion.p>
+
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.5, duration: 0.6 }}
+              className="mt-10 lg:mt-12 flex flex-col sm:flex-row items-center gap-4"
+            >
+              <Link
+                href="/work"
                 className={cn(
-                  'rounded-2xl overflow-hidden',
-                  'bg-[#0d1117] dark:bg-neutral-950',
-                  'border border-neutral-800/80',
-                  'shadow-2xl shadow-neutral-900/20'
+                  'group px-8 py-3.5 rounded-full',
+                  'bg-neutral-900 dark:bg-white',
+                  'text-white dark:text-neutral-900',
+                  'text-sm font-medium',
+                  'hover:bg-neutral-800 dark:hover:bg-neutral-100',
+                  'transition-all duration-200',
+                  'shadow-sm hover:shadow-md',
+                  'inline-flex items-center gap-2'
                 )}
               >
-                {/* Window controls */}
-                <div className="flex items-center gap-2 px-4 py-3.5 border-b border-neutral-800/80 bg-neutral-900/50">
-                  <div className="flex gap-2">
-                    <div className="w-3 h-3 rounded-full bg-[#ff5f56]" />
-                    <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
-                    <div className="w-3 h-3 rounded-full bg-[#27c93f]" />
-                  </div>
-                  <span className="ml-4 text-sm text-neutral-500 font-mono">tokens.ts</span>
-                </div>
-                {/* Code content */}
-                <pre className="p-5 text-sm overflow-x-auto scrollbar-thin">
-                  <code className="text-neutral-300 font-mono leading-relaxed">
-                    <span className="text-[#ff7b72]">export const</span>{' '}
-                    <span className="text-[#d2a8ff]">colors</span>{' '}
-                    <span className="text-neutral-500">=</span> {'{'}
-                    {'\n'}
-                    {'  '}
-                    <span className="text-[#79c0ff]">primary</span>
-                    <span className="text-neutral-500">:</span> {'{'}
-                    {'\n'}
-                    {'    '}
-                    <span className="text-[#79c0ff]">50</span>
-                    <span className="text-neutral-500">:</span>{' '}
-                    <span className="text-[#a5d6ff]">&apos;#f0f4ff&apos;</span>
-                    <span className="text-neutral-500">,</span>
-                    {'\n'}
-                    {'    '}
-                    <span className="text-[#79c0ff]">500</span>
-                    <span className="text-neutral-500">:</span>{' '}
-                    <span className="text-[#a5d6ff]">&apos;#6366f1&apos;</span>
-                    <span className="text-neutral-500">,</span>
-                    {'\n'}
-                    {'    '}
-                    <span className="text-[#79c0ff]">900</span>
-                    <span className="text-neutral-500">:</span>{' '}
-                    <span className="text-[#a5d6ff]">&apos;#312e81&apos;</span>
-                    <span className="text-neutral-500">,</span>
-                    {'\n'}
-                    {'  '}
-                    {'}'}
-                    <span className="text-neutral-500">,</span>
-                    {'\n'}
-                    {'  '}
-                    <span className="text-neutral-500">{'// Semantic colors'}</span>
-                    {'\n'}
-                    {'  '}
-                    <span className="text-[#79c0ff]">background</span>
-                    <span className="text-neutral-500">:</span>{' '}
-                    <span className="text-[#a5d6ff]">&apos;var(--color-neutral-0)&apos;</span>
-                    <span className="text-neutral-500">,</span>
-                    {'\n'}
-                    {'  '}
-                    <span className="text-[#79c0ff]">foreground</span>
-                    <span className="text-neutral-500">:</span>{' '}
-                    <span className="text-[#a5d6ff]">&apos;var(--color-neutral-900)&apos;</span>
-                    <span className="text-neutral-500">,</span>
-                    {'\n'}
-                    {'}'}<span className="text-neutral-500">;</span>
-                  </code>
-                </pre>
-              </motion.div>
-            </div>
+                View Our Work
+                <svg
+                  className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </Link>
+              <Link
+                href="/contact"
+                className={cn(
+                  'px-8 py-3.5 rounded-full',
+                  'text-sm font-medium',
+                  'text-neutral-900 dark:text-white',
+                  'border-2 border-neutral-900 dark:border-white',
+                  'hover:bg-neutral-100 dark:hover:bg-white/10',
+                  'hover:border-neutral-900 dark:hover:border-white',
+                  'transition-all duration-200'
+                )}
+              >
+                Start a Project
+              </Link>
+            </motion.div>
           </div>
-        </section>
 
-        {/* Pricing Section - Refined spacing */}
-        <section className="section-padding bg-neutral-50 dark:bg-neutral-900/50">
-          <div className="container-premium">
-            {/* Section Header - Centered for pricing */}
-            <div className="max-w-2xl mx-auto text-center mb-12 lg:mb-14">
-              <motion.span
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="inline-block text-sm font-semibold text-primary-600 dark:text-primary-400 uppercase tracking-wider mb-3"
-              >
-                Pricing
-              </motion.span>
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-neutral-900 dark:text-white mb-4"
-              >
-                Simple, transparent pricing
-              </motion.h2>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-lg text-neutral-600 dark:text-neutral-400"
-              >
-                Choose the plan that works best for you. All plans include lifetime access.
-              </motion.p>
-            </div>
-
-            {/* Pricing Grid */}
-            <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
-              {pricingPlans.map((plan, index) => (
-                <PricingCard key={index} {...plan} />
-              ))}
-            </div>
+          {/* Scroll Indicator - bottom center */}
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+            <ScrollIndicator />
           </div>
-        </section>
+        </motion.section>
 
-        {/* Testimonials Section - Refined */}
-        <section className="section-padding bg-white dark:bg-neutral-950 relative overflow-hidden">
-          {/* Background accent */}
-          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary-500/[0.02] dark:bg-secondary-400/[0.03] rounded-full blur-[100px] translate-y-1/2 -translate-x-1/3" />
-
-          <div className="container-premium relative">
-            {/* Section Header */}
-            <div className="max-w-2xl mx-auto text-center mb-12 lg:mb-14">
-              <motion.span
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="inline-block text-sm font-semibold text-primary-600 dark:text-primary-400 uppercase tracking-wider mb-3"
-              >
-                Testimonials
-              </motion.span>
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-neutral-900 dark:text-white"
-              >
-                Loved by developers worldwide
-              </motion.h2>
-            </div>
-
-            {/* Testimonials Grid */}
-            <div className="grid md:grid-cols-3 gap-5 lg:gap-6">
-              {testimonials.map((testimonial, index) => (
-                <TestimonialCard key={index} {...testimonial} />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <CTASection
-          variant="gradient"
-          eyebrow="Ready to start?"
-          title="Build your next premium website today"
-          description="Get started with the most complete Next.js boilerplate and ship faster than ever."
-          primaryCta={{ label: 'Get Started Free', href: '#' }}
-          secondaryCta={{ label: 'View Documentation', href: '#' }}
+        {/* ================================================================
+            SELECTED WORK SECTION
+            ================================================================ */}
+        <SelectedWork
+          heading="All Projects"
+          categories={projectCategories}
+          projects={projects}
         />
       </main>
-
-      <Footer
-        newsletter={{
-          title: 'Stay updated',
-          description: 'Get notified about new features and updates.',
-          placeholder: 'Enter your email',
-          buttonText: 'Subscribe',
-        }}
-        bottomLinks={[
-          { label: 'Privacy Policy', href: '/privacy' },
-          { label: 'Terms of Service', href: '/terms' },
-        ]}
-      />
     </>
   );
 }

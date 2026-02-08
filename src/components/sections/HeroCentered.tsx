@@ -183,8 +183,8 @@ export function HeroCentered({
           <h1
             ref={titleRef}
             className={cn(
-              'text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[4.25rem] xl:text-7xl',
-              'font-extrabold tracking-display leading-[1.05]',
+              'text-2xl sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-6xl',
+              'tracking-display leading-[1.05]',
               'text-neutral-900 dark:text-white',
               'mb-6 lg:mb-8',
               'text-balance'

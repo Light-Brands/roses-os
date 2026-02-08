@@ -75,7 +75,7 @@ export default function AnalyticsPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-neutral-900 dark:text-white">
+          <h1 className="text-2xl text-neutral-900 dark:text-white">
             Analytics
           </h1>
           <p className="text-neutral-500 mt-1">
@@ -142,7 +142,7 @@ export default function AnalyticsPage() {
           transition={{ delay: 0.4 }}
           className="bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-200 dark:border-neutral-800 p-6"
         >
-          <h2 className="text-lg font-semibold text-neutral-900 dark:text-white mb-4">
+          <h2 className="text-lg text-neutral-900 dark:text-white mb-4">
             Visitors Over Time
           </h2>
           <div className="h-64 flex flex-col items-center justify-center bg-neutral-50 dark:bg-neutral-800/50 rounded-xl border-2 border-dashed border-neutral-200 dark:border-neutral-700">
@@ -159,7 +159,7 @@ export default function AnalyticsPage() {
           transition={{ delay: 0.5 }}
           className="bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-200 dark:border-neutral-800 p-6"
         >
-          <h2 className="text-lg font-semibold text-neutral-900 dark:text-white mb-6">
+          <h2 className="text-lg text-neutral-900 dark:text-white mb-6">
             Devices
           </h2>
           <div className="space-y-5">
@@ -205,7 +205,7 @@ export default function AnalyticsPage() {
           className="bg-white dark:bg-neutral-900 rounded-2xl border border-neutral-200 dark:border-neutral-800 overflow-hidden"
         >
           <div className="p-5 border-b border-neutral-200 dark:border-neutral-800">
-            <h2 className="text-lg font-semibold text-neutral-900 dark:text-white">
+            <h2 className="text-lg text-neutral-900 dark:text-white">
               Top Pages
             </h2>
           </div>
@@ -250,7 +250,7 @@ export default function AnalyticsPage() {
         >
           <div className="p-5 border-b border-neutral-200 dark:border-neutral-800 flex items-center gap-2">
             <Globe className="w-5 h-5 text-neutral-400" />
-            <h2 className="text-lg font-semibold text-neutral-900 dark:text-white">
+            <h2 className="text-lg text-neutral-900 dark:text-white">
               Top Countries
             </h2>
           </div>

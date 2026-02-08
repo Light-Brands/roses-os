@@ -1,11 +1,12 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 import './globals.css';
 import { siteConfig, generateOrganizationSchema, JsonLd } from '@/lib/seo';
 import { ThemeProvider } from '@/lib/theme';
 
-const inter = Inter({
+const poppins = Poppins({
   subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
   display: 'swap',
   variable: '--font-sans',
 });
@@ -55,13 +56,21 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/oracle-logo.webp',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
+      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
   },
+  manifest: '/manifest.json',
 };
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: light)', color: '#E8E8E8' },
     { media: '(prefers-color-scheme: dark)', color: '#0a0a0a' },
   ],
   width: 'device-width',
@@ -81,21 +90,19 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               try {
-                // Default to dark mode unless explicitly set to light
-                if (localStorage.theme === 'light') {
-                  document.documentElement.classList.remove('dark')
-                } else {
+                // Default to light mode unless explicitly set to dark
+                if (localStorage.theme === 'dark') {
                   document.documentElement.classList.add('dark')
+                } else {
+                  document.documentElement.classList.remove('dark')
                 }
-              } catch (_) {
-                document.documentElement.classList.add('dark')
-              }
+              } catch (_) {}
             `,
           }}
         />
       </head>
       <body
-        className={`${inter.variable} font-sans antialiased bg-background text-foreground`}
+        className={`${poppins.variable} font-sans antialiased bg-background text-foreground`}
       >
         <ThemeProvider>
           {children}
