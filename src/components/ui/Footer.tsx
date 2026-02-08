@@ -73,14 +73,14 @@ export default function Footer() {
       className="relative bg-neutral-950 dark:bg-white text-neutral-300 dark:text-neutral-600 overflow-hidden transition-colors duration-200"
     >
       {/* ─── TOP SECTION ─── */}
-      <div className="container-premium pt-20 sm:pt-24 md:pt-32 lg:pt-40">
+      <div className="container-premium pt-14 sm:pt-20 md:pt-32 lg:pt-40">
         {/* Upper row: link columns + contact pills */}
-        <div className="flex flex-col lg:flex-row lg:justify-between gap-16 lg:gap-12">
+        <div className="flex flex-col lg:flex-row lg:justify-between gap-10 lg:gap-12">
           {/* Link columns */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-12 gap-y-10 sm:gap-x-16 md:gap-x-20">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-8 gap-y-8 sm:gap-x-16 md:gap-x-20">
             {/* Links */}
             <motion.div {...fadeUp(0)}>
-              <h4 className="text-[10px] font-medium uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-400 mb-5">
+              <h4 className="text-[10px] font-medium uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-400 mb-4 sm:mb-5">
                 Links
               </h4>
               <ul className="space-y-3">
@@ -99,7 +99,7 @@ export default function Footer() {
 
             {/* Socials */}
             <motion.div {...fadeUp(0.06)}>
-              <h4 className="text-[10px] font-medium uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-400 mb-5">
+              <h4 className="text-[10px] font-medium uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-400 mb-4 sm:mb-5">
                 Socials
               </h4>
               <ul className="space-y-3">
@@ -120,7 +120,7 @@ export default function Footer() {
 
             {/* Local Time */}
             <motion.div {...fadeUp(0.12)}>
-              <h4 className="text-[10px] font-medium uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-400 mb-5">
+              <h4 className="text-[10px] font-medium uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-400 mb-4 sm:mb-5">
                 Local Time
               </h4>
               <p className="text-sm text-neutral-300 dark:text-neutral-700">
@@ -131,7 +131,7 @@ export default function Footer() {
 
             {/* Version / Info */}
             <motion.div {...fadeUp(0.18)}>
-              <h4 className="text-[10px] font-medium uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-400 mb-5">
+              <h4 className="text-[10px] font-medium uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-400 mb-4 sm:mb-5">
                 Version
               </h4>
               <p className="text-sm text-neutral-300 dark:text-neutral-700">
@@ -143,12 +143,12 @@ export default function Footer() {
           {/* Contact pills */}
           <motion.div
             {...fadeUp(0.15)}
-            className="flex flex-wrap items-start gap-3"
+            className="flex flex-col sm:flex-row flex-wrap items-start gap-3"
           >
             <a
               href="tel:+35799123456"
               className={cn(
-                'inline-flex items-center gap-2 px-5 py-2.5 rounded-full',
+                'inline-flex items-center gap-2 px-5 py-2.5 rounded-full w-full sm:w-auto justify-center sm:justify-start',
                 'border border-neutral-700 dark:border-neutral-300 hover:border-neutral-500 dark:hover:border-neutral-500',
                 'text-sm text-neutral-300 dark:text-neutral-600 hover:text-white dark:hover:text-neutral-900',
                 'transition-all duration-200'
@@ -160,7 +160,7 @@ export default function Footer() {
             <a
               href="mailto:hello@digitalcultures.co"
               className={cn(
-                'inline-flex items-center px-5 py-2.5 rounded-full',
+                'inline-flex items-center px-5 py-2.5 rounded-full w-full sm:w-auto justify-center sm:justify-start',
                 'border border-neutral-700 dark:border-neutral-300 hover:border-neutral-500 dark:hover:border-neutral-500',
                 'text-sm text-neutral-300 dark:text-neutral-600 hover:text-white dark:hover:text-neutral-900',
                 'transition-all duration-200'
@@ -173,20 +173,23 @@ export default function Footer() {
       </div>
 
       {/* ─── LOGO + BOTTOM BAR ─── */}
-      <div className="container-premium mt-24 sm:mt-32 md:mt-40 lg:mt-52 pb-12 sm:pb-16 md:pb-20">
-        {/* Logo — centered, small */}
+      <div className="container-premium mt-16 sm:mt-24 md:mt-40 lg:mt-52 pb-10 sm:pb-16 md:pb-20">
+        {/* Logo — centered */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="flex justify-center mb-12 md:mb-16"
+          className="flex justify-center mb-10 md:mb-16"
         >
           <Image
             src="/dc-logo.svg"
             alt="Digital Cultures"
             width={36}
             height={36}
-            className="invert dark:invert-0 opacity-30 transition-all duration-200"
+            className="transition-all duration-200"
+            style={{
+              filter: 'brightness(0) saturate(100%) invert(53%) sepia(18%) saturate(1400%) hue-rotate(210deg) brightness(88%) contrast(90%)',
+            }}
           />
         </motion.div>
 
@@ -195,12 +198,12 @@ export default function Footer() {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-6 border-t border-neutral-800 dark:border-neutral-200"
+          className="flex flex-col items-center gap-4 pt-6 border-t border-neutral-800 dark:border-neutral-200"
         >
           <p className="text-[11px] text-neutral-500 dark:text-neutral-400 tracking-wide">
             &copy; {currentYear} Digital Cultures. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
             <Link
               href="/privacy"
               className="text-[11px] text-neutral-500 dark:text-neutral-400 hover:text-neutral-300 dark:hover:text-neutral-700 transition-colors duration-200 tracking-wide"
@@ -213,18 +216,18 @@ export default function Footer() {
             >
               Terms of Service
             </Link>
-            <span className="text-[11px] text-neutral-500 dark:text-neutral-400 tracking-wide">
-              Designed &amp; developed by{' '}
-              <a
-                href="https://oraclestudios.io"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-neutral-300 dark:hover:text-neutral-700 transition-colors duration-200"
-              >
-                Oracle Studios
-              </a>
-            </span>
           </div>
+          <span className="text-[11px] text-neutral-500 dark:text-neutral-400 tracking-wide">
+            Designed &amp; developed by{' '}
+            <a
+              href="https://oraclestudios.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-neutral-300 dark:hover:text-neutral-700 transition-colors duration-200"
+            >
+              Oracle Studios
+            </a>
+          </span>
         </motion.div>
       </div>
     </footer>

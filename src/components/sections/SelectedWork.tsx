@@ -56,7 +56,7 @@ function ProjectCard({
     >
       <Link href={project.href} className="group block">
         {/* Image Container — fixed height, all cards share the same row height */}
-        <div className="relative h-[420px] md:h-[520px] lg:h-[600px] overflow-hidden bg-neutral-300 dark:bg-neutral-800">
+        <div className="relative h-[420px] md:h-[520px] lg:h-[600px] overflow-hidden bg-neutral-300 dark:bg-neutral-800" data-cursor-text="View">
           <Image
             src={project.image}
             alt={project.title}

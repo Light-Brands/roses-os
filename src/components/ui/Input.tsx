@@ -35,9 +35,9 @@ const variantStyles: Record<InputVariant, string> = {
   ),
   ghost: cn(
     'bg-transparent',
-    'border-b border-neutral-200 dark:border-neutral-800',
+    'border-b border-neutral-400 dark:border-neutral-700',
     'rounded-none',
-    'hover:border-neutral-400 dark:hover:border-neutral-600'
+    'hover:border-neutral-600 dark:hover:border-neutral-500'
   ),
 };
 

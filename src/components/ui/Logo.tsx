@@ -35,7 +35,10 @@ export function Logo({
         alt="Digital Cultures"
         width={sizes.width}
         height={sizes.height}
-        className="dark:invert transition-all duration-200"
+        className="transition-all duration-200"
+        style={{
+          filter: 'brightness(0) saturate(100%) invert(53%) sepia(18%) saturate(1400%) hue-rotate(210deg) brightness(88%) contrast(90%)',
+        }}
         priority
       />
       {showText && (

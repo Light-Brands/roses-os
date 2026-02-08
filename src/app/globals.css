@@ -67,7 +67,7 @@ body {
   /* Typography */
   --font-sans: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-  --font-weight-heading-1: 400;
+  --font-weight-heading-1: 500;
   --font-weight-heading-2: 600;
   --font-weight-heading-3: 600;
   --font-weight-heading-4: 600;
@@ -257,6 +257,26 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+  .has-custom-cursor,
+  .has-custom-cursor * {
+    cursor: auto !important;
+  }
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+}
+
+/* Hide custom cursor on touch / mobile devices */
+@media (pointer: coarse), (hover: none) {
+  .has-custom-cursor,
+  .has-custom-cursor * {
+    cursor: auto !important;
+  }
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
 }
 
 /* =============================================================================
@@ -292,8 +312,8 @@ body {
 
 /* Section spacing - generous, breathing */
 .section-padding {
-  padding-top: 5rem;     /* 80px */
-  padding-bottom: 5rem;
+  padding-top: 3.5rem;   /* 56px — mobile */
+  padding-bottom: 3.5rem;
 }
 
 @media (min-width: 768px) {
@@ -457,4 +477,286 @@ h6 { font-weight: var(--font-weight-heading-6); }
   .hero-sphere-container canvas {
     animation: none !important;
   }
+}
+
+/* =============================================================================
+   SMOOTH SCROLL
+   ============================================================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* =============================================================================
+   PRELOADER — Architectural geometric with circular reveal
+   ============================================================================= */
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader-bg {
+  position: absolute;
+  inset: 0;
+  --reveal-size: 0px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    transparent var(--reveal-size),
+    var(--color-background) calc(var(--reveal-size) + 40px)
+  );
+}
+
+.preloader-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: opacity 0.35s ease, transform 0.5s var(--ease-reveal);
+}
+
+.preloader-content-exit {
+  opacity: 0;
+  transform: scale(0.92);
+}
+
+/* SVG Graphic */
+.preloader-graphic {
+  width: clamp(110px, 22vw, 150px);
+  height: clamp(110px, 22vw, 150px);
+  color: var(--color-foreground);
+}
+
+/* Rings — stroke draw from top, clockwise */
+.loader-ring {
+  stroke: currentColor;
+  fill: none;
+  transform: rotate(-90deg);
+  transform-origin: 100px 100px;
+}
+
+.loader-ring-outer {
+  stroke-dasharray: 402.12;
+  stroke-dashoffset: 402.12;
+  animation: loader-draw 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+}
+
+.loader-ring-inner {
+  stroke-dasharray: 201.06;
+  stroke-dashoffset: 201.06;
+  animation: loader-draw 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+}
+
+@keyframes loader-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+/* Crosshair ticks — staggered fade-in */
+.loader-tick {
+  stroke: currentColor;
+  opacity: 0;
+}
+.loader-tick-1 { animation: loader-tick-in 0.4s var(--ease-reveal) 0.7s forwards; }
+.loader-tick-2 { animation: loader-tick-in 0.4s var(--ease-reveal) 0.85s forwards; }
+.loader-tick-3 { animation: loader-tick-in 0.4s var(--ease-reveal) 1.0s forwards; }
+.loader-tick-4 { animation: loader-tick-in 0.4s var(--ease-reveal) 1.15s forwards; }
+.loader-tick-5 { animation: loader-tick-in 0.3s var(--ease-reveal) 1.25s forwards; }
+.loader-tick-6 { animation: loader-tick-in 0.3s var(--ease-reveal) 1.35s forwards; }
+.loader-tick-7 { animation: loader-tick-in 0.3s var(--ease-reveal) 1.45s forwards; }
+.loader-tick-8 { animation: loader-tick-in 0.3s var(--ease-reveal) 1.55s forwards; }
+
+@keyframes loader-tick-in {
+  from { opacity: 0; }
+  to   { opacity: 0.6; }
+}
+
+/* Center dot */
+.loader-center {
+  fill: currentColor;
+  opacity: 0;
+  animation: loader-center-in 0.4s ease 0.5s forwards;
+}
+
+@keyframes loader-center-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Brand text */
+.preloader-brand {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-foreground-muted);
+  margin-top: 32px;
+  opacity: 0;
+  animation: loader-center-in 0.5s ease 0.8s forwards;
+}
+
+/* =============================================================================
+   CUSTOM CURSOR — mix-blend-mode: difference for universal visibility
+   ============================================================================= */
+
+.has-custom-cursor,
+.has-custom-cursor * {
+  cursor: none !important;
+}
+
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 99999;
+  opacity: 0;
+  mix-blend-mode: difference;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  margin-left: -4px;
+  margin-top: -4px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    width 0.3s var(--ease-reveal),
+    height 0.3s var(--ease-reveal),
+    margin 0.3s var(--ease-reveal),
+    opacity 0.3s ease;
+}
+
+.cursor-dot.is-visible {
+  opacity: 1;
+}
+
+/* Hover: dot expands into a bold filled circle */
+.cursor-dot.is-hover {
+  width: 48px;
+  height: 48px;
+  margin-left: -24px;
+  margin-top: -24px;
+}
+
+/* Cursor with text label (e.g. "View") */
+.cursor-dot.has-text {
+  width: 88px;
+  height: 88px;
+  margin-left: -44px;
+  margin-top: -44px;
+}
+
+/* Click squeeze */
+.cursor-dot.is-press {
+  width: 6px;
+  height: 6px;
+  margin-left: -3px;
+  margin-top: -3px;
+}
+
+.cursor-dot.is-hover.is-press {
+  width: 40px;
+  height: 40px;
+  margin-left: -20px;
+  margin-top: -20px;
+}
+
+.cursor-dot.has-text.is-press {
+  width: 76px;
+  height: 76px;
+  margin-left: -38px;
+  margin-top: -38px;
+}
+
+/* Text inside cursor dot */
+.cursor-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0;
+  color: #fff;
+  pointer-events: none;
+  transition: opacity 0.2s ease 0.1s;
+}
+
+.cursor-dot.has-text .cursor-text {
+  opacity: 1;
+}
+
+/* Ring — trailing circle outline */
+.cursor-ring {
+  width: 40px;
+  height: 40px;
+  margin-left: -20px;
+  margin-top: -20px;
+  border: 1px solid #fff;
+  transition:
+    width 0.35s var(--ease-reveal),
+    height 0.35s var(--ease-reveal),
+    margin 0.35s var(--ease-reveal),
+    opacity 0.3s ease;
+}
+
+.cursor-ring.is-visible {
+  opacity: 0.4;
+}
+
+/* Ring fades when dot is active (hover/text) */
+.cursor-ring.is-hover {
+  opacity: 0;
+  width: 48px;
+  height: 48px;
+  margin-left: -24px;
+  margin-top: -24px;
+}
+
+.cursor-ring.is-press {
+  width: 34px;
+  height: 34px;
+  margin-left: -17px;
+  margin-top: -17px;
+}
+
+/* =============================================================================
+   SCROLL PROGRESS
+   ============================================================================= */
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 60;
+  pointer-events: none;
+}
+
+.scroll-progress-bar {
+  height: 100%;
+  width: 100%;
+  background: var(--color-foreground);
+  opacity: 0.3;
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+/* Hero words hidden until GSAP reveals them */
+.hero-word {
+  opacity: 0;
 }

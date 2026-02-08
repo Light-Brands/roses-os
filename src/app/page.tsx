@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
@@ -8,10 +8,10 @@ import Link from 'next/link';
 import { Navigation } from '@/components/ui/Navigation';
 import HeroSphere from '@/components/three/HeroSphere';
 import SelectedWork from '@/components/sections/SelectedWork';
-import type { Project } from '@/components/sections/SelectedWork';
 import ClientLogos from '@/components/sections/ClientLogos';
 import Footer from '@/components/ui/Footer';
 import { cn } from '@/lib/utils';
+import { navItems, projectCategories, projects } from '@/lib/data';
 
 // =============================================================================
 // SOCIAL ICONS
@@ -65,11 +65,11 @@ function InstagramIcon({ className }: { className?: string }) {
 // SCROLL INDICATOR
 // =============================================================================
 
-function ScrollIndicator() {
+function ScrollIndicator({ ready }: { ready: boolean }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
+      animate={ready ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
       transition={{ delay: 2, duration: 0.6 }}
       className="flex flex-col items-center gap-2"
     >
@@ -93,7 +93,7 @@ function ScrollIndicator() {
 // SIDE SOCIAL LINKS
 // =============================================================================
 
-function SocialSidebar() {
+function SocialSidebar({ ready }: { ready: boolean }) {
   const socials = [
     {
       icon: LinkedInIcon,
@@ -115,7 +115,7 @@ function SocialSidebar() {
   return (
     <motion.div
       initial={{ opacity: 0, x: -20 }}
-      animate={{ opacity: 1, x: 0 }}
+      animate={ready ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
       transition={{ delay: 1.6, duration: 0.6 }}
       className="absolute site-edge-left top-1/2 -translate-y-1/2 z-30 hidden md:flex flex-col items-center gap-5"
     >
@@ -151,14 +151,16 @@ function SocialSidebar() {
 function VerticalText({
   text,
   side,
+  ready,
 }: {
   text: string;
   side: 'left' | 'right';
+  ready: boolean;
 }) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      animate={ready ? { opacity: 1 } : { opacity: 0 }}
       transition={{ delay: 1.8, duration: 0.6 }}
       className={cn(
         'absolute top-1/2 -translate-y-1/2 z-20 hidden lg:block',
@@ -182,103 +184,6 @@ function VerticalText({
 // MAIN PAGE
 // =============================================================================
 
-const navItems = [
-  { label: 'Work', href: '/work' },
-  { label: 'Services', href: '/services' },
-  { label: 'About', href: '/about' },
-  { label: 'Contact', href: '/contact' },
-];
-
-// =============================================================================
-// PROJECT DATA (placeholder — replace with CMS/Supabase data)
-// =============================================================================
-
-const projectCategories = [
-  'Branding',
-  'Art Direction',
-  'Web Design',
-  'Social Media',
-  'Strategy',
-  'Video',
-  'Print',
-  'Photography',
-];
-
-const projects: Project[] = [
-  {
-    id: '1',
-    title: 'Olympus Resort',
-    category: 'Branding',
-    client: 'Branding',
-    image: '/projects/project-1.svg',
-    href: '/work/olympus-resort',
-  },
-  {
-    id: '2',
-    title: 'Kypria Digital',
-    category: 'Web Design',
-    client: 'Web Design',
-    image: '/projects/project-2.svg',
-    href: '/work/kypria-digital',
-  },
-  {
-    id: '3',
-    title: 'Amara Collection',
-    category: 'Art Direction',
-    client: 'Art Direction',
-    image: '/projects/project-3.svg',
-    href: '/work/amara-collection',
-  },
-  {
-    id: '4',
-    title: 'Limassol Marina',
-    category: 'Social Media',
-    client: 'Social Media',
-    image: '/projects/project-4.svg',
-    href: '/work/limassol-marina',
-  },
-  {
-    id: '5',
-    title: 'Paphos Estates',
-    category: 'Photography',
-    client: 'Photography',
-    image: '/projects/project-5.svg',
-    href: '/work/paphos-estates',
-  },
-  {
-    id: '6',
-    title: 'Nea Ventures',
-    category: 'Strategy',
-    client: 'Strategy',
-    image: '/projects/project-6.svg',
-    href: '/work/nea-ventures',
-  },
-  {
-    id: '7',
-    title: 'Kolossi Studio',
-    category: 'Branding',
-    client: 'Branding',
-    image: '/projects/project-1.svg',
-    href: '/work/kolossi-studio',
-  },
-  {
-    id: '8',
-    title: 'Petra & Co',
-    category: 'Video',
-    client: 'Video',
-    image: '/projects/project-2.svg',
-    href: '/work/petra-co',
-  },
-  {
-    id: '9',
-    title: 'Akamas Wild',
-    category: 'Print',
-    client: 'Print',
-    image: '/projects/project-3.svg',
-    href: '/work/akamas-wild',
-  },
-];
-
 export default function Home() {
   const heroRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -291,12 +196,26 @@ export default function Home() {
   const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const heroY = useTransform(scrollYProgress, [0, 0.5], [0, -60]);
 
-  // GSAP entrance animations
+  // Preloader coordination
+  const [ready, setReady] = useState(false);
+  const fromPreloader = useRef(true);
+
   useEffect(() => {
-    if (!titleRef.current) return;
+    if (sessionStorage.getItem('dc-preloader')) {
+      fromPreloader.current = false;
+      setReady(true);
+      return;
+    }
+    const handler = () => setReady(true);
+    window.addEventListener('preloader:done', handler);
+    return () => window.removeEventListener('preloader:done', handler);
+  }, []);
+
+  // GSAP entrance animations — gated on preloader
+  useEffect(() => {
+    if (!ready || !titleRef.current) return;
 
     const ctx = gsap.context(() => {
-      // Split title into words for staggered animation
       const title = titleRef.current;
       if (!title) return;
 
@@ -309,12 +228,12 @@ export default function Home() {
         duration: 0.9,
         stagger: 0.1,
         ease: 'power3.out',
-        delay: 0.5,
+        delay: fromPreloader.current ? 0.2 : 0.5,
       });
     });
 
     return () => ctx.revert();
-  }, []);
+  }, [ready]);
 
   return (
     <>
@@ -335,10 +254,10 @@ export default function Home() {
           className="relative min-h-[100svh] min-h-screen flex items-center justify-center"
         >
           {/* Side Social Links - fixed to hero only */}
-          <SocialSidebar />
+          <SocialSidebar ready={ready} />
 
           {/* Vertical Text - fixed to hero only */}
-          <VerticalText text="Digital Cultures — Paphos, Cyprus" side="right" />
+          <VerticalText text="Digital Cultures — Paphos, Cyprus" side="right" ready={ready} />
 
           {/* Background - subtle noise texture overlay */}
           <div
@@ -362,7 +281,7 @@ export default function Home() {
             {/* Greeting / Tagline */}
             <motion.p
               initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={ready ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
               transition={{ delay: 0.3, duration: 0.6 }}
               className="text-sm sm:text-base font-medium text-neutral-900 dark:text-white tracking-wide mb-6 lg:mb-8"
             >
@@ -388,7 +307,7 @@ export default function Home() {
             {/* Subtitle */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={ready ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ delay: 1.2, duration: 0.6 }}
               className="mt-8 lg:mt-10 text-lg sm:text-xl text-neutral-900 dark:text-white max-w-xl leading-relaxed"
             >
@@ -400,7 +319,7 @@ export default function Home() {
             {/* CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={ready ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ delay: 1.5, duration: 0.6 }}
               className="mt-10 lg:mt-12 flex flex-col sm:flex-row items-center gap-4"
             >
@@ -451,7 +370,7 @@ export default function Home() {
 
           {/* Scroll Indicator - bottom center */}
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-            <ScrollIndicator />
+            <ScrollIndicator ready={ready} />
           </div>
         </motion.section>
 

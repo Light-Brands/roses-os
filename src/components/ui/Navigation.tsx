@@ -185,7 +185,7 @@ export function Navigation({
               <button
                 onClick={toggleTheme}
                 className={cn(
-                  'relative p-2.5 rounded-lg',
+                  'relative p-3 rounded-lg min-w-[44px] min-h-[44px] flex items-center justify-center',
                   'text-[var(--color-foreground-muted)]',
                   'hover:text-[var(--color-foreground)]',
                   'transition-colors duration-200'
@@ -219,13 +219,13 @@ export function Navigation({
                   className={cn(
                     'relative inline-flex items-center rounded-full overflow-hidden',
                     'px-5 py-2.5',
-                    'bg-[var(--color-accent)]'
+                    'bg-[#887BC6]'
                   )}
                 >
                   <div
                     className={cn(
                       'absolute inset-0',
-                      'bg-[var(--color-accent-foreground)]',
+                      'bg-[#766AB3]',
                       'origin-left scale-x-0 group-hover:scale-x-100',
                       'transition-transform duration-300 ease-out'
                     )}
@@ -233,8 +233,7 @@ export function Navigation({
                   <span
                     className={cn(
                       'relative z-10 text-sm font-medium tracking-[0.01em]',
-                      'text-[var(--color-accent-foreground)]',
-                      'group-hover:text-[var(--color-accent)]',
+                      'text-white',
                       'transition-colors duration-300'
                     )}
                   >
@@ -246,20 +245,20 @@ export function Navigation({
                   className={cn(
                     'relative flex items-center justify-center',
                     'w-10 h-10 rounded-full overflow-hidden',
-                    'bg-[var(--color-accent)]'
+                    'bg-[#887BC6]'
                   )}
                 >
                   <div
                     className={cn(
                       'absolute inset-0',
-                      'bg-[var(--color-accent-foreground)]',
+                      'bg-[#766AB3]',
                       'origin-left scale-x-0 group-hover:scale-x-100',
                       'transition-transform duration-300 delay-100 ease-out'
                     )}
                   />
                   <ArrowUpRight
                     className={cn(
-                      'absolute w-4 h-4 text-[var(--color-accent-foreground)]',
+                      'absolute w-4 h-4 text-white',
                       'transition-all duration-300',
                       'group-hover:translate-x-full group-hover:-translate-y-full group-hover:opacity-0'
                     )}
@@ -268,8 +267,7 @@ export function Navigation({
                   <ArrowUpRight
                     className={cn(
                       'absolute w-4 h-4',
-                      'text-[var(--color-accent-foreground)]',
-                      'group-hover:text-[var(--color-accent)]',
+                      'text-white',
                       'transition-all duration-300',
                       '-translate-x-full translate-y-full opacity-0',
                       'group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100'
@@ -283,7 +281,7 @@ export function Navigation({
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className={cn(
-                  'lg:hidden p-2.5 rounded-lg relative z-50',
+                  'lg:hidden p-3 rounded-lg relative z-50 min-w-[44px] min-h-[44px] flex items-center justify-center',
                   'text-[var(--color-foreground)]',
                   'transition-colors duration-200'
                 )}
@@ -346,8 +344,8 @@ export function Navigation({
                         href={item.href}
                         onClick={() => setIsMobileMenuOpen(false)}
                         className={cn(
-                          'block py-3',
-                          'text-2xl font-medium',
+                          'block py-4',
+                          'text-xl sm:text-2xl font-medium',
                           'text-[var(--color-foreground)]',
                           'hover:text-[var(--color-foreground-muted)]',
                           'transition-colors duration-200'
@@ -379,8 +377,8 @@ export function Navigation({
                     className={cn(
                       'inline-flex items-center gap-2',
                       'px-6 py-3.5 rounded-full',
-                      'bg-[var(--color-accent)]',
-                      'text-[var(--color-accent-foreground)]',
+                      'bg-[#887BC6]',
+                      'text-white',
                       'text-sm font-medium',
                       'transition-colors duration-200'
                     )}
