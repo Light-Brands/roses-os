@@ -72,6 +72,31 @@ ROSES OS exists to dissolve distortion and return people to truth.
 - Modern devotion
 - Quiet genius awakening
 
+```mermaid
+mindmap
+  root((ROSES OS))
+    Core Promise
+      Inner Freedom
+      Coherence
+      Awakened Leadership
+      Conscious Prosperity
+      Intuitive Clarity
+    Brand Feeling
+      Warm Silence
+      Sacred Minimalism
+      Calm Authority
+      Modern Devotion
+      Quiet Genius Awakening
+    Instruments
+      The Rose
+      The Aura
+      The Human Journey
+    Essence
+      Remembrance Ecosystem
+      Energetic Operating System
+      Living Inner Technology
+```
+
 ---
 
 ## Mission & Vision
@@ -79,6 +104,16 @@ ROSES OS exists to dissolve distortion and return people to truth.
 **Mission:** To restore inner symmetry and coherence through simple, precise instruments of consciousness. ROSES OS is built for this moment -- where life moves fast and noise is constant.
 
 **Vision:** A world where humans live, lead, create, and love from presence instead of distortion. Where life becomes creation instead of reaction.
+
+```mermaid
+graph LR
+    A["Distortion<br/><i>reaction, noise, fragmentation</i>"] -->|ROSES OS dissolves| B["Coherence<br/><i>presence, clarity, alignment</i>"]
+    B --> C["Creation<br/><i>leadership, love, sovereignty</i>"]
+
+    style A fill:#7A3A34,color:#F7F5F2,stroke:#7A3A34
+    style B fill:#9C6F6E,color:#F7F5F2,stroke:#9C6F6E
+    style C fill:#9E956B,color:#F7F5F2,stroke:#9E956B
+```
 
 ---
 
@@ -89,6 +124,20 @@ Aura Reading emerged in the 1960s, in California, channeled by a North American 
 ### Lineage Transmission
 
 Berkeley Psychic Institute --> **Anastacia Plunk** --> **Angelina Ataide** --> **ROSES OS**
+
+```mermaid
+graph TD
+    LB["Lewis Bostwick<br/><i>1960s, California</i>"] --> BPI["Berkeley Psychic Institute<br/>&<br/>Church of the Divine Man"]
+    BPI --> AP["Anastacia Plunk"]
+    AP --> AA["Angelina Ataide"]
+    AA --> ROS["ROSES OS"]
+
+    style LB fill:#BFB3AA,color:#3F3E3C,stroke:#9A8F88
+    style BPI fill:#BFB3AA,color:#3F3E3C,stroke:#9A8F88
+    style AP fill:#9C6F6E,color:#F7F5F2,stroke:#9C6F6E
+    style AA fill:#9C6F6E,color:#F7F5F2,stroke:#9C6F6E
+    style ROS fill:#9E956B,color:#F7F5F2,stroke:#9E956B
+```
 
 These teachings are part of a living energetic lineage. They invite inner stillness, gentle discipline, and deep self-responsibility. ROSES OS is not a system to be imposed or taught casually -- it is an energetic operating system revealed through direct practice and transmission.
 
@@ -120,6 +169,34 @@ For those who feel the world accelerating and know the tools they inherited were
 
 They want to move through complexity without losing themselves. They are ready to rise above noise. They are seeking alignment and peace.
 
+```mermaid
+graph TD
+    subgraph WHO["Audience"]
+        F[Founders] & CR[Creators] & E[Entrepreneurs]
+        H[Healers] & L[Leaders] & P[Parents]
+    end
+
+    subgraph FEEL["What They Feel"]
+        WA["World accelerating"]
+        TO["Tools becoming outdated"]
+        CT["Call toward truth"]
+    end
+
+    subgraph DESIRE["What They Seek"]
+        CL["Clarity"]
+        IN["Intuition"]
+        IS["Inner stability"]
+        SV["Sovereignty"]
+    end
+
+    WHO --> FEEL --> DESIRE --> ROS["ROSES OS"]
+
+    style WHO fill:#E4DED8,color:#3F3E3C,stroke:#BFB3AA
+    style FEEL fill:#BFB3AA,color:#3F3E3C,stroke:#9A8F88
+    style DESIRE fill:#9C6F6E,color:#F7F5F2,stroke:#9C6F6E
+    style ROS fill:#9E956B,color:#F7F5F2,stroke:#9E956B
+```
+
 ---
 
 ## Brand Positioning
@@ -145,6 +222,31 @@ They want to move through complexity without losing themselves. They are ready t
 
 **Differentiator:** Simple, living inner technology that doesn't fight noise and fragmentation -- it quietly dissolves the conditions that keep chaos alive.
 
+```mermaid
+graph LR
+    subgraph NOT["ROSES OS Is Not"]
+        direction TB
+        N1["Belief system"]
+        N2["Healing loop"]
+        N3["Technique collection"]
+        N4["Performance spirituality"]
+    end
+
+    subgraph IS["ROSES OS Is"]
+        direction TB
+        Y1["Coherence"]
+        Y2["Remembrance"]
+        Y3["Energetic precision"]
+        Y4["Inner operating system"]
+        Y5["Decentralized simplicity"]
+    end
+
+    NOT -.-|"dissolves into"| IS
+
+    style NOT fill:#7A3A34,color:#F7F5F2,stroke:#7A3A34
+    style IS fill:#9E956B,color:#F7F5F2,stroke:#9E956B
+```
+
 ---
 
 ## Brand Personality & Archetype
@@ -160,6 +262,29 @@ ROSES OS is:
 - Slightly futuristic
 
 **Archetype Blend:** The Mystic Guide x The Architect x The Modern Oracle
+
+```mermaid
+graph TD
+    MG["The Mystic Guide<br/><i>Wisdom, reverence, lineage</i>"]
+    TA["The Architect<br/><i>Structure, precision, system</i>"]
+    MO["The Modern Oracle<br/><i>Intuition, vision, future</i>"]
+
+    MG --> ROS((ROSES OS<br/>Brand<br/>Personality))
+    TA --> ROS
+    MO --> ROS
+
+    ROS --> G["Grounded"]
+    ROS --> EL["Elegant"]
+    ROS --> D["Devotional"]
+    ROS --> S["Spacious"]
+    ROS --> QP["Quietly Powerful"]
+    ROS --> SF["Slightly Futuristic"]
+
+    style MG fill:#9C6F6E,color:#F7F5F2,stroke:#9C6F6E
+    style TA fill:#9A8F88,color:#F7F5F2,stroke:#9A8F88
+    style MO fill:#9E956B,color:#F7F5F2,stroke:#9E956B
+    style ROS fill:#3F3E3C,color:#F7F5F2,stroke:#3F3E3C
+```
 
 ---
 
@@ -203,6 +328,31 @@ Never loud. Never bright. Never hype. The voice feels like:
 | **Inner Symmetry** | Inner symmetry becomes the source of leadership and creation. |
 | **Presence** | The work asks for presence, not perfection. |
 | **Quiet Genius** | When distortion dissolves, Genius awakens. |
+
+```mermaid
+graph TD
+    subgraph PILLARS["Five Messaging Pillars"]
+        direction LR
+        P1["Coherence<br/><i>Life aligns</i>"]
+        P2["Remembrance<br/><i>Not learning — remembering</i>"]
+        P3["Inner Symmetry<br/><i>Source of leadership</i>"]
+        P4["Presence<br/><i>Not perfection</i>"]
+        P5["Quiet Genius<br/><i>Genius awakens</i>"]
+    end
+
+    P1 --> CORE((ROSES OS<br/>Message))
+    P2 --> CORE
+    P3 --> CORE
+    P4 --> CORE
+    P5 --> CORE
+
+    style P1 fill:#9C6F6E,color:#F7F5F2
+    style P2 fill:#9C6F6E,color:#F7F5F2
+    style P3 fill:#9C6F6E,color:#F7F5F2
+    style P4 fill:#9C6F6E,color:#F7F5F2
+    style P5 fill:#9C6F6E,color:#F7F5F2
+    style CORE fill:#9E956B,color:#F7F5F2
+```
 
 ---
 
@@ -268,6 +418,52 @@ It doesn't fight the noise and fragmentation -- it quietly dissolves the conditi
 
 The Rose restores coherence across emotional, mental, and energetic systems -- making intuition precise and presence sovereign. Simple and decentralized, it frees you from endless healing and returns you to natural alignment.
 
+### The Three Levels -- Journey Overview
+
+```mermaid
+graph LR
+    L1["LEVEL 1<br/>Foundational<br/>Practices"]
+    L2["LEVEL 2<br/>Sacred Space &<br/>Chakra System"]
+    L3["LEVEL 3<br/>Advanced<br/>Perception"]
+    A1["AURA 1<br/>11 Sessions"]
+
+    L1 ==> L2 ==> L3
+    L1 -.-> A1
+
+    subgraph L1D[" "]
+        direction TB
+        L1A["Posture & Grounding"]
+        L1B["Golden Sun & Aura"]
+        L1C["Earth & Cosmos Circuits"]
+        L1D2["Roses of Protection"]
+        L1E["Cleansing & Recovery"]
+    end
+
+    subgraph L2D[" "]
+        direction TB
+        L2A["Sacred & Physical Space"]
+        L2B["7 Chakras Deep Dive"]
+        L2C["Aura Layer Cleansing"]
+        L2D2["Golden Sticky Roses"]
+    end
+
+    subgraph L3D[" "]
+        direction TB
+        L3A["The Analyzer"]
+        L3B["Advanced Perception"]
+        L3C["Energetic Discernment"]
+    end
+
+    L1 --- L1D
+    L2 --- L2D
+    L3 --- L3D
+
+    style L1 fill:#BFB3AA,color:#3F3E3C,stroke:#9A8F88
+    style L2 fill:#9C6F6E,color:#F7F5F2,stroke:#9C6F6E
+    style L3 fill:#9E956B,color:#F7F5F2,stroke:#9E956B
+    style A1 fill:#7A3A34,color:#F7F5F2,stroke:#7A3A34
+```
+
 ---
 
 ## The Rose -- Core Inner Technology
@@ -277,6 +473,26 @@ The Rose is the foundational symbol and tool of this practice -- a living energe
 **When the Rose awakens, Genius awakens.**
 
 The Rose dissolves distortion and restores coherence. Inner awareness expands, presence and stability deepen. From this state, intuition sharpens, leadership rises, and connection becomes natural.
+
+```mermaid
+graph TD
+    subgraph ROSE["The Rose — Anatomy"]
+        BLOOM["Bloom<br/><i>Active, radiant tool</i>"]
+        STEM["Stem<br/><i>Channel of energy</i>"]
+        ROOTS["Roots<br/><i>Connection to source</i>"]
+        BLOOM --- STEM --- ROOTS
+    end
+
+    subgraph FUNCTIONS["Rose Functions"]
+        PL["Place"] & MV["Move"] & OP["Open"] & CL["Close"] & RL["Release"]
+    end
+
+    ROSE --> FUNCTIONS
+
+    style BLOOM fill:#9E956B,color:#F7F5F2
+    style STEM fill:#BFB3AA,color:#3F3E3C
+    style ROOTS fill:#9A8F88,color:#F7F5F2
+```
 
 ---
 
@@ -306,6 +522,21 @@ Once you are aware of your aura, the grounding cord practice deepens. You ground
 
 The complete foundational setup combines all three elements: the person is seated in proper posture, enclosed within their aura, with the grounding cord descending into the earth and the golden sun shining above the crown.
 
+```mermaid
+graph TD
+    GS["Golden Sun<br/>Above Crown"]
+    GS -->|"replenishes energy"| AURA
+    subgraph AURA["Aura Field"]
+        BODY["Practitioner<br/><i>Seated, spine upright</i><br/><i>Feet flat, eyes closed</i>"]
+    end
+    AURA -->|"grounding cord"| EARTH["Center of the Earth"]
+
+    style GS fill:#9E956B,color:#F7F5F2,stroke:#9E956B
+    style AURA fill:#E4DED8,color:#3F3E3C,stroke:#9C6F6E
+    style BODY fill:#F7F5F2,color:#3F3E3C,stroke:#BFB3AA
+    style EARTH fill:#7A3A34,color:#F7F5F2,stroke:#7A3A34
+```
+
 ### Circuit of the Energy of the Earth
 
 The Earth circuit is an energetic pathway that draws the energy of the Earth upward through the feet, rising through the legs and into the body. This circuit connects you to the grounding, nourishing, stabilizing force of the planet.
@@ -317,6 +548,23 @@ The Cosmic circuit is an energetic pathway that draws cosmic energy downward thr
 ### Circuit of Energy of Cosmos and Earth
 
 When both circuits are activated simultaneously, the energies of the Earth and Cosmos flow together through the body. Earth energy rises from below; Cosmic energy descends from above. They meet and blend within the body, creating a unified field of balanced, integrated energy.
+
+```mermaid
+graph TD
+    COSMOS["Cosmos<br/><i>Universal consciousness</i>"]
+    COSMOS -->|"descends through crown"| CROWN["7th Chakra — Crown"]
+    CROWN --> BODY["Body<br/><i>Energies meet & blend</i>"]
+    BODY --> ROOT["1st Chakra — Root"]
+    ROOT -->|"rises through feet"| EARTH["Earth<br/><i>Grounding, nourishing force</i>"]
+    EARTH -->|"Earth circuit upward"| ROOT
+    COSMOS -->|"Cosmic circuit downward"| CROWN
+
+    style COSMOS fill:#9E956B,color:#F7F5F2
+    style CROWN fill:#9C6F6E,color:#F7F5F2
+    style BODY fill:#E4DED8,color:#3F3E3C,stroke:#9C6F6E
+    style ROOT fill:#7A3A34,color:#F7F5F2
+    style EARTH fill:#9A8F88,color:#F7F5F2
+```
 
 ### Roses of Protection, Observation and Separation
 
@@ -337,6 +585,36 @@ After cleansing, the Rose is used to recover your own energy that has been left 
 ### Discharge Excess Energy
 
 After deep meditation or energy work, excess energy may accumulate in the body. To discharge it, lean forward from the seated position with hands reaching toward the ground. Allow the excess energy to flow out through the hands and into the earth, returning the body to a calm, balanced state.
+
+### Level 1 Practice Sequence
+
+```mermaid
+graph LR
+    A["Posture"] --> B["Grounding Cord"]
+    B --> C["Golden Sun"]
+    C --> D["Feel Your Aura"]
+    D --> E["Ground the Aura"]
+    E --> F["Earth Circuit"]
+    F --> G["Cosmos Circuit"]
+    G --> H["Combined Circuit"]
+    H --> I["Roses of Protection"]
+    I --> J["Cleansing Rose"]
+    J --> K["Energy Recovery"]
+    K --> L["Discharge Excess"]
+
+    style A fill:#E4DED8,color:#3F3E3C
+    style B fill:#E4DED8,color:#3F3E3C
+    style C fill:#E4DED8,color:#3F3E3C
+    style D fill:#BFB3AA,color:#3F3E3C
+    style E fill:#BFB3AA,color:#3F3E3C
+    style F fill:#BFB3AA,color:#3F3E3C
+    style G fill:#9C6F6E,color:#F7F5F2
+    style H fill:#9C6F6E,color:#F7F5F2
+    style I fill:#9C6F6E,color:#F7F5F2
+    style J fill:#9E956B,color:#F7F5F2
+    style K fill:#9E956B,color:#F7F5F2
+    style L fill:#9E956B,color:#F7F5F2
+```
 
 ---
 
@@ -367,6 +645,20 @@ Once the space is protected, it is cleansed. A large Cleansing Rose is placed ab
 
 After protection and cleansing, you claim ownership of the space. This is an act of energetic sovereignty -- declaring the space as yours, filling it with your own energy and intention.
 
+```mermaid
+graph LR
+    A["Prepare<br/>Physical Space"] ==> B["Protection<br/><i>Rose grid at corners</i>"]
+    B ==> C["Cleansing<br/><i>Golden energy pours down</i>"]
+    C ==> D["Owning<br/><i>Fill with your energy</i>"]
+    D ==> E["Sacred Space<br/>Complete"]
+
+    style A fill:#E4DED8,color:#3F3E3C
+    style B fill:#BFB3AA,color:#3F3E3C
+    style C fill:#9C6F6E,color:#F7F5F2
+    style D fill:#9E956B,color:#F7F5F2
+    style E fill:#3F3E3C,color:#F7F5F2
+```
+
 ### The Seven Chakras
 
 | # | Chakra | Location | Color |
@@ -378,6 +670,27 @@ After protection and cleansing, you claim ownership of the space. This is an act
 | 3 | **Solar Plexus** | Upper abdomen | Yellow |
 | 2 | **Sacral** | Lower abdomen | Orange |
 | 1 | **Root** | Base of spine | Red |
+
+```mermaid
+graph TD
+    C7["7 — Crown<br/>I KNOW<br/><i>Violet & White</i>"]
+    C6["6 — Third Eye<br/>I SEE<br/><i>Indigo</i>"]
+    C5["5 — Throat<br/>I SPEAK AND I LISTEN<br/><i>Light Blue</i>"]
+    C4["4 — Heart<br/>I LOVE / I AM LOVE<br/><i>Green / Pink</i>"]
+    C3["3 — Solar Plexus<br/>I CAN<br/><i>Yellow</i>"]
+    C2["2 — Sacral<br/>I FEEL<br/><i>Orange</i>"]
+    C1["1 — Root<br/>I AM<br/><i>Red</i>"]
+
+    C7 --- C6 --- C5 --- C4 --- C3 --- C2 --- C1
+
+    style C7 fill:#9B59B6,color:#FFFFFF
+    style C6 fill:#3B3B98,color:#FFFFFF
+    style C5 fill:#5DADE2,color:#FFFFFF
+    style C4 fill:#27AE60,color:#FFFFFF
+    style C3 fill:#F1C40F,color:#3F3E3C
+    style C2 fill:#E67E22,color:#FFFFFF
+    style C1 fill:#E74C3C,color:#FFFFFF
+```
 
 ### Root Chakra -- Muladhara
 
@@ -574,6 +887,30 @@ Each individual chakra is cleansed using roses addressing two dimensions:
 - **Dynamics of the Past** -- Energetic patterns, imprints, and blockages carried from past experiences
 - **Dynamics of the Present** -- Current energetic influences, relationships, and situations affecting the chakra
 
+```mermaid
+graph LR
+    subgraph PAST["Dynamics of the Past"]
+        PP["Patterns & imprints"]
+        PB["Blockages carried forward"]
+    end
+
+    CHAKRA["Each Chakra"]
+
+    subgraph PRESENT["Dynamics of the Present"]
+        PI["Current influences"]
+        PR["Active relationships"]
+    end
+
+    PAST -->|"rose cleanses"| CHAKRA
+    PRESENT -->|"rose cleanses"| CHAKRA
+    CHAKRA --> RESTORED["Restored<br/><i>Sovereign & clear</i>"]
+
+    style PAST fill:#7A3A34,color:#F7F5F2
+    style PRESENT fill:#9C6F6E,color:#F7F5F2
+    style CHAKRA fill:#E4DED8,color:#3F3E3C
+    style RESTORED fill:#9E956B,color:#F7F5F2
+```
+
 ### Golden Sticky Roses
 
 Golden Sticky Roses are a powerful cleansing and recovery technique. Small golden roses are placed directly on and within the body at specific locations to draw out deeply embedded foreign energy and restore your own.
@@ -585,6 +922,49 @@ Golden Sticky Roses are a powerful cleansing and recovery technique. Small golde
 **Phase 3 -- Full Body Coverage:** Golden sticky roses placed throughout the entire body for thorough, complete energetic cleansing.
 
 **Phase 4 -- Integration:** A large Golden Rose appears above the head. All foreign energy gathered by the sticky roses is released, and the entire body is bathed in golden light -- restoring, sealing, and integrating the energy body.
+
+```mermaid
+graph LR
+    P1["Phase 1<br/>Chakra Placement<br/><i>7 chakra points</i>"]
+    P2["Phase 2<br/>Body Placement<br/><i>Joints & extremities</i>"]
+    P3["Phase 3<br/>Full Body<br/><i>Complete coverage</i>"]
+    P4["Phase 4<br/>Integration<br/><i>Golden Rose above</i>"]
+
+    P1 ==> P2 ==> P3 ==> P4
+
+    style P1 fill:#E4DED8,color:#3F3E3C
+    style P2 fill:#BFB3AA,color:#3F3E3C
+    style P3 fill:#9C6F6E,color:#F7F5F2
+    style P4 fill:#9E956B,color:#F7F5F2
+```
+
+### Level 2 Practice Sequence
+
+```mermaid
+graph LR
+    A["Create<br/>Sacred Space"] --> B["6th & 7th<br/>Chakras"]
+    B --> C["Prepare<br/>Physical Space"]
+    C --> D["Protect<br/>the Space"]
+    D --> E["Cleanse<br/>the Space"]
+    E --> F["Own<br/>the Space"]
+    F --> G["Chakra<br/>Deep Dive"]
+    G --> H["Cleanse<br/>Aura Layers"]
+    H --> I["Cleanse<br/>Each Chakra"]
+    I --> J["Energy<br/>Recovery"]
+    J --> K["Golden<br/>Sticky Roses"]
+
+    style A fill:#E4DED8,color:#3F3E3C
+    style B fill:#E4DED8,color:#3F3E3C
+    style C fill:#BFB3AA,color:#3F3E3C
+    style D fill:#BFB3AA,color:#3F3E3C
+    style E fill:#BFB3AA,color:#3F3E3C
+    style F fill:#9C6F6E,color:#F7F5F2
+    style G fill:#9C6F6E,color:#F7F5F2
+    style H fill:#9C6F6E,color:#F7F5F2
+    style I fill:#9E956B,color:#F7F5F2
+    style J fill:#9E956B,color:#F7F5F2
+    style K fill:#9E956B,color:#F7F5F2
+```
 
 ---
 
@@ -605,6 +985,26 @@ Aura sharpens perception, revealing what shapes your choices, relationships, and
 - **The Rose** awakens perception.
 - **Aura** empowers relationship.
 - **Together**, they restore coherence, love, and confidence.
+
+```mermaid
+graph TD
+    ROSE["The Rose<br/><i>Awakens perception</i>"]
+    AURA["The Aura<br/><i>Empowers relationship</i>"]
+
+    ROSE --> SYNERGY((Together))
+    AURA --> SYNERGY
+
+    SYNERGY --> COH["Coherence"]
+    SYNERGY --> LOV["Love"]
+    SYNERGY --> CON["Confidence"]
+
+    style ROSE fill:#9C6F6E,color:#F7F5F2
+    style AURA fill:#9E956B,color:#F7F5F2
+    style SYNERGY fill:#3F3E3C,color:#F7F5F2
+    style COH fill:#E4DED8,color:#3F3E3C
+    style LOV fill:#E4DED8,color:#3F3E3C
+    style CON fill:#E4DED8,color:#3F3E3C
+```
 
 ---
 
@@ -638,6 +1038,35 @@ You access the brilliance of your original design. You live your life from pure 
 
 **No prior experience is needed. Only presence.**
 
+```mermaid
+mindmap
+  root((What Awakens))
+    The Rose
+      Dissolves distortion
+      Restores coherence
+      Expands awareness
+    Aura
+      Perceive subtle senses
+      Mirror of clarity
+      Strengthens relationships
+    Human Journey
+      Patterns dissolve
+      Imprints release
+      Love self-organizes
+    Intuition
+      Listen to truth
+      Beliefs dissolve
+      Decisions align
+    Leadership
+      Capacity to feel
+      Rooted in coherence
+      Self-mastery
+    Highest Potential
+      Original design
+      Pure integrity
+      Remember who you are
+```
+
 ---
 
 ## The Guardians
@@ -657,6 +1086,27 @@ Rooted in the ways of embodiment and self-knowledge, she holds human expression 
 ### Peggy Mar
 
 She practices the pedagogical methods and integration, ensuring the teachings remain grounded and pure.
+
+```mermaid
+graph TD
+    subgraph GUARDIANS["The Guardians"]
+        AA["Angelina Ataide<br/><i>Lineage holder — precision & sovereignty</i>"]
+        DD["Diego Dosal<br/><i>Spirit & structure — awakening Genius</i>"]
+        DA["Dara Ayoub<br/><i>Embodiment — community & coherence</i>"]
+        PM["Peggy Mar<br/><i>Pedagogy — grounded & pure</i>"]
+    end
+
+    AA --> ROS((ROSES OS))
+    DD --> ROS
+    DA --> ROS
+    PM --> ROS
+
+    style AA fill:#9C6F6E,color:#F7F5F2
+    style DD fill:#9A8F88,color:#F7F5F2
+    style DA fill:#BFB3AA,color:#3F3E3C
+    style PM fill:#E4DED8,color:#3F3E3C
+    style ROS fill:#9E956B,color:#F7F5F2
+```
 
 ---
 
@@ -709,6 +1159,32 @@ This work is offered in devotion. You are invited to choose a contribution that 
 
 Your support allows these technologies to reach more people worldwide.
 
+```mermaid
+graph TD
+    subgraph ROSE_COURSE["The Rose — 2 Days Online"]
+        D1["Day 1<br/>3hr + 3hr"]
+        D2["Day 2<br/>3hr + 3hr"]
+    end
+
+    subgraph AURA_COURSE["Aura 1 — 11 Sessions"]
+        S1["Structured blocks"]
+        S2["Flexible scheduling"]
+    end
+
+    subgraph CONTRIBUTION["Contribution Model"]
+        T1["Under $30K<br/><i>Honors your reality</i>"]
+        T2["$30K – $70K<br/><i>Reciprocity & balance</i>"]
+        T3["Above $70K<br/><i>Supports expansion</i>"]
+    end
+
+    ROSE_COURSE --> AURA_COURSE
+    AURA_COURSE --> CONTRIBUTION
+
+    style ROSE_COURSE fill:#9C6F6E,color:#F7F5F2
+    style AURA_COURSE fill:#9E956B,color:#F7F5F2
+    style CONTRIBUTION fill:#E4DED8,color:#3F3E3C
+```
+
 ---
 
 ## The Frequency
@@ -750,6 +1226,19 @@ The design should feel like:
 - Rose Clay Mauve sits between them
 
 **Rose Clay Mauve is the human interface layer of ROSES OS.** Alive. Calm. Intelligent.
+
+```mermaid
+graph LR
+    TECH["TECHNOLOGY<br/><i>Inter + spacing + restraint</i>"]
+    BRIDGE["Rose Clay Mauve<br/>#9C6F6E<br/><i>Human Interface Layer</i>"]
+    DEV["DEVOTION<br/><i>Cormorant + texture + clay</i>"]
+
+    TECH <-->|"the bridge"| BRIDGE <-->|"the bridge"| DEV
+
+    style TECH fill:#3F3E3C,color:#F7F5F2
+    style BRIDGE fill:#9C6F6E,color:#F7F5F2,stroke-width:3px
+    style DEV fill:#9E956B,color:#F7F5F2
+```
 
 ---
 
@@ -834,6 +1323,44 @@ This color should never be used like an accent button color. **It is a field col
 - Feels good for men + women + non-binary audiences
 - No bright colors. No saturation. Calm only.
 
+### Color System Architecture
+
+```mermaid
+graph TD
+    subgraph SIG["Signature"]
+        RCM["Rose Clay Mauve<br/>#9C6F6E<br/><i>Field color — the room you enter</i>"]
+    end
+
+    subgraph WARM["Primary Warm Tones"]
+        WRC["Warm Rose-Clay Brown<br/>#9B6A66 → #9E6F6B"]
+        DT["Deep Terracotta<br/>#7A3A34 → #7F3F39"]
+    end
+
+    subgraph NEUTRAL["Primary Neutrals"]
+        MC["Muted Clay #9A8F88"]
+        BS["Balanced Stone #BFB3AA"]
+        NS["Neutral Sand #E4DED8"]
+        AW["Aura White #F7F5F2"]
+        SC["Soft Charcoal #3F3E3C"]
+    end
+
+    subgraph ACCENT["Accent"]
+        AOB["Antique Olive Brass<br/>#9E956B<br/><i>Like gold in a temple</i>"]
+    end
+
+    SIG --> WARM --> NEUTRAL --> ACCENT
+
+    style RCM fill:#9C6F6E,color:#F7F5F2
+    style WRC fill:#9B6A66,color:#F7F5F2
+    style DT fill:#7A3A34,color:#F7F5F2
+    style MC fill:#9A8F88,color:#F7F5F2
+    style BS fill:#BFB3AA,color:#3F3E3C
+    style NS fill:#E4DED8,color:#3F3E3C
+    style AW fill:#F7F5F2,color:#3F3E3C
+    style SC fill:#3F3E3C,color:#F7F5F2
+    style AOB fill:#9E956B,color:#F7F5F2
+```
+
 ---
 
 ## Typography
@@ -874,6 +1401,29 @@ This color should never be used like an accent button color. **It is a field col
 - Minimal weights
 - Breath between lines
 - Silence is part of the design
+
+```mermaid
+graph TD
+    subgraph SACRED["Sacred Layer — Cormorant Garamond"]
+        HT["Hero Titles<br/>64–80px Light"]
+        QS["Quote Spreads"]
+        SH["Section Headers"]
+    end
+
+    subgraph MODERN["Modern Layer — Inter"]
+        PARA["Paragraphs"]
+        UI["UI Labels"]
+        NAV["Navigation"]
+        BTN["Buttons"]
+    end
+
+    SACRED -->|"devotion<br/>timeless, poetic"| BRAND((ROSES OS<br/>Typography))
+    MODERN -->|"technology<br/>clean, precise"| BRAND
+
+    style SACRED fill:#9C6F6E,color:#F7F5F2
+    style MODERN fill:#3F3E3C,color:#F7F5F2
+    style BRAND fill:#9E956B,color:#F7F5F2
+```
 
 ---
 
@@ -978,6 +1528,29 @@ ROSES OS is where:
 
 > Think: Apple-level minimalism inside a temple.
 
+```mermaid
+graph LR
+    SP["Spirituality"] <--> ST["Structure"]
+    MY["Mysticism"] <--> CL["Clarity"]
+    SO["Soul"] <--> SY["System"]
+    IT["Inner Tools"] <--> ML["Modern Life"]
+
+    SP --> ROS((ROSES OS<br/>Sacred-Tech))
+    ST --> ROS
+    MY --> ROS
+    CL --> ROS
+
+    style SP fill:#9C6F6E,color:#F7F5F2
+    style ST fill:#3F3E3C,color:#F7F5F2
+    style MY fill:#9C6F6E,color:#F7F5F2
+    style CL fill:#3F3E3C,color:#F7F5F2
+    style SO fill:#9C6F6E,color:#F7F5F2
+    style SY fill:#3F3E3C,color:#F7F5F2
+    style IT fill:#9C6F6E,color:#F7F5F2
+    style ML fill:#3F3E3C,color:#F7F5F2
+    style ROS fill:#9E956B,color:#F7F5F2
+```
+
 ### Design Keywords
 
 - Calm luxury
@@ -1041,6 +1614,24 @@ Modern UI precision + earth-toned devotion.
 
 **Principle 4 -- Invitation, Not Promotion**
 Every section should feel like: "You are welcome here."
+
+```mermaid
+graph TD
+    subgraph PRINCIPLES["Non-Negotiable Design Principles"]
+        P1["1. Silence is the Brand<br/><i>Whitespace is presence</i>"]
+        P2["2. Calm Authority<br/><i>No urgency — only clarity</i>"]
+        P3["3. Sacred-Tech Simplicity<br/><i>UI precision + earth devotion</i>"]
+        P4["4. Invitation, Not Promotion<br/><i>You are welcome here</i>"]
+    end
+
+    P1 & P2 & P3 & P4 --> SITE["ROSES OS Website<br/><i>A threshold, not a marketing site</i>"]
+
+    style P1 fill:#E4DED8,color:#3F3E3C
+    style P2 fill:#BFB3AA,color:#3F3E3C
+    style P3 fill:#9C6F6E,color:#F7F5F2
+    style P4 fill:#9E956B,color:#F7F5F2
+    style SITE fill:#3F3E3C,color:#F7F5F2
+```
 
 ### Spacing + Layout System
 
@@ -1194,6 +1785,63 @@ ROSES OS copy must always feel like:
 5. **The Guardians** -- Facilitators and lineage holders
 6. **Begin** -- Contribution + application, start your journey
 7. **Journal / Library** -- Content, reflections, resources (later phase)
+
+```mermaid
+graph TD
+    HOME["Home<br/><i>Invitation & brand essence</i>"]
+
+    HOME --> ROSE["The Rose<br/><i>Levels 1–3</i>"]
+    HOME --> AURA_P["The Aura<br/><i>Perception & relationship</i>"]
+    HOME --> JOURNEY["The Journey<br/><i>Experience & outcomes</i>"]
+    HOME --> GUARD["The Guardians<br/><i>Facilitators & lineage</i>"]
+    HOME --> BEGIN["Begin<br/><i>Contribution & application</i>"]
+
+    ROSE --> L1["Level 1<br/>Foundational"]
+    ROSE --> L2["Level 2<br/>Sacred Space"]
+    ROSE --> L3["Level 3<br/>Perception"]
+
+    AURA_P --> A1S["Aura 1<br/>11 Sessions"]
+
+    BEGIN --> CONTRIB["Contribution<br/>Model"]
+
+    HOME -.->|"later phase"| JOURNAL["Journal / Library<br/><i>Reflections & resources</i>"]
+
+    style HOME fill:#3F3E3C,color:#F7F5F2
+    style ROSE fill:#9C6F6E,color:#F7F5F2
+    style AURA_P fill:#9C6F6E,color:#F7F5F2
+    style JOURNEY fill:#9C6F6E,color:#F7F5F2
+    style GUARD fill:#9C6F6E,color:#F7F5F2
+    style BEGIN fill:#9E956B,color:#F7F5F2
+    style L1 fill:#BFB3AA,color:#3F3E3C
+    style L2 fill:#BFB3AA,color:#3F3E3C
+    style L3 fill:#BFB3AA,color:#3F3E3C
+    style A1S fill:#BFB3AA,color:#3F3E3C
+    style CONTRIB fill:#BFB3AA,color:#3F3E3C
+    style JOURNAL fill:#E4DED8,color:#3F3E3C,stroke-dasharray: 5 5
+```
+
+### User Journey Flow
+
+```mermaid
+graph LR
+    DISCOVER["Discover<br/><i>Find ROSES OS</i>"]
+    FEEL["Feel<br/><i>Experience the threshold</i>"]
+    EXPLORE["Explore<br/><i>The Rose & Aura</i>"]
+    RESONATE["Resonate<br/><i>The two questions</i>"]
+    BEGIN_J["Begin<br/><i>Choose contribution</i>"]
+    PRACTICE["Practice<br/><i>Level 1 → 2 → 3</i>"]
+    REMEMBER["Remember<br/><i>Who you are</i>"]
+
+    DISCOVER ==> FEEL ==> EXPLORE ==> RESONATE ==> BEGIN_J ==> PRACTICE ==> REMEMBER
+
+    style DISCOVER fill:#E4DED8,color:#3F3E3C
+    style FEEL fill:#BFB3AA,color:#3F3E3C
+    style EXPLORE fill:#BFB3AA,color:#3F3E3C
+    style RESONATE fill:#9C6F6E,color:#F7F5F2
+    style BEGIN_J fill:#9C6F6E,color:#F7F5F2
+    style PRACTICE fill:#9E956B,color:#F7F5F2
+    style REMEMBER fill:#3F3E3C,color:#F7F5F2
+```
 
 ---
 
