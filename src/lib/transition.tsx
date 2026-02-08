@@ -19,8 +19,8 @@ const TransitionContext = createContext<TransitionContextValue>({ phase: 'idle' 
 // TIMING
 // =============================================================================
 
-const COVER_MS = 300;
-const REVEAL_MS = 400;
+const COVER_MS = 320;
+const REVEAL_MS = 500;
 
 // =============================================================================
 // PROVIDER — global click interceptor for seamless page transitions
