@@ -9,6 +9,8 @@ import { Navigation } from '@/components/ui/Navigation';
 import HeroSphere from '@/components/three/HeroSphere';
 import SelectedWork from '@/components/sections/SelectedWork';
 import type { Project } from '@/components/sections/SelectedWork';
+import ClientLogos from '@/components/sections/ClientLogos';
+import Footer from '@/components/ui/Footer';
 import { cn } from '@/lib/utils';
 
 // =============================================================================
@@ -372,14 +374,15 @@ export default function Home() {
               ref={titleRef}
               className="text-[clamp(2rem,5.5vw,4.5rem)] leading-[1.05] tracking-tighter text-balance max-w-5xl"
             >
-              <span className="hero-word inline-block mr-[0.25em]">We</span>
-              <span className="hero-word inline-block mr-[0.25em]">craft</span>
-              <span className="hero-word inline-block mr-[0.25em]">digital</span>
+              <span className="hero-word inline-block mr-[0.25em]">From</span>
+              <span className="hero-word inline-block mr-[0.25em]">concept</span>
+              <span className="hero-word inline-block mr-[0.25em]">to</span>
+              <span className="hero-word inline-block mr-[0.25em]">connection</span>
               <br className="hidden sm:block" />
-              <span className="hero-word inline-block mr-[0.25em]">experiences</span>
-              <span className="hero-word inline-block mr-[0.25em]">that</span>
-              <br className="hidden sm:block" />
-              <span className="hero-word inline-block">resonate.</span>
+              <span className="hero-word inline-block mr-[0.25em]">and</span>
+              <span className="hero-word inline-block mr-[0.25em]">everything</span>
+              <span className="hero-word inline-block mr-[0.25em]">in</span>
+              <span className="hero-word inline-block">between</span>
             </h1>
 
             {/* Subtitle */}
@@ -389,7 +392,9 @@ export default function Home() {
               transition={{ delay: 1.2, duration: 0.6 }}
               className="mt-8 lg:mt-10 text-lg sm:text-xl text-neutral-900 dark:text-white max-w-xl leading-relaxed"
             >
-              Marketing, creative &amp; design for brands that dare to be different.
+              Transforming ideas into impact
+              <br />
+              for brands ready to stand out.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -458,7 +463,17 @@ export default function Home() {
           categories={projectCategories}
           projects={projects}
         />
+
+        {/* ================================================================
+            CLIENT LOGOS SECTION
+            ================================================================ */}
+        <ClientLogos />
       </main>
+
+      {/* ================================================================
+          FOOTER
+          ================================================================ */}
+      <Footer />
     </>
   );
 }

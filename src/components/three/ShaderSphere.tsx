@@ -8,9 +8,10 @@ import { createNoise3D } from 'simplex-noise';
 interface ShaderSphereProps {
   mouseRef: React.RefObject<{ x: number; y: number }>;
   reducedMotion: boolean;
+  isDark?: boolean;
 }
 
-export default function ShaderSphere({ mouseRef, reducedMotion }: ShaderSphereProps) {
+export default function ShaderSphere({ mouseRef, reducedMotion, isDark }: ShaderSphereProps) {
   const meshRef = useRef<THREE.Mesh>(null);
   const noise3D = useMemo(() => createNoise3D(), []);
   const originalPositions = useRef<Float32Array | null>(null);
@@ -137,7 +138,7 @@ export default function ShaderSphere({ mouseRef, reducedMotion }: ShaderSpherePr
     <mesh ref={meshRef} position={[0, 0, 0]}>
       <sphereGeometry args={[1.3, 128, 128]} />
       <meshPhysicalMaterial
-        color="#b8a0d8"
+        color={isDark ? "#6b4f99" : "#b8a0d8"}
         roughness={0.0}
         metalness={0.0}
         clearcoat={1.0}
@@ -148,7 +149,7 @@ export default function ShaderSphere({ mouseRef, reducedMotion }: ShaderSpherePr
         transmission={0.75}
         thickness={0.5}
         ior={1.4}
-        envMapIntensity={2.5}
+        envMapIntensity={isDark ? 1.5 : 2.5}
         specularIntensity={1.0}
         specularColor={"#9B8FD9" as unknown as THREE.Color}
         attenuationColor={"#9B8FD9" as unknown as THREE.Color}

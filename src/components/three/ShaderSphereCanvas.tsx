@@ -9,19 +9,20 @@ import ShaderSphere from './ShaderSphere';
 interface ShaderSphereCanvasProps {
   mouseRef: React.RefObject<{ x: number; y: number }>;
   reducedMotion: boolean;
+  isDark?: boolean;
   onReady?: () => void;
 }
 
-function Scene({ mouseRef, reducedMotion }: ShaderSphereCanvasProps) {
+function Scene({ mouseRef, reducedMotion, isDark }: ShaderSphereCanvasProps) {
   return (
     <>
-      {/* Rich HDR environment for iridescent reflections */}
-      <Environment preset="studio" environmentIntensity={1.8} />
+      {/* HDR environment — dimmed in dark mode */}
+      <Environment preset="studio" environmentIntensity={isDark ? 1.0 : 1.8} />
 
-      {/* White key light */}
+      {/* Key light */}
       <pointLight
         color="#ffffff"
-        intensity={3}
+        intensity={isDark ? 1.8 : 3}
         distance={30}
         decay={2}
         position={[5, 3, 8]}
@@ -29,7 +30,7 @@ function Scene({ mouseRef, reducedMotion }: ShaderSphereCanvasProps) {
       {/* Purple fill — preserves original palette */}
       <pointLight
         color="#b8a0d0"
-        intensity={2.5}
+        intensity={isDark ? 2.2 : 2.5}
         distance={40}
         decay={2}
         position={[-4, -2, -6]}
@@ -37,22 +38,23 @@ function Scene({ mouseRef, reducedMotion }: ShaderSphereCanvasProps) {
       {/* Cool rim light */}
       <pointLight
         color="#e0e0ff"
-        intensity={2}
+        intensity={isDark ? 1.2 : 2}
         distance={25}
         decay={2}
         position={[0, 4, -8]}
       />
-      <ambientLight color="#ffffff" intensity={0.15} />
+      <ambientLight color="#ffffff" intensity={isDark ? 0.1 : 0.15} />
 
       <ShaderSphere
         mouseRef={mouseRef}
         reducedMotion={reducedMotion}
+        isDark={isDark}
       />
     </>
   );
 }
 
-export default function ShaderSphereCanvas({ mouseRef, reducedMotion, onReady }: ShaderSphereCanvasProps) {
+export default function ShaderSphereCanvas({ mouseRef, reducedMotion, isDark, onReady }: ShaderSphereCanvasProps) {
   return (
     <Canvas
       dpr={[1, 1.5]}
@@ -84,7 +86,7 @@ export default function ShaderSphereCanvas({ mouseRef, reducedMotion, onReady }:
       }}
     >
       <Suspense fallback={null}>
-        <Scene mouseRef={mouseRef} reducedMotion={reducedMotion} />
+        <Scene mouseRef={mouseRef} reducedMotion={reducedMotion} isDark={isDark} />
       </Suspense>
     </Canvas>
   );

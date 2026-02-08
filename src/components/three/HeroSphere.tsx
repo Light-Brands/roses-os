@@ -4,6 +4,7 @@ import { useRef, useEffect, useState, useCallback } from 'react';
 import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 import { prefersReducedMotion } from '@/lib/utils';
+import { useTheme } from '@/lib/theme';
 
 const ShaderSphereCanvas = dynamic(() => import('./ShaderSphereCanvas'), {
   ssr: false,
@@ -12,6 +13,9 @@ const ShaderSphereCanvas = dynamic(() => import('./ShaderSphereCanvas'), {
 export default function HeroSphere() {
   const mouseRef = useRef({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === 'dark';
 
   const [reducedMotion, setReducedMotion] = useState(false);
   const [containerReady, setContainerReady] = useState(false);
@@ -98,6 +102,7 @@ export default function HeroSphere() {
         <ShaderSphereCanvas
           mouseRef={mouseRef}
           reducedMotion={reducedMotion}
+          isDark={isDark}
           onReady={() => setGlReady(true)}
         />
       )}

@@ -4,3 +4,4 @@ export { HeroMinimal } from './HeroMinimal';
 export { CTASection } from './CTASection';
 export { default as SelectedWork } from './SelectedWork';
 export type { Project } from './SelectedWork';
+export { default as ClientLogos } from './ClientLogos';

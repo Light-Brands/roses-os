@@ -1,291 +1,232 @@
 'use client';
 
+import { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { Github, Twitter, Linkedin, Mail, ArrowUpRight } from 'lucide-react';
+import Image from 'next/image';
+import { motion, useInView } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import { Logo } from './Logo';
 
-interface FooterLink {
-  label: string;
-  href: string;
-  external?: boolean;
-}
+// =============================================================================
+// DATA
+// =============================================================================
 
-interface FooterColumn {
-  title: string;
-  links: FooterLink[];
-}
-
-interface SocialLink {
-  icon: React.ReactNode;
-  href: string;
-  label: string;
-}
-
-interface FooterProps {
-  logo?: React.ReactNode;
-  description?: string;
-  columns?: FooterColumn[];
-  socialLinks?: SocialLink[];
-  newsletter?: {
-    title: string;
-    description: string;
-    placeholder?: string;
-    buttonText?: string;
-  };
-  bottomLinks?: FooterLink[];
-  copyright?: string;
-}
-
-const defaultColumns: FooterColumn[] = [
-  {
-    title: 'Product',
-    links: [
-      { label: 'Features', href: '#features' },
-      { label: 'Pricing', href: '#pricing' },
-      { label: 'Changelog', href: '/changelog' },
-      { label: 'Roadmap', href: '/roadmap' },
-    ],
-  },
-  {
-    title: 'Company',
-    links: [
-      { label: 'About', href: '/about' },
-      { label: 'Blog', href: '/blog' },
-      { label: 'Careers', href: '/careers' },
-      { label: 'Contact', href: '/contact' },
-    ],
-  },
-  {
-    title: 'Resources',
-    links: [
-      { label: 'Documentation', href: '/docs' },
-      { label: 'Help Center', href: '/help' },
-      { label: 'Community', href: '/community' },
-      { label: 'Partners', href: '/partners' },
-    ],
-  },
-  {
-    title: 'Legal',
-    links: [
-      { label: 'Privacy', href: '/privacy' },
-      { label: 'Terms', href: '/terms' },
-      { label: 'Cookies', href: '/cookies' },
-      { label: 'Licenses', href: '/licenses' },
-    ],
-  },
+const navLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'Work', href: '/work' },
+  { label: 'Services', href: '/services' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
 ];
 
-const defaultSocialLinks: SocialLink[] = [
-  { icon: <Twitter className="w-5 h-5" />, href: '#', label: 'Twitter' },
-  { icon: <Github className="w-5 h-5" />, href: '#', label: 'GitHub' },
-  { icon: <Linkedin className="w-5 h-5" />, href: '#', label: 'LinkedIn' },
-  { icon: <Mail className="w-5 h-5" />, href: '#', label: 'Email' },
+const socialLinks = [
+  { label: 'LinkedIn', href: 'https://linkedin.com', external: true },
+  { label: 'WhatsApp', href: 'https://wa.me/', external: true },
+  { label: 'Instagram', href: 'https://instagram.com', external: true },
+  { label: 'Email', href: 'mailto:hello@digitalcultures.co', external: false },
 ];
 
-export function Footer({
-  logo,
-  description = 'Building the future of web development with premium, production-ready solutions.',
-  columns = defaultColumns,
-  socialLinks = defaultSocialLinks,
-  newsletter,
-  bottomLinks,
-  copyright,
-}: FooterProps) {
+// =============================================================================
+// LIVE CLOCK — Paphos, Cyprus (EET/EEST)
+// =============================================================================
+
+function usePaphosTime() {
+  const [time, setTime] = useState('');
+
+  useEffect(() => {
+    function update() {
+      const now = new Date();
+      const formatted = now.toLocaleTimeString('en-GB', {
+        timeZone: 'Europe/Nicosia',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false,
+      });
+      setTime(formatted);
+    }
+    update();
+    const interval = setInterval(update, 10_000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return time;
+}
+
+// =============================================================================
+// FOOTER COMPONENT
+// =============================================================================
+
+export default function Footer() {
+  const time = usePaphosTime();
   const currentYear = new Date().getFullYear();
+  const footerRef = useRef<HTMLElement>(null);
+  const isInView = useInView(footerRef, { once: true, margin: '-100px' });
+
+  const fadeUp = (delay: number) => ({
+    initial: { opacity: 0, y: 16 },
+    animate: isInView ? { opacity: 1, y: 0 } : {},
+    transition: { duration: 0.5, delay, ease: [0.16, 1, 0.3, 1] as const },
+  });
 
   return (
-    <footer className="bg-neutral-50 dark:bg-neutral-950 border-t border-neutral-200 dark:border-neutral-800">
-      <div className="container-premium">
-        {/* Main Footer Content */}
-        <div className="py-16 lg:py-20">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-12">
-            {/* Brand Column */}
-            <div className="col-span-2 lg:col-span-2">
-              {/* Logo */}
-              {logo || <Logo size="md" className="mb-6" />}
+    <footer
+      ref={footerRef}
+      className="relative bg-neutral-950 dark:bg-white text-neutral-300 dark:text-neutral-600 overflow-hidden transition-colors duration-200"
+    >
+      {/* ─── TOP SECTION ─── */}
+      <div className="container-premium pt-20 sm:pt-24 md:pt-32 lg:pt-40">
+        {/* Upper row: link columns + contact pills */}
+        <div className="flex flex-col lg:flex-row lg:justify-between gap-16 lg:gap-12">
+          {/* Link columns */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-12 gap-y-10 sm:gap-x-16 md:gap-x-20">
+            {/* Links */}
+            <motion.div {...fadeUp(0)}>
+              <h4 className="text-[10px] font-medium uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-400 mb-5">
+                Links
+              </h4>
+              <ul className="space-y-3">
+                {navLinks.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-neutral-400 dark:text-neutral-500 hover:text-white dark:hover:text-neutral-900 transition-colors duration-200"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
 
-              {/* Description */}
-              <p className="text-neutral-600 dark:text-neutral-400 mb-6 max-w-sm">
-                {description}
+            {/* Socials */}
+            <motion.div {...fadeUp(0.06)}>
+              <h4 className="text-[10px] font-medium uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-400 mb-5">
+                Socials
+              </h4>
+              <ul className="space-y-3">
+                {socialLinks.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      target={link.external ? '_blank' : undefined}
+                      rel={link.external ? 'noopener noreferrer' : undefined}
+                      className="text-sm text-neutral-400 dark:text-neutral-500 hover:text-white dark:hover:text-neutral-900 transition-colors duration-200"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Local Time */}
+            <motion.div {...fadeUp(0.12)}>
+              <h4 className="text-[10px] font-medium uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-400 mb-5">
+                Local Time
+              </h4>
+              <p className="text-sm text-neutral-300 dark:text-neutral-700">
+                {time || '--:--'} <span className="text-neutral-500 dark:text-neutral-400">EET</span>
               </p>
+              <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">Paphos, Cyprus</p>
+            </motion.div>
 
-              {/* Social Links */}
-              <div className="flex items-center gap-4">
-                {socialLinks.map((social, index) => (
-                  <motion.a
-                    key={index}
-                    href={social.href}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={cn(
-                      'p-2 rounded-lg',
-                      'text-neutral-500 hover:text-neutral-900',
-                      'dark:text-neutral-400 dark:hover:text-white',
-                      'hover:bg-neutral-200 dark:hover:bg-neutral-800',
-                      'transition-colors duration-200'
-                    )}
-                    aria-label={social.label}
-                  >
-                    {social.icon}
-                  </motion.a>
-                ))}
-              </div>
-            </div>
-
-            {/* Link Columns */}
-            {columns.map((column, columnIndex) => (
-              <div key={columnIndex}>
-                <h3 className="text-sm font-semibold text-neutral-900 dark:text-white mb-4 uppercase tracking-wider">
-                  {column.title}
-                </h3>
-                <ul className="space-y-3">
-                  {column.links.map((link, linkIndex) => (
-                    <li key={linkIndex}>
-                      <Link
-                        href={link.href}
-                        className={cn(
-                          'inline-flex items-center gap-1',
-                          'text-neutral-600 dark:text-neutral-400',
-                          'hover:text-neutral-900 dark:hover:text-white',
-                          'transition-colors duration-200'
-                        )}
-                      >
-                        {link.label}
-                        {link.external && (
-                          <ArrowUpRight className="w-3 h-3 opacity-50" />
-                        )}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            {/* Version / Info */}
+            <motion.div {...fadeUp(0.18)}>
+              <h4 className="text-[10px] font-medium uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-400 mb-5">
+                Version
+              </h4>
+              <p className="text-sm text-neutral-300 dark:text-neutral-700">
+                {currentYear} &copy; Edition
+              </p>
+            </motion.div>
           </div>
 
-          {/* Newsletter */}
-          {newsletter && (
-            <div className="mt-16 pt-16 border-t border-neutral-200 dark:border-neutral-800">
-              <div className="max-w-xl">
-                <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-2">
-                  {newsletter.title}
-                </h3>
-                <p className="text-neutral-600 dark:text-neutral-400 mb-6">
-                  {newsletter.description}
-                </p>
-                <form className="flex gap-3">
-                  <input
-                    type="email"
-                    placeholder={newsletter.placeholder || 'Enter your email'}
-                    className={cn(
-                      'flex-1 px-4 py-3 rounded-xl',
-                      'bg-white dark:bg-neutral-900',
-                      'border border-neutral-200 dark:border-neutral-800',
-                      'text-neutral-900 dark:text-white',
-                      'placeholder-neutral-500',
-                      'focus:outline-none focus:ring-2 focus:ring-primary-500',
-                      'transition-all duration-200'
-                    )}
-                  />
-                  <button
-                    type="submit"
-                    className={cn(
-                      'px-6 py-3 rounded-xl',
-                      'bg-neutral-900 dark:bg-white',
-                      'text-white dark:text-neutral-900',
-                      'font-medium',
-                      'hover:bg-neutral-800 dark:hover:bg-neutral-100',
-                      'transition-colors duration-200'
-                    )}
-                  >
-                    {newsletter.buttonText || 'Subscribe'}
-                  </button>
-                </form>
-              </div>
-            </div>
-          )}
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="py-6 border-t border-neutral-200 dark:border-neutral-800">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-neutral-500 dark:text-neutral-500">
-              {copyright || `${currentYear} Brand. All rights reserved.`}
-            </p>
-
-            {bottomLinks && (
-              <div className="flex items-center gap-6">
-                {bottomLinks.map((link, index) => (
-                  <Link
-                    key={index}
-                    href={link.href}
-                    className={cn(
-                      'text-sm',
-                      'text-neutral-500 dark:text-neutral-500',
-                      'hover:text-neutral-900 dark:hover:text-white',
-                      'transition-colors duration-200'
-                    )}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
+          {/* Contact pills */}
+          <motion.div
+            {...fadeUp(0.15)}
+            className="flex flex-wrap items-start gap-3"
+          >
+            <a
+              href="tel:+35799123456"
+              className={cn(
+                'inline-flex items-center gap-2 px-5 py-2.5 rounded-full',
+                'border border-neutral-700 dark:border-neutral-300 hover:border-neutral-500 dark:hover:border-neutral-500',
+                'text-sm text-neutral-300 dark:text-neutral-600 hover:text-white dark:hover:text-neutral-900',
+                'transition-all duration-200'
+              )}
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
+              +357 99 123 456
+            </a>
+            <a
+              href="mailto:hello@digitalcultures.co"
+              className={cn(
+                'inline-flex items-center px-5 py-2.5 rounded-full',
+                'border border-neutral-700 dark:border-neutral-300 hover:border-neutral-500 dark:hover:border-neutral-500',
+                'text-sm text-neutral-300 dark:text-neutral-600 hover:text-white dark:hover:text-neutral-900',
+                'transition-all duration-200'
+              )}
+            >
+              hello@digitalcultures.co
+            </a>
+          </motion.div>
         </div>
       </div>
-    </footer>
-  );
-}
 
-// Minimal Footer variant
-export function FooterMinimal({
-  logo,
-  links,
-  copyright,
-}: {
-  logo?: React.ReactNode;
-  links?: FooterLink[];
-  copyright?: string;
-}) {
-  const currentYear = new Date().getFullYear();
+      {/* ─── LOGO + BOTTOM BAR ─── */}
+      <div className="container-premium mt-24 sm:mt-32 md:mt-40 lg:mt-52 pb-12 sm:pb-16 md:pb-20">
+        {/* Logo — centered, small */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          className="flex justify-center mb-12 md:mb-16"
+        >
+          <Image
+            src="/dc-logo.svg"
+            alt="Digital Cultures"
+            width={36}
+            height={36}
+            className="invert dark:invert-0 opacity-30 transition-all duration-200"
+          />
+        </motion.div>
 
-  return (
-    <footer className="py-8 border-t border-neutral-200 dark:border-neutral-800">
-      <div className="container-premium">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          {/* Logo */}
-          {logo || <Logo size="sm" />}
-
-          {/* Links */}
-          {links && (
-            <nav className="flex items-center gap-6">
-              {links.map((link, index) => (
-                <Link
-                  key={index}
-                  href={link.href}
-                  className={cn(
-                    'text-sm',
-                    'text-neutral-600 dark:text-neutral-400',
-                    'hover:text-neutral-900 dark:hover:text-white',
-                    'transition-colors duration-200'
-                  )}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-          )}
-
-          {/* Copyright */}
-          <p className="text-sm text-neutral-500">
-            {copyright || `${currentYear} Brand.`}
+        {/* Bottom bar */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-6 border-t border-neutral-800 dark:border-neutral-200"
+        >
+          <p className="text-[11px] text-neutral-500 dark:text-neutral-400 tracking-wide">
+            &copy; {currentYear} Digital Cultures. All rights reserved.
           </p>
-        </div>
+          <div className="flex items-center gap-6">
+            <Link
+              href="/privacy"
+              className="text-[11px] text-neutral-500 dark:text-neutral-400 hover:text-neutral-300 dark:hover:text-neutral-700 transition-colors duration-200 tracking-wide"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="/terms"
+              className="text-[11px] text-neutral-500 dark:text-neutral-400 hover:text-neutral-300 dark:hover:text-neutral-700 transition-colors duration-200 tracking-wide"
+            >
+              Terms of Service
+            </Link>
+            <span className="text-[11px] text-neutral-500 dark:text-neutral-400 tracking-wide">
+              Designed &amp; developed by{' '}
+              <a
+                href="https://oraclestudios.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-neutral-300 dark:hover:text-neutral-700 transition-colors duration-200"
+              >
+                Oracle Studios
+              </a>
+            </span>
+          </div>
+        </motion.div>
       </div>
     </footer>
   );
 }
-
-export default Footer;
