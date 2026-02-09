@@ -1305,7 +1305,7 @@ This color should never be used like an accent button color. **It is a field col
 | Muted Clay | `#9A8F88` | Warm neutral -- more mineral, reads earthy |
 | Balanced Stone | `#BFB3AA` | Background support -- cooler, architectural, unisex |
 | Neutral Sand | `#E4DED8` | Light background -- linen / parchment feel |
-| Parchment Light | `#F5E8E2` | Warm blush background -- parchment ivory with soft golden cast, pairs naturally with gold accents |
+| Golden Ether | `#F5E8E2` | Warm blush background -- parchment ivory with soft golden cast, pairs naturally with gold accents |
 | Aura White | `#F7F5F2` | Primary background -- excellent and neutral |
 | Soft Charcoal | `#3F3E3C` | Body text, navigation, buttons, footer, dark elements |
 
@@ -1324,13 +1324,13 @@ This color should never be used like an accent button color. **It is a field col
 - Feels good for men + women + non-binary audiences
 - No bright colors. No saturation. Calm only.
 
-### Parchment Light -- Usage Guide
+### Golden Ether -- Usage Guide
 
 **HEX:** `#F5E8E2` (~`#F3E6E1` to `#F6EAE4` screen variance)
 **HSL:** ~20°, low saturation, very high lightness
 **Feel:** Parchment, handmade paper, soft linen -- warm-neutral, not pink-forward
 
-Parchment Light is a warm blush ivory with a soft golden cast. It sits between Neutral Sand and Aura White in the palette hierarchy -- warmer and more luminous than Aura White, but lighter than Neutral Sand.
+Golden Ether is a warm blush ivory with a soft golden cast. It sits between Neutral Sand and Aura White in the palette hierarchy -- warmer and more luminous than Aura White, but lighter than Neutral Sand.
 
 **Why it works:**
 
@@ -1347,9 +1347,9 @@ Parchment Light is a warm blush ivory with a soft golden cast. It sits between N
 
 **Pairing with Gold:**
 
-Parchment Light is the ideal background for Antique Olive Brass (`#9E956B`) accents and golden illustration elements. The warm undertone lets gold read as luminous rather than harsh.
+Golden Ether is the ideal background for Antique Olive Brass (`#9E956B`) accents and golden illustration elements. The warm undertone lets gold read as luminous rather than harsh.
 
-**Typography on Parchment Light:**
+**Typography on Golden Ether:**
 
 - Body text: Soft Charcoal (`#3F3E3C`)
 - Headlines: Soft Charcoal or Deep Terracotta (`#7A3A34`)
@@ -1361,9 +1361,9 @@ Background-range colors can also serve as text colors when placed on darker back
 
 | Color | Text Use |
 |-------|----------|
-| Deep Terracotta (`#7A3A34`) | Headlines or emphasis text on light backgrounds (Parchment Light, Aura White, Neutral Sand) |
+| Deep Terracotta (`#7A3A34`) | Headlines or emphasis text on light backgrounds (Golden Ether, Aura White, Neutral Sand) |
 | Rose Clay Mauve (`#9C6F6E`) | Subheadings or accent text on light backgrounds |
-| Warm Rose-Clay Brown (`#9B6A66`) | Body emphasis on Aura White or Parchment Light |
+| Warm Rose-Clay Brown (`#9B6A66`) | Body emphasis on Aura White or Golden Ether |
 
 > These warm tones read as grounded ink on light surfaces -- like fired clay on handmade paper.
 
@@ -1384,7 +1384,7 @@ graph TD
         MC["Muted Clay #9A8F88"]
         BS["Balanced Stone #BFB3AA"]
         NS["Neutral Sand #E4DED8"]
-        PL["Parchment Light #F5E8E2"]
+        PL["Golden Ether #F5E8E2"]
         AW["Aura White #F7F5F2"]
         SC["Soft Charcoal #3F3E3C"]
     end

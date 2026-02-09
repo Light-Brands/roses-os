@@ -103,7 +103,7 @@ For those who feel the world accelerating and know the tools they inherited were
 | Muted Clay | `#9A8F88` | Warm neutral |
 | Balanced Stone | `#BFB3AA` | Background support |
 | Neutral Sand | `#E4DED8` | Light background |
-| Parchment Light | `#F5E8E2` | Warm blush background -- pairs with gold |
+| Golden Ether | `#F5E8E2` | Warm blush background -- pairs with gold |
 | Aura White | `#F7F5F2` | Primary background |
 | Antique Olive Brass | `#9E956B` | Accent, buttons, highlights |
 | Soft Charcoal | `#3F3E3C` | Text, dark elements |
