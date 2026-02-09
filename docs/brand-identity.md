@@ -106,6 +106,9 @@ For those who feel the world accelerating and know the tools they inherited were
 | Golden Ether | `#F5E8E2` | Warm blush background -- pairs with gold |
 | Aura White | `#F7F5F2` | Primary background |
 | Antique Olive Brass | `#9E956B` | Accent, buttons, highlights |
+| Temple Gold | `#C9A84C` | Rich gold -- featured section backgrounds |
+| Soft Gold | `#DBCA7A` | Lighter wheat gold -- inner containers on gold |
+| Deep Forest | `#1A3A2D` | Text on gold backgrounds |
 | Soft Charcoal | `#3F3E3C` | Text, dark elements |
 
 ### Typography
