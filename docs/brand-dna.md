@@ -1319,31 +1319,27 @@ This color should never be used like an accent button color. **It is a field col
 
 ### Gold Tones
 
-Two additional gold tones for featured sections (e.g., "Explore More" cards, investment details, contribution pages):
-
 | Color | HEX | Usage |
 |-------|-----|-------|
 | Temple Gold | `#C9A84C` | Rich saturated gold -- card backgrounds, featured section fills, full-bleed gold fields |
-| Soft Gold | `#DBCA7A` | Lighter wheat gold -- inner containers, cards-within-cards, muted gold overlays |
+
+**Relationship to Antique Olive Brass:**
+
+- **Antique Olive Brass** (`#9E956B`) -- Olive-toned accent. Small elements: buttons, highlights, sacred detail
+- **Temple Gold** (`#C9A84C`) -- Warmer, richer, more saturated. Large surfaces: card backgrounds, featured sections
+
+For lighter gold inner containers, use Temple Gold at reduced opacity rather than a separate swatch.
 
 **Text on Gold Backgrounds:**
 
-- Headlines: Deep Forest (`#1A3A2D`) -- a dark teal-green that reads as grounded ink on gold
-- Body text: Deep Forest (`#1A3A2D`) or Soft Charcoal (`#3F3E3C`)
+- Headlines and body: Soft Charcoal (`#3F3E3C`)
 - Avoid pure black -- it clashes with the warmth
 
-**Relationship between the golds:**
-
-- **Antique Olive Brass** (`#9E956B`) -- The original olive-toned accent. Small elements: buttons, highlights, sacred detail
-- **Temple Gold** (`#C9A84C`) -- Warmer, richer, more saturated. Large surfaces: card backgrounds, featured sections
-- **Soft Gold** (`#DBCA7A`) -- Lighter, wheat-toned. Nested containers, inner cards, layered depth within gold sections
-
-**Correct Uses for Gold Sections:**
+**Correct Uses:**
 
 - "Explore More" feature cards
 - Investment / contribution detail sections
 - Sacred pricing or offering pages
-- Layered gold containers (Temple Gold outer, Soft Gold inner)
 
 > Gold sections should feel like opening a gilded page -- warm, luminous, intentional. Not flashy. Not financial. Sacred.
 
@@ -1425,7 +1421,6 @@ graph TD
 
     subgraph GOLD["Gold Tones"]
         TG["Temple Gold<br/>#C9A84C<br/><i>Rich gold — featured sections</i>"]
-        SG["Soft Gold<br/>#DBCA7A<br/><i>Lighter wheat — inner containers</i>"]
     end
 
     SIG --> WARM --> NEUTRAL --> ACCENT --> GOLD
@@ -1440,8 +1435,7 @@ graph TD
     style AW fill:#F7F5F2,color:#3F3E3C
     style SC fill:#3F3E3C,color:#F7F5F2
     style AOB fill:#9E956B,color:#F7F5F2
-    style TG fill:#C9A84C,color:#1A3A2D
-    style SG fill:#DBCA7A,color:#1A3A2D
+    style TG fill:#C9A84C,color:#3F3E3C
 ```
 
 ---
