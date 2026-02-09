@@ -1,6 +1,6 @@
 # ROSES OS -- A Seamless Path to Inner Freedom
 
-> Rose Levels 1, 3 & Aura
+> Rose Levels 1, 2, 3 & Aura
 >
 > Where awareness and coherence become the source of leadership, creativity, sovereignty, and joy.
 
@@ -155,7 +155,7 @@ Your support allows these technologies to reach more people worldwide.
 
 ## The Guardians
 
-### Angelina Ata
+### Angelina Ataíde
 
 For over three decades, she has carried this lineage with unwavering devotion. Her presence opens a field of rare precision and depth, guiding thousands into clarity, safety, and sovereignty. She protects the essence of the Rose and reminds us that true mastery is lived, not taught.
 
