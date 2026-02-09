@@ -1305,6 +1305,7 @@ This color should never be used like an accent button color. **It is a field col
 | Muted Clay | `#9A8F88` | Warm neutral -- more mineral, reads earthy |
 | Balanced Stone | `#BFB3AA` | Background support -- cooler, architectural, unisex |
 | Neutral Sand | `#E4DED8` | Light background -- linen / parchment feel |
+| Parchment Light | `#F5E8E2` | Warm blush background -- parchment ivory with soft golden cast, pairs naturally with gold accents |
 | Aura White | `#F7F5F2` | Primary background -- excellent and neutral |
 | Soft Charcoal | `#3F3E3C` | Body text, navigation, buttons, footer, dark elements |
 
@@ -1323,6 +1324,49 @@ This color should never be used like an accent button color. **It is a field col
 - Feels good for men + women + non-binary audiences
 - No bright colors. No saturation. Calm only.
 
+### Parchment Light -- Usage Guide
+
+**HEX:** `#F5E8E2` (~`#F3E6E1` to `#F6EAE4` screen variance)
+**HSL:** ~20°, low saturation, very high lightness
+**Feel:** Parchment, handmade paper, soft linen -- warm-neutral, not pink-forward
+
+Parchment Light is a warm blush ivory with a soft golden cast. It sits between Neutral Sand and Aura White in the palette hierarchy -- warmer and more luminous than Aura White, but lighter than Neutral Sand.
+
+**Why it works:**
+
+- The slight peach undertone prevents it from feeling sterile
+- Golden elements glow on it without contrast harshness
+- Reads as sacred-neutral -- ceremonial but not heavy
+
+**Correct Uses:**
+
+- Full-page backgrounds where gold accents are prominent
+- Sections featuring the Golden Sticky Roses imagery
+- Meditation or practice-related content backgrounds
+- Invitation and threshold pages requiring extra warmth
+
+**Pairing with Gold:**
+
+Parchment Light is the ideal background for Antique Olive Brass (`#9E956B`) accents and golden illustration elements. The warm undertone lets gold read as luminous rather than harsh.
+
+**Typography on Parchment Light:**
+
+- Body text: Soft Charcoal (`#3F3E3C`)
+- Headlines: Soft Charcoal or Deep Terracotta (`#7A3A34`)
+- Accent text: Antique Olive Brass (`#9E956B`)
+
+### Background Colors as Text Colors
+
+Background-range colors can also serve as text colors when placed on darker backgrounds:
+
+| Color | Text Use |
+|-------|----------|
+| Deep Terracotta (`#7A3A34`) | Headlines or emphasis text on light backgrounds (Parchment Light, Aura White, Neutral Sand) |
+| Rose Clay Mauve (`#9C6F6E`) | Subheadings or accent text on light backgrounds |
+| Warm Rose-Clay Brown (`#9B6A66`) | Body emphasis on Aura White or Parchment Light |
+
+> These warm tones read as grounded ink on light surfaces -- like fired clay on handmade paper.
+
 ### Color System Architecture
 
 ```mermaid
@@ -1340,6 +1384,7 @@ graph TD
         MC["Muted Clay #9A8F88"]
         BS["Balanced Stone #BFB3AA"]
         NS["Neutral Sand #E4DED8"]
+        PL["Parchment Light #F5E8E2"]
         AW["Aura White #F7F5F2"]
         SC["Soft Charcoal #3F3E3C"]
     end
@@ -1356,6 +1401,7 @@ graph TD
     style MC fill:#9A8F88,color:#F7F5F2
     style BS fill:#BFB3AA,color:#3F3E3C
     style NS fill:#E4DED8,color:#3F3E3C
+    style PL fill:#F5E8E2,color:#3F3E3C
     style AW fill:#F7F5F2,color:#3F3E3C
     style SC fill:#3F3E3C,color:#F7F5F2
     style AOB fill:#9E956B,color:#F7F5F2
