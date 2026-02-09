@@ -112,7 +112,7 @@ graph LR
 
     style A fill:#7A3A34,color:#F7F5F2,stroke:#7A3A34
     style B fill:#9C6F6E,color:#F7F5F2,stroke:#9C6F6E
-    style C fill:#9E956B,color:#F7F5F2,stroke:#9E956B
+    style C fill:#A6944E,color:#F7F5F2,stroke:#A6944E
 ```
 
 ---
@@ -136,7 +136,7 @@ graph TD
     style BPI fill:#BFB3AA,color:#3F3E3C,stroke:#9A8F88
     style AP fill:#9C6F6E,color:#F7F5F2,stroke:#9C6F6E
     style AA fill:#9C6F6E,color:#F7F5F2,stroke:#9C6F6E
-    style ROS fill:#9E956B,color:#F7F5F2,stroke:#9E956B
+    style ROS fill:#A6944E,color:#F7F5F2,stroke:#A6944E
 ```
 
 These teachings are part of a living energetic lineage. They invite inner stillness, gentle discipline, and deep self-responsibility. ROSES OS is not a system to be imposed or taught casually -- it is an energetic operating system revealed through direct practice and transmission.
@@ -194,7 +194,7 @@ graph TD
     style WHO fill:#E4DED8,color:#3F3E3C,stroke:#BFB3AA
     style FEEL fill:#BFB3AA,color:#3F3E3C,stroke:#9A8F88
     style DESIRE fill:#9C6F6E,color:#F7F5F2,stroke:#9C6F6E
-    style ROS fill:#9E956B,color:#F7F5F2,stroke:#9E956B
+    style ROS fill:#A6944E,color:#F7F5F2,stroke:#A6944E
 ```
 
 ---
@@ -244,7 +244,7 @@ graph LR
     NOT -.-|"dissolves into"| IS
 
     style NOT fill:#7A3A34,color:#F7F5F2,stroke:#7A3A34
-    style IS fill:#9E956B,color:#F7F5F2,stroke:#9E956B
+    style IS fill:#A6944E,color:#F7F5F2,stroke:#A6944E
 ```
 
 ---
@@ -282,7 +282,7 @@ graph TD
 
     style MG fill:#9C6F6E,color:#F7F5F2,stroke:#9C6F6E
     style TA fill:#9A8F88,color:#F7F5F2,stroke:#9A8F88
-    style MO fill:#9E956B,color:#F7F5F2,stroke:#9E956B
+    style MO fill:#A6944E,color:#F7F5F2,stroke:#A6944E
     style ROS fill:#3F3E3C,color:#F7F5F2,stroke:#3F3E3C
 ```
 
@@ -351,7 +351,7 @@ graph TD
     style P3 fill:#9C6F6E,color:#F7F5F2
     style P4 fill:#9C6F6E,color:#F7F5F2
     style P5 fill:#9C6F6E,color:#F7F5F2
-    style CORE fill:#9E956B,color:#F7F5F2
+    style CORE fill:#A6944E,color:#F7F5F2
 ```
 
 ---
@@ -460,7 +460,7 @@ graph LR
 
     style L1 fill:#BFB3AA,color:#3F3E3C,stroke:#9A8F88
     style L2 fill:#9C6F6E,color:#F7F5F2,stroke:#9C6F6E
-    style L3 fill:#9E956B,color:#F7F5F2,stroke:#9E956B
+    style L3 fill:#A6944E,color:#F7F5F2,stroke:#A6944E
     style A1 fill:#7A3A34,color:#F7F5F2,stroke:#7A3A34
 ```
 
@@ -489,7 +489,7 @@ graph TD
 
     ROSE --> FUNCTIONS
 
-    style BLOOM fill:#9E956B,color:#F7F5F2
+    style BLOOM fill:#A6944E,color:#F7F5F2
     style STEM fill:#BFB3AA,color:#3F3E3C
     style ROOTS fill:#9A8F88,color:#F7F5F2
 ```
@@ -531,7 +531,7 @@ graph TD
     end
     AURA -->|"grounding cord"| EARTH["Center of the Earth"]
 
-    style GS fill:#9E956B,color:#F7F5F2,stroke:#9E956B
+    style GS fill:#A6944E,color:#F7F5F2,stroke:#A6944E
     style AURA fill:#E4DED8,color:#3F3E3C,stroke:#9C6F6E
     style BODY fill:#F7F5F2,color:#3F3E3C,stroke:#BFB3AA
     style EARTH fill:#7A3A34,color:#F7F5F2,stroke:#7A3A34
@@ -559,7 +559,7 @@ graph TD
     EARTH -->|"Earth circuit upward"| ROOT
     COSMOS -->|"Cosmic circuit downward"| CROWN
 
-    style COSMOS fill:#9E956B,color:#F7F5F2
+    style COSMOS fill:#A6944E,color:#F7F5F2
     style CROWN fill:#9C6F6E,color:#F7F5F2
     style BODY fill:#E4DED8,color:#3F3E3C,stroke:#9C6F6E
     style ROOT fill:#7A3A34,color:#F7F5F2
@@ -611,9 +611,9 @@ graph LR
     style G fill:#9C6F6E,color:#F7F5F2
     style H fill:#9C6F6E,color:#F7F5F2
     style I fill:#9C6F6E,color:#F7F5F2
-    style J fill:#9E956B,color:#F7F5F2
-    style K fill:#9E956B,color:#F7F5F2
-    style L fill:#9E956B,color:#F7F5F2
+    style J fill:#A6944E,color:#F7F5F2
+    style K fill:#A6944E,color:#F7F5F2
+    style L fill:#A6944E,color:#F7F5F2
 ```
 
 ---
@@ -655,7 +655,7 @@ graph LR
     style A fill:#E4DED8,color:#3F3E3C
     style B fill:#BFB3AA,color:#3F3E3C
     style C fill:#9C6F6E,color:#F7F5F2
-    style D fill:#9E956B,color:#F7F5F2
+    style D fill:#A6944E,color:#F7F5F2
     style E fill:#3F3E3C,color:#F7F5F2
 ```
 
@@ -908,7 +908,7 @@ graph LR
     style PAST fill:#7A3A34,color:#F7F5F2
     style PRESENT fill:#9C6F6E,color:#F7F5F2
     style CHAKRA fill:#E4DED8,color:#3F3E3C
-    style RESTORED fill:#9E956B,color:#F7F5F2
+    style RESTORED fill:#A6944E,color:#F7F5F2
 ```
 
 ### Golden Sticky Roses
@@ -935,7 +935,7 @@ graph LR
     style P1 fill:#E4DED8,color:#3F3E3C
     style P2 fill:#BFB3AA,color:#3F3E3C
     style P3 fill:#9C6F6E,color:#F7F5F2
-    style P4 fill:#9E956B,color:#F7F5F2
+    style P4 fill:#A6944E,color:#F7F5F2
 ```
 
 ### Level 2 Practice Sequence
@@ -961,9 +961,9 @@ graph LR
     style F fill:#9C6F6E,color:#F7F5F2
     style G fill:#9C6F6E,color:#F7F5F2
     style H fill:#9C6F6E,color:#F7F5F2
-    style I fill:#9E956B,color:#F7F5F2
-    style J fill:#9E956B,color:#F7F5F2
-    style K fill:#9E956B,color:#F7F5F2
+    style I fill:#A6944E,color:#F7F5F2
+    style J fill:#A6944E,color:#F7F5F2
+    style K fill:#A6944E,color:#F7F5F2
 ```
 
 ---
@@ -999,7 +999,7 @@ graph TD
     SYNERGY --> CON["Confidence"]
 
     style ROSE fill:#9C6F6E,color:#F7F5F2
-    style AURA fill:#9E956B,color:#F7F5F2
+    style AURA fill:#A6944E,color:#F7F5F2
     style SYNERGY fill:#3F3E3C,color:#F7F5F2
     style COH fill:#E4DED8,color:#3F3E3C
     style LOV fill:#E4DED8,color:#3F3E3C
@@ -1105,7 +1105,7 @@ graph TD
     style DD fill:#9A8F88,color:#F7F5F2
     style DA fill:#BFB3AA,color:#3F3E3C
     style PM fill:#E4DED8,color:#3F3E3C
-    style ROS fill:#9E956B,color:#F7F5F2
+    style ROS fill:#A6944E,color:#F7F5F2
 ```
 
 ---
@@ -1181,7 +1181,7 @@ graph TD
     AURA_COURSE --> CONTRIBUTION
 
     style ROSE_COURSE fill:#9C6F6E,color:#F7F5F2
-    style AURA_COURSE fill:#9E956B,color:#F7F5F2
+    style AURA_COURSE fill:#A6944E,color:#F7F5F2
     style CONTRIBUTION fill:#E4DED8,color:#3F3E3C
 ```
 
@@ -1237,7 +1237,7 @@ graph LR
 
     style TECH fill:#3F3E3C,color:#F7F5F2
     style BRIDGE fill:#9C6F6E,color:#F7F5F2,stroke-width:3px
-    style DEV fill:#9E956B,color:#F7F5F2
+    style DEV fill:#A6944E,color:#F7F5F2
 ```
 
 ---
@@ -1305,15 +1305,53 @@ This color should never be used like an accent button color. **It is a field col
 | Muted Clay | `#9A8F88` | Warm neutral -- more mineral, reads earthy |
 | Balanced Stone | `#BFB3AA` | Background support -- cooler, architectural, unisex |
 | Neutral Sand | `#E4DED8` | Light background -- linen / parchment feel |
-| Golden Ether | `#F5E8E2` | Warm blush background -- parchment ivory with soft golden cast, pairs naturally with gold accents |
+| Golden Ether | `#F5EDDA` | Warm golden background -- parchment ivory with true golden cast, pairs naturally with gold family |
 | Aura White | `#F7F5F2` | Primary background -- excellent and neutral |
 | Soft Charcoal | `#3F3E3C` | Body text, navigation, buttons, footer, dark elements |
+
+### Gold Family
+
+The gold palette brings ceremonial warmth and sacred elevation to the design system. These are the colors of temples, altars, and gilded manuscripts -- grounded luxury, not decorative shimmer.
+
+| Color | HEX | Role |
+|-------|-----|------|
+| **Temple Gold** | `#C8A84E` | Rich ceremonial gold -- the anchor of the gold family. Feature sections, key cards, high-impact moments. Like aged temple ornaments. |
+| Burnished Brass | `#A8893A` | Deep grounded gold -- antique metalwork. Depth, borders, hover states, contrast within gold contexts. |
+| Gold Leaf | `#D9BD6E` | Mid-tone luminous gold -- cards, panels, secondary surfaces. Warm and inviting without harshness. |
+| Gold Dust | `#ECDC9E` | Soft pale gold wash -- subtle card backgrounds, gentle tints, list items within gold sections. |
+| Gilded Sand | `#F3EBD0` | Lightest gold background -- replaces Aura White in gold-themed contexts. Warm, barely-there gold. |
+
+> Gold should feel sacred, not shiny. Ceremonial, not decorative. These tones are sun-warmed stone and temple light -- not jewelry.
+
+#### How to Use the Gold Family
+
+**Temple Gold** is the primary gold. It anchors gold-forward sections the way Rose Clay Mauve anchors reflective spaces.
+
+**Correct Uses:**
+
+- Feature section backgrounds (e.g., "Explore More," investment details)
+- Hero cards and elevated content blocks
+- Section dividers and accent panels
+- CTA areas that need warmth and gravitas
+
+**Gold Layering:**
+
+- Temple Gold (`#C8A84E`) as primary surface
+- Gold Leaf (`#D9BD6E`) or Gold Dust (`#ECDC9E`) for cards on gold backgrounds
+- Gilded Sand (`#F3EBD0`) for the lightest gold wash
+
+**Typography on Gold Backgrounds:**
+
+- Headlines: Forest Patina (`#2C4A3E`) or Soft Charcoal (`#3F3E3C`)
+- Body text: Forest Patina (`#2C4A3E`) -- the teal-green reads with clarity and elegance on gold
+- Avoid pure black or pure white -- maintain warmth
 
 ### Accent
 
 | Color | HEX | Usage |
 |-------|-----|-------|
-| Antique Olive Brass | `#9E956B` | Buttons, highlights, sacred detail -- more olive, masculine + feminine balance, grounded, premium, timeless |
+| Antique Gold | `#A6944E` | Buttons, highlights, sacred detail -- warm antique gold, grounded, premium, timeless |
+| Forest Patina | `#2C4A3E` | Dark text on gold backgrounds -- deep teal-green, classic gold pairing, ceremonial contrast |
 
 > Accent should be rare. Like gold in a temple.
 
@@ -1323,19 +1361,20 @@ This color should never be used like an accent button color. **It is a field col
 - Still warm, refined, and modern
 - Feels good for men + women + non-binary audiences
 - No bright colors. No saturation. Calm only.
+- Gold tones are sacred and ceremonial -- used with restraint and intention
 
 ### Golden Ether -- Usage Guide
 
-**HEX:** `#F5E8E2` (~`#F3E6E1` to `#F6EAE4` screen variance)
-**HSL:** ~20°, low saturation, very high lightness
-**Feel:** Parchment, handmade paper, soft linen -- warm-neutral, not pink-forward
+**HEX:** `#F5EDDA` (~`#F3EBDA` to `#F6EEDD` screen variance)
+**HSL:** ~42°, low saturation, very high lightness
+**Feel:** Parchment, handmade paper, soft linen -- warm-golden, not pink-forward
 
-Golden Ether is a warm blush ivory with a soft golden cast. It sits between Neutral Sand and Aura White in the palette hierarchy -- warmer and more luminous than Aura White, but lighter than Neutral Sand.
+Golden Ether is a warm parchment ivory with a true golden cast. It sits between Neutral Sand and Aura White in the palette hierarchy -- warmer and more luminous than Aura White, but lighter than Neutral Sand. It also bridges into the lightest end of the Gold Family.
 
 **Why it works:**
 
-- The slight peach undertone prevents it from feeling sterile
-- Golden elements glow on it without contrast harshness
+- The golden undertone connects it naturally to the Gold Family
+- Gold elements glow on it without contrast harshness
 - Reads as sacred-neutral -- ceremonial but not heavy
 
 **Correct Uses:**
@@ -1344,16 +1383,17 @@ Golden Ether is a warm blush ivory with a soft golden cast. It sits between Neut
 - Sections featuring the Golden Sticky Roses imagery
 - Meditation or practice-related content backgrounds
 - Invitation and threshold pages requiring extra warmth
+- Transition backgrounds between neutral and gold-forward sections
 
 **Pairing with Gold:**
 
-Golden Ether is the ideal background for Antique Olive Brass (`#9E956B`) accents and golden illustration elements. The warm undertone lets gold read as luminous rather than harsh.
+Golden Ether is the ideal background for Antique Gold (`#A6944E`) accents and golden illustration elements. Its golden undertone creates a seamless bridge to the Gold Family, letting gold read as luminous rather than harsh.
 
 **Typography on Golden Ether:**
 
-- Body text: Soft Charcoal (`#3F3E3C`)
+- Body text: Soft Charcoal (`#3F3E3C`) or Forest Patina (`#2C4A3E`)
 - Headlines: Soft Charcoal or Deep Terracotta (`#7A3A34`)
-- Accent text: Antique Olive Brass (`#9E956B`)
+- Accent text: Antique Gold (`#A6944E`)
 
 ### Background Colors as Text Colors
 
@@ -1364,6 +1404,8 @@ Background-range colors can also serve as text colors when placed on darker back
 | Deep Terracotta (`#7A3A34`) | Headlines or emphasis text on light backgrounds (Golden Ether, Aura White, Neutral Sand) |
 | Rose Clay Mauve (`#9C6F6E`) | Subheadings or accent text on light backgrounds |
 | Warm Rose-Clay Brown (`#9B6A66`) | Body emphasis on Aura White or Golden Ether |
+| Forest Patina (`#2C4A3E`) | Primary text on gold backgrounds -- deep teal-green ink on gold surfaces |
+| Burnished Brass (`#A8893A`) | Accent headlines on light backgrounds (Aura White, Gilded Sand) |
 
 > These warm tones read as grounded ink on light surfaces -- like fired clay on handmade paper.
 
@@ -1384,16 +1426,25 @@ graph TD
         MC["Muted Clay #9A8F88"]
         BS["Balanced Stone #BFB3AA"]
         NS["Neutral Sand #E4DED8"]
-        PL["Golden Ether #F5E8E2"]
+        PL["Golden Ether #F5EDDA"]
         AW["Aura White #F7F5F2"]
         SC["Soft Charcoal #3F3E3C"]
     end
 
-    subgraph ACCENT["Accent"]
-        AOB["Antique Olive Brass<br/>#9E956B<br/><i>Like gold in a temple</i>"]
+    subgraph GOLD["Gold Family"]
+        TG["Temple Gold<br/>#C8A84E<br/><i>Sacred, ceremonial</i>"]
+        BB["Burnished Brass #A8893A"]
+        GL["Gold Leaf #D9BD6E"]
+        GD["Gold Dust #ECDC9E"]
+        GS["Gilded Sand #F3EBD0"]
     end
 
-    SIG --> WARM --> NEUTRAL --> ACCENT
+    subgraph ACCENT["Accent"]
+        AG["Antique Gold<br/>#A6944E<br/><i>Like gold in a temple</i>"]
+        FP["Forest Patina<br/>#2C4A3E<br/><i>Ink on gold</i>"]
+    end
+
+    SIG --> WARM --> NEUTRAL --> GOLD --> ACCENT
 
     style RCM fill:#9C6F6E,color:#F7F5F2
     style WRC fill:#9B6A66,color:#F7F5F2
@@ -1401,10 +1452,16 @@ graph TD
     style MC fill:#9A8F88,color:#F7F5F2
     style BS fill:#BFB3AA,color:#3F3E3C
     style NS fill:#E4DED8,color:#3F3E3C
-    style PL fill:#F5E8E2,color:#3F3E3C
+    style PL fill:#F5EDDA,color:#3F3E3C
     style AW fill:#F7F5F2,color:#3F3E3C
     style SC fill:#3F3E3C,color:#F7F5F2
-    style AOB fill:#9E956B,color:#F7F5F2
+    style TG fill:#C8A84E,color:#2C4A3E
+    style BB fill:#A8893A,color:#F7F5F2
+    style GL fill:#D9BD6E,color:#3F3E3C
+    style GD fill:#ECDC9E,color:#3F3E3C
+    style GS fill:#F3EBD0,color:#3F3E3C
+    style AG fill:#A6944E,color:#F7F5F2
+    style FP fill:#2C4A3E,color:#F7F5F2
 ```
 
 ---
@@ -1468,7 +1525,7 @@ graph TD
 
     style SACRED fill:#9C6F6E,color:#F7F5F2
     style MODERN fill:#3F3E3C,color:#F7F5F2
-    style BRAND fill:#9E956B,color:#F7F5F2
+    style BRAND fill:#A6944E,color:#F7F5F2
 ```
 
 ---
@@ -1594,7 +1651,7 @@ graph LR
     style SY fill:#3F3E3C,color:#F7F5F2
     style IT fill:#9C6F6E,color:#F7F5F2
     style ML fill:#3F3E3C,color:#F7F5F2
-    style ROS fill:#9E956B,color:#F7F5F2
+    style ROS fill:#A6944E,color:#F7F5F2
 ```
 
 ### Design Keywords
@@ -1675,7 +1732,7 @@ graph TD
     style P1 fill:#E4DED8,color:#3F3E3C
     style P2 fill:#BFB3AA,color:#3F3E3C
     style P3 fill:#9C6F6E,color:#F7F5F2
-    style P4 fill:#9E956B,color:#F7F5F2
+    style P4 fill:#A6944E,color:#F7F5F2
     style SITE fill:#3F3E3C,color:#F7F5F2
 ```
 
@@ -1721,7 +1778,7 @@ Motion should feel like breath.
 
 **Primary Button (Invitation CTA)**
 
-- Background: Quiet Olive Gold (`#9E956B`)
+- Background: Antique Gold (`#A6944E`)
 - Text: Aura White
 - Radius: 999px (pill)
 - Padding: 16px 28px
@@ -1857,7 +1914,7 @@ graph TD
     style AURA_P fill:#9C6F6E,color:#F7F5F2
     style JOURNEY fill:#9C6F6E,color:#F7F5F2
     style GUARD fill:#9C6F6E,color:#F7F5F2
-    style BEGIN fill:#9E956B,color:#F7F5F2
+    style BEGIN fill:#A6944E,color:#F7F5F2
     style L1 fill:#BFB3AA,color:#3F3E3C
     style L2 fill:#BFB3AA,color:#3F3E3C
     style L3 fill:#BFB3AA,color:#3F3E3C
@@ -1885,7 +1942,7 @@ graph LR
     style EXPLORE fill:#BFB3AA,color:#3F3E3C
     style RESONATE fill:#9C6F6E,color:#F7F5F2
     style BEGIN_J fill:#9C6F6E,color:#F7F5F2
-    style PRACTICE fill:#9E956B,color:#F7F5F2
+    style PRACTICE fill:#A6944E,color:#F7F5F2
     style REMEMBER fill:#3F3E3C,color:#F7F5F2
 ```
 

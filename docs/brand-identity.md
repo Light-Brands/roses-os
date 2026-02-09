@@ -103,10 +103,26 @@ For those who feel the world accelerating and know the tools they inherited were
 | Muted Clay | `#9A8F88` | Warm neutral |
 | Balanced Stone | `#BFB3AA` | Background support |
 | Neutral Sand | `#E4DED8` | Light background |
-| Golden Ether | `#F5E8E2` | Warm blush background -- pairs with gold |
+| Golden Ether | `#F5EDDA` | Warm golden background -- pairs with gold family |
 | Aura White | `#F7F5F2` | Primary background |
-| Antique Olive Brass | `#9E956B` | Accent, buttons, highlights |
 | Soft Charcoal | `#3F3E3C` | Text, dark elements |
+
+#### Gold Family
+
+| Color | HEX | Usage |
+|---|---|---|
+| Temple Gold | `#C8A84E` | Rich ceremonial gold -- feature sections, key cards |
+| Burnished Brass | `#A8893A` | Deep grounded gold -- depth, borders |
+| Gold Leaf | `#D9BD6E` | Mid-tone gold -- cards, panels, secondary surfaces |
+| Gold Dust | `#ECDC9E` | Soft pale gold -- card backgrounds, gentle tints |
+| Gilded Sand | `#F3EBD0` | Lightest gold background |
+
+#### Accent Colors
+
+| Color | HEX | Usage |
+|---|---|---|
+| Antique Gold | `#A6944E` | Accent, buttons, highlights |
+| Forest Patina | `#2C4A3E` | Dark text on gold backgrounds |
 
 ### Typography
 
@@ -123,7 +139,7 @@ For those who feel the world accelerating and know the tools they inherited were
 
 **Buttons**
 - Pill-shaped
-- Olive gold accent (`#9E956B`)
+- Antique Gold accent (`#A6944E`)
 - Calm, inviting interaction
 
 **Cards**
