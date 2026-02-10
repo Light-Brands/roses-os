@@ -60,7 +60,7 @@ function StorySection() {
             className="relative aspect-[4/5] bg-neutral-300 dark:bg-neutral-800 overflow-hidden"
           >
             <Image
-              src="/projects/project-1.svg"
+              src="/projects-album/photoshoot-5.jpg"
               alt="Digital Cultures studio"
               fill
               className="object-cover"

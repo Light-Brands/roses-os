@@ -41,7 +41,7 @@ export const projects: Project[] = [
     title: 'Olympus Resort',
     category: 'Branding',
     client: 'Branding',
-    image: '/projects/project-1.svg',
+    image: '/projects-album/stationery.jpg',
     href: '/work/olympus-resort',
   },
   {
@@ -49,7 +49,7 @@ export const projects: Project[] = [
     title: 'Kypria Digital',
     category: 'Web Design',
     client: 'Web Design',
-    image: '/projects/project-2.svg',
+    image: '/projects-album/phone-mockups.jpg',
     href: '/work/kypria-digital',
   },
   {
@@ -57,7 +57,7 @@ export const projects: Project[] = [
     title: 'Amara Collection',
     category: 'Art Direction',
     client: 'Art Direction',
-    image: '/projects/project-3.svg',
+    image: '/projects-album/photoshoot-1.jpg',
     href: '/work/amara-collection',
   },
   {
@@ -65,7 +65,7 @@ export const projects: Project[] = [
     title: 'Limassol Marina',
     category: 'Social Media',
     client: 'Social Media',
-    image: '/projects/project-4.svg',
+    image: '/projects-album/photoshoot-2.jpg',
     href: '/work/limassol-marina',
   },
   {
@@ -73,7 +73,7 @@ export const projects: Project[] = [
     title: 'Paphos Estates',
     category: 'Photography',
     client: 'Photography',
-    image: '/projects/project-5.svg',
+    image: '/projects-album/photoshoot-3.jpg',
     href: '/work/paphos-estates',
   },
   {
@@ -81,7 +81,7 @@ export const projects: Project[] = [
     title: 'Nea Ventures',
     category: 'Strategy',
     client: 'Strategy',
-    image: '/projects/project-6.svg',
+    image: '/projects-album/proposal.jpg',
     href: '/work/nea-ventures',
   },
   {
@@ -89,7 +89,7 @@ export const projects: Project[] = [
     title: 'Kolossi Studio',
     category: 'Branding',
     client: 'Branding',
-    image: '/projects/project-1.svg',
+    image: '/projects-album/brand-identity.png',
     href: '/work/kolossi-studio',
   },
   {
@@ -97,7 +97,7 @@ export const projects: Project[] = [
     title: 'Petra & Co',
     category: 'Video',
     client: 'Video',
-    image: '/projects/project-2.svg',
+    image: '/projects-album/magazine.jpg',
     href: '/work/petra-co',
   },
   {
@@ -105,7 +105,7 @@ export const projects: Project[] = [
     title: 'Akamas Wild',
     category: 'Print',
     client: 'Print',
-    image: '/projects/project-3.svg',
+    image: '/projects-album/packaging-01.jpg',
     href: '/work/akamas-wild',
   },
 ];
@@ -124,7 +124,7 @@ export const projectDetails: ProjectDetail[] = [
     year: '2024',
     location: 'Paphos, Cyprus',
     services: ['Brand Identity', 'Visual System', 'Collateral Design'],
-    image: '/projects/project-1.svg',
+    image: '/projects-album/stationery.jpg',
     href: '/work/olympus-resort',
     overview:
       'A complete brand identity for a luxury resort nestled in the hills above Paphos. The visual language draws from Mediterranean light and Cypriot stone textures, creating a sense of timeless calm.',
@@ -135,12 +135,12 @@ export const projectDetails: ProjectDetail[] = [
     result:
       'The new identity launched to strong guest feedback and a measurable increase in direct bookings. The brand now communicates luxury through restraint rather than excess.',
     gallery: [
-      { src: '/projects/project-1.svg', alt: 'Olympus Resort brand overview', wide: true },
-      { src: '/projects/project-2.svg', alt: 'Logo system' },
-      { src: '/projects/project-3.svg', alt: 'Stationery suite' },
-      { src: '/projects/project-4.svg', alt: 'Signage application', wide: true },
-      { src: '/projects/project-5.svg', alt: 'Digital touchpoints' },
-      { src: '/projects/project-6.svg', alt: 'Collateral materials' },
+      { src: '/projects-album/stationery-infinity.jpg', alt: 'Olympus Resort brand overview', wide: true },
+      { src: '/projects-album/business-cards.jpg', alt: 'Business card design' },
+      { src: '/projects-album/brochure.jpg', alt: 'Stationery suite' },
+      { src: '/projects-album/billboard.jpg', alt: 'Billboard application', wide: true },
+      { src: '/projects-album/brand-mockup.jpg', alt: 'Brand mockup' },
+      { src: '/projects-album/stationery.jpg', alt: 'Collateral materials' },
     ],
   },
   {
@@ -152,7 +152,7 @@ export const projectDetails: ProjectDetail[] = [
     year: '2024',
     location: 'Limassol, Cyprus',
     services: ['Web Design', 'UI/UX', 'Development'],
-    image: '/projects/project-2.svg',
+    image: '/projects-album/phone-mockups.jpg',
     href: '/work/kypria-digital',
     overview:
       'A high-performance website for a Limassol-based tech consultancy. The design prioritises clarity and speed, reflecting the client\'s own commitment to efficiency.',
@@ -163,10 +163,10 @@ export const projectDetails: ProjectDetail[] = [
     result:
       'Page load times dropped by 70%, and the site now consistently converts visitors into qualified leads at twice the previous rate.',
     gallery: [
-      { src: '/projects/project-2.svg', alt: 'Kypria Digital homepage', wide: true },
-      { src: '/projects/project-3.svg', alt: 'Service page' },
-      { src: '/projects/project-4.svg', alt: 'Case study layout' },
-      { src: '/projects/project-5.svg', alt: 'Mobile responsive views', wide: true },
+      { src: '/projects-album/layout-design.jpg', alt: 'Kypria Digital homepage', wide: true },
+      { src: '/projects-album/phone-mockups.jpg', alt: 'Mobile responsive views' },
+      { src: '/projects-album/poster.png', alt: 'Design system' },
+      { src: '/projects-album/logo-mark.png', alt: 'UI components', wide: true },
     ],
   },
   {
@@ -178,7 +178,7 @@ export const projectDetails: ProjectDetail[] = [
     year: '2023',
     location: 'Nicosia, Cyprus',
     services: ['Art Direction', 'Photography', 'Campaign Design'],
-    image: '/projects/project-3.svg',
+    image: '/projects-album/photoshoot-1.jpg',
     href: '/work/amara-collection',
     overview:
       'Art direction for the spring/summer collection campaign. We crafted a visual narrative that blends Mediterranean warmth with contemporary minimalism.',
@@ -189,11 +189,11 @@ export const projectDetails: ProjectDetail[] = [
     result:
       'The campaign ran across social, print, and in-store, generating a 40% increase in engagement compared to the previous season.',
     gallery: [
-      { src: '/projects/project-3.svg', alt: 'Amara campaign hero', wide: true },
-      { src: '/projects/project-1.svg', alt: 'Look 1' },
-      { src: '/projects/project-2.svg', alt: 'Look 2' },
-      { src: '/projects/project-4.svg', alt: 'Behind the scenes' },
-      { src: '/projects/project-5.svg', alt: 'Print deliverables', wide: true },
+      { src: '/projects-album/photoshoot-3.jpg', alt: 'Amara campaign hero', wide: true },
+      { src: '/projects-album/photoshoot-4.jpg', alt: 'Look 1' },
+      { src: '/projects-album/photoshoot-5.jpg', alt: 'Look 2' },
+      { src: '/projects-album/photoshoot-6.jpg', alt: 'Behind the scenes' },
+      { src: '/projects-album/magazine.jpg', alt: 'Print deliverables', wide: true },
     ],
   },
   {
@@ -205,7 +205,7 @@ export const projectDetails: ProjectDetail[] = [
     year: '2024',
     location: 'Limassol, Cyprus',
     services: ['Social Media Strategy', 'Content Creation', 'Community Management'],
-    image: '/projects/project-4.svg',
+    image: '/projects-album/photoshoot-2.jpg',
     href: '/work/limassol-marina',
     overview:
       'An ongoing social media programme that positions Limassol Marina as the Mediterranean\'s most desirable waterfront destination.',
@@ -216,10 +216,10 @@ export const projectDetails: ProjectDetail[] = [
     result:
       'Follower growth of 120% in six months, with engagement rates consistently above industry benchmarks for luxury hospitality.',
     gallery: [
-      { src: '/projects/project-4.svg', alt: 'Marina social grid', wide: true },
-      { src: '/projects/project-5.svg', alt: 'Content samples' },
-      { src: '/projects/project-6.svg', alt: 'Story templates' },
-      { src: '/projects/project-1.svg', alt: 'Analytics overview', wide: true },
+      { src: '/projects-album/photoshoot-1.jpg', alt: 'Marina social grid', wide: true },
+      { src: '/projects-album/brand-elements.png', alt: 'Content samples' },
+      { src: '/projects-album/booth.png', alt: 'Story templates' },
+      { src: '/projects-album/proposal.jpg', alt: 'Analytics overview', wide: true },
     ],
   },
   {
@@ -231,7 +231,7 @@ export const projectDetails: ProjectDetail[] = [
     year: '2023',
     location: 'Paphos, Cyprus',
     services: ['Architecture Photography', 'Aerial Photography', 'Post-Production'],
-    image: '/projects/project-5.svg',
+    image: '/projects-album/photoshoot-3.jpg',
     href: '/work/paphos-estates',
     overview:
       'Architectural and aerial photography for a portfolio of luxury villas and development sites across the Paphos region.',
@@ -242,10 +242,10 @@ export const projectDetails: ProjectDetail[] = [
     result:
       'The new imagery was deployed across their website, brochures, and listing platforms. Enquiry rates from international buyers increased significantly.',
     gallery: [
-      { src: '/projects/project-5.svg', alt: 'Villa exterior', wide: true },
-      { src: '/projects/project-6.svg', alt: 'Interior detail' },
-      { src: '/projects/project-1.svg', alt: 'Aerial view' },
-      { src: '/projects/project-2.svg', alt: 'Landscape context', wide: true },
+      { src: '/projects-album/photoshoot-5.jpg', alt: 'Villa exterior', wide: true },
+      { src: '/projects-album/photoshoot-6.jpg', alt: 'Interior detail' },
+      { src: '/projects-album/photoshoot-2.jpg', alt: 'Aerial view' },
+      { src: '/projects-album/photoshoot-4.jpg', alt: 'Landscape context', wide: true },
     ],
   },
   {
@@ -257,7 +257,7 @@ export const projectDetails: ProjectDetail[] = [
     year: '2024',
     location: 'Nicosia, Cyprus',
     services: ['Brand Strategy', 'Market Research', 'Positioning'],
-    image: '/projects/project-6.svg',
+    image: '/projects-album/proposal.jpg',
     href: '/work/nea-ventures',
     overview:
       'Brand strategy and market positioning for a new venture capital firm focused on Mediterranean tech startups.',
@@ -268,10 +268,10 @@ export const projectDetails: ProjectDetail[] = [
     result:
       'The strategy informed all subsequent brand and marketing decisions, helping Nea Ventures secure meetings with top-tier founders within their first quarter.',
     gallery: [
-      { src: '/projects/project-6.svg', alt: 'Strategy framework', wide: true },
-      { src: '/projects/project-1.svg', alt: 'Research findings' },
-      { src: '/projects/project-2.svg', alt: 'Brand architecture' },
-      { src: '/projects/project-3.svg', alt: 'Implementation roadmap', wide: true },
+      { src: '/projects-album/stationery.jpg', alt: 'Strategy framework', wide: true },
+      { src: '/projects-album/business-cards.jpg', alt: 'Research findings' },
+      { src: '/projects-album/brand-identity.png', alt: 'Brand architecture' },
+      { src: '/projects-album/brochure.jpg', alt: 'Implementation roadmap', wide: true },
     ],
   },
   {
@@ -283,7 +283,7 @@ export const projectDetails: ProjectDetail[] = [
     year: '2023',
     location: 'Limassol, Cyprus',
     services: ['Brand Identity', 'Naming', 'Brand Guidelines'],
-    image: '/projects/project-1.svg',
+    image: '/projects-album/brand-identity.png',
     href: '/work/kolossi-studio',
     overview:
       'Complete brand identity for an architecture and interior design studio, from naming through to a comprehensive brand guidelines document.',
@@ -294,10 +294,10 @@ export const projectDetails: ProjectDetail[] = [
     result:
       'The studio launched with a polished identity that immediately positioned them as a serious player in the Limassol design scene.',
     gallery: [
-      { src: '/projects/project-1.svg', alt: 'Brand identity system', wide: true },
-      { src: '/projects/project-3.svg', alt: 'Logo construction' },
-      { src: '/projects/project-4.svg', alt: 'Typography system' },
-      { src: '/projects/project-5.svg', alt: 'Guidelines document', wide: true },
+      { src: '/projects-album/logo-mark.png', alt: 'Brand identity system', wide: true },
+      { src: '/projects-album/brand-elements.png', alt: 'Logo construction' },
+      { src: '/projects-album/stationery-infinity.jpg', alt: 'Typography system' },
+      { src: '/projects-album/billboard.jpg', alt: 'Guidelines document', wide: true },
     ],
   },
   {
@@ -309,7 +309,7 @@ export const projectDetails: ProjectDetail[] = [
     year: '2024',
     location: 'Paphos, Cyprus',
     services: ['Video Production', 'Motion Graphics', 'Social Edits'],
-    image: '/projects/project-2.svg',
+    image: '/projects-album/magazine.jpg',
     href: '/work/petra-co',
     overview:
       'A suite of brand films and social video content for an independent jewellery house, capturing the craft behind each piece.',
@@ -320,10 +320,10 @@ export const projectDetails: ProjectDetail[] = [
     result:
       'The brand film became the centrepiece of their website, and the social edits drove a notable uplift in engagement and in-store visits.',
     gallery: [
-      { src: '/projects/project-2.svg', alt: 'Brand film still', wide: true },
-      { src: '/projects/project-4.svg', alt: 'Workshop footage' },
-      { src: '/projects/project-5.svg', alt: 'Social edit frames' },
-      { src: '/projects/project-6.svg', alt: 'Motion graphics', wide: true },
+      { src: '/projects-album/photoshoot-1.jpg', alt: 'Brand film still', wide: true },
+      { src: '/projects-album/photoshoot-6.jpg', alt: 'Workshop footage' },
+      { src: '/projects-album/brand-mockup.jpg', alt: 'Social edit frames' },
+      { src: '/projects-album/photoshoot-3.jpg', alt: 'Motion graphics', wide: true },
     ],
   },
   {
@@ -335,7 +335,7 @@ export const projectDetails: ProjectDetail[] = [
     year: '2023',
     location: 'Akamas, Cyprus',
     services: ['Print Design', 'Illustration', 'Packaging'],
-    image: '/projects/project-3.svg',
+    image: '/projects-album/packaging-01.jpg',
     href: '/work/akamas-wild',
     overview:
       'Print collateral and illustrated materials for an eco-tourism operator in the Akamas Peninsula, Cyprus\'s last wilderness.',
@@ -346,10 +346,10 @@ export const projectDetails: ProjectDetail[] = [
     result:
       'The materials are now distributed across visitor centres and partner hotels, earning praise for their quality and environmental consideration.',
     gallery: [
-      { src: '/projects/project-3.svg', alt: 'Print collateral spread', wide: true },
-      { src: '/projects/project-6.svg', alt: 'Trail map illustration' },
-      { src: '/projects/project-1.svg', alt: 'Booklet interior' },
-      { src: '/projects/project-2.svg', alt: 'Merchandise packaging', wide: true },
+      { src: '/projects-album/packaging-02.jpg', alt: 'Print collateral spread', wide: true },
+      { src: '/projects-album/packaging-03.jpg', alt: 'Packaging design' },
+      { src: '/projects-album/packaging-04.jpg', alt: 'Booklet interior' },
+      { src: '/projects-album/menu.jpg', alt: 'Menu design', wide: true },
     ],
   },
 ];
