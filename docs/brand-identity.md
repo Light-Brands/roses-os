@@ -94,7 +94,7 @@ For those who feel the world accelerating and know the tools they inherited were
 |---|---|---|
 | Rose Clay Mauve | `#9C6F6E` | Human interface layer -- the signature color of ROSES OS |
 | Warm Rose-Clay Brown | `#9B6A66` to `#9E6F6B` | Dusty mauve tones |
-| Deep Terracotta | `#7A3A34` to `#7F3F39` | Accent and grounding |
+| Light Terracotta | `#C4836C` to `#CB8E7E` | Accent and grounding -- warm, luminous |
 
 #### Secondary Colors
 

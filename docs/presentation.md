@@ -155,6 +155,8 @@ Your support allows these technologies to reach more people worldwide.
 
 ## The Guardians
 
+> **Slide styling:** Each guardian photo framed with a white border (`#FFFFFF`, 4--6px) for clean, reverent separation from the slide background.
+
 ### Angelina Ataíde
 
 For over three decades, she has carried this lineage with unwavering devotion. Her presence opens a field of rare precision and depth, guiding thousands into clarity, safety, and sovereignty. She protects the essence of the Rose and reminds us that true mastery is lived, not taught.
