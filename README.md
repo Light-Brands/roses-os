@@ -6,10 +6,16 @@ ROSES OS is a remembrance ecosystem -- spiritual-modern consciousness technology
 
 ## Documentation
 
-- [Brand Identity](docs/brand-identity.md) -- Brand essence, visual identity, voice and tone, messaging pillars, website style guide
-- [Presentation](docs/presentation.md) -- The Rose and Aura journey, refined from the original invite deck
-
-## Source Materials
-
-- `Brand Guideline Guide-compressed.docx` -- Original brand guidelines and design book
-- `Rose + Aura - Invite .key` -- Original Keynote presentation
+```
+docs/
+├── brand/                  — Brand identity, DNA, and visual design system
+│   ├── brand-dna.md            Master brand bible (identity, technology, design system, web guidelines)
+│   └── brand-identity.md       Core brand essence, visual identity, voice and tone, messaging pillars
+├── program/                — Program overview and journey narrative
+│   └── presentation.md         The Rose and Aura invitation, structure, and contribution model
+├── training/               — Facilitator and teacher training resources
+│   └── mdr-teachers-training-manual.md   Rose Meditation teacher training (Levels 1-3)
+└── source-materials/       — Original reference files
+    ├── Brand Guideline Guide-compressed.docx
+    └── Rose + Aura - Invite .key
+```
