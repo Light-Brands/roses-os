@@ -1296,7 +1296,7 @@ This color should never be used like an accent button color. **It is a field col
 | Color | HEX | Description |
 |-------|-----|-------------|
 | Warm Rose-Clay Brown | `#9B6A66` to `#9E6F6B` | Dusty mauve tones -- clay, terracotta dust, sun-warmed stone |
-| Deep Terracotta | `#7A3A34` to `#7F3F39` | Fired clay, iron-rich earth -- solid, embodied, ancient |
+| Light Terracotta | `#C4836C` to `#CB8E7E` | Sun-warmed clay, soft earth -- warm, luminous, approachable |
 
 ### Primary Neutrals (Structural)
 
@@ -1352,7 +1352,7 @@ Golden Ether is the ideal background for Antique Olive Brass (`#9E956B`) accents
 **Typography on Golden Ether:**
 
 - Body text: Soft Charcoal (`#3F3E3C`)
-- Headlines: Soft Charcoal or Deep Terracotta (`#7A3A34`)
+- Headlines: Soft Charcoal or Light Terracotta (`#C4836C`)
 - Accent text: Antique Olive Brass (`#9E956B`)
 
 ### Background Colors as Text Colors
@@ -1361,7 +1361,7 @@ Background-range colors can also serve as text colors when placed on darker back
 
 | Color | Text Use |
 |-------|----------|
-| Deep Terracotta (`#7A3A34`) | Headlines or emphasis text on light backgrounds (Golden Ether, Aura White, Neutral Sand) |
+| Light Terracotta (`#C4836C`) | Headlines or emphasis text on light backgrounds (Golden Ether, Aura White, Neutral Sand) |
 | Rose Clay Mauve (`#9C6F6E`) | Subheadings or accent text on light backgrounds |
 | Warm Rose-Clay Brown (`#9B6A66`) | Body emphasis on Aura White or Golden Ether |
 
@@ -1377,7 +1377,7 @@ graph TD
 
     subgraph WARM["Primary Warm Tones"]
         WRC["Warm Rose-Clay Brown<br/>#9B6A66 → #9E6F6B"]
-        DT["Deep Terracotta<br/>#7A3A34 → #7F3F39"]
+        DT["Light Terracotta<br/>#C4836C → #CB8E7E"]
     end
 
     subgraph NEUTRAL["Primary Neutrals"]
@@ -1397,7 +1397,7 @@ graph TD
 
     style RCM fill:#9C6F6E,color:#F7F5F2
     style WRC fill:#9B6A66,color:#F7F5F2
-    style DT fill:#7A3A34,color:#F7F5F2
+    style DT fill:#C4836C,color:#F7F5F2
     style MC fill:#9A8F88,color:#F7F5F2
     style BS fill:#BFB3AA,color:#3F3E3C
     style NS fill:#E4DED8,color:#3F3E3C
@@ -1784,7 +1784,7 @@ The hero is not promotional. It is a remembering.
 
 **The Journey Section:** Three pillars layout -- The Rose, The Aura, The Human Journey. Each as calm cards, not sales blocks.
 
-**Guardians Section:** Photography should feel real, reverent. Photo + Name + 2-line essence. No long resumes.
+**Guardians Section:** Photography should feel real, reverent. Photo + Name + 2-line essence. No long resumes. Each photo framed with a white border (Aura White `#F7F5F2` or pure `#FFFFFF`, 4--6px) to create a clean, reverent separation from the background.
 
 **Pricing / Contribution Section:** Must feel sacred, not transactional. Language: "A contribution rooted in truth." No "BUY NOW."
 
