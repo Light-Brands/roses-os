@@ -131,13 +131,6 @@ There are **five deliverables**, in priority order:
 - Exception acknowledgment (supporting children under care)
 - Signature and date fields
 
-#### 4. Guardian / Teacher Application Form
-- Personal background and experience
-- Relationship to the lineage and practice
-- Why they feel called to facilitate
-- Availability and language capabilities
-- References within the community
-
 **Design rules for PDF forms:**
 - Aura White (`#F7F5F2`) background -- clean, warm, not stark white
 - Rose Clay Mauve (`#9C6F6E`) for section headers and dividers
@@ -172,12 +165,7 @@ There are **five deliverables**, in priority order:
 - Message field
 - Simple, minimal -- no CAPTCHA clutter if avoidable
 
-#### 3. Guardian Application
-- Web version of the Guardian / Teacher Application PDF form
-- Multi-step for readability
-- File upload capability for supporting documents
-
-#### 4. Community Interest / Waitlist
+#### 3. Community Interest / Waitlist
 - Name, email
 - Location / language
 - What draws them to the work (optional, open text)
@@ -335,7 +323,6 @@ The designer must follow this system across all deliverables.
 - [ ] Build Enrollment / Registration Form
 - [ ] Build Contribution Selection Form
 - [ ] Build Participant Agreements Form
-- [ ] Build Guardian / Teacher Application Form
 - [ ] Test all fillable fields across PDF readers (Acrobat, Preview, browser)
 - [ ] Review for brand consistency with Deliverables A and B
 
@@ -346,7 +333,6 @@ The designer must follow this system across all deliverables.
 - [ ] Design contribution tier selection component (card-based)
 - [ ] Build Begin Your Journey multi-step enrollment flow (5 steps)
 - [ ] Build Contact / Inquiry form
-- [ ] Build Guardian Application multi-step form
 - [ ] Build Community Interest / Waitlist form
 - [ ] Design mobile responsive versions of all forms
 - [ ] Verify accessibility (WCAG 2.1 AA)
