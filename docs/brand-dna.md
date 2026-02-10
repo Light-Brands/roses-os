@@ -418,7 +418,7 @@ It doesn't fight the noise and fragmentation -- it quietly dissolves the conditi
 
 The Rose restores coherence across emotional, mental, and energetic systems -- making intuition precise and presence sovereign. Simple and decentralized, it frees you from endless healing and returns you to natural alignment.
 
-### The Three Levels -- Journey Overview
+### The Complete Journey -- Levels 1, 2, 3 & Aura 1
 
 ```mermaid
 graph LR
@@ -427,8 +427,7 @@ graph LR
     L3["LEVEL 3<br/>Advanced<br/>Perception"]
     A1["AURA 1<br/>11 Sessions"]
 
-    L1 ==> L2 ==> L3
-    L1 -.-> A1
+    L1 ==> L2 ==> L3 ==> A1
 
     subgraph L1D[" "]
         direction TB
@@ -1146,6 +1145,7 @@ This manual is a sacred companion for those who have been initiated into the pat
 ### + Aura 1
 
 - Eleven sessions, structured and flexible blocks
+- Requires completion of Rose Meditation Levels 1, 2, and 3
 
 ### Contribution Model
 
@@ -1177,7 +1177,7 @@ graph TD
         T3["Above $70K<br/><i>Supports expansion</i>"]
     end
 
-    ROSE_COURSE --> AURA_COURSE
+    ROSE_COURSE -->|"Levels 1–3 required"| AURA_COURSE
     AURA_COURSE --> CONTRIBUTION
 
     style ROSE_COURSE fill:#9C6F6E,color:#F7F5F2
@@ -1846,7 +1846,7 @@ graph TD
     ROSE --> L2["Level 2<br/>Sacred Space"]
     ROSE --> L3["Level 3<br/>Perception"]
 
-    AURA_P --> A1S["Aura 1<br/>11 Sessions"]
+    L3 -->|"prerequisite"| A1S["Aura 1<br/>11 Sessions"]
 
     BEGIN --> CONTRIB["Contribution<br/>Model"]
 

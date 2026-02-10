@@ -138,6 +138,7 @@ No belief required. Only presence and willingness to return to your essence. The
 ### + Aura 1
 
 - Eleven sessions, structured and flexible blocks
+- Requires completion of Rose Meditation Levels 1, 2, and 3
 
 ### Contribution Model
 
