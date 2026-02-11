@@ -134,12 +134,12 @@ No belief required. Only presence and willingness to return to your essence. The
 
 - Two immersive days, online
 - Six hours per day, offered in two three-hour sessions
-- **Dates:** March 17th -- March 26th
+- **Dates:** March 17th -- March 27th
 
 ### + Aura 1
 
 - Eleven sessions, structured and flexible blocks
-- **Dates:** March 17th -- March 26th
+- **Dates:** March 17th -- March 27th
 
 ### Contribution Model
 
