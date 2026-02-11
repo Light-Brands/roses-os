@@ -19,7 +19,8 @@ ROSES OS is a spiritual-modern consciousness technology brand. The design work c
 | Brand DNA (master bible) | `docs/brand/brand-dna.md` | Complete brand identity, visual system, color palette, typography, design book, web guidelines |
 | Brand Identity (summary) | `docs/brand/brand-identity.md` | Condensed brand essence, colors, fonts, UI components, sitemap |
 | Visual Aid Manual Plan | `docs/plan-mdr.md` | Structure, scope, and brand rules for the Teacher Visual Aid Manual |
-| Invitation Presentation | `docs/program/presentation.md` | Full content for the public-facing invitation deck |
+| Invitation Presentation | `docs/program/presentation.md` | Full content for the public-facing invitation deck (Screen 1) |
+| Schedule Details & Contribution | `docs/program/schedule-details.md` | Full schedule times and contribution model for the Learn More page (Screen 2) |
 | Training Manual | `docs/training/mdr-teachers-training-manual.md` | Teaching content for Levels 1-3 (source material for the visual aid deck) |
 | Source Files | `docs/source-materials/` | Original Keynote presentation and brand guideline document |
 
@@ -85,11 +86,16 @@ There are **five platform sections**, in priority order:
 
 ### Section B -- The Invitation (Public-Facing)
 
-**What it is:** The outward-facing section of the platform that introduces The Rose and Aura to prospective participants. A threshold, not a sales pitch. Designed as a flowing, scroll-based web experience that can also be downloaded as a presentation-ready PDF.
+**What it is:** The outward-facing section of the platform that introduces The Rose and Aura to prospective participants. A threshold, not a sales pitch. This section uses a **two-screen architecture:**
 
-**Full content is in:** `docs/program/presentation.md`
+- **Screen 1 -- The Presentation (Landing Page):** A live, flowing web experience that presents the essence of the work. No detailed times or contribution tiers -- only dates, class types, and the invitation itself. This is the first thing visitors see.
+- **Screen 2 -- Learn More (Detail Page):** Accessed via a "Learn More" action from the presentation. Contains the full schedule with time zone tables and the contribution model. This is where practical details live.
 
-**Page flow (sections on a single scrolling page or a multi-page flow):**
+**Content sources:**
+- Presentation (Screen 1): `docs/program/presentation.md`
+- Schedule details & contribution model (Screen 2): `docs/program/schedule-details.md`
+
+**Screen 1 -- Presentation page flow:**
 
 1. **Title** -- "ROSES OS -- A Seamless Path to Inner Freedom"
 2. **The Invitation** -- Einstein quote, the need for new inner tools
@@ -101,19 +107,27 @@ There are **five platform sections**, in priority order:
 8. **What You Will Experience** -- The Rose / Aura / Human Journey
 9. **What This Journey Awakens** -- Intuition / Leadership / Highest Potential
 10. **The Frequency** -- "A frequency you cultivate"
-11. **Your Path** -- Option 1 (The Rose), +Aura 1, contribution model table
-12. **The Guardians** -- Profiles for Angelina, Diego, Dara, Peggy (photos framed with white border, `#FFFFFF`, 4-6px)
-13. **Begin** -- "Start your journey. Welcome home."
+11. **Your Path** -- Option 1 (The Rose), +Aura 1 (dates and class types only -- no times, no contribution model)
+12. **Schedule Overview** -- Dates and class types per stage (no time zone tables)
+13. **The Guardians** -- Profiles for Angelina, Diego, Dara, Peggy (photos framed with white border, `#FFFFFF`, 4-6px)
+14. **Begin** -- "Start your journey. Welcome home."
+
+**Screen 2 -- Learn More page flow:**
+
+1. **Full Schedule** -- All class times across four time zones (San Jose, New York, Brasilia, London), organized by stage, week, and weekend
+2. **Contribution Model** -- Income tiers and invitational language
 
 **Design rules specific to this section:**
 - Generous whitespace -- every section should breathe
 - Quote spreads are full-width, silent, centered
 - Guardian photos framed with clean white borders for reverent separation from background
+- The presentation (Screen 1) should feel complete on its own -- a self-contained invitation with no missing information
+- The Learn More page (Screen 2) should feel like a natural continuation -- practical and detailed, but still within the brand's sacred tone
 - Contribution table should feel inviting, not transactional
 - Tone: a quiet invitation, not a sales deck
 - On the web, sections can use subtle scroll-triggered transitions (fade-in, parallax) to create a meditative pace
 
-**PDF download:** A "Download PDF" button exports this section as a beautifully formatted presentation-style PDF -- suitable for sharing, screen sharing, or printing. The PDF should read as a cohesive deck (one section per page).
+**PDF download:** A "Download PDF" button exports the presentation as a beautifully formatted presentation-style PDF -- suitable for sharing, screen sharing, or printing. The PDF should read as a cohesive deck (one section per page). The Learn More page can be exported as a separate companion PDF with schedule and contribution details.
 
 ---
 
@@ -340,12 +354,14 @@ The designer must follow this system across the entire platform -- web and PDF.
 
 ### Phase 4 -- The Invitation (Section B)
 
-- [ ] Build all 13 sections following the content in `docs/program/presentation.md`
+- [ ] Build Screen 1 (Presentation) -- all 14 sections following `docs/program/presentation.md`
 - [ ] Design the scrolling web experience with section transitions
 - [ ] Design quote spreads (full-width, presence-oriented)
 - [ ] Design Guardian profile sections with photo framing
-- [ ] Design contribution model table (inviting, not transactional)
-- [ ] Design the PDF export for this section (presentation-style, one section per page)
+- [ ] Design the "Learn More" action/transition from Screen 1 to Screen 2
+- [ ] Build Screen 2 (Learn More) -- full schedule times and contribution model following `docs/program/schedule-details.md`
+- [ ] Design contribution model table (inviting, not transactional) for Screen 2
+- [ ] Design the PDF exports: presentation deck (Screen 1) and schedule/contribution companion PDF (Screen 2)
 - [ ] Review for brand consistency with the platform and Section A
 
 ### Phase 5 -- Forms (Section C)

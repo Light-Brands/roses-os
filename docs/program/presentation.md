@@ -141,18 +141,6 @@ No belief required. Only presence and willingness to return to your essence. The
 - Eleven sessions, structured and flexible blocks
 - **Dates:** March 17th -- March 27th
 
-### Contribution Model
-
-This work is offered in devotion. You are invited to choose a contribution that reflects your truth.
-
-| Income Range | Tier |
-|---|---|
-| Under $30,000 USD | Lower contribution -- honors your reality |
-| $30,000 -- $70,000 USD | Mid-range -- reflects reciprocity and balance |
-| Above $70,000 USD | Higher tier -- supports accessibility for others and the expansion of this work |
-
-Your support allows these technologies to reach more people worldwide.
-
 ---
 
 ## Schedule -- Aura Reading Online Course Level 1 | March 2026
