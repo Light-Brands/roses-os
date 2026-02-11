@@ -1308,6 +1308,7 @@ This color should never be used like an accent button color. **It is a field col
 | Honeyed Stone | `#C7AE8C` | Background support -- warm golden, architectural, inviting |
 | Peach Sand | `#EBD6C1` | Light background -- peachy cream, soft warmth |
 | Golden Ether | `#F5E8E2` | Warm blush background -- parchment ivory with soft golden cast, pairs naturally with gold accents |
+| Cream Veil | `#FFF8E7` | Soft cream background -- warm ivory, gentle and luminous |
 | Aura White | `#F7F5F2` | Primary background -- excellent and neutral |
 | Soft Charcoal | `#3F3E3C` | Body text, navigation, buttons, footer, dark elements |
 
