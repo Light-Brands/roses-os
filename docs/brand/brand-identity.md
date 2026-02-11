@@ -104,6 +104,7 @@ For those who feel the world accelerating and know the tools they inherited were
 | Honeyed Stone | `#C7AE8C` | Background support |
 | Peach Sand | `#EBD6C1` | Light background |
 | Golden Ether | `#F5E8E2` | Warm blush background -- pairs with gold |
+| Cream Veil | `#FFF8E7` | Soft cream background |
 | Aura White | `#F7F5F2` | Primary background |
 | Antique Olive Brass | `#9E956B` | Accent, buttons, highlights |
 | Soft Charcoal | `#3F3E3C` | Text, dark elements |
