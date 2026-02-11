@@ -472,3 +472,27 @@ The web-first approach means content is always current, always accessible, and a
 It shows: *"This is how we think, teach, and build."*
 
 The designer is building the visual foundation for an entire ecosystem. Every decision made now carries forward.
+
+---
+
+## 10. IDEAS FOR DESIGNER REVIEW
+
+The following ideas are proposals for the designer to evaluate. They are not approved directions — they require designer review, exploration, and feedback before any decision is made.
+
+### Idea: Pastel Chakra Colors
+
+**Current approach:** Each chakra page uses the standard, vivid chakra color (red, orange, yellow, green/pink, light blue, indigo, violet) as its dominant color, with harmonized saturation across pages.
+
+**Proposed exploration:** Use **pastel** versions of the chakra colors instead of their full-saturation counterparts. This would mean softer, muted tones — a pastel red/rose for Root, pastel orange/peach for Sacral, pastel yellow/cream for Solar Plexus, and so on through the seven chakras.
+
+**Rationale to consider:**
+- Pastel tones may integrate more naturally with the brand's warm, earthy, quiet visual identity
+- The current palette (Rose Clay Mauve, Peach Sand, Golden Ether) already lives in a soft, muted tonal range — pastels could create a more cohesive transition between non-chakra pages and chakra pages
+- Reduces visual contrast when moving from the warm neutral backgrounds into the chakra section
+- Aligns with the design principle "no harsh contrasts"
+
+**Questions for the designer:**
+- Do pastel chakra colors maintain enough visual distinction between the seven chakras, or do they risk blending together?
+- Can the chakra identity (each color's energetic meaning) still read clearly in pastel form?
+- Would a gradient approach work — pastel as the background field with the true chakra color as an accent — to preserve both softness and clarity?
+- How does this interact with the gold accents on chakra pages?
