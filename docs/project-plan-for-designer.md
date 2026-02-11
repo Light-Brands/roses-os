@@ -6,7 +6,9 @@
 
 ## 1. PROJECT OVERVIEW
 
-ROSES OS is a spiritual-modern consciousness technology brand. The design work spans two presentation decks, PDF and web forms, and a website -- all rooted in one unified visual identity system.
+ROSES OS is a spiritual-modern consciousness technology brand. The design work centers on a **unified web platform** -- a single, living digital environment where all ROSES OS content is accessible online and downloadable as PDF. The platform replaces the need for separate standalone decks, fillable PDFs, and disconnected web forms. Everything lives on the web; everything can be taken offline.
+
+**Core concept:** One web platform. All content accessible in-browser. All content downloadable as beautifully formatted PDF.
 
 **Brand philosophy:** "Apple-level minimalism inside a temple." Sacred-tech minimalism -- earthy, grounded, warm, and quiet. Never loud, never busy, never hype-driven.
 
@@ -25,18 +27,25 @@ ROSES OS is a spiritual-modern consciousness technology brand. The design work s
 
 ## 2. WHAT NEEDS TO BE DESIGNED
 
-There are **five deliverables**, in priority order:
+The project is a **single web platform** with distinct sections. Every section is designed web-first and includes a **"Download as PDF"** option that produces a beautifully formatted, print-ready document. No standalone decks or separate fillable PDFs -- the web is the source of truth, and PDFs are an export.
 
-### Deliverable A -- Teacher Visual Aid Manual (Slide Deck / PDF)
+There are **five platform sections**, in priority order:
 
-**What it is:** A visual reference deck that teachers use while guiding live sessions. Not a student workbook -- a facilitator's visual companion.
+---
+
+### Section A -- Teacher Visual Aid Manual
+
+**What it is:** A password-protected section of the web platform that teachers access while guiding live sessions. Not a student workbook -- a facilitator's visual companion, accessible in-browser and downloadable as PDF for offline use.
+
+**Access:** Password-protected area (password: 4444). Teachers log in or enter the password to access this section.
 
 **Purpose:**
 - Support teachers in explaining energetic concepts clearly
 - Provide consistent visual references across all facilitators
 - Reduce cognitive load during live teaching
+- Accessible on any device during a live session (tablet, laptop, phone)
 
-**Content structure (5 sections):**
+**Content structure (5 sections, each a page or scroll section on the web):**
 
 1. **Introduction** -- Purpose of Rose Meditation, how to use the manual, teaching posture, safety and consent
 2. **Energetic Foundations** -- Grounding Cord, Golden Sun, Earth & Cosmos Circuits, The Rose (roots/stem/bloom), The Aura (7 layers), Roses of Protection
@@ -62,25 +71,25 @@ There are **five deliverables**, in priority order:
 | 6 | Third Eye | Ajna | I SEE | Indigo | Light |
 | 7 | Crown | Sahasrara | I KNOW | Violet/White | Consciousness |
 
-**Design rules specific to this deck:**
-- Non-chakra slides use the warm neutral background (rose clay / peachy neutral)
-- Each chakra slide uses its correct chakra color as the dominant color
-- Harmonize saturation across chakra slides so the deck feels cohesive
+**Design rules specific to this section:**
+- Non-chakra pages use the warm neutral background (rose clay / peachy neutral)
+- Each chakra page uses its correct chakra color as the dominant color
+- Harmonize saturation across chakra pages so the section feels cohesive
 - Gold accents for headings, dividers, key phrases -- used intentionally, never decoratively
 - Some existing Procreate diagrams may need to be digitally redrawn or strengthened
 - Illustrations needed: seated meditation posture, grounding cord, golden sun, aura layers, chakra body placements, the rose (roots/stem/bloom), roses of protection, the Analyzer
 
-**Final format:** PDF (password-protected, password: 4444), downloadable, usable offline. Designed so it can later be integrated into a web portal or app.
+**PDF download:** A "Download PDF" button at the top of the section exports the entire manual as a formatted, password-protected PDF -- designed for print or offline reference. The PDF should mirror the web layout as closely as possible.
 
 ---
 
-### Deliverable B -- Invitation Presentation (Public-Facing Deck)
+### Section B -- The Invitation (Public-Facing)
 
-**What it is:** The outward-facing presentation that introduces The Rose and Aura to prospective participants. A threshold, not a sales pitch.
+**What it is:** The outward-facing section of the platform that introduces The Rose and Aura to prospective participants. A threshold, not a sales pitch. Designed as a flowing, scroll-based web experience that can also be downloaded as a presentation-ready PDF.
 
 **Full content is in:** `docs/program/presentation.md`
 
-**Slide flow:**
+**Page flow (sections on a single scrolling page or a multi-page flow):**
 
 1. **Title** -- "ROSES OS -- A Seamless Path to Inner Freedom"
 2. **The Invitation** -- Einstein quote, the need for new inner tools
@@ -93,61 +102,24 @@ There are **five deliverables**, in priority order:
 9. **What This Journey Awakens** -- Intuition / Leadership / Highest Potential
 10. **The Frequency** -- "A frequency you cultivate"
 11. **Your Path** -- Option 1 (The Rose), +Aura 1, contribution model table
-12. **The Guardians** -- Individual slides for Angelina, Diego, Dara, Peggy (photos framed with white border, `#FFFFFF`, 4-6px)
+12. **The Guardians** -- Profiles for Angelina, Diego, Dara, Peggy (photos framed with white border, `#FFFFFF`, 4-6px)
 13. **Begin** -- "Start your journey. Welcome home."
 
-**Design rules specific to this deck:**
-- Generous whitespace -- every slide should breathe
+**Design rules specific to this section:**
+- Generous whitespace -- every section should breathe
 - Quote spreads are full-width, silent, centered
 - Guardian photos framed with clean white borders for reverent separation from background
 - Contribution table should feel inviting, not transactional
 - Tone: a quiet invitation, not a sales deck
+- On the web, sections can use subtle scroll-triggered transitions (fade-in, parallax) to create a meditative pace
+
+**PDF download:** A "Download PDF" button exports this section as a beautifully formatted presentation-style PDF -- suitable for sharing, screen sharing, or printing. The PDF should read as a cohesive deck (one section per page).
 
 ---
 
-### Deliverable C -- PDF Forms (Fillable, Branded)
+### Section C -- Forms (Enrollment, Contribution & Agreements)
 
-**What they are:** A set of fillable PDF documents that participants, teachers, and applicants use throughout the enrollment and teaching journey. These must feel like a seamless extension of the brand -- warm, minimal, and sacred.
-
-**Forms needed:**
-
-#### 1. Enrollment / Registration Form
-- Full name, email, phone, location
-- How they heard about ROSES OS
-- Which program they are enrolling in (The Rose / +Aura 1)
-- Income range selection (for contribution tier)
-- Emergency contact (optional)
-
-#### 2. Contribution Selection Form
-- Program selected
-- Income tier declaration (Under $30K / $30K-$70K / Above $70K)
-- Chosen contribution amount
-- Payment method preference
-- Space for personal note (optional)
-
-#### 3. Participant Agreements Form
-- Core agreements acknowledgment (punctuality, confidentiality, co-responsibility, trust, patience, empathy, compassion)
-- Sacred use agreement -- material is for initiated students only, not to be shared or used to teach independently
-- Exception acknowledgment (supporting children under care)
-- Signature and date fields
-
-**Design rules for PDF forms:**
-- Aura White (`#F7F5F2`) background -- clean, warm, not stark white
-- Rose Clay Mauve (`#9C6F6E`) for section headers and dividers
-- Antique Olive Brass (`#9E956B`) for form field borders and accent lines
-- Cormorant Garamond for section titles, Inter for field labels and body text
-- Generous spacing between fields -- forms should breathe, not feel crowded
-- Fillable fields with subtle warm-toned backgrounds (Golden Ether `#F5E8E2` or Neutral Sand `#E4DED8`)
-- ROSES OS wordmark and subtle brand texture on each page
-- Tone: inviting and respectful, never bureaucratic. These are thresholds, not paperwork.
-
-**Final format:** Fillable PDF (Adobe Acrobat / PDF form standard), plus editable source files.
-
----
-
-### Deliverable D -- Web Forms (Online, Interactive)
-
-**What they are:** The web-based equivalents of the PDF forms, designed for the ROSES OS website. These are the primary touchpoint where someone transitions from visitor to participant. They must feel like a continuation of the brand experience -- a sacred threshold, not a checkout flow.
+**What they are:** Interactive web forms integrated directly into the platform. These are the primary touchpoint where someone transitions from visitor to participant. They must feel like a continuation of the brand experience -- a sacred threshold, not a checkout flow. Completed forms can be downloaded as PDF for personal records.
 
 **Forms needed:**
 
@@ -156,7 +128,14 @@ There are **five deliverables**, in priority order:
 - Step 1: Who you are (name, email, location)
 - Step 2: Your path (program selection with brief descriptions)
 - Step 3: Contribution (income tier selection with the brand's invitational language, not price tags)
+  - Income tiers: Under $30K / $30K-$70K / Above $70K USD
+  - Chosen contribution amount
+  - Payment method preference
+  - Space for personal note (optional)
 - Step 4: Agreements (acknowledgment of core agreements and sacred use)
+  - Core agreements: punctuality, confidentiality, co-responsibility, trust, patience, empathy, compassion
+  - Sacred use agreement -- material is for initiated students only, not to be shared or used to teach independently
+  - Exception acknowledgment (supporting children under care)
 - Step 5: Confirmation ("Welcome home." -- warm confirmation with next steps)
 
 #### 2. Contact / Inquiry Form
@@ -171,8 +150,8 @@ There are **five deliverables**, in priority order:
 - What draws them to the work (optional, open text)
 - Used for future programs and regional expansions
 
-**Design rules for web forms:**
-- Follow all website UI component specs (pill-shaped buttons, 20px border radius cards, etc.)
+**Design rules for forms:**
+- Follow all platform UI component specs (pill-shaped buttons, 20px border radius cards, etc.)
 - Multi-step forms use a subtle progress indicator -- minimal, not a numbered stepper
 - Field styling: warm-toned backgrounds (Golden Ether or Neutral Sand), soft borders in Muted Clay (`#9A8F88`)
 - Active/focused fields: border shifts to Antique Olive Brass (`#9E956B`)
@@ -189,22 +168,22 @@ There are **five deliverables**, in priority order:
 - Selected card gets a subtle Rose Clay Mauve border glow
 - No "best value" badges or pricing psychology -- this is devotion, not commerce
 
-**Final format:** Figma designs (or equivalent) with component specs, interaction states (default, hover, focus, error, success), and responsive breakpoints. Developer-ready with spacing tokens and color references.
+**PDF download:** After submission, participants receive a "Download your confirmation" option that generates a branded PDF summary of their enrollment, selected contribution tier, and signed agreements -- a personal record.
 
 ---
 
-### Deliverable E -- Website
+### Section D -- The Platform Pages (Website)
 
-**What it is:** The ROSES OS website -- "a threshold, not a marketing site."
+**What it is:** The public-facing pages of the ROSES OS web platform -- "a threshold, not a marketing site." These pages frame the entire experience and house all other sections.
 
 **Sitemap:**
 
-1. **Home** -- Entry point, brand essence
+1. **Home** -- Entry point, brand essence, invitation to explore
 2. **The Rose** -- Core technology (Levels 1-3)
 3. **The Aura** -- Perception and relationship work
 4. **The Journey** -- What participants experience
 5. **The Guardians** -- Facilitators and lineage
-6. **Begin** -- Enrollment and contribution model
+6. **Begin** -- Enrollment and contribution model (links to Section C forms)
 7. **Journal / Library** -- Content and resources (later phase)
 
 **UI component specs:**
@@ -214,13 +193,41 @@ There are **five deliverables**, in priority order:
 - Hero sections: full-width, breathing space, centered typography
 - Spacing: generous whitespace throughout -- every element has room to breathe
 
-**Note:** The Teacher Visual Aid Manual acts as a proof of concept for the website and app. Design coherence established in Deliverables A and B should carry directly into the website.
+**PDF download:** Key content pages (The Rose, The Aura, The Journey) include a "Download as PDF" option so visitors can take the information with them. The PDF should be a clean, branded document -- not a raw browser print.
+
+---
+
+### Section E -- PDF Export System (Cross-Platform Feature)
+
+**What it is:** A unified PDF export system that works across the entire platform. This is not a separate section visitors see, but a design and development deliverable that ensures every downloadable PDF feels like a first-class ROSES OS artifact.
+
+**Requirements:**
+- Every PDF export uses the same branded template: ROSES OS wordmark, Aura White background, consistent margins and typography
+- PDFs are formatted for both screen reading and print (A4 / Letter)
+- Cormorant Garamond for headers, Inter for body -- matching the web exactly
+- Subtle brand texture on each page (clay, linen, or fogged light -- light enough to print cleanly)
+- Rose Clay Mauve (`#9C6F6E`) for section headers and dividers
+- Antique Olive Brass (`#9E956B`) for accent lines
+- Page numbers, section headers in footer
+- Teacher Visual Aid Manual PDF is password-protected (password: 4444); all other PDFs are open
+- Illustrations and diagrams must render cleanly in both web and PDF formats (SVG preferred)
+
+**PDF types across the platform:**
+
+| Source Section | PDF Type | Access |
+|---|---|---|
+| Teacher Visual Aid Manual | Full manual export | Password-protected (4444) |
+| The Invitation | Presentation-style PDF (one section per page) | Public |
+| Forms (post-submission) | Confirmation summary with signed agreements | Per-participant |
+| The Rose / The Aura / The Journey | Content page exports | Public |
+
+**Design principle:** The PDF should feel intentional -- not like a printed webpage, but like a designed document that happens to share content with the web. Same information, optimized for the medium.
 
 ---
 
 ## 3. VISUAL IDENTITY SYSTEM
 
-The designer must follow this system across all deliverables.
+The designer must follow this system across the entire platform -- web and PDF.
 
 ### Color Palette
 
@@ -253,7 +260,7 @@ The designer must follow this system across all deliverables.
 - No bright colors
 - No harsh contrasts
 - Gold is used intentionally, never decoratively
-- Chakra slides are the only exception where vivid color is used (each chakra's true color)
+- Chakra pages are the only exception where vivid color is used (each chakra's true color)
 
 ### Typography
 
@@ -262,7 +269,7 @@ The designer must follow this system across all deliverables.
 | Headlines | **Cormorant Garamond** | Elegant, serif, devotional, timeless |
 | Body text | **Inter** | Clean, modern, readable, tech-quiet |
 
-**Hierarchy:** Titles > Subtitles > Body > Callouts -- consistent across all deliverables.
+**Hierarchy:** Titles > Subtitles > Body > Callouts -- consistent across web and PDF.
 
 ### Texture & Visual Language
 
@@ -283,79 +290,94 @@ The designer must follow this system across all deliverables.
 
 ## 4. PRODUCTION PHASES
 
-### Phase 1 -- Foundation
+### Phase 1 -- Foundation & Design System
 
 - [ ] Review all brand documents in this repo
 - [ ] Review source Keynote file (`docs/source-materials/Rose + Aura - Invite .key`)
 - [ ] Review source brand guideline document (`docs/source-materials/Brand Guideline Guide-compressed.docx`)
-- [ ] Finalize color palette application (confirm swatches work together in practice)
-- [ ] Lock typography choices and create type scale
-- [ ] Design master slide templates:
-  - Introduction slide template
-  - Chakra slide template (repeatable for 7 chakras)
-  - Teaching flow template
-  - Quote/breathing space template
-  - Guardian profile template
+- [ ] Finalize color palette application (confirm swatches work together on screen and in print)
+- [ ] Lock typography choices and create type scale (web + PDF)
+- [ ] Design the web platform's core UI component library:
+  - Navigation and global layout
+  - Page templates (content page, scroll-based presentation, protected section)
+  - Card components, button styles, spacing tokens
+  - Form field components (inputs, dropdowns, textareas, checkboxes)
+  - Form interaction states (default, hover, focus, error, success)
+  - Contribution tier selection component (card-based)
+  - PDF download button component
+- [ ] Design the branded PDF template system:
+  - PDF page layout (margins, headers, footers, page numbers)
+  - PDF-optimized typography and color application
+  - Background textures for PDF (must print cleanly)
 - [ ] Create background textures and visual assets (clay, linen, stone, fogged light)
+- [ ] Establish responsive breakpoints (mobile, tablet, desktop)
 
-### Phase 2 -- Teacher Visual Aid Manual (Deliverable A)
+### Phase 2 -- Platform Pages (Section D)
 
-- [ ] Build Section 1: Introduction slides
-- [ ] Build Section 2: Energetic Foundations slides (grounding cord, golden sun, earth & cosmos, the rose, the aura, roses of protection)
+- [ ] Design Home page -- entry point, brand essence, clear navigation to all sections
+- [ ] Design The Rose page -- core technology explained (Levels 1-3)
+- [ ] Design The Aura page -- perception and relationship work
+- [ ] Design The Journey page -- what participants experience
+- [ ] Design The Guardians page -- facilitator profiles with photo framing
+- [ ] Design Begin page -- enrollment gateway, links to forms
+- [ ] Design mobile responsive versions of all pages
+- [ ] Design "Download as PDF" integration for content pages (The Rose, The Aura, The Journey)
+- [ ] Verify accessibility (WCAG 2.1 AA)
+
+### Phase 3 -- Teacher Visual Aid Manual (Section A)
+
+- [ ] Design the password-protected entry gate for this section
+- [ ] Build Introduction pages (purpose, how to use, teaching posture, safety and consent)
+- [ ] Build Energetic Foundations pages (grounding cord, golden sun, earth & cosmos, the rose, the aura, roses of protection)
 - [ ] Create or refine illustrations for each energetic concept
-- [ ] Build Section 3: Chakra 1-7 slides (one per chakra, consistent layout)
-- [ ] Build Section 4: Level-specific teaching flow slides
-- [ ] Build Section 5: Teaching Agreements slides
-- [ ] Review all slides for consistency (layout, color, typography, iconography)
+- [ ] Build Chakra 1-7 pages (one per chakra, consistent layout)
+- [ ] Build Level-specific teaching flow pages
+- [ ] Build Teaching Agreements pages
 - [ ] Update/digitally strengthen any existing Procreate diagrams
+- [ ] Design the PDF export for this section (full manual as password-protected PDF)
+- [ ] Review all pages for consistency (layout, color, typography, iconography)
+- [ ] Test the section on tablet and mobile (teachers will use these devices during live sessions)
 
-### Phase 3 -- Invitation Presentation (Deliverable B)
+### Phase 4 -- The Invitation (Section B)
 
-- [ ] Build all 13 slides following the content in `docs/program/presentation.md`
+- [ ] Build all 13 sections following the content in `docs/program/presentation.md`
+- [ ] Design the scrolling web experience with section transitions
 - [ ] Design quote spreads (full-width, presence-oriented)
-- [ ] Design Guardian profile slides with photo framing
+- [ ] Design Guardian profile sections with photo framing
 - [ ] Design contribution model table (inviting, not transactional)
-- [ ] Review for brand consistency with Deliverable A
+- [ ] Design the PDF export for this section (presentation-style, one section per page)
+- [ ] Review for brand consistency with the platform and Section A
 
-### Phase 4 -- PDF Forms (Deliverable C)
+### Phase 5 -- Forms (Section C)
 
-- [ ] Design master form template (header, footer, field styles, signature block)
-- [ ] Build Enrollment / Registration Form
-- [ ] Build Contribution Selection Form
-- [ ] Build Participant Agreements Form
-- [ ] Test all fillable fields across PDF readers (Acrobat, Preview, browser)
-- [ ] Review for brand consistency with Deliverables A and B
-
-### Phase 5 -- Web Forms (Deliverable D)
-
-- [ ] Design form field component library (inputs, dropdowns, textareas, checkboxes, file upload)
-- [ ] Design form interaction states (default, hover, focus, error, success)
-- [ ] Design contribution tier selection component (card-based)
 - [ ] Build Begin Your Journey multi-step enrollment flow (5 steps)
 - [ ] Build Contact / Inquiry form
 - [ ] Build Community Interest / Waitlist form
+- [ ] Design post-submission confirmation pages
+- [ ] Design the PDF export for form confirmations (branded summary of enrollment + agreements)
 - [ ] Design mobile responsive versions of all forms
 - [ ] Verify accessibility (WCAG 2.1 AA)
-- [ ] Review for brand consistency with all prior deliverables
+- [ ] Review for brand consistency with all platform sections
 
-### Phase 6 -- Polish, Review & Localization
+### Phase 6 -- PDF Export System (Section E) & Integration
 
+- [ ] Finalize the branded PDF template across all sections
+- [ ] Test PDF exports for: Teacher Visual Aid Manual, The Invitation, form confirmations, content pages
+- [ ] Verify PDFs render correctly across readers (browser, Acrobat, Preview)
+- [ ] Verify illustrations and diagrams render cleanly in both web and PDF (SVG assets)
+- [ ] Test password protection on Teacher Visual Aid Manual PDF
+- [ ] End-to-end review: navigate the full platform, download all PDF types, verify brand coherence
 - [ ] Internal review with Guardians and facilitators
 - [ ] Address feedback and refine
-- [ ] Export final PDFs (password-protected for the visual aid manual)
-- [ ] Export final fillable PDF forms
-- [ ] Translate all decks and forms to Portuguese and Spanish
+
+### Phase 7 -- Localization
+
+- [ ] Translate all platform content to Portuguese and Spanish
   - Maintain identical layouts, swap text only
   - Respect linguistic nuance (not literal translation)
-- [ ] Deliver to teachers and set up access
-
-### Phase 7 -- Website (Deliverable E)
-
-- [ ] Apply established visual system to web design
-- [ ] Design page templates following the sitemap
-- [ ] Integrate web form designs into page templates
-- [ ] Create responsive component library
-- [ ] Design interactive elements faithful to the brand
+- [ ] Verify translated content works in both web and PDF formats
+- [ ] Test all forms in translated versions
+- [ ] Deliver platform access to teachers and set up credentials
 
 ---
 
@@ -368,13 +390,13 @@ These principles must guide every design decision:
 3. **Centered and calm** -- Layouts are devotional, not dynamic. Centered, not asymmetric.
 4. **Gold is earned** -- Use `#9E956B` for emphasis, never decoration.
 5. **No hype** -- Nothing should feel urgent, loud, or sales-driven. This is an invitation, not a pitch.
-6. **Consistency is coherence** -- Same background style, same layout logic, same color rules, same iconography style across every slide and page.
+6. **Consistency is coherence** -- Same background style, same layout logic, same color rules, same iconography style across every page and PDF.
 7. **Texture has meaning** -- Clay, linen, stone, paper evoke earthiness and groundedness. Use them with intention.
 8. **The Rose Clay Mauve (`#9C6F6E`) is the brand** -- It is the field, not the accent. It should feel like home.
 
 ---
 
-## 6. VOICE & TONE REFERENCE (FOR COPY ON SLIDES)
+## 6. VOICE & TONE REFERENCE (FOR COPY ON THE PLATFORM)
 
 The designer should understand the language world they are designing for:
 
@@ -398,12 +420,13 @@ The designer should understand the language world they are designing for:
 
 | Deliverable | Format | Notes |
 |---|---|---|
-| Teacher Visual Aid Manual | PDF + editable source (Figma/Keynote/InDesign) | Password-protected PDF (4444). Designed for future app/web integration |
-| Invitation Presentation | PDF + editable source | Optimized for screen sharing and live presentation |
-| PDF Forms | Fillable PDF + editable source | Tested across Acrobat, Preview, and browser PDF readers |
-| Web Forms | Figma (or equivalent) | All interaction states, responsive breakpoints, developer-ready specs |
-| Website | Figma (or equivalent) | Component-based, responsive, with design tokens |
-| Assets | SVG/PNG | All illustrations, icons, textures exported as reusable assets |
+| Web Platform Design | Figma (or equivalent) | Complete component library, page designs, responsive breakpoints, interaction states, design tokens, developer-ready specs |
+| PDF Template System | Figma (or equivalent) + sample PDF exports | Branded PDF template with typography, margins, headers/footers. Sample exports for each PDF type |
+| Teacher Visual Aid Manual | Web section design + PDF export design | Password-protected PDF export (4444). Web section must work on tablet during live sessions |
+| The Invitation | Web section design + PDF export design | PDF optimized for screen sharing (one section per page) |
+| Forms | Web form designs | Multi-step enrollment flow, contact, waitlist. All interaction states. Post-submission PDF confirmation design |
+| Platform Pages | Web page designs | All 7 sitemap pages, responsive, with PDF download integration for content pages |
+| Assets | SVG/PNG | All illustrations, icons, textures exported as reusable assets. SVG preferred for cross-medium rendering (web + PDF) |
 
 ---
 
@@ -414,19 +437,21 @@ The designer should understand the language world they are designing for:
 2. Portuguese (secondary)
 3. Spanish
 
-All versions (decks, PDF forms, and web forms) must maintain identical layouts with text-only swaps. Translations should respect linguistic nuance -- not be literal word-for-word translations.
+All platform content and PDF exports must support all three languages with identical layouts and text-only swaps. The web platform should support language switching (via navigation or URL path). PDF exports should generate in the user's selected language. Translations should respect linguistic nuance -- not be literal word-for-word translations.
 
 ---
 
 ## 9. STRATEGIC CONTEXT
 
-This work is more than design production. The Teacher Visual Aid Manual is a proof of concept that demonstrates:
+This work is more than design production. The web platform is a unified digital home for ROSES OS that demonstrates:
 
-- Design coherence
-- Educational clarity
-- Energetic intelligence
-- Platform readiness
+- Design coherence across every touchpoint
+- Educational clarity for teachers and participants
+- Energetic intelligence embedded in every interaction
+- Platform readiness for future growth (app, additional programs, regional expansion)
+
+The web-first approach means content is always current, always accessible, and always shareable -- while PDF downloads ensure nothing is lost when someone is offline, in a session, or wants a personal record. One source of truth, two mediums.
 
 It shows: *"This is how we think, teach, and build."*
 
-The designer is building the visual foundation for an entire ecosystem -- presentations, forms, website, and eventually an app. Every decision made now carries forward.
+The designer is building the visual foundation for an entire ecosystem. Every decision made now carries forward.
