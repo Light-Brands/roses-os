@@ -132,8 +132,8 @@ graph TD
     AP --> AA["Angelina Ataide"]
     AA --> ROS["ROSES OS"]
 
-    style LB fill:#BFB3AA,color:#3F3E3C,stroke:#9A8F88
-    style BPI fill:#BFB3AA,color:#3F3E3C,stroke:#9A8F88
+    style LB fill:#C7AE8C,color:#3F3E3C,stroke:#A8896D
+    style BPI fill:#C7AE8C,color:#3F3E3C,stroke:#A8896D
     style AP fill:#9C6F6E,color:#F7F5F2,stroke:#9C6F6E
     style AA fill:#9C6F6E,color:#F7F5F2,stroke:#9C6F6E
     style ROS fill:#9E956B,color:#F7F5F2,stroke:#9E956B
@@ -191,8 +191,8 @@ graph TD
 
     WHO --> FEEL --> DESIRE --> ROS["ROSES OS"]
 
-    style WHO fill:#E4DED8,color:#3F3E3C,stroke:#BFB3AA
-    style FEEL fill:#BFB3AA,color:#3F3E3C,stroke:#9A8F88
+    style WHO fill:#EBD6C1,color:#3F3E3C,stroke:#C7AE8C
+    style FEEL fill:#C7AE8C,color:#3F3E3C,stroke:#A8896D
     style DESIRE fill:#9C6F6E,color:#F7F5F2,stroke:#9C6F6E
     style ROS fill:#9E956B,color:#F7F5F2,stroke:#9E956B
 ```
@@ -281,7 +281,7 @@ graph TD
     ROS --> SF["Slightly Futuristic"]
 
     style MG fill:#9C6F6E,color:#F7F5F2,stroke:#9C6F6E
-    style TA fill:#9A8F88,color:#F7F5F2,stroke:#9A8F88
+    style TA fill:#A8896D,color:#F7F5F2,stroke:#A8896D
     style MO fill:#9E956B,color:#F7F5F2,stroke:#9E956B
     style ROS fill:#3F3E3C,color:#F7F5F2,stroke:#3F3E3C
 ```
@@ -458,7 +458,7 @@ graph LR
     L2 --- L2D
     L3 --- L3D
 
-    style L1 fill:#BFB3AA,color:#3F3E3C,stroke:#9A8F88
+    style L1 fill:#C7AE8C,color:#3F3E3C,stroke:#A8896D
     style L2 fill:#9C6F6E,color:#F7F5F2,stroke:#9C6F6E
     style L3 fill:#9E956B,color:#F7F5F2,stroke:#9E956B
     style A1 fill:#7A3A34,color:#F7F5F2,stroke:#7A3A34
@@ -490,8 +490,8 @@ graph TD
     ROSE --> FUNCTIONS
 
     style BLOOM fill:#9E956B,color:#F7F5F2
-    style STEM fill:#BFB3AA,color:#3F3E3C
-    style ROOTS fill:#9A8F88,color:#F7F5F2
+    style STEM fill:#C7AE8C,color:#3F3E3C
+    style ROOTS fill:#A8896D,color:#F7F5F2
 ```
 
 ---
@@ -532,8 +532,8 @@ graph TD
     AURA -->|"grounding cord"| EARTH["Center of the Earth"]
 
     style GS fill:#9E956B,color:#F7F5F2,stroke:#9E956B
-    style AURA fill:#E4DED8,color:#3F3E3C,stroke:#9C6F6E
-    style BODY fill:#F7F5F2,color:#3F3E3C,stroke:#BFB3AA
+    style AURA fill:#EBD6C1,color:#3F3E3C,stroke:#9C6F6E
+    style BODY fill:#F7F5F2,color:#3F3E3C,stroke:#C7AE8C
     style EARTH fill:#7A3A34,color:#F7F5F2,stroke:#7A3A34
 ```
 
@@ -561,9 +561,9 @@ graph TD
 
     style COSMOS fill:#9E956B,color:#F7F5F2
     style CROWN fill:#9C6F6E,color:#F7F5F2
-    style BODY fill:#E4DED8,color:#3F3E3C,stroke:#9C6F6E
+    style BODY fill:#EBD6C1,color:#3F3E3C,stroke:#9C6F6E
     style ROOT fill:#7A3A34,color:#F7F5F2
-    style EARTH fill:#9A8F88,color:#F7F5F2
+    style EARTH fill:#A8896D,color:#F7F5F2
 ```
 
 ### Roses of Protection, Observation and Separation
@@ -602,12 +602,12 @@ graph LR
     J --> K["Energy Recovery"]
     K --> L["Discharge Excess"]
 
-    style A fill:#E4DED8,color:#3F3E3C
-    style B fill:#E4DED8,color:#3F3E3C
-    style C fill:#E4DED8,color:#3F3E3C
-    style D fill:#BFB3AA,color:#3F3E3C
-    style E fill:#BFB3AA,color:#3F3E3C
-    style F fill:#BFB3AA,color:#3F3E3C
+    style A fill:#EBD6C1,color:#3F3E3C
+    style B fill:#EBD6C1,color:#3F3E3C
+    style C fill:#EBD6C1,color:#3F3E3C
+    style D fill:#C7AE8C,color:#3F3E3C
+    style E fill:#C7AE8C,color:#3F3E3C
+    style F fill:#C7AE8C,color:#3F3E3C
     style G fill:#9C6F6E,color:#F7F5F2
     style H fill:#9C6F6E,color:#F7F5F2
     style I fill:#9C6F6E,color:#F7F5F2
@@ -652,8 +652,8 @@ graph LR
     C ==> D["Owning<br/><i>Fill with your energy</i>"]
     D ==> E["Sacred Space<br/>Complete"]
 
-    style A fill:#E4DED8,color:#3F3E3C
-    style B fill:#BFB3AA,color:#3F3E3C
+    style A fill:#EBD6C1,color:#3F3E3C
+    style B fill:#C7AE8C,color:#3F3E3C
     style C fill:#9C6F6E,color:#F7F5F2
     style D fill:#9E956B,color:#F7F5F2
     style E fill:#3F3E3C,color:#F7F5F2
@@ -907,7 +907,7 @@ graph LR
 
     style PAST fill:#7A3A34,color:#F7F5F2
     style PRESENT fill:#9C6F6E,color:#F7F5F2
-    style CHAKRA fill:#E4DED8,color:#3F3E3C
+    style CHAKRA fill:#EBD6C1,color:#3F3E3C
     style RESTORED fill:#9E956B,color:#F7F5F2
 ```
 
@@ -932,8 +932,8 @@ graph LR
 
     P1 ==> P2 ==> P3 ==> P4
 
-    style P1 fill:#E4DED8,color:#3F3E3C
-    style P2 fill:#BFB3AA,color:#3F3E3C
+    style P1 fill:#EBD6C1,color:#3F3E3C
+    style P2 fill:#C7AE8C,color:#3F3E3C
     style P3 fill:#9C6F6E,color:#F7F5F2
     style P4 fill:#9E956B,color:#F7F5F2
 ```
@@ -953,11 +953,11 @@ graph LR
     I --> J["Energy<br/>Recovery"]
     J --> K["Golden<br/>Sticky Roses"]
 
-    style A fill:#E4DED8,color:#3F3E3C
-    style B fill:#E4DED8,color:#3F3E3C
-    style C fill:#BFB3AA,color:#3F3E3C
-    style D fill:#BFB3AA,color:#3F3E3C
-    style E fill:#BFB3AA,color:#3F3E3C
+    style A fill:#EBD6C1,color:#3F3E3C
+    style B fill:#EBD6C1,color:#3F3E3C
+    style C fill:#C7AE8C,color:#3F3E3C
+    style D fill:#C7AE8C,color:#3F3E3C
+    style E fill:#C7AE8C,color:#3F3E3C
     style F fill:#9C6F6E,color:#F7F5F2
     style G fill:#9C6F6E,color:#F7F5F2
     style H fill:#9C6F6E,color:#F7F5F2
@@ -1001,9 +1001,9 @@ graph TD
     style ROSE fill:#9C6F6E,color:#F7F5F2
     style AURA fill:#9E956B,color:#F7F5F2
     style SYNERGY fill:#3F3E3C,color:#F7F5F2
-    style COH fill:#E4DED8,color:#3F3E3C
-    style LOV fill:#E4DED8,color:#3F3E3C
-    style CON fill:#E4DED8,color:#3F3E3C
+    style COH fill:#EBD6C1,color:#3F3E3C
+    style LOV fill:#EBD6C1,color:#3F3E3C
+    style CON fill:#EBD6C1,color:#3F3E3C
 ```
 
 ---
@@ -1102,9 +1102,9 @@ graph TD
     PM --> ROS
 
     style AA fill:#9C6F6E,color:#F7F5F2
-    style DD fill:#9A8F88,color:#F7F5F2
-    style DA fill:#BFB3AA,color:#3F3E3C
-    style PM fill:#E4DED8,color:#3F3E3C
+    style DD fill:#A8896D,color:#F7F5F2
+    style DA fill:#C7AE8C,color:#3F3E3C
+    style PM fill:#EBD6C1,color:#3F3E3C
     style ROS fill:#9E956B,color:#F7F5F2
 ```
 
@@ -1184,7 +1184,7 @@ graph TD
 
     style ROSE_COURSE fill:#9C6F6E,color:#F7F5F2
     style AURA_COURSE fill:#9E956B,color:#F7F5F2
-    style CONTRIBUTION fill:#E4DED8,color:#3F3E3C
+    style CONTRIBUTION fill:#EBD6C1,color:#3F3E3C
 ```
 
 ---
@@ -1289,7 +1289,7 @@ This color should never be used like an accent button color. **It is a field col
 #### Typography on Rose Clay Mauve Backgrounds
 
 - Headlines: Aura White (`#F7F5F2`) or very light sand
-- Body text: Neutral Sand (`#E4DED8`)
+- Body text: Peach Sand (`#EBD6C1`)
 - Bold emphasis: Aura White only (no brighter contrast)
 - Avoid pure white -- it breaks the warmth
 
@@ -1304,9 +1304,9 @@ This color should never be used like an accent button color. **It is a field col
 
 | Color | HEX | Usage |
 |-------|-----|-------|
-| Muted Clay | `#9A8F88` | Warm neutral -- more mineral, reads earthy |
-| Balanced Stone | `#BFB3AA` | Background support -- cooler, architectural, unisex |
-| Neutral Sand | `#E4DED8` | Light background -- linen / parchment feel |
+| Gilded Clay | `#A8896D` | Warm neutral -- golden-tan, reads earthy and sun-kissed |
+| Honeyed Stone | `#C7AE8C` | Background support -- warm golden, architectural, inviting |
+| Peach Sand | `#EBD6C1` | Light background -- peachy cream, soft warmth |
 | Golden Ether | `#F5E8E2` | Warm blush background -- parchment ivory with soft golden cast, pairs naturally with gold accents |
 | Aura White | `#F7F5F2` | Primary background -- excellent and neutral |
 | Soft Charcoal | `#3F3E3C` | Body text, navigation, buttons, footer, dark elements |
@@ -1332,7 +1332,7 @@ This color should never be used like an accent button color. **It is a field col
 **HSL:** ~20°, low saturation, very high lightness
 **Feel:** Parchment, handmade paper, soft linen -- warm-neutral, not pink-forward
 
-Golden Ether is a warm blush ivory with a soft golden cast. It sits between Neutral Sand and Aura White in the palette hierarchy -- warmer and more luminous than Aura White, but lighter than Neutral Sand.
+Golden Ether is a warm blush ivory with a soft golden cast. It sits between Peach Sand and Aura White in the palette hierarchy -- warmer and more luminous than Aura White, but lighter than Peach Sand.
 
 **Why it works:**
 
@@ -1363,7 +1363,7 @@ Background-range colors can also serve as text colors when placed on darker back
 
 | Color | Text Use |
 |-------|----------|
-| Light Terracotta (`#C4836C`) | Headlines or emphasis text on light backgrounds (Golden Ether, Aura White, Neutral Sand) |
+| Light Terracotta (`#C4836C`) | Headlines or emphasis text on light backgrounds (Golden Ether, Aura White, Peach Sand) |
 | Rose Clay Mauve (`#9C6F6E`) | Subheadings or accent text on light backgrounds |
 | Warm Rose-Clay Brown (`#9B6A66`) | Body emphasis on Aura White or Golden Ether |
 
@@ -1383,9 +1383,9 @@ graph TD
     end
 
     subgraph NEUTRAL["Primary Neutrals"]
-        MC["Muted Clay #9A8F88"]
-        BS["Balanced Stone #BFB3AA"]
-        NS["Neutral Sand #E4DED8"]
+        MC["Gilded Clay #A8896D"]
+        BS["Honeyed Stone #C7AE8C"]
+        NS["Peach Sand #EBD6C1"]
         PL["Golden Ether #F5E8E2"]
         AW["Aura White #F7F5F2"]
         SC["Soft Charcoal #3F3E3C"]
@@ -1400,9 +1400,9 @@ graph TD
     style RCM fill:#9C6F6E,color:#F7F5F2
     style WRC fill:#9B6A66,color:#F7F5F2
     style DT fill:#C4836C,color:#F7F5F2
-    style MC fill:#9A8F88,color:#F7F5F2
-    style BS fill:#BFB3AA,color:#3F3E3C
-    style NS fill:#E4DED8,color:#3F3E3C
+    style MC fill:#A8896D,color:#F7F5F2
+    style BS fill:#C7AE8C,color:#3F3E3C
+    style NS fill:#EBD6C1,color:#3F3E3C
     style PL fill:#F5E8E2,color:#3F3E3C
     style AW fill:#F7F5F2,color:#3F3E3C
     style SC fill:#3F3E3C,color:#F7F5F2
@@ -1674,8 +1674,8 @@ graph TD
 
     P1 & P2 & P3 & P4 --> SITE["ROSES OS Website<br/><i>A threshold, not a marketing site</i>"]
 
-    style P1 fill:#E4DED8,color:#3F3E3C
-    style P2 fill:#BFB3AA,color:#3F3E3C
+    style P1 fill:#EBD6C1,color:#3F3E3C
+    style P2 fill:#C7AE8C,color:#3F3E3C
     style P3 fill:#9C6F6E,color:#F7F5F2
     style P4 fill:#9E956B,color:#F7F5F2
     style SITE fill:#3F3E3C,color:#F7F5F2
@@ -1860,12 +1860,12 @@ graph TD
     style JOURNEY fill:#9C6F6E,color:#F7F5F2
     style GUARD fill:#9C6F6E,color:#F7F5F2
     style BEGIN fill:#9E956B,color:#F7F5F2
-    style L1 fill:#BFB3AA,color:#3F3E3C
-    style L2 fill:#BFB3AA,color:#3F3E3C
-    style L3 fill:#BFB3AA,color:#3F3E3C
-    style A1S fill:#BFB3AA,color:#3F3E3C
-    style CONTRIB fill:#BFB3AA,color:#3F3E3C
-    style JOURNAL fill:#E4DED8,color:#3F3E3C,stroke-dasharray: 5 5
+    style L1 fill:#C7AE8C,color:#3F3E3C
+    style L2 fill:#C7AE8C,color:#3F3E3C
+    style L3 fill:#C7AE8C,color:#3F3E3C
+    style A1S fill:#C7AE8C,color:#3F3E3C
+    style CONTRIB fill:#C7AE8C,color:#3F3E3C
+    style JOURNAL fill:#EBD6C1,color:#3F3E3C,stroke-dasharray: 5 5
 ```
 
 ### User Journey Flow
@@ -1882,9 +1882,9 @@ graph LR
 
     DISCOVER ==> FEEL ==> EXPLORE ==> RESONATE ==> BEGIN_J ==> PRACTICE ==> REMEMBER
 
-    style DISCOVER fill:#E4DED8,color:#3F3E3C
-    style FEEL fill:#BFB3AA,color:#3F3E3C
-    style EXPLORE fill:#BFB3AA,color:#3F3E3C
+    style DISCOVER fill:#EBD6C1,color:#3F3E3C
+    style FEEL fill:#C7AE8C,color:#3F3E3C
+    style EXPLORE fill:#C7AE8C,color:#3F3E3C
     style RESONATE fill:#9C6F6E,color:#F7F5F2
     style BEGIN_J fill:#9C6F6E,color:#F7F5F2
     style PRACTICE fill:#9E956B,color:#F7F5F2
