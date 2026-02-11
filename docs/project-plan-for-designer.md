@@ -116,6 +116,7 @@ There are **five platform sections**, in priority order:
 
 1. **Full Schedule** -- All class times across four time zones (San Jose, New York, Brasilia, London), organized by stage, week, and weekend
 2. **Contribution Model** -- Income tiers and invitational language
+3. **Talk with Dara** -- WhatsApp contact button for questions about the program, schedule, or contribution
 
 **Design rules specific to this section:**
 - Generous whitespace -- every section should breathe

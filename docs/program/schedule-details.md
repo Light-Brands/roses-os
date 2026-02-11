@@ -162,3 +162,9 @@ This work is offered in devotion. You are invited to choose a contribution that 
 | Above $70,000 USD | Higher tier -- supports accessibility for others and the expansion of this work |
 
 Your support allows these technologies to reach more people worldwide.
+
+---
+
+## Questions?
+
+**[Talk with Dara](https://wa.me/5511996330135)** -- Reach out on WhatsApp for any questions about the program, schedule, or contribution.
