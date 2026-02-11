@@ -1142,10 +1142,12 @@ This manual is a sacred companion for those who have been initiated into the pat
 
 - Two immersive days, online
 - Six hours per day, offered in two three-hour sessions
+- **Dates:** March 17th -- March 26th
 
 ### + Aura 1
 
 - Eleven sessions, structured and flexible blocks
+- **Dates:** March 17th -- March 26th
 
 ### Contribution Model
 
