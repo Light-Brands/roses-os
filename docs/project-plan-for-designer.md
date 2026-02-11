@@ -153,7 +153,7 @@ There are **five platform sections**, in priority order:
 **Design rules for forms:**
 - Follow all platform UI component specs (pill-shaped buttons, 20px border radius cards, etc.)
 - Multi-step forms use a subtle progress indicator -- minimal, not a numbered stepper
-- Field styling: warm-toned backgrounds (Golden Ether or Neutral Sand), soft borders in Muted Clay (`#9A8F88`)
+- Field styling: warm-toned backgrounds (Golden Ether or Peach Sand), soft borders in Gilded Clay (`#A8896D`)
 - Active/focused fields: border shifts to Antique Olive Brass (`#9E956B`)
 - Submit buttons: pill-shaped, olive gold, with calm invitational labels ("Continue," "Begin," "Submit with Gratitude")
 - Error states: gentle, never alarming -- warm language ("This field needs your attention") with Light Terracotta (`#C4836C`) as the indicator color, not red
@@ -243,9 +243,9 @@ The designer must follow this system across the entire platform -- web and PDF.
 
 | Color | HEX | Role |
 |---|---|---|
-| Muted Clay | `#9A8F88` | Warm neutral |
-| Balanced Stone | `#BFB3AA` | Background support |
-| Neutral Sand | `#E4DED8` | Light background |
+| Gilded Clay | `#A8896D` | Warm neutral |
+| Honeyed Stone | `#C7AE8C` | Background support |
+| Peach Sand | `#EBD6C1` | Light background |
 | Golden Ether | `#F5E8E2` | Warm blush background, pairs with gold |
 | Aura White | `#F7F5F2` | Primary background |
 | Soft Charcoal | `#3F3E3C` | Text, dark elements |

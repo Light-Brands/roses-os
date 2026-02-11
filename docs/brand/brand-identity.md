@@ -100,9 +100,9 @@ For those who feel the world accelerating and know the tools they inherited were
 
 | Color | HEX | Usage |
 |---|---|---|
-| Muted Clay | `#9A8F88` | Warm neutral |
-| Balanced Stone | `#BFB3AA` | Background support |
-| Neutral Sand | `#E4DED8` | Light background |
+| Gilded Clay | `#A8896D` | Warm neutral |
+| Honeyed Stone | `#C7AE8C` | Background support |
+| Peach Sand | `#EBD6C1` | Light background |
 | Golden Ether | `#F5E8E2` | Warm blush background -- pairs with gold |
 | Aura White | `#F7F5F2` | Primary background |
 | Antique Olive Brass | `#9E956B` | Accent, buttons, highlights |
