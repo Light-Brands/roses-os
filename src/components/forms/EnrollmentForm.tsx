@@ -27,12 +27,12 @@ const programs = [
   {
     id: 'the-rose',
     title: 'The Rose',
-    subtitle: 'Foundation Program -- 8 weeks',
+    subtitle: 'Rose Meditation Level 1, 2 & 3 -- 2 days',
   },
   {
     id: 'the-rose-aura-1',
     title: 'The Rose + Aura 1',
-    subtitle: 'Advanced Immersion -- 12 weeks',
+    subtitle: 'Complete Immersion -- 11 days',
   },
 ];
 
