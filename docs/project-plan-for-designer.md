@@ -37,7 +37,7 @@ There are **five platform sections**, in priority order:
 
 **What it is:** A password-protected section of the web platform that teachers access while guiding live sessions. Not a student workbook -- a facilitator's visual companion, accessible in-browser and downloadable as PDF for offline use.
 
-**Access:** Password-protected area (password: 4444). Teachers log in or enter the password to access this section.
+**Access:** Password-protected area (password: 8888). Teachers log in or enter the password to access this section.
 
 **Purpose:**
 - Support teachers in explaining energetic concepts clearly
@@ -209,14 +209,14 @@ There are **five platform sections**, in priority order:
 - Rose Clay Mauve (`#9C6F6E`) for section headers and dividers
 - Antique Olive Brass (`#9E956B`) for accent lines
 - Page numbers, section headers in footer
-- Teacher Visual Aid Manual PDF is password-protected (password: 4444); all other PDFs are open
+- Teacher Visual Aid Manual PDF is password-protected (password: 8888); all other PDFs are open
 - Illustrations and diagrams must render cleanly in both web and PDF formats (SVG preferred)
 
 **PDF types across the platform:**
 
 | Source Section | PDF Type | Access |
 |---|---|---|
-| Teacher Visual Aid Manual | Full manual export | Password-protected (4444) |
+| Teacher Visual Aid Manual | Full manual export | Password-protected (8888) |
 | The Invitation | Presentation-style PDF (one section per page) | Public |
 | Forms (post-submission) | Confirmation summary with signed agreements | Per-participant |
 | The Rose / The Aura / The Journey | Content page exports | Public |
@@ -422,7 +422,7 @@ The designer should understand the language world they are designing for:
 |---|---|---|
 | Web Platform Design | Figma (or equivalent) | Complete component library, page designs, responsive breakpoints, interaction states, design tokens, developer-ready specs |
 | PDF Template System | Figma (or equivalent) + sample PDF exports | Branded PDF template with typography, margins, headers/footers. Sample exports for each PDF type |
-| Teacher Visual Aid Manual | Web section design + PDF export design | Password-protected PDF export (4444). Web section must work on tablet during live sessions |
+| Teacher Visual Aid Manual | Web section design + PDF export design | Password-protected PDF export (8888). Web section must work on tablet during live sessions |
 | The Invitation | Web section design + PDF export design | PDF optimized for screen sharing (one section per page) |
 | Forms | Web form designs | Multi-step enrollment flow, contact, waitlist. All interaction states. Post-submission PDF confirmation design |
 | Platform Pages | Web page designs | All 7 sitemap pages, responsive, with PDF download integration for content pages |

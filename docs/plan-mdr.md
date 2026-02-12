@@ -177,7 +177,7 @@ Each chakra section includes:
 
 ### Access & Security
 
-- Password protected: 4444
+- Password protected: 8888
 - Simple access for teachers
 - Not publicly indexed
 
