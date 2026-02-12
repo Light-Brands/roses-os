@@ -123,17 +123,15 @@ Aura Reading emerged in the 1960s, in California, channeled by a North American 
 
 ### Lineage Transmission
 
-Berkeley Psychic Institute --> **Anastasia Plunk** --> **Angelina Ataide** --> **ROSES OS**
+**Lewis S. Bostwick** --> **Anastasia Plunk** --> **Angelina Ataide** --> **ROSES OS**
 
 ```mermaid
 graph TD
-    LB["Lewis S. Bostwick<br/><i>1960s, California</i>"] --> BPI["Berkeley Psychic Institute<br/>&<br/>Church of the Divine Man"]
-    BPI --> AP["Anastasia Plunk"]
-    AP --> AA["Angelina Ataide"]
-    AA --> ROS["ROSES OS"]
+    LB["Lewis S. Bostwick<br/><i>1960s, California<br/>Founder of the Berkeley Psychic Institute<br/>& Church of the Divine Man</i>"] --> AP["Anastasia Plunk"]
+    AP --> AA["Angelina Ataide<br/><i>1990s, Founder of CELARIS<br/>(formerly Escola da Aura & Sueños)</i>"]
+    AA --> ROS["ROSES OS<br/><i>2025</i>"]
 
     style LB fill:#C7AE8C,color:#3F3E3C,stroke:#A8896D
-    style BPI fill:#C7AE8C,color:#3F3E3C,stroke:#A8896D
     style AP fill:#9C6F6E,color:#F7F5F2,stroke:#9C6F6E
     style AA fill:#9C6F6E,color:#F7F5F2,stroke:#9C6F6E
     style ROS fill:#9E956B,color:#F7F5F2,stroke:#9E956B
