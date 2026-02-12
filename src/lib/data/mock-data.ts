@@ -29,7 +29,7 @@ export const guardians: Guardian[] = [
   {
     id: '1',
     name: 'Angelina Ataíde',
-    role: 'Lead Guardian',
+    role: 'Guardian of Lineage',
     bio: 'A pioneer in Aura Reading education in Brazil and Portugal, Angelina has dedicated over three decades to spiritual development and training aura readers. Her transformative methodology has already trained thousands of students, therapists, and teachers — combining spiritual wisdom with practical techniques as the primary steward of the ROSES OS lineage.',
     image: '/images/angel.JPG',
   },
