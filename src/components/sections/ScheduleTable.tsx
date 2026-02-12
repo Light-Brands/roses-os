@@ -136,7 +136,7 @@ export default function ScheduleTable({ stages, className }: ScheduleTableProps)
                       {/* Table header */}
                       <div className="grid grid-cols-[1fr_1.5fr_auto] gap-4 pb-3 mb-3 border-b border-[var(--color-border-subtle)]">
                         <span className="label-sacred">Day</span>
-                        <span className="label-sacred">Topic</span>
+                        <span className="label-sacred">Duration</span>
                         <span className="label-sacred">Time</span>
                       </div>
 
@@ -163,7 +163,7 @@ export default function ScheduleTable({ stages, className }: ScheduleTableProps)
                               {session.day}
                             </span>
                             <span className="text-[var(--color-foreground-muted)]">
-                              {session.topic}
+                              {session.duration}
                             </span>
                             <span className="text-[var(--color-foreground-faint)] tabular-nums whitespace-nowrap">
                               {session.time[timezone]}
