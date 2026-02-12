@@ -64,7 +64,7 @@ export default function LineageTimeline({ entries, className }: LineageTimelineP
               'left-4 top-0 bottom-0 w-px lg:left-0 lg:top-auto lg:bottom-auto',
               // Desktop: horizontal line centered vertically
               'lg:w-full lg:h-px lg:top-6',
-              'bg-[#C4A86B]'
+              'bg-[#9E956B]'
             )}
           />
 
@@ -95,16 +95,16 @@ export default function LineageTimeline({ entries, className }: LineageTimelineP
                   // Desktop: on the horizontal line
                   'lg:left-4 lg:-top-[5px]',
                   'w-3 h-3 rounded-full',
-                  'bg-[#C4A86B]',
+                  'bg-[#9E956B]',
                   'border-2 border-[var(--color-background)]',
-                  'shadow-[0_0_0_2px_#C4A86B]'
+                  'shadow-[0_0_0_2px_#9E956B]'
                 )}
               />
 
               {/* Year */}
               <p className={cn(
                 "relative z-10",
-                "text-xs font-medium uppercase tracking-[0.15em] text-[#C4A86B] mb-1.5",
+                "text-xs font-medium uppercase tracking-[0.15em] text-[#9E956B] mb-1.5",
                 // Desktop: position above the gold line
                 "lg:absolute lg:top-0 lg:left-4",
               )}>

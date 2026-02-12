@@ -151,7 +151,7 @@ export default function ShaderSphere({ mouseRef, reducedMotion, isDark }: Shader
         ior={1.4}
         envMapIntensity={isDark ? 1.5 : 2.5}
         specularIntensity={1.0}
-        specularColor={"#C4A86B" as unknown as THREE.Color}
+        specularColor={"#9E956B" as unknown as THREE.Color}
         attenuationColor={"#9C6F6E" as unknown as THREE.Color}
         attenuationDistance={1.5}
         side={THREE.DoubleSide}

@@ -159,9 +159,9 @@ function ArchitectureLayers() {
               <span
                 className={cn(
                   'block font-serif text-3xl leading-none',
-                  'text-[#C4A86B]/40 mb-3',
+                  'text-[#9E956B]/40 mb-3',
                   'transition-colors duration-300',
-                  'group-hover:text-[#C4A86B]/70'
+                  'group-hover:text-[#9E956B]/70'
                 )}
               >
                 {String(i + 1).padStart(2, '0')}

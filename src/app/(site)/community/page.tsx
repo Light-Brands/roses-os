@@ -121,9 +121,9 @@ export default function CommunityPage() {
                     className={cn(
                       'flex items-center justify-center',
                       'w-8 h-8 rounded-full',
-                      'bg-[#C4A86B]/10 text-[#C4A86B]',
+                      'bg-[#9E956B]/10 text-[#9E956B]',
                       'font-serif font-semibold text-sm',
-                      'border border-[#C4A86B]/20'
+                      'border border-[#9E956B]/20'
                     )}
                   >
                     {i + 1}

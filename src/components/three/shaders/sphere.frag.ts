@@ -22,7 +22,7 @@ void main() {
   vec3 roseDeep  = vec3(0.43, 0.29, 0.29);   // Deep Earth #6E4A49
   vec3 roseMid   = vec3(0.61, 0.44, 0.43);    // Rose Clay #9C6F6E
   vec3 roseLight = vec3(0.91, 0.77, 0.75);    // Rose 300 #E8C4BF
-  vec3 goldWarm  = vec3(0.77, 0.66, 0.42);    // Soft Gold #C4A86B
+  vec3 goldWarm  = vec3(0.62, 0.58, 0.42);    // Antique Olive Brass #9E956B
 
   // Caustic-like interior — directional streaks
   float animTime = uTime * mix(0.12, 0.0, uReducedMotion);

@@ -1,7 +1,7 @@
 /**
  * Design Tokens — ROSES OS
  * Warm, sacred design system with organic curves and contemplative rhythm
- * Palette: warm whites, rose clay, deep earth, soft gold, sage mist
+ * Palette: aura white, rose clay, soft charcoal, antique olive brass
  */
 
 // =============================================================================
@@ -9,21 +9,23 @@
 // =============================================================================
 
 export const colors = {
-  // Brand Core
+  // Brand Core — from Brand DNA
   brand: {
-    warmWhite: '#FAF8F5',
-    softIvory: '#F5F0EB',
-    mutedStone: '#E8E0D8',
-    roseClay: '#9C6F6E',
-    deepEarth: '#3B2F2F',
-    charcoalVeil: '#2C2C2C',
+    auraWhite: '#F7F5F2',        // Primary background — excellent and neutral
+    creamVeil: '#FFF8E7',        // Soft cream background — warm ivory, gentle and luminous
+    goldenEther: '#F5E8E2',      // Warm blush background — parchment ivory with soft golden cast
+    peachSand: '#EBD6C1',        // Light background — peachy cream, soft warmth
+    honeyedStone: '#C7AE8C',     // Background support — warm golden, architectural, inviting
+    gildedClay: '#A8896D',       // Warm neutral — golden-tan, reads earthy and sun-kissed
+    roseClay: '#9C6F6E',         // Signature color — the human interface layer
+    softCharcoal: '#3F3E3C',     // Body text, navigation, buttons, footer, dark elements
   },
 
-  // Accents
+  // Accents — from Brand DNA
   accent: {
-    softGold: '#C4A86B',
-    sageMist: '#A3B5A6',
-    dustyLavender: '#B8A9C9',
+    antiqueOliveBrass: '#9E956B', // Buttons, highlights, sacred detail — like gold in a temple
+    lightTerracotta: '#C4836C',   // Sun-warmed clay, soft earth — warm, luminous, approachable
+    warmRoseClay: '#9B6A66',      // Dusty mauve tones — clay, terracotta dust, sun-warmed stone
   },
 
   // Rose scale (for field usage)
@@ -44,7 +46,7 @@ export const colors = {
   // Warm neutrals (replacing cold greys)
   warm: {
     0: '#FFFFFF',
-    50: '#FAF8F5',
+    50: '#F7F5F2',
     100: '#F5F0EB',
     200: '#E8E0D8',
     300: '#D4C8BE',
@@ -52,7 +54,7 @@ export const colors = {
     500: '#8C7E73',
     600: '#6B5F56',
     700: '#504540',
-    800: '#3B2F2F',
+    800: '#3F3E3C',
     900: '#2A2020',
     950: '#1A1716',
   },
@@ -78,8 +80,8 @@ export const colors = {
     },
     warning: {
       light: '#FDF8F0',
-      default: '#C4A86B',
-      dark: '#A68D55',
+      default: '#9E956B',
+      dark: '#7D7652',
       subtle: '#F7F0E0',
     },
     error: {
@@ -98,14 +100,14 @@ export const colors = {
 
   // Gradients — warm, organic
   gradients: {
-    primary: 'linear-gradient(135deg, #3B2F2F 0%, #1A1716 100%)',
-    secondary: 'linear-gradient(135deg, #6B5F56 0%, #3B2F2F 100%)',
-    subtle: 'linear-gradient(135deg, #FAF8F5 0%, #F5F0EB 100%)',
+    primary: 'linear-gradient(135deg, #3F3E3C 0%, #1A1716 100%)',
+    secondary: 'linear-gradient(135deg, #6B5F56 0%, #3F3E3C 100%)',
+    subtle: 'linear-gradient(135deg, #F7F5F2 0%, #F5F0EB 100%)',
     dark: 'linear-gradient(135deg, #1A1716 0%, #2A2020 100%)',
-    glass: 'linear-gradient(135deg, rgba(250,248,245,0.1) 0%, rgba(250,248,245,0.03) 100%)',
+    glass: 'linear-gradient(135deg, rgba(247,245,242,0.1) 0%, rgba(247,245,242,0.03) 100%)',
     rose: 'linear-gradient(135deg, #9C6F6E 0%, #6E4A49 100%)',
-    gold: 'linear-gradient(135deg, #C4A86B 0%, #A68D55 100%)',
-    mesh: 'radial-gradient(ellipse 80% 50% at 35% 20%, rgba(156,111,110,0.06) 0px, transparent 50%), radial-gradient(ellipse 60% 40% at 75% 80%, rgba(196,168,107,0.04) 0px, transparent 50%)',
+    gold: 'linear-gradient(135deg, #9E956B 0%, #7D7652 100%)',
+    mesh: 'radial-gradient(ellipse 80% 50% at 35% 20%, rgba(156,111,110,0.06) 0px, transparent 50%), radial-gradient(ellipse 60% 40% at 75% 80%, rgba(158,149,107,0.04) 0px, transparent 50%)',
   },
 } as const;
 
@@ -114,7 +116,7 @@ export const colors = {
 // =============================================================================
 
 export const typography = {
-  // Font families — Cormorant Garamond (display) + Inter (body)
+  // Font families — Cormorant Garamond (sacred headlines) + Inter (modern clarity)
   fonts: {
     serif: 'var(--font-serif, "Cormorant Garamond", Georgia, "Times New Roman", serif)',
     sans: 'var(--font-sans, "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif)',
@@ -246,7 +248,7 @@ export const shadows = {
 
   // Rose & Gold variants
   rose: '0 4px 16px 0 rgb(156 111 110 / 0.15)',
-  gold: '0 4px 16px 0 rgb(196 168 107 / 0.15)',
+  gold: '0 4px 16px 0 rgb(158 149 107 / 0.15)',
 
   // Elevation levels
   elevation1: '0 1px 3px 0 rgb(59 47 47 / 0.05), 0 1px 2px 0 rgb(59 47 47 / 0.03)',

@@ -20,7 +20,7 @@ body {
 @theme inline {
   /* Colors - Warm Neutrals */
   --color-warm-0: #FFFFFF;
-  --color-warm-50: #FAF8F5;
+  --color-warm-50: #F7F5F2;
   --color-warm-100: #F5F0EB;
   --color-warm-200: #E8E0D8;
   --color-warm-300: #D4C8BE;
@@ -28,7 +28,7 @@ body {
   --color-warm-500: #8C7E73;
   --color-warm-600: #6B5F56;
   --color-warm-700: #504540;
-  --color-warm-800: #3B2F2F;
+  --color-warm-800: #3F3E3C;
   --color-warm-900: #2A2020;
   --color-warm-950: #1A1716;
 
@@ -45,14 +45,17 @@ body {
   --color-rose-900: #3B2828;
   --color-rose-950: #2A1C1C;
 
-  /* Brand Accent Colors */
-  --color-gold: #C4A86B;
-  --color-sage: #A3B5A6;
-  --color-lavender: #B8A9C9;
+  /* Brand Accent Colors — from Brand DNA */
+  --color-gold: #9E956B;
+  --color-terracotta: #C4836C;
+  --color-honeyed: #C7AE8C;
+  --color-peach-sand: #EBD6C1;
+  --color-golden-ether: #F5E8E2;
+  --color-cream-veil: #FFF8E7;
 
   /* Status Colors */
   --color-success: #5B9A6F;
-  --color-warning: #C4A86B;
+  --color-warning: #9E956B;
   --color-error: #C0392B;
   --color-info: #6B5F56;
 

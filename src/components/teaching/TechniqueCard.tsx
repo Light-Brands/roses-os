@@ -54,8 +54,8 @@ export default function TechniqueCard({ technique, index = 0, className }: Techn
             'inline-flex items-center',
             'text-[11px] font-medium uppercase tracking-[0.1em]',
             'px-2.5 py-1 rounded-full',
-            'bg-[#C4A86B]/10 text-[#C4A86B]',
-            'border border-[#C4A86B]/20'
+            'bg-[#9E956B]/10 text-[#9E956B]',
+            'border border-[#9E956B]/20'
           )}
         >
           {technique.category}
