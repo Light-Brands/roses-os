@@ -36,7 +36,7 @@ export const guardians: Guardian[] = [
   {
     id: '2',
     name: 'Diego Dosal',
-    role: 'Guardian of Structural Architecture & Expansion',
+    role: 'Guardian of Structure & Architecture',
     bio: 'Diego is the bridge between spirit and structure. With deep roots in spiritual practice, energy work, and community building, he carries the horizontal axis of ROSES OS — developing platforms, systems, and frameworks that harmonize intuition with strategy and build lasting foundations for remembrance.',
     image: '/guardians/diego.jpg',
   },
