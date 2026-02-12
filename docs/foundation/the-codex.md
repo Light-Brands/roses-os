@@ -502,12 +502,6 @@ The Rose establishes the foundation. The Aura awakens perception. The Dreams tra
 
 This is not metaphor. It is architecture.
 
-### The Roses Sequence
-
-- **Rose One** is offered freely, meeting each person exactly where they are
-- **Rose Two** integrates remembrance into daily rhythm
-- **Rose Three** opens initiation and increased energetic capacity
-
 From here, two learning rivers unfold:
 
 - **The Aura Path** (Levels 1--4) develops perceptual clarity and precision
