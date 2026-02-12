@@ -177,8 +177,9 @@ Each chakra section includes:
 
 ### Access & Security
 
-- Password protected: 4444
-- Simple access for teachers
+- Static passcode-protected: **4444**
+- This is a fixed, shared passcode — not a per-user login or rotating credential
+- Simple access for teachers: enter the code once to view the manual
 - Not publicly indexed
 
 ### Downloading
