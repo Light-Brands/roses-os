@@ -54,10 +54,10 @@ export interface ScheduleSession {
 
 /** Timezone column entries */
 export interface TimeZoneEntry {
-  pt: string;
-  et: string;
-  gmt: string;
-  ist: string;
+  sanJose: string;
+  newYork: string;
+  brasilia: string;
+  london: string;
 }
 
 /** Coherence domain (from The Codex) */
