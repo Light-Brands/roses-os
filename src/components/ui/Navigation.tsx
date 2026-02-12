@@ -174,8 +174,8 @@ export function Navigation({
               ))}
             </div>
 
-            {/* Center: logo — flex-shrink-0 so it stays truly centered */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex-shrink-0">
+            {/* Logo — left-aligned on mobile/tablet, absolutely centered on desktop */}
+            <div className="z-10 flex-shrink-0 lg:absolute lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2">
               {logo || <Logo size="lg" />}
             </div>
 
