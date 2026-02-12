@@ -7,7 +7,7 @@ import type { PathLevel } from '@/lib/data/types';
 
 // =============================================================================
 // PATH LEVELS
-// 3-step visualization with connected steps design.
+// Multi-step visualization with connected steps design.
 // Compact: titles + subtitles only. Full: everything including focus areas.
 // =============================================================================
 
@@ -57,7 +57,7 @@ export default function PathLevels({ levels, variant = 'full', className }: Path
           <div
             className={cn(
               'grid gap-0',
-              'grid-cols-1 lg:grid-cols-3'
+              'grid-cols-1 md:grid-cols-2 lg:grid-cols-4'
             )}
           >
             {levels.map((level, index) => (
@@ -66,16 +66,20 @@ export default function PathLevels({ levels, variant = 'full', className }: Path
                 variants={stepVariants}
                 className={cn(
                   'relative group',
-                  // Desktop: side borders for connected look
-                  'lg:border-l lg:border-[var(--color-border)]',
-                  index === 0 && 'lg:border-l-0',
                   // Mobile: bottom borders
-                  'border-b border-[var(--color-border)] lg:border-b-0',
+                  'border-b border-[var(--color-border)] md:border-b-0',
                   index === levels.length - 1 && 'border-b-0',
+                  // Tablet+ (2-col): left border on every item, remove for first in row
+                  'md:border-l md:border-[var(--color-border)]',
+                  index % 2 === 0 && 'md:border-l-0',
+                  // Desktop (4-col): re-add left border for items that aren't first in 4-col row
+                  index % 2 === 0 && index % 4 !== 0 && 'lg:border-l lg:border-[var(--color-border)]',
+                  // Tablet+ top border for rows after first (2-col)
+                  index >= 2 && 'md:border-t md:border-t-[var(--color-border)]',
+                  // Desktop: remove top border for first 4-col row items
+                  index >= 2 && index < 4 && 'lg:border-t-0',
                   // Padding
-                  isCompact ? 'py-6 lg:py-4 lg:px-6' : 'py-8 lg:py-6 lg:px-8',
-                  index === 0 && 'lg:pl-0',
-                  index === levels.length - 1 && 'lg:pr-0'
+                  isCompact ? 'py-6 md:py-4 md:px-5' : 'py-8 md:py-6 md:px-6',
                 )}
               >
                 {/* Step indicator */}
@@ -95,8 +99,8 @@ export default function PathLevels({ levels, variant = 'full', className }: Path
                     {level.level}
                   </div>
 
-                  {/* Connecting dash (desktop only, not on last) */}
-                  {index < levels.length - 1 && (
+                  {/* Connecting dash (desktop only, not on last in row) */}
+                  {index < levels.length - 1 && index % 4 !== 3 && (
                     <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-3 h-px bg-[var(--color-border)]" />
                   )}
                 </div>

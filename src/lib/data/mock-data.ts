@@ -208,33 +208,73 @@ export const coherenceDomains: CoherenceDomain[] = [
 ];
 
 // =============================================================================
-// PATH LEVELS (Rose One / Two / Three)
+// PATH LEVELS (Rose Meditation 1–3 + Aura 1–5)
 // =============================================================================
 
 export const pathLevels: PathLevel[] = [
   {
     id: '1',
     level: 1,
-    title: 'Rose One',
-    subtitle: 'The Remembering',
-    description: 'The foundational journey. Rose One initiates the process of remembrance: reconnecting with the body, breath, and the intelligence of silence. Participants establish a daily practice and begin to experience coherence as a felt sense.',
-    focus: ['Core meditation practice', 'Breath awareness', 'Somatic presence', 'Daily coherence rhythm'],
+    title: 'Rose Meditation 1',
+    subtitle: 'The Open Threshold',
+    description: 'Introduces grounding, aura awareness, and energetic cleansing. Learn to root yourself, separate your energy from others, and receive the nourishing forces of Earth and Cosmos.',
+    focus: ['Grounding & presence', 'Aura cleansing & protection', 'Energy separation', 'Earth & Cosmic circuits'],
   },
   {
     id: '2',
     level: 2,
-    title: 'Rose Two',
-    subtitle: 'The Deepening',
-    description: 'Building on the foundation, Rose Two invites a deeper relationship with the subtle body and energetic awareness. Through daily practice, participants strengthen nervous system coherence, emotional integration, and vibrational clarity, weaving remembrance into the rhythm of everyday life.',
-    focus: ['Energetic awareness', 'Nervous system coherence', 'Emotional integration', 'Relational coherence'],
+    title: 'Rose Meditation 2',
+    subtitle: 'The Living Rhythm',
+    description: 'Deepens into the subtle body. Discover what your aura carries, transmute past and present energies, cleanse the seven chakras and aura layers, and release energetic ties.',
+    focus: ['Chakra & aura layer cleansing', 'Energetic tie release', 'Sacred space creation', 'Environmental protection'],
   },
   {
     id: '3',
     level: 3,
-    title: 'Rose Three',
-    subtitle: 'The Flowering',
-    description: 'The culmination of the foundational path. Rose Three unfolds through guided activations, live transmissions, and in-person experiences with trained guardians. At this level, perception expands, sovereignty deepens, and creation becomes conscious and heart-led.',
-    focus: ['Guided activations', 'Expanded perception', 'Deepened sovereignty', 'Heart-led creation'],
+    title: 'Rose Meditation 3',
+    subtitle: 'The Spiritual Activation',
+    description: 'Work with spiritual agreements, free yourself from energetic cords, transcend limiting beliefs, cleanse mental programs, and learn Reality Creation through the Mock Up technique.',
+    focus: ['Spiritual agreements & cords', 'Belief transcendence', 'Mental program cleansing', 'Reality Creation (Mock Up)'],
+  },
+  {
+    id: '4',
+    level: 4,
+    title: 'Aura 1',
+    subtitle: 'The Initiation',
+    description: 'The gateway into reading energy. Learn to read your own aura and the aura of others, opening a direct channel to intuition, healing, and self-knowledge.',
+    focus: ['Aura reading initiation', 'Healing journeys', 'Chakra & universal teachings', 'Energy of love'],
+  },
+  {
+    id: '5',
+    level: 5,
+    title: 'Aura 2',
+    subtitle: 'Perceptual Deepening',
+    description: 'Perception sharpens through theme readings and focused practice. Clairvoyance, clairsentience, and clairaudience refine as reading becomes more precise, nuanced, and confident.',
+    focus: ['Theme readings', 'Refined clairvoyance', 'Advanced reading techniques', 'Deepened perception'],
+  },
+  {
+    id: '6',
+    level: 6,
+    title: 'Aura 3',
+    subtitle: 'Relationships & Healing',
+    description: 'Aura reading turns toward the relational field. Explore the energetic dynamics of relationships, navigate complex interpersonal landscapes, and support transformation in yourself and others.',
+    focus: ['Relational energy dynamics', 'Relationship healing', 'Interpersonal navigation', 'Expanded intuitive capacity'],
+  },
+  {
+    id: '7',
+    level: 7,
+    title: 'Aura 4',
+    subtitle: 'The Living Transmission',
+    description: 'Requires physical presence and direct guardianship. Energetic transmission deepens through shared field, community practice, and the embodied coherence of practiced guardians.',
+    focus: ['In-person transmission', 'Guardian-held field', 'Embodied coherence', 'Community practice'],
+  },
+  {
+    id: '8',
+    level: 8,
+    title: 'Aura 5',
+    subtitle: 'Sovereign Mastery',
+    description: 'The culmination of the Aura path. Perception, healing, and transmission converge into sovereign expression. Creation becomes conscious, heart-led, and rooted in love.',
+    focus: ['Unified mastery', 'Conscious creation', 'Heart-led expression', 'Full sovereignty'],
   },
 ];
 
