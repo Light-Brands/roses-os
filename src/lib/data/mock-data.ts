@@ -36,14 +36,14 @@ export const guardians: Guardian[] = [
   {
     id: '2',
     name: 'Diego Dosal',
-    role: 'Guardian of Practice',
+    role: 'Guardian of Community',
     bio: 'Diego bridges ancient wisdom traditions with modern embodiment practices. His work focuses on masculine integration, breathwork, and the somatic dimensions of the Rose technology.',
     image: '/guardians/diego.jpg',
   },
   {
     id: '3',
     name: 'Dara Ayoub',
-    role: 'Guardian of Community',
+    role: 'Guardian of Practice',
     bio: 'Dara serves as the connective tissue of the ROSES OS community. With a background in facilitation and relational intelligence, she holds the space for enrollment and participant care.',
     image: '/guardians/dara.jpg',
   },
