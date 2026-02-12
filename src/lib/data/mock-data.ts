@@ -64,34 +64,36 @@ export const programs: Program[] = [
   {
     id: '1',
     title: 'The Rose',
-    subtitle: 'Foundation Program',
-    duration: '8 weeks',
-    dates: 'Rolling enrollment',
-    format: 'Live online + self-paced',
-    description: 'The foundational program introducing the Rose technology. A systematic practice for remembrance, coherence, and inner freedom. Participants learn the core meditation, breath protocols, and somatic awareness techniques.',
+    subtitle: 'Rose Meditation Level 1, 2 & 3',
+    duration: '2 days',
+    dates: 'March 17–18, 2026',
+    format: 'Live online + recorded content',
+    description: 'Two immersive days introducing the Rose technology. Six hours per day offered in two three-hour sessions. A systematic practice for remembrance, coherence, and inner freedom.',
     includes: [
-      '8 live group sessions',
-      'Daily practice guidance',
-      'Private community access',
+      '2 immersive days of live instruction',
+      'Rose Meditation Levels 1, 2 & 3',
+      'Two 3-hour sessions per day',
       'Integration workbook',
-      'One-on-one check-in',
+      'Private community access to classes and events',
+      'Multi-timezone support',
     ],
   },
   {
     id: '2',
     title: 'The Rose + Aura 1',
-    subtitle: 'Advanced Immersion',
-    duration: '12 weeks',
-    dates: 'By application',
-    format: 'Live online + in-person retreat',
-    description: 'A deeper immersion building on The Rose foundation. Aura 1 introduces advanced practices for energetic coherence, subtle body awareness, and the first stage of teaching capacity development.',
+    subtitle: 'Complete Immersion',
+    duration: '11 days',
+    dates: 'March 17–27, 2026',
+    format: 'Live online + recorded content',
+    description: 'The complete journey combining Rose Meditation Levels 1, 2 & 3 with Aura Reading Level 1. Eleven sessions across structured and flexible blocks, deepening perception and energetic coherence.',
     includes: [
-      '12 live group sessions',
-      'Advanced practice sequences',
-      'Energetic assessment',
-      '3-day in-person retreat',
-      'Monthly mentorship calls',
-      'Teaching preparation modules',
+      'Rose Meditation Levels 1, 2 & 3 (2 days)',
+      'Aura Reading Level 1 (9 days)',
+      'Daily Rose Meditation guidance',
+      'Flexible practice sessions',
+      'Integration workbook',
+      'Private community access to classes and events',
+      'Multi-timezone support',
     ],
   },
 ];
@@ -103,24 +105,43 @@ export const programs: Program[] = [
 export const scheduleStages: ScheduleStage[] = [
   {
     id: '1',
-    title: 'Stage 1: Foundation',
-    dateRange: 'Weeks 1–4',
+    title: 'Stage 1: Rose Meditation Level 1, 2 & 3',
+    dateRange: 'March 17–18',
     sessions: [
-      { day: 'Week 1', topic: 'The Invitation:Opening to Remembrance', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
-      { day: 'Week 2', topic: 'The Breath:Entering the Field', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
-      { day: 'Week 3', topic: 'The Body:Somatic Awareness', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
-      { day: 'Week 4', topic: 'The Heart:Coherence Practice', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
+      { day: 'First Class', topic: '3 hours', time: { sanJose: '7:00 AM – 10:00 AM', bogota: '8:00 AM – 11:00 AM', newYork: '9:00 AM – 12:00 PM', brasilia: '10:00 AM – 1:00 PM', london: '1:00 PM – 4:00 PM', madrid: '2:00 – 5:00 PM' } },
+      { day: 'Second Class', topic: '3 hours', time: { sanJose: '11:30 AM – 2:30 PM', bogota: '12:30 – 3:30 PM', newYork: '1:30 PM – 4:30 PM', brasilia: '2:30 PM – 5:30 PM', london: '5:30 PM – 8:30 PM', madrid: '6:30 – 9:30 PM' } },
     ],
   },
   {
     id: '2',
-    title: 'Stage 2: Integration',
-    dateRange: 'Weeks 5–8',
+    title: 'Stage 2: Aura Reading: Week 1 Weekdays',
+    dateRange: 'March 19–20 (Thu & Fri)',
     sessions: [
-      { day: 'Week 5', topic: 'The Rose Meditation:Core Practice', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
-      { day: 'Week 6', topic: 'Living Coherence:Daily Application', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
-      { day: 'Week 7', topic: 'Community Practice:Shared Field', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
-      { day: 'Week 8', topic: 'The Way Forward:Continuation & Deepening', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
+      { day: 'Rose Meditation Guidance', topic: '30 min', time: { sanJose: '7:00 – 7:30 AM', bogota: '8:00 – 8:30 AM', newYork: '9:00 – 9:30 AM', brasilia: '10:00 – 10:30 AM', london: '1:00 – 1:30 PM', madrid: '2:00 – 2:30 PM' } },
+      { day: 'First Class', topic: '2 hours', time: { sanJose: '8:00 – 10:00 AM', bogota: '9:00 – 11:00 AM', newYork: '10:00 AM – 12:00 PM', brasilia: '11:00 AM – 1:00 PM', london: '2:00 – 4:00 PM', madrid: '3:00 – 5:00 PM' } },
+      { day: 'Second Class', topic: '2 hours', time: { sanJose: '11:00 AM – 1:00 PM', bogota: '12:00 – 2:00 PM', newYork: '1:00 – 3:00 PM', brasilia: '2:00 – 4:00 PM', london: '5:00 – 7:00 PM', madrid: '6:00 – 8:00 PM' } },
+    ],
+  },
+  {
+    id: '3',
+    title: 'Stage 2: Aura Reading: Weekend',
+    dateRange: 'March 21–22 (Sat & Sun)',
+    sessions: [
+      { day: 'Rose Meditation Guidance', topic: '30 min', time: { sanJose: '7:00 – 7:30 AM', bogota: '8:00 – 8:30 AM', newYork: '9:00 – 9:30 AM', brasilia: '10:00 – 10:30 AM', london: '1:00 – 1:30 PM', madrid: '2:00 – 2:30 PM' } },
+      { day: 'First Class', topic: '3 hours', time: { sanJose: '8:00 – 11:00 AM', bogota: '9:00 AM – 12:00 PM', newYork: '10:00 AM – 1:00 PM', brasilia: '11:00 AM – 2:00 PM', london: '2:00 – 5:00 PM', madrid: '3:00 – 6:00 PM' } },
+      { day: 'Second Class', topic: '3 hours', time: { sanJose: '12:30 – 2:30 PM', bogota: '1:30 – 4:30 PM', newYork: '2:30 – 5:30 PM', brasilia: '3:30 – 6:30 PM', london: '6:30 – 9:30 PM', madrid: '7:30 – 10:30 PM' } },
+    ],
+  },
+  {
+    id: '4',
+    title: 'Stage 2: Aura Reading: Week 2',
+    dateRange: 'March 23–27 (Mon–Fri)',
+    sessions: [
+      { day: 'Rose Meditation Guidance', topic: '30 min', time: { sanJose: '7:00 – 7:30 AM', bogota: '8:00 – 8:30 AM', newYork: '8:00 – 8:30 AM', brasilia: '10:00 – 10:30 AM', london: '1:00 – 1:30 PM', madrid: '2:00 – 2:30 PM' } },
+      { day: 'Class (mandatory)', topic: '3 hours', time: { sanJose: '8:00 – 11:00 AM', bogota: '9:00 AM – 12:00 PM', newYork: '10:00 AM – 1:00 PM', brasilia: '11:00 AM – 2:00 PM', london: '2:00 – 5:00 PM', madrid: '3:00 – 6:00 PM' } },
+      { day: 'Practice 1: Europe', topic: '1.5 hours', time: { sanJose: '—', bogota: '—', newYork: '—', brasilia: '7:00 – 8:30 AM', london: '10:00 – 11:30 AM', madrid: '11:00 AM – 12:30 PM' } },
+      { day: 'Practice 2', topic: '1.5 hours', time: { sanJose: '12:00 – 1:30 PM', bogota: '1:00 – 2:30 PM', newYork: '2:00 – 3:30 PM', brasilia: '3:00 – 4:30 PM', london: '6:00 – 7:30 PM', madrid: '7:00 – 8:30 PM' } },
+      { day: 'Practice 3', topic: '1.5 hours', time: { sanJose: '2:30 – 4:00 PM', bogota: '3:30 – 5:00 PM', newYork: '4:30 – 6:00 PM', brasilia: '5:30 – 7:00 PM', london: '8:30 – 10:00 PM', madrid: '9:30 – 11:00 PM' } },
     ],
   },
 ];
@@ -133,20 +154,26 @@ export const contributionTiers: ContributionTier[] = [
   {
     id: '1',
     name: 'Seed',
-    range: 'Below $50k annual income',
-    description: 'For those building their foundation. The full program experience at a rate that honors your current season.',
+    range: 'Under $30,000 USD annual income',
+    description: 'Lower contribution: honors your reality and current season.',
+    priceFoundational: '$222',
+    priceFull: '$888',
   },
   {
     id: '2',
     name: 'Bloom',
-    range: '$50k–$100k annual income',
-    description: 'For those in a season of growth. Your contribution supports both your journey and the accessibility of the work.',
+    range: '$30,000–$70,000 USD annual income',
+    description: 'Mid-range: reflects reciprocity and balance.',
+    priceFoundational: '$444',
+    priceFull: '$1,444',
   },
   {
     id: '3',
     name: 'Canopy',
-    range: 'Above $100k annual income',
-    description: 'For those in a season of abundance. Your contribution sustains the ecosystem and opens doors for others.',
+    range: 'Above $70,000 USD annual income',
+    description: 'Higher tier: supports accessibility for others and the expansion of this work.',
+    priceFoundational: '$777',
+    priceFull: '$2,111',
   },
 ];
 
@@ -155,18 +182,18 @@ export const contributionTiers: ContributionTier[] = [
 // =============================================================================
 
 export const coherenceDomains: CoherenceDomain[] = [
-  { id: '1', number: 1, title: 'Physical Coherence', description: 'Alignment of the body:posture, breath, movement, and somatic awareness as the foundation of all practice.' },
+  { id: '1', number: 1, title: 'Physical Coherence', description: 'Alignment of the body: posture, breath, movement, and somatic awareness as the foundation of all practice.' },
   { id: '2', number: 2, title: 'Emotional Coherence', description: 'The capacity to feel fully without being governed by reactivity. Emotional intelligence as a doorway to freedom.' },
   { id: '3', number: 3, title: 'Mental Coherence', description: 'Clarity of thought without compulsive thinking. The mind as an instrument rather than a master.' },
   { id: '4', number: 4, title: 'Relational Coherence', description: 'Authentic connection with others rooted in presence, boundaries, and compassion rather than performance.' },
   { id: '5', number: 5, title: 'Creative Coherence', description: 'Access to the creative impulse as a natural expression of aligned being rather than forced production.' },
   { id: '6', number: 6, title: 'Vocational Coherence', description: 'Work as an expression of purpose. The alignment of livelihood with authentic calling.' },
-  { id: '7', number: 7, title: 'Financial Coherence', description: 'A healthy relationship with resources:receiving, stewarding, and circulating with ease and integrity.' },
+  { id: '7', number: 7, title: 'Financial Coherence', description: 'A healthy relationship with resources: receiving, stewarding, and circulating with ease and integrity.' },
   { id: '8', number: 8, title: 'Sexual Coherence', description: 'The integration of life force energy. Embodied presence in intimacy and creative power.' },
-  { id: '9', number: 9, title: 'Spiritual Coherence', description: 'Direct connection with the sacred:not as belief but as lived experience and continuous remembrance.' },
+  { id: '9', number: 9, title: 'Spiritual Coherence', description: 'Direct connection with the sacred: not as belief but as lived experience and continuous remembrance.' },
   { id: '10', number: 10, title: 'Environmental Coherence', description: 'Harmony between the individual and their spaces, ecosystems, and the living world.' },
   { id: '11', number: 11, title: 'Ancestral Coherence', description: 'Healing the lineage. Transforming inherited patterns into gifts and reclaiming the wisdom of those who came before.' },
-  { id: '12', number: 12, title: 'Temporal Coherence', description: 'Right relationship with time:neither rushing nor stagnating. The art of sacred timing.' },
+  { id: '12', number: 12, title: 'Temporal Coherence', description: 'Right relationship with time: neither rushing nor stagnating. The art of sacred timing.' },
   { id: '13', number: 13, title: 'Universal Coherence', description: 'The recognition of belonging to something vast. Alignment with the intelligence that moves through all things.' },
 ];
 
@@ -180,7 +207,7 @@ export const pathLevels: PathLevel[] = [
     level: 1,
     title: 'Rose One',
     subtitle: 'The Remembering',
-    description: 'The foundational journey. Rose One initiates the process of remembrance:reconnecting with the body, breath, and the intelligence of silence. Participants establish a daily practice and begin to experience coherence as a felt sense.',
+    description: 'The foundational journey. Rose One initiates the process of remembrance: reconnecting with the body, breath, and the intelligence of silence. Participants establish a daily practice and begin to experience coherence as a felt sense.',
     focus: ['Core meditation practice', 'Breath awareness', 'Somatic presence', 'Daily coherence rhythm'],
   },
   {
@@ -236,8 +263,8 @@ export const techniques: Technique[] = [
   { id: '2', title: 'Body Scan Awareness', description: 'Systematic attention through the body, cultivating somatic presence and releasing held tension.', level: 1, category: 'Somatic' },
   { id: '3', title: 'Heart Coherence Meditation', description: 'Focused attention on the heart center, cultivating the felt sense of coherence and compassion.', level: 1, category: 'Meditation' },
   { id: '4', title: 'Witnessing Practice', description: 'Developing the capacity to observe thoughts and sensations without identification or reaction.', level: 1, category: 'Awareness' },
-  { id: '5', title: 'Rose Meditation', description: 'The core practice of the lineage:a multi-layered meditation integrating breath, body, and subtle awareness.', level: 1, category: 'Core Practice' },
-  { id: '6', title: 'Field Sensing', description: 'Developing sensitivity to the energetic field:both personal and shared:as a perceptual capacity.', level: 2, category: 'Energetic' },
+  { id: '5', title: 'Rose Meditation', description: 'The core practice of the lineage: a multi-layered meditation integrating breath, body, and subtle awareness.', level: 1, category: 'Core Practice' },
+  { id: '6', title: 'Field Sensing', description: 'Developing sensitivity to the energetic field (both personal and shared) as a perceptual capacity.', level: 2, category: 'Energetic' },
   { id: '7', title: 'Chakra Awareness Sequence', description: 'A guided practice moving attention through the seven energy centers, noting qualities and blockages.', level: 2, category: 'Energetic' },
   { id: '8', title: 'Emotional Alchemy', description: 'The practice of meeting difficult emotions with presence, allowing transformation through awareness rather than suppression.', level: 2, category: 'Emotional' },
   { id: '9', title: 'Relational Presence', description: 'Partnered practices for maintaining authentic presence in connection with others.', level: 2, category: 'Relational' },
@@ -276,17 +303,17 @@ export const agreements: Agreement[] = [
 // =============================================================================
 
 export const elevenCapacities: Capacity[] = [
-  { id: '1', number: 1, title: 'Stillness', description: 'The capacity to be at rest:internally and externally:as a foundation for all action.' },
+  { id: '1', number: 1, title: 'Stillness', description: 'The capacity to be at rest (internally and externally) as a foundation for all action.' },
   { id: '2', number: 2, title: 'Presence', description: 'The ability to be fully here, now, without the need to be elsewhere.' },
   { id: '3', number: 3, title: 'Breath', description: 'Conscious relationship with the breath as the bridge between body and awareness.' },
-  { id: '4', number: 4, title: 'Feeling', description: 'The willingness to feel completely:pleasure, pain, and everything in between.' },
-  { id: '5', number: 5, title: 'Listening', description: 'Deep receptivity:to self, others, and the intelligence of the larger field.' },
+  { id: '4', number: 4, title: 'Feeling', description: 'The willingness to feel completely: pleasure, pain, and everything in between.' },
+  { id: '5', number: 5, title: 'Listening', description: 'Deep receptivity: to self, others, and the intelligence of the larger field.' },
   { id: '6', number: 6, title: 'Discernment', description: 'Clear seeing without judgment. The capacity to distinguish truth from noise.' },
   { id: '7', number: 7, title: 'Courage', description: 'The heart-strength to act on what is true, even when it is uncomfortable.' },
   { id: '8', number: 8, title: 'Surrender', description: 'The art of releasing control without collapsing. Trusting the larger intelligence.' },
   { id: '9', number: 9, title: 'Integration', description: 'The ongoing work of bringing insights into lived experience and daily practice.' },
   { id: '10', number: 10, title: 'Service', description: 'The natural movement from inner coherence to outer contribution.' },
-  { id: '11', number: 11, title: 'Remembrance', description: 'The ultimate capacity:not learning something new but remembering what has always been true.' },
+  { id: '11', number: 11, title: 'Remembrance', description: 'The ultimate capacity: not learning something new but remembering what has always been true.' },
 ];
 
 // =============================================================================
@@ -294,10 +321,10 @@ export const elevenCapacities: Capacity[] = [
 // =============================================================================
 
 export const architectureLayers: ArchitectureLayer[] = [
-  { id: '1', name: 'Hardware', description: 'The physical body:bones, muscles, organs, nervous system. The vessel through which all experience flows.' },
-  { id: '2', name: 'Software', description: 'The mind:beliefs, patterns, conditioning, and the stories we carry. The programs that run our experience.' },
+  { id: '1', name: 'Hardware', description: 'The physical body: bones, muscles, organs, nervous system. The vessel through which all experience flows.' },
+  { id: '2', name: 'Software', description: 'The mind: beliefs, patterns, conditioning, and the stories we carry. The programs that run our experience.' },
   { id: '3', name: 'Heartware', description: 'The emotional and relational intelligence. The felt sense of connection, compassion, and coherence.' },
-  { id: '4', name: 'Soulware', description: 'The deepest layer:essence, purpose, and the remembrance of who we truly are beneath all conditioning.' },
+  { id: '4', name: 'Soulware', description: 'The deepest layer: essence, purpose, and the remembrance of who we truly are beneath all conditioning.' },
 ];
 
 // =============================================================================
@@ -318,7 +345,7 @@ export const brandQuotes: BrandQuote[] = [
 // =============================================================================
 
 export const messagingPillars = [
-  { id: '1', title: 'The Rose', description: 'A sacred technology of remembrance:a systematic practice for reconnecting with the intelligence that lives within.' },
-  { id: '2', title: 'The Aura', description: 'The energetic body and its role in coherence:subtle awareness as a practical capacity for daily living.' },
-  { id: '3', title: 'The Human Journey', description: 'The recognition that every life is a journey of remembrance:and that this journey is supported, not solitary.' },
+  { id: '1', title: 'The Rose', description: 'A sacred technology of remembrance: a systematic practice for reconnecting with the intelligence that lives within.' },
+  { id: '2', title: 'The Aura', description: 'The energetic body and its role in coherence: subtle awareness as a practical capacity for daily living.' },
+  { id: '3', title: 'The Human Journey', description: 'The recognition that every life is a journey of remembrance, and that this journey is supported, not solitary.' },
 ];

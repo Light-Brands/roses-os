@@ -35,6 +35,10 @@ export interface ContributionTier {
   name: string;
   range: string;
   description: string;
+  /** Suggested price for Foundational only (Rose Meditation Weekend 1) */
+  priceFoundational: string;
+  /** Suggested price for the Full Program */
+  priceFull: string;
 }
 
 /** Schedule stage */
@@ -54,10 +58,12 @@ export interface ScheduleSession {
 
 /** Timezone column entries */
 export interface TimeZoneEntry {
-  pt: string;
-  et: string;
-  gmt: string;
-  ist: string;
+  sanJose: string;
+  bogota: string;
+  newYork: string;
+  brasilia: string;
+  london: string;
+  madrid: string;
 }
 
 /** Coherence domain (from The Codex) */
