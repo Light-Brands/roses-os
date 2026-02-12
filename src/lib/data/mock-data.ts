@@ -28,9 +28,9 @@ export const navItems: NavItem[] = [
 export const guardians: Guardian[] = [
   {
     id: '1',
-    name: 'Angelina Ataide',
-    role: 'Founder & Lead Guardian',
-    bio: 'A pioneer in Aura Reading education in Brazil, Angelina has dedicated over three decades to spiritual development and training aura readers. Her transformative methodology has already trained thousands of students, therapists, and teachers — combining spiritual wisdom with practical techniques as the primary steward of the ROSES OS lineage.',
+    name: 'Angelina Ataíde',
+    role: 'Lead Guardian',
+    bio: 'A pioneer in Aura Reading education in Brazil and Portugal, Angelina has dedicated over three decades to spiritual development and training aura readers. Her transformative methodology has already trained thousands of students, therapists, and teachers — combining spiritual wisdom with practical techniques as the primary steward of the ROSES OS lineage.',
     image: '/images/angel.JPG',
   },
   {
@@ -39,20 +39,20 @@ export const guardians: Guardian[] = [
     role: 'Guardian of Structure & Architecture',
     bio: 'Diego is the bridge between spirit and structure. With deep roots in spiritual practice, energy work, and community building, he carries the horizontal axis of ROSES OS — developing platforms, systems, and frameworks that harmonize intuition with strategy and build lasting foundations for remembrance.',
     image: '/images/Diegophoto.avif',
-    imageTransform: 'scale(1.15) translateY(-8%)',
+    imageTransform: 'scale(0.85) translateY(5%)',
   },
   {
     id: '3',
     name: 'Dara Ayoub',
     role: 'Guardian of Community & Programs',
-    bio: 'With a background in multiple traditions of self-knowledge, Dara integrates body, mind, and spirit with reverence. She supports the creation and delivery of programs and courses, blending intuitive listening with grounded clarity as the guardian of the Birthday Aura Reading.',
+    bio: 'With a background in multiple traditions of self-knowledge, Dara integrates body, mind, and spirit with reverence. She supports the creation and delivery of programs and courses, blending intuitive listening with grounded clarity.',
     image: '/images/dara.jpg',
   },
   {
     id: '4',
     name: 'Peggy Mars',
     role: 'Guardian of Practice & Methodology',
-    bio: 'Peggy creates bridges between cultures, communities, and inner worlds. With over a decade walking the Aura Reading path, she integrates emotional, ancestral, and spiritual layers with clarity and compassion — sustaining authentic connection between teachers and students as the guardian of the Birth Oracle.',
+    bio: 'Peggy creates bridges between cultures, communities, and inner worlds. With over a decade walking the Aura Reading path, she integrates emotional, ancestral, and spiritual layers with clarity and compassion — sustaining authentic connection between teachers and students.',
     image: '/images/peggy.JPG',
   },
 ];
