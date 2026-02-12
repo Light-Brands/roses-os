@@ -73,16 +73,28 @@ export default function ContactPage() {
                 {/* Email */}
                 <div>
                   <p className="label-sacred mb-2">Email</p>
-                  <a
-                    href="mailto:hello@rosesos.com"
-                    className={cn(
-                      'text-[var(--color-foreground)]',
-                      'underline underline-offset-4 decoration-[var(--color-rose-clay)]',
-                      'hover:text-[var(--color-rose-clay)] transition-colors duration-200'
-                    )}
-                  >
-                    hello@rosesos.com
-                  </a>
+                  <div className="space-y-2">
+                    <a
+                      href="mailto:hello@rosesos.com"
+                      className={cn(
+                        'block text-[var(--color-foreground)]',
+                        'underline underline-offset-4 decoration-[var(--color-rose-clay)]',
+                        'hover:text-[var(--color-rose-clay)] transition-colors duration-200'
+                      )}
+                    >
+                      hello@rosesos.com
+                    </a>
+                    <a
+                      href="mailto:dani.ayoub88@gmail.com"
+                      className={cn(
+                        'block text-[var(--color-foreground)]',
+                        'underline underline-offset-4 decoration-[var(--color-rose-clay)]',
+                        'hover:text-[var(--color-rose-clay)] transition-colors duration-200'
+                      )}
+                    >
+                      dani.ayoub88@gmail.com
+                    </a>
+                  </div>
                 </div>
 
                 {/* Response Times */}
