@@ -38,14 +38,14 @@ export const guardians: Guardian[] = [
     name: 'Diego Dosal',
     role: 'Guardian of Structural Architecture & Expansion',
     bio: 'Diego is the bridge between spirit and structure. With deep roots in spiritual practice, energy work, and community building, he carries the horizontal axis of ROSES OS — developing platforms, systems, and frameworks that harmonize intuition with strategy and build lasting foundations for remembrance.',
-    image: '/guardians/diego.jpg',
+    image: '/images/Diegophoto.avif',
   },
   {
     id: '3',
     name: 'Dara Ayoub',
     role: 'Guardian of Community & Programs',
     bio: 'With a background in multiple traditions of self-knowledge, Dara integrates body, mind, and spirit with reverence. She supports the creation and delivery of programs and courses, blending intuitive listening with grounded clarity as the guardian of the Birthday Aura Reading.',
-    image: '/guardians/dara.jpg',
+    image: '/images/dara.jpg',
   },
   {
     id: '4',
