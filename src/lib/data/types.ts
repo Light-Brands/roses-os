@@ -52,7 +52,7 @@ export interface ScheduleStage {
 /** Individual session within a stage */
 export interface ScheduleSession {
   day: string;
-  topic: string;
+  duration: string;
   time: TimeZoneEntry;
 }
 
