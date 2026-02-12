@@ -226,7 +226,7 @@ export const pathLevels: PathLevel[] = [
     title: 'Rose Two',
     subtitle: 'The Deepening',
     description: 'Building on the foundation, Rose Two invites a deeper relationship with the subtle body and energetic awareness. Through daily practice, participants strengthen nervous system coherence, emotional integration, and vibrational clarity, weaving remembrance into the rhythm of everyday life.',
-    focus: ['Energetic awareness', 'Nervous system coherence', 'Vibrational clarity', 'Relational coherence'],
+    focus: ['Energetic awareness', 'Nervous system coherence', 'Emotional integration', 'Relational coherence'],
   },
   {
     id: '3',
@@ -243,10 +243,9 @@ export const pathLevels: PathLevel[] = [
 // =============================================================================
 
 export const lineageEntries: LineageEntry[] = [
-  { id: '1', year: '1960s', name: 'Lewis S. Bostwick', description: 'Channeled and systematized the techniques and tools of Aura Reading in California. Founder of the Berkeley Psychic Institute and the Church of the Divine Man.' },
-  { id: '2', year: '1980s', name: 'Anastasia Plunk', description: 'Received and carried the Aura Reading and Rose meditation teachings from the Berkeley Psychic Institute, ensuring the continuity and integrity of the lineage.' },
-  { id: '3', year: '2005s', name: 'Angelina Ataide', description: 'Founder of CELARIS, formerly Escola da Aura & Sueños. For over thirty years, she has upheld the Rose as a living transmission, initiating more than six thousand individuals into the Rose tradition.' },
-  { id: '4', year: '2023', name: 'ROSES OS', description: 'The platform crystallizes decades of lineage wisdom into an accessible ecosystem for consciousness, remembrance, and coherent living.' },
+  { id: '1', year: '1960s', name: 'Lewis S. Bostwick', description: 'Channeled the material of Aura Reading in California. Founder of the Berkeley Psychic Institute and the Church of the Divine Man.' },
+  { id: '2', year: '2005s', name: 'Angelina Ataide', description: 'Systematized the techniques and tools of the Rose tradition. Founder of CELARIS, formerly Escola da Aura & Sueños. For over thirty years, she has upheld the Rose as a living transmission, initiating more than six thousand individuals into the Rose tradition.' },
+  { id: '3', year: '2023', name: 'ROSES OS', description: 'The platform crystallizes decades of lineage wisdom into an accessible ecosystem for consciousness, remembrance, and coherent living.' },
 ];
 
 // =============================================================================
