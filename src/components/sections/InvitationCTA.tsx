@@ -43,7 +43,7 @@ export default function InvitationCTA({ className }: InvitationCTAProps) {
               href="/invitation"
               className={cn(
                 'inline-flex items-center px-8 py-3.5 rounded-full',
-                'bg-white text-warm-950',
+                'bg-warm-50 text-warm-950',
                 'text-sm font-medium',
                 'hover:bg-warm-100',
                 'transition-colors duration-200'
