@@ -119,16 +119,16 @@ graph LR
 
 ## Origin & Lineage
 
-Aura Reading emerged in the 1960s, in California, channeled by a North American called **Lewis Bostwick**. Founder of the **Berkeley Psychic Institute** and the **Church of the Divine Man**, he channeled and systematized the techniques and tools sent by the angels, to assist in the process of evolution of humanity.
+Aura Reading emerged in the 1960s, in California, channeled by a North American called **Lewis S. Bostwick**. Founder of the **Berkeley Psychic Institute** and the **Church of the Divine Man**, he channeled and systematized the techniques and tools sent by the angels, to assist in the process of evolution of humanity.
 
 ### Lineage Transmission
 
-Berkeley Psychic Institute --> **Anastacia Plunk** --> **Angelina Ataide** --> **ROSES OS**
+Berkeley Psychic Institute --> **Anastasia Plunk** --> **Angelina Ataide** --> **ROSES OS**
 
 ```mermaid
 graph TD
-    LB["Lewis Bostwick<br/><i>1960s, California</i>"] --> BPI["Berkeley Psychic Institute<br/>&<br/>Church of the Divine Man"]
-    BPI --> AP["Anastacia Plunk"]
+    LB["Lewis S. Bostwick<br/><i>1960s, California</i>"] --> BPI["Berkeley Psychic Institute<br/>&<br/>Church of the Divine Man"]
+    BPI --> AP["Anastasia Plunk"]
     AP --> AA["Angelina Ataide"]
     AA --> ROS["ROSES OS"]
 

@@ -126,7 +126,7 @@ In that weaving, you are not a follower.
 
 The Rose Meditation did not emerge from theory or invention. It was received through direct transmission, arising from subtle realms of intelligence and delivered into human experience through lived perception.
 
-In the 1960s, this transmission was received by **Louis Bostwick**, who became its first human steward in this era. He carried the frequency with reverence and responsibility, transmitting it to his disciples, **John Bostwick** and **Anastasia Bostwick**, who ensured its continuity with integrity and devotion.
+In the 1960s, this transmission was received by **Lewis S. Bostwick**, who became its first human steward in this era. Founder of the **Berkeley Psychic Institute** and the **Church of the Divine Man**, he channeled and systematized the techniques and tools sent by the angels, to assist in the process of evolution of humanity. The lineage was carried forward by **Anastasia Plunk**, who ensured its continuity with integrity and devotion.
 
 Over time, this lineage reached **Angelina Ataide**, founder of **CELARIS** (Centro de Estudos de Leitura de Aura, Reiki, Intuicao e Sonhos).
 
