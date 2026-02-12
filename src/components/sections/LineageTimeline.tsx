@@ -86,10 +86,10 @@ export default function LineageTimeline({ entries, className }: LineageTimelineP
                 index === entries.length - 1 && 'lg:pr-0'
               )}
             >
-              {/* Node dot */}
+              {/* Node dot — decorative, behind text */}
               <div
                 className={cn(
-                  'absolute',
+                  'absolute z-0',
                   // Mobile: on the vertical line
                   'left-2.5 top-1 lg:left-auto lg:top-auto',
                   // Desktop: on the horizontal line
@@ -102,17 +102,22 @@ export default function LineageTimeline({ entries, className }: LineageTimelineP
               />
 
               {/* Year */}
-              <p className="text-xs font-medium uppercase tracking-[0.15em] text-[#C4A86B] mb-1.5">
+              <p className={cn(
+                "relative z-10",
+                "text-xs font-medium uppercase tracking-[0.15em] text-[#C4A86B] mb-1.5",
+                // Desktop: position above the gold line
+                "lg:absolute lg:top-0 lg:left-4",
+              )}>
                 {entry.year}
               </p>
 
               {/* Name */}
-              <h3 className="font-serif font-semibold text-lg text-[var(--color-foreground)] leading-snug mb-1.5">
+              <h3 className="relative z-10 font-serif font-semibold text-lg text-[var(--color-foreground)] leading-snug mb-1.5">
                 {entry.name}
               </h3>
 
               {/* Description */}
-              <p className="text-sm text-[var(--color-foreground-muted)] leading-relaxed">
+              <p className="relative z-10 text-sm text-[var(--color-foreground-muted)] leading-relaxed">
                 {entry.description}
               </p>
             </motion.div>
