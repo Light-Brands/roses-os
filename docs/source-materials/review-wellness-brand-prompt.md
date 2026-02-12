@@ -36,7 +36,7 @@ There's no evaluation dimension for how the brand DNA aligns with the revenue mo
 
 ### 4. Missing: Lineage & Transmission Ethics
 
-The prompt mentions "founder story" but doesn't address lineage — a critical dimension for brands rooted in channeled, indigenous, or traditional practices. ROSES OS traces its lineage through Lewis Bostwick → Berkeley Psychic Institute → Anastacia Plunk → Angelina Ataide.
+The prompt mentions "founder story" but doesn't address lineage — a critical dimension for brands rooted in channeled, indigenous, or traditional practices. ROSES OS traces its lineage through Lewis S. Bostwick → Berkeley Psychic Institute → Anastasia Plunk → Angelina Ataide.
 
 **The prompt should ask:** "Where do these practices come from? How is that acknowledged? Is there appropriation risk?"
 

@@ -128,7 +128,7 @@ The Codex is the foundational reference document for the Roses OS ecosystem. It 
 
 - **Coherence** -- The definition of coherence as inner agreement and wholeness in motion
 - **Sacred Purpose** -- The Rose as a living technology of remembrance, not a metaphor
-- **Origin, Lineage, and Expansion** -- From Louis Bostwick to Angelina Ataide and CELARIS
+- **Origin, Lineage, and Expansion** -- From Lewis S. Bostwick to Angelina Ataide and CELARIS
 - **Etymology and Numerology** -- The meaning encoded in the name Roses OS (11/2)
 - **The Coherence Architecture** -- 13 core domains of coherence restoration
 - **The Path of the Rose** -- Three progressive levels (Rose One, Two, Three) and the Rose Game
