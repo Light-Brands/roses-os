@@ -38,7 +38,7 @@ export default function GuardianCard({ guardian, className }: GuardianCardProps)
               alt={guardian.name}
               width={160}
               height={160}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-top"
             />
           ) : (
             <div className="w-full h-full bg-[var(--color-background-muted)] flex items-center justify-center">
