@@ -15,6 +15,8 @@ export interface Guardian {
   role: string;
   bio: string;
   image: string;
+  /** Optional CSS transform for fine-tuning photo position in circular crop */
+  imageTransform?: string;
 }
 
 /** Program offering */
