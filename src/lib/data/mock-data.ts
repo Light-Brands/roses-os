@@ -135,13 +135,22 @@ export const scheduleStages: ScheduleStage[] = [
   {
     id: '4',
     title: 'Stage 2: Aura Reading: Week 2',
-    dateRange: 'March 23–27 (Mon–Fri)',
+    dateRange: 'March 23–26 (Mon–Thu)',
     sessions: [
       { day: 'Rose Meditation Guidance', duration: '30 min', time: { sanJose: '7:00 – 7:30 AM', bogota: '8:00 – 8:30 AM', newYork: '8:00 – 8:30 AM', brasilia: '10:00 – 10:30 AM', london: '1:00 – 1:30 PM', madrid: '2:00 – 2:30 PM' } },
       { day: 'Class (mandatory)', duration: '3 hours', time: { sanJose: '8:00 – 11:00 AM', bogota: '9:00 AM – 12:00 PM', newYork: '10:00 AM – 1:00 PM', brasilia: '11:00 AM – 2:00 PM', london: '2:00 – 5:00 PM', madrid: '3:00 – 6:00 PM' } },
       { day: 'Practice 1: Europe', duration: '1.5 hours', time: { sanJose: '—', bogota: '—', newYork: '—', brasilia: '7:00 – 8:30 AM', london: '10:00 – 11:30 AM', madrid: '11:00 AM – 12:30 PM' } },
       { day: 'Practice 2', duration: '1.5 hours', time: { sanJose: '12:00 – 1:30 PM', bogota: '1:00 – 2:30 PM', newYork: '2:00 – 3:30 PM', brasilia: '3:00 – 4:30 PM', london: '6:00 – 7:30 PM', madrid: '7:00 – 8:30 PM' } },
       { day: 'Practice 3', duration: '1.5 hours', time: { sanJose: '2:30 – 4:00 PM', bogota: '3:30 – 5:00 PM', newYork: '4:30 – 6:00 PM', brasilia: '5:30 – 7:00 PM', london: '8:30 – 10:00 PM', madrid: '9:30 – 11:00 PM' } },
+    ],
+  },
+  {
+    id: '5',
+    title: 'Special Practice Day',
+    dateRange: 'March 27 (Fri)',
+    sessions: [
+      { day: 'Rose Meditation Guidance', duration: '30 min', time: { sanJose: '7:00 – 7:30 AM', bogota: '8:00 – 8:30 AM', newYork: '8:00 – 8:30 AM', brasilia: '10:00 – 10:30 AM', london: '1:00 – 1:30 PM', madrid: '2:00 – 2:30 PM' } },
+      { day: 'Q&A and Practice Time', duration: '3 hours', time: { sanJose: '8:00 – 11:00 AM', bogota: '9:00 AM – 12:00 PM', newYork: '10:00 AM – 1:00 PM', brasilia: '11:00 AM – 2:00 PM', london: '2:00 – 5:00 PM', madrid: '3:00 – 6:00 PM' } },
     ],
   },
 ];

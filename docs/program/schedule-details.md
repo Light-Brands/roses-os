@@ -100,7 +100,7 @@
 
 ---
 
-### 2nd Week Classes -- 23rd to 27th of March (Monday to Friday)
+### 2nd Week Classes -- 23rd to 26th of March (Monday to Thursday)
 
 *The classes are mandatory, but the practices can be chosen between the first or second period -- of course if you come to both, you are more than welcome, but one is enough!*
 
@@ -148,6 +148,28 @@
 | New York | 4:30 PM -- 6:00 PM |
 | Brasilia | 5:30 PM -- 7:00 PM |
 | London | 8:30 PM -- 10:00 PM |
+
+---
+
+### Special Practice Day -- 27th of March (Friday)
+
+**Rose Meditation Guidance (30 min)**
+
+| Time Zone | Hours |
+|---|---|
+| San Jose | 7:00 AM -- 7:30 AM |
+| New York | 8:00 AM -- 8:30 AM |
+| Brasilia | 10:00 AM -- 10:30 AM |
+| London | 1:00 PM -- 1:30 PM |
+
+**Q&A and Practice Time (3 hours)**
+
+| Time Zone | Hours |
+|---|---|
+| San Jose | 8:00 AM -- 11:00 AM |
+| New York | 10:00 AM -- 1:00 PM |
+| Brasilia | 11:00 AM -- 2:00 PM |
+| London | 2:00 PM -- 5:00 PM |
 
 ---
 
