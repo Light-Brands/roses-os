@@ -1,6 +1,6 @@
 # ROSES OS -- Project Plan for Designer
 
-> Everything the designer needs to understand, reference, and deliver.
+> Web Platform Design Brief -- Everything the designer needs to understand, reference, and deliver.
 
 ---
 

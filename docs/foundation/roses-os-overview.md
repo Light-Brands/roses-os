@@ -1,8 +1,8 @@
 # Roses OS -- Overview
 
-> The Technologies of Remembrance
+> Ecosystem Overview & Document Index
 >
-> A Seamless Path to Inner Freedom
+> The Technologies of Remembrance -- A Seamless Path to Inner Freedom
 
 This document provides a unified overview of the Roses OS ecosystem, combining the program presentation, the philosophical foundation, and the full Codex.
 

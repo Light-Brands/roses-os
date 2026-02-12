@@ -1,6 +1,6 @@
 # Schedule Details -- Aura Reading Online Course Level 1 | March 2026
 
-> From 17th to 27th of March
+> Program Logistics & Contribution -- From 17th to 27th of March
 >
 > NY time is changing on 8th of March and we are already taking that in consideration
 

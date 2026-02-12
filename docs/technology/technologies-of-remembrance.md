@@ -1,6 +1,6 @@
 # The Technologies of Remembrance
 
-> The Roses OS
+> Philosophical Foundation -- The Roses OS
 
 ---
 

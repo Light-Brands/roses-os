@@ -1,6 +1,6 @@
 # Roses OS -- The Codex
 
-> A Seamless Path to Inner Freedom
+> Foundational Reference -- A Seamless Path to Inner Freedom
 
 ---
 

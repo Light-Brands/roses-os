@@ -2,7 +2,7 @@
 
 ## Introductory Course in Rose Meditation
 
-> ROSES OS -- Foundational Practices
+> Facilitator & Practitioner Resource -- ROSES OS Foundational Practices
 
 ---
 

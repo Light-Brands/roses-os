@@ -1,6 +1,6 @@
 # ROSES OS -- A Seamless Path to Inner Freedom
 
-> Rose Levels 1, 2, 3 & Aura 1
+> Public Invitation -- Rose Levels 1, 2, 3 & Aura 1
 >
 > Where awareness and coherence become the source of leadership, creativity, sovereignty, and joy.
 
