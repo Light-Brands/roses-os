@@ -215,16 +215,16 @@ export const pathLevels: PathLevel[] = [
     level: 2,
     title: 'Rose Two',
     subtitle: 'The Deepening',
-    description: 'Building on the foundation, Rose Two invites a deeper relationship with the subtle body and energetic awareness. Participants explore the 13 domains of coherence and begin to integrate the practice into all dimensions of life.',
-    focus: ['Energetic awareness', '13 domains exploration', 'Advanced breathwork', 'Relational coherence'],
+    description: 'Building on the foundation, Rose Two invites a deeper relationship with the subtle body and energetic awareness. Through daily practice, participants strengthen nervous system coherence, emotional integration, and vibrational clarity, weaving remembrance into the rhythm of everyday life.',
+    focus: ['Energetic awareness', 'Nervous system coherence', 'Advanced breathwork', 'Relational coherence'],
   },
   {
     id: '3',
     level: 3,
     title: 'Rose Three',
     subtitle: 'The Flowering',
-    description: 'The culmination of the foundational path. Rose Three develops teaching capacity and the ability to hold space for others. Participants become stewards of the work, capable of transmitting the Rose technology to their communities.',
-    focus: ['Teaching methodology', 'Space-holding capacity', 'Community stewardship', 'Living transmission'],
+    description: 'The culmination of the foundational path. Rose Three unfolds through guided activations, live transmissions, and in-person experiences with trained guardians. At this level, perception expands, sovereignty deepens, and creation becomes conscious and heart-led.',
+    focus: ['Guided activations', 'Expanded perception', 'Deepened sovereignty', 'Heart-led creation'],
   },
 ];
 
