@@ -226,7 +226,7 @@ export const pathLevels: PathLevel[] = [
     title: 'Rose Two',
     subtitle: 'The Deepening',
     description: 'Building on the foundation, Rose Two invites a deeper relationship with the subtle body and energetic awareness. Through daily practice, participants strengthen nervous system coherence, emotional integration, and vibrational clarity, weaving remembrance into the rhythm of everyday life.',
-    focus: ['Energetic awareness', 'Nervous system coherence', 'Advanced breathwork', 'Relational coherence'],
+    focus: ['Energetic awareness', 'Nervous system coherence', 'Vibrational clarity', 'Relational coherence'],
   },
   {
     id: '3',
