@@ -29,7 +29,7 @@ export const guardians: Guardian[] = [
   {
     id: '1',
     name: 'Angelina Ataíde',
-    role: 'Lead Guardian',
+    role: 'Guardian of Lineage',
     bio: 'A pioneer in Aura Reading education in Brazil and Portugal, Angelina has dedicated over three decades to spiritual development and training aura readers. Her transformative methodology has already trained thousands of students, therapists, and teachers — combining spiritual wisdom with practical techniques as the primary steward of the ROSES OS lineage.',
     image: '/images/angel.JPG',
   },
@@ -39,7 +39,7 @@ export const guardians: Guardian[] = [
     role: 'Guardian of Structure & Architecture',
     bio: 'Diego is the bridge between spirit and structure. With deep roots in spiritual practice, energy work, and community building, he carries the horizontal axis of ROSES OS — developing platforms, systems, and frameworks that harmonize intuition with strategy and build lasting foundations for remembrance.',
     image: '/images/Diegophoto.avif',
-    imageTransform: 'scale(0.85) translateY(5%)',
+    imageTransform: 'scale(1.2) translateY(-8%)',
   },
   {
     id: '3',
@@ -51,7 +51,7 @@ export const guardians: Guardian[] = [
   {
     id: '4',
     name: 'Peggy Mars',
-    role: 'Guardian of Practice & Methodology',
+    role: 'Guardian of Methodology',
     bio: 'Peggy creates bridges between cultures, communities, and inner worlds. With over a decade walking the Aura Reading path, she integrates emotional, ancestral, and spiritual layers with clarity and compassion — sustaining authentic connection between teachers and students.',
     image: '/images/peggy.JPG',
   },
