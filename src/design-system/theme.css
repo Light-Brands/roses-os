@@ -1,7 +1,7 @@
 /**
  * Theme CSS Variables — ROSES OS
  * Warm sacred design system with light/dark mode support
- * Light mode is PRIMARY (#FAF8F5 warm white background)
+ * Light mode is PRIMARY (#F7F5F2 Aura White background)
  */
 
 /* =============================================================================
@@ -13,7 +13,7 @@
 
   /* Warm Neutral Scale */
   --color-warm-0: #FFFFFF;
-  --color-warm-50: #FAF8F5;
+  --color-warm-50: #F7F5F2;
   --color-warm-100: #F5F0EB;
   --color-warm-200: #E8E0D8;
   --color-warm-300: #D4C8BE;
@@ -21,7 +21,7 @@
   --color-warm-500: #8C7E73;
   --color-warm-600: #6B5F56;
   --color-warm-700: #504540;
-  --color-warm-800: #3B2F2F;
+  --color-warm-800: #3F3E3C;
   --color-warm-900: #2A2020;
   --color-warm-950: #1A1716;
 
@@ -38,40 +38,44 @@
   --color-rose-900: #3B2828;
   --color-rose-950: #2A1C1C;
 
-  /* Brand Semantic */
+  /* Brand Semantic — from Brand DNA */
   --color-rose-clay: #9C6F6E;
-  --color-soft-gold: #C4A86B;
-  --color-sage-mist: #A3B5A6;
-  --color-dusty-lavender: #B8A9C9;
-  --color-deep-earth: #3B2F2F;
+  --color-olive-brass: #9E956B;
+  --color-terracotta: #C4836C;
+  --color-honeyed-stone: #C7AE8C;
+  --color-gilded-clay: #A8896D;
+  --color-peach-sand: #EBD6C1;
+  --color-golden-ether: #F5E8E2;
+  --color-cream-veil: #FFF8E7;
+  --color-soft-charcoal: #3F3E3C;
 
   /* Semantic Colors - Light Mode */
-  --color-background: #FFFFFF;
+  --color-background: #F7F5F2;
   --color-background-subtle: #F5F0EB;
   --color-background-muted: #E8E0D8;
   --color-background-elevated: #FFFFFF;
-  --color-background-overlay: rgba(59, 47, 47, 0.5);
+  --color-background-overlay: rgba(63, 62, 60, 0.5);
   --color-background-rose: #FDF8F7;
 
-  --color-foreground: #3B2F2F;
+  --color-foreground: #3F3E3C;
   --color-foreground-subtle: #504540;
   --color-foreground-muted: #6B5F56;
   --color-foreground-faint: #8C7E73;
-  --color-foreground-on-rose: #FFFFFF;
+  --color-foreground-on-rose: #F7F5F2;
 
   --color-border: #E8E0D8;
   --color-border-subtle: #F5F0EB;
   --color-border-strong: #D4C8BE;
 
-  --color-accent: #3B2F2F;
-  --color-accent-foreground: #FAF8F5;
+  --color-accent: #3F3E3C;
+  --color-accent-foreground: #F7F5F2;
   --color-accent-hover: #504540;
   --color-accent-subtle: #F5F0EB;
 
   /* Status Colors */
   --color-success: #5B9A6F;
   --color-success-subtle: #E3F0E7;
-  --color-warning: #C4A86B;
+  --color-warning: #9E956B;
   --color-warning-subtle: #F7F0E0;
   --color-error: #C0392B;
   --color-error-subtle: #F5E3E0;
@@ -79,9 +83,9 @@
   --color-info-subtle: #F5F0EB;
 
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #3B2F2F 0%, #1A1716 100%);
-  --gradient-secondary: linear-gradient(135deg, #6B5F56 0%, #3B2F2F 100%);
-  --gradient-subtle: linear-gradient(135deg, #FAF8F5 0%, #F5F0EB 100%);
+  --gradient-primary: linear-gradient(135deg, #3F3E3C 0%, #1A1716 100%);
+  --gradient-secondary: linear-gradient(135deg, #6B5F56 0%, #3F3E3C 100%);
+  --gradient-subtle: linear-gradient(135deg, #F7F5F2 0%, #F5F0EB 100%);
 
   /* Shadows — warm-tinted */
   --shadow-xs: 0 1px 2px 0 rgb(59 47 47 / 0.04);
@@ -92,7 +96,7 @@
   --shadow-2xl: 0 25px 50px -12px rgb(59 47 47 / 0.15);
   --shadow-glass: 0 8px 32px 0 rgb(59 47 47 / 0.06);
   --shadow-rose: 0 4px 16px 0 rgb(156 111 110 / 0.15);
-  --shadow-gold: 0 4px 16px 0 rgb(196 168 107 / 0.15);
+  --shadow-gold: 0 4px 16px 0 rgb(158 149 107 / 0.15);
 
   /* Typography */
   --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
@@ -156,9 +160,9 @@
   --blur-2xl: 24px;
 
   /* Glass Effect — warm */
-  --glass-background: rgba(250, 248, 245, 0.8);
+  --glass-background: rgba(247, 245, 242, 0.8);
   --glass-border: rgba(232, 224, 216, 0.4);
-  --glass-shadow: 0 8px 32px 0 rgba(59, 47, 47, 0.06);
+  --glass-shadow: 0 8px 32px 0 rgba(63, 62, 60, 0.06);
 
   /* Grain texture opacity */
   --grain-opacity: 0.03;
@@ -175,7 +179,7 @@
   /* Semantic Colors - Dark Mode */
   --color-background: #1A1716;
   --color-background-subtle: #2A2020;
-  --color-background-muted: #3B2F2F;
+  --color-background-muted: #3F3E3C;
   --color-background-elevated: #2A2020;
   --color-background-overlay: rgba(26, 23, 22, 0.7);
   --color-background-rose: #2A1C1C;
@@ -184,9 +188,9 @@
   --color-foreground-subtle: #E8E0D8;
   --color-foreground-muted: #B5A89D;
   --color-foreground-faint: #8C7E73;
-  --color-foreground-on-rose: #FAF8F5;
+  --color-foreground-on-rose: #F7F5F2;
 
-  --color-border: #3B2F2F;
+  --color-border: #3F3E3C;
   --color-border-subtle: #2A2020;
   --color-border-strong: #504540;
 
@@ -197,7 +201,7 @@
 
   /* Status Colors - Dark Mode */
   --color-success-subtle: rgba(91, 154, 111, 0.15);
-  --color-warning-subtle: rgba(196, 168, 107, 0.15);
+  --color-warning-subtle: rgba(158, 149, 107, 0.15);
   --color-error-subtle: rgba(192, 57, 43, 0.15);
   --color-info-subtle: rgba(245, 240, 235, 0.08);
 

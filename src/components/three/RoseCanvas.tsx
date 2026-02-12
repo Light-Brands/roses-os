@@ -66,7 +66,7 @@ function Scene({ mouseRef, reducedMotion, isDark }: RoseCanvasProps) {
 
       {/* Soft gold rim — behind */}
       <pointLight
-        color="#C4A86B"
+        color="#9E956B"
         intensity={isDark ? 0.6 : 1.0}
         distance={20}
         decay={2}

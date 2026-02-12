@@ -37,7 +37,7 @@ function Scene({ mouseRef, reducedMotion, isDark }: ShaderSphereCanvasProps) {
       />
       {/* Gold rim light */}
       <pointLight
-        color="#C4A86B"
+        color="#9E956B"
         intensity={isDark ? 1.2 : 2}
         distance={25}
         decay={2}

@@ -84,7 +84,7 @@ export default function LevelNav({ levels, activeLevel, className }: LevelNavPro
                   'absolute bottom-0 left-3 right-3 h-0.5 lg:h-auto',
                   // Desktop: left bar
                   'lg:bottom-auto lg:left-0 lg:top-2 lg:bottom-2 lg:right-auto lg:w-0.5',
-                  'bg-[#C4A86B] rounded-full'
+                  'bg-[#9E956B] rounded-full'
                 )}
                 transition={{
                   type: 'spring',
@@ -100,7 +100,7 @@ export default function LevelNav({ levels, activeLevel, className }: LevelNavPro
                 <span
                   className={cn(
                     'font-serif text-xs',
-                    isActive ? 'text-[#C4A86B]' : 'text-[var(--color-foreground-faint)]'
+                    isActive ? 'text-[#9E956B]' : 'text-[var(--color-foreground-faint)]'
                   )}
                 >
                   {String(level.level).padStart(2, '0')}

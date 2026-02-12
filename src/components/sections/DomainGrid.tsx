@@ -81,7 +81,7 @@ export default function DomainGrid({ domains, className }: DomainGridProps) {
                       <span
                         className={cn(
                           'font-serif text-2xl lg:text-3xl leading-none',
-                          'text-[#C4A86B]/50'
+                          'text-[#9E956B]/50'
                         )}
                       >
                         {String(domain.number).padStart(2, '0')}

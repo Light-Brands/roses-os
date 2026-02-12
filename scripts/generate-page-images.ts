@@ -169,7 +169,7 @@ COLOR PALETTE (ROSES OS brand — use these as accent tones on a white backgroun
 - Rose 400: #D4A09A (lighter warm rose)
 - Rose 300: #E8C4BF (pale blush)
 - Rose 200: #F5E1DD (very soft petal)
-- Gold: #C4A86B (sacred gold accent — use sparingly)
+- Gold: #9E956B (antique olive brass accent — use sparingly)
 - Dark accent: #3B2828 (deep rose-brown, for subtle contrast)
 - Background: pure white or very faint warm cream (#FAFAFA or #FFFFFF)
 `;
@@ -295,7 +295,7 @@ COMPOSITION REQUIREMENTS:
 - CRITICAL: The background MUST be perfectly pure white (#FFFFFF) with ZERO variation. No shadows, no gradients, no grey tones, no vignetting, no ambient occlusion, no drop shadows, no floor shadows, no reflected light on the background. The background must be completely uniform flat white from edge to edge, corner to corner.
 - The subject should be centered or elegantly composed, clearly visible and recognizable
 - Flat, even lighting — no directional shadows cast onto the background
-- Color palette: muted rose tones (#9C6F6E rose-clay, #D4A09A warm rose, #E8C4BF blush, #F5E1DD petal pink), touches of gold (#C4A86B)
+- Color palette: muted rose tones (#9C6F6E rose-clay, #D4A09A warm rose, #E8C4BF blush, #F5E1DD petal pink), touches of gold (#9E956B)
 - Style: photorealistic 3D render or high-end botanical illustration — polished, editorial, Apple-level quality
 - The image should look like it belongs on a pure white webpage where the edges of the image are completely invisible
 - NO text, NO letters, NO words, NO numbers in the image

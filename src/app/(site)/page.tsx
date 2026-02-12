@@ -129,7 +129,7 @@ function BrandEssence() {
     <section ref={ref} className="relative py-24 lg:py-32 bg-[#1A1716] text-white overflow-hidden">
       {/* Rose-gold gradient orb */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-rose-500/10 rounded-full blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#C4A86B]/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#9E956B]/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container-premium max-w-4xl mx-auto text-center relative z-10">
         <motion.p

@@ -93,11 +93,11 @@ export default function PathLevels({ levels, variant = 'full', className }: Path
                     className={cn(
                       'flex items-center justify-center',
                       'w-8 h-8 rounded-full',
-                      'bg-[#C4A86B]/10 text-[#C4A86B]',
+                      'bg-[#9E956B]/10 text-[#9E956B]',
                       'font-serif font-semibold text-sm',
-                      'border border-[#C4A86B]/20',
+                      'border border-[#9E956B]/20',
                       'transition-colors duration-300',
-                      'group-hover:bg-[#C4A86B]/20'
+                      'group-hover:bg-[#9E956B]/20'
                     )}
                   >
                     {level.level}
@@ -139,7 +139,7 @@ export default function PathLevels({ levels, variant = 'full', className }: Path
                               key={i}
                               className="flex items-start gap-2 text-sm text-[var(--color-foreground-muted)]"
                             >
-                              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#C4A86B]/50 flex-shrink-0" />
+                              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#9E956B]/50 flex-shrink-0" />
                               <span>{item}</span>
                             </li>
                           ))}
@@ -163,7 +163,7 @@ export default function PathLevels({ levels, variant = 'full', className }: Path
                           })
                         }
                         className={cn(
-                          'flex items-center gap-1.5 text-xs text-[#C4A86B] hover:text-[#C4A86B]/80',
+                          'flex items-center gap-1.5 text-xs text-[#9E956B] hover:text-[#9E956B]/80',
                           'transition-colors duration-200 cursor-pointer mt-1'
                         )}
                       >
