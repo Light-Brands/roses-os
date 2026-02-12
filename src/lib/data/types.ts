@@ -55,9 +55,11 @@ export interface ScheduleSession {
 /** Timezone column entries */
 export interface TimeZoneEntry {
   sanJose: string;
+  bogota: string;
   newYork: string;
   brasilia: string;
   london: string;
+  madrid: string;
 }
 
 /** Coherence domain (from The Codex) */
