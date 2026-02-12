@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { prefersReducedMotion } from '@/lib/utils';
 import { useTheme } from '@/lib/theme';
 
-const ShaderSphereCanvas = dynamic(() => import('./ShaderSphereCanvas'), {
+const RoseCanvas = dynamic(() => import('./RoseCanvas'), {
   ssr: false,
 });
 
@@ -99,7 +99,7 @@ export default function HeroSphere() {
       className="hero-sphere-container w-full h-full"
     >
       {containerReady && (
-        <ShaderSphereCanvas
+        <RoseCanvas
           mouseRef={mouseRef}
           reducedMotion={reducedMotion}
           isDark={isDark}

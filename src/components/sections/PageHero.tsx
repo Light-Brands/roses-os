@@ -39,7 +39,7 @@ export default function PageHero({ eyebrow, title, description, compact }: PageH
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="text-[clamp(2.5rem,5vw,4rem)] tracking-tight leading-tight"
+          className="font-serif text-[clamp(2.5rem,5vw,4rem)] tracking-tight leading-tight"
         >
           {title}
         </motion.h1>

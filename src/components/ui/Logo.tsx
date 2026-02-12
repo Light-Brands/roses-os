@@ -1,7 +1,7 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
 interface LogoProps {
@@ -14,9 +14,9 @@ interface LogoProps {
 }
 
 const sizeMap = {
-  sm: { width: 32, height: 32, text: 'text-sm' },
-  md: { width: 40, height: 40, text: 'text-base' },
-  lg: { width: 56, height: 56, text: 'text-xl' },
+  sm: 'text-base',
+  md: 'text-lg',
+  lg: 'text-xl',
 };
 
 export function Logo({
@@ -27,31 +27,26 @@ export function Logo({
   textClassName,
   onClick,
 }: LogoProps) {
-  const sizes = sizeMap[size];
+  const iconSize = size === 'lg' ? 36 : size === 'md' ? 30 : 24;
   const logoContent = (
-    <div className={cn('flex items-center gap-3', className)}>
+    <div className={cn('flex items-center gap-2', className)}>
       <Image
-        src="/dc-logo.svg"
-        alt="Digital Cultures"
-        width={sizes.width}
-        height={sizes.height}
-        className="transition-all duration-200"
-        style={{
-          filter: 'brightness(0) saturate(100%) invert(53%) sepia(18%) saturate(1400%) hue-rotate(210deg) brightness(88%) contrast(90%)',
-        }}
-        priority
+        src="/rose.png"
+        alt=""
+        width={iconSize}
+        height={iconSize}
+        className="object-contain shrink-0"
       />
-      {showText && (
-        <span
-          className={cn(
-            'font-medium text-foreground tracking-tight',
-            sizes.text,
-            textClassName
-          )}
-        >
-          Digital Cultures
-        </span>
-      )}
+      <span
+        className={cn(
+          'font-medium tracking-[0.08em] uppercase text-[var(--color-foreground)]',
+          sizeMap[size],
+          textClassName
+        )}
+        style={{ fontFamily: 'var(--font-sans)' }}
+      >
+        ROSE OS
+      </span>
     </div>
   );
 

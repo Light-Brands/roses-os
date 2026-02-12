@@ -6,20 +6,22 @@ import { Metadata } from 'next';
  */
 
 export const siteConfig = {
-  name: 'Digital Cultures',
-  description: 'Marketing, creative, and design agency based in Paphos, Cyprus. We craft digital experiences that elevate brands.',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://digitalcultures.agency',
+  name: 'ROSES OS',
+  description: 'A seamless path to inner freedom. ROSES OS is a consciousness and remembrance ecosystem — technologies, practices, and community for coherent living.',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://rosesos.org',
   ogImage: '/og-image.jpg',
-  creator: '@digitalcultures',
+  creator: '@rosesos',
   keywords: [
-    'creative agency',
-    'design agency',
-    'marketing agency',
-    'branding',
-    'web design',
-    'digital marketing',
-    'Paphos',
-    'Cyprus',
+    'consciousness',
+    'remembrance',
+    'coherence',
+    'inner freedom',
+    'meditation',
+    'sacred technology',
+    'the rose',
+    'human development',
+    'spiritual practice',
+    'holistic wellness',
   ],
 };
 
@@ -101,7 +103,7 @@ export function generateOrganizationSchema() {
     url: siteConfig.url,
     logo: `${siteConfig.url}/logo.png`,
     sameAs: [
-      // TODO: Add Digital Cultures social media URLs
+      // TODO: Add ROSES OS social media URLs
     ],
   };
 }

@@ -4,10 +4,10 @@ import { useEffect, useRef } from 'react';
 import { usePageTransition } from '@/lib/transition';
 
 // =============================================================================
-// PAGE TRANSITION — Single panel wipe + DC logo
+// PAGE TRANSITION — Single panel wipe + Rose logo
 // =============================================================================
 //
-// Cover:  solid panel slides UP from bottom, DC logo fades in at center
+// Cover:  solid panel slides UP from bottom, Rose logo fades in at center
 // Reveal: logo fades out, panel continues UP out of view
 //
 // Colors: inverted theme — black in light mode, white in dark mode
@@ -69,30 +69,26 @@ export function PageTransition() {
     <div
       ref={panelRef}
       aria-hidden="true"
-      className="fixed inset-0 z-[9999] bg-[#0A0A0A] dark:bg-[#F5F5F5]"
+      className="fixed inset-0 z-[9999] bg-[#1A1716] dark:bg-[#FAF8F5]"
       style={{
         transform: 'translateY(100%)',
         willChange: 'transform',
         pointerEvents: 'none',
       }}
     >
-      {/* DC Logo — centered */}
+      {/* Rose Logo — centered */}
       <div
         ref={logoRef}
         className="absolute inset-0 flex items-center justify-center"
         style={{ opacity: 0 }}
       >
-        <svg
-          width="42"
-          height="42"
-          viewBox="0 0 107.52 107.55"
-          className="text-white dark:text-[#0A0A0A]"
-          fill="currentColor"
-        >
-          <path d="M0,107.53V0c9.92-.18,19.68,2.61,28.06,7.82,21.17,13.16,30.81,38.12,23.36,62.21-6.81,22.03-28.06,38.26-51.42,37.5Z" />
-          <path d="M107.52,107.53h-48.72c-.35-22.93,16.52-43.22,38.87-47.65,2.94-.58,5.31-.76,8.3-.82.34,0,1.55-.44,1.55.11v48.36Z" />
-          <path d="M107.52,0v48.48c-21.14.54-40.51-14.4-46.68-34.32-1.44-4.64-2.11-9.3-2.28-14.16h48.96Z" />
-        </svg>
+        <img
+          src="/rose.png"
+          alt=""
+          width={40}
+          height={40}
+          className="object-contain"
+        />
       </div>
     </div>
   );

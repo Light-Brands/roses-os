@@ -14,61 +14,54 @@ body {
 
 /* =============================================================================
    TAILWIND THEME CONFIGURATION
-   Monochrome design tokens for Digital Cultures
+   ROSES OS warm design tokens
    ============================================================================= */
 
 @theme inline {
-  /* Colors - Primary (dark accent scale) */
-  --color-primary-50: #F5F5F5;
-  --color-primary-100: #E8E8E8;
-  --color-primary-200: #D4D4D4;
-  --color-primary-300: #A3A3A3;
-  --color-primary-400: #525252;
-  --color-primary-500: #1A1A1A;
-  --color-primary-600: #0A0A0A;
-  --color-primary-700: #050505;
-  --color-primary-800: #020202;
-  --color-primary-900: #000000;
-  --color-primary-950: #000000;
+  /* Colors - Warm Neutrals */
+  --color-warm-0: #FFFFFF;
+  --color-warm-50: #FAF8F5;
+  --color-warm-100: #F5F0EB;
+  --color-warm-200: #E8E0D8;
+  --color-warm-300: #D4C8BE;
+  --color-warm-400: #B5A89D;
+  --color-warm-500: #8C7E73;
+  --color-warm-600: #6B5F56;
+  --color-warm-700: #504540;
+  --color-warm-800: #3B2F2F;
+  --color-warm-900: #2A2020;
+  --color-warm-950: #1A1716;
 
-  /* Colors - Secondary (neutral mid-tones) */
-  --color-secondary-50: #FAFAFA;
-  --color-secondary-100: #F5F5F5;
-  --color-secondary-200: #E8E8E8;
-  --color-secondary-300: #D4D4D4;
-  --color-secondary-400: #A3A3A3;
-  --color-secondary-500: #666666;
-  --color-secondary-600: #525252;
-  --color-secondary-700: #404040;
-  --color-secondary-800: #262626;
-  --color-secondary-900: #171717;
-  --color-secondary-950: #0A0A0A;
+  /* Colors - Rose Scale */
+  --color-rose-50: #FDF8F7;
+  --color-rose-100: #FAF0EE;
+  --color-rose-200: #F5E1DD;
+  --color-rose-300: #E8C4BF;
+  --color-rose-400: #D4A09A;
+  --color-rose-500: #9C6F6E;
+  --color-rose-600: #8A5E5D;
+  --color-rose-700: #6E4A49;
+  --color-rose-800: #523737;
+  --color-rose-900: #3B2828;
+  --color-rose-950: #2A1C1C;
 
-  /* Colors - Neutral */
-  --color-neutral-0: #FFFFFF;
-  --color-neutral-50: #FAFAFA;
-  --color-neutral-100: #F5F5F5;
-  --color-neutral-200: #E8E8E8;
-  --color-neutral-300: #D4D4D4;
-  --color-neutral-400: #A3A3A3;
-  --color-neutral-500: #737373;
-  --color-neutral-600: #525252;
-  --color-neutral-700: #404040;
-  --color-neutral-800: #262626;
-  --color-neutral-900: #171717;
-  --color-neutral-950: #0A0A0A;
+  /* Brand Accent Colors */
+  --color-gold: #C4A86B;
+  --color-sage: #A3B5A6;
+  --color-lavender: #B8A9C9;
 
   /* Status Colors */
-  --color-success: #10b981;
-  --color-warning: #f59e0b;
-  --color-error: #ef4444;
-  --color-info: #525252;
+  --color-success: #5B9A6F;
+  --color-warning: #C4A86B;
+  --color-error: #C0392B;
+  --color-info: #6B5F56;
 
   /* Typography */
-  --font-sans: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-  --font-weight-heading-1: 500;
-  --font-weight-heading-2: 600;
+  --font-weight-heading-1: 400;
+  --font-weight-heading-2: 500;
   --font-weight-heading-3: 600;
   --font-weight-heading-4: 600;
   --font-weight-heading-5: 600;
@@ -103,14 +96,14 @@ body {
   --tracking-wide: 0.01em;
   --tracking-wider: 0.02em;
 
-  /* Shadows - pure black, no color tinting */
-  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.04);
-  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.04);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.06), 0 2px 4px -2px rgb(0 0 0 / 0.04);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.06), 0 4px 6px -4px rgb(0 0 0 / 0.03);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.06), 0 8px 10px -6px rgb(0 0 0 / 0.03);
-  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.15);
-  --shadow-glass: 0 8px 32px 0 rgb(0 0 0 / 0.06);
+  /* Shadows — warm-tinted */
+  --shadow-xs: 0 1px 2px 0 rgb(59 47 47 / 0.04);
+  --shadow-sm: 0 1px 3px 0 rgb(59 47 47 / 0.06), 0 1px 2px -1px rgb(59 47 47 / 0.04);
+  --shadow-md: 0 4px 6px -1px rgb(59 47 47 / 0.06), 0 2px 4px -2px rgb(59 47 47 / 0.04);
+  --shadow-lg: 0 10px 15px -3px rgb(59 47 47 / 0.06), 0 4px 6px -4px rgb(59 47 47 / 0.03);
+  --shadow-xl: 0 20px 25px -5px rgb(59 47 47 / 0.06), 0 8px 10px -6px rgb(59 47 47 / 0.03);
+  --shadow-2xl: 0 25px 50px -12px rgb(59 47 47 / 0.15);
+  --shadow-glass: 0 8px 32px 0 rgb(59 47 47 / 0.06);
 
   /* Border Radius */
   --radius-xs: 0.125rem;
@@ -138,6 +131,8 @@ body {
   --ease-smooth-out: cubic-bezier(0.0, 0.0, 0.2, 1);
   --ease-hover: cubic-bezier(0.33, 1, 0.68, 1);
   --ease-reveal: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-breathe: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  --ease-sacred: cubic-bezier(0.25, 0.8, 0.25, 1);
 
   --duration-faster: 100ms;
   --duration-fast: 150ms;
@@ -145,6 +140,8 @@ body {
   --duration-relaxed: 300ms;
   --duration-slow: 400ms;
   --duration-slower: 500ms;
+  --duration-meditative: 800ms;
+  --duration-contemplative: 1200ms;
 
   /* Breakpoints */
   --breakpoint-xs: 480px;
@@ -156,7 +153,7 @@ body {
 }
 
 /* =============================================================================
-   CUSTOM ANIMATIONS - Subtle, purposeful
+   CUSTOM ANIMATIONS — Organic, sacred
    ============================================================================= */
 
 @keyframes fade-in {
@@ -229,6 +226,42 @@ body {
   100% { background-position: 200% 0; }
 }
 
+/* ROSES OS organic animations */
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.02); opacity: 1; }
+}
+
+@keyframes gentle-rise {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes grain-shift {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-2%, -2%); }
+  30% { transform: translate(1%, -1%); }
+  50% { transform: translate(-1%, 2%); }
+  70% { transform: translate(2%, 1%); }
+  90% { transform: translate(-1%, -1%); }
+}
+
+@keyframes soft-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
 /* Animation utility classes */
 .animate-fade-in { animation: fade-in 0.6s var(--ease-smooth) forwards; }
 .animate-fade-up { animation: fade-up 0.6s var(--ease-reveal) forwards; }
@@ -237,6 +270,10 @@ body {
 .animate-slide-in-right { animation: slide-in-right 0.6s var(--ease-reveal) forwards; }
 .animate-slide-in-left { animation: slide-in-left 0.6s var(--ease-reveal) forwards; }
 .animate-pulse-subtle { animation: pulse-subtle 2s ease-in-out infinite; }
+.animate-breathe { animation: breathe 4s var(--ease-breathe) infinite; }
+.animate-gentle-rise { animation: gentle-rise 0.8s var(--ease-sacred) forwards; }
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-soft-pulse { animation: soft-pulse 3s var(--ease-breathe) infinite; }
 
 /* Animation delays */
 .delay-75 { animation-delay: 75ms; }
@@ -280,21 +317,18 @@ body {
 }
 
 /* =============================================================================
-   SITE EDGE — single source of truth for horizontal alignment.
-   Navigation, containers, side social icons, and vertical text
-   all reference this variable so everything lines up perfectly.
+   SITE EDGE — single source of truth for horizontal alignment
    ============================================================================= */
 
 :root {
-  --site-edge: 1.5rem;   /* 24px — mobile */
+  --site-edge: 1.5rem;
 }
-@media (min-width: 640px)  { :root { --site-edge: 2rem; } }    /* 32px */
-@media (min-width: 768px)  { :root { --site-edge: 2.5rem; } }  /* 40px */
-@media (min-width: 1024px) { :root { --site-edge: 3rem; } }    /* 48px */
-@media (min-width: 1280px) { :root { --site-edge: 4rem; } }    /* 64px */
-@media (min-width: 1536px) { :root { --site-edge: 5rem; } }    /* 80px */
+@media (min-width: 640px)  { :root { --site-edge: 2rem; } }
+@media (min-width: 768px)  { :root { --site-edge: 2.5rem; } }
+@media (min-width: 1024px) { :root { --site-edge: 3rem; } }
+@media (min-width: 1280px) { :root { --site-edge: 4rem; } }
+@media (min-width: 1536px) { :root { --site-edge: 5rem; } }
 
-/* Positional helpers for fixed side elements */
 .site-edge-left  { left: var(--site-edge); }
 .site-edge-right { right: var(--site-edge); }
 
@@ -302,8 +336,6 @@ body {
    PREMIUM UTILITY CLASSES
    ============================================================================= */
 
-/* Container — uses --site-edge for padding so it aligns with side elements.
-   No max-width: content elements set their own max-w as needed. */
 .container-premium {
   width: 100%;
   padding-left: var(--site-edge);
@@ -312,25 +344,25 @@ body {
 
 /* Section spacing - generous, breathing */
 .section-padding {
-  padding-top: 3.5rem;   /* 56px — mobile */
+  padding-top: 3.5rem;
   padding-bottom: 3.5rem;
 }
 
 @media (min-width: 768px) {
   .section-padding {
-    padding-top: 7rem;   /* 112px */
+    padding-top: 7rem;
     padding-bottom: 7rem;
   }
 }
 
 @media (min-width: 1024px) {
   .section-padding {
-    padding-top: 8rem;   /* 128px */
+    padding-top: 8rem;
     padding-bottom: 8rem;
   }
 }
 
-/* Heading weights - from design tokens (lighter, especially h1) */
+/* Heading weights */
 h1 { font-weight: var(--font-weight-heading-1); }
 h2 { font-weight: var(--font-weight-heading-2); }
 h3 { font-weight: var(--font-weight-heading-3); }
@@ -338,12 +370,19 @@ h4 { font-weight: var(--font-weight-heading-4); }
 h5 { font-weight: var(--font-weight-heading-5); }
 h6 { font-weight: var(--font-weight-heading-6); }
 
-/* Utility classes for heading weight when not using semantic h1–h6 */
+/* Headings use serif */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
 .font-heading-1 { font-weight: var(--font-weight-heading-1); }
 .font-heading-2 { font-weight: var(--font-weight-heading-2); }
 .font-heading-3 { font-weight: var(--font-weight-heading-3); }
 
-/* Text balance for headings */
+/* Font utilities */
+.font-serif { font-family: var(--font-serif); }
+.font-display { font-family: var(--font-serif); }
+
 .text-balance {
   text-wrap: balance;
 }
@@ -351,7 +390,7 @@ h6 { font-weight: var(--font-weight-heading-6); }
 /* Premium focus states */
 .focus-premium:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px var(--color-background), 0 0 0 4px var(--color-foreground);
+  box-shadow: 0 0 0 2px var(--color-background), 0 0 0 4px var(--color-rose-clay);
   border-radius: var(--radius-sm);
 }
 
@@ -365,7 +404,7 @@ h6 { font-weight: var(--font-weight-heading-6); }
   display: none;
 }
 
-/* Card hover - subtle lift */
+/* Card hover - subtle lift with warm shadow */
 .card-hover {
   transition:
     transform 0.4s var(--ease-smooth),
@@ -374,10 +413,10 @@ h6 { font-weight: var(--font-weight-heading-6); }
 
 .card-hover:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 20px 0 rgb(0 0 0 / 0.1);
+  box-shadow: 0 4px 20px 0 rgb(59 47 47 / 0.1);
 }
 
-/* Link underline animation - monochrome */
+/* Link underline animation */
 .link-underline {
   position: relative;
 }
@@ -415,21 +454,21 @@ h6 { font-weight: var(--font-weight-heading-6); }
   aspect-ratio: 16 / 9;
 }
 
-/* Selection styling - monochrome */
+/* Selection styling — rose-tinted */
 ::selection {
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(156, 111, 110, 0.2);
   color: inherit;
 }
 
 .dark ::selection {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(156, 111, 110, 0.3);
   color: inherit;
 }
 
 /* Scrollbar thin variant */
 .scrollbar-thin {
   scrollbar-width: thin;
-  scrollbar-color: var(--color-neutral-400) transparent;
+  scrollbar-color: var(--color-warm-400) transparent;
 }
 
 .scrollbar-thin::-webkit-scrollbar {
@@ -438,12 +477,56 @@ h6 { font-weight: var(--font-weight-heading-6); }
 }
 
 .scrollbar-thin::-webkit-scrollbar-thumb {
-  background: var(--color-neutral-400);
+  background: var(--color-warm-400);
   border-radius: 3px;
 }
 
 .scrollbar-thin::-webkit-scrollbar-track {
   background: transparent;
+}
+
+/* =============================================================================
+   ROSES OS — Texture utilities
+   ============================================================================= */
+
+/* Grain texture overlay */
+.texture-grain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: var(--grain-opacity);
+  pointer-events: none;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 128px 128px;
+  animation: grain-shift 8s steps(10) infinite;
+}
+
+/* Linen texture overlay */
+.texture-linen::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.02;
+  pointer-events: none;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C6F6E' fill-opacity='0.4'%3E%3Cpath d='M0 0h1v1H0zM20 0h1v1h-1zM0 20h1v1H0zM20 20h1v1h-1z'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* Rose field background */
+.bg-rose-field {
+  background-color: var(--color-background-rose);
+}
+
+/* Sacred label styling */
+.label-sacred {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-foreground-faint);
 }
 
 /* =============================================================================
@@ -455,11 +538,9 @@ h6 { font-weight: var(--font-weight-heading-6); }
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Anchor at center so blob and scale animation are truly centered */
   transform-origin: center center;
 }
 
-/* Force Canvas root and canvas to fill container and stay centered */
 .hero-sphere-container > * {
   width: 100% !important;
   height: 100% !important;
@@ -486,8 +567,6 @@ h6 { font-weight: var(--font-weight-heading-6); }
 html {
   scroll-behavior: smooth;
 }
-
-/* Preloader styles moved to component (inline/Tailwind) */
 
 /* =============================================================================
    CUSTOM CURSOR — mix-blend-mode: difference for universal visibility
@@ -530,7 +609,6 @@ html {
   opacity: 1;
 }
 
-/* Hover: dot expands into a bold filled circle */
 .cursor-dot.is-hover {
   width: 48px;
   height: 48px;
@@ -538,7 +616,6 @@ html {
   margin-top: -24px;
 }
 
-/* Cursor with text label (e.g. "View") */
 .cursor-dot.has-text {
   width: 88px;
   height: 88px;
@@ -546,7 +623,6 @@ html {
   margin-top: -44px;
 }
 
-/* Click squeeze */
 .cursor-dot.is-press {
   width: 6px;
   height: 6px;
@@ -568,7 +644,6 @@ html {
   margin-top: -38px;
 }
 
-/* Text inside cursor dot */
 .cursor-text {
   position: absolute;
   top: 50%;
@@ -589,7 +664,6 @@ html {
   opacity: 1;
 }
 
-/* Ring — trailing circle outline */
 .cursor-ring {
   width: 40px;
   height: 40px;
@@ -607,7 +681,6 @@ html {
   opacity: 0.4;
 }
 
-/* Ring fades when dot is active (hover/text) */
 .cursor-ring.is-hover {
   opacity: 0;
   width: 48px;
@@ -649,4 +722,44 @@ html {
 /* Hero words hidden until GSAP reveals them */
 .hero-word {
   opacity: 0;
+}
+
+/* =============================================================================
+   PRINT STYLES — PDF Export
+   ============================================================================= */
+
+@media print {
+  /* Hide non-essential elements */
+  nav, footer, .cursor-dot, .cursor-ring, .scroll-progress,
+  .hero-sphere-container, button[aria-label="Toggle theme"] {
+    display: none !important;
+  }
+
+  /* Clean typography */
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000;
+    background: #fff;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    font-family: "Cormorant Garamond", Georgia, serif;
+  }
+
+  /* Page break control */
+  .section-padding {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 }

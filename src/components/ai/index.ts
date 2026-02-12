@@ -1,3 +1,2 @@
 // AI-Powered Components
-export { DynamicHero } from './DynamicHero';
-export { FeedbackWidget } from './FeedbackWidget';
+// (Previous components removed during ROSES OS migration)

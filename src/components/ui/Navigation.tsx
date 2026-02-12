@@ -27,9 +27,11 @@ interface NavigationProps {
 }
 
 const defaultItems: NavItem[] = [
-  { label: 'Features', href: '#features' },
-  { label: 'Pricing', href: '#pricing' },
-  { label: 'About', href: '#about' },
+  { label: 'The Rose', href: '/the-rose' },
+  { label: 'Programs', href: '/programs' },
+  { label: 'Guardians', href: '/guardians' },
+  { label: 'The Codex', href: '/the-codex' },
+  { label: 'Community', href: '/community' },
 ];
 
 // =============================================================================
@@ -105,7 +107,7 @@ function HamburgerIcon({ isOpen }: { isOpen: boolean }) {
 export function Navigation({
   logo,
   items = defaultItems,
-  cta = { label: 'Get Started', href: '#' },
+  cta = { label: 'Begin', href: '/invitation' },
   transparent = false,
 }: NavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -158,7 +160,7 @@ export function Navigation({
           <div className="relative flex items-center justify-between h-16 lg:h-[72px]">
             {/* Logo */}
             <div className="relative z-10">
-              {logo || <Logo size="md" />}
+              {logo || <Logo size="lg" />}
             </div>
 
             {/* Desktop Navigation — center-aligned */}
@@ -219,13 +221,13 @@ export function Navigation({
                   className={cn(
                     'relative inline-flex items-center rounded-full overflow-hidden',
                     'px-5 py-2.5',
-                    'bg-[#887BC6]'
+                    'bg-[#9C6F6E]'
                   )}
                 >
                   <div
                     className={cn(
                       'absolute inset-0',
-                      'bg-[#766AB3]',
+                      'bg-[#8A5E5D]',
                       'origin-left scale-x-0 group-hover:scale-x-100',
                       'transition-transform duration-300 ease-out'
                     )}
@@ -245,13 +247,13 @@ export function Navigation({
                   className={cn(
                     'relative flex items-center justify-center',
                     'w-10 h-10 rounded-full overflow-hidden',
-                    'bg-[#887BC6]'
+                    'bg-[#9C6F6E]'
                   )}
                 >
                   <div
                     className={cn(
                       'absolute inset-0',
-                      'bg-[#766AB3]',
+                      'bg-[#8A5E5D]',
                       'origin-left scale-x-0 group-hover:scale-x-100',
                       'transition-transform duration-300 delay-100 ease-out'
                     )}
@@ -377,7 +379,7 @@ export function Navigation({
                     className={cn(
                       'inline-flex items-center gap-2',
                       'px-6 py-3.5 rounded-full',
-                      'bg-[#887BC6]',
+                      'bg-[#9C6F6E]',
                       'text-white',
                       'text-sm font-medium',
                       'transition-colors duration-200'

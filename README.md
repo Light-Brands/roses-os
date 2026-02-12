@@ -1,19 +1,40 @@
-# Digital Cultures
+# ROSES OS
 
-Agency website for Digital Cultures - a marketing, creative, and design agency based in Paphos, Cyprus.
+> The Operating System of Remembrance
+
+ROSES OS is a remembrance ecosystem — spiritual-modern consciousness technology that restores inner symmetry and coherence. It is not a self-improvement brand. It is an operating system of coherence — where intuition becomes precise and presence becomes sovereign.
+
+---
+
+## Project Overview
+
+This repository contains the **ROSES OS web platform**: the public site, invitation flow, program content, teaching materials, and admin tooling. Documentation, brand system, and project planning live in `docs/`, aligned with the [Light-Brands/roses-os](https://github.com/Light-Brands/roses-os) documentation repo.
+
+**Core programs (reflected on the site):**
+
+- **The Rose** — Core inner technology (3 progressive levels) that restores coherence across emotional, mental, and energetic systems
+- **The Aura** — Perception sharpening, relationship work, and leadership empowerment
+- **Rose + Aura Combined** — Integrated learning path
+
+**What’s built:**
+
+- **Public site** — Home, The Rose, Programs, Guardians, The Codex, Community, Contact
+- **Invitation** — Invitation and Learn more pages with contribution tiers and schedule
+- **Forms** — Enrollment, contribution, and agreements (with API routes)
+- **Teaching** — Level 1, 2, and 3 content with sidebar nav and password gate
+- **Admin** — Dashboard (login, analytics, content, feedback, media, users, settings)
+- **Design system** — Warm palette, typography, page transitions, preloader (rose logo), responsive nav and footer
 
 ---
 
 ## Tech Stack
 
-- **Framework:** Next.js 16+ (App Router)
-- **Language:** TypeScript (strict mode)
-- **Styling:** Tailwind CSS v4 + custom design tokens
-- **Animation:** Framer Motion + GSAP
+- **Framework:** Next.js 16 (App Router)
+- **Language:** TypeScript (strict)
+- **Styling:** Tailwind CSS v4 + design tokens (`src/design-system/`)
+- **Animation:** Framer Motion, GSAP, Three.js (hero sphere, rose model)
 - **Icons:** Lucide React
-- **Images:** Sharp via Next.js Image
-- **Database:** Supabase (PostgreSQL)
-- **Auth:** Supabase Auth (admin only)
+- **Database / Auth:** Supabase (optional; schema in `supabase/`)
 
 ---
 
@@ -37,99 +58,74 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 
 ---
 
-## Project Structure
+## Repository Structure
 
 ```
-src/
-├── app/                      # Pages (App Router)
-│   ├── globals.css           # Global styles + Tailwind config
-│   ├── layout.tsx            # Root layout with SEO
-│   ├── page.tsx              # Homepage
-│   ├── (admin)/              # Admin dashboard (route group)
-│   └── api/                  # API routes
-├── components/
-│   ├── ui/                   # Base UI components
-│   ├── sections/             # Page section components
-│   ├── admin/                # Admin panel components
-│   └── ai/                   # AI-powered components
-├── design-system/
-│   ├── tokens.ts             # Design token definitions
-│   ├── theme.css             # CSS variables (light/dark)
-│   └── DESIGN-PRINCIPLES.md  # Design guidelines
-└── lib/
-    ├── utils.ts              # Utility functions (cn, etc.)
-    ├── seo.tsx               # SEO configuration & utilities
-    ├── theme.tsx             # Theme provider & hook
-    └── supabase/             # Database client
+roses-os/
+├── README.md                 — This file
+├── docs/                      — Brand, foundation, program, training (see Key Documents)
+├── public/                    — Static assets (rose.png, favicons, models)
+├── scripts/                   — generate-favicons.mjs, etc.
+├── src/
+│   ├── app/
+│   │   ├── (site)/            — Public pages: home, the-rose, programs, guardians, the-codex, community, contact
+│   │   ├── (invitation)/      — Invitation + learn-more
+│   │   ├── (forms)/           — enroll, contribute, agreements
+│   │   ├── (teaching)/        — teaching hub + level-1, level-2, level-3
+│   │   ├── (admin)/           — Admin dashboard
+│   │   ├── api/               — API routes (enrollment, contribution, agreements, etc.)
+│   │   └── layout.tsx, globals.css
+│   ├── components/
+│   │   ├── ui/                — Navigation, Logo, Footer, Preloader, PageTransition, etc.
+│   │   ├── sections/          — PageHero, DomainGrid, LineageTimeline, ContributionTiers, etc.
+│   │   ├── forms/             — EnrollmentForm, ContributionForm, AgreementsForm
+│   │   ├── teaching/          — LevelNav, PasswordGate, TechniqueCard, ChakraChart
+│   │   └── three/             — HeroSphere, RoseModel, RoseCanvas
+│   ├── design-system/         — tokens.ts, theme.css, DESIGN-PRINCIPLES.md
+│   └── lib/                   — utils, theme, transition, data, supabase, seo
+└── supabase/                  — schema.sql (optional)
 ```
 
 ---
 
-## Design System
+## Key Documents (in `docs/`)
 
-### Philosophy
-
-- **Breathing minimalism** - generous whitespace, purposeful focal points
-- **Typography-first** - text size and weight create the hierarchy
-- **Monochrome restraint** - near-monochrome palette, strategic accents only
-- **Subtle motion** - micro-interactions that enhance, never distract
-
-### Color Palette
-
-| Role | Light Mode | Dark Mode |
-|------|-----------|-----------|
-| Page background | #E8E8E8 | #0A0A0A |
-| Surface/cards | #FFFFFF | #1A1A1A |
-| Primary text | #1A1A1A | #F5F5F5 |
-| Supporting text | #666666 | #999999 |
-| Accent/CTA | #000000 | #FFFFFF |
-
-### Typography
-
-Inter font family. Display headlines up to 96px (fluid clamp). Tight letter spacing on headings. Generous line height on body text.
-
-### Spacing
-
-8px base grid. Generous section padding (py-20 to py-32). Safe margins: 40px mobile, 80px tablet, 120px desktop.
-
----
-
-## Key Files
-
-| File | Purpose |
-|------|---------|
-| `AI-RULES.md` | Development rules for AI-assisted work |
-| `.claude/project-context.md` | Full context for Claude sessions |
-| `src/design-system/tokens.ts` | All design token values |
-| `src/design-system/DESIGN-PRINCIPLES.md` | Design guidelines |
-| `src/lib/seo.tsx` | SEO configuration |
+| Document                        | Path                                           | Purpose                                                                              |
+| ------------------------------- | ---------------------------------------------- | ------------------------------------------------------------------------------------ |
+| **Brand DNA**                   | docs/brand/brand-dna.md                        | Brand identity, visual system, and web design decisions                              |
+| **The Codex**                   | docs/foundation/the-codex.md                   | Foundational philosophy: coherence, lineage, architecture, manifesto                 |
+| **Technologies of Remembrance** | docs/technology/technologies-of-remembrance.md| The Rose as a modern inner technology                                                |
+| **Presentation**                | docs/program/presentation.md                   | Public invitation content for the Rose and Aura programs                            |
+| **Schedule Details**            | docs/program/schedule-details.md               | Program schedule, time zones, contribution model                                     |
+| **Training Manual**             | docs/training/mdr-teachers-training-manual.md | Teacher training content for Rose Meditation Levels 1–3                             |
+| **Project Plan**                | docs/project-plan-for-designer.md              | Design brief for the web platform                                                   |
 
 ---
 
 ## Scripts
 
 ```bash
-pnpm dev            # Development server
-pnpm build          # Production build
-pnpm start          # Start production
-pnpm lint           # Run ESLint
-pnpm type-check     # TypeScript check
+pnpm dev          # Development server
+pnpm build        # Production build
+pnpm start        # Start production server
+pnpm lint         # ESLint
+pnpm type-check   # TypeScript check
+pnpm icons        # Generate favicons from source
 ```
 
 ---
 
 ## Deployment
 
-Deploy on Vercel:
+Build and deploy to Vercel or any Node-friendly host:
 
 ```bash
 pnpm build
 ```
 
-Or deploy anywhere that supports Node.js.
-
 ---
 
-## License
+## About
 
-Private - Digital Cultures
+Designed & developed by **LIGHT BRANDS**.  
+Documentation and planning: [github.com/Light-Brands/roses-os](https://github.com/Light-Brands/roses-os).

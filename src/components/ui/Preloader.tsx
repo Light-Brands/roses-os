@@ -3,9 +3,9 @@
 import { useState, useEffect, useRef } from 'react';
 
 // =============================================================================
-// PRELOADER — DC logo on black, then slides up to reveal site
+// PRELOADER — Rose logo on dark, then slides up to reveal site
 // =============================================================================
-// Matches the page transition visual language: black panel + DC mark.
+// Matches the page transition visual language: dark panel + Rose mark.
 // Logo fades in → holds → logo fades out → panel slides up.
 // Total: ~1.6s (vs old geometric preloader at ~2.9s)
 // =============================================================================
@@ -21,7 +21,7 @@ export function Preloader() {
   useEffect(() => {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    if (sessionStorage.getItem('dc-preloader') || reducedMotion) {
+    if (sessionStorage.getItem('roses-preloader') || reducedMotion) {
       setDone(true);
       window.dispatchEvent(new Event('preloader:done'));
       return;
@@ -59,7 +59,7 @@ export function Preloader() {
 
         t(() => {
           setDone(true);
-          sessionStorage.setItem('dc-preloader', '1');
+          sessionStorage.setItem('roses-preloader', '1');
           document.body.style.overflow = '';
         }, 500);
       }, 120);
@@ -76,7 +76,7 @@ export function Preloader() {
   return (
     <div
       ref={panelRef}
-      className="fixed inset-0 z-[10000] bg-[#0A0A0A]"
+      className="fixed inset-0 z-[10000] bg-[#1A1716]"
       aria-hidden="true"
     >
       <div
@@ -84,16 +84,13 @@ export function Preloader() {
         className="absolute inset-0 flex items-center justify-center"
         style={{ opacity: 0, transform: 'scale(0.88)' }}
       >
-        <svg
-          width="52"
-          height="52"
-          viewBox="0 0 107.52 107.55"
-          fill="white"
-        >
-          <path d="M0,107.53V0c9.92-.18,19.68,2.61,28.06,7.82,21.17,13.16,30.81,38.12,23.36,62.21-6.81,22.03-28.06,38.26-51.42,37.5Z" />
-          <path d="M107.52,107.53h-48.72c-.35-22.93,16.52-43.22,38.87-47.65,2.94-.58,5.31-.76,8.3-.82.34,0,1.55-.44,1.55.11v48.36Z" />
-          <path d="M107.52,0v48.48c-21.14.54-40.51-14.4-46.68-34.32-1.44-4.64-2.11-9.3-2.28-14.16h48.96Z" />
-        </svg>
+        <img
+          src="/rose.png"
+          alt=""
+          width={48}
+          height={48}
+          className="object-contain"
+        />
       </div>
     </div>
   );

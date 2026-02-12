@@ -1,437 +1,324 @@
 // =============================================================================
-// MOCK DATA — Digital Cultures
-// TODO: Replace with CMS/Supabase data
+// MOCK DATA — ROSES OS
 // =============================================================================
 
-import type { Project, ProjectDetail, Service, Stat, NavItem } from './types';
+import type {
+  NavItem, Guardian, Program, ContributionTier,
+  ScheduleStage, CoherenceDomain, PathLevel, LineageEntry,
+  ArchitectureLayer, Chakra, Technique, TeachingLevel,
+  Agreement, Capacity, BrandQuote, Stat,
+} from './types';
 
 // =============================================================================
 // NAVIGATION
 // =============================================================================
 
 export const navItems: NavItem[] = [
-  { label: 'Work', href: '/work' },
-  { label: 'Services', href: '/services' },
-  { label: 'About', href: '/about' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'The Rose', href: '/the-rose' },
+  { label: 'Programs', href: '/programs' },
+  { label: 'Guardians', href: '/guardians' },
+  { label: 'The Codex', href: '/the-codex' },
+  { label: 'Community', href: '/community' },
 ];
 
 // =============================================================================
-// PROJECT CATEGORIES
+// GUARDIANS
 // =============================================================================
 
-export const projectCategories = [
-  'Branding',
-  'Art Direction',
-  'Web Design',
-  'Social Media',
-  'Strategy',
-  'Video',
-  'Print',
-  'Photography',
-];
-
-// =============================================================================
-// PROJECTS (listing)
-// =============================================================================
-
-export const projects: Project[] = [
+export const guardians: Guardian[] = [
   {
     id: '1',
-    title: 'Olympus Resort',
-    category: 'Branding',
-    client: 'Branding',
-    image: '/projects-album/stationery.jpg',
-    href: '/work/olympus-resort',
+    name: 'Angelina Ataide',
+    role: 'Founder & Lead Guardian',
+    bio: 'Angelina brings over two decades of experience in somatic healing, consciousness research, and transformative education. She is the creator of the ROSES OS methodology and the primary steward of its lineage.',
+    image: '/guardians/angelina.jpg',
   },
   {
     id: '2',
-    title: 'Kypria Digital',
-    category: 'Web Design',
-    client: 'Web Design',
-    image: '/projects-album/phone-mockups.jpg',
-    href: '/work/kypria-digital',
+    name: 'Diego Dosal',
+    role: 'Guardian of Practice',
+    bio: 'Diego bridges ancient wisdom traditions with modern embodiment practices. His work focuses on masculine integration, breathwork, and the somatic dimensions of the Rose technology.',
+    image: '/guardians/diego.jpg',
   },
   {
     id: '3',
-    title: 'Amara Collection',
-    category: 'Art Direction',
-    client: 'Art Direction',
-    image: '/projects-album/photoshoot-1.jpg',
-    href: '/work/amara-collection',
+    name: 'Dara Ayoub',
+    role: 'Guardian of Community',
+    bio: 'Dara serves as the connective tissue of the ROSES OS community. With a background in facilitation and relational intelligence, she holds the space for enrollment and participant care.',
+    image: '/guardians/dara.jpg',
   },
   {
     id: '4',
-    title: 'Limassol Marina',
-    category: 'Social Media',
-    client: 'Social Media',
-    image: '/projects-album/photoshoot-2.jpg',
-    href: '/work/limassol-marina',
-  },
-  {
-    id: '5',
-    title: 'Paphos Estates',
-    category: 'Photography',
-    client: 'Photography',
-    image: '/projects-album/photoshoot-3.jpg',
-    href: '/work/paphos-estates',
-  },
-  {
-    id: '6',
-    title: 'Nea Ventures',
-    category: 'Strategy',
-    client: 'Strategy',
-    image: '/projects-album/proposal.jpg',
-    href: '/work/nea-ventures',
-  },
-  {
-    id: '7',
-    title: 'Kolossi Studio',
-    category: 'Branding',
-    client: 'Branding',
-    image: '/projects-album/brand-identity.png',
-    href: '/work/kolossi-studio',
-  },
-  {
-    id: '8',
-    title: 'Petra & Co',
-    category: 'Video',
-    client: 'Video',
-    image: '/projects-album/magazine.jpg',
-    href: '/work/petra-co',
-  },
-  {
-    id: '9',
-    title: 'Akamas Wild',
-    category: 'Print',
-    client: 'Print',
-    image: '/projects-album/packaging-01.jpg',
-    href: '/work/akamas-wild',
+    name: 'Peggy Mar',
+    role: 'Guardian of Integration',
+    bio: 'Peggy specializes in the integration of transformative experiences into daily life. Her expertise in psychology and mindfulness supports participants in grounding their practice.',
+    image: '/guardians/peggy.jpg',
   },
 ];
 
 // =============================================================================
-// PROJECT DETAILS (for /work/[slug])
+// PROGRAMS
 // =============================================================================
 
-export const projectDetails: ProjectDetail[] = [
+export const programs: Program[] = [
   {
     id: '1',
-    slug: 'olympus-resort',
-    title: 'Olympus Resort',
-    category: 'Branding',
-    client: 'Olympus Resort & Spa',
-    year: '2024',
-    location: 'Paphos, Cyprus',
-    services: ['Brand Identity', 'Visual System', 'Collateral Design'],
-    image: '/projects-album/stationery.jpg',
-    href: '/work/olympus-resort',
-    overview:
-      'A complete brand identity for a luxury resort nestled in the hills above Paphos. The visual language draws from Mediterranean light and Cypriot stone textures, creating a sense of timeless calm.',
-    challenge:
-      'Olympus Resort needed to differentiate itself in a crowded hospitality market while honouring the natural beauty of its hilltop setting. The existing identity felt generic and failed to communicate the property\'s distinct character.',
-    approach:
-      'We developed a restrained visual system built on warm neutrals and a custom wordmark inspired by classical Greek letterforms. Every touchpoint — from key cards to the website — carries the same quiet confidence.',
-    result:
-      'The new identity launched to strong guest feedback and a measurable increase in direct bookings. The brand now communicates luxury through restraint rather than excess.',
-    gallery: [
-      { src: '/projects-album/stationery-infinity.jpg', alt: 'Olympus Resort brand overview', wide: true },
-      { src: '/projects-album/business-cards.jpg', alt: 'Business card design' },
-      { src: '/projects-album/brochure.jpg', alt: 'Stationery suite' },
-      { src: '/projects-album/billboard.jpg', alt: 'Billboard application', wide: true },
-      { src: '/projects-album/brand-mockup.jpg', alt: 'Brand mockup' },
-      { src: '/projects-album/stationery.jpg', alt: 'Collateral materials' },
+    title: 'The Rose',
+    subtitle: 'Foundation Program',
+    duration: '8 weeks',
+    dates: 'Rolling enrollment',
+    format: 'Live online + self-paced',
+    description: 'The foundational program introducing the Rose technology — a systematic practice for remembrance, coherence, and inner freedom. Participants learn the core meditation, breath protocols, and somatic awareness techniques.',
+    includes: [
+      '8 live group sessions',
+      'Daily practice guidance',
+      'Private community access',
+      'Integration workbook',
+      'One-on-one check-in',
     ],
   },
   {
     id: '2',
-    slug: 'kypria-digital',
-    title: 'Kypria Digital',
-    category: 'Web Design',
-    client: 'Kypria Digital Solutions',
-    year: '2024',
-    location: 'Limassol, Cyprus',
-    services: ['Web Design', 'UI/UX', 'Development'],
-    image: '/projects-album/phone-mockups.jpg',
-    href: '/work/kypria-digital',
-    overview:
-      'A high-performance website for a Limassol-based tech consultancy. The design prioritises clarity and speed, reflecting the client\'s own commitment to efficiency.',
-    challenge:
-      'Kypria\'s previous site was built on a dated CMS and loaded slowly. It didn\'t reflect the calibre of work the team was delivering. They needed a complete rebuild.',
-    approach:
-      'We designed a minimal, typography-led interface and built it on Next.js for speed. Content is structured around case studies and clear service descriptions.',
-    result:
-      'Page load times dropped by 70%, and the site now consistently converts visitors into qualified leads at twice the previous rate.',
-    gallery: [
-      { src: '/projects-album/layout-design.jpg', alt: 'Kypria Digital homepage', wide: true },
-      { src: '/projects-album/phone-mockups.jpg', alt: 'Mobile responsive views' },
-      { src: '/projects-album/poster.png', alt: 'Design system' },
-      { src: '/projects-album/logo-mark.png', alt: 'UI components', wide: true },
+    title: 'The Rose + Aura 1',
+    subtitle: 'Advanced Immersion',
+    duration: '12 weeks',
+    dates: 'By application',
+    format: 'Live online + in-person retreat',
+    description: 'A deeper immersion building on The Rose foundation. Aura 1 introduces advanced practices for energetic coherence, subtle body awareness, and the first stage of teaching capacity development.',
+    includes: [
+      '12 live group sessions',
+      'Advanced practice sequences',
+      'Energetic assessment',
+      '3-day in-person retreat',
+      'Monthly mentorship calls',
+      'Teaching preparation modules',
     ],
+  },
+];
+
+// =============================================================================
+// SCHEDULE STAGES
+// =============================================================================
+
+export const scheduleStages: ScheduleStage[] = [
+  {
+    id: '1',
+    title: 'Stage 1: Foundation',
+    dateRange: 'Weeks 1–4',
+    sessions: [
+      { day: 'Week 1', topic: 'The Invitation — Opening to Remembrance', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
+      { day: 'Week 2', topic: 'The Breath — Entering the Field', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
+      { day: 'Week 3', topic: 'The Body — Somatic Awareness', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
+      { day: 'Week 4', topic: 'The Heart — Coherence Practice', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
+    ],
+  },
+  {
+    id: '2',
+    title: 'Stage 2: Integration',
+    dateRange: 'Weeks 5–8',
+    sessions: [
+      { day: 'Week 5', topic: 'The Rose Meditation — Core Practice', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
+      { day: 'Week 6', topic: 'Living Coherence — Daily Application', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
+      { day: 'Week 7', topic: 'Community Practice — Shared Field', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
+      { day: 'Week 8', topic: 'The Way Forward — Continuation & Deepening', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
+    ],
+  },
+];
+
+// =============================================================================
+// CONTRIBUTION TIERS
+// =============================================================================
+
+export const contributionTiers: ContributionTier[] = [
+  {
+    id: '1',
+    name: 'Seed',
+    range: 'Below $50k annual income',
+    description: 'For those building their foundation. The full program experience at a rate that honors your current season.',
+  },
+  {
+    id: '2',
+    name: 'Bloom',
+    range: '$50k–$100k annual income',
+    description: 'For those in a season of growth. Your contribution supports both your journey and the accessibility of the work.',
   },
   {
     id: '3',
-    slug: 'amara-collection',
-    title: 'Amara Collection',
-    category: 'Art Direction',
-    client: 'Amara Fashion House',
-    year: '2023',
-    location: 'Nicosia, Cyprus',
-    services: ['Art Direction', 'Photography', 'Campaign Design'],
-    image: '/projects-album/photoshoot-1.jpg',
-    href: '/work/amara-collection',
-    overview:
-      'Art direction for the spring/summer collection campaign. We crafted a visual narrative that blends Mediterranean warmth with contemporary minimalism.',
-    challenge:
-      'Amara wanted to elevate their visual output to match international fashion standards while retaining a distinctly Cypriot sensibility.',
-    approach:
-      'We directed a two-day shoot on location in Nicosia\'s old town, using natural light and muted backdrops to let the garments speak. Post-production was deliberately restrained.',
-    result:
-      'The campaign ran across social, print, and in-store, generating a 40% increase in engagement compared to the previous season.',
-    gallery: [
-      { src: '/projects-album/photoshoot-3.jpg', alt: 'Amara campaign hero', wide: true },
-      { src: '/projects-album/photoshoot-4.jpg', alt: 'Look 1' },
-      { src: '/projects-album/photoshoot-5.jpg', alt: 'Look 2' },
-      { src: '/projects-album/photoshoot-6.jpg', alt: 'Behind the scenes' },
-      { src: '/projects-album/magazine.jpg', alt: 'Print deliverables', wide: true },
-    ],
-  },
-  {
-    id: '4',
-    slug: 'limassol-marina',
-    title: 'Limassol Marina',
-    category: 'Social Media',
-    client: 'Limassol Marina',
-    year: '2024',
-    location: 'Limassol, Cyprus',
-    services: ['Social Media Strategy', 'Content Creation', 'Community Management'],
-    image: '/projects-album/photoshoot-2.jpg',
-    href: '/work/limassol-marina',
-    overview:
-      'An ongoing social media programme that positions Limassol Marina as the Mediterranean\'s most desirable waterfront destination.',
-    challenge:
-      'The marina\'s social presence was inconsistent — a mix of stock photography and unplanned posts. They needed a cohesive content strategy.',
-    approach:
-      'We built a content calendar around lifestyle themes: sunrise sailings, waterfront dining, and seasonal events. Each post follows strict brand guidelines we established in month one.',
-    result:
-      'Follower growth of 120% in six months, with engagement rates consistently above industry benchmarks for luxury hospitality.',
-    gallery: [
-      { src: '/projects-album/photoshoot-1.jpg', alt: 'Marina social grid', wide: true },
-      { src: '/projects-album/brand-elements.png', alt: 'Content samples' },
-      { src: '/projects-album/booth.png', alt: 'Story templates' },
-      { src: '/projects-album/proposal.jpg', alt: 'Analytics overview', wide: true },
-    ],
-  },
-  {
-    id: '5',
-    slug: 'paphos-estates',
-    title: 'Paphos Estates',
-    category: 'Photography',
-    client: 'Paphos Estates Group',
-    year: '2023',
-    location: 'Paphos, Cyprus',
-    services: ['Architecture Photography', 'Aerial Photography', 'Post-Production'],
-    image: '/projects-album/photoshoot-3.jpg',
-    href: '/work/paphos-estates',
-    overview:
-      'Architectural and aerial photography for a portfolio of luxury villas and development sites across the Paphos region.',
-    challenge:
-      'The developer\'s existing photography was shot on smartphones and failed to communicate the quality of their properties to overseas buyers.',
-    approach:
-      'We shot over three weeks using a combination of ground-level and drone photography, timing each property for optimal natural light. Post-production enhanced without misrepresenting.',
-    result:
-      'The new imagery was deployed across their website, brochures, and listing platforms. Enquiry rates from international buyers increased significantly.',
-    gallery: [
-      { src: '/projects-album/photoshoot-5.jpg', alt: 'Villa exterior', wide: true },
-      { src: '/projects-album/photoshoot-6.jpg', alt: 'Interior detail' },
-      { src: '/projects-album/photoshoot-2.jpg', alt: 'Aerial view' },
-      { src: '/projects-album/photoshoot-4.jpg', alt: 'Landscape context', wide: true },
-    ],
-  },
-  {
-    id: '6',
-    slug: 'nea-ventures',
-    title: 'Nea Ventures',
-    category: 'Strategy',
-    client: 'Nea Ventures Capital',
-    year: '2024',
-    location: 'Nicosia, Cyprus',
-    services: ['Brand Strategy', 'Market Research', 'Positioning'],
-    image: '/projects-album/proposal.jpg',
-    href: '/work/nea-ventures',
-    overview:
-      'Brand strategy and market positioning for a new venture capital firm focused on Mediterranean tech startups.',
-    challenge:
-      'As a new entrant in a competitive space, Nea Ventures needed a brand strategy that would immediately convey credibility and a clear investment thesis.',
-    approach:
-      'We conducted competitor analysis across European VC firms, interviewed founding partners, and developed a positioning framework that balances ambition with regional expertise.',
-    result:
-      'The strategy informed all subsequent brand and marketing decisions, helping Nea Ventures secure meetings with top-tier founders within their first quarter.',
-    gallery: [
-      { src: '/projects-album/stationery.jpg', alt: 'Strategy framework', wide: true },
-      { src: '/projects-album/business-cards.jpg', alt: 'Research findings' },
-      { src: '/projects-album/brand-identity.png', alt: 'Brand architecture' },
-      { src: '/projects-album/brochure.jpg', alt: 'Implementation roadmap', wide: true },
-    ],
-  },
-  {
-    id: '7',
-    slug: 'kolossi-studio',
-    title: 'Kolossi Studio',
-    category: 'Branding',
-    client: 'Kolossi Design Studio',
-    year: '2023',
-    location: 'Limassol, Cyprus',
-    services: ['Brand Identity', 'Naming', 'Brand Guidelines'],
-    image: '/projects-album/brand-identity.png',
-    href: '/work/kolossi-studio',
-    overview:
-      'Complete brand identity for an architecture and interior design studio, from naming through to a comprehensive brand guidelines document.',
-    challenge:
-      'The founders were operating under a placeholder name with no visual identity. They needed a brand that matched the sophistication of their architectural work.',
-    approach:
-      'We explored naming conventions rooted in Cypriot geography — Kolossi references the medieval castle in Limassol — and built a minimal identity system around geometric precision.',
-    result:
-      'The studio launched with a polished identity that immediately positioned them as a serious player in the Limassol design scene.',
-    gallery: [
-      { src: '/projects-album/logo-mark.png', alt: 'Brand identity system', wide: true },
-      { src: '/projects-album/brand-elements.png', alt: 'Logo construction' },
-      { src: '/projects-album/stationery-infinity.jpg', alt: 'Typography system' },
-      { src: '/projects-album/billboard.jpg', alt: 'Guidelines document', wide: true },
-    ],
-  },
-  {
-    id: '8',
-    slug: 'petra-co',
-    title: 'Petra & Co',
-    category: 'Video',
-    client: 'Petra & Co Jewellers',
-    year: '2024',
-    location: 'Paphos, Cyprus',
-    services: ['Video Production', 'Motion Graphics', 'Social Edits'],
-    image: '/projects-album/magazine.jpg',
-    href: '/work/petra-co',
-    overview:
-      'A suite of brand films and social video content for an independent jewellery house, capturing the craft behind each piece.',
-    challenge:
-      'Petra & Co\'s products are handcrafted, but their digital presence didn\'t convey that story. They needed video content that showed the human touch.',
-    approach:
-      'We produced a hero brand film and a series of short-form social edits, filming in their workshop and showroom. The pacing is deliberately slow, letting viewers appreciate the detail.',
-    result:
-      'The brand film became the centrepiece of their website, and the social edits drove a notable uplift in engagement and in-store visits.',
-    gallery: [
-      { src: '/projects-album/photoshoot-1.jpg', alt: 'Brand film still', wide: true },
-      { src: '/projects-album/photoshoot-6.jpg', alt: 'Workshop footage' },
-      { src: '/projects-album/brand-mockup.jpg', alt: 'Social edit frames' },
-      { src: '/projects-album/photoshoot-3.jpg', alt: 'Motion graphics', wide: true },
-    ],
-  },
-  {
-    id: '9',
-    slug: 'akamas-wild',
-    title: 'Akamas Wild',
-    category: 'Print',
-    client: 'Akamas Wild Adventures',
-    year: '2023',
-    location: 'Akamas, Cyprus',
-    services: ['Print Design', 'Illustration', 'Packaging'],
-    image: '/projects-album/packaging-01.jpg',
-    href: '/work/akamas-wild',
-    overview:
-      'Print collateral and illustrated materials for an eco-tourism operator in the Akamas Peninsula, Cyprus\'s last wilderness.',
-    challenge:
-      'Akamas Wild needed printed materials — trail maps, information booklets, merchandise — that felt authentic to the rugged landscape without looking amateur.',
-    approach:
-      'We developed a hand-drawn illustration style inspired by topographic maps and botanical drawings. Every printed piece uses recycled paper stocks and soy-based inks.',
-    result:
-      'The materials are now distributed across visitor centres and partner hotels, earning praise for their quality and environmental consideration.',
-    gallery: [
-      { src: '/projects-album/packaging-02.jpg', alt: 'Print collateral spread', wide: true },
-      { src: '/projects-album/packaging-03.jpg', alt: 'Packaging design' },
-      { src: '/projects-album/packaging-04.jpg', alt: 'Booklet interior' },
-      { src: '/projects-album/menu.jpg', alt: 'Menu design', wide: true },
-    ],
+    name: 'Canopy',
+    range: 'Above $100k annual income',
+    description: 'For those in a season of abundance. Your contribution sustains the ecosystem and opens doors for others.',
   },
 ];
 
 // =============================================================================
-// SERVICES
+// COHERENCE DOMAINS (from The Codex Section IV)
 // =============================================================================
 
-export const services: Service[] = [
+export const coherenceDomains: CoherenceDomain[] = [
+  { id: '1', number: 1, title: 'Physical Coherence', description: 'Alignment of the body — posture, breath, movement, and somatic awareness as the foundation of all practice.' },
+  { id: '2', number: 2, title: 'Emotional Coherence', description: 'The capacity to feel fully without being governed by reactivity. Emotional intelligence as a doorway to freedom.' },
+  { id: '3', number: 3, title: 'Mental Coherence', description: 'Clarity of thought without compulsive thinking. The mind as an instrument rather than a master.' },
+  { id: '4', number: 4, title: 'Relational Coherence', description: 'Authentic connection with others rooted in presence, boundaries, and compassion rather than performance.' },
+  { id: '5', number: 5, title: 'Creative Coherence', description: 'Access to the creative impulse as a natural expression of aligned being rather than forced production.' },
+  { id: '6', number: 6, title: 'Vocational Coherence', description: 'Work as an expression of purpose. The alignment of livelihood with authentic calling.' },
+  { id: '7', number: 7, title: 'Financial Coherence', description: 'A healthy relationship with resources — receiving, stewarding, and circulating with ease and integrity.' },
+  { id: '8', number: 8, title: 'Sexual Coherence', description: 'The integration of life force energy. Embodied presence in intimacy and creative power.' },
+  { id: '9', number: 9, title: 'Spiritual Coherence', description: 'Direct connection with the sacred — not as belief but as lived experience and continuous remembrance.' },
+  { id: '10', number: 10, title: 'Environmental Coherence', description: 'Harmony between the individual and their spaces, ecosystems, and the living world.' },
+  { id: '11', number: 11, title: 'Ancestral Coherence', description: 'Healing the lineage. Transforming inherited patterns into gifts and reclaiming the wisdom of those who came before.' },
+  { id: '12', number: 12, title: 'Temporal Coherence', description: 'Right relationship with time — neither rushing nor stagnating. The art of sacred timing.' },
+  { id: '13', number: 13, title: 'Universal Coherence', description: 'The recognition of belonging to something vast. Alignment with the intelligence that moves through all things.' },
+];
+
+// =============================================================================
+// PATH LEVELS (Rose One / Two / Three)
+// =============================================================================
+
+export const pathLevels: PathLevel[] = [
   {
-    id: 'branding',
-    number: '01',
-    title: 'Branding',
-    description:
-      'We build brand identities that resonate. From strategy and naming to visual systems and guidelines, we craft every element to communicate who you are.',
-    capabilities: ['Brand Strategy', 'Visual Identity', 'Naming', 'Brand Guidelines', 'Tone of Voice'],
+    id: '1',
+    level: 1,
+    title: 'Rose One',
+    subtitle: 'The Remembering',
+    description: 'The foundational journey. Rose One initiates the process of remembrance — reconnecting with the body, breath, and the intelligence of silence. Participants establish a daily practice and begin to experience coherence as a felt sense.',
+    focus: ['Core meditation practice', 'Breath awareness', 'Somatic presence', 'Daily coherence rhythm'],
   },
   {
-    id: 'web-design',
-    number: '02',
-    title: 'Web Design',
-    description:
-      'Websites that perform as beautifully as they look. We design and develop fast, responsive sites that convert visitors into clients.',
-    capabilities: ['UI/UX Design', 'Responsive Design', 'Prototyping', 'Design Systems', 'Interaction Design'],
+    id: '2',
+    level: 2,
+    title: 'Rose Two',
+    subtitle: 'The Deepening',
+    description: 'Building on the foundation, Rose Two invites a deeper relationship with the subtle body and energetic awareness. Participants explore the 13 domains of coherence and begin to integrate the practice into all dimensions of life.',
+    focus: ['Energetic awareness', '13 domains exploration', 'Advanced breathwork', 'Relational coherence'],
   },
   {
-    id: 'social-media',
-    number: '03',
-    title: 'Social Media',
-    description:
-      'Strategic content that builds communities. We plan, create, and manage social presences that drive meaningful engagement.',
-    capabilities: ['Content Strategy', 'Content Creation', 'Community Management', 'Paid Social', 'Analytics'],
-  },
-  {
-    id: 'strategy',
-    number: '04',
-    title: 'Strategy',
-    description:
-      'Clear thinking before creative execution. We research, analyse, and define the strategic foundations that make creative work effective.',
-    capabilities: ['Market Research', 'Competitor Analysis', 'Positioning', 'Go-to-Market', 'Brand Architecture'],
-  },
-  {
-    id: 'video',
-    number: '05',
-    title: 'Video Production',
-    description:
-      'Films that tell your story with craft and intention. From brand documentaries to social edits, we produce video content that connects.',
-    capabilities: ['Brand Films', 'Social Video', 'Motion Graphics', 'Drone Footage', 'Post-Production'],
-  },
-  {
-    id: 'photography',
-    number: '06',
-    title: 'Photography',
-    description:
-      'Images that elevate perception. We shoot architecture, products, portraits, and lifestyle with a consistent editorial eye.',
-    capabilities: ['Architecture', 'Product', 'Portrait', 'Lifestyle', 'Aerial / Drone'],
-  },
-  {
-    id: 'print',
-    number: '07',
-    title: 'Print Design',
-    description:
-      'Tangible design that leaves a lasting impression. We create printed materials with the same care and precision as our digital work.',
-    capabilities: ['Editorial Design', 'Packaging', 'Signage', 'Illustration', 'Production Management'],
-  },
-  {
-    id: 'art-direction',
-    number: '08',
-    title: 'Art Direction',
-    description:
-      'Cohesive creative vision across every touchpoint. We direct shoots, campaigns, and creative projects to ensure consistency and impact.',
-    capabilities: ['Campaign Direction', 'Shoot Direction', 'Creative Concepts', 'Visual Storytelling', 'Moodboarding'],
+    id: '3',
+    level: 3,
+    title: 'Rose Three',
+    subtitle: 'The Flowering',
+    description: 'The culmination of the foundational path. Rose Three develops teaching capacity and the ability to hold space for others. Participants become stewards of the work, capable of transmitting the Rose technology to their communities.',
+    focus: ['Teaching methodology', 'Space-holding capacity', 'Community stewardship', 'Living transmission'],
   },
 ];
 
 // =============================================================================
-// AGENCY STATS
+// LINEAGE
 // =============================================================================
 
-export const agencyStats: Stat[] = [
-  { value: '5+', label: 'Years' },
-  { value: '80+', label: 'Projects' },
-  { value: '40+', label: 'Clients' },
-  { value: '6', label: 'Countries' },
+export const lineageEntries: LineageEntry[] = [
+  { id: '1', year: '1970s', name: 'Dr. Vernon Bostwick', description: 'Pioneer in consciousness research and somatic integration. Developed foundational breath-awareness protocols.' },
+  { id: '2', year: '1980s', name: 'BPI (Body-Psyche Integration)', description: 'The integration of somatic psychology with meditative practice. Bridge between clinical and contemplative traditions.' },
+  { id: '3', year: '1990s', name: 'James Plunk', description: 'Advanced the breath-body connection into a systematic teaching methodology. Introduced the concept of "remembrance" as a practice.' },
+  { id: '4', year: '2010s', name: 'Angelina Ataide', description: 'Synthesized the lineage teachings into the Rose technology. Created the coherence framework and the ROSES OS methodology.' },
+  { id: '5', year: '2020s', name: 'ROSES OS', description: 'The platform crystallizes decades of lineage wisdom into an accessible ecosystem for consciousness, remembrance, and coherent living.' },
+];
+
+// =============================================================================
+// CHAKRAS (for teacher section)
+// =============================================================================
+
+export const chakras: Chakra[] = [
+  { id: '1', number: 1, name: 'Root', sanskritName: 'Muladhara', color: '#C0392B', location: 'Base of spine', element: 'Earth', balanced: 'Grounded, stable, secure, trusting', unbalanced: 'Anxious, fearful, disconnected from body', blockages: 'Survival trauma, displacement, basic needs unmet' },
+  { id: '2', number: 2, name: 'Sacral', sanskritName: 'Svadhisthana', color: '#E67E22', location: 'Lower abdomen', element: 'Water', balanced: 'Creative, fluid, emotionally present', unbalanced: 'Rigid, emotionally numb, or overwhelmed', blockages: 'Shame, guilt, creative suppression' },
+  { id: '3', number: 3, name: 'Solar Plexus', sanskritName: 'Manipura', color: '#F1C40F', location: 'Upper abdomen', element: 'Fire', balanced: 'Confident, purposeful, self-directed', unbalanced: 'Controlling, passive, or scattered', blockages: 'Power dynamics, self-worth wounds' },
+  { id: '4', number: 4, name: 'Heart', sanskritName: 'Anahata', color: '#27AE60', location: 'Center of chest', element: 'Air', balanced: 'Compassionate, open, connected', unbalanced: 'Closed, codependent, or bitter', blockages: 'Grief, betrayal, inability to receive' },
+  { id: '5', number: 5, name: 'Throat', sanskritName: 'Vishuddha', color: '#2980B9', location: 'Throat', element: 'Ether', balanced: 'Expressive, truthful, clear communication', unbalanced: 'Silent, over-talking, or dishonest', blockages: 'Suppressed voice, fear of judgment' },
+  { id: '6', number: 6, name: 'Third Eye', sanskritName: 'Ajna', color: '#8E44AD', location: 'Between eyebrows', element: 'Light', balanced: 'Intuitive, perceptive, clear-seeing', unbalanced: 'Disconnected from intuition, delusional', blockages: 'Over-intellectualization, denial of inner knowing' },
+  { id: '7', number: 7, name: 'Crown', sanskritName: 'Sahasrara', color: '#9B59B6', location: 'Top of head', element: 'Consciousness', balanced: 'Connected to the sacred, open to grace', unbalanced: 'Spiritually disconnected or bypassing', blockages: 'Attachment to material identity, spiritual ego' },
+];
+
+// =============================================================================
+// TEACHING TECHNIQUES
+// =============================================================================
+
+export const techniques: Technique[] = [
+  { id: '1', title: 'Grounding Breath', description: 'A foundational breath practice connecting awareness to the body through slow, rhythmic nasal breathing.', level: 1, category: 'Breath' },
+  { id: '2', title: 'Body Scan Awareness', description: 'Systematic attention through the body, cultivating somatic presence and releasing held tension.', level: 1, category: 'Somatic' },
+  { id: '3', title: 'Heart Coherence Meditation', description: 'Focused attention on the heart center, cultivating the felt sense of coherence and compassion.', level: 1, category: 'Meditation' },
+  { id: '4', title: 'Witnessing Practice', description: 'Developing the capacity to observe thoughts and sensations without identification or reaction.', level: 1, category: 'Awareness' },
+  { id: '5', title: 'Rose Meditation', description: 'The core practice of the lineage — a multi-layered meditation integrating breath, body, and subtle awareness.', level: 1, category: 'Core Practice' },
+  { id: '6', title: 'Field Sensing', description: 'Developing sensitivity to the energetic field — both personal and shared — as a perceptual capacity.', level: 2, category: 'Energetic' },
+  { id: '7', title: 'Chakra Awareness Sequence', description: 'A guided practice moving attention through the seven energy centers, noting qualities and blockages.', level: 2, category: 'Energetic' },
+  { id: '8', title: 'Emotional Alchemy', description: 'The practice of meeting difficult emotions with presence, allowing transformation through awareness rather than suppression.', level: 2, category: 'Emotional' },
+  { id: '9', title: 'Relational Presence', description: 'Partnered practices for maintaining authentic presence in connection with others.', level: 2, category: 'Relational' },
+  { id: '10', title: 'Advanced Breath Protocols', description: 'Extended breath sequences for deeper states of coherence and expanded awareness.', level: 2, category: 'Breath' },
+  { id: '11', title: 'Space-Holding Fundamentals', description: 'The art of creating and maintaining a sacred container for individual and group practice.', level: 3, category: 'Teaching' },
+  { id: '12', title: 'Transmission Practice', description: 'Developing the capacity to transmit the quality of practice through presence rather than instruction alone.', level: 3, category: 'Teaching' },
+  { id: '13', title: 'Group Field Navigation', description: 'Reading and responding to the energetic dynamics of a group in real time.', level: 3, category: 'Teaching' },
+  { id: '14', title: 'Adaptive Sequencing', description: 'The skill of adjusting practice sequences in response to what is present in the room.', level: 3, category: 'Teaching' },
+  { id: '15', title: 'Integration Facilitation', description: 'Supporting others in grounding transformative experiences into daily life.', level: 3, category: 'Teaching' },
+];
+
+// =============================================================================
+// TEACHING LEVELS
+// =============================================================================
+
+export const teachingLevels: TeachingLevel[] = [
+  { level: 1, title: 'Level 1: Foundation', subtitle: 'Core Practices', description: 'The essential practices that form the foundation of all ROSES OS work. Breath, body, heart, and the Rose Meditation.' },
+  { level: 2, title: 'Level 2: Deepening', subtitle: 'Energetic & Relational', description: 'Advanced practices for subtle body awareness, emotional alchemy, and relational coherence.' },
+  { level: 3, title: 'Level 3: Teaching', subtitle: 'Transmission & Facilitation', description: 'Practices and principles for holding space, transmitting the work, and serving as a guardian of the lineage.' },
+];
+
+// =============================================================================
+// AGREEMENTS
+// =============================================================================
+
+export const agreements: Agreement[] = [
+  { id: '1', title: 'Commitment to Practice', description: 'I commit to engaging with the daily practice for the duration of the program with sincerity and consistency.' },
+  { id: '2', title: 'Confidentiality', description: 'I agree to hold in confidence what is shared in group settings, honoring the sacred container of our community.' },
+  { id: '3', title: 'Respect for the Lineage', description: 'I honor the origins of this work and agree not to teach or represent these practices as my own without authorization.' },
+  { id: '4', title: 'Personal Responsibility', description: 'I take responsibility for my own well-being and will communicate with the guardians if I need additional support.' },
+  { id: '5', title: 'Community Care', description: 'I commit to showing up with care and respect for all participants, guardians, and the shared field of our practice.' },
+];
+
+// =============================================================================
+// ELEVEN CAPACITIES
+// =============================================================================
+
+export const elevenCapacities: Capacity[] = [
+  { id: '1', number: 1, title: 'Stillness', description: 'The capacity to be at rest — internally and externally — as a foundation for all action.' },
+  { id: '2', number: 2, title: 'Presence', description: 'The ability to be fully here, now, without the need to be elsewhere.' },
+  { id: '3', number: 3, title: 'Breath', description: 'Conscious relationship with the breath as the bridge between body and awareness.' },
+  { id: '4', number: 4, title: 'Feeling', description: 'The willingness to feel completely — pleasure, pain, and everything in between.' },
+  { id: '5', number: 5, title: 'Listening', description: 'Deep receptivity — to self, others, and the intelligence of the larger field.' },
+  { id: '6', number: 6, title: 'Discernment', description: 'Clear seeing without judgment. The capacity to distinguish truth from noise.' },
+  { id: '7', number: 7, title: 'Courage', description: 'The heart-strength to act on what is true, even when it is uncomfortable.' },
+  { id: '8', number: 8, title: 'Surrender', description: 'The art of releasing control without collapsing. Trusting the larger intelligence.' },
+  { id: '9', number: 9, title: 'Integration', description: 'The ongoing work of bringing insights into lived experience and daily practice.' },
+  { id: '10', number: 10, title: 'Service', description: 'The natural movement from inner coherence to outer contribution.' },
+  { id: '11', number: 11, title: 'Remembrance', description: 'The ultimate capacity — not learning something new but remembering what has always been true.' },
+];
+
+// =============================================================================
+// ARCHITECTURE LAYERS
+// =============================================================================
+
+export const architectureLayers: ArchitectureLayer[] = [
+  { id: '1', name: 'Hardware', description: 'The physical body — bones, muscles, organs, nervous system. The vessel through which all experience flows.' },
+  { id: '2', name: 'Software', description: 'The mind — beliefs, patterns, conditioning, and the stories we carry. The programs that run our experience.' },
+  { id: '3', name: 'Heartware', description: 'The emotional and relational intelligence. The felt sense of connection, compassion, and coherence.' },
+  { id: '4', name: 'Soulware', description: 'The deepest layer — essence, purpose, and the remembrance of who we truly are beneath all conditioning.' },
+];
+
+// =============================================================================
+// BRAND QUOTES
+// =============================================================================
+
+export const brandQuotes: BrandQuote[] = [
+  { id: '1', text: 'The next revolution is not technological — it is a revolution of remembrance.' },
+  { id: '2', text: 'A seamless path to inner freedom.' },
+  { id: '3', text: 'You are not broken. You are not lost. You are remembering.' },
+  { id: '4', text: 'Coherence is not something you achieve. It is something you return to.' },
+  { id: '5', text: 'The way is open. Welcome home.' },
+  { id: '6', text: 'What if the intelligence you seek is already within you, waiting to be remembered?' },
+];
+
+// =============================================================================
+// MESSAGING PILLARS
+// =============================================================================
+
+export const messagingPillars = [
+  { id: '1', title: 'The Rose', description: 'A sacred technology of remembrance — a systematic practice for reconnecting with the intelligence that lives within.' },
+  { id: '2', title: 'The Aura', description: 'The energetic body and its role in coherence — subtle awareness as a practical capacity for daily living.' },
+  { id: '3', title: 'The Human Journey', description: 'The recognition that every life is a journey of remembrance — and that this journey is supported, not solitary.' },
 ];

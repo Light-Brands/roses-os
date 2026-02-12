@@ -19,25 +19,25 @@ function Scene({ mouseRef, reducedMotion, isDark }: ShaderSphereCanvasProps) {
       {/* HDR environment — dimmed in dark mode */}
       <Environment preset="studio" environmentIntensity={isDark ? 1.0 : 1.8} />
 
-      {/* Key light */}
+      {/* Key light — warm white */}
       <pointLight
-        color="#ffffff"
+        color="#FFF5E8"
         intensity={isDark ? 1.8 : 3}
         distance={30}
         decay={2}
         position={[5, 3, 8]}
       />
-      {/* Purple fill — preserves original palette */}
+      {/* Rose fill */}
       <pointLight
-        color="#b8a0d0"
+        color="#D4B1AF"
         intensity={isDark ? 2.2 : 2.5}
         distance={40}
         decay={2}
         position={[-4, -2, -6]}
       />
-      {/* Cool rim light */}
+      {/* Gold rim light */}
       <pointLight
-        color="#e0e0ff"
+        color="#C4A86B"
         intensity={isDark ? 1.2 : 2}
         distance={25}
         decay={2}

@@ -1,6 +1,6 @@
-# Design Principles - Digital Cultures
+# Design Principles - ROSES OS
 
-A guide to creating the Digital Cultures agency website. Every design decision should trace back to these principles.
+A guide to creating the ROSES OS platform. Every design decision should trace back to these principles.
 
 ---
 

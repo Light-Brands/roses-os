@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Poppins } from 'next/font/google';
+import { Cormorant_Garamond, Inter } from 'next/font/google';
 import './globals.css';
 import { siteConfig, generateOrganizationSchema, JsonLd } from '@/lib/seo';
 import { ThemeProvider } from '@/lib/theme';
@@ -9,7 +9,14 @@ import { PageTransition } from '@/components/ui/PageTransition';
 import { CustomCursor } from '@/components/ui/CustomCursor';
 import { ScrollProgress } from '@/components/ui/ScrollProgress';
 
-const poppins = Poppins({
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-serif',
+});
+
+const inter = Inter({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
   display: 'swap',
@@ -75,8 +82,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#E8E8E8' },
-    { media: '(prefers-color-scheme: dark)', color: '#0a0a0a' },
+    { media: '(prefers-color-scheme: light)', color: '#FAF8F5' },
+    { media: '(prefers-color-scheme: dark)', color: '#1A1716' },
   ],
   width: 'device-width',
   initialScale: 1,
@@ -107,7 +114,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${poppins.variable} font-sans antialiased bg-background text-foreground`}
+        className={`${cormorant.variable} ${inter.variable} font-sans antialiased bg-background text-foreground`}
       >
         <ThemeProvider>
           <TransitionProvider>

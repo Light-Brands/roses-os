@@ -138,7 +138,7 @@ export default function ShaderSphere({ mouseRef, reducedMotion, isDark }: Shader
     <mesh ref={meshRef} position={[0, 0, 0]}>
       <sphereGeometry args={[1.3, 128, 128]} />
       <meshPhysicalMaterial
-        color={isDark ? "#6b4f99" : "#b8a0d8"}
+        color={isDark ? "#6E4A49" : "#E8C4BF"}
         roughness={0.0}
         metalness={0.0}
         clearcoat={1.0}
@@ -151,8 +151,8 @@ export default function ShaderSphere({ mouseRef, reducedMotion, isDark }: Shader
         ior={1.4}
         envMapIntensity={isDark ? 1.5 : 2.5}
         specularIntensity={1.0}
-        specularColor={"#9B8FD9" as unknown as THREE.Color}
-        attenuationColor={"#9B8FD9" as unknown as THREE.Color}
+        specularColor={"#C4A86B" as unknown as THREE.Color}
+        attenuationColor={"#9C6F6E" as unknown as THREE.Color}
         attenuationDistance={1.5}
         side={THREE.DoubleSide}
       />

@@ -1,7 +1,7 @@
 /**
- * Theme CSS Variables - Digital Cultures
- * Monochrome design system with light/dark mode support
- * Light mode is PRIMARY (#E8E8E8 grey background)
+ * Theme CSS Variables — ROSES OS
+ * Warm sacred design system with light/dark mode support
+ * Light mode is PRIMARY (#FAF8F5 warm white background)
  */
 
 /* =============================================================================
@@ -11,96 +11,95 @@
 :root {
   color-scheme: light;
 
-  /* Primary Colors (dark accent scale) */
-  --color-primary-50: #F5F5F5;
-  --color-primary-100: #E8E8E8;
-  --color-primary-200: #D4D4D4;
-  --color-primary-300: #A3A3A3;
-  --color-primary-400: #525252;
-  --color-primary-500: #1A1A1A;
-  --color-primary-600: #0A0A0A;
-  --color-primary-700: #050505;
-  --color-primary-800: #020202;
-  --color-primary-900: #000000;
-  --color-primary-950: #000000;
+  /* Warm Neutral Scale */
+  --color-warm-0: #FFFFFF;
+  --color-warm-50: #FAF8F5;
+  --color-warm-100: #F5F0EB;
+  --color-warm-200: #E8E0D8;
+  --color-warm-300: #D4C8BE;
+  --color-warm-400: #B5A89D;
+  --color-warm-500: #8C7E73;
+  --color-warm-600: #6B5F56;
+  --color-warm-700: #504540;
+  --color-warm-800: #3B2F2F;
+  --color-warm-900: #2A2020;
+  --color-warm-950: #1A1716;
 
-  /* Secondary Colors (neutral mid-tones) */
-  --color-secondary-50: #FAFAFA;
-  --color-secondary-100: #F5F5F5;
-  --color-secondary-200: #E8E8E8;
-  --color-secondary-300: #D4D4D4;
-  --color-secondary-400: #A3A3A3;
-  --color-secondary-500: #666666;
-  --color-secondary-600: #525252;
-  --color-secondary-700: #404040;
-  --color-secondary-800: #262626;
-  --color-secondary-900: #171717;
-  --color-secondary-950: #0A0A0A;
+  /* Rose Scale */
+  --color-rose-50: #FDF8F7;
+  --color-rose-100: #FAF0EE;
+  --color-rose-200: #F5E1DD;
+  --color-rose-300: #E8C4BF;
+  --color-rose-400: #D4A09A;
+  --color-rose-500: #9C6F6E;
+  --color-rose-600: #8A5E5D;
+  --color-rose-700: #6E4A49;
+  --color-rose-800: #523737;
+  --color-rose-900: #3B2828;
+  --color-rose-950: #2A1C1C;
 
-  /* Neutral Colors */
-  --color-neutral-0: #FFFFFF;
-  --color-neutral-50: #FAFAFA;
-  --color-neutral-100: #F5F5F5;
-  --color-neutral-200: #E8E8E8;
-  --color-neutral-300: #D4D4D4;
-  --color-neutral-400: #A3A3A3;
-  --color-neutral-500: #737373;
-  --color-neutral-600: #525252;
-  --color-neutral-700: #404040;
-  --color-neutral-800: #262626;
-  --color-neutral-900: #171717;
-  --color-neutral-950: #0A0A0A;
+  /* Brand Semantic */
+  --color-rose-clay: #9C6F6E;
+  --color-soft-gold: #C4A86B;
+  --color-sage-mist: #A3B5A6;
+  --color-dusty-lavender: #B8A9C9;
+  --color-deep-earth: #3B2F2F;
 
   /* Semantic Colors - Light Mode */
-  --color-background: #E8E8E8;
-  --color-background-subtle: #F5F5F5;
-  --color-background-muted: #E8E8E8;
+  --color-background: #FAF8F5;
+  --color-background-subtle: #F5F0EB;
+  --color-background-muted: #E8E0D8;
   --color-background-elevated: #FFFFFF;
-  --color-background-overlay: rgba(0, 0, 0, 0.5);
+  --color-background-overlay: rgba(59, 47, 47, 0.5);
+  --color-background-rose: #FDF8F7;
 
-  --color-foreground: #1A1A1A;
-  --color-foreground-subtle: #404040;
-  --color-foreground-muted: #666666;
-  --color-foreground-faint: #999999;
+  --color-foreground: #3B2F2F;
+  --color-foreground-subtle: #504540;
+  --color-foreground-muted: #6B5F56;
+  --color-foreground-faint: #8C7E73;
+  --color-foreground-on-rose: #FFFFFF;
 
-  --color-border: #D4D4D4;
-  --color-border-subtle: #E8E8E8;
-  --color-border-strong: #A3A3A3;
+  --color-border: #E8E0D8;
+  --color-border-subtle: #F5F0EB;
+  --color-border-strong: #D4C8BE;
 
-  --color-accent: #000000;
-  --color-accent-foreground: #FFFFFF;
-  --color-accent-hover: #1A1A1A;
-  --color-accent-subtle: #F5F5F5;
+  --color-accent: #3B2F2F;
+  --color-accent-foreground: #FAF8F5;
+  --color-accent-hover: #504540;
+  --color-accent-subtle: #F5F0EB;
 
   /* Status Colors */
-  --color-success: #10b981;
-  --color-success-subtle: #ecfdf5;
-  --color-warning: #f59e0b;
-  --color-warning-subtle: #fffbeb;
-  --color-error: #ef4444;
-  --color-error-subtle: #fef2f2;
-  --color-info: #525252;
-  --color-info-subtle: #F5F5F5;
+  --color-success: #5B9A6F;
+  --color-success-subtle: #E3F0E7;
+  --color-warning: #C4A86B;
+  --color-warning-subtle: #F7F0E0;
+  --color-error: #C0392B;
+  --color-error-subtle: #F5E3E0;
+  --color-info: #6B5F56;
+  --color-info-subtle: #F5F0EB;
 
-  /* Gradients - monochrome */
-  --gradient-primary: linear-gradient(135deg, #1A1A1A 0%, #000000 100%);
-  --gradient-secondary: linear-gradient(135deg, #404040 0%, #1A1A1A 100%);
-  --gradient-subtle: linear-gradient(135deg, #F5F5F5 0%, #E8E8E8 100%);
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #3B2F2F 0%, #1A1716 100%);
+  --gradient-secondary: linear-gradient(135deg, #6B5F56 0%, #3B2F2F 100%);
+  --gradient-subtle: linear-gradient(135deg, #FAF8F5 0%, #F5F0EB 100%);
 
-  /* Shadows - pure black, no color tinting */
-  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.04);
-  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.04);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.06), 0 2px 4px -2px rgb(0 0 0 / 0.04);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.06), 0 4px 6px -4px rgb(0 0 0 / 0.03);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.06), 0 8px 10px -6px rgb(0 0 0 / 0.03);
-  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.15);
-  --shadow-glass: 0 8px 32px 0 rgb(0 0 0 / 0.06);
+  /* Shadows — warm-tinted */
+  --shadow-xs: 0 1px 2px 0 rgb(59 47 47 / 0.04);
+  --shadow-sm: 0 1px 3px 0 rgb(59 47 47 / 0.06), 0 1px 2px -1px rgb(59 47 47 / 0.04);
+  --shadow-md: 0 4px 6px -1px rgb(59 47 47 / 0.06), 0 2px 4px -2px rgb(59 47 47 / 0.04);
+  --shadow-lg: 0 10px 15px -3px rgb(59 47 47 / 0.06), 0 4px 6px -4px rgb(59 47 47 / 0.03);
+  --shadow-xl: 0 20px 25px -5px rgb(59 47 47 / 0.06), 0 8px 10px -6px rgb(59 47 47 / 0.03);
+  --shadow-2xl: 0 25px 50px -12px rgb(59 47 47 / 0.15);
+  --shadow-glass: 0 8px 32px 0 rgb(59 47 47 / 0.06);
+  --shadow-rose: 0 4px 16px 0 rgb(156 111 110 / 0.15);
+  --shadow-gold: 0 4px 16px 0 rgb(196 168 107 / 0.15);
 
   /* Typography */
-  --font-sans: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-  --font-weight-heading-1: 500;
-  --font-weight-heading-2: 600;
+  --font-weight-heading-1: 400;
+  --font-weight-heading-2: 500;
   --font-weight-heading-3: 600;
   --font-weight-heading-4: 600;
   --font-weight-heading-5: 600;
@@ -124,6 +123,8 @@
   --ease-smooth-in: cubic-bezier(0.4, 0.0, 1, 1);
   --ease-hover: cubic-bezier(0.33, 1, 0.68, 1);
   --ease-reveal: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-breathe: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  --ease-sacred: cubic-bezier(0.25, 0.8, 0.25, 1);
 
   --duration-instant: 0ms;
   --duration-faster: 100ms;
@@ -132,6 +133,8 @@
   --duration-relaxed: 300ms;
   --duration-slow: 400ms;
   --duration-slower: 500ms;
+  --duration-meditative: 800ms;
+  --duration-contemplative: 1200ms;
 
   /* Z-Index */
   --z-base: 0;
@@ -152,10 +155,13 @@
   --blur-xl: 16px;
   --blur-2xl: 24px;
 
-  /* Glass Effect */
-  --glass-background: rgba(255, 255, 255, 0.8);
-  --glass-border: rgba(255, 255, 255, 0.3);
-  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.06);
+  /* Glass Effect — warm */
+  --glass-background: rgba(250, 248, 245, 0.8);
+  --glass-border: rgba(232, 224, 216, 0.4);
+  --glass-shadow: 0 8px 32px 0 rgba(59, 47, 47, 0.06);
+
+  /* Grain texture opacity */
+  --grain-opacity: 0.03;
 }
 
 /* =============================================================================
@@ -167,36 +173,38 @@
   color-scheme: dark;
 
   /* Semantic Colors - Dark Mode */
-  --color-background: #0A0A0A;
-  --color-background-subtle: #171717;
-  --color-background-muted: #1A1A1A;
-  --color-background-elevated: #1A1A1A;
-  --color-background-overlay: rgba(0, 0, 0, 0.7);
+  --color-background: #1A1716;
+  --color-background-subtle: #2A2020;
+  --color-background-muted: #3B2F2F;
+  --color-background-elevated: #2A2020;
+  --color-background-overlay: rgba(26, 23, 22, 0.7);
+  --color-background-rose: #2A1C1C;
 
-  --color-foreground: #F5F5F5;
-  --color-foreground-subtle: #D4D4D4;
-  --color-foreground-muted: #999999;
-  --color-foreground-faint: #666666;
+  --color-foreground: #F5F0EB;
+  --color-foreground-subtle: #E8E0D8;
+  --color-foreground-muted: #B5A89D;
+  --color-foreground-faint: #8C7E73;
+  --color-foreground-on-rose: #FAF8F5;
 
-  --color-border: #262626;
-  --color-border-subtle: #1A1A1A;
-  --color-border-strong: #404040;
+  --color-border: #3B2F2F;
+  --color-border-subtle: #2A2020;
+  --color-border-strong: #504540;
 
-  --color-accent: #FFFFFF;
-  --color-accent-foreground: #0A0A0A;
-  --color-accent-hover: #E8E8E8;
-  --color-accent-subtle: rgba(255, 255, 255, 0.08);
+  --color-accent: #F5F0EB;
+  --color-accent-foreground: #1A1716;
+  --color-accent-hover: #E8E0D8;
+  --color-accent-subtle: rgba(245, 240, 235, 0.08);
 
   /* Status Colors - Dark Mode */
-  --color-success-subtle: rgba(16, 185, 129, 0.15);
-  --color-warning-subtle: rgba(245, 158, 11, 0.15);
-  --color-error-subtle: rgba(239, 68, 68, 0.15);
-  --color-info-subtle: rgba(255, 255, 255, 0.08);
+  --color-success-subtle: rgba(91, 154, 111, 0.15);
+  --color-warning-subtle: rgba(196, 168, 107, 0.15);
+  --color-error-subtle: rgba(192, 57, 43, 0.15);
+  --color-info-subtle: rgba(245, 240, 235, 0.08);
 
   /* Gradients - Dark Mode */
-  --gradient-subtle: linear-gradient(135deg, #171717 0%, #1A1A1A 100%);
+  --gradient-subtle: linear-gradient(135deg, #2A2020 0%, #1A1716 100%);
 
-  /* Shadows - Dark Mode (more subtle) */
+  /* Shadows - Dark Mode */
   --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.3);
   --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.4), 0 1px 2px -1px rgb(0 0 0 / 0.3);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3);
@@ -206,16 +214,18 @@
   --shadow-glass: 0 8px 32px 0 rgb(0 0 0 / 0.3);
 
   /* Glass Effect - Dark Mode */
-  --glass-background: rgba(23, 23, 23, 0.8);
-  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-background: rgba(42, 32, 32, 0.8);
+  --glass-border: rgba(245, 240, 235, 0.08);
   --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+
+  --grain-opacity: 0.05;
 }
 
 /* =============================================================================
    UTILITY CLASSES
    ============================================================================= */
 
-/* Glass morphism effect */
+/* Glass morphism effect — warm */
 .glass {
   background: var(--glass-background);
   backdrop-filter: blur(var(--blur-lg));
@@ -257,7 +267,7 @@
 }
 
 .focus-ring:focus-visible {
-  outline: 2px solid var(--color-foreground);
+  outline: 2px solid var(--color-rose-clay);
   outline-offset: 4px;
 }
 
@@ -279,21 +289,26 @@ body {
   font-family: var(--font-sans);
   background-color: var(--color-background);
   color: var(--color-foreground);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
-/* Selection styling - monochrome */
+/* Headings use serif */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+/* Selection styling — rose-tinted */
 ::selection {
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(156, 111, 110, 0.2);
   color: inherit;
 }
 
 .dark ::selection {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(156, 111, 110, 0.3);
   color: inherit;
 }
 
-/* Scrollbar styling */
+/* Scrollbar styling — warm */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -304,18 +319,18 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-neutral-400);
+  background: var(--color-warm-400);
   border-radius: var(--radius-full);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-neutral-500);
+  background: var(--color-warm-500);
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background: var(--color-neutral-600);
+  background: var(--color-warm-600);
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-neutral-500);
+  background: var(--color-warm-500);
 }

@@ -1,9 +1,26 @@
-export type { Project, ProjectDetail, GalleryImage, Service, Stat, NavItem } from './types';
+export type {
+  NavItem, Guardian, Program, ContributionTier,
+  ScheduleStage, ScheduleSession, TimeZoneEntry,
+  CoherenceDomain, PathLevel, LineageEntry,
+  ArchitectureLayer, Chakra, Technique, TeachingLevel,
+  Agreement, Capacity, MessagingPillar, BrandQuote, Stat,
+} from './types';
+
 export {
   navItems,
-  projectCategories,
-  projects,
-  projectDetails,
-  services,
-  agencyStats,
+  guardians,
+  programs,
+  scheduleStages,
+  contributionTiers,
+  coherenceDomains,
+  pathLevels,
+  lineageEntries,
+  architectureLayers,
+  chakras,
+  techniques,
+  teachingLevels,
+  agreements,
+  elevenCapacities,
+  brandQuotes,
+  messagingPillars,
 } from './mock-data';
