@@ -156,18 +156,24 @@ export const contributionTiers: ContributionTier[] = [
     name: 'Seed',
     range: 'Under $30,000 USD annual income',
     description: 'Lower contribution — honors your reality and current season.',
+    priceFoundational: '$222',
+    priceFull: '$888',
   },
   {
     id: '2',
     name: 'Bloom',
     range: '$30,000–$70,000 USD annual income',
     description: 'Mid-range — reflects reciprocity and balance.',
+    priceFoundational: '$444',
+    priceFull: '$1,444',
   },
   {
     id: '3',
     name: 'Canopy',
     range: 'Above $70,000 USD annual income',
     description: 'Higher tier — supports accessibility for others and the expansion of this work.',
+    priceFoundational: '$777',
+    priceFull: '$2,111',
   },
 ];
 

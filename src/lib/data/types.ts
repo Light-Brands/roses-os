@@ -35,6 +35,10 @@ export interface ContributionTier {
   name: string;
   range: string;
   description: string;
+  /** Suggested price for Foundational only (Rose Meditation Weekend 1) */
+  priceFoundational: string;
+  /** Suggested price for the Full Program */
+  priceFull: string;
 }
 
 /** Schedule stage */

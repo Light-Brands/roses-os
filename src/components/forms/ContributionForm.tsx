@@ -108,13 +108,25 @@ export function ContributionForm({ tiers, onSubmit, className }: ContributionFor
                   {tier.name}
                 </h3>
 
+                {/* Pricing */}
+                <div className="mt-3 space-y-1 w-full text-left">
+                  <p className="text-sm text-[var(--color-foreground-muted)]">
+                    <span className="font-medium text-[var(--color-foreground)]">Foundational:</span>{' '}
+                    {tier.priceFoundational}
+                  </p>
+                  <p className="text-sm text-[var(--color-foreground-muted)]">
+                    <span className="font-medium text-[var(--color-foreground)]">Full Program:</span>{' '}
+                    {tier.priceFull}
+                  </p>
+                </div>
+
                 {/* Income range */}
-                <p className="mt-1 text-xs font-medium text-[var(--color-foreground-faint)]">
+                <p className="mt-3 text-xs font-medium text-[var(--color-foreground-faint)]">
                   {tier.range}
                 </p>
 
                 {/* Description */}
-                <p className="mt-3 text-sm leading-relaxed text-[var(--color-foreground-muted)]">
+                <p className="mt-2 text-sm leading-relaxed text-[var(--color-foreground-muted)]">
                   {tier.description}
                 </p>
 
