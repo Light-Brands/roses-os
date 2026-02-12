@@ -17,8 +17,6 @@ ROSES OS is a spiritual-modern consciousness technology brand. The design work c
 | Document | Path | What it contains |
 |---|---|---|
 | Brand DNA (master bible) | `docs/brand/brand-dna.md` | Complete brand identity, visual system, color palette, typography, design book, web guidelines |
-| Brand Identity (summary) | `docs/brand/brand-identity.md` | Condensed brand essence, colors, fonts, UI components, sitemap |
-| Visual Aid Manual Plan | `docs/plan-mdr.md` | Structure, scope, and brand rules for the Teacher Visual Aid Manual |
 | Invitation Presentation | `docs/program/presentation.md` | Full content for the public-facing invitation deck (Screen 1) |
 | Schedule Details & Contribution | `docs/program/schedule-details.md` | Full schedule times and contribution model for the Learn More page (Screen 2) |
 | Training Manual | `docs/training/mdr-teachers-training-manual.md` | Teaching content for Levels 1-3 (source material for the visual aid deck) |
