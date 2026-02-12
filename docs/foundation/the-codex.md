@@ -128,7 +128,7 @@ The Rose Meditation did not emerge from theory or invention. It was received thr
 
 In the 1960s, this transmission was received by **Lewis S. Bostwick**, who became its first human steward in this era. Founder of the **Berkeley Psychic Institute** and the **Church of the Divine Man**, he channeled and systematized the techniques and tools sent by the angels, to assist in the process of evolution of humanity. The lineage was carried forward by **Anastasia Plunk**, who ensured its continuity with integrity and devotion.
 
-Over time, this lineage reached **Angelina Ataide**, founder of **CELARIS** (Centro de Estudos de Leitura de Aura, Reiki, Intuicao e Sonhos), formerly known as Escola da Aura & Sueños.
+In the 2000s, this lineage reached **Angelina Ataide**, founder of **CELARIS** (Centro de Estudos de Leitura de Aura, Reiki, Intuicao e Sonhos), formerly known as Escola da Aura & Sueños.
 
 For more than thirty years, Angelina has upheld and embodied the Rose as a living transmission. CELARIS has been held predominantly by feminine guardians dedicated to preserving the integrity, clarity, and vibrational coherence of the original field.
 
