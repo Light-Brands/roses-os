@@ -50,7 +50,7 @@ export const guardians: Guardian[] = [
   {
     id: '4',
     name: 'Peggy Mars',
-    role: 'Guardian of Practice',
+    role: 'Guardian of Practice & Methodology',
     bio: 'Peggy creates bridges between cultures, communities, and inner worlds. With over a decade walking the Aura Reading path, she integrates emotional, ancestral, and spiritual layers with clarity and compassion — sustaining authentic connection between teachers and students as the guardian of the Birth Oracle.',
     image: '/images/peggy.JPG',
   },
