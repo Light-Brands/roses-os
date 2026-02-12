@@ -7,7 +7,7 @@ import { Metadata } from 'next';
 
 export const siteConfig = {
   name: 'ROSES OS',
-  description: 'A seamless path to inner freedom. ROSES OS is a consciousness and remembrance ecosystem — technologies, practices, and community for coherent living.',
+  description: 'A seamless path to inner freedom. ROSES OS is a consciousness and remembrance ecosystem: technologies, practices, and community for coherent living.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://rosesos.com',
   ogImage: '/og-image.jpg',
   creator: '@rosesos',

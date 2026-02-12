@@ -72,7 +72,7 @@ function CoreQuestions() {
 
   const questions = [
     'Are you aware of your inner state at this moment?',
-    'Do you feel coherent inside — if not, how can you restore it?',
+    'Do you feel coherent inside? If not, how can you restore it?',
   ];
 
   return (
@@ -155,7 +155,7 @@ function BrandEssence() {
           transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="text-lg text-white/60 leading-relaxed max-w-2xl mx-auto"
         >
-          ROSES OS is a consciousness and remembrance ecosystem — a living architecture
+          ROSES OS is a consciousness and remembrance ecosystem. A living architecture
           of technologies, practices, and community for coherent living. Not a course.
           Not a cure. A way home.
         </motion.p>

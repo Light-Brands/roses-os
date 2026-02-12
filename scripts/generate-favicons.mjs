@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Generate favicon.ico, Apple touch icon, and PWA icons from public/dc-logo.svg
+ * Generate favicon.ico, Apple touch icon, and PWA icons from public/rose.png
  * Run: node scripts/generate-favicons.mjs
  */
 
@@ -13,7 +13,7 @@ import toIco from 'to-ico';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
 const publicDir = join(root, 'public');
-const logoSvg = join(publicDir, 'dc-logo.svg');
+const logoPng = join(publicDir, 'rose.png');
 
 const SIZES = {
   ico: [16, 32, 48],
@@ -27,12 +27,12 @@ const SIZES = {
 };
 
 async function main() {
-  const svgBuffer = readFileSync(logoSvg);
+  const pngBuffer = readFileSync(logoPng);
 
   // Generate PNG buffers for ICO (16, 32, 48)
   const icoPngs = await Promise.all(
     SIZES.ico.map((size) =>
-      sharp(svgBuffer)
+      sharp(pngBuffer)
         .resize(size, size)
         .png()
         .toBuffer()
@@ -46,7 +46,7 @@ async function main() {
 
   // Generate and write all PNG icons
   for (const { name, size } of SIZES.png) {
-    const buf = await sharp(svgBuffer).resize(size, size).png().toBuffer();
+    const buf = await sharp(pngBuffer).resize(size, size).png().toBuffer();
     writeFileSync(join(publicDir, name), buf);
     console.log(`Created public/${name}`);
   }

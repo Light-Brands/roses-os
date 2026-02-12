@@ -1,11 +1,11 @@
 {
-  "name": "Digital Cultures",
-  "short_name": "Digital Cultures",
-  "description": "Marketing, creative, and design agency based in Paphos, Cyprus.",
+  "name": "ROSES OS",
+  "short_name": "ROSES OS",
+  "description": "A seamless path to inner freedom. ROSES OS is a consciousness and remembrance ecosystem — technologies, practices, and community for coherent living.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#0a0a0a",
+  "background_color": "#FAF8F5",
+  "theme_color": "#FAF8F5",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
