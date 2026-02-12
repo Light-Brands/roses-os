@@ -222,6 +222,109 @@ function GuardiansSection() {
 }
 
 // =============================================================================
+// DATA: What This Journey Awakens
+// =============================================================================
+
+const awakenings = [
+  {
+    title: 'The Rose',
+    description:
+      'It dissolves distortion and restores coherence. Inner awareness expands, presence and stability deepen. From this state, intuition sharpens, leadership rises, and connection becomes natural.',
+  },
+  {
+    title: 'Aura',
+    description:
+      'When heart aligns with soul, you perceive subtle senses and the energy shaping your choices. Each reading is a mirror — strengthening clarity, relationships, and service.',
+  },
+  {
+    title: 'Human Journey',
+    description:
+      'Emotional patterns and imprints dissolve — freed across mental and energetic layers. Love reveals itself as a self-organizing intelligence.',
+  },
+  {
+    title: 'Intuition',
+    description:
+      'You learn to listen to truth with clarity and simplicity. Limiting beliefs and unconscious patterns dissolve. Your decisions become aligned, precise, and guided.',
+  },
+  {
+    title: 'Leadership',
+    description:
+      'It deepens your capacity to feel, support, and relate. Leadership rooted in coherence, empowerment, and trust. You read your own field and the energy around you with discernment and self-mastery.',
+  },
+  {
+    title: 'Your Highest Potential',
+    description:
+      'You access the brilliance of your original design. You live your life from pure integrity. These belong to every human who remembers who they are.',
+  },
+];
+
+// =============================================================================
+// SECTION: What This Journey Awakens
+// =============================================================================
+
+function WhatAwakensSection() {
+  const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+  return (
+    <section ref={ref} className="section-padding bg-[var(--color-background-subtle)]">
+      <div className="container-premium">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease }}
+          className="label-sacred text-center mb-4"
+        >
+          What This Journey Awakens
+        </motion.p>
+        <motion.h2
+          initial={{ opacity: 0, y: 24 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.1, ease }}
+          className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight text-center mb-4"
+        >
+          What awaits you
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.15, ease }}
+          className="text-center text-[var(--color-foreground-muted)] italic mb-14 text-lg"
+        >
+          This is not learning. It is remembering.
+        </motion.p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {awakenings.map((item, i) => (
+            <motion.div
+              key={item.title}
+              initial={{ opacity: 0, y: 24 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.15 + i * 0.1, ease }}
+              className="text-center"
+            >
+              <h3 className="font-serif text-xl tracking-tight mb-3">
+                {item.title}
+              </h3>
+              <p className="text-[var(--color-foreground-muted)] leading-relaxed text-[15px]">
+                {item.description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.8, ease }}
+          className="text-center mt-14 text-[var(--color-foreground-muted)] font-medium"
+        >
+          No prior experience is needed. Only presence.
+        </motion.p>
+      </div>
+    </section>
+  );
+}
+
+// =============================================================================
 // SECTION: Programs
 // =============================================================================
 
@@ -230,7 +333,7 @@ function ProgramsSection() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section ref={ref} className="section-padding bg-[var(--color-background-subtle)]">
+    <section ref={ref} className="section-padding">
       <div className="container-premium">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -246,7 +349,7 @@ function ProgramsSection() {
           transition={{ duration: 0.6, delay: 0.1, ease }}
           className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight text-center mb-12"
         >
-          What awaits you
+          Begin your path
         </motion.h2>
         <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {programs.map((program) => (
@@ -327,6 +430,7 @@ export default function InvitationPage() {
       <WhatIsRosesOS />
       <ThreePillars />
       <GuardiansSection />
+      <WhatAwakensSection />
       <ProgramsSection />
       <FinalCTA />
     </>
