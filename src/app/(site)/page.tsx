@@ -169,7 +169,7 @@ function BrandEssence() {
         >
           <AnimatedStat value="30+" label="Years" delay={0.5} />
           <AnimatedStat value="6,000+" label="Initiated" delay={0.6} />
-          <AnimatedStat value="13" label="Domains" delay={0.7} />
+          <AnimatedStat value="50+" label="Countries" delay={0.7} />
         </motion.div>
       </div>
     </section>
