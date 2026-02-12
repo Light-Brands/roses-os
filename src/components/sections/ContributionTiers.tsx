@@ -83,8 +83,20 @@ export default function ContributionTiers({
                 </span>
               </div>
 
+              {/* Pricing */}
+              <div className="mb-3 space-y-1">
+                <p className="text-sm text-[var(--color-foreground-muted)]">
+                  <span className="font-medium text-[var(--color-foreground)]">Foundational:</span>{' '}
+                  {tier.priceFoundational}
+                </p>
+                <p className="text-sm text-[var(--color-foreground-muted)]">
+                  <span className="font-medium text-[var(--color-foreground)]">Full Program:</span>{' '}
+                  {tier.priceFull}
+                </p>
+              </div>
+
               {/* Range */}
-              <p className="text-base font-medium text-[var(--color-foreground-subtle)] mb-2">
+              <p className="text-xs font-medium text-[var(--color-foreground-faint)] mb-2">
                 {tier.range}
               </p>
 

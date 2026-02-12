@@ -6,13 +6,15 @@ import { ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { ScheduleStage } from '@/lib/data/types';
 
-type TimezoneKey = 'pt' | 'et' | 'gmt' | 'ist';
+type TimezoneKey = 'sanJose' | 'bogota' | 'newYork' | 'brasilia' | 'london' | 'madrid';
 
 const timezoneLabels: Record<TimezoneKey, string> = {
-  pt: 'Pacific (PT)',
-  et: 'Eastern (ET)',
-  gmt: 'GMT',
-  ist: 'India (IST)',
+  sanJose: 'San Jose',
+  bogota: 'Bogota',
+  newYork: 'New York',
+  brasilia: 'Brasilia',
+  london: 'London',
+  madrid: 'Madrid',
 };
 
 interface ScheduleTableProps {
@@ -23,7 +25,7 @@ interface ScheduleTableProps {
 export default function ScheduleTable({ stages, className }: ScheduleTableProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
-  const [timezone, setTimezone] = useState<TimezoneKey>('pt');
+  const [timezone, setTimezone] = useState<TimezoneKey>('newYork');
   const [openStages, setOpenStages] = useState<string[]>(
     stages.length > 0 ? [stages[0].id] : []
   );
