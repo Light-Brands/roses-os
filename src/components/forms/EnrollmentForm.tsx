@@ -142,9 +142,9 @@ export function EnrollmentForm({ onSubmit, className }: EnrollmentFormProps) {
         whileTap={isValid ? { scale: 0.98 } : undefined}
         className={cn(
           'w-full rounded-xl px-6 py-3 font-medium',
-          'bg-[var(--color-accent)] text-[var(--color-accent-foreground)]',
+          'bg-[var(--color-rose-clay)] text-[var(--color-foreground-on-rose)]',
           'transition-all duration-200',
-          'hover:bg-[var(--color-accent-hover)]',
+          'hover:bg-[var(--color-rose-600)]',
           'disabled:cursor-not-allowed disabled:opacity-50'
         )}
       >
