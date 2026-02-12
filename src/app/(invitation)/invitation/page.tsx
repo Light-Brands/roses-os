@@ -72,9 +72,9 @@ function InvitationHero() {
             href="/invitation/learn-more"
             className={cn(
               'inline-flex items-center gap-2 px-8 py-3.5 rounded-full',
-              'bg-white text-warm-950',
+              'bg-warm-100 text-warm-950',
               'text-sm font-medium',
-              'hover:bg-warm-100',
+              'hover:bg-warm-200',
               'transition-colors duration-200'
             )}
           >
@@ -392,9 +392,9 @@ function FinalCTA() {
               href="/invitation/learn-more"
               className={cn(
                 'px-8 py-3.5 rounded-full',
-                'bg-white text-warm-950',
+                'bg-warm-100 text-warm-950',
                 'text-sm font-medium',
-                'hover:bg-warm-100',
+                'hover:bg-warm-200',
                 'transition-colors duration-200'
               )}
             >
