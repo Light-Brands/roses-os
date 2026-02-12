@@ -39,6 +39,7 @@ export const guardians: Guardian[] = [
     role: 'Guardian of Structure & Architecture',
     bio: 'Diego is the bridge between spirit and structure. With deep roots in spiritual practice, energy work, and community building, he carries the horizontal axis of ROSES OS — developing platforms, systems, and frameworks that harmonize intuition with strategy and build lasting foundations for remembrance.',
     image: '/images/Diegophoto.avif',
+    imageTransform: 'scale(1.15) translateY(-8%)',
   },
   {
     id: '3',
