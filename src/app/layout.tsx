@@ -8,6 +8,8 @@ import { Preloader } from '@/components/ui/Preloader';
 import { PageTransition } from '@/components/ui/PageTransition';
 import { CustomCursor } from '@/components/ui/CustomCursor';
 import { ScrollProgress } from '@/components/ui/ScrollProgress';
+import { ToastProvider } from '@/components/ui/Toast';
+import { PWAInstallPrompt } from '@/components/ui/PWAInstallPrompt';
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -118,11 +120,14 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <TransitionProvider>
-            <Preloader />
-            <PageTransition />
-            <CustomCursor />
-            <ScrollProgress />
-            {children}
+            <ToastProvider position="bottom-center">
+              <Preloader />
+              <PageTransition />
+              <CustomCursor />
+              <ScrollProgress />
+              <PWAInstallPrompt />
+              {children}
+            </ToastProvider>
           </TransitionProvider>
         </ThemeProvider>
       </body>
