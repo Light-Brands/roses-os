@@ -31,7 +31,7 @@ export const guardians: Guardian[] = [
     name: 'Angelina Ataide',
     role: 'Founder & Lead Guardian',
     bio: 'Angelina brings over two decades of experience in somatic healing, consciousness research, and transformative education. She is the creator of the ROSES OS methodology and the primary steward of its lineage.',
-    image: '/guardians/angelina.jpg',
+    image: '/images/angel.JPG',
   },
   {
     id: '2',
@@ -52,7 +52,7 @@ export const guardians: Guardian[] = [
     name: 'Peggy Mar',
     role: 'Guardian of Integration',
     bio: 'Peggy specializes in the integration of transformative experiences into daily life. Her expertise in psychology and mindfulness supports participants in grounding their practice.',
-    image: '/guardians/peggy.jpg',
+    image: '/images/peggy.JPG',
   },
 ];
 
