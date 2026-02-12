@@ -243,11 +243,10 @@ export const pathLevels: PathLevel[] = [
 // =============================================================================
 
 export const lineageEntries: LineageEntry[] = [
-  { id: '1', year: '1960s', name: 'Lewis S. Bostwick', description: 'Channeled and systematized the techniques and tools of Aura Reading in California. Founder of the Berkeley Psychic Institute and the Church of the Divine Man.' },
-  { id: '2', year: '1960s', name: 'Berkeley Psychic Institute & Church of the Divine Man', description: 'Center for psychic training and transmission of Aura Reading practices. Bridge between the original channeled teachings and the next generation of stewards.' },
-  { id: '3', year: '1980s', name: 'Anastasia Plunk', description: 'Received and carried the Aura Reading and Rose meditation teachings from the Berkeley Psychic Institute, ensuring the continuity and integrity of the lineage.' },
-  { id: '4', year: '2010s', name: 'Angelina Ataide', description: 'Founder of CELARIS. For over thirty years, she has upheld the Rose as a living transmission, initiating more than six thousand individuals into the Rose tradition.' },
-  { id: '5', year: '2020s', name: 'ROSES OS', description: 'The platform crystallizes decades of lineage wisdom into an accessible ecosystem for consciousness, remembrance, and coherent living.' },
+  { id: '1', year: '1960s', name: 'Lewis S. Bostwick', description: 'Channeled the material of Aura Reading in California. Founder of the Berkeley Psychic Institute and the Church of the Divine Man.' },
+  { id: '2', year: '1980s', name: 'Anastasia Plunk', description: 'Received and carried the Aura Reading and Rose meditation teachings from the Berkeley Psychic Institute, ensuring the continuity and integrity of the lineage.' },
+  { id: '3', year: '2005s', name: 'Angelina Ataide', description: 'Systematized the techniques and tools of the Rose and Aura tradition. Founder of CELARIS, formerly Escola da Aura & Sueños. For over thirty years, she has upheld the Rose as a living transmission, initiating more than six thousand individuals into the Rose tradition.' },
+  { id: '4', year: '2023', name: 'ROSES OS', description: 'The platform crystallizes decades of lineage wisdom into an accessible ecosystem for consciousness, remembrance, and coherent living.' },
 ];
 
 // =============================================================================
