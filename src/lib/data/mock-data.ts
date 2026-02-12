@@ -30,7 +30,7 @@ export const guardians: Guardian[] = [
     id: '1',
     name: 'Angelina Ataide',
     role: 'Founder & Lead Guardian',
-    bio: 'Angelina brings over two decades of experience in somatic healing, consciousness research, and transformative education. She is the creator of the ROSES OS methodology and the primary steward of its lineage.',
+    bio: 'Angelina brings over three decades of experience in somatic healing, consciousness research, and transformative education. She is the creator of the ROSES OS methodology and the primary steward of its lineage.',
     image: '/images/angel.JPG',
   },
   {
@@ -44,14 +44,14 @@ export const guardians: Guardian[] = [
     id: '3',
     name: 'Dara Ayoub',
     role: 'Guardian of Practice',
-    bio: 'Dara serves as the connective tissue of the ROSES OS community. With a background in facilitation and relational intelligence, she holds the space for enrollment and participant care.',
+    bio: 'Dara brings over a decade of experience in facilitation and relational intelligence, serving as the connective tissue of the ROSES OS community. She holds the space for enrollment and participant care.',
     image: '/guardians/dara.jpg',
   },
   {
     id: '4',
     name: 'Peggy Mar',
     role: 'Guardian of Integration',
-    bio: 'Peggy specializes in the integration of transformative experiences into daily life. Her expertise in psychology and mindfulness supports participants in grounding their practice.',
+    bio: 'Peggy brings over two decades of experience and practice in the integration of transformative experiences into daily life. Her expertise in psychology and mindfulness supports participants in grounding their practice.',
     image: '/images/peggy.JPG',
   },
 ];
