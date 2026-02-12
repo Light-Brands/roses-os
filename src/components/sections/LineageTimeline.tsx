@@ -102,7 +102,11 @@ export default function LineageTimeline({ entries, className }: LineageTimelineP
               />
 
               {/* Year */}
-              <p className="text-xs font-medium uppercase tracking-[0.15em] text-[#C4A86B] mb-1.5">
+              <p className={cn(
+                "text-xs font-medium uppercase tracking-[0.15em] text-[#C4A86B] mb-1.5",
+                // Desktop: position above the gold line
+                "lg:absolute lg:top-0 lg:left-4",
+              )}>
                 {entry.year}
               </p>
 
