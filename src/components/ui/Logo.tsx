@@ -45,7 +45,7 @@ export function Logo({
         )}
         style={{ fontFamily: 'var(--font-sans)' }}
       >
-        ROSE OS
+        ROSES OS
       </span>
     </div>
   );

@@ -53,7 +53,7 @@ export default function Footer() {
           </nav>
           {/* Credit */}
           <p className="text-[10px] sm:text-[11px] text-warm-500 dark:text-warm-400 tracking-wide shrink-0">
-            &copy; {currentYear} ROSE OS · Designed &amp; developed by LIGHT BRANDS
+            &copy; {currentYear} ROSES OS · Designed &amp; developed by LIGHT BRANDS
           </p>
         </motion.div>
       </div>

@@ -74,14 +74,14 @@ export default function ContactPage() {
                 <div>
                   <p className="label-sacred mb-2">Email</p>
                   <a
-                    href="mailto:hello@rosesos.org"
+                    href="mailto:hello@rosesos.com"
                     className={cn(
                       'text-[var(--color-foreground)]',
                       'underline underline-offset-4 decoration-[var(--color-rose-clay)]',
                       'hover:text-[var(--color-rose-clay)] transition-colors duration-200'
                     )}
                   >
-                    hello@rosesos.org
+                    hello@rosesos.com
                   </a>
                 </div>
 
