@@ -66,6 +66,9 @@ export interface TimeZoneEntry {
   brasilia: string;
   london: string;
   madrid: string;
+  israel: string;
+  greece: string;
+  australia: string;
 }
 
 /** Coherence domain (from The Codex) */

@@ -6,7 +6,7 @@ import { ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { ScheduleStage } from '@/lib/data/types';
 
-type TimezoneKey = 'sanJose' | 'bogota' | 'newYork' | 'brasilia' | 'london' | 'madrid';
+type TimezoneKey = 'sanJose' | 'bogota' | 'newYork' | 'brasilia' | 'london' | 'madrid' | 'israel' | 'greece' | 'australia';
 
 const timezoneLabels: Record<TimezoneKey, string> = {
   sanJose: 'San Jose',
@@ -15,6 +15,9 @@ const timezoneLabels: Record<TimezoneKey, string> = {
   brasilia: 'Brasilia',
   london: 'London',
   madrid: 'Madrid',
+  israel: 'Israel',
+  greece: 'Greece',
+  australia: 'Australia (Sydney)',
 };
 
 interface ScheduleTableProps {
