@@ -39,7 +39,7 @@ export const guardians: Guardian[] = [
     role: 'Guardian of Structure & Architecture',
     bio: 'Diego is the bridge between spirit and structure. With deep roots in spiritual practice, energy work, and community building, he carries the horizontal axis of ROSES OS — developing platforms, systems, and frameworks that harmonize intuition with strategy and build lasting foundations for remembrance.',
     image: '/images/Diegophoto.avif',
-    imageTransform: 'scale(0.85) translateY(5%)',
+    imageTransform: 'scale(1.2) translateY(-8%)',
   },
   {
     id: '3',
@@ -51,7 +51,7 @@ export const guardians: Guardian[] = [
   {
     id: '4',
     name: 'Peggy Mars',
-    role: 'Guardian of Practice & Methodology',
+    role: 'Guardian of Methodology',
     bio: 'Peggy creates bridges between cultures, communities, and inner worlds. With over a decade walking the Aura Reading path, she integrates emotional, ancestral, and spiritual layers with clarity and compassion — sustaining authentic connection between teachers and students.',
     image: '/images/peggy.JPG',
   },
