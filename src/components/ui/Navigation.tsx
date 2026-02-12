@@ -3,9 +3,8 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Moon, Sun, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { useTheme } from '@/lib/theme';
 import { Logo } from './Logo';
 import { AnimatedNavText } from './AnimatedNavText';
 
@@ -111,7 +110,6 @@ export function Navigation({
   transparent = false,
 }: NavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { resolvedTheme, toggleTheme } = useTheme();
   const { isHidden, isScrolled } = useScrollDirection();
 
   // Lock body scroll when mobile menu is open
@@ -157,14 +155,9 @@ export function Navigation({
         )}
       >
         <nav className="container-premium">
-          <div className="relative flex items-center justify-between h-16 lg:h-[72px]">
-            {/* Logo */}
-            <div className="relative z-10">
-              {logo || <Logo size="lg" />}
-            </div>
-
-            {/* Desktop Navigation — center-aligned */}
-            <div className="hidden lg:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
+          <div className="relative flex items-center h-16 lg:h-[72px] w-full">
+            {/* Left: nav links — equal flex so logo stays centered */}
+            <div className="hidden lg:flex items-center gap-1 flex-1 min-w-0 justify-start">
               {items.map((item) => (
                 <Link
                   key={item.label}
@@ -181,36 +174,13 @@ export function Navigation({
               ))}
             </div>
 
-            {/* Right Side: theme toggle + CTA + hamburger */}
-            <div className="flex items-center gap-2">
-              {/* Theme Toggle */}
-              <button
-                onClick={toggleTheme}
-                className={cn(
-                  'relative p-3 rounded-lg min-w-[44px] min-h-[44px] flex items-center justify-center',
-                  'text-[var(--color-foreground-muted)]',
-                  'hover:text-[var(--color-foreground)]',
-                  'transition-colors duration-200'
-                )}
-                aria-label="Toggle theme"
-              >
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={resolvedTheme}
-                    initial={{ rotate: -90, opacity: 0, scale: 0.8 }}
-                    animate={{ rotate: 0, opacity: 1, scale: 1 }}
-                    exit={{ rotate: 90, opacity: 0, scale: 0.8 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    {resolvedTheme === 'dark' ? (
-                      <Sun className="w-[18px] h-[18px]" />
-                    ) : (
-                      <Moon className="w-[18px] h-[18px]" />
-                    )}
-                  </motion.div>
-                </AnimatePresence>
-              </button>
+            {/* Center: logo — flex-shrink-0 so it stays truly centered */}
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex-shrink-0">
+              {logo || <Logo size="lg" />}
+            </div>
 
+            {/* Right: CTA + hamburger — equal flex to balance left */}
+            <div className="flex items-center gap-2 flex-1 min-w-0 justify-end">
               {/* CTA — pill + circle, fill-sweep on hover */}
               <Link
                 href={cta.href}

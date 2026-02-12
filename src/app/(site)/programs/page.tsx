@@ -36,6 +36,7 @@ export default function ProgramsPage() {
         eyebrow="Programs"
         title="Current Offerings"
         description="Guided pathways into the Rose field — each program is a living invitation to deepen your practice, remember your coherence, and step into a community devoted to inner freedom."
+        image="/page-images/page-programs.png"
       />
 
       {/* 2. Program Cards Grid */}

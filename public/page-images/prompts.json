@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "page": "home",
+    "description": "A radiant, fully bloomed rose symbolizing inner freedom and the brand's core essence.",
+    "prompt": "An exquisite, fully bloomed rose in perfect symmetry, rendered as a high-detail 3D illustration. The petals softly unfurl, showcasing a gradient of the ROSES OS brand palette: Rose 200 (#F5E1DD) at the edges, transitioning to Rose 300 (#E8C4BF), Rose 400 (#D4A09A), and deepening to Rose Clay (#9C6F6E) towards the heart. A subtle, sacred golden glow (#C4A86B) emanates from the very center of the rose, suggesting inner luminescence. The rose floats elegantly, perfectly centered on a pure white background (#FFFFFF). The lighting is entirely internal and diffused, ensuring absolutely NO external light sources, NO cast shadows, NO drop shadows, NO floor shadows, NO ambient occlusion, NO gradients, NO vignetting. The background must be uniformly #FFFFFF from edge to edge. The rose has a smooth, soft, velvety texture, appearing tactile and dimensional yet weightless."
+  },
+  {
+    "id": 2,
+    "page": "the-rose",
+    "description": "An abstract, organic form subtly suggesting a body, from which a delicate rose emerges, symbolizing inner coherence and remembering.",
+    "prompt": "A minimalist, elegant 3D render depicting an abstract, organic form in a deep rose-brown (#3B2828), subtly suggesting the contours of a torso or upper body. This form is smooth, matte, and refined. From its central cavity, a delicate, partially unfurled rose gently emerges, as if blooming from within. The rose's petals are soft, slightly translucent, and range in color from very pale Rose 200 (#F5E1DD) to soft Rose 300 (#E8C4BF). The entire composition floats serenely, perfectly centered on a pure white background (#FFFFFF). The lighting emanates softly from the unfurling rose, giving it a gentle, internal glow, ensuring absolutely NO external light sources, NO cast shadows, NO drop shadows, NO floor shadows, NO ambient occlusion, NO gradients, NO vignetting. The background must be uniformly #FFFFFF from edge to edge. The overall aesthetic is clean, polished, and deeply meaningful."
+  },
+  {
+    "id": 3,
+    "page": "the-codex",
+    "description": "A sacred geometric structure composed of interconnected rose petal forms, representing layers of coherent being.",
+    "prompt": "A sophisticated, mandala-like sacred geometric structure rendered as a precise 3D illustration. The structure is formed by elegantly interconnected abstract rose petal shapes and circles, creating distinct, interlocking layers. The petal elements are rendered in polished, slightly iridescent materials in Rose Clay (#9C6F6E), Rose 400 (#D4A09A), and Rose 300 (#E8C4BF). Thin, luminous lines of sacred gold (#C4A86B) subtly connect the geometric points, emphasizing the integrated field. The entire structure is perfectly symmetrical, centered, and floats on a pure white background (#FFFFFF). The lighting is soft, diffuse, and even, highlighting the dimensionality and layers without casting any shadows whatsoever. Absolutely NO external light sources, NO cast shadows, NO drop shadows, NO floor shadows, NO ambient occlusion, NO gradients, NO vignetting. The background must be uniformly #FFFFFF from edge to edge. The detail is rich but never cluttered, maintaining a clean, editorial quality."
+  },
+  {
+    "id": 4,
+    "page": "programs",
+    "description": "An elegant, unfolding spiral pathway made of rose petals, symbolizing a guided journey and progression.",
+    "prompt": "An elegant and graceful spiral pathway, composed of numerous individual, perfectly formed rose petals, rendered as a polished 3D illustration. The petals gently ascend and curve inwards, creating a sense of progression and a guided journey towards a soft, luminous center. The petals transition in color, starting with very pale Rose 200 (#F5E1DD) at the outer, wider sections of the spiral, gradually deepening to Rose 300 (#E8C4BF), Rose 400 (#D4A09A), and culminating in Rose Clay (#9C6F6E) towards the luminous core. The spiral floats weightlessly, perfectly centered on a pure white background (#FFFFFF). The illumination emanates softly from within the petals themselves, creating a gentle glow, ensuring absolutely NO external light sources, NO cast shadows, NO drop shadows, NO floor shadows, NO ambient occlusion, NO gradients, NO vignetting. The background must be uniformly #FFFFFF from edge to edge. The petals have a smooth, velvety texture, appearing tactile yet ethereal."
+  },
+  {
+    "id": 5,
+    "page": "guardians",
+    "description": "Abstract, protective forms gently cradling a radiant rose, symbolizing nurturing and stewardship.",
+    "prompt": "A single, radiant, fully bloomed rose, showcasing the brand's primary rose tones (Rose Clay #9C6F6E, Rose 400 #D4A09A), nestled gently and protected within two elegantly abstract, curved forms. These 'cupping forms' are rendered in a smooth, refined, matte deep rose-brown (#3B2828), embracing the rose with a profound sense of care, guardianship, and protection. The rose is the focal point, centrally positioned and intimately held. The entire composition floats serenely on a pure white background (#FFFFFF). The rose itself emits a soft, warm, internal luminescence, ensuring absolutely NO external light sources, NO cast shadows, NO drop shadows, NO floor shadows, NO ambient occlusion, NO gradients, NO vignetting. The background must be uniformly #FFFFFF from edge to edge. The cupping forms are evenly lit by this internal glow, appearing dimensional without any shadows, maintaining a clean, polished, editorial aesthetic."
+  },
+  {
+    "id": 6,
+    "page": "community",
+    "description": "Multiple interconnected, glowing rose-like forms, symbolizing a living field and shared coherence.",
+    "prompt": "A serene and dynamic composition of multiple abstract, organic forms, rendered as an elegant 3D illustration. Each form subtly resembles an unfurling rosebud or a delicate, swirling petal. They float harmoniously, spreading outwards from a subtle central point. These forms are interconnected by delicate, shimmering threads or subtle ripples of luminous golden light (#C4A86B), creating an ethereal, energetic network that suggests a unified 'living field.' The forms themselves range in color from very pale Rose 200 (#F5E1DD) to soft Rose 300 (#E8C4BF) and Rose 400 (#D4A09A). The entire arrangement floats weightlessly on a pure white background (#FFFFFF). Soft, internal luminescence emanates from the forms and the connecting threads, ensuring absolutely NO external light sources, NO cast shadows, NO drop shadows, NO floor shadows, NO ambient occlusion, NO gradients, NO vignetting. The background must be uniformly #FFFFFF from edge to edge. The materials are smooth, ethereal, and slightly translucent."
+  },
+  {
+    "id": 7,
+    "page": "contact",
+    "description": "Two elegant, abstract forms gently reaching towards each other, symbolizing connection and welcome.",
+    "prompt": "Two elegantly curved, smooth, abstract forms, rendered as a minimalist 3D illustration. Each form resembles a stylized, graceful rose petal or a gentle, inviting gesture. They are positioned in the center of the frame, gently arcing and reaching towards each other, creating a sense of approach and connection. One form is in Rose Clay (#9C6F6E), and the other in Rose 400 (#D4A09A). A soft, warm, luminous light emanates from the delicate space between them, symbolizing welcome, openness, and invitation. The entire composition floats perfectly on a pure white background (#FFFFFF). The lighting is entirely internal and diffused, ensuring absolutely NO external light sources, NO cast shadows, NO drop shadows, NO floor shadows, NO ambient occlusion, NO gradients, NO vignetting. The background must be uniformly #FFFFFF from edge to edge. The forms have a polished, smooth, and refined sculptural quality, appearing dimensional yet weightless."
+  }
+]

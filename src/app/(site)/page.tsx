@@ -4,6 +4,7 @@ import { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 import HeroSphere from '@/components/three/HeroSphere';
 import { cn } from '@/lib/utils';
@@ -319,6 +320,21 @@ function WhoItsFor() {
   return (
     <section ref={ref} className="relative py-24 lg:py-32 overflow-hidden">
       <div className="container-premium max-w-3xl mx-auto text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-10 flex justify-center pointer-events-none"
+        >
+          <Image
+            src="/page-images/page-home.png"
+            alt=""
+            width={384}
+            height={384}
+            className="max-w-xs md:max-w-sm w-full h-auto"
+          />
+        </motion.div>
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -401,12 +417,15 @@ function InvitationCTA() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="mx-auto mb-8 w-12 h-12 rounded-full border border-rose-500/30 flex items-center justify-center"
+            className="mx-auto mb-8 w-16 h-16 rounded-full border border-rose-500/30 flex items-center justify-center overflow-hidden bg-[#1A1716]/80"
           >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5 text-rose-400">
-              <circle cx="12" cy="12" r="10" />
-              <path d="M12 7c-1.5 2-3 3.5-3 5.5a3 3 0 0 0 6 0c0-2-1.5-3.5-3-5.5z" />
-            </svg>
+            <Image
+              src="/rose.png"
+              alt="Roses OS"
+              width={64}
+              height={64}
+              className="w-10 h-10 object-contain"
+            />
           </motion.div>
 
           <motion.h2

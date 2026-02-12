@@ -25,6 +25,7 @@ export default function GuardiansPage() {
         eyebrow="Guardians"
         title="The Keepers of the Rose Field"
         description="The Guardians are devoted practitioners and stewards of the Rose technology. Each one brings a unique gift to the field — holding space, guiding practice, and nurturing the community with presence and care."
+        image="/page-images/page-guardians.png"
       />
 
       {/* 2. Guardian Cards Grid */}

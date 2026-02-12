@@ -22,6 +22,7 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="Reach Out"
         description="We welcome your questions and inquiries. Whether you are exploring the programs, seeking clarity on the path, or simply feel called to connect — we are here."
+        image="/page-images/page-contact.png"
       />
 
       {/* 2. Two-Column Layout */}

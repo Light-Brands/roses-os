@@ -30,6 +30,7 @@ export default function CommunityPage() {
         eyebrow="Community"
         title="The Living Field"
         description="A network of practitioners devoted to coherent living — supporting one another in the remembrance of what is real, what is true, and what is possible."
+        image="/page-images/page-community.png"
       />
 
       {/* 2. Community Vision */}

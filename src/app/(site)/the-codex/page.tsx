@@ -193,6 +193,7 @@ export default function TheCodexPage() {
         eyebrow="The Codex"
         title="A Living Document of Coherent Being"
         description="The Codex is the philosophical container of ROSES OS — a map of the territory, an articulation of the architecture, and an invitation to remember what has always been true. It is not a rigid doctrine but a living document that deepens as you do."
+        image="/page-images/page-the-codex.png"
       />
 
       {/* 2. What is Coherence? */}

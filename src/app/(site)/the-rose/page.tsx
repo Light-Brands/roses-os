@@ -77,6 +77,7 @@ export default function TheRosePage() {
         eyebrow="The Rose"
         title="The Intelligence of Silence"
         description="The Rose is a technology of remembrance — a living practice that reconnects you with the intelligence already present within your body, your breath, and your being. It is not something to learn. It is something to remember."
+        image="/page-images/page-the-rose.png"
       />
 
       {/* 2. The Collapse of Old Paradigms */}
