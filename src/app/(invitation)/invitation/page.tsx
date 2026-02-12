@@ -134,7 +134,7 @@ function WhatIsRosesOS() {
         >
           ROSES OS is a living architecture of technologies, practices, and
           community for coherent living. It is not a course or a cure. It is a
-          way home — a seamless path back to the intelligence that already lives
+          way home. A seamless path back to the intelligence that already lives
           within you, waiting to be remembered.
         </motion.p>
       </div>

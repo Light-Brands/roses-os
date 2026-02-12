@@ -38,7 +38,7 @@ export default function Level2Page() {
           <div className="space-y-12">
             <div className="space-y-3">
               <h1 className="font-serif text-3xl md:text-4xl text-[var(--color-foreground)]">
-                Level 2 — {level.title}
+                Level 2: {level.title}
               </h1>
               <p className="text-[var(--color-foreground-muted)] max-w-2xl">
                 {level.description}

@@ -21,7 +21,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Reach Out"
-        description="We welcome your questions and inquiries. Whether you are exploring the programs, seeking clarity on the path, or simply feel called to connect — we are here."
+        description="We welcome your questions and inquiries. Whether you are exploring the programs, seeking clarity on the path, or simply feel called to connect, we are here."
         image="/page-images/page-contact.png"
       />
 

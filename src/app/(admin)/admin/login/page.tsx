@@ -86,7 +86,7 @@ export default function AdminLoginPage() {
               <span className="text-white/80">admin dashboard</span>
             </h1>
             <p className="text-white/70 text-lg leading-relaxed">
-              Manage your content, track analytics, and grow your audience — all in one place.
+              Manage your content, track analytics, and grow your audience, all in one place.
             </p>
           </div>
 

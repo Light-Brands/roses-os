@@ -1,5 +1,5 @@
 // =============================================================================
-// MOCK DATA — ROSES OS
+// MOCK DATA: ROSES OS
 // =============================================================================
 
 import type {
@@ -68,7 +68,7 @@ export const programs: Program[] = [
     duration: '8 weeks',
     dates: 'Rolling enrollment',
     format: 'Live online + self-paced',
-    description: 'The foundational program introducing the Rose technology — a systematic practice for remembrance, coherence, and inner freedom. Participants learn the core meditation, breath protocols, and somatic awareness techniques.',
+    description: 'The foundational program introducing the Rose technology. A systematic practice for remembrance, coherence, and inner freedom. Participants learn the core meditation, breath protocols, and somatic awareness techniques.',
     includes: [
       '8 live group sessions',
       'Daily practice guidance',
@@ -106,10 +106,10 @@ export const scheduleStages: ScheduleStage[] = [
     title: 'Stage 1: Foundation',
     dateRange: 'Weeks 1–4',
     sessions: [
-      { day: 'Week 1', topic: 'The Invitation — Opening to Remembrance', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
-      { day: 'Week 2', topic: 'The Breath — Entering the Field', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
-      { day: 'Week 3', topic: 'The Body — Somatic Awareness', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
-      { day: 'Week 4', topic: 'The Heart — Coherence Practice', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
+      { day: 'Week 1', topic: 'The Invitation:Opening to Remembrance', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
+      { day: 'Week 2', topic: 'The Breath:Entering the Field', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
+      { day: 'Week 3', topic: 'The Body:Somatic Awareness', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
+      { day: 'Week 4', topic: 'The Heart:Coherence Practice', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
     ],
   },
   {
@@ -117,10 +117,10 @@ export const scheduleStages: ScheduleStage[] = [
     title: 'Stage 2: Integration',
     dateRange: 'Weeks 5–8',
     sessions: [
-      { day: 'Week 5', topic: 'The Rose Meditation — Core Practice', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
-      { day: 'Week 6', topic: 'Living Coherence — Daily Application', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
-      { day: 'Week 7', topic: 'Community Practice — Shared Field', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
-      { day: 'Week 8', topic: 'The Way Forward — Continuation & Deepening', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
+      { day: 'Week 5', topic: 'The Rose Meditation:Core Practice', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
+      { day: 'Week 6', topic: 'Living Coherence:Daily Application', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
+      { day: 'Week 7', topic: 'Community Practice:Shared Field', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
+      { day: 'Week 8', topic: 'The Way Forward:Continuation & Deepening', time: { pt: '9:00 AM', et: '12:00 PM', gmt: '5:00 PM', ist: '10:30 PM' } },
     ],
   },
 ];
@@ -155,18 +155,18 @@ export const contributionTiers: ContributionTier[] = [
 // =============================================================================
 
 export const coherenceDomains: CoherenceDomain[] = [
-  { id: '1', number: 1, title: 'Physical Coherence', description: 'Alignment of the body — posture, breath, movement, and somatic awareness as the foundation of all practice.' },
+  { id: '1', number: 1, title: 'Physical Coherence', description: 'Alignment of the body:posture, breath, movement, and somatic awareness as the foundation of all practice.' },
   { id: '2', number: 2, title: 'Emotional Coherence', description: 'The capacity to feel fully without being governed by reactivity. Emotional intelligence as a doorway to freedom.' },
   { id: '3', number: 3, title: 'Mental Coherence', description: 'Clarity of thought without compulsive thinking. The mind as an instrument rather than a master.' },
   { id: '4', number: 4, title: 'Relational Coherence', description: 'Authentic connection with others rooted in presence, boundaries, and compassion rather than performance.' },
   { id: '5', number: 5, title: 'Creative Coherence', description: 'Access to the creative impulse as a natural expression of aligned being rather than forced production.' },
   { id: '6', number: 6, title: 'Vocational Coherence', description: 'Work as an expression of purpose. The alignment of livelihood with authentic calling.' },
-  { id: '7', number: 7, title: 'Financial Coherence', description: 'A healthy relationship with resources — receiving, stewarding, and circulating with ease and integrity.' },
+  { id: '7', number: 7, title: 'Financial Coherence', description: 'A healthy relationship with resources:receiving, stewarding, and circulating with ease and integrity.' },
   { id: '8', number: 8, title: 'Sexual Coherence', description: 'The integration of life force energy. Embodied presence in intimacy and creative power.' },
-  { id: '9', number: 9, title: 'Spiritual Coherence', description: 'Direct connection with the sacred — not as belief but as lived experience and continuous remembrance.' },
+  { id: '9', number: 9, title: 'Spiritual Coherence', description: 'Direct connection with the sacred:not as belief but as lived experience and continuous remembrance.' },
   { id: '10', number: 10, title: 'Environmental Coherence', description: 'Harmony between the individual and their spaces, ecosystems, and the living world.' },
   { id: '11', number: 11, title: 'Ancestral Coherence', description: 'Healing the lineage. Transforming inherited patterns into gifts and reclaiming the wisdom of those who came before.' },
-  { id: '12', number: 12, title: 'Temporal Coherence', description: 'Right relationship with time — neither rushing nor stagnating. The art of sacred timing.' },
+  { id: '12', number: 12, title: 'Temporal Coherence', description: 'Right relationship with time:neither rushing nor stagnating. The art of sacred timing.' },
   { id: '13', number: 13, title: 'Universal Coherence', description: 'The recognition of belonging to something vast. Alignment with the intelligence that moves through all things.' },
 ];
 
@@ -180,7 +180,7 @@ export const pathLevels: PathLevel[] = [
     level: 1,
     title: 'Rose One',
     subtitle: 'The Remembering',
-    description: 'The foundational journey. Rose One initiates the process of remembrance — reconnecting with the body, breath, and the intelligence of silence. Participants establish a daily practice and begin to experience coherence as a felt sense.',
+    description: 'The foundational journey. Rose One initiates the process of remembrance:reconnecting with the body, breath, and the intelligence of silence. Participants establish a daily practice and begin to experience coherence as a felt sense.',
     focus: ['Core meditation practice', 'Breath awareness', 'Somatic presence', 'Daily coherence rhythm'],
   },
   {
@@ -236,8 +236,8 @@ export const techniques: Technique[] = [
   { id: '2', title: 'Body Scan Awareness', description: 'Systematic attention through the body, cultivating somatic presence and releasing held tension.', level: 1, category: 'Somatic' },
   { id: '3', title: 'Heart Coherence Meditation', description: 'Focused attention on the heart center, cultivating the felt sense of coherence and compassion.', level: 1, category: 'Meditation' },
   { id: '4', title: 'Witnessing Practice', description: 'Developing the capacity to observe thoughts and sensations without identification or reaction.', level: 1, category: 'Awareness' },
-  { id: '5', title: 'Rose Meditation', description: 'The core practice of the lineage — a multi-layered meditation integrating breath, body, and subtle awareness.', level: 1, category: 'Core Practice' },
-  { id: '6', title: 'Field Sensing', description: 'Developing sensitivity to the energetic field — both personal and shared — as a perceptual capacity.', level: 2, category: 'Energetic' },
+  { id: '5', title: 'Rose Meditation', description: 'The core practice of the lineage:a multi-layered meditation integrating breath, body, and subtle awareness.', level: 1, category: 'Core Practice' },
+  { id: '6', title: 'Field Sensing', description: 'Developing sensitivity to the energetic field:both personal and shared:as a perceptual capacity.', level: 2, category: 'Energetic' },
   { id: '7', title: 'Chakra Awareness Sequence', description: 'A guided practice moving attention through the seven energy centers, noting qualities and blockages.', level: 2, category: 'Energetic' },
   { id: '8', title: 'Emotional Alchemy', description: 'The practice of meeting difficult emotions with presence, allowing transformation through awareness rather than suppression.', level: 2, category: 'Emotional' },
   { id: '9', title: 'Relational Presence', description: 'Partnered practices for maintaining authentic presence in connection with others.', level: 2, category: 'Relational' },
@@ -276,17 +276,17 @@ export const agreements: Agreement[] = [
 // =============================================================================
 
 export const elevenCapacities: Capacity[] = [
-  { id: '1', number: 1, title: 'Stillness', description: 'The capacity to be at rest — internally and externally — as a foundation for all action.' },
+  { id: '1', number: 1, title: 'Stillness', description: 'The capacity to be at rest:internally and externally:as a foundation for all action.' },
   { id: '2', number: 2, title: 'Presence', description: 'The ability to be fully here, now, without the need to be elsewhere.' },
   { id: '3', number: 3, title: 'Breath', description: 'Conscious relationship with the breath as the bridge between body and awareness.' },
-  { id: '4', number: 4, title: 'Feeling', description: 'The willingness to feel completely — pleasure, pain, and everything in between.' },
-  { id: '5', number: 5, title: 'Listening', description: 'Deep receptivity — to self, others, and the intelligence of the larger field.' },
+  { id: '4', number: 4, title: 'Feeling', description: 'The willingness to feel completely:pleasure, pain, and everything in between.' },
+  { id: '5', number: 5, title: 'Listening', description: 'Deep receptivity:to self, others, and the intelligence of the larger field.' },
   { id: '6', number: 6, title: 'Discernment', description: 'Clear seeing without judgment. The capacity to distinguish truth from noise.' },
   { id: '7', number: 7, title: 'Courage', description: 'The heart-strength to act on what is true, even when it is uncomfortable.' },
   { id: '8', number: 8, title: 'Surrender', description: 'The art of releasing control without collapsing. Trusting the larger intelligence.' },
   { id: '9', number: 9, title: 'Integration', description: 'The ongoing work of bringing insights into lived experience and daily practice.' },
   { id: '10', number: 10, title: 'Service', description: 'The natural movement from inner coherence to outer contribution.' },
-  { id: '11', number: 11, title: 'Remembrance', description: 'The ultimate capacity — not learning something new but remembering what has always been true.' },
+  { id: '11', number: 11, title: 'Remembrance', description: 'The ultimate capacity:not learning something new but remembering what has always been true.' },
 ];
 
 // =============================================================================
@@ -294,10 +294,10 @@ export const elevenCapacities: Capacity[] = [
 // =============================================================================
 
 export const architectureLayers: ArchitectureLayer[] = [
-  { id: '1', name: 'Hardware', description: 'The physical body — bones, muscles, organs, nervous system. The vessel through which all experience flows.' },
-  { id: '2', name: 'Software', description: 'The mind — beliefs, patterns, conditioning, and the stories we carry. The programs that run our experience.' },
+  { id: '1', name: 'Hardware', description: 'The physical body:bones, muscles, organs, nervous system. The vessel through which all experience flows.' },
+  { id: '2', name: 'Software', description: 'The mind:beliefs, patterns, conditioning, and the stories we carry. The programs that run our experience.' },
   { id: '3', name: 'Heartware', description: 'The emotional and relational intelligence. The felt sense of connection, compassion, and coherence.' },
-  { id: '4', name: 'Soulware', description: 'The deepest layer — essence, purpose, and the remembrance of who we truly are beneath all conditioning.' },
+  { id: '4', name: 'Soulware', description: 'The deepest layer:essence, purpose, and the remembrance of who we truly are beneath all conditioning.' },
 ];
 
 // =============================================================================
@@ -305,7 +305,7 @@ export const architectureLayers: ArchitectureLayer[] = [
 // =============================================================================
 
 export const brandQuotes: BrandQuote[] = [
-  { id: '1', text: 'The next revolution is not technological — it is a revolution of remembrance.' },
+  { id: '1', text: 'The next revolution is not technological. It is a revolution of remembrance.' },
   { id: '2', text: 'A seamless path to inner freedom.' },
   { id: '3', text: 'You are not broken. You are not lost. You are remembering.' },
   { id: '4', text: 'Coherence is not something you achieve. It is something you return to.' },
@@ -318,7 +318,7 @@ export const brandQuotes: BrandQuote[] = [
 // =============================================================================
 
 export const messagingPillars = [
-  { id: '1', title: 'The Rose', description: 'A sacred technology of remembrance — a systematic practice for reconnecting with the intelligence that lives within.' },
-  { id: '2', title: 'The Aura', description: 'The energetic body and its role in coherence — subtle awareness as a practical capacity for daily living.' },
-  { id: '3', title: 'The Human Journey', description: 'The recognition that every life is a journey of remembrance — and that this journey is supported, not solitary.' },
+  { id: '1', title: 'The Rose', description: 'A sacred technology of remembrance:a systematic practice for reconnecting with the intelligence that lives within.' },
+  { id: '2', title: 'The Aura', description: 'The energetic body and its role in coherence:subtle awareness as a practical capacity for daily living.' },
+  { id: '3', title: 'The Human Journey', description: 'The recognition that every life is a journey of remembrance:and that this journey is supported, not solitary.' },
 ];

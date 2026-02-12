@@ -29,7 +29,7 @@ export default function CommunityPage() {
       <PageHero
         eyebrow="Community"
         title="The Living Field"
-        description="A network of practitioners devoted to coherent living — supporting one another in the remembrance of what is real, what is true, and what is possible."
+        description="A network of practitioners devoted to coherent living. Supporting one another in the remembrance of what is real, what is true, and what is possible."
         image="/page-images/page-community.png"
       />
 
@@ -60,7 +60,7 @@ export default function CommunityPage() {
           >
             <p>
               The ROSES OS community is not a membership club or a social network.
-              It is a living field — a gathering of individuals who have chosen to
+              It is a living field. A gathering of individuals who have chosen to
               walk the path of remembrance together. Here, you are not a follower.
               You are a fellow practitioner.
             </p>
@@ -68,7 +68,7 @@ export default function CommunityPage() {
               We hold space for one another through daily practice, shared inquiry,
               and the quiet commitment to showing up as we are. The community
               exists because the journey home is supported, not solitary. We believe
-              that coherence is contagious — that when one person remembers, it
+              that coherence is contagious. That when one person remembers, it
               ripples through the field and touches everyone around them.
             </p>
           </motion.div>
@@ -170,7 +170,7 @@ export default function CommunityPage() {
               The doorway into the community is through the programs. When you
               enroll in The Rose or any of our offerings, you become part of a
               living field of practitioners. From there, the community grows
-              organically — through shared practice, ongoing gatherings, and the
+              organically, through shared practice, ongoing gatherings, and the
               quiet bonds that form when people walk this path together.
             </p>
             <p>

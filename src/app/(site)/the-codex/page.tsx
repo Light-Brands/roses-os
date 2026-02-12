@@ -50,8 +50,8 @@ function WhatIsCoherence() {
           transition={{ duration: 0.6, delay: 0.1, ease }}
           className="text-lg text-[var(--color-foreground-muted)] leading-relaxed"
         >
-          Coherence is the state in which all dimensions of being — body, heart,
-          mind, and soul — move as one integrated field. It is not a concept to
+          Coherence is the state in which all dimensions of being (body, heart,
+          mind, and soul) move as one integrated field. It is not a concept to
           understand but a reality to embody, a felt sense of alignment that
           transforms every layer of life.
         </motion.p>
@@ -88,7 +88,7 @@ function SacredPurpose() {
           ROSES OS exists to remember what was never lost. It is a living
           document, a field of practice, and a sacred container designed to
           support human beings in returning to the coherence that is their
-          birthright. This is not about acquiring something new — it is about
+          birthright. This is not about acquiring something new. It is about
           uncovering what has always been present, beneath the noise, the
           conditioning, and the forgetting.
         </motion.p>
@@ -192,7 +192,7 @@ export default function TheCodexPage() {
       <PageHero
         eyebrow="The Codex"
         title="A Living Document of Coherent Being"
-        description="The Codex is the philosophical container of ROSES OS — a map of the territory, an articulation of the architecture, and an invitation to remember what has always been true. It is not a rigid doctrine but a living document that deepens as you do."
+        description="The Codex is the philosophical container of ROSES OS: a map of the territory, an articulation of the architecture, and an invitation to remember what has always been true. It is not a rigid doctrine but a living document that deepens as you do."
         image="/page-images/page-the-codex.png"
       />
 

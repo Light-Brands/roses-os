@@ -76,7 +76,7 @@ export default function TheRosePage() {
       <PageHero
         eyebrow="The Rose"
         title="The Intelligence of Silence"
-        description="The Rose is a technology of remembrance — a living practice that reconnects you with the intelligence already present within your body, your breath, and your being. It is not something to learn. It is something to remember."
+        description="The Rose is a technology of remembrance. A living practice that reconnects you with the intelligence already present within your body, your breath, and your being. It is not something to learn. It is something to remember."
         image="/page-images/page-the-rose.png"
       />
 
@@ -85,7 +85,7 @@ export default function TheRosePage() {
         <p>
           For decades, we have been told that more information would save us. More
           knowledge, more productivity, more optimization. We built systems to
-          manage every dimension of life — and still, something essential remained
+          manage every dimension of life, and still, something essential remained
           untouched.
         </p>
         <p>
@@ -104,14 +104,14 @@ export default function TheRosePage() {
       >
         <p>
           We live in a time of unprecedented acceleration. The systems we
-          inherited — economic, educational, relational — are rapidly failing to
+          inherited (economic, educational, relational) are rapidly failing to
           meet the depth of what it means to be human. Burnout is epidemic.
           Disconnection is normalized. The nervous system is overwhelmed.
         </p>
         <p>
           Technology promised connection but delivered distraction. Wellness
           culture promised healing but delivered consumption. The acceleration
-          continues, and with it, a growing hunger for something real — something
+          continues, and with it, a growing hunger for something real. Something
           that cannot be optimized or automated.
         </p>
       </RevealSection>
@@ -122,7 +122,7 @@ export default function TheRosePage() {
         title="The Next Revolution"
       >
         <p>
-          The next revolution is not technological — it is a revolution of inner
+          The next revolution is not technological. It is a revolution of inner
           coherence. A return to the body. A remembering of the intelligence that
           lives beneath thought, beneath conditioning, beneath the stories we
           carry about who we are.
@@ -146,7 +146,7 @@ export default function TheRosePage() {
           and the cultivation of inner coherence. Developed over decades by
           Angelina Ataide and drawn from a deep lineage of consciousness research,
           it offers a clear, grounded pathway for anyone ready to remember who
-          they truly are. The Rose unfolds across three levels — each one a
+          they truly are. The Rose unfolds across three levels. Each one a
           deepening of the relationship with yourself, your body, and the field of
           intelligence that surrounds you.
         </p>
