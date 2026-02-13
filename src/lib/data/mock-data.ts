@@ -290,7 +290,7 @@ export const lineageEntries: LineageEntry[] = [
   { id: '1', year: '1960s', name: 'Lewis S. Bostwick', description: 'Channeled the material of Aura Reading in California. Founder of the Berkeley Psychic Institute and the Church of the Divine Man.' },
   { id: '2', year: '1980s', name: 'Anastasia Plunk', description: 'Received and carried the Aura Reading and Rose meditation teachings from the Berkeley Psychic Institute, ensuring the continuity and integrity of the lineage.' },
   { id: '3', year: '2000s', name: 'Angelina Ataide', description: 'Founder of CELARIS (Centro de Estudos de Leitura de Aura, Reiki, Intuicao e Sonhos), formerly known as Escola da Aura & Sueños. For more than thirty years, she has upheld and embodied the Rose as a living transmission, initiating more than six thousand individuals into the living field of the Rose.' },
-  { id: '4', year: '2023', name: 'ROSES OS', description: 'The platform crystallizes decades of lineage wisdom into an accessible ecosystem for consciousness, remembrance, and coherent living.' },
+  { id: '4', year: '2026', name: 'ROSES OS', description: 'The platform crystallizes decades of lineage wisdom into an accessible ecosystem for consciousness, remembrance, and coherent living.' },
 ];
 
 // =============================================================================
