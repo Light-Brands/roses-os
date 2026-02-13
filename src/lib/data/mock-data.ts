@@ -32,6 +32,7 @@ export const guardians: Guardian[] = [
     role: 'Guardian of Lineage',
     bio: 'A pioneer in Aura Reading education in Brazil and Portugal, Angelina has dedicated over three decades to spiritual development and training aura readers. Her transformative methodology has already trained thousands of students, therapists, and teachers — combining spiritual wisdom with practical techniques as the primary steward of the ROSES OS lineage.',
     image: '/images/angel.JPG',
+    imageTransform: 'translateY(6%)',
   },
   {
     id: '2',
@@ -55,6 +56,7 @@ export const guardians: Guardian[] = [
     role: 'Guardian of Methodology',
     bio: 'Peggy creates bridges between cultures, communities, and inner worlds. With over two decades walking the Aura Reading path, she integrates emotional, ancestral, and spiritual layers with clarity and compassion — sustaining authentic connection between teachers and students.',
     image: '/images/peggy.JPG',
+    imageTransform: 'translateY(12%)',
   },
 ];
 
