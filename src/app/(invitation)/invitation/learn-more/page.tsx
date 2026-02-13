@@ -219,7 +219,7 @@ function ReadyCTA() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section ref={ref} className="section-padding bg-warm-950 text-white">
+    <section ref={ref} className="section-padding bg-rose-950 text-white">
       <div className="container-premium">
         <div className="max-w-3xl mx-auto text-center">
           <motion.h2
@@ -240,7 +240,7 @@ function ReadyCTA() {
               href="/enroll"
               className={cn(
                 'inline-flex items-center px-8 py-3.5 rounded-full',
-                'bg-warm-50 text-warm-950',
+                'bg-warm-50 text-rose-950',
                 'text-sm font-medium',
                 'hover:bg-warm-100',
                 'transition-colors duration-200'
