@@ -86,14 +86,14 @@ export default function LineageTimeline({ entries, className }: LineageTimelineP
                 index === entries.length - 1 && 'lg:pr-0'
               )}
             >
-              {/* Node dot — decorative, behind text */}
+              {/* Node dot — decorative, sits on the gold connecting line */}
               <div
                 className={cn(
                   'absolute z-0',
                   // Mobile: on the vertical line
                   'left-2.5 top-1 lg:left-auto lg:top-auto',
-                  // Desktop: on the horizontal line
-                  'lg:left-4 lg:-top-[5px]',
+                  // Desktop: centered on the horizontal line at top-6 (24px)
+                  'lg:left-4 lg:top-[18px]',
                   'w-3 h-3 rounded-full',
                   'bg-[#9E956B]',
                   'border-2 border-[var(--color-background)]',
