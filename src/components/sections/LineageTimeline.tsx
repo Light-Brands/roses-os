@@ -50,20 +50,20 @@ export default function LineageTimeline({ entries, className }: LineageTimelineP
           animate={isInView ? 'visible' : 'hidden'}
           className={cn(
             'relative',
-            // Horizontal on desktop
-            'flex flex-col lg:flex-row',
-            'gap-8 lg:gap-0'
+            // Horizontal on desktop (xl+), vertical on mobile/tablet
+            'flex flex-col xl:flex-row',
+            'gap-8 xl:gap-0'
           )}
         >
           {/* Gold connecting line */}
-          {/* Vertical line on mobile */}
+          {/* Vertical line on mobile/tablet */}
           <div
             className={cn(
               'absolute',
-              // Mobile: vertical line on the left
-              'left-4 top-0 bottom-0 w-px lg:left-0 lg:top-auto lg:bottom-auto',
+              // Mobile/tablet: vertical line on the left
+              'left-4 top-0 bottom-0 w-px xl:left-0 xl:top-auto xl:bottom-auto',
               // Desktop: horizontal line centered vertically
-              'lg:w-full lg:h-px lg:top-6',
+              'xl:w-full xl:h-px xl:top-6',
               'bg-[#9E956B]'
             )}
           />
@@ -74,26 +74,26 @@ export default function LineageTimeline({ entries, className }: LineageTimelineP
               variants={itemVariants}
               className={cn(
                 'relative',
-                // Mobile: left-padded for vertical line
-                'pl-10 lg:pl-0',
+                // Mobile/tablet: left-padded for vertical line
+                'pl-12 xl:pl-0',
                 // Desktop: equal-width flex items
-                'lg:flex-1 lg:px-4',
+                'xl:flex-1 xl:px-4',
                 // Desktop: top padding for horizontal line
-                'lg:pt-14',
+                'xl:pt-14',
                 // First item needs no left padding on desktop
-                index === 0 && 'lg:pl-0',
+                index === 0 && 'xl:pl-0',
                 // Last item needs no right padding on desktop
-                index === entries.length - 1 && 'lg:pr-0'
+                index === entries.length - 1 && 'xl:pr-0'
               )}
             >
               {/* Node dot — decorative, sits on the gold connecting line */}
               <div
                 className={cn(
                   'absolute z-0',
-                  // Mobile: on the vertical line
-                  'left-2.5 top-1 lg:left-auto lg:top-auto',
+                  // Mobile/tablet: on the vertical line
+                  'left-2.5 top-1 xl:left-auto xl:top-auto',
                   // Desktop: centered on the horizontal line at top-6 (24px)
-                  'lg:left-4 lg:top-[18px]',
+                  'xl:left-4 xl:top-[18px]',
                   'w-3 h-3 rounded-full',
                   'bg-[#9E956B]',
                   'border-2 border-[var(--color-background)]',
@@ -106,7 +106,7 @@ export default function LineageTimeline({ entries, className }: LineageTimelineP
                 "relative z-10",
                 "text-xs font-medium uppercase tracking-[0.15em] text-[#9E956B] mb-1.5",
                 // Desktop: position above the gold line
-                "lg:absolute lg:top-0 lg:left-4",
+                "xl:absolute xl:top-0 xl:left-4",
               )}>
                 {entry.year}
               </p>
