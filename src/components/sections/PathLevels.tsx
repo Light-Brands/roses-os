@@ -39,8 +39,8 @@ const stepVariants = {
   },
 };
 
-// Aura 2–3 are levels 5–6; their descriptions are hidden behind a toggle
-const COLLAPSED_LEVELS = new Set([5, 6]);
+// Aura 2–5 are levels 5–8; their descriptions are hidden behind a toggle
+const COLLAPSED_LEVELS = new Set([5, 6, 7, 8]);
 
 export default function PathLevels({ levels, variant = 'full', className }: PathLevelsProps) {
   const ref = useRef<HTMLElement>(null);
