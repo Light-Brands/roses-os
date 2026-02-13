@@ -4,12 +4,16 @@ import { createContext, useContext, useEffect, useState, useCallback } from 'rea
 
 type Theme = 'light' | 'dark' | 'system';
 type ResolvedTheme = 'light' | 'dark';
+type StyleVariant = 'default' | 'rose-clay';
 
 interface ThemeContextValue {
   theme: Theme;
   resolvedTheme: ResolvedTheme;
   setTheme: (theme: Theme) => void;
   toggleTheme: () => void;
+  styleVariant: StyleVariant;
+  setStyleVariant: (variant: StyleVariant) => void;
+  toggleStyleVariant: () => void;
 }
 
 const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
@@ -29,6 +33,13 @@ function getStoredTheme(): Theme {
   return 'light';
 }
 
+function getStoredStyle(): StyleVariant {
+  if (typeof window === 'undefined') return 'default';
+  const stored = localStorage.getItem('style-variant');
+  if (stored === 'rose-clay') return 'rose-clay';
+  return 'default';
+}
+
 function applyTheme(theme: ResolvedTheme) {
   const root = document.documentElement;
   if (theme === 'dark') {
@@ -38,19 +49,32 @@ function applyTheme(theme: ResolvedTheme) {
   }
 }
 
+function applyStyleVariant(variant: StyleVariant) {
+  const root = document.documentElement;
+  if (variant === 'default') {
+    root.removeAttribute('data-style');
+  } else {
+    root.setAttribute('data-style', variant);
+  }
+}
+
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setThemeState] = useState<Theme>('system');
   const [resolvedTheme, setResolvedTheme] = useState<ResolvedTheme>('light');
+  const [styleVariant, setStyleVariantState] = useState<StyleVariant>('default');
   const [mounted, setMounted] = useState(false);
 
   // Initialize theme on mount
   useEffect(() => {
     const storedTheme = getStoredTheme();
     const resolved = storedTheme === 'system' ? getSystemTheme() : storedTheme;
+    const storedStyle = getStoredStyle();
 
     setThemeState(storedTheme);
     setResolvedTheme(resolved);
+    setStyleVariantState(storedStyle);
     applyTheme(resolved);
+    applyStyleVariant(storedStyle);
     setMounted(true);
   }, []);
 
@@ -86,12 +110,26 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     setTheme(newResolved);
   }, [resolvedTheme, setTheme]);
 
+  const setStyleVariant = useCallback((variant: StyleVariant) => {
+    setStyleVariantState(variant);
+    applyStyleVariant(variant);
+    localStorage.setItem('style-variant', variant);
+  }, []);
+
+  const toggleStyleVariant = useCallback(() => {
+    const next = styleVariant === 'default' ? 'rose-clay' : 'default';
+    setStyleVariant(next);
+  }, [styleVariant, setStyleVariant]);
+
   // Always provide context value, even before mount, to prevent errors
   const contextValue: ThemeContextValue = {
     theme,
     resolvedTheme,
     setTheme,
     toggleTheme,
+    styleVariant,
+    setStyleVariant,
+    toggleStyleVariant,
   };
 
   return (
@@ -110,6 +148,9 @@ export function useTheme(): ThemeContextValue {
       resolvedTheme: 'light',
       setTheme: () => {},
       toggleTheme: () => {},
+      styleVariant: 'default',
+      setStyleVariant: () => {},
+      toggleStyleVariant: () => {},
     };
   }
   return context;

@@ -76,7 +76,7 @@ export function Preloader() {
   return (
     <div
       ref={panelRef}
-      className="fixed inset-0 z-[10000] bg-[#1A1716]"
+      className="fixed inset-0 z-[10000] bg-[var(--color-section-dark)]"
       aria-hidden="true"
     >
       <div

@@ -21,7 +21,7 @@ const ease = [0.16, 1, 0.3, 1] as const;
 
 function InvitationHero() {
   return (
-    <section className="relative min-h-[100svh] min-h-screen flex items-center justify-center bg-[#1E1916] text-white overflow-hidden">
+    <section className="relative min-h-[100svh] min-h-screen flex items-center justify-center bg-[var(--color-section-dark)] text-white overflow-hidden">
       {/* Subtle texture */}
       <div
         className="absolute inset-0 opacity-[0.04] pointer-events-none"
@@ -72,7 +72,7 @@ function InvitationHero() {
             href="/invitation/learn-more"
             className={cn(
               'inline-flex items-center gap-2 px-8 py-3.5 rounded-full',
-              'bg-warm-100 text-[#1E1916]',
+              'bg-warm-100 text-[var(--color-section-dark)]',
               'text-sm font-medium',
               'hover:bg-warm-200',
               'transition-colors duration-200'
@@ -151,7 +151,7 @@ function ThreePillars() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section ref={ref} className="section-padding bg-[#1E1916] text-white">
+    <section ref={ref} className="section-padding bg-[var(--color-section-dark)] text-white">
       <div className="container-premium">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -370,7 +370,7 @@ function FinalCTA() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section ref={ref} className="section-padding bg-[#1E1916] text-white">
+    <section ref={ref} className="section-padding bg-[var(--color-section-dark)] text-white">
       <div className="container-premium">
         <div className="max-w-3xl mx-auto text-center">
           <motion.h2
@@ -392,7 +392,7 @@ function FinalCTA() {
               href="/invitation/learn-more"
               className={cn(
                 'px-8 py-3.5 rounded-full',
-                'bg-warm-100 text-[#1E1916]',
+                'bg-warm-100 text-[var(--color-section-dark)]',
                 'text-sm font-medium',
                 'hover:bg-warm-200',
                 'transition-colors duration-200'

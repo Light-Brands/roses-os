@@ -53,6 +53,9 @@ body {
   --color-golden-ether: #F5E8E2;
   --color-cream-veil: #FFF8E7;
 
+  /* Section Dark — for dark-background sections */
+  --color-section-dark: var(--color-section-dark, #1E1916);
+
   /* Status Colors */
   --color-success: #5B9A6F;
   --color-warning: #9E956B;

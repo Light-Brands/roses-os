@@ -164,6 +164,9 @@
   --glass-border: rgba(232, 224, 216, 0.4);
   --glass-shadow: 0 8px 32px 0 rgba(63, 62, 60, 0.06);
 
+  /* Section Dark — dark-background sections (footer, hero, CTA blocks) */
+  --color-section-dark: #1E1916;
+
   /* Grain texture opacity */
   --grain-opacity: 0.03;
 }
@@ -223,6 +226,70 @@
   --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 
   --grain-opacity: 0.05;
+}
+
+/* =============================================================================
+   ROSE CLAY STYLE VARIANT
+   ============================================================================= */
+/* Alternative style: dark sections become rich rose clay tones instead of
+   near-black warm browns. Toggle via data-style="rose-clay" on <html>. */
+
+[data-style="rose-clay"] {
+  /* Section dark backgrounds — deep rose replaces near-black */
+  --color-section-dark: #6E4A49;
+
+  /* Foreground — rose-tinted charcoals for body text */
+  --color-foreground: #523737;
+  --color-foreground-subtle: #6E4A49;
+  --color-foreground-muted: #8A5E5D;
+  --color-foreground-faint: #9C6F6E;
+
+  /* Accent — rose clay replaces charcoal */
+  --color-accent: #523737;
+  --color-accent-foreground: #FDF8F7;
+  --color-accent-hover: #6E4A49;
+
+  /* Borders — rose-tinted */
+  --color-border: #F5E1DD;
+  --color-border-subtle: #FAF0EE;
+  --color-border-strong: #E8C4BF;
+
+  /* Gradients — rose clay spectrum */
+  --gradient-primary: linear-gradient(135deg, #9C6F6E 0%, #523737 100%);
+  --gradient-secondary: linear-gradient(135deg, #8A5E5D 0%, #6E4A49 100%);
+
+  /* Info status — rose-shifted */
+  --color-info: #8A5E5D;
+
+  /* Soft charcoal → rose dark */
+  --color-soft-charcoal: #523737;
+}
+
+/* Rose Clay + Dark Mode combined */
+[data-style="rose-clay"].dark,
+[data-style="rose-clay"] [data-theme="dark"] {
+  --color-section-dark: #3B2828;
+
+  --color-background: #2A1C1C;
+  --color-background-subtle: #3B2828;
+  --color-background-muted: #523737;
+  --color-background-elevated: #3B2828;
+  --color-background-rose: #3B2828;
+
+  --color-foreground: #F5E1DD;
+  --color-foreground-subtle: #E8C4BF;
+  --color-foreground-muted: #D4A09A;
+  --color-foreground-faint: #9C6F6E;
+
+  --color-border: #523737;
+  --color-border-subtle: #3B2828;
+  --color-border-strong: #6E4A49;
+
+  --color-accent: #F5E1DD;
+  --color-accent-foreground: #2A1C1C;
+  --color-accent-hover: #E8C4BF;
+
+  --gradient-subtle: linear-gradient(135deg, #3B2828 0%, #2A1C1C 100%);
 }
 
 /* =============================================================================

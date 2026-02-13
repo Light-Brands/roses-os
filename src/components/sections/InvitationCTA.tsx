@@ -17,7 +17,7 @@ export default function InvitationCTA({ className }: InvitationCTAProps) {
     <section
       ref={ref}
       className={cn(
-        'bg-[#1E1916] text-white',
+        'bg-[var(--color-section-dark)] text-white',
         className
       )}
     >
@@ -43,7 +43,7 @@ export default function InvitationCTA({ className }: InvitationCTAProps) {
               href="/invitation"
               className={cn(
                 'inline-flex items-center px-8 py-3.5 rounded-full',
-                'bg-warm-50 text-[#1E1916]',
+                'bg-warm-50 text-[var(--color-section-dark)]',
                 'text-sm font-medium',
                 'hover:bg-warm-100',
                 'transition-colors duration-200'

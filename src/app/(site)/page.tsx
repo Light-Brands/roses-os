@@ -126,7 +126,7 @@ function BrandEssence() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section ref={ref} className="relative py-24 lg:py-32 bg-[#1A1716] text-white overflow-hidden">
+    <section ref={ref} className="relative py-24 lg:py-32 bg-[var(--color-section-dark)] text-white overflow-hidden">
       {/* Rose-gold gradient orb */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-rose-500/10 rounded-full blur-[150px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#9E956B]/10 rounded-full blur-[120px] pointer-events-none" />
@@ -406,7 +406,7 @@ function InvitationCTA() {
       className="relative overflow-hidden"
     >
       {/* Dark rose gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#1A1716] via-rose-950 to-[#1A1716]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-section-dark)] via-rose-950 to-[var(--color-section-dark)]" />
 
       {/* Subtle glow */}
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-rose-500/10 rounded-full blur-[150px] pointer-events-none" />
@@ -417,7 +417,7 @@ function InvitationCTA() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="mx-auto mb-8 w-16 h-16 rounded-full border border-rose-500/30 flex items-center justify-center overflow-hidden bg-[#1A1716]/80"
+            className="mx-auto mb-8 w-16 h-16 rounded-full border border-rose-500/30 flex items-center justify-center overflow-hidden bg-[var(--color-section-dark)]/80"
           >
             <Image
               src="/rose.png"
