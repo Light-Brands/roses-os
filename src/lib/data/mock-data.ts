@@ -403,5 +403,5 @@ export const brandQuotes: BrandQuote[] = [
 export const messagingPillars = [
   { id: '1', title: 'The Rose', description: 'A sacred technology of remembrance: a systematic practice for reconnecting with the intelligence that lives within.' },
   { id: '2', title: 'The Aura', description: 'The energetic body and its role in coherence: subtle awareness as a practical capacity for daily living.' },
-  { id: '3', title: 'The Human Journey', description: 'The recognition that every life is a journey of remembrance, and that this journey is supported, not solitary.' },
+  { id: '3', title: 'The Human Journey', description: 'The recognition that every life is a journey of return, and that this journey is supported, not solitary.' },
 ];
