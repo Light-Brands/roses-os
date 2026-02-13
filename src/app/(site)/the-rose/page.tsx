@@ -144,7 +144,7 @@ export default function TheRosePage() {
         <p>
           The Rose is a systematic practice rooted in imagination, awareness,
           and the cultivation of inner coherence. Developed over decades by
-          Angelina Ataide and drawn from a deep lineage of consciousness research,
+          Angelina Ataíde and drawn from a deep lineage of consciousness research,
           it offers a clear, grounded pathway for anyone ready to remember who
           they truly are. The Rose unfolds across three levels. Each one a
           deepening of the relationship with yourself, your body, and the field of
