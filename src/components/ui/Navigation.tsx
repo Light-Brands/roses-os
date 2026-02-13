@@ -29,7 +29,7 @@ const defaultItems: NavItem[] = [
   { label: 'The Rose', href: '/the-rose' },
   { label: 'Programs', href: '/programs' },
   { label: 'Guardians', href: '/guardians' },
-  { label: 'The Codex', href: '/the-codex' },
+  // { label: 'The Codex', href: '/the-codex' }, // Hidden — re-enable when ready
   { label: 'Community', href: '/community' },
 ];
 
