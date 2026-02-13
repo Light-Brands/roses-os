@@ -48,7 +48,7 @@ export const guardians: Guardian[] = [
     bio: 'With over a decade walking the Aura Reading path and a background in multiple traditions of self-knowledge, Dara integrates body, mind, and spirit with reverence. She supports the creation and delivery of programs and courses, blending intuitive listening with grounded clarity.',
     image: '/images/39E1608C-8D44-4A6D-B2C2-EEEDA9C8F6C4.png',
     imagePosition: '55% 20%',
-    imageScale: 1.1,
+    imageScale: 1.0,
   },
   {
     id: '4',
