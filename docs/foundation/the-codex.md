@@ -344,6 +344,16 @@ One of the most profound gifts of the Rose is its restoration of **sovereignty t
 
 The ability to direct attention with conscious intention is the reclamation of our last true power: the power of choice.
 
+But choice alone is not enough. **Clarity must be cultivated over time, directed by conscious will.**
+
+Clarity is not a flash of insight that arrives and fades. It is a field that deepens through sustained, deliberate direction. When attention is held with intention -- not once, but again and again across time -- clarity does not merely appear. It accumulates. It refines. It becomes the steady light by which the soul navigates.
+
+This is not passive waiting. It is active cultivation.
+
+Conscious will, applied consistently, clears the layers of distortion that obscure perception. Each return to center dissolves another veil. Each act of deliberate attention strengthens the inner field. Over time, what was effort becomes instinct. What was practice becomes presence. What was chosen becomes nature.
+
+This is the quiet discipline of the Rose: clarity is not given. It is grown -- by the one who chooses it, again and again, through the sustained application of conscious will across the living arc of time.
+
 From this power, we step into co-creation, no longer governed by unconscious patterns or external influence, but guided from within.
 
 Yet the most beautiful aspect of the Rose is its form.
