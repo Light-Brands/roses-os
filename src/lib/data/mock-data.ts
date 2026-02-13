@@ -38,7 +38,7 @@ export const guardians: Guardian[] = [
     name: 'Diego Dosal',
     role: 'Guardian of Architecture & Structure',
     bio: 'Diego is the bridge between spirit and structure. With over a decade of deep roots in multiple paths of spiritual practice, energy work, and community building, he carries the horizontal axis of ROSES OS — developing platforms, systems, and frameworks that harmonize intuition with strategy and build lasting foundations for remembrance.',
-    image: '/images/aidiego3.png',
+    image: '/images/85C51DAA-9283-428E-A6FA-2C6AA8839EA3.png',
   },
   {
     id: '3',
@@ -46,8 +46,8 @@ export const guardians: Guardian[] = [
     role: 'Guardian of Community & Programs',
     bio: 'With over a decade walking the Aura Reading path and a background in multiple traditions of self-knowledge, Dara integrates body, mind, and spirit with reverence. She supports the creation and delivery of programs and courses, blending intuitive listening with grounded clarity.',
     image: '/images/dara-new.png',
-    imageTransform: 'translateY(-10%)',
-    imageScale: 0.85,
+    imageTransform: 'translateY(15%)',
+    imageScale: 0.55,
   },
   {
     id: '4',
