@@ -15,10 +15,8 @@ export interface Guardian {
   role: string;
   bio: string;
   image: string;
-  /** Optional CSS transform for fine-tuning photo position in circular crop */
-  imageTransform?: string;
-  /** Optional scale factor (<1 zooms out to show more of the photo in the circular crop) */
-  imageScale?: number;
+  /** Optional CSS object-position value for fine-tuning which part of the photo is visible in the circular crop (e.g. "center 20%") */
+  imagePosition?: string;
 }
 
 /** Program offering */
