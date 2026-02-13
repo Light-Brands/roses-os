@@ -39,7 +39,21 @@ export default function GuardianCard({ guardian, className }: GuardianCardProps)
               width={160}
               height={160}
               className="w-full h-full object-cover object-top"
-              style={guardian.imageTransform ? { transform: guardian.imageTransform } : undefined}
+              style={(() => {
+                const s: React.CSSProperties = {};
+                if (guardian.imageScale && guardian.imageScale !== 1) {
+                  const sizePct = (1 / guardian.imageScale) * 100;
+                  const offset = (100 - sizePct) / 2;
+                  s.width = `${sizePct}%`;
+                  s.height = `${sizePct}%`;
+                  s.marginLeft = `${offset}%`;
+                  s.marginTop = `${offset}%`;
+                }
+                if (guardian.imageTransform) {
+                  s.transform = guardian.imageTransform;
+                }
+                return Object.keys(s).length > 0 ? s : undefined;
+              })()}
             />
           ) : (
             <div className="w-full h-full bg-[var(--color-background-muted)] flex items-center justify-center">

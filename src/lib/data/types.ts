@@ -17,6 +17,8 @@ export interface Guardian {
   image: string;
   /** Optional CSS transform for fine-tuning photo position in circular crop */
   imageTransform?: string;
+  /** Optional scale factor (<1 zooms out to show more of the photo in the circular crop) */
+  imageScale?: number;
 }
 
 /** Program offering */
