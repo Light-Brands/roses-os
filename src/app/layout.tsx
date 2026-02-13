@@ -110,6 +110,11 @@ export default function RootLayout({
                 } else {
                   document.documentElement.classList.remove('dark')
                 }
+                // Apply style variant (e.g. rose-clay) before hydration
+                var sv = localStorage.getItem('style-variant');
+                if (sv && sv !== 'default') {
+                  document.documentElement.setAttribute('data-style', sv);
+                }
               } catch (_) {}
             `,
           }}

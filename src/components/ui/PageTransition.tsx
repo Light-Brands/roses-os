@@ -69,7 +69,7 @@ export function PageTransition() {
     <div
       ref={panelRef}
       aria-hidden="true"
-      className="fixed inset-0 z-[9999] bg-[#1A1716] dark:bg-[#F7F5F2]"
+      className="fixed inset-0 z-[9999] bg-[var(--color-section-dark)] dark:bg-[#F7F5F2]"
       style={{
         transform: 'translateY(100%)',
         willChange: 'transform',

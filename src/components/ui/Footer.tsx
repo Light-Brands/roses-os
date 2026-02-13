@@ -30,7 +30,7 @@ export default function Footer() {
   return (
     <footer
       ref={footerRef}
-      className="relative bg-[#1E1916] dark:bg-warm-50 text-warm-300 dark:text-warm-600 overflow-hidden transition-colors duration-200"
+      className="relative bg-[var(--color-section-dark)] dark:bg-warm-50 text-warm-300 dark:text-warm-600 overflow-hidden transition-colors duration-200"
     >
       <div className="container-premium py-6 sm:py-8">
         <motion.div
