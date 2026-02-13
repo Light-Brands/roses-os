@@ -1,7 +1,8 @@
 export type {
   NavItem, Guardian, Program, ContributionTier,
   ScheduleStage, ScheduleSession, TimeZoneEntry,
-  CoherenceDomain, PathLevel, LineageEntry,
+  CoherenceDomain, CoherenceAlternativeCategory,
+  PathLevel, LineageEntry,
   ArchitectureLayer, Chakra, Technique, TeachingLevel,
   Agreement, Capacity, MessagingPillar, BrandQuote, Stat,
 } from './types';
@@ -13,6 +14,7 @@ export {
   scheduleStages,
   contributionTiers,
   coherenceDomains,
+  coherenceAlternatives,
   pathLevels,
   visiblePathLevels,
   lineageEntries,
