@@ -47,7 +47,7 @@ export const guardians: Guardian[] = [
     name: 'Dara Ayoub',
     role: 'Guardian of Community & Programs',
     bio: 'With over a decade walking the Aura Reading path and a background in multiple traditions of self-knowledge, Dara integrates body, mind, and spirit with reverence. She supports the creation and delivery of programs and courses, blending intuitive listening with grounded clarity.',
-    image: '/images/9803AE3A-B158-4A79-9D69-6E442BE39BA4.png',
+    image: '/images/39E1608C-8D44-4A6D-B2C2-EEEDA9C8F6C4.png',
     imagePosition: 'center 20%',
   },
   {
