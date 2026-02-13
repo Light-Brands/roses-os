@@ -27,7 +27,7 @@ export default function GuardianCard({ guardian, className }: GuardianCardProps)
       <div className="mx-auto mb-5 w-32 h-32 md:w-40 md:h-40 relative">
         <div
           className={cn(
-            'aspect-square rounded-full overflow-hidden',
+            'relative aspect-square rounded-full overflow-hidden',
             'border-[3px] border-white',
             'shadow-[var(--shadow-lg)]'
           )}
@@ -36,23 +36,20 @@ export default function GuardianCard({ guardian, className }: GuardianCardProps)
             <Image
               src={guardian.image}
               alt={guardian.name}
-              width={160}
-              height={160}
-              className="w-full h-full object-cover object-top"
+              fill
+              sizes="(min-width: 768px) 160px, 128px"
+              className="object-cover object-center"
               style={(() => {
-                const s: React.CSSProperties = {};
+                const transforms: string[] = [];
                 if (guardian.imageScale && guardian.imageScale !== 1) {
-                  const sizePct = (1 / guardian.imageScale) * 100;
-                  const offset = (100 - sizePct) / 2;
-                  s.width = `${sizePct}%`;
-                  s.height = `${sizePct}%`;
-                  s.marginLeft = `${offset}%`;
-                  s.marginTop = `${offset}%`;
+                  transforms.push(`scale(${1 / guardian.imageScale})`);
                 }
                 if (guardian.imageTransform) {
-                  s.transform = guardian.imageTransform;
+                  transforms.push(guardian.imageTransform);
                 }
-                return Object.keys(s).length > 0 ? s : undefined;
+                return transforms.length > 0
+                  ? { transform: transforms.join(' ') }
+                  : undefined;
               })()}
             />
           ) : (
