@@ -133,8 +133,8 @@ export default function ScheduleTable({ stages, className }: ScheduleTableProps)
                     className="overflow-hidden"
                   >
                     <div className="px-5 pb-5 md:px-6 md:pb-6">
-                      {/* Table header */}
-                      <div className="grid grid-cols-[1fr_1.5fr_auto] gap-4 pb-3 mb-3 border-b border-[var(--color-border-subtle)]">
+                      {/* Table header – hidden on mobile, shown on md+ */}
+                      <div className="hidden md:grid grid-cols-[1.5fr_1fr_1.5fr] gap-4 pb-3 mb-3 border-b border-[var(--color-border-subtle)]">
                         <span className="label-sacred">Day</span>
                         <span className="label-sacred">Duration</span>
                         <span className="label-sacred">Time</span>
@@ -153,21 +153,38 @@ export default function ScheduleTable({ stages, className }: ScheduleTableProps)
                               ease: [0.16, 1, 0.3, 1],
                             }}
                             className={cn(
-                              'grid grid-cols-[1fr_1.5fr_auto] gap-4 py-2.5',
-                              'text-sm',
+                              'py-2.5 text-sm',
                               idx < stage.sessions.length - 1 &&
                                 'border-b border-[var(--color-border-subtle)]'
                             )}
                           >
-                            <span className="text-[var(--color-foreground-subtle)] font-medium">
-                              {session.day}
-                            </span>
-                            <span className="text-[var(--color-foreground-muted)]">
-                              {session.duration}
-                            </span>
-                            <span className="text-[var(--color-foreground-faint)] tabular-nums whitespace-nowrap">
-                              {session.time[timezone]}
-                            </span>
+                            {/* Mobile layout: stacked rows */}
+                            <div className="md:hidden">
+                              <div className="flex items-baseline justify-between gap-3">
+                                <span className="text-[var(--color-foreground-subtle)] font-medium">
+                                  {session.day}
+                                </span>
+                                <span className="text-[var(--color-foreground-muted)] shrink-0">
+                                  {session.duration}
+                                </span>
+                              </div>
+                              <p className="text-[var(--color-foreground-faint)] tabular-nums text-xs mt-1">
+                                {session.time[timezone]}
+                              </p>
+                            </div>
+
+                            {/* Desktop layout: 3-column grid */}
+                            <div className="hidden md:grid grid-cols-[1.5fr_1fr_1.5fr] gap-4">
+                              <span className="text-[var(--color-foreground-subtle)] font-medium">
+                                {session.day}
+                              </span>
+                              <span className="text-[var(--color-foreground-muted)]">
+                                {session.duration}
+                              </span>
+                              <span className="text-[var(--color-foreground-faint)] tabular-nums whitespace-nowrap">
+                                {session.time[timezone]}
+                              </span>
+                            </div>
                           </motion.div>
                         ))}
                       </div>
