@@ -582,6 +582,22 @@ export default function Home() {
             A Consciousness &amp; Remembrance Ecosystem
           </motion.p>
 
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={ready ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+            transition={{ delay: 0.15, duration: 0.6 }}
+            className="mb-5 lg:mb-6"
+          >
+            <Image
+              src="/rose.png"
+              alt="ROSES OS"
+              width={48}
+              height={48}
+              className="object-contain"
+              priority
+            />
+          </motion.div>
+
           <h1
             ref={titleRef}
             className="font-serif text-[clamp(2rem,5.5vw,4.5rem)] leading-[1.05] tracking-tighter text-balance max-w-5xl"
