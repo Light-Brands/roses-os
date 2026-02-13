@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
@@ -14,6 +14,21 @@ import PageHero from '@/components/sections/PageHero';
 export default function ContactPage() {
   const contentRef = useRef<HTMLElement>(null);
   const contentInView = useInView(contentRef, { once: true, margin: '-100px' });
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    const subject = encodeURIComponent(name ? `Contact from ${name}` : 'Contact Form Inquiry');
+    const body = encodeURIComponent(
+      [name && `Name: ${name}`, email && `Email: ${email}`, '', message]
+        .filter(Boolean)
+        .join('\n')
+    );
+    window.location.href = `mailto:dani.ayoub88@gmail.com?subject=${subject}&body=${body}`;
+  }
 
   return (
     <>
@@ -112,7 +127,7 @@ export default function ContactPage() {
               </h2>
 
               <form
-                onSubmit={(e) => e.preventDefault()}
+                onSubmit={handleSubmit}
                 className="space-y-5"
               >
                 {/* Name */}
@@ -127,6 +142,8 @@ export default function ContactPage() {
                     id="contact-name"
                     type="text"
                     placeholder="Your name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                     className={cn(
                       'w-full rounded-lg border border-[var(--color-border)]',
                       'bg-[var(--color-background-subtle)]',
@@ -150,6 +167,8 @@ export default function ContactPage() {
                     id="contact-email"
                     type="email"
                     placeholder="you@example.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     className={cn(
                       'w-full rounded-lg border border-[var(--color-border)]',
                       'bg-[var(--color-background-subtle)]',
@@ -173,6 +192,8 @@ export default function ContactPage() {
                     id="contact-message"
                     rows={6}
                     placeholder="How can we support you?"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
                     className={cn(
                       'w-full rounded-lg border border-[var(--color-border)]',
                       'bg-[var(--color-background-subtle)]',
