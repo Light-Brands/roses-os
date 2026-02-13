@@ -54,7 +54,7 @@ body {
   --color-cream-veil: #FFF8E7;
 
   /* Section Dark — for dark-background sections */
-  --color-section-dark: var(--color-section-dark, #1E1916);
+  --color-section-dark: var(--color-section-dark, #241B1E);
 
   /* Status Colors */
   --color-success: #5B9A6F;
