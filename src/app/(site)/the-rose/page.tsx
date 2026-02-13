@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import { pathLevels, brandQuotes } from '@/lib/data';
+import { visiblePathLevels, brandQuotes } from '@/lib/data';
 
 import PageHero from '@/components/sections/PageHero';
 import PathLevels from '@/components/sections/PathLevels';
@@ -153,7 +153,7 @@ export default function TheRosePage() {
       </RevealSection>
 
       {/* 6. Path Levels */}
-      <PathLevels levels={pathLevels} variant="full" />
+      <PathLevels levels={visiblePathLevels} variant="full" />
 
       {/* 7. Quote */}
       <QuoteBlock

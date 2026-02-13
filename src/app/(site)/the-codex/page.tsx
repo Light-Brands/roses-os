@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 import {
   lineageEntries,
   coherenceDomains,
-  pathLevels,
+  visiblePathLevels,
   architectureLayers,
   elevenCapacities,
 } from '@/lib/data';
@@ -212,7 +212,7 @@ export default function TheCodexPage() {
 
       {/* 6. The Path */}
       <SectionLabel>The Path</SectionLabel>
-      <PathLevels levels={pathLevels} variant="full" />
+      <PathLevels levels={visiblePathLevels} variant="full" />
 
       {/* 7. Four Layers of the Architecture */}
       <ArchitectureLayers />

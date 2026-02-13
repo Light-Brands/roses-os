@@ -14,6 +14,7 @@ export {
   contributionTiers,
   coherenceDomains,
   pathLevels,
+  visiblePathLevels,
   lineageEntries,
   architectureLayers,
   chakras,

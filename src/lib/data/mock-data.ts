@@ -209,6 +209,8 @@ export const coherenceDomains: CoherenceDomain[] = [
 
 // =============================================================================
 // PATH LEVELS (Rose Meditation 1–3 + Aura 1–5)
+// Full dataset kept for future use. Aura 4 & 5 (levels 7–8) are hidden from
+// the public UI via the visiblePathLevels export below.
 // =============================================================================
 
 export const pathLevels: PathLevel[] = [
@@ -277,6 +279,11 @@ export const pathLevels: PathLevel[] = [
     focus: ['Unified mastery', 'Conscious creation', 'Heart-led expression', 'Full sovereignty'],
   },
 ];
+
+// Aura 4 & 5 (levels 7–8) hidden for now; surface them when ready
+export const visiblePathLevels: PathLevel[] = pathLevels.filter(
+  (l) => l.level <= 6
+);
 
 // =============================================================================
 // LINEAGE
