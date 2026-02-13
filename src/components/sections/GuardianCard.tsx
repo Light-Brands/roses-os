@@ -38,19 +38,8 @@ export default function GuardianCard({ guardian, className }: GuardianCardProps)
               alt={guardian.name}
               fill
               sizes="(min-width: 768px) 160px, 128px"
-              className="object-cover object-center"
-              style={(() => {
-                const transforms: string[] = [];
-                if (guardian.imageScale && guardian.imageScale !== 1) {
-                  transforms.push(`scale(${1 / guardian.imageScale})`);
-                }
-                if (guardian.imageTransform) {
-                  transforms.push(guardian.imageTransform);
-                }
-                return transforms.length > 0
-                  ? { transform: transforms.join(' ') }
-                  : undefined;
-              })()}
+              className="object-cover"
+              style={{ objectPosition: guardian.imagePosition ?? 'center 20%' }}
             />
           ) : (
             <div className="w-full h-full bg-[var(--color-background-muted)] flex items-center justify-center">
