@@ -157,13 +157,13 @@ export function Navigation({
         <nav className="container-premium">
           <div className="relative flex items-center h-16 lg:h-[72px] w-full">
             {/* Left: nav links — equal flex so logo stays centered */}
-            <div className="hidden lg:flex items-center gap-1 flex-1 min-w-0 justify-start">
+            <div className="hidden lg:flex items-center gap-1 flex-1 min-w-0 justify-start lg:pr-20">
               {items.map((item) => (
                 <Link
                   key={item.label}
                   href={item.href}
                   className={cn(
-                    'group relative px-4 py-2 text-sm font-medium rounded-lg',
+                    'group relative px-2 xl:px-4 py-2 text-sm font-medium rounded-lg',
                     'text-[var(--color-foreground-muted)]',
                     'hover:text-[var(--color-foreground)]',
                     'transition-colors duration-200'
