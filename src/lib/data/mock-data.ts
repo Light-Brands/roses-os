@@ -46,8 +46,8 @@ export const guardians: Guardian[] = [
     role: 'Guardian of Community & Programs',
     bio: 'With over a decade walking the Aura Reading path and a background in multiple traditions of self-knowledge, Dara integrates body, mind, and spirit with reverence. She supports the creation and delivery of programs and courses, blending intuitive listening with grounded clarity.',
     image: '/images/dara-new.png',
-    imageTransform: 'translateY(-10%)',
-    imageScale: 0.85,
+    imageTransform: 'translateY(15%)',
+    imageScale: 0.55,
   },
   {
     id: '4',
