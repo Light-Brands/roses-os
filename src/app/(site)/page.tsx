@@ -174,7 +174,7 @@ function BrandEssence() {
           className="mt-16 grid grid-cols-3 gap-8 max-w-lg mx-auto"
         >
           <AnimatedStat value="30+" label="Years" delay={0.5} />
-          <AnimatedStat value="6,000+" label="Practitioners" delay={0.6} />
+          <AnimatedStat value="500+" label="Practitioners" delay={0.6} />
           <AnimatedStat value="50+" label="Countries" delay={0.7} />
         </motion.div>
       </div>
