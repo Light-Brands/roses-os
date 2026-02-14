@@ -28,7 +28,6 @@ interface NavigationProps {
 const defaultItems: NavItem[] = [
   { label: 'The Rose', href: '/the-rose' },
   { label: 'Offerings', href: '/offerings' },
-  { label: 'Programs', href: '/programs' },
   { label: 'Guardians', href: '/guardians' },
   { label: 'Community', href: '/community' },
 ];

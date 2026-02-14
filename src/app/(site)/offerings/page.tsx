@@ -4,279 +4,147 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import { pathLevels } from '@/lib/data';
+import { programs, scheduleStages, contributionTiers } from '@/lib/data';
 
 import PageHero from '@/components/sections/PageHero';
-import QuoteBlock from '@/components/sections/QuoteBlock';
-import InvitationCTA from '@/components/sections/InvitationCTA';
-
-// =============================================================================
-// LEVEL CARD
-// =============================================================================
-
-function LevelCard({
-  level,
-  index,
-  isInView,
-}: {
-  level: (typeof pathLevels)[number];
-  index: number;
-  isInView: boolean;
-}) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 32 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{
-        duration: 0.7,
-        delay: index * 0.15,
-        ease: [0.16, 1, 0.3, 1],
-      }}
-      className={cn(
-        'relative rounded-2xl p-8 md:p-10',
-        'bg-[var(--color-background-subtle)]',
-        'border border-[var(--color-border)]',
-        'transition-shadow duration-300',
-        'hover:shadow-[var(--shadow-md)]'
-      )}
-    >
-      {/* Level indicator */}
-      <div className="flex items-center gap-3 mb-5">
-        <div
-          className={cn(
-            'flex items-center justify-center',
-            'w-10 h-10 rounded-full',
-            'bg-[#9E956B]/10 text-[#9E956B]',
-            'font-serif font-semibold text-base',
-            'border border-[#9E956B]/20'
-          )}
-        >
-          {index + 1}
-        </div>
-        <p className="text-xs font-medium uppercase tracking-[0.2em] text-[var(--color-foreground-faint)]">
-          Level {index + 1}
-        </p>
-      </div>
-
-      {/* Title & subtitle */}
-      <h3 className="font-serif text-2xl md:text-3xl tracking-tight text-[var(--color-foreground)] mb-2">
-        {level.title}
-      </h3>
-      <p className="text-base text-[var(--color-foreground-faint)] italic mb-5">
-        {level.subtitle}
-      </p>
-
-      {/* Description */}
-      <p className="text-base text-[var(--color-foreground-muted)] leading-relaxed mb-6">
-        {level.description}
-      </p>
-
-      {/* Focus areas */}
-      {level.focus.length > 0 && (
-        <div>
-          <span className="label-sacred block mb-3">Focus Areas</span>
-          <ul className="space-y-2">
-            {level.focus.map((item, i) => (
-              <li
-                key={i}
-                className="flex items-start gap-3 text-sm text-[var(--color-foreground-muted)]"
-              >
-                <span
-                  className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#9E956B]/50 shrink-0"
-                  aria-hidden="true"
-                />
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </motion.div>
-  );
-}
+import ProgramCard from '@/components/sections/ProgramCard';
+import ScheduleTable from '@/components/sections/ScheduleTable';
+import ContributionTiers from '@/components/sections/ContributionTiers';
 
 // =============================================================================
 // OFFERINGS PAGE
 // =============================================================================
 
 export default function OfferingsPage() {
-  const introRef = useRef<HTMLElement>(null);
-  const introInView = useInView(introRef, { once: true, margin: '-100px' });
+  const gridRef = useRef<HTMLElement>(null);
+  const gridInView = useInView(gridRef, { once: true, margin: '-100px' });
 
-  const roseLevelsRef = useRef<HTMLElement>(null);
-  const roseLevelsInView = useInView(roseLevelsRef, { once: true, margin: '-100px' });
+  const scheduleRef = useRef<HTMLElement>(null);
+  const scheduleInView = useInView(scheduleRef, { once: true, margin: '-100px' });
 
-  const levelsRef = useRef<HTMLElement>(null);
-  const levelsInView = useInView(levelsRef, { once: true, margin: '-100px' });
+  const contributionRef = useRef<HTMLElement>(null);
+  const contributionInView = useInView(contributionRef, { once: true, margin: '-100px' });
 
   const ctaRef = useRef<HTMLElement>(null);
   const ctaInView = useInView(ctaRef, { once: true, margin: '-100px' });
-
-  // Rose Meditation levels 1, 2 & 3
-  const roseLevels = pathLevels.filter((l) => l.level >= 1 && l.level <= 3);
-
-  // Aura levels 1, 2 & 3 correspond to pathLevels indices 3, 4, 5 (levels 4, 5, 6)
-  const auraLevels = pathLevels.filter((l) => l.level >= 4 && l.level <= 6);
 
   return (
     <>
       {/* 1. Hero */}
       <PageHero
         eyebrow="Offerings"
-        title="The Path"
-        description="A progressive journey from inner stillness to energetic mastery. Beginning with the Rose Meditation and deepening through Aura Reading, each level builds on the last — expanding your capacity to perceive, heal, and navigate the subtle field of consciousness."
-        image="/page-images/page-offerings.png"
+        title="Current Offerings"
+        description="Guided pathways into the Rose field. Each program is a living invitation to deepen your practice, remember your coherence, and step into a community devoted to inner freedom."
+        image="/page-images/page-programs.png"
       />
 
-      {/* 2. Introduction */}
-      <section ref={introRef} className="section-padding bg-[var(--color-background-subtle)]">
+      {/* 2. Program Card */}
+      <section ref={gridRef} className="section-padding">
         <div className="container-premium max-w-3xl mx-auto">
+          {programs.map((program, i) => (
+            <motion.div
+              key={program.id}
+              initial={{ opacity: 0, y: 24 }}
+              animate={gridInView ? { opacity: 1, y: 0 } : {}}
+              transition={{
+                duration: 0.6,
+                delay: i * 0.15,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+            >
+              <ProgramCard program={program} />
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* 3. Schedule */}
+      <section
+        ref={scheduleRef}
+        className="section-padding bg-[var(--color-background-subtle)]"
+      >
+        <div className="container-premium max-w-4xl mx-auto">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            animate={introInView ? { opacity: 1, y: 0 } : {}}
+            animate={scheduleInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="label-sacred mb-6"
+            className="label-sacred mb-4"
           >
-            The Journey
+            Schedule
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 24 }}
-            animate={introInView ? { opacity: 1, y: 0 } : {}}
+            animate={scheduleInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-6"
+            className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-8"
           >
-            Six Levels of Deepening
+            Program Schedule
           </motion.h2>
-          <motion.div
+          <ScheduleTable stages={scheduleStages} />
+        </div>
+      </section>
+
+      {/* 4. Contribution */}
+      <section ref={contributionRef} className="section-padding">
+        <div className="container-premium max-w-4xl mx-auto">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={contributionInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="label-sacred mb-4"
+          >
+            Contribution
+          </motion.p>
+          <motion.h2
             initial={{ opacity: 0, y: 24 }}
-            animate={introInView ? { opacity: 1, y: 0 } : {}}
+            animate={contributionInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-4"
+          >
+            Income-Based Model
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 24 }}
+            animate={contributionInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-lg text-[var(--color-foreground-muted)] leading-relaxed space-y-6"
+            className="text-lg text-[var(--color-foreground-muted)] leading-relaxed mb-10 max-w-2xl"
           >
-            <p>
-              The path unfolds across six levels, each building on
-              the last. Beginning with the three levels of Rose Meditation —
-              grounding, cleansing, and spiritual activation — the journey
-              extends into reading the energetic body, deepening perceptual
-              capacity, and ultimately navigating the relational and healing
-              dimensions of the subtle field through three levels of Aura Reading.
-            </p>
-            <p>
-              Every level is taught live, in community, and supported by the
-              guardians of this lineage. The path is designed for those who are
-              ready to move beyond concept and into direct experience.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* 3. Rose Meditation Levels */}
-      <section ref={roseLevelsRef} className="section-padding">
-        <div className="container-premium">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={roseLevelsInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="label-sacred mb-4 text-center"
-          >
-            Rose Meditation
+            We believe this work should be accessible to everyone who is called.
+            Our income-based contribution model ensures that your financial season
+            is honored while sustaining the ecosystem for all.
           </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 24 }}
-            animate={roseLevelsInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-12 text-center"
-          >
-            The Foundation
-          </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            {roseLevels.map((level, i) => (
-              <LevelCard
-                key={level.id}
-                level={level}
-                index={i}
-                isInView={roseLevelsInView}
-              />
-            ))}
-          </div>
+          <ContributionTiers tiers={contributionTiers} />
         </div>
       </section>
 
-      {/* 4. Aura Levels */}
-      <section ref={levelsRef} className="section-padding bg-[var(--color-background-subtle)]">
-        <div className="container-premium">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={levelsInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="label-sacred mb-4 text-center"
-          >
-            Aura Reading
-          </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 24 }}
-            animate={levelsInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-12 text-center"
-          >
-            The Deepening
-          </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            {auraLevels.map((level, i) => (
-              <LevelCard
-                key={level.id}
-                level={level}
-                index={i}
-                isInView={levelsInView}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5. Quote */}
-      <QuoteBlock
-        quote="The aura is not something you learn to see. It is something you remember how to feel."
-        variant="fullbleed"
-      />
-
-      {/* 6. Current Program CTA */}
-      <section ref={ctaRef} className="section-padding">
+      {/* 5. Enroll CTA */}
+      <section ref={ctaRef} className="section-padding bg-[var(--color-background-subtle)]">
         <div className="container-premium">
           <div className="max-w-2xl mx-auto text-center">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={ctaInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="label-sacred mb-4"
-            >
-              Currently Enrolling
-            </motion.p>
             <motion.h2
               initial={{ opacity: 0, y: 24 }}
               animate={ctaInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-4"
             >
-              The Rose + Aura 1
+              Ready to Begin?
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 24 }}
               animate={ctaInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="text-lg text-[var(--color-foreground-muted)] leading-relaxed mb-8"
             >
-              The first level is now open. Eleven days combining Rose Meditation
-              1, 2 & 3 with Aura Reading Level 1: a complete foundation for
-              the journey ahead.
+              If something in these words resonates, we invite you to take the
+              next step. Enrollment is open and we are here to support your journey.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={ctaInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             >
               <Link
-                href="/programs"
+                href="/enroll"
                 className={cn(
                   'inline-flex items-center gap-2 px-8 py-3.5 rounded-full',
                   'bg-[var(--color-accent)] text-[var(--color-accent-foreground)]',
@@ -286,9 +154,9 @@ export default function OfferingsPage() {
                   'shadow-sm hover:shadow-md'
                 )}
               >
-                View Program Details
+                Enroll Now
                 <svg
-                  className="w-4 h-4"
+                  className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -306,8 +174,6 @@ export default function OfferingsPage() {
         </div>
       </section>
 
-      {/* 7. Invitation CTA */}
-      <InvitationCTA />
     </>
   );
 }

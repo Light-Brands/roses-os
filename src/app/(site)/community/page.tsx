@@ -160,10 +160,10 @@ export default function CommunityPage() {
             <p>
               If you feel called, we invite you to explore our{' '}
               <Link
-                href="/programs"
+                href="/offerings"
                 className="underline underline-offset-4 decoration-[var(--color-rose-clay)] hover:text-[var(--color-foreground)] transition-colors duration-200"
               >
-                current programs
+                current offerings
               </Link>{' '}
               and find the offering that resonates with where you are right now.
             </p>

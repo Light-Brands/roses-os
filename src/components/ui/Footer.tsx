@@ -11,7 +11,7 @@ import { motion, useInView } from 'framer-motion';
 const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'The Rose', href: '/the-rose' },
-  { label: 'Programs', href: '/programs' },
+  { label: 'Offerings', href: '/offerings' },
   { label: 'Guardians', href: '/guardians' },
   { label: 'Community', href: '/community' },
   { label: 'Contact', href: '/contact' },

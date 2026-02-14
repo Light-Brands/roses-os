@@ -65,7 +65,7 @@ function OverviewSection() {
           className="mt-10"
         >
           <Link
-            href="/programs"
+            href="/offerings"
             className={cn(
               'inline-flex items-center gap-2',
               'text-sm font-medium',
@@ -75,7 +75,7 @@ function OverviewSection() {
               'transition-colors duration-200'
             )}
           >
-            View programs, schedule & contribution details
+            View offerings, schedule & contribution details
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
@@ -206,7 +206,7 @@ function ReadyCTA() {
               Enroll Now
             </Link>
             <Link
-              href="/programs"
+              href="/offerings"
               className={cn(
                 'px-8 py-3.5 rounded-full',
                 'border-2 border-white/30 text-white',
@@ -215,7 +215,7 @@ function ReadyCTA() {
                 'transition-all duration-200'
               )}
             >
-              View Programs
+              View Offerings
             </Link>
           </motion.div>
         </div>

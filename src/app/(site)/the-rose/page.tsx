@@ -155,13 +155,36 @@ export default function TheRosePage() {
       {/* 6. Path Levels — Rose Meditation 1–3 */}
       <PathLevels levels={pathLevels.filter((l) => l.level <= 3)} variant="full" />
 
-      {/* 7. Quote */}
+      {/* 7. The Journey */}
+      <RevealSection
+        label="The Journey"
+        title="Six Levels of Deepening"
+      >
+        <p>
+          The path unfolds across six levels, each building on
+          the last. Beginning with the three levels of Rose Meditation —
+          grounding, cleansing, and spiritual activation — the journey
+          extends into reading the energetic body, deepening perceptual
+          capacity, and ultimately navigating the relational and healing
+          dimensions of the subtle field through three levels of Aura Reading.
+        </p>
+        <p>
+          Every level is taught live, in community, and supported by the
+          guardians of this lineage. The path is designed for those who are
+          ready to move beyond concept and into direct experience.
+        </p>
+      </RevealSection>
+
+      {/* 8. Path Levels — Aura Reading 1–3 */}
+      <PathLevels levels={pathLevels.filter((l) => l.level >= 4 && l.level <= 6)} variant="full" />
+
+      {/* 9. Quote */}
       <QuoteBlock
-        quote="The body already knows. The heart already knows. The practice is simply learning to listen."
+        quote="The aura is not something you learn to see. It is something you remember how to feel."
         variant="fullbleed"
       />
 
-      {/* 8. Invitation CTA */}
+      {/* 10. Invitation CTA */}
       <InvitationCTA />
     </>
   );
