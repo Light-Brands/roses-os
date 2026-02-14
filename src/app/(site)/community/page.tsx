@@ -54,10 +54,9 @@ export default function CommunityPage() {
             className="text-lg text-[var(--color-foreground-muted)] leading-relaxed space-y-6"
           >
             <p>
-              The ROSES OS community is not a membership club or a social network.
-              It is a living field. A gathering of individuals who have chosen to
-              walk the path of remembrance together. Here, you are not a follower.
-              You are a fellow practitioner.
+              The ROSES OS community is a living field. A gathering of individuals
+              who have chosen to walk the path of remembrance together as fellow
+              practitioners.
             </p>
             <p>
               We hold space for one another through daily practice, shared inquiry,
