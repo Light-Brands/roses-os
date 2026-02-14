@@ -3,10 +3,10 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 import {
   lineageEntries,
   coherenceDomains,
-  visiblePathLevels,
   architectureLayers,
   elevenCapacities,
 } from '@/lib/data';
@@ -16,7 +16,6 @@ import QuoteBlock from '@/components/sections/QuoteBlock';
 import InvitationCTA from '@/components/sections/InvitationCTA';
 import LineageTimeline from '@/components/sections/LineageTimeline';
 import DomainGrid from '@/components/sections/DomainGrid';
-import PathLevels from '@/components/sections/PathLevels';
 import ElevenCapacities from '@/components/sections/ElevenCapacities';
 
 // =============================================================================
@@ -210,9 +209,60 @@ export default function TheCodexPage() {
       <SectionLabel>13 Domains of Coherence</SectionLabel>
       <DomainGrid domains={coherenceDomains} />
 
-      {/* 6. The Path */}
-      <SectionLabel>The Path</SectionLabel>
-      <PathLevels levels={visiblePathLevels} variant="full" />
+      {/* 6. The Path — brief overview with link to /the-rose for full details */}
+      <section className="section-padding">
+        <div className="container-premium max-w-3xl mx-auto">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease }}
+            className="label-sacred mb-6"
+          >
+            The Path
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1, ease }}
+            className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-6"
+          >
+            Eight Levels of Remembrance
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease }}
+            className="text-lg text-[var(--color-foreground-muted)] leading-relaxed mb-8"
+          >
+            The path unfolds across eight levels — three Rose Meditations and five
+            Aura Readings — each deepening your relationship with inner coherence.
+            From grounding and aura awareness through to spiritual activation and
+            advanced perception, every level builds on the last.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3, ease }}
+          >
+            <Link
+              href="/the-rose"
+              className={cn(
+                'inline-flex items-center gap-2',
+                'text-sm font-medium',
+                'text-[var(--color-foreground)]',
+                'underline underline-offset-4 decoration-[var(--color-rose-clay)]',
+                'hover:text-[var(--color-foreground-muted)]',
+                'transition-colors duration-200'
+              )}
+            >
+              Explore all levels on The Rose
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
 
       {/* 7. Four Layers of the Architecture */}
       <ArchitectureLayers />

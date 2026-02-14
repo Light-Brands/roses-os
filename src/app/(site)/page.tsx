@@ -438,19 +438,11 @@ function InvitationCTA() {
             <br />
             <span className="text-rose-400">Welcome home.</span>
           </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="mt-6 text-white/50 text-lg max-w-md mx-auto"
-          >
-            Begin the journey back to yourself.
-          </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="mt-10"
           >
             <Link
               href="/invitation"
@@ -464,7 +456,7 @@ function InvitationCTA() {
                 'inline-flex items-center gap-2'
               )}
             >
-              Begin Your Journey
+              Enter the Rose Field
               <svg
                 className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5"
                 fill="none"
@@ -474,19 +466,6 @@ function InvitationCTA() {
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </Link>
-            <Link
-              href="/the-rose"
-              className={cn(
-                'px-8 py-3.5 rounded-full',
-                'text-sm font-medium',
-                'text-white/80',
-                'border border-white/20',
-                'hover:bg-white/10 hover:border-white/30',
-                'transition-all duration-300'
-              )}
-            >
-              Explore The Rose
             </Link>
           </motion.div>
         </div>

@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import { visiblePathLevels, brandQuotes } from '@/lib/data';
+import { visiblePathLevels } from '@/lib/data';
 
 import PageHero from '@/components/sections/PageHero';
 import PathLevels from '@/components/sections/PathLevels';
@@ -157,7 +157,7 @@ export default function TheRosePage() {
 
       {/* 7. Quote */}
       <QuoteBlock
-        quote="What if the intelligence you seek is already within you, waiting to be remembered?"
+        quote="The body already knows. The heart already knows. The practice is simply learning to listen."
         variant="fullbleed"
       />
 

@@ -4,7 +4,6 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import { architectureLayers } from '@/lib/data';
 
 import PageHero from '@/components/sections/PageHero';
 import InvitationCTA from '@/components/sections/InvitationCTA';
@@ -16,9 +15,6 @@ import InvitationCTA from '@/components/sections/InvitationCTA';
 export default function CommunityPage() {
   const visionRef = useRef<HTMLElement>(null);
   const visionInView = useInView(visionRef, { once: true, margin: '-100px' });
-
-  const archRef = useRef<HTMLElement>(null);
-  const archInView = useInView(archRef, { once: true, margin: '-100px' });
 
   const participateRef = useRef<HTMLElement>(null);
   const participateInView = useInView(participateRef, { once: true, margin: '-100px' });
@@ -75,69 +71,57 @@ export default function CommunityPage() {
         </div>
       </section>
 
-      {/* 3. Architecture Layers */}
-      <section
-        ref={archRef}
-        className="section-padding bg-[var(--color-background-subtle)]"
-      >
-        <div className="container-premium">
+      {/* 3. The Architecture — brief reference with link to The Codex */}
+      <section className="section-padding bg-[var(--color-background-subtle)]">
+        <div className="container-premium max-w-3xl mx-auto text-center">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            animate={archInView ? { opacity: 1, y: 0 } : {}}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="label-sacred mb-4 text-center"
+            className="label-sacred mb-6"
           >
             The Architecture
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 24 }}
-            animate={archInView ? { opacity: 1, y: 0 } : {}}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-10 text-center"
+            className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-6"
           >
-            Four Layers of the Living System
+            Built on Four Living Layers
           </motion.h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {architectureLayers.map((layer, i) => (
-              <motion.div
-                key={layer.id}
-                initial={{ opacity: 0, y: 24 }}
-                animate={archInView ? { opacity: 1, y: 0 } : {}}
-                transition={{
-                  duration: 0.6,
-                  delay: 0.15 + i * 0.1,
-                  ease: [0.16, 1, 0.3, 1],
-                }}
-                className={cn(
-                  'rounded-2xl p-6 md:p-8',
-                  'bg-[var(--color-background-elevated)]',
-                  'border border-[var(--color-border)]',
-                  'transition-shadow duration-300',
-                  'hover:shadow-[var(--shadow-md)]'
-                )}
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <span
-                    className={cn(
-                      'flex items-center justify-center',
-                      'w-8 h-8 rounded-full',
-                      'bg-[#9E956B]/10 text-[#9E956B]',
-                      'font-serif font-semibold text-sm',
-                      'border border-[#9E956B]/20'
-                    )}
-                  >
-                    {i + 1}
-                  </span>
-                </div>
-                <h3 className="font-serif text-xl tracking-tight text-[var(--color-foreground)] mb-3">
-                  {layer.name}
-                </h3>
-                <p className="text-sm text-[var(--color-foreground-muted)] leading-relaxed">
-                  {layer.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+          <motion.p
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="text-lg text-[var(--color-foreground-muted)] leading-relaxed mb-8"
+          >
+            The community rests on a four-layer architecture — Hardware, Software,
+            Heartware, and Soulware — each sustaining a different dimension of
+            coherent living.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <Link
+              href="/the-codex"
+              className={cn(
+                'inline-flex items-center gap-2',
+                'text-sm font-medium',
+                'text-[var(--color-foreground)]',
+                'underline underline-offset-4 decoration-[var(--color-rose-clay)]',
+                'hover:text-[var(--color-foreground-muted)]',
+                'transition-colors duration-200'
+              )}
+            >
+              Explore the full architecture in The Codex
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </motion.div>
         </div>
       </section>
 
