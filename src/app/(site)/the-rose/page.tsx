@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import { visiblePathLevels } from '@/lib/data';
+import { pathLevels } from '@/lib/data';
 
 import PageHero from '@/components/sections/PageHero';
 import PathLevels from '@/components/sections/PathLevels';
@@ -152,8 +152,8 @@ export default function TheRosePage() {
         </p>
       </RevealSection>
 
-      {/* 6. Path Levels */}
-      <PathLevels levels={visiblePathLevels} variant="full" />
+      {/* 6. Path Levels — Rose Meditation 1–3 */}
+      <PathLevels levels={pathLevels.filter((l) => l.level <= 3)} variant="full" />
 
       {/* 7. Quote */}
       <QuoteBlock
