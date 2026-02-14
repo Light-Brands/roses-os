@@ -93,7 +93,7 @@ export const programs: Program[] = [
 export const scheduleStages: ScheduleStage[] = [
   {
     id: '1',
-    title: 'Stage 1: Rose Meditation Level 1, 2 & 3',
+    title: 'Rose Meditation Level 1, 2 & 3',
     dateRange: 'March 17–18',
     sessions: [
       { day: 'First Class', duration: '3 hours', time: { sanJose: '7:00 AM – 10:00 AM', bogota: '8:00 AM – 11:00 AM', newYork: '9:00 AM – 12:00 PM', brasilia: '10:00 AM – 1:00 PM', london: '1:00 PM – 4:00 PM', madrid: '2:00 – 5:00 PM' } },
@@ -102,7 +102,7 @@ export const scheduleStages: ScheduleStage[] = [
   },
   {
     id: '2',
-    title: 'Stage 2: Aura Reading: Week 1 Weekdays',
+    title: 'Aura Reading: Week 1 Weekdays',
     dateRange: 'March 19–20 (Thu & Fri)',
     sessions: [
       { day: 'Rose Meditation Guidance', duration: '30 min', time: { sanJose: '7:00 – 7:30 AM', bogota: '8:00 – 8:30 AM', newYork: '9:00 – 9:30 AM', brasilia: '10:00 – 10:30 AM', london: '1:00 – 1:30 PM', madrid: '2:00 – 2:30 PM' } },
@@ -112,7 +112,7 @@ export const scheduleStages: ScheduleStage[] = [
   },
   {
     id: '3',
-    title: 'Stage 2: Aura Reading: Weekend',
+    title: 'Aura Reading: Weekend',
     dateRange: 'March 21–22 (Sat & Sun)',
     sessions: [
       { day: 'Rose Meditation Guidance', duration: '30 min', time: { sanJose: '7:00 – 7:30 AM', bogota: '8:00 – 8:30 AM', newYork: '9:00 – 9:30 AM', brasilia: '10:00 – 10:30 AM', london: '1:00 – 1:30 PM', madrid: '2:00 – 2:30 PM' } },
@@ -122,7 +122,7 @@ export const scheduleStages: ScheduleStage[] = [
   },
   {
     id: '4',
-    title: 'Stage 2: Aura Reading: Week 2',
+    title: 'Aura Reading: Week 2',
     dateRange: 'March 23–26 (Mon–Thu)',
     sessions: [
       { day: 'Rose Meditation Guidance', duration: '30 min', time: { sanJose: '7:00 – 7:30 AM', bogota: '8:00 – 8:30 AM', newYork: '8:00 – 8:30 AM', brasilia: '10:00 – 10:30 AM', london: '1:00 – 1:30 PM', madrid: '2:00 – 2:30 PM' } },
