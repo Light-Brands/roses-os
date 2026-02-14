@@ -119,7 +119,7 @@ export default function CoherencePage() {
       <PageHero
         eyebrow="Coherence"
         title="A Living Document of Coherent Being"
-        description="The Codex is the philosophical container of ROSES OS. It is a map of the territory, an articulation of the architecture, and an invitation to remember what has always been true. It is not a rigid doctrine but a living document that deepens as you do."
+        description="Coherence is the foundation of ROSES OS — a living invitation to remember the wholeness that has always been present, and to embody it in every dimension of being."
         image="/page-images/page-the-codex.png"
       />
 
