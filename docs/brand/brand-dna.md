@@ -6,6 +6,7 @@
 
 ## Table of Contents
 
+### Part I -- Brand Identity
 1. [Brand Essence](#brand-essence)
 2. [Mission & Vision](#mission--vision)
 3. [Origin & Lineage](#origin--lineage)
@@ -16,6 +17,8 @@
 8. [Messaging Pillars](#messaging-pillars)
 9. [Key Language & Vocabulary](#key-language--vocabulary)
 10. [The Two Core Questions](#the-two-core-questions)
+
+### Part II -- The Technology
 11. [The Technology -- What ROSES OS Is](#the-technology----what-roses-os-is)
 12. [The Rose -- Core Inner Technology](#the-rose----core-inner-technology)
 13. [Level 1 -- Foundational Practices](#level-1----foundational-practices)
@@ -23,19 +26,24 @@
 15. [Level 3 -- Advanced Perception](#level-3----advanced-perception)
 16. [The Aura](#the-aura)
 17. [What This Journey Awakens](#what-this-journey-awakens)
-18. [The Guardians](#the-guardians)
-19. [Agreements & Virtues](#agreements--virtues)
-20. [Sacred Use & Integrity](#sacred-use--integrity)
-21. [Course Structure & Contribution Model](#course-structure--contribution-model)
-22. [Visual Identity System](#visual-identity-system)
-23. [Color Palette](#color-palette)
-24. [Typography](#typography)
-25. [Imagery & Graphics](#imagery--graphics)
-26. [Design Book](#design-book)
-27. [Website Style Guide](#website-style-guide)
-28. [UI Components](#ui-components)
-29. [Copy Style Rules](#copy-style-rules)
-30. [Sitemap & Page Structure](#sitemap--page-structure)
+18. [The Codex -- Philosophical Container](#the-codex----philosophical-container)
+19. [The Guardians](#the-guardians)
+20. [Agreements & Virtues](#agreements--virtues)
+21. [Sacred Use & Integrity](#sacred-use--integrity)
+22. [Course Structure & Contribution Model](#course-structure--contribution-model)
+
+### Part III -- Visual Identity & Design System
+23. [Visual Identity System](#visual-identity-system)
+24. [Color Palette](#color-palette)
+25. [Typography](#typography)
+26. [Imagery & Graphics](#imagery--graphics)
+27. [Design Book](#design-book)
+
+### Part IV -- Website & Digital Experience
+28. [Website Style Guide](#website-style-guide)
+29. [UI Components](#ui-components)
+30. [Copy Style Rules](#copy-style-rules)
+31. [Sitemap & Page Structure](#sitemap--page-structure)
 
 ---
 
@@ -123,12 +131,17 @@ Aura Reading emerged in the 1960s, in California, channeled by a North American 
 
 ### Lineage Transmission
 
-**Lewis S. Bostwick** --> **Anastasia Plunk** --> **Angelina Ataide** --> **ROSES OS**
+| Era | Name | Description |
+|-----|------|-------------|
+| **1960s** | Lewis S. Bostwick | Channeled the material of Aura Reading in California. Founder of the Berkeley Psychic Institute and the Church of the Divine Man. |
+| **1980s** | Anastasia Plunk | Received and carried the Aura Reading and Rose meditation teachings from the Berkeley Psychic Institute, ensuring the continuity and integrity of the lineage. |
+| **2000s** | Angelina Ataíde | Founder of CELARIS (Centro de Estudos de Leitura de Aura, Reiki, Intuicao e Sonhos), formerly known as Escola da Aura & Sueños. For more than thirty years, she has upheld and embodied the Rose as a living transmission, initiating more than six thousand individuals into the living field of the Rose. |
+| **2026** | ROSES OS | The platform crystallizes decades of lineage wisdom into an accessible ecosystem for consciousness, remembrance, and coherent living. |
 
 ```mermaid
 graph TD
-    LB["Lewis S. Bostwick<br/><i>1960s, California<br/>Founder of the Berkeley Psychic Institute<br/>& Church of the Divine Man</i>"] --> AP["Anastasia Plunk"]
-    AP --> AA["Angelina Ataide<br/><i>1990s, Founder of CELARIS<br/>(formerly Escola da Aura & Sueños)</i>"]
+    LB["Lewis S. Bostwick<br/><i>1960s, California<br/>Founder of the Berkeley Psychic Institute<br/>& Church of the Divine Man</i>"] --> AP["Anastasia Plunk<br/><i>1980s<br/>Carried the teachings forward</i>"]
+    AP --> AA["Angelina Ataíde<br/><i>2000s, Founder of CELARIS<br/>(formerly Escola da Aura & Sueños)</i>"]
     AA --> ROS["ROSES OS<br/><i>2026</i>"]
 
     style LB fill:#C7AE8C,color:#3F3E3C,stroke:#A8896D
@@ -136,6 +149,12 @@ graph TD
     style AA fill:#9C6F6E,color:#F7F5F2,stroke:#9C6F6E
     style ROS fill:#9E956B,color:#F7F5F2,stroke:#9E956B
 ```
+
+### Key Stats
+
+- **30+** years of lineage
+- **6,000+** practitioners initiated
+- **50+** countries reached
 
 These teachings are part of a living energetic lineage. They invite inner stillness, gentle discipline, and deep self-responsibility. ROSES OS is not a system to be imposed or taught casually -- it is an energetic operating system revealed through direct practice and transmission.
 
@@ -147,15 +166,19 @@ These teachings are part of a living energetic lineage. They invite inner stilln
 
 Adults -- women and men -- especially:
 
-- Founders
-- Creators
-- Entrepreneurs
+- Seekers
 - Healers
+- Teachers
 - Leaders
+- Creators
+- Founders
+- Entrepreneurs
 - Parents
-- Seekers of clarity
 
 For those who feel the world accelerating and know the tools they inherited were not built for this moment.
+
+**Site headline:** "For those who sense there is more"
+**Site copy:** "You may be someone who knows that the life you are living is not yet the life you came here to live. If something in these words resonates, the way is open."
 
 ### What They Feel
 
@@ -319,6 +342,8 @@ Never loud. Never bright. Never hype. The voice feels like:
 
 ## Messaging Pillars
 
+### Five Core Pillars
+
 | Pillar | Statement |
 |--------|-----------|
 | **Coherence** | When coherence returns, life aligns. Restoring alignment across emotional, mental, and energetic systems. |
@@ -327,9 +352,26 @@ Never loud. Never bright. Never hype. The voice feels like:
 | **Presence** | The work asks for presence, not perfection. |
 | **Quiet Genius** | When distortion dissolves, Genius awakens. |
 
+### Three Pillars (Site Display)
+
+The homepage and invitation pages present three pillars that communicate "What This Journey Awakens":
+
+| Pillar | Description |
+|--------|-------------|
+| **The Rose** | A sacred technology of remembrance: a systematic practice for reconnecting with the intelligence that lives within. |
+| **The Aura** | The energetic body and its role in coherence: subtle awareness as a practical capacity for daily living. |
+| **The Human Journey** | The recognition that every life is a journey of return, and that this journey is supported, not solitary. |
+
 ```mermaid
 graph TD
-    subgraph PILLARS["Five Messaging Pillars"]
+    subgraph PILLARS_SITE["Three Pillars — Site Display"]
+        direction LR
+        PS1["The Rose<br/><i>Sacred technology of remembrance</i>"]
+        PS2["The Aura<br/><i>Subtle awareness for daily living</i>"]
+        PS3["The Human Journey<br/><i>A journey of return, supported</i>"]
+    end
+
+    subgraph PILLARS_MSG["Five Core Messaging Pillars"]
         direction LR
         P1["Coherence<br/><i>Life aligns</i>"]
         P2["Remembrance<br/><i>Not learning — remembering</i>"]
@@ -338,12 +380,12 @@ graph TD
         P5["Quiet Genius<br/><i>Genius awakens</i>"]
     end
 
-    P1 --> CORE((ROSES OS<br/>Message))
-    P2 --> CORE
-    P3 --> CORE
-    P4 --> CORE
-    P5 --> CORE
+    PS1 & PS2 & PS3 --> CORE((ROSES OS<br/>Message))
+    P1 & P2 & P3 & P4 & P5 --> CORE
 
+    style PS1 fill:#C7AE8C,color:#3F3E3C
+    style PS2 fill:#C7AE8C,color:#3F3E3C
+    style PS3 fill:#C7AE8C,color:#3F3E3C
     style P1 fill:#9C6F6E,color:#F7F5F2
     style P2 fill:#9C6F6E,color:#F7F5F2
     style P3 fill:#9C6F6E,color:#F7F5F2
@@ -381,6 +423,18 @@ graph TD
 - "Remember who you are"
 - "Welcome home"
 
+### Brand Quotes (Site)
+
+These quotes rotate across the site in hero sections, quote blocks, and brand essence sections:
+
+- "The next revolution is not technological. It is a revolution of remembrance."
+- "A seamless path to inner freedom."
+- "You are not broken. You are not lost. You are remembering."
+- "Coherence is not something you achieve. It is something you return to."
+- "The way is open. Welcome home."
+- "What if the intelligence you seek is already within you, waiting to be remembered?"
+- "This is not self-help. This is self-remembrance."
+
 ---
 
 ## The Two Core Questions
@@ -416,50 +470,44 @@ It doesn't fight the noise and fragmentation -- it quietly dissolves the conditi
 
 The Rose restores coherence across emotional, mental, and energetic systems -- making intuition precise and presence sovereign. Simple and decentralized, it frees you from endless healing and returns you to natural alignment.
 
-### The Three Levels -- Journey Overview
+### The Full Path -- Eight Levels
+
+The site presents eight levels across two tracks: Rose Meditation (3 levels) and Aura Reading (5 levels).
+
+| Level | Title | Subtitle | Focus |
+|-------|-------|----------|-------|
+| 1 | **Rose Meditation 1** | The Open Threshold | Grounding & presence, aura cleansing & protection, energy separation, Earth & Cosmic circuits |
+| 2 | **Rose Meditation 2** | The Living Rhythm | Chakra & aura layer cleansing, energetic tie release, sacred space creation, environmental protection |
+| 3 | **Rose Meditation 3** | The Spiritual Activation | Spiritual agreements & cords, belief transcendence, mental program cleansing, Reality Creation (Mock Up) |
+| 4 | **Aura 1** | The Initiation | Aura reading initiation, healing journeys, chakra & universal teachings, energy of love |
+| 5 | **Aura 2** | Perceptual Deepening | Theme readings, refined clairvoyance, advanced reading techniques, deepened perception |
+| 6 | **Aura 3** | Relationships & Healing | Relational energy dynamics, relationship healing, interpersonal navigation, expanded intuitive capacity |
+| 7 | **Aura 4** | The Living Transmission | In-person transmission, guardian-held field, embodied coherence, community practice |
+| 8 | **Aura 5** | Sovereign Mastery | Unified mastery, conscious creation, heart-led expression, full sovereignty |
 
 ```mermaid
 graph LR
-    L1["LEVEL 1<br/>Foundational<br/>Practices"]
-    L2["LEVEL 2<br/>Sacred Space &<br/>Chakra System"]
-    L3["LEVEL 3<br/>Advanced<br/>Perception"]
-    A1["AURA 1<br/>11 Sessions"]
+    L1["Rose Meditation 1<br/><i>The Open Threshold</i>"]
+    L2["Rose Meditation 2<br/><i>The Living Rhythm</i>"]
+    L3["Rose Meditation 3<br/><i>The Spiritual Activation</i>"]
+    A1["Aura 1<br/><i>The Initiation</i>"]
+    A2["Aura 2<br/><i>Perceptual Deepening</i>"]
+    A3["Aura 3<br/><i>Relationships & Healing</i>"]
+    A4["Aura 4<br/><i>The Living Transmission</i>"]
+    A5["Aura 5<br/><i>Sovereign Mastery</i>"]
 
     L1 ==> L2 ==> L3
-    L1 -.-> A1
-
-    subgraph L1D[" "]
-        direction TB
-        L1A["Posture & Grounding"]
-        L1B["Golden Sun & Aura"]
-        L1C["Earth & Cosmos Circuits"]
-        L1D2["Roses of Protection"]
-        L1E["Cleansing & Recovery"]
-    end
-
-    subgraph L2D[" "]
-        direction TB
-        L2A["Sacred & Physical Space"]
-        L2B["7 Chakras Deep Dive"]
-        L2C["Aura Layer Cleansing"]
-        L2D2["Golden Sticky Roses"]
-    end
-
-    subgraph L3D[" "]
-        direction TB
-        L3A["The Analyzer"]
-        L3B["Advanced Perception"]
-        L3C["Energetic Discernment"]
-    end
-
-    L1 --- L1D
-    L2 --- L2D
-    L3 --- L3D
+    L3 ==> A1 ==> A2 ==> A3
+    A3 -.-> A4 -.-> A5
 
     style L1 fill:#C7AE8C,color:#3F3E3C,stroke:#A8896D
-    style L2 fill:#9C6F6E,color:#F7F5F2,stroke:#9C6F6E
-    style L3 fill:#9E956B,color:#F7F5F2,stroke:#9E956B
-    style A1 fill:#7A3A34,color:#F7F5F2,stroke:#7A3A34
+    style L2 fill:#C7AE8C,color:#3F3E3C,stroke:#A8896D
+    style L3 fill:#9C6F6E,color:#F7F5F2,stroke:#9C6F6E
+    style A1 fill:#9C6F6E,color:#F7F5F2,stroke:#9C6F6E
+    style A2 fill:#9C6F6E,color:#F7F5F2,stroke:#9C6F6E
+    style A3 fill:#9E956B,color:#F7F5F2,stroke:#9E956B
+    style A4 fill:#7A3A34,color:#F7F5F2,stroke:#7A3A34
+    style A5 fill:#7A3A34,color:#F7F5F2,stroke:#7A3A34
 ```
 
 ---
@@ -1010,6 +1058,8 @@ graph TD
 
 *This is not learning. It is remembering.*
 
+The site presents six dimensions of awakening across a 3-column grid:
+
 ### The Rose
 
 It dissolves distortion and restores coherence. Inner awareness expands, presence and stability deepen. From this state, intuition sharpens, leadership rises, and connection becomes natural.
@@ -1030,7 +1080,7 @@ You learn to listen to truth with clarity and simplicity. Limiting beliefs and u
 
 It deepens your capacity to feel, support, and relate. Leadership rooted in coherence, empowerment, and trust. You read your own field and the energy around you with discernment and self-mastery.
 
-### Highest Potential
+### Your Highest Potential
 
 You access the brilliance of your original design. You live your life from pure integrity. These belong to every human who remembers who they are.
 
@@ -1067,31 +1117,100 @@ mindmap
 
 ---
 
+## The Codex -- Philosophical Container
+
+The Codex is the philosophical container of ROSES OS: a map of the territory, an articulation of the architecture, and an invitation to remember what has always been true. It is not a rigid doctrine but a living document that deepens as you do.
+
+### What is Coherence?
+
+Coherence is the state in which all dimensions of being (body, heart, mind, and soul) move as one integrated field. It is not a concept to understand but a reality to embody, a felt sense of alignment that transforms every layer of life.
+
+### Sacred Purpose
+
+ROSES OS exists to remember what was never lost. It is a living document, a field of practice, and a sacred container designed to support human beings in returning to the coherence that is their birthright. This is not about acquiring something new. It is about uncovering what has always been present, beneath the noise, the conditioning, and the forgetting.
+
+### 13 Domains of Coherence
+
+| # | Domain | Description |
+|---|--------|-------------|
+| 1 | **Physical Coherence** | Alignment of the body: posture, breath, movement, and somatic awareness as the foundation of all practice. |
+| 2 | **Emotional Coherence** | The capacity to feel fully without being governed by reactivity. Emotional intelligence as a doorway to freedom. |
+| 3 | **Mental Coherence** | Clarity of thought without compulsive thinking. The mind as an instrument rather than a master. |
+| 4 | **Relational Coherence** | Authentic connection with others rooted in presence, boundaries, and compassion rather than performance. |
+| 5 | **Creative Coherence** | Access to the creative impulse as a natural expression of aligned being rather than forced production. |
+| 6 | **Vocational Coherence** | Work as an expression of purpose. The alignment of livelihood with authentic calling. |
+| 7 | **Financial Coherence** | A healthy relationship with resources: receiving, stewarding, and circulating with ease and integrity. |
+| 8 | **Sexual Coherence** | The integration of life force energy. Embodied presence in intimacy and creative power. |
+| 9 | **Spiritual Coherence** | Direct connection with the sacred: not as belief but as lived experience and continuous remembrance. |
+| 10 | **Environmental Coherence** | Harmony between the individual and their spaces, ecosystems, and the living world. |
+| 11 | **Ancestral Coherence** | Healing the lineage. Transforming inherited patterns into gifts and reclaiming the wisdom of those who came before. |
+| 12 | **Temporal Coherence** | Right relationship with time: neither rushing nor stagnating. The art of sacred timing. |
+| 13 | **Universal Coherence** | The recognition of belonging to something vast. Alignment with the intelligence that moves through all things. |
+
+### Four Architecture Layers
+
+| Layer | Name | Description |
+|-------|------|-------------|
+| 1 | **Hardware** | The physical body: bones, muscles, organs, nervous system. The vessel through which all experience flows. |
+| 2 | **Software** | The mind: beliefs, patterns, conditioning, and the stories we carry. The programs that run our experience. |
+| 3 | **Heartware** | The emotional and relational intelligence. The felt sense of connection, compassion, and coherence. |
+| 4 | **Soulware** | The deepest layer: essence, purpose, and the remembrance of who we truly are beneath all conditioning. |
+
+### Eleven Capacities
+
+| # | Capacity | Description |
+|---|----------|-------------|
+| 1 | **Stillness** | The capacity to be at rest (internally and externally) as a foundation for all action. |
+| 2 | **Presence** | The ability to be fully here, now, without the need to be elsewhere. |
+| 3 | **Breath** | Conscious relationship with the breath as the bridge between body and awareness. |
+| 4 | **Feeling** | The willingness to feel completely: pleasure, pain, and everything in between. |
+| 5 | **Listening** | Deep receptivity: to self, others, and the intelligence of the larger field. |
+| 6 | **Discernment** | Clear seeing without judgment. The capacity to distinguish truth from noise. |
+| 7 | **Courage** | The heart-strength to act on what is true, even when it is uncomfortable. |
+| 8 | **Surrender** | The art of releasing control without collapsing. Trusting the larger intelligence. |
+| 9 | **Integration** | The ongoing work of bringing insights into lived experience and daily practice. |
+| 10 | **Service** | The natural movement from inner coherence to outer contribution. |
+| 11 | **Remembrance** | The ultimate capacity: not learning something new but remembering what has always been true. |
+
+### Coherence Vocabulary Alternatives
+
+Words that can replace "coherence" in domain titles and copy to vary tone and resonance:
+
+| Tone | Alternatives |
+|------|-------------|
+| **Inner Alignment / Spiritual** | Alignment, Harmony, Integration, Wholeness, Inner Order, Unity, Centeredness |
+| **Nervous System / Somatic** | Regulation, Stability, Balance, Groundedness, Equilibrium |
+| **Signal / Technology Metaphor** | Clarity, Signal Integrity, Resolution, Synchronization, Clean Signal, Calibration |
+| **Freedom / Sovereignty** | Self-possession, Sovereignty, Agency, Presence, Inner Freedom |
+| **Simple Everyday** | Stillness, Flow, Peace, Ease, Consistency |
+
+---
+
 ## The Guardians
 
-### Angelina Ataide
+### Angelina Ataíde -- Guardian of Lineage
 
-For over three decades, she has carried this lineage with unwavering devotion. Her presence opens a field of rare precision and depth, guiding thousands into clarity, safety, and sovereignty. She protects the essence of the Rose and reminds us that true mastery is lived, not taught.
+A pioneer in Aura Reading education in Brazil and Portugal, Angelina has dedicated over three decades to spiritual development and training aura readers. Her transformative methodology has already trained thousands of students, therapists, and teachers -- combining spiritual wisdom with practical techniques as the primary steward of the ROSES OS lineage.
 
-### Diego Dosal
+### Diego Dosal -- Guardian of Architecture & Structure
 
-He bridges spirit and structure with common clarity. After years exploring multiple energetic paths, he recognized the Rose and Aura as the most powerful, simple, and accessible technologies to awaken Genius.
+Diego is the bridge between spirit and structure. With over a decade of deep roots in multiple paths of spiritual practice, energy work, and community building, he carries the horizontal axis of ROSES OS -- developing platforms, systems, and frameworks that harmonize intuition with strategy and build lasting foundations for this work.
 
-### Dara Ayoub
+### Dara Ayoub -- Guardian of Community & Programs
 
-Rooted in the ways of embodiment and self-knowledge, she holds human expression and the work. She sustains programs, builds community and coherence, nurturing an environment where students feel held, guided, and safe.
+With over a decade walking the Aura Reading path and a background in multiple traditions of self-knowledge, Dara integrates body, mind, and spirit with reverence. She supports the creation and delivery of programs and courses, blending intuitive listening with grounded clarity.
 
-### Peggy Mar
+### Peggy Mars -- Guardian of Methodology
 
-She practices the pedagogical methods and integration, ensuring the teachings remain grounded and pure.
+Peggy creates bridges between cultures, communities, and inner worlds. With over two decades walking the Aura Reading path, she integrates emotional, ancestral, and spiritual layers with clarity and compassion -- sustaining authentic connection between teachers and students.
 
 ```mermaid
 graph TD
     subgraph GUARDIANS["The Guardians"]
-        AA["Angelina Ataide<br/><i>Lineage holder — precision & sovereignty</i>"]
-        DD["Diego Dosal<br/><i>Spirit & structure — awakening Genius</i>"]
-        DA["Dara Ayoub<br/><i>Embodiment — community & coherence</i>"]
-        PM["Peggy Mar<br/><i>Pedagogy — grounded & pure</i>"]
+        AA["Angelina Ataíde<br/><i>Guardian of Lineage</i>"]
+        DD["Diego Dosal<br/><i>Guardian of Architecture & Structure</i>"]
+        DA["Dara Ayoub<br/><i>Guardian of Community & Programs</i>"]
+        PM["Peggy Mars<br/><i>Guardian of Methodology</i>"]
     end
 
     AA --> ROS((ROSES OS))
@@ -1110,13 +1229,13 @@ graph TD
 
 ## Agreements & Virtues
 
-All participants honor these foundational agreements:
+All participants honor these five sacred agreements:
 
-- **Punctuality**
-- **Confidentiality**
-- **Co-responsibility**
-- **Trust**
-- **Patience, Empathy and Compassion**
+1. **Commitment to Practice** -- I commit to engaging with the daily practice for the duration of the program with sincerity and consistency.
+2. **Confidentiality** -- I agree to hold in confidence what is shared in group settings, honoring the sacred container of our community.
+3. **Respect for the Lineage** -- I honor the origins of this work and agree not to teach or represent these practices as my own without authorization.
+4. **Personal Responsibility** -- I take responsibility for my own well-being and will communicate with the guardians if I need additional support.
+5. **Community Care** -- I commit to showing up with care and respect for all participants, guardians, and the shared field of our practice.
 
 ---
 
@@ -1138,24 +1257,33 @@ This manual is a sacred companion for those who have been initiated into the pat
 
 ### Option 1 -- The Rose
 
-- Two immersive days, online
+- **Subtitle:** Rose Meditation Level 1, 2 & 3
+- Two immersive days, live online + recorded content
 - Six hours per day, offered in two three-hour sessions
-- **Dates:** March 17th -- March 27th
+- **Dates:** March 17--18, 2026
+- **Includes:** 2 immersive days of live instruction, Rose Meditation Levels 1, 2 & 3, two 3-hour sessions per day, integration workbook, private community access to classes and events, multi-timezone support
 
-### + Aura 1
+### Option 2 -- The Rose + Aura 1
 
-- Eleven sessions, structured and flexible blocks
-- **Dates:** March 17th -- March 27th
+- **Subtitle:** Complete Immersion
+- Eleven days combining Rose Meditation Levels 1, 2 & 3 with Aura Reading Level 1
+- Live online + recorded content
+- **Dates:** March 17--27, 2026
+- **Includes:** Rose Meditation Levels 1, 2 & 3 (2 days), Aura Reading Level 1 (9 days), daily Rose Meditation guidance, flexible practice sessions, integration workbook, private community access to classes and events, multi-timezone support
 
 ### Contribution Model
 
-This work is offered in devotion. You are invited to choose a contribution that reflects your truth.
+This work is offered in devotion. An income-based contribution model ensures that your financial season is honored while sustaining the ecosystem for all. You are invited to choose a contribution that reflects your truth.
 
-| Income Range | Tier |
-|---|---|
-| Under $30,000 USD | Lower contribution -- honors your reality |
-| $30,000 -- $70,000 USD | Mid-range -- reflects reciprocity and balance |
-| Above $70,000 USD | Higher tier -- supports accessibility for others and the expansion of this work |
+| Tier | Income Range | The Rose (2 days) | The Rose + Aura 1 (11 days) |
+|------|---|---|---|
+| **Seed** | Under $30,000 USD | $222 | $888 |
+| **Bloom** | $30,000 -- $70,000 USD | $444 | $1,444 |
+| **Canopy** | Above $70,000 USD | $777 | $2,111 |
+
+- **Seed** -- Honors your reality and current season.
+- **Bloom** -- Reflects reciprocity and balance.
+- **Canopy** -- Supports accessibility for others and the expansion of this work.
 
 Your support allows these technologies to reach more people worldwide.
 
@@ -1166,15 +1294,15 @@ graph TD
         D2["Day 2<br/>3hr + 3hr"]
     end
 
-    subgraph AURA_COURSE["Aura 1 — 11 Sessions"]
-        S1["Structured blocks"]
-        S2["Flexible scheduling"]
+    subgraph AURA_COURSE["The Rose + Aura 1 — 11 Days"]
+        S1["Rose Meditation (2 days)"]
+        S2["Aura Reading (9 days)"]
     end
 
     subgraph CONTRIBUTION["Contribution Model"]
-        T1["Under $30K<br/><i>Honors your reality</i>"]
-        T2["$30K – $70K<br/><i>Reciprocity & balance</i>"]
-        T3["Above $70K<br/><i>Supports expansion</i>"]
+        T1["Seed<br/><i>$222 / $888</i>"]
+        T2["Bloom<br/><i>$444 / $1,444</i>"]
+        T3["Canopy<br/><i>$777 / $2,111</i>"]
     end
 
     ROSE_COURSE --> AURA_COURSE
@@ -1488,10 +1616,24 @@ Only use imagery that feels: warm, human, earthy, devotional, quiet.
 
 ### Graphic Style
 
-- Minimal line icons
+- Minimal line icons (Lucide React icon set)
 - Subtle sacred geometry
 - Soft gradients
 - Spacious compositions
+
+### 3D Elements (Three.js / React Three Fiber)
+
+The site features interactive 3D elements that embody the Rose technology:
+
+- **HeroSphere** -- An iridescent, gently animated 3D sphere on the home page hero, created with custom shaders and post-processing effects
+- **RoseModel** -- A detailed 3D rose model used in key sections
+- **ShaderSphere** -- Custom shader-based sphere with animated materials
+
+These 3D elements should feel:
+- Alive but calm (gentle oscillation, not flashy)
+- Iridescent and warm (rose-gold tones)
+- Ambient, not distracting
+- Like a living presence, not a tech demo
 
 ### Logo System
 
@@ -1720,27 +1862,49 @@ Motion should feel like breath.
 
 ### Buttons
 
-**Primary Button (Invitation CTA)**
+**Navigation CTA Button (Begin)**
 
-- Background: Quiet Olive Gold (`#9E956B`)
-- Text: Aura White
+- Background: Rose Clay Mauve (`#9C6F6E`)
+- Hover: Darker rose (`#8A5E5D`) with fill-sweep animation
+- Text: White, Inter Medium
+- Shape: Pill + attached circle with ArrowUpRight icon
+- Icon animation: slides out and back in on hover
+- Used only in the navigation bar
+
+**Primary Button (Hero / Section CTAs)**
+
+- Background: `rose-500` (Tailwind)
+- Text: White
 - Radius: 999px (pill)
-- Padding: 16px 28px
+- Padding: 16px 32px
 - Font: Inter Medium
-- No harsh shadows
+- Shadow: rose-500/25, grows on hover
+- Inline arrow icon that shifts right on hover
 
 Text examples:
 
-- "Start Your Journey"
-- "Enter the Rose"
-- "Return to Coherence"
+- "Begin Your Journey"
+- "Explore The Rose"
+
+**Accent Button (Enrollment / Form CTAs)**
+
+- Background: Antique Olive Brass (`#9E956B`) via CSS variable `--color-accent`
+- Text: Accent foreground (white)
+- Radius: 999px (pill)
+- No harsh shadows
+- Used for enrollment CTAs and form submissions
+
+Text examples:
+
+- "Enroll Now"
+- "Send Message"
 
 **Secondary Button (Ghost)**
 
 - Transparent background
-- Border: Deep Earth 20% opacity
-- Text: Deep Earth
-- Hover: slight warm overlay
+- Border: 2px rose-300 (light) / rose-700 (dark)
+- Text: Foreground color
+- Hover: subtle bg fill + border darkens
 
 ### Cards / Containers
 
@@ -1761,33 +1925,65 @@ Navigation should disappear.
 - Small type
 - Wide spacing
 
-Example: ROSES OS | The Rose | The Aura | Journey | Guardians | Begin
+Example: ROSES OS | The Rose | Programs | Guardians | Community | Begin
 
 ### Hero Section
 
 The hero is not promotional. It is a remembering.
 
-**Structure:**
+**Structure (Home Page):**
 
-- Headline (Cormorant): "A Seamless Path to Inner Freedom"
-- Subtext (Inter): Where inner symmetry becomes the source of leadership, creativity, and conscious prosperity.
-- Single CTA Button: Start Your Journey
+- Eyebrow label (Inter, uppercase, 11px): "A Living Ecosystem for Remembering Who You Are"
+- Rose icon: Centered, minimal
+- Headline (Cormorant, GSAP word-reveal animation): "A Seamless Path to Inner Freedom"
+- Subtext (Inter): "Technologies of remembrance for those ready to live in coherence."
+- Primary CTA: "Begin Your Journey" → /invitation
+- Secondary CTA: "Explore The Rose" → /the-rose
+- 3D animated sphere (Three.js / React Three Fiber) -- iridescent, gently animating below the text
+- Scroll indicator at bottom with animated pulse line
 
 **Hero Visual Style:**
 
-- Solid rose clay background OR soft textured field
-- Minimal rose icon centered
+- Warm gradient background (rose-50/50 to transparent)
+- Background noise texture overlay
+- 3D HeroSphere filling lower portion of viewport
+- Parallax fade-out on scroll
 - Nothing busy
+
+**Interior Page Heroes:**
+
+Interior pages use the `PageHero` component with consistent structure:
+- Eyebrow label (sacred label style)
+- Headline (Cormorant)
+- Description text (Inter, muted)
+- Optional page image
+
+**CTA Text Examples (as used on site):**
+
+- "Begin Your Journey" (primary, rose-500 pill button)
+- "Explore The Rose" (secondary, ghost/outline)
+- "Begin" (nav CTA, Rose Clay Mauve pill button)
+- "Enroll Now" (enrollment, olive brass accent)
+- "Learn More" (invitation flow)
+- "Send Message" (contact form)
 
 ### Section Templates
 
-**Quote Spread Section:** Full-width. Silence. Centered text: *"When coherence returns, Genius awakens."* No button. Just presence.
+**Quote Spread Section (`QuoteBlock`):** Full-width rose gradient background (`rose-600` via `#9C6F6E` to `rose-800`), linen texture overlay, decorative circles, centered text with large serif quotation mark. No button. Just presence.
 
-**The Journey Section:** Three pillars layout -- The Rose, The Aura, The Human Journey. Each as calm cards, not sales blocks.
+**Three Pillars Section:** Three-column card grid -- The Rose, The Aura, The Human Journey. Each as calm cards with subtle rose gradient backgrounds, rose-tinted icon containers, serif title, muted body text. Not sales blocks.
 
-**Guardians Section:** Photography should feel real, reverent. Photo + Name + 2-line essence. No long resumes. Each photo framed with a white border (Aura White `#F7F5F2` or pure `#FFFFFF`, 4--6px) to create a clean, reverent separation from the background.
+**Two Core Questions Section:** Centered section with soft radial rose glow. Two italic serif questions that change everything. Gradient line divider below.
 
-**Pricing / Contribution Section:** Must feel sacred, not transactional. Language: "A contribution rooted in truth." No "BUY NOW."
+**Brand Essence Section:** Dark background (`section-dark`), rose-gold gradient orbs, centered messaging with stats row (30+ Years, 6,000+ Practitioners, 50+ Countries).
+
+**Who It's For Section:** Centered section with page image, trait pills (Seekers, Healers, Teachers, Leaders, Creators) in rose-tinted pill badges, centered prose.
+
+**Guardians Section:** 4-column grid (1 on mobile, 2 on tablet, 4 on desktop). Photography should feel real, reverent. Photo + Name + Role + Bio. `GuardianCard` component with image positioning control.
+
+**Pricing / Contribution Section:** Must feel sacred, not transactional. Three-tier layout (Seed, Bloom, Canopy) with income ranges and pricing for both program options. Language: "We believe this work should be accessible to everyone who is called." No "BUY NOW."
+
+**Invitation CTA Section:** Dark gradient background, centered rose icon, headline "The way is open. Welcome home." with rose-400 accent, primary + secondary CTA buttons.
 
 ---
 
@@ -1823,69 +2019,109 @@ ROSES OS copy must always feel like:
 
 ## Sitemap & Page Structure
 
-### Core Pages
+### Core Pages (Public)
 
-1. **Home** -- Entry point, brand essence, invitation
-2. **The Rose** -- Core technology explained (Levels 1--3)
-3. **The Aura** -- Perception, mirror of leadership, relationship work
-4. **The Journey** -- What participants experience, outcomes
-5. **The Guardians** -- Facilitators and lineage holders
-6. **Begin** -- Contribution + application, start your journey
-7. **Journal / Library** -- Content, reflections, resources (later phase)
+1. **Home** -- Entry point, brand essence, 3D hero sphere, core questions, three pillars, quote, invitation
+2. **The Rose** -- Core technology explained (Rose Meditation 1--3, Aura 1--5), the narrative arc from old paradigm to remembrance
+3. **Programs** -- Current offerings (The Rose, The Rose + Aura 1), schedule, income-based contribution model
+4. **Guardians** -- The four keepers of the Rose field with photos and bios
+5. **The Codex** -- Philosophical container: coherence definition, sacred purpose, lineage, 13 domains, path levels, architecture layers, eleven capacities
+6. **Community** -- The living field: vision for coherent living, four architecture layers, participation through programs
+7. **Contact** -- WhatsApp and email contact, contact form
+
+### Invitation Flow
+
+8. **Invitation** -- Full-screen immersive landing: hero, what is ROSES OS, three pillars, guardians, what awakens, programs, CTA
+9. **Learn More** -- Detailed program info, schedule, contribution model, five sacred agreements, enrollment CTA
+
+### Forms
+
+10. **Enroll** -- Multi-step enrollment application
+11. **Contribute** -- Contribution/payment selection
+12. **Agreements** -- Terms acceptance
+
+### Teaching (Password-Gated)
+
+13. **Teaching Hub** -- Entry point for level selection
+14. **Level 1** -- Foundational practices content
+15. **Level 2** -- Sacred space and chakras
+16. **Level 3** -- Advanced perception
+
+### Admin
+
+17. **Admin Dashboard** -- Analytics, content, feedback, media, user management, settings
 
 ```mermaid
 graph TD
-    HOME["Home<br/><i>Invitation & brand essence</i>"]
+    HOME["Home<br/><i>3D hero, brand essence, invitation</i>"]
 
-    HOME --> ROSE["The Rose<br/><i>Levels 1–3</i>"]
-    HOME --> AURA_P["The Aura<br/><i>Perception & relationship</i>"]
-    HOME --> JOURNEY["The Journey<br/><i>Experience & outcomes</i>"]
-    HOME --> GUARD["The Guardians<br/><i>Facilitators & lineage</i>"]
-    HOME --> BEGIN["Begin<br/><i>Contribution & application</i>"]
+    HOME --> ROSE["The Rose<br/><i>Rose 1–3, Aura 1–5</i>"]
+    HOME --> PROG["Programs<br/><i>Offerings & schedule</i>"]
+    HOME --> GUARD["Guardians<br/><i>Keepers of the Rose field</i>"]
+    HOME --> CODEX["The Codex<br/><i>Philosophy & architecture</i>"]
+    HOME --> COMMUNITY["Community<br/><i>The living field</i>"]
+    HOME --> CONTACT["Contact<br/><i>WhatsApp, email, form</i>"]
 
-    ROSE --> L1["Level 1<br/>Foundational"]
-    ROSE --> L2["Level 2<br/>Sacred Space"]
-    ROSE --> L3["Level 3<br/>Perception"]
+    HOME --> INV["Invitation<br/><i>Immersive landing</i>"]
+    INV --> LEARN["Learn More<br/><i>Full program details</i>"]
+    INV --> ENROLL["Enroll<br/><i>Application form</i>"]
 
-    AURA_P --> A1S["Aura 1<br/>11 Sessions"]
+    ROSE --> L1["Rose Meditation 1<br/>The Open Threshold"]
+    ROSE --> L2["Rose Meditation 2<br/>The Living Rhythm"]
+    ROSE --> L3["Rose Meditation 3<br/>The Spiritual Activation"]
+    ROSE --> A1["Aura 1<br/>The Initiation"]
 
-    BEGIN --> CONTRIB["Contribution<br/>Model"]
+    CODEX --> DOMAINS["13 Domains<br/>of Coherence"]
+    CODEX --> ARCH["4 Architecture<br/>Layers"]
+    CODEX --> CAP["11 Capacities"]
 
-    HOME -.->|"later phase"| JOURNAL["Journal / Library<br/><i>Reflections & resources</i>"]
+    PROG --> SCHED["Schedule"]
+    PROG --> CONTRIB["Contribution<br/>Model"]
 
     style HOME fill:#3F3E3C,color:#F7F5F2
     style ROSE fill:#9C6F6E,color:#F7F5F2
-    style AURA_P fill:#9C6F6E,color:#F7F5F2
-    style JOURNEY fill:#9C6F6E,color:#F7F5F2
+    style PROG fill:#9C6F6E,color:#F7F5F2
     style GUARD fill:#9C6F6E,color:#F7F5F2
-    style BEGIN fill:#9E956B,color:#F7F5F2
+    style CODEX fill:#9C6F6E,color:#F7F5F2
+    style COMMUNITY fill:#9C6F6E,color:#F7F5F2
+    style CONTACT fill:#9C6F6E,color:#F7F5F2
+    style INV fill:#9E956B,color:#F7F5F2
+    style LEARN fill:#C7AE8C,color:#3F3E3C
+    style ENROLL fill:#C7AE8C,color:#3F3E3C
     style L1 fill:#C7AE8C,color:#3F3E3C
     style L2 fill:#C7AE8C,color:#3F3E3C
     style L3 fill:#C7AE8C,color:#3F3E3C
-    style A1S fill:#C7AE8C,color:#3F3E3C
-    style CONTRIB fill:#C7AE8C,color:#3F3E3C
-    style JOURNAL fill:#EBD6C1,color:#3F3E3C,stroke-dasharray: 5 5
+    style A1 fill:#C7AE8C,color:#3F3E3C
+    style DOMAINS fill:#EBD6C1,color:#3F3E3C
+    style ARCH fill:#EBD6C1,color:#3F3E3C
+    style CAP fill:#EBD6C1,color:#3F3E3C
+    style SCHED fill:#EBD6C1,color:#3F3E3C
+    style CONTRIB fill:#EBD6C1,color:#3F3E3C
 ```
 
 ### User Journey Flow
 
 ```mermaid
 graph LR
-    DISCOVER["Discover<br/><i>Find ROSES OS</i>"]
-    FEEL["Feel<br/><i>Experience the threshold</i>"]
-    EXPLORE["Explore<br/><i>The Rose & Aura</i>"]
-    RESONATE["Resonate<br/><i>The two questions</i>"]
-    BEGIN_J["Begin<br/><i>Choose contribution</i>"]
-    PRACTICE["Practice<br/><i>Level 1 → 2 → 3</i>"]
-    REMEMBER["Remember<br/><i>Who you are</i>"]
+    DISCOVER["Discover<br/><i>Home page / social</i>"]
+    FEEL["Feel<br/><i>3D hero, brand essence</i>"]
+    EXPLORE["Explore<br/><i>The Rose, Codex, Community</i>"]
+    RESONATE["Resonate<br/><i>Two core questions</i>"]
+    INVITE["Invitation<br/><i>Immersive landing</i>"]
+    LEARN["Learn More<br/><i>Programs, schedule, tiers</i>"]
+    ENROLL["Enroll<br/><i>Application form</i>"]
+    PRACTICE["Practice<br/><i>Rose 1→2→3, Aura 1→5</i>"]
+    REMEMBER["Remember<br/><i>Welcome home</i>"]
 
-    DISCOVER ==> FEEL ==> EXPLORE ==> RESONATE ==> BEGIN_J ==> PRACTICE ==> REMEMBER
+    DISCOVER ==> FEEL ==> EXPLORE ==> RESONATE ==> INVITE ==> LEARN ==> ENROLL ==> PRACTICE ==> REMEMBER
 
     style DISCOVER fill:#EBD6C1,color:#3F3E3C
-    style FEEL fill:#C7AE8C,color:#3F3E3C
+    style FEEL fill:#EBD6C1,color:#3F3E3C
     style EXPLORE fill:#C7AE8C,color:#3F3E3C
-    style RESONATE fill:#9C6F6E,color:#F7F5F2
-    style BEGIN_J fill:#9C6F6E,color:#F7F5F2
+    style RESONATE fill:#C7AE8C,color:#3F3E3C
+    style INVITE fill:#9C6F6E,color:#F7F5F2
+    style LEARN fill:#9C6F6E,color:#F7F5F2
+    style ENROLL fill:#9C6F6E,color:#F7F5F2
     style PRACTICE fill:#9E956B,color:#F7F5F2
     style REMEMBER fill:#3F3E3C,color:#F7F5F2
 ```
@@ -1901,10 +2137,13 @@ graph LR
 This Brand DNA was synthesized from:
 
 1. **Brand Guideline Guide** -- Complete brand guidelines and design book (docx)
-2. **Brand Identity** -- Core brand identity document (docs/brand-identity.md)
-3. **Presentation** -- Invitation and program overview (docs/presentation.md)
-4. **Teachers Resource -- Rose Meditation Level 1, 2, 3 -- 2026** -- Complete 46-page visual teaching resource (PDF)
-5. **MDR Teachers Training Manual** -- Text extraction of all teaching content (docs/mdr-teachers-training-manual.md)
+2. **Brand Identity** -- Core brand identity document (docs/source-materials/brand-identity.md)
+3. **Brand Guidelines** -- Color system, typography, voice/tone, positioning (docs/source-materials/brand-guidelines.md)
+4. **Presentation** -- Invitation and program overview (docs/program/presentation.md)
+5. **The Codex** -- Foundational philosophy (docs/foundation/the-codex.md)
+6. **Teachers Resource -- Rose Meditation Level 1, 2, 3 -- 2026** -- Complete 46-page visual teaching resource (PDF)
+7. **MDR Teachers Training Manual** -- Text extraction of all teaching content (docs/training/mdr-teachers-training-manual.md)
+8. **Live Site Implementation** -- The roses.os website codebase (src/), including all pages, components, data, and design system
 
 ---
 
