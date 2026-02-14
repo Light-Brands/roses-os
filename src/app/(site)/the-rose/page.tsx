@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import { visiblePathLevels } from '@/lib/data';
+import { pathLevels } from '@/lib/data';
 
 import PageHero from '@/components/sections/PageHero';
 import PathLevels from '@/components/sections/PathLevels';
@@ -146,14 +146,15 @@ export default function TheRosePage() {
           and the cultivation of inner coherence. Developed over decades by
           Angelina Ataíde and drawn from a deep lineage of consciousness research,
           it offers a clear, grounded pathway for anyone ready to remember who
-          they truly are. The Rose unfolds across three levels. Each one a
-          deepening of the relationship with yourself, your body, and the field of
-          intelligence that surrounds you.
+          they truly are. The Rose unfolds across three levels of meditation,
+          each a deepening of the relationship with yourself, your body, and
+          the field of intelligence that surrounds you — culminating in Aura
+          Reading, where perception itself becomes practice.
         </p>
       </RevealSection>
 
-      {/* 6. Path Levels */}
-      <PathLevels levels={visiblePathLevels} variant="full" />
+      {/* 6. Path Levels — Rose Meditation 1–3 + Aura 1 */}
+      <PathLevels levels={pathLevels.filter((l) => l.level <= 4)} variant="full" />
 
       {/* 7. Quote */}
       <QuoteBlock
