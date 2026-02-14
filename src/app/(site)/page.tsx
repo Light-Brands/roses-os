@@ -162,7 +162,7 @@ function BrandEssence() {
           className="text-lg text-white/60 leading-relaxed max-w-2xl mx-auto"
         >
           ROSES OS is a living consciousness ecosystem of practices, teachings,
-          and community — designed to help you remember what you already know and
+          and community, designed to help you remember what you already know and
           live from that place. Not a course. Not a cure. A way home.
         </motion.p>
 

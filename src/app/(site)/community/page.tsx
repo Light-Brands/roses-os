@@ -96,8 +96,8 @@ export default function CommunityPage() {
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="text-lg text-[var(--color-foreground-muted)] leading-relaxed mb-8"
           >
-            The community rests on a four-layer architecture — Hardware, Software,
-            Heartware, and Soulware — each sustaining a different dimension of
+            The community rests on a four-layer architecture: Hardware, Software,
+            Heartware, and Soulware, each sustaining a different dimension of
             coherent living.
           </motion.p>
           <motion.div
