@@ -227,8 +227,8 @@ export const coherenceAlternatives: CoherenceAlternativeCategory[] = [
 
 // =============================================================================
 // PATH LEVELS (Rose Meditation 1–3 + Aura 1–5)
-// Full dataset kept for future use. Aura 4 & 5 (levels 7–8) are hidden from
-// the public UI via the visiblePathLevels export below.
+// Full dataset kept for reference. Aura 4 & 5 (levels 7–8) are excluded from
+// the rose page via the visiblePathLevels export below.
 // =============================================================================
 
 export const pathLevels: PathLevel[] = [
@@ -298,7 +298,9 @@ export const pathLevels: PathLevel[] = [
   },
 ];
 
-export const visiblePathLevels: PathLevel[] = pathLevels;
+export const visiblePathLevels: PathLevel[] = pathLevels.filter(
+  (l) => l.level <= 6,
+);
 
 // =============================================================================
 // LINEAGE
