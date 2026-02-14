@@ -68,13 +68,13 @@ export const programs: Program[] = [
   {
     id: '1',
     title: 'The Rose + Aura 1',
-    subtitle: 'Rose Meditation 1, 2 & 3 + Aura Reading Level 1',
+    subtitle: 'Rose Meditation + Aura Reading Level 1',
     duration: '11 days',
     dates: 'March 17–27, 2026',
     format: 'Live online + recorded content',
-    description: 'The complete journey combining Rose Meditation Levels 1, 2 & 3 with Aura Reading Level 1. Eleven days of immersive practice across structured and flexible blocks, deepening perception and energetic coherence.',
+    description: 'The complete journey combining Rose Meditation with Aura Reading Level 1. Eleven days of immersive practice across structured and flexible blocks, deepening perception and energetic coherence.',
     includes: [
-      'Rose Meditation Levels 1, 2 & 3 (2 days)',
+      'Rose Meditation (2 days)',
       'Aura Reading Level 1 (9 days)',
       'Daily Rose Meditation guidance',
       'Flexible practice sessions',
@@ -108,7 +108,7 @@ export const programs: Program[] = [
 export const scheduleStages: ScheduleStage[] = [
   {
     id: '1',
-    title: 'Rose Meditation Level 1, 2 & 3',
+    title: 'Rose Meditation',
     dateRange: 'March 17–18',
     sessions: [
       { day: 'First Class', duration: '3 hours', time: { sanJose: '7:00 AM – 10:00 AM', bogota: '8:00 AM – 11:00 AM', newYork: '9:00 AM – 12:00 PM', brasilia: '10:00 AM – 1:00 PM', london: '1:00 PM – 4:00 PM', madrid: '2:00 – 5:00 PM' } },
