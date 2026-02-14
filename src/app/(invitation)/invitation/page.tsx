@@ -4,9 +4,8 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import { messagingPillars, guardians, programs } from '@/lib/data';
+import { programs } from '@/lib/data';
 
-import GuardianCard from '@/components/sections/GuardianCard';
 import ProgramCard from '@/components/sections/ProgramCard';
 
 // =============================================================================
@@ -48,9 +47,9 @@ function InvitationHero() {
           transition={{ delay: 0.5, duration: 0.8, ease }}
           className="font-serif text-[clamp(2.5rem,6vw,5rem)] leading-[1.05] tracking-tighter text-balance max-w-4xl mx-auto"
         >
-          A Seamless Path to
+          You Have Been
           <br />
-          Inner Freedom
+          Invited
         </motion.h1>
 
         <motion.p
@@ -59,7 +58,7 @@ function InvitationHero() {
           transition={{ delay: 0.9, duration: 0.6, ease }}
           className="mt-6 text-lg sm:text-xl text-warm-300 max-w-xl mx-auto leading-relaxed"
         >
-          Technologies of remembrance for those ready to live in coherence.
+          A personal doorway into the Rose field. Everything you need to begin is here.
         </motion.p>
 
         <motion.div
@@ -143,63 +142,21 @@ function WhatIsRosesOS() {
 }
 
 // =============================================================================
-// SECTION: Three Pillars
+// SECTION: Guardians Link
 // =============================================================================
 
-function ThreePillars() {
+function GuardiansLink() {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section ref={ref} className="section-padding bg-[var(--color-section-dark)] text-white">
-      <div className="container-premium">
+    <section ref={ref} className="section-padding bg-[var(--color-background-subtle)]">
+      <div className="container-premium max-w-3xl mx-auto text-center">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease }}
-          className="text-[11px] font-medium uppercase tracking-[0.2em] text-warm-400 text-center mb-12"
-        >
-          Three Pillars
-        </motion.p>
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {messagingPillars.map((pillar, i) => (
-            <motion.div
-              key={pillar.id}
-              initial={{ opacity: 0, y: 24 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.1 + i * 0.15, ease }}
-              className="text-center"
-            >
-              <h3 className="font-serif text-2xl tracking-tight mb-4 text-white">
-                {pillar.title}
-              </h3>
-              <p className="text-warm-300 leading-relaxed">
-                {pillar.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// =============================================================================
-// SECTION: Guardians
-// =============================================================================
-
-function GuardiansSection() {
-  const ref = useRef<HTMLElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-
-  return (
-    <section ref={ref} className="section-padding">
-      <div className="container-premium">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, ease }}
-          className="label-sacred text-center mb-4"
+          className="label-sacred mb-4"
         >
           The Guardians
         </motion.p>
@@ -207,15 +164,41 @@ function GuardiansSection() {
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1, ease }}
-          className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight text-center mb-12"
+          className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-6"
         >
-          Your guides on the path
+          Held by those who walk the path
         </motion.h2>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
-          {guardians.map((guardian) => (
-            <GuardianCard key={guardian.id} guardian={guardian} />
-          ))}
-        </div>
+        <motion.p
+          initial={{ opacity: 0, y: 24 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2, ease }}
+          className="text-lg text-[var(--color-foreground-muted)] leading-relaxed mb-8"
+        >
+          Four guardians steward the Rose field — each bringing decades of
+          practice, devotion, and lived experience to support your journey.
+        </motion.p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.3, ease }}
+        >
+          <Link
+            href="/guardians"
+            className={cn(
+              'inline-flex items-center gap-2',
+              'text-sm font-medium',
+              'text-[var(--color-foreground)]',
+              'underline underline-offset-4 decoration-[var(--color-rose-clay)]',
+              'hover:text-[var(--color-foreground-muted)]',
+              'transition-colors duration-200'
+            )}
+          >
+            Meet the Guardians
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
@@ -428,9 +411,8 @@ export default function InvitationPage() {
     <>
       <InvitationHero />
       <WhatIsRosesOS />
-      <ThreePillars />
-      <GuardiansSection />
       <WhatAwakensSection />
+      <GuardiansLink />
       <ProgramsSection />
       <FinalCTA />
     </>

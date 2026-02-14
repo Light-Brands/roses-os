@@ -4,19 +4,10 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import {
-  programs,
-  scheduleStages,
-  contributionTiers,
-  agreements,
-} from '@/lib/data';
 
 import { Navigation } from '@/components/ui/Navigation';
 import Footer from '@/components/ui/Footer';
 import PageHero from '@/components/sections/PageHero';
-import ProgramCard from '@/components/sections/ProgramCard';
-import ScheduleTable from '@/components/sections/ScheduleTable';
-import ContributionTiers from '@/components/sections/ContributionTiers';
 
 // =============================================================================
 // SHARED EASE
@@ -25,130 +16,106 @@ import ContributionTiers from '@/components/sections/ContributionTiers';
 const ease = [0.16, 1, 0.3, 1] as const;
 
 // =============================================================================
-// SECTION: Programs Detail
+// SECTION: Overview
 // =============================================================================
 
-function ProgramsDetail() {
+function OverviewSection() {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
     <section ref={ref} className="section-padding">
-      <div className="container-premium">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, ease }}
-          className="label-sacred mb-4"
-        >
-          Programs
-        </motion.p>
+      <div className="container-premium max-w-3xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1, ease }}
-          className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-10"
+          className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-6"
         >
-          What we offer
+          How It Works
         </motion.h2>
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl">
-          {programs.map((program) => (
-            <ProgramCard key={program.id} program={program} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// =============================================================================
-// SECTION: Schedule
-// =============================================================================
-
-function ScheduleSection() {
-  const ref = useRef<HTMLElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-
-  return (
-    <section ref={ref} className="section-padding bg-[var(--color-background-subtle)]">
-      <div className="container-premium">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, ease }}
-          className="label-sacred mb-4"
-        >
-          Schedule
-        </motion.p>
-        <motion.h2
-          initial={{ opacity: 0, y: 24 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.1, ease }}
-          className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-10"
-        >
-          Program timeline
-        </motion.h2>
-        <div className="max-w-4xl">
-          <ScheduleTable stages={scheduleStages} />
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// =============================================================================
-// SECTION: Contribution Model
-// =============================================================================
-
-function ContributionSection() {
-  const ref = useRef<HTMLElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-
-  return (
-    <section ref={ref} className="section-padding">
-      <div className="container-premium">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, ease }}
-          className="label-sacred mb-4"
-        >
-          Contribution Model
-        </motion.p>
-        <motion.h2
-          initial={{ opacity: 0, y: 24 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.1, ease }}
-          className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-4"
-        >
-          Income-based pricing
-        </motion.h2>
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2, ease }}
-          className="text-base text-[var(--color-foreground-muted)] leading-relaxed max-w-2xl mb-10"
+          className="text-lg text-[var(--color-foreground-muted)] leading-relaxed space-y-6"
         >
-          We believe that access to this work should not be limited by financial
-          circumstance. Our contribution model is based on trust and
-          self-assessment. Choose the tier that reflects your current season of
-          life.
-        </motion.p>
-        <div className="max-w-4xl">
-          <ContributionTiers tiers={contributionTiers} />
-        </div>
+          <p>
+            ROSES OS offers guided programs in Rose Meditation and Aura Reading.
+            Each program is held live, online, and designed to meet you exactly
+            where you are. No prior experience is needed.
+          </p>
+          <p>
+            We use an income-based contribution model so that financial
+            circumstances never stand between you and this work. You choose the
+            tier that reflects your current season of life.
+          </p>
+          <p>
+            Before enrolling, you will be asked to accept five sacred agreements
+            that hold the integrity of our container: Commitment to Practice,
+            Confidentiality, Respect for the Lineage, Personal Responsibility,
+            and Community Care.
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.3, ease }}
+          className="mt-10"
+        >
+          <Link
+            href="/programs"
+            className={cn(
+              'inline-flex items-center gap-2',
+              'text-sm font-medium',
+              'text-[var(--color-foreground)]',
+              'underline underline-offset-4 decoration-[var(--color-rose-clay)]',
+              'hover:text-[var(--color-foreground-muted)]',
+              'transition-colors duration-200'
+            )}
+          >
+            View programs, schedule & contribution details
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
 }
 
 // =============================================================================
-// SECTION: Agreements
+// SECTION: What to Expect
 // =============================================================================
 
-function AgreementsSection() {
+function WhatToExpect() {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+  const steps = [
+    {
+      number: '01',
+      title: 'Explore',
+      description: 'Read about the programs and find the offering that resonates with where you are.',
+    },
+    {
+      number: '02',
+      title: 'Enroll',
+      description: 'Complete a brief enrollment form and select your contribution tier.',
+    },
+    {
+      number: '03',
+      title: 'Prepare',
+      description: 'Accept the five sacred agreements and receive your welcome materials.',
+    },
+    {
+      number: '04',
+      title: 'Begin',
+      description: 'Join live sessions with the guardians and fellow practitioners.',
+    },
+  ];
 
   return (
     <section ref={ref} className="section-padding bg-[var(--color-background-subtle)]">
@@ -157,51 +124,40 @@ function AgreementsSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease }}
-          className="label-sacred mb-4"
+          className="label-sacred mb-4 text-center"
         >
-          Our Agreements
+          Your Journey
         </motion.p>
         <motion.h2
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1, ease }}
-          className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-10"
+          className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-12 text-center"
         >
-          Five sacred agreements
+          What to expect
         </motion.h2>
-        <div className="max-w-3xl space-y-6">
-          {agreements.map((agreement, i) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          {steps.map((step, i) => (
             <motion.div
-              key={agreement.id}
+              key={step.number}
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.15 + i * 0.08, ease }}
+              transition={{ duration: 0.6, delay: 0.15 + i * 0.1, ease }}
               className={cn(
-                'flex gap-5',
-                'py-5',
-                'border-b border-[var(--color-border-subtle)]',
-                'last:border-b-0'
+                'rounded-xl p-6',
+                'bg-[var(--color-background-elevated)]',
+                'border border-[var(--color-border-subtle)]'
               )}
             >
-              <span
-                className={cn(
-                  'flex-shrink-0 flex items-center justify-center',
-                  'w-8 h-8 rounded-full',
-                  'bg-[#9E956B]/10 text-[#9E956B]',
-                  'font-serif font-semibold text-sm',
-                  'border border-[#9E956B]/20'
-                )}
-              >
-                {i + 1}
+              <span className="block font-serif text-2xl text-[#9E956B]/50 mb-3">
+                {step.number}
               </span>
-              <div className="flex-1 min-w-0">
-                <h3 className="font-serif font-semibold text-base text-[var(--color-foreground)] leading-snug mb-1">
-                  {agreement.title}
-                </h3>
-                <p className="text-sm text-[var(--color-foreground-muted)] leading-relaxed">
-                  {agreement.description}
-                </p>
-              </div>
+              <h3 className="font-serif font-semibold text-base text-[var(--color-foreground)] mb-2">
+                {step.title}
+              </h3>
+              <p className="text-sm text-[var(--color-foreground-muted)] leading-relaxed">
+                {step.description}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -235,6 +191,7 @@ function ReadyCTA() {
             initial={{ opacity: 0, y: 24 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2, ease }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Link
               href="/enroll"
@@ -247,6 +204,18 @@ function ReadyCTA() {
               )}
             >
               Enroll Now
+            </Link>
+            <Link
+              href="/programs"
+              className={cn(
+                'px-8 py-3.5 rounded-full',
+                'border-2 border-white/30 text-white',
+                'text-sm font-medium',
+                'hover:border-white/60 hover:bg-white/5',
+                'transition-all duration-200'
+              )}
+            >
+              View Programs
             </Link>
           </motion.div>
         </div>
@@ -268,25 +237,19 @@ export default function LearnMorePage() {
         {/* 1. Hero */}
         <PageHero
           title="Everything You Need to Know"
-          description="A detailed look at the ROSES OS programs, schedule, contribution model, and the sacred agreements that hold our container. Take your time. Read what calls to you."
+          description="A clear overview of how ROSES OS works, what to expect, and how to get started."
         />
 
-        {/* 2. Detailed program information */}
-        <ProgramsDetail />
+        {/* 2. How it works overview */}
+        <OverviewSection />
 
-        {/* 3. Schedule overview */}
-        <ScheduleSection />
+        {/* 3. What to expect steps */}
+        <WhatToExpect />
 
-        {/* 4. Contribution model */}
-        <ContributionSection />
-
-        {/* 5. Agreements preview */}
-        <AgreementsSection />
-
-        {/* 6. CTA */}
+        {/* 4. CTA */}
         <ReadyCTA />
 
-        {/* 7. Back link */}
+        {/* 5. Back link */}
         <section className="py-10">
           <div className="container-premium">
             <Link
