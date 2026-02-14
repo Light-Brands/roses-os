@@ -146,10 +146,9 @@ export default function TheRosePage() {
           and the cultivation of inner coherence. Developed over decades by
           Angelina Ataíde and drawn from a deep lineage of consciousness research,
           it offers a clear, grounded pathway for anyone ready to remember who
-          they truly are. The Rose unfolds across three levels of meditation,
-          each a deepening of the relationship with yourself, your body, and
-          the field of intelligence that surrounds you — culminating in Aura
-          Reading, where perception itself becomes practice.
+          they truly are. The Rose unfolds across three levels. Each one a
+          deepening of the relationship with yourself, your body, and the field of
+          intelligence that surrounds you.
         </p>
       </RevealSection>
 
