@@ -429,7 +429,7 @@ export const elevenCapacities: Capacity[] = [
   { id: '8', number: 8, title: 'Surrender', description: 'The art of releasing control without collapsing. Trusting the larger intelligence.' },
   { id: '9', number: 9, title: 'Integration', description: 'The ongoing work of bringing insights into lived experience and daily practice.' },
   { id: '10', number: 10, title: 'Service', description: 'The natural movement from inner coherence to outer contribution.' },
-  { id: '11', number: 11, title: 'Remembrance', description: 'The ultimate capacity is not learning something new but remembering what has always been true.' },
+  { id: '11', number: 11, title: 'Remembrance', description: 'The ultimate capacity is remembering what has always been true.' },
 ];
 
 // =============================================================================
@@ -448,10 +448,10 @@ export const architectureLayers: ArchitectureLayer[] = [
 // =============================================================================
 
 export const brandQuotes: BrandQuote[] = [
-  { id: '1', text: 'The next revolution is not technological. It is a revolution of remembrance.' },
+  { id: '1', text: 'The next revolution is a revolution of remembrance.' },
   { id: '2', text: 'A seamless path to inner freedom.' },
-  { id: '3', text: 'You are not broken. You are not lost. You are remembering.' },
-  { id: '4', text: 'Coherence is not something you achieve. It is something you return to.' },
+  { id: '3', text: 'You are whole. You are here. You are remembering.' },
+  { id: '4', text: 'Coherence is something you return to.' },
   { id: '5', text: 'The way is open. Welcome home.' },
   { id: '6', text: 'What if the intelligence you seek is already within you, waiting to be remembered?' },
 ];

@@ -40,9 +40,8 @@ function WhatIsCoherence() {
           className="text-lg text-[var(--color-foreground-muted)] leading-relaxed"
         >
           Coherence is the state in which all dimensions of being (body, heart,
-          mind, and soul) move as one integrated field. It is not a concept to
-          understand but a reality to embody, a felt sense of alignment that
-          transforms every layer of life.
+          mind, and soul) move as one integrated field. A reality to embody, a
+          felt sense of alignment that transforms every layer of life.
         </motion.p>
       </div>
     </section>
@@ -77,9 +76,8 @@ function SacredPurpose() {
           ROSES OS exists to remember what was never lost. It is a living
           document, a field of practice, and a sacred container designed to
           support human beings in returning to the coherence that is their
-          birthright. This is not about acquiring something new. It is about
-          uncovering what has always been present, beneath the noise, the
-          conditioning, and the forgetting.
+          birthright. It is about uncovering what has always been present,
+          beneath the noise, the conditioning, and the forgetting.
         </motion.p>
       </div>
     </section>
