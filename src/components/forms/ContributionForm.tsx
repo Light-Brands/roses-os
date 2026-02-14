@@ -111,11 +111,13 @@ export function ContributionForm({ tiers, onSubmit, className }: ContributionFor
                 {/* Pricing */}
                 <div className="mt-3 space-y-1 w-full text-left">
                   <p className="text-sm text-[var(--color-foreground-muted)]">
-                    <span className="font-medium text-[var(--color-foreground)]">Foundational:</span>{' '}
+                    <span className="font-medium text-[var(--color-foreground)]">Foundational</span>{' '}
+                    <span className="text-xs text-[var(--color-foreground-faint)]">(Rose 1, 2 &amp; 3)</span>{' '}
                     {tier.priceFoundational}
                   </p>
                   <p className="text-sm text-[var(--color-foreground-muted)]">
-                    <span className="font-medium text-[var(--color-foreground)]">Full Program:</span>{' '}
+                    <span className="font-medium text-[var(--color-foreground)]">Full Program</span>{' '}
+                    <span className="text-xs text-[var(--color-foreground-faint)]">(Rose &amp; Aura 1)</span>{' '}
                     {tier.priceFull}
                   </p>
                 </div>
