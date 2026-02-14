@@ -152,8 +152,8 @@ export default function TheRosePage() {
         </p>
       </RevealSection>
 
-      {/* 6. Path Levels — Rose Meditation 1–3 + Aura 1 */}
-      <PathLevels levels={pathLevels.filter((l) => l.level <= 4)} variant="full" />
+      {/* 6. Path Levels — Rose Meditation 1–3 */}
+      <PathLevels levels={pathLevels.filter((l) => l.level <= 3)} variant="full" />
 
       {/* 7. Quote */}
       <QuoteBlock
