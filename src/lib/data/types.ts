@@ -39,9 +39,9 @@ export interface ContributionTier {
   name: string;
   range: string;
   description: string;
-  /** Suggested price for Foundational only (Rose Meditation Weekend 1) */
+  /** Suggested price for Foundational (Rose Meditation Levels 1, 2 & 3) */
   priceFoundational: string;
-  /** Suggested price for the Full Program */
+  /** Suggested price for the Full Program (Rose & Aura Reading Level 1) */
   priceFull: string;
 }
 
