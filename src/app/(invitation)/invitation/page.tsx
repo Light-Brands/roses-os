@@ -132,9 +132,9 @@ function WhatIsRosesOS() {
           className="text-lg text-[var(--color-foreground-muted)] leading-relaxed"
         >
           ROSES OS is a living architecture of technologies, practices, and
-          community for coherent living. It is not a course or a cure. It is a
-          way home. A seamless path back to the intelligence that already lives
-          within you, waiting to be remembered.
+          community for coherent living. It is a way home. A seamless path back
+          to the intelligence that already lives within you, waiting to be
+          remembered.
         </motion.p>
       </div>
     </section>
@@ -274,7 +274,7 @@ function WhatAwakensSection() {
           transition={{ duration: 0.6, delay: 0.15, ease }}
           className="text-center text-[var(--color-foreground-muted)] italic mb-14 text-lg"
         >
-          This is not learning. It is remembering.
+          Remember who you are.
         </motion.p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {awakenings.map((item, i) => (
@@ -300,7 +300,7 @@ function WhatAwakensSection() {
           transition={{ duration: 0.6, delay: 0.8, ease }}
           className="text-center mt-14 text-[var(--color-foreground-muted)] font-medium"
         >
-          No prior experience is needed. Only presence.
+          All you need is presence.
         </motion.p>
       </div>
     </section>

@@ -496,9 +496,7 @@ ROSES OS design should translate into:
 
 ## Final Brand Truth
 
-ROSES OS is not something you follow. It is something you return to.
-
-It does not ask for belief. It asks for presence.
+ROSES OS is something you return to. It asks for presence.
 
 *Welcome home.*
 
@@ -510,6 +508,6 @@ It does not ask for belief. It asks for presence.
 
 ## Website Purpose
 
-The ROSES OS website is not a marketing site. It is a threshold.
+The ROSES OS website is a threshold.
 
 A visitor should feel stillness, warmth, and remembrance upon arrival.

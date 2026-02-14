@@ -412,7 +412,7 @@ The Rose is simple, living inner technology:
 - It restores coherence.
 - It restores real choice.
 
-It doesn't fight the noise and fragmentation -- it quietly dissolves the conditions that keep chaos alive.
+It quietly dissolves the conditions that keep chaos alive.
 
 The Rose restores coherence across emotional, mental, and energetic systems -- making intuition precise and presence sovereign. Simple and decentralized, it frees you from endless healing and returns you to natural alignment.
 
@@ -1622,7 +1622,7 @@ ROSES OS design should translate into:
 
 ### Final Brand Truth
 
-ROSES OS is not something you follow. It is something you return to. It does not ask for belief. It asks for presence.
+ROSES OS is something you return to. It asks for presence.
 
 **Welcome home.**
 
@@ -1636,7 +1636,7 @@ ROSES OS is not something you follow. It is something you return to. It does not
 
 ### Website Purpose
 
-The ROSES OS website is not a marketing site. **It is a threshold.**
+The ROSES OS website **is a threshold.**
 
 A visitor should feel:
 
@@ -1646,12 +1646,12 @@ A visitor should feel:
 - Oriented
 - Quietly awakened
 
-The site is not trying to convince. It is remembering.
+The site is remembering.
 
 ### Design Principles (Non-Negotiable)
 
 **Principle 1 -- Silence is the Brand**
-Whitespace is not empty. Whitespace is presence.
+Whitespace is presence.
 
 **Principle 2 -- Calm Authority**
 No urgency. No loud sales tone. Only clarity.

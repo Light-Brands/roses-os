@@ -38,7 +38,7 @@ The Rose is simple, living inner technology:
 - It restores coherence.
 - It restores real choice.
 
-It doesn't fight the noise and fragmentation -- it quietly dissolves the conditions that keep chaos alive.
+It quietly dissolves the conditions that keep chaos alive.
 
 ---
 
@@ -47,7 +47,7 @@ It doesn't fight the noise and fragmentation -- it quietly dissolves the conditi
 The Rose asks two questions:
 
 1. **Are you aware of your inner state at this moment?**
-2. **Do you feel coherent inside -- if not, how can you restore it?**
+2. **How coherent do you feel inside -- and how can you deepen it?**
 
 No belief needed. Just an honest awareness and presence. When even a trace of coherence returns, clarity grows, and choice becomes real again.
 

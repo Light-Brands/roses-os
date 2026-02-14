@@ -22,7 +22,7 @@ Before beginning, all participants honor these agreements:
 
 This manual is a sacred companion for those who have been initiated into the path of Rose Meditation.
 
-These teachings are part of a living energetic lineage. They invite inner stillness, gentle discipline, and deep self-responsibility. ROSES OS is not a system to be imposed or taught casually -- it is an energetic operating system revealed through direct practice and transmission.
+These teachings are part of a living energetic lineage. They invite inner stillness, gentle discipline, and deep self-responsibility. ROSES OS is an energetic operating system revealed through direct practice and transmission.
 
 ### To honor the integrity of this work:
 

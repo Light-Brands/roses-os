@@ -26,7 +26,7 @@
 
 Coherence is inner agreement.
 
-It is when nothing inside you is fighting. When your mind is not arguing with your heart. When your words are not hiding from your truth. When what you know, what you feel, and what you choose move in the same direction.
+It is when everything inside you moves together. When your mind and heart speak as one. When your words honor your truth. When what you know, what you feel, and what you choose move in the same direction.
 
 No split. No mask. No leakage of energy.
 
@@ -36,9 +36,7 @@ Just alignment.
 
 A system is coherent when all its parts serve the same signal. In a human being, that signal is truth.
 
-But coherence is not something you possess.
-
-It is the capacity to cultivate wholeness in motion.
+Coherence is a capacity you cultivate. Wholeness in motion.
 
 Life moves. Pressure appears. Emotions rise. Circumstances change.
 
@@ -46,7 +44,7 @@ Coherence is the practiced ability to notice the split and gently return yoursel
 
 Again. And again. And again.
 
-Not perfection. Not rigidity.
+Fluidity. Grace.
 
 **Wholeness -- in motion.**
 
@@ -84,7 +82,7 @@ This Codex is not the destination. It is the bridge.
 
 Between Spirit and structure. Between lineage and future. Between silence and collective embodiment.
 
-You are not being asked to follow a method. You are being invited to remember a frequency.
+You are being invited to remember a frequency.
 
 And if it resonates, to carry it forward with clarity, integrity, and devotion.
 
@@ -92,9 +90,9 @@ And if it resonates, to carry it forward with clarity, integrity, and devotion.
 
 ## I. Sacred Purpose
 
-The Rose is not a metaphor. It is a living technology of remembrance.
+The Rose is a living technology of remembrance.
 
-Not a worldview, not a belief, but a condition-set through which coherence is restored and the soul's original memory can emerge naturally.
+A condition-set through which coherence is restored and the soul's original memory can emerge naturally.
 
 **It cannot be owned. Only embodied.**
 
@@ -102,13 +100,13 @@ This sacred architecture was known to civilizations that predate written history
 
 The Rose has been carried through a quiet and unwavering feminine lineage of women, teachers, guardians, and embodied souls who held its frequency without commodifying it, without diluting it, without forgetting.
 
-It is not a method among many. It is a path of unmasking.
+It is a path of unmasking.
 
 A transmission that lifts veils, reorders the subtle anatomy, and restores the human being to its original coherence.
 
-In this time of collective forgetting, the Rose returns not as a trend, but as medicine.
+In this time of collective forgetting, the Rose returns as medicine.
 
-Not something to follow, but something to remember.
+Something to remember.
 
 This Codex holds the clearest truth we have been able to receive and transmit about the Rose's origin, its function, and its purpose, so that its essence may be shared without distortion, multiplied without hierarchy, and recognized by thousands, then millions, of remembering hearts.
 
@@ -116,9 +114,7 @@ This document is, at once, a map, an offering, and a key.
 
 Its mission is simple, yet irreversible: to provide a seamless path to inner freedom by restoring coherence between Spirit and matter, and allowing Spirit to move through matter without distortion.
 
-In that weaving, you are not a follower.
-
-**You are the bridge.** The living channel through which forgetting dissolves and remembrance begins.
+In that weaving, **you are the bridge.** The living channel through which forgetting dissolves and remembrance begins.
 
 ---
 
@@ -164,7 +160,7 @@ It names not a single center, but a field. Not one authority, but many points of
 
 Roses speaks to multiplicity without fragmentation, to many sovereign beings remembering simultaneously, each unique, each contributing to a shared geometry of coherence.
 
-It is not a flower. It is the archetype of conscious unfolding, remembrance blooming from the inside out, again and again, through many.
+It is the archetype of conscious unfolding, remembrance blooming from the inside out, again and again, through many.
 
 ### OS -- The Architecture Beneath Expression
 
@@ -172,9 +168,9 @@ It is not a flower. It is the archetype of conscious unfolding, remembrance bloo
 
 Applied to the human being, Roses OS names the inner architecture that harmonizes perception, body, mind, heart, and Spirit.
 
-An operating system is not a practice. It is what allows all practices to function coherently.
+An operating system is what allows all practices to function coherently.
 
-Roses OS is not a meditation. It is the architecture through which remembrance becomes embodied.
+Roses OS is the architecture through which remembrance becomes embodied.
 
 It is the operating system of the remembering human, and the shared field that allows many humans to remember together without losing sovereignty.
 
@@ -196,7 +192,7 @@ Together, 11 / 2 signifies a relational architecture where many humans can hold 
 
 This is why the plural matters.
 
-**Roses OS is not about The One. It is about the many aligned through coherence.**
+**Roses OS is about the many aligned through coherence.**
 
 ### The Destiny Encoded in the Name
 
@@ -212,13 +208,13 @@ Roses OS is the name of the living architecture that restores coherence, awakens
 
 ## IV. The Coherence Architecture of the Rose
 
-The Rose is not defined by belief, symbolism, or interpretation. It is defined by **function**.
+The Rose is defined by **function**.
 
 At its most fundamental level, the Rose is an inner coherence architecture designed to restore the conditions that allow perception, cognition, emotion, and agency to operate without distortion.
 
 When coherence is present, clarity emerges. When clarity emerges, choice becomes possible. When choice is available, remembrance arises naturally.
 
-The Rose does not impose states, meanings, or identities. It removes interference.
+The Rose removes interference.
 
 For this reason, it is neither a spiritual doctrine nor a scientific theory. It operates upstream of both.
 
@@ -260,9 +256,9 @@ These domains describe where reintegration occurs, not what to believe. They are
 
 ### Closing Principle
 
-The Rose does not teach remembrance. It restores coherence.
+The Rose restores coherence.
 
-**When coherence returns, remembrance is not an achievement. It is the natural state that was never lost.**
+**When coherence returns, remembrance reveals itself as the natural state that was never lost.**
 
 ---
 
@@ -378,7 +374,7 @@ The Rose blooms only when two forces move in coherence. One protects the essence
 
 Together, they form a geometry capable of holding purity at scale.
 
-This geometry is not symbolic. It is functional.
+This geometry is functional.
 
 ### The Vertical Axis -- Essence Protection
 
@@ -388,9 +384,9 @@ Its role is to protect the soul of the work so the Rose remains coherent, safe, 
 
 This axis is held by the **Council of Guardians**, with stewardship carried by Angelina, who has held and transmitted the Rose, the Aura, and the Dreams for more than thirty years.
 
-The Vertical does not rule. It does not command. **It protects.**
+The Vertical **protects.**
 
-This is not power. It is custodianship.
+This is custodianship.
 
 ### The Horizontal Axis -- World Building
 
@@ -400,7 +396,7 @@ Its role is to build the pathways, platforms, systems, and structures that allow
 
 This axis is stewarded by **Diego and the Executive Board**.
 
-Its responsibility is not to modify the teachings, but to translate them into lived environments: schools, digital ecosystems, governance structures, developments, teams, and collaborations that carry the work with clarity and integrity.
+Its responsibility is to translate the teachings into lived environments: schools, digital ecosystems, governance structures, developments, teams, and collaborations that carry the work with clarity and integrity.
 
 The Horizontal does not invent essence. **It builds containers for embodiment.**
 
@@ -467,13 +463,13 @@ This is how an OS becomes a movement. How a movement becomes culture. How cultur
 
 > A Seamless Path of Inner Freedom
 
-Humanity has entered a velocity that no previous spiritual, psychological, or philosophical system was designed to hold. Not because those systems were wrong, but because they were built for slower realities.
+Humanity has entered a velocity that no previous spiritual, psychological, or philosophical system was designed to hold — because they were built for slower realities.
 
 Today, the crisis is not a lack of wisdom. It is the absence of inner technologies capable of matching the complexity, speed, and cognitive load of contemporary life.
 
 **Roses OS emerges precisely here.**
 
-It is not an update of the past. It is not a synthesis of traditions. It is the next evolution of remembrance, designed for a world that moves at accelerating speed.
+It is the next evolution of remembrance, designed for a world that moves at accelerating speed.
 
 A path simple enough for any human being, and precise enough to support a civilization awakening at scale.
 
@@ -558,13 +554,13 @@ A path that begins in simplicity and matures into sovereignty.
 
 ## IX. The Embodied Genius
 
-Roses OS does not prepare followers. **It prepares creators.**
+Roses OS **prepares creators.**
 
 Human beings capable of meeting the world with clarity, coherence, and embodied leadership.
 
-The eleven capacities cultivated through Roses OS do not culminate in contemplation. They culminate in activation.
+The eleven capacities cultivated through Roses OS culminate in activation.
 
-Not activation as performance, but as embodiment.
+Activation as embodiment.
 
 The Rose clears distortion. The Aura refines perception. Dreams restore navigation. The Path of Love anchors coherence into the body.
 
@@ -574,15 +570,15 @@ A creator whose work becomes an offering. A leader whose presence stabilizes com
 
 **This is conscious leadership.**
 
-Not authority. Not influence. Not an image. But inner coherence expressed through outer action.
+Inner coherence expressed through outer action.
 
 ### A New Model of Leadership
 
-The world does not need more noise. It needs humans who can remain still within it.
+The world needs humans who can remain still within it.
 
-Humans who can build from love rather than fear. Who can lead teams without abandoning themselves. Who can create structures that reflect humanity's highest potential, not its unresolved wounds.
+Humans who can build from love. Who can lead teams while honoring themselves. Who can create structures that reflect humanity's highest potential.
 
-This is not a new ideology. It is a new condition.
+This is a new condition.
 
 Leadership emerging from coherence rather than compensation. Action guided by clarity rather than urgency.
 
@@ -601,11 +597,11 @@ This is how culture is rebuilt. From the inside out.
 
 ### The Choice of the Awakened Genius
 
-The awakened genius is not a gift. It is a choice.
+The awakened genius is a choice.
 
 A choice to live without distortion. A choice to create without fear. A choice to embody freedom rather than seek it.
 
-This is what Roses OS prepares. Not spiritual followers. **Cultural architects.**
+This is what Roses OS prepares. **Cultural architects.**
 
 Humans whose lives become the transmission.
 
@@ -615,9 +611,9 @@ As these humans embody clarity, Roses OS becomes a seed.
 
 A living catalyst that activates, roots, and harmonizes communities. A pulse that gathers people into fields of abundance, joy, peace, serenity, harmony, clarity, and freedom.
 
-Not as ideals. As lived conditions.
+As lived conditions.
 
-Here, prosperity is not an achievement. It is the natural consequence of coherence. It is the fragrance of a community living in alignment with its essence. The bloom that appears when the root is healed and the reach is free.
+Here, prosperity is the natural consequence of coherence. It is the fragrance of a community living in alignment with its essence. The bloom that appears when the root is healed and the reach is free.
 
 ### The Purpose of Roses OS
 
@@ -625,7 +621,7 @@ This is the purpose of Roses OS.
 
 An architecture for a new humanity. An ignition point for cultures that remember how to thrive. A seed from which a more beautiful, coherent world can grow.
 
-Not imposed. Not forced. But remembered.
+Remembered.
 
 **When the Rose opens, and humans embody its clarity, the world remembers what it is meant to be.**
 
@@ -635,15 +631,15 @@ Not imposed. Not forced. But remembered.
 
 ### The Eleven Capacities of the Remembered Harmonic Being
 
-The purpose of Roses OS is not to create new abilities, elevate identity, or grant extraordinary powers. Its purpose is to restore the natural capacities of a human being whose perception is clear, whose nervous system is regulated, and whose inner field is coherent.
+The purpose of Roses OS is to restore the natural capacities of a human being whose perception is clear, whose nervous system is regulated, and whose inner field is coherent.
 
-These capacities are not learned. They are remembered.
+These capacities are remembered.
 
 They are what naturally emerge when noise dissolves, fragmentation resolves, and coherence becomes the default state. Each capacity describes an innate mode of human intelligence operating without distortion.
 
 Together, they form the living anatomy of the remembering human.
 
-What follows is not an ideal to reach, but a truth to recognize.
+What follows is a truth to recognize.
 
 ### The Eleven Capacities
 
@@ -673,11 +669,11 @@ What follows is not an ideal to reach, but a truth to recognize.
 
 These capacities are the quiet signature of inner alignment. They arise not from effort, discipline, or striving, but from clarity and coherence.
 
-Not from becoming something more, but from remembering what was never lost.
+From remembering what was never lost.
 
 Stillness in motion. Perception moving freely while the center remains unmoved.
 
-This is the mastery Roses OS protects. Not power over reality, but trust in perception. Not control of life, but the ability to navigate it with precision, dignity, and care.
+This is the mastery Roses OS protects. Trust in perception. The ability to navigate life with precision, dignity, and care.
 
 This is the imprint of the Codex. The remembrance of the inner architecture that belongs to every human being. The return of our natural intelligence. The quiet mastery of the remembering human.
 
@@ -687,17 +683,17 @@ This is the imprint of the Codex. The remembrance of the inner architecture that
 
 We want to name, in simple and grounded terms, what we are building with Roses OS.
 
-What we are observing in the world is no longer subtle. Human intelligence, leverage, and technological power are accelerating at an unprecedented pace. What is not accelerating at the same rate is the human capacity to remain clear, centered, and internally coherent while holding that power.
+What we are observing in the world is no longer subtle. Human intelligence, leverage, and technological power are accelerating at an unprecedented pace. The human capacity to remain clear, centered, and internally coherent while holding that power has yet to match that pace.
 
 **When clarity collapses, choice collapses.** And when choice collapses, even well-intentioned people become reactive, fragmented, and harmful, often without realizing it.
 
-Roses OS does not emerge as a belief system, a spiritual path, a therapy, or an ideology. It emerges as something more fundamental: an attempt to restore the inner conditions that make conscious choice possible in the first place.
+Roses OS emerges as something more fundamental than any single path: an attempt to restore the inner conditions that make conscious choice possible in the first place.
 
-We are not telling people what to believe, how to think, or how to live. We are working upstream, at the level of conditions, not conclusions.
+We are working upstream, at the level of conditions — the foundation from which clarity and choice naturally arise.
 
-At its core, Roses OS is a lightweight, experiential infrastructure designed to restore awareness, coherence, and agency in the human being before power, intelligence, or complexity amplify what is unresolved. It does not fight dysfunction. It removes the conditions that allow dysfunction to emerge.
+At its core, Roses OS is a lightweight, experiential infrastructure designed to restore awareness, coherence, and agency in the human being before power, intelligence, or complexity amplify what is unresolved. It removes the conditions that allow dysfunction to emerge.
 
-This is what distinguishes Roses OS from most prior attempts to change humanity. Nearly all traditions, movements, and systems operate at the level of belief, values, or identity. That inevitably produces division. **Roses OS refuses that layer entirely.**
+This is what distinguishes Roses OS. Where most traditions, movements, and systems operate at the level of belief, values, or identity, **Roses OS operates beneath that layer entirely.**
 
 It asks only two questions:
 
@@ -706,7 +702,7 @@ It asks only two questions:
 
 These questions require no belief. They are experiential and self-verifying. From them, everything else becomes downstream.
 
-Because Roses OS operates at the level of infrastructure rather than ideology, it can be received by anyone: spiritual or secular, religious or agnostic, skeptical or curious. It is not here to replace other paths, but to provide the internal stability that allows any path to function without collapsing under pressure.
+Because Roses OS operates at the level of infrastructure rather than ideology, it can be received by anyone: spiritual or secular, religious or agnostic, skeptical or curious. It provides the internal stability that allows any path to function under pressure.
 
 This framing also matters for us as a collective.
 
@@ -720,7 +716,7 @@ If what we build becomes heavy, moralizing, performative, or dependent on people
 
 If it does, it belongs. If it does not, we let it go.
 
-Our role is not to persuade or to position ourselves as authorities. Our role is to embody and build something so clear, grounded, and useful that it speaks for itself.
+Our role is to embody and build something so clear, grounded, and useful that it speaks for itself.
 
 If we do this well, Roses OS will not need to be pushed. It will become evident. And what becomes evident can move quietly, touch many lives, and scale without losing its soul.
 

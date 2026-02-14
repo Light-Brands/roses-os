@@ -2,7 +2,7 @@
 
 > The Operating System of Remembrance
 
-ROSES OS is a remembrance ecosystem — spiritual-modern consciousness technology that restores inner symmetry and coherence. It is not a self-improvement brand. It is an operating system of coherence — where intuition becomes precise and presence becomes sovereign.
+ROSES OS is a remembrance ecosystem — spiritual-modern consciousness technology that restores inner symmetry and coherence. It is an operating system of coherence — where intuition becomes precise and presence becomes sovereign.
 
 ---
 
