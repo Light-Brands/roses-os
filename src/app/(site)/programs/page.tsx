@@ -38,25 +38,23 @@ export default function ProgramsPage() {
         image="/page-images/page-programs.png"
       />
 
-      {/* 2. Program Cards Grid */}
+      {/* 2. Program Card */}
       <section ref={gridRef} className="section-padding">
-        <div className="container-premium">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-            {programs.map((program, i) => (
-              <motion.div
-                key={program.id}
-                initial={{ opacity: 0, y: 24 }}
-                animate={gridInView ? { opacity: 1, y: 0 } : {}}
-                transition={{
-                  duration: 0.6,
-                  delay: i * 0.15,
-                  ease: [0.16, 1, 0.3, 1],
-                }}
-              >
-                <ProgramCard program={program} />
-              </motion.div>
-            ))}
-          </div>
+        <div className="container-premium max-w-3xl mx-auto">
+          {programs.map((program, i) => (
+            <motion.div
+              key={program.id}
+              initial={{ opacity: 0, y: 24 }}
+              animate={gridInView ? { opacity: 1, y: 0 } : {}}
+              transition={{
+                duration: 0.6,
+                delay: i * 0.15,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+            >
+              <ProgramCard program={program} />
+            </motion.div>
+          ))}
         </div>
       </section>
 

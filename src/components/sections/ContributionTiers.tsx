@@ -84,16 +84,9 @@ export default function ContributionTiers({
               </div>
 
               {/* Pricing */}
-              <div className="mb-3 space-y-1">
-                <p className="text-sm text-[var(--color-foreground-muted)]">
-                  <span className="font-medium text-[var(--color-foreground)]">Foundational</span>{' '}
-                  <span className="text-xs text-[var(--color-foreground-faint)]">(Rose 1, 2 &amp; 3)</span>{' '}
-                  {tier.priceFoundational}
-                </p>
-                <p className="text-sm text-[var(--color-foreground-muted)]">
-                  <span className="font-medium text-[var(--color-foreground)]">Full Program</span>{' '}
-                  <span className="text-xs text-[var(--color-foreground-faint)]">(Rose &amp; Aura 1)</span>{' '}
-                  {tier.priceFull}
+              <div className="mb-3">
+                <p className="font-serif text-2xl text-[var(--color-foreground)] tracking-tight">
+                  {tier.price}
                 </p>
               </div>
 

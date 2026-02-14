@@ -16,6 +16,7 @@ import type {
 
 export const navItems: NavItem[] = [
   { label: 'The Rose', href: '/the-rose' },
+  { label: 'Offerings', href: '/offerings' },
   { label: 'Programs', href: '/programs' },
   { label: 'Guardians', href: '/guardians' },
   { label: 'Community', href: '/community' },
@@ -67,29 +68,12 @@ export const guardians: Guardian[] = [
 export const programs: Program[] = [
   {
     id: '1',
-    title: 'The Rose',
-    subtitle: 'Rose Meditation Level 1, 2 & 3',
-    duration: '2 days',
-    dates: 'March 17–18, 2026',
-    format: 'Live online + recorded content',
-    description: 'Two immersive days introducing the Rose technology. Six hours per day offered in two three-hour sessions. A systematic practice for remembrance, coherence, and inner freedom.',
-    includes: [
-      '2 immersive days of live instruction',
-      'Rose Meditation Levels 1, 2 & 3',
-      'Two 3-hour sessions per day',
-      'Integration workbook',
-      'Private community access to classes and events',
-      'Multi-timezone support',
-    ],
-  },
-  {
-    id: '2',
     title: 'The Rose + Aura 1',
-    subtitle: 'Complete Immersion',
+    subtitle: 'Rose Meditation 1, 2 & 3 + Aura Reading Level 1',
     duration: '11 days',
     dates: 'March 17–27, 2026',
     format: 'Live online + recorded content',
-    description: 'The complete journey combining Rose Meditation Levels 1, 2 & 3 with Aura Reading Level 1. Eleven sessions across structured and flexible blocks, deepening perception and energetic coherence.',
+    description: 'The complete journey combining Rose Meditation Levels 1, 2 & 3 with Aura Reading Level 1. Eleven days of immersive practice across structured and flexible blocks, deepening perception and energetic coherence.',
     includes: [
       'Rose Meditation Levels 1, 2 & 3 (2 days)',
       'Aura Reading Level 1 (9 days)',
@@ -169,24 +153,21 @@ export const contributionTiers: ContributionTier[] = [
     name: 'Seed',
     range: 'Under $30,000 USD annual income',
     description: 'Lower contribution: honors your reality and current season.',
-    priceFoundational: '$222',
-    priceFull: '$888',
+    price: '$888',
   },
   {
     id: '2',
     name: 'Bloom',
     range: '$30,000–$70,000 USD annual income',
     description: 'Mid-range: reflects reciprocity and balance.',
-    priceFoundational: '$444',
-    priceFull: '$1,444',
+    price: '$1,444',
   },
   {
     id: '3',
     name: 'Canopy',
     range: 'Above $70,000 USD annual income',
     description: 'Higher tier: supports accessibility for others and the expansion of this work.',
-    priceFoundational: '$777',
-    priceFull: '$2,111',
+    price: '$2,111',
   },
 ];
 

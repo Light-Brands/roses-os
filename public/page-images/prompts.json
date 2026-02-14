@@ -37,6 +37,12 @@
   },
   {
     "id": 7,
+    "page": "offerings",
+    "description": "Three luminous, ascending rose forms representing the three levels of Aura Reading, each more radiant than the last.",
+    "prompt": "Three elegant, ascending rose-like forms arranged in a graceful upward progression, rendered as a refined 3D illustration. The first rose is a gentle, partially unfurled bud in Rose 300 (#E8C4BF), the second a more open bloom in Rose 400 (#D4A09A), and the third a fully radiant, luminous rose in Rose Clay (#9C6F6E) with subtle golden light (#C4A86B) radiating from its center. They are connected by a delicate, flowing ribbon of soft light that suggests a path of deepening. Each rose floats at a progressively higher position, creating a sense of ascension and growth. The entire composition floats elegantly, perfectly centered on a pure white background (#FFFFFF). The lighting is entirely internal and diffused, ensuring absolutely NO external light sources, NO cast shadows, NO drop shadows, NO floor shadows, NO ambient occlusion, NO gradients, NO vignetting. The background must be uniformly #FFFFFF from edge to edge. The roses have smooth, velvety, dimensional petals that appear tactile yet weightless."
+  },
+  {
+    "id": 8,
     "page": "contact",
     "description": "Two elegant, abstract forms gently reaching towards each other, symbolizing connection and welcome.",
     "prompt": "Two elegantly curved, smooth, abstract forms, rendered as a minimalist 3D illustration. Each form resembles a stylized, graceful rose petal or a gentle, inviting gesture. They are positioned in the center of the frame, gently arcing and reaching towards each other, creating a sense of approach and connection. One form is in Rose Clay (#9C6F6E), and the other in Rose 400 (#D4A09A). A soft, warm, luminous light emanates from the delicate space between them, symbolizing welcome, openness, and invitation. The entire composition floats perfectly on a pure white background (#FFFFFF). The lighting is entirely internal and diffused, ensuring absolutely NO external light sources, NO cast shadows, NO drop shadows, NO floor shadows, NO ambient occlusion, NO gradients, NO vignetting. The background must be uniformly #FFFFFF from edge to edge. The forms have a polished, smooth, and refined sculptural quality, appearing dimensional yet weightless."
