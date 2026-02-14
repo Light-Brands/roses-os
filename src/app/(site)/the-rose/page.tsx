@@ -122,16 +122,12 @@ export default function TheRosePage() {
         title="The Next Revolution"
       >
         <p>
-          The next revolution is not technological. It is a revolution of inner
-          coherence. A return to the body. A remembering of the intelligence that
-          lives beneath thought, beneath conditioning, beneath the stories we
-          carry about who we are.
-        </p>
-        <p>
-          This revolution does not require a guru, a doctrine, or a belief system.
-          It requires only your willingness to be still, to listen, and to let the
-          intelligence of silence do what it has always known how to do: bring you
-          home.
+          The next revolution is one of inner coherence. A return to the body. A
+          remembering of the intelligence that lives beneath thought, beneath
+          conditioning, beneath the stories we carry about who we are. It
+          requires only your willingness to be still, to listen, and to let the
+          intelligence of silence do what it has always known how to do: bring
+          you home.
         </p>
       </RevealSection>
 
