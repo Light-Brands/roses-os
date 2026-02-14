@@ -237,7 +237,6 @@ export default function LearnMorePage() {
         {/* 1. Hero */}
         <PageHero
           title="Everything You Need to Know"
-          description="A clear overview of how ROSES OS works, what to expect, and how to get started."
         />
 
         {/* 2. How it works overview */}
