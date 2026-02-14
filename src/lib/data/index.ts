@@ -12,6 +12,7 @@ export {
   guardians,
   programs,
   scheduleStages,
+  aura2ScheduleStages,
   contributionTiers,
   coherenceDomains,
   coherenceAlternatives,

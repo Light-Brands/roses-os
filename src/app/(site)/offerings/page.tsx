@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import { programs, scheduleStages, contributionTiers } from '@/lib/data';
+import { programs, scheduleStages, aura2ScheduleStages, contributionTiers } from '@/lib/data';
 
 import PageHero from '@/components/sections/PageHero';
 import ProgramCard from '@/components/sections/ProgramCard';
@@ -58,7 +58,7 @@ export default function OfferingsPage() {
         </div>
       </section>
 
-      {/* 3. Schedule */}
+      {/* 3. Schedule – The Rose + Aura 1 */}
       <section
         ref={scheduleRef}
         className="section-padding bg-[var(--color-background-subtle)]"
@@ -76,11 +76,38 @@ export default function OfferingsPage() {
             initial={{ opacity: 0, y: 24 }}
             animate={scheduleInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-8"
+            className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-4"
           >
-            Program Schedule
+            The Rose + Aura 1
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 24 }}
+            animate={scheduleInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            className="text-sm text-[var(--color-foreground-muted)] mb-8"
+          >
+            March 17–27, 2026
+          </motion.p>
           <ScheduleTable stages={scheduleStages} />
+
+          {/* Aura Reading Level 2 */}
+          <motion.h2
+            initial={{ opacity: 0, y: 24 }}
+            animate={scheduleInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mt-16 mb-4"
+          >
+            Aura Reading Level 2
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 24 }}
+            animate={scheduleInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            className="text-sm text-[var(--color-foreground-muted)] mb-8"
+          >
+            September 19–27, 2026
+          </motion.p>
+          <ScheduleTable stages={aura2ScheduleStages} />
         </div>
       </section>
 

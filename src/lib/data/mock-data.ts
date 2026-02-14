@@ -83,6 +83,22 @@ export const programs: Program[] = [
       'Multi-timezone support',
     ],
   },
+  {
+    id: '2',
+    title: 'Aura Reading Level 2',
+    subtitle: 'Aura Reading Online Course Level 2',
+    duration: '9 days',
+    dates: 'September 19–27, 2026',
+    format: 'Live online',
+    description: 'Perception sharpens through theme readings and focused practice. Clairvoyance, clairsentience, and clairaudience refine as reading becomes more precise, nuanced, and confident. Weekend intensive classes combined with weekday practice sessions.',
+    includes: [
+      'Weekend intensive classes (4 days)',
+      'Weekday classes and practice sessions (5 days)',
+      'Daily Rose Meditation guidance',
+      'Flexible practice time slots',
+      'Multi-timezone support',
+    ],
+  },
 ];
 
 // =============================================================================
@@ -138,6 +154,34 @@ export const scheduleStages: ScheduleStage[] = [
     sessions: [
       { day: 'Rose Meditation Guidance', duration: '30 min', time: { sanJose: '7:00 – 7:30 AM', bogota: '8:00 – 8:30 AM', newYork: '8:00 – 8:30 AM', brasilia: '10:00 – 10:30 AM', london: '1:00 – 1:30 PM', madrid: '2:00 – 2:30 PM' } },
       { day: 'Q&A and Practice Time', duration: '3 hours', time: { sanJose: '8:00 – 11:00 AM', bogota: '9:00 AM – 12:00 PM', newYork: '10:00 AM – 1:00 PM', brasilia: '11:00 AM – 2:00 PM', london: '2:00 – 5:00 PM', madrid: '3:00 – 6:00 PM' } },
+    ],
+  },
+];
+
+// =============================================================================
+// AURA 2 SCHEDULE STAGES (September 19–27, 2026)
+// =============================================================================
+
+export const aura2ScheduleStages: ScheduleStage[] = [
+  {
+    id: 'aura2-1',
+    title: 'Aura Reading Level 2: Weekends',
+    dateRange: 'September 19, 20, 26 & 27 (Sat & Sun)',
+    sessions: [
+      { day: 'Rose Meditation Guidance', duration: '30 min', time: { sanJose: '7:00 – 7:30 AM', bogota: '8:00 – 8:30 AM', newYork: '8:00 – 8:30 AM', brasilia: '10:00 – 10:30 AM', london: '1:00 – 1:30 PM', madrid: '2:00 – 2:30 PM' } },
+      { day: 'First Class', duration: '2.5 hours', time: { sanJose: '8:00 – 10:30 AM', bogota: '9:00 – 11:30 AM', newYork: '9:00 – 11:30 AM', brasilia: '11:00 AM – 1:30 PM', london: '2:00 – 4:30 PM', madrid: '3:00 – 5:30 PM' } },
+      { day: 'Second Class', duration: '2.5 hours', time: { sanJose: '12:00 – 2:30 PM', bogota: '1:00 – 3:30 PM', newYork: '1:00 – 3:30 PM', brasilia: '3:00 – 5:30 PM', london: '6:00 – 8:30 PM', madrid: '7:00 – 9:30 PM' } },
+    ],
+  },
+  {
+    id: 'aura2-2',
+    title: 'Aura Reading Level 2: Weekdays',
+    dateRange: 'September 21–25 (Mon–Fri)',
+    sessions: [
+      { day: 'Rose Meditation Guidance', duration: '30 min', time: { sanJose: '7:00 – 7:30 AM', bogota: '8:00 – 8:30 AM', newYork: '8:00 – 8:30 AM', brasilia: '10:00 – 10:30 AM', london: '1:00 – 1:30 PM', madrid: '2:00 – 2:30 PM' } },
+      { day: 'First Practice (choose at least one)', duration: '1.5 hours', time: { sanJose: '8:00 – 9:30 AM', bogota: '9:00 – 10:30 AM', newYork: '9:00 – 10:30 AM', brasilia: '11:00 AM – 12:30 PM', london: '2:00 – 3:30 PM', madrid: '3:00 – 4:30 PM' } },
+      { day: 'Second Practice (choose at least one)', duration: '1.5 hours', time: { sanJose: '10:00 – 11:30 AM', bogota: '11:00 AM – 12:30 PM', newYork: '11:00 AM – 12:30 PM', brasilia: '1:00 – 2:30 PM', london: '4:00 – 5:30 PM', madrid: '5:00 – 6:30 PM' } },
+      { day: 'Class', duration: '1.5 hours', time: { sanJose: '12:00 – 1:30 PM', bogota: '1:00 – 2:30 PM', newYork: '1:00 – 2:30 PM', brasilia: '3:00 – 4:30 PM', london: '6:00 – 7:30 PM', madrid: '7:00 – 8:30 PM' } },
     ],
   },
 ];
