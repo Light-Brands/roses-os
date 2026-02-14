@@ -31,7 +31,7 @@ export const guardians: Guardian[] = [
     id: '1',
     name: 'Angelina Ataíde',
     role: 'Guardian of Lineage',
-    bio: 'A pioneer in Aura Reading education in Brazil and Portugal, Angelina has dedicated over three decades to spiritual development and training aura readers. Her transformative methodology has already trained thousands of students, therapists, and teachers — combining spiritual wisdom with practical techniques as the primary steward of the ROSES OS lineage.',
+    bio: 'A pioneer in Aura Reading education in Brazil and Portugal, Angelina has dedicated over three decades to spiritual development and training aura readers. Her transformative methodology has already trained thousands of students, therapists, and teachers, combining spiritual wisdom with practical techniques as the primary steward of the ROSES OS lineage.',
     image: '/images/angel.JPG',
     imagePosition: 'center 20%',
   },
@@ -39,7 +39,7 @@ export const guardians: Guardian[] = [
     id: '2',
     name: 'Diego Dosal',
     role: 'Guardian of Architecture & Structure',
-    bio: 'Diego is the bridge between spirit and structure. With over a decade of deep roots in multiple paths of spiritual practice, energy work, and community building, he carries the horizontal axis of ROSES OS — developing platforms, systems, and frameworks that harmonize intuition with strategy and build lasting foundations for this work.',
+    bio: 'Diego is the bridge between spirit and structure. With over a decade of deep roots in multiple paths of spiritual practice, energy work, and community building, he carries the horizontal axis of ROSES OS by developing platforms, systems, and frameworks that harmonize intuition with strategy and build lasting foundations for this work.',
     image: '/images/61C5142D-1CB2-414A-BAED-1C2E2E30217E.png',
   },
   {
@@ -55,7 +55,7 @@ export const guardians: Guardian[] = [
     id: '4',
     name: 'Peggy Mars',
     role: 'Guardian of Methodology',
-    bio: 'Peggy creates bridges between cultures, communities, and inner worlds. With over two decades walking the Aura Reading path, she integrates emotional, ancestral, and spiritual layers with clarity and compassion — sustaining authentic connection between teachers and students.',
+    bio: 'Peggy creates bridges between cultures, communities, and inner worlds. With over two decades walking the Aura Reading path, she integrates emotional, ancestral, and spiritual layers with clarity and compassion while sustaining authentic connection between teachers and students.',
     image: '/images/peggy.JPG',
     imagePosition: 'center 20%',
   },
@@ -152,21 +152,21 @@ export const contributionTiers: ContributionTier[] = [
     id: '1',
     name: 'Seed',
     range: 'Under $30,000 USD annual income',
-    description: 'Lower contribution: honors your reality and current season.',
+    description: 'A lower contribution that honors your reality and current season.',
     price: '$888',
   },
   {
     id: '2',
     name: 'Bloom',
     range: '$30,000–$70,000 USD annual income',
-    description: 'Mid-range: reflects reciprocity and balance.',
+    description: 'A mid-range contribution reflecting reciprocity and balance.',
     price: '$1,444',
   },
   {
     id: '3',
     name: 'Canopy',
     range: 'Above $70,000 USD annual income',
-    description: 'Higher tier: supports accessibility for others and the expansion of this work.',
+    description: 'A higher tier that supports accessibility for others and the expansion of this work.',
     price: '$2,111',
   },
 ];
@@ -176,18 +176,18 @@ export const contributionTiers: ContributionTier[] = [
 // =============================================================================
 
 export const coherenceDomains: CoherenceDomain[] = [
-  { id: '1', number: 1, title: 'Physical Coherence', description: 'Alignment of the body: posture, breath, movement, and somatic awareness as the foundation of all practice.' },
+  { id: '1', number: 1, title: 'Physical Coherence', description: 'Alignment of the body through posture, breath, movement, and somatic awareness as the foundation of all practice.' },
   { id: '2', number: 2, title: 'Emotional Coherence', description: 'The capacity to feel fully without being governed by reactivity. Emotional intelligence as a doorway to freedom.' },
   { id: '3', number: 3, title: 'Mental Coherence', description: 'Clarity of thought without compulsive thinking. The mind as an instrument rather than a master.' },
   { id: '4', number: 4, title: 'Relational Coherence', description: 'Authentic connection with others rooted in presence, boundaries, and compassion rather than performance.' },
   { id: '5', number: 5, title: 'Creative Coherence', description: 'Access to the creative impulse as a natural expression of aligned being rather than forced production.' },
   { id: '6', number: 6, title: 'Vocational Coherence', description: 'Work as an expression of purpose. The alignment of livelihood with authentic calling.' },
-  { id: '7', number: 7, title: 'Financial Coherence', description: 'A healthy relationship with resources: receiving, stewarding, and circulating with ease and integrity.' },
+  { id: '7', number: 7, title: 'Financial Coherence', description: 'A healthy relationship with resources through receiving, stewarding, and circulating with ease and integrity.' },
   { id: '8', number: 8, title: 'Sexual Coherence', description: 'The integration of life force energy. Embodied presence in intimacy and creative power.' },
-  { id: '9', number: 9, title: 'Spiritual Coherence', description: 'Direct connection with the sacred: not as belief but as lived experience and continuous remembrance.' },
+  { id: '9', number: 9, title: 'Spiritual Coherence', description: 'Direct connection with the sacred, not as belief but as lived experience and continuous remembrance.' },
   { id: '10', number: 10, title: 'Environmental Coherence', description: 'Harmony between the individual and their spaces, ecosystems, and the living world.' },
   { id: '11', number: 11, title: 'Ancestral Coherence', description: 'Healing the lineage. Transforming inherited patterns into gifts and reclaiming the wisdom of those who came before.' },
-  { id: '12', number: 12, title: 'Temporal Coherence', description: 'Right relationship with time: neither rushing nor stagnating. The art of sacred timing.' },
+  { id: '12', number: 12, title: 'Temporal Coherence', description: 'Right relationship with time, neither rushing nor stagnating. The art of sacred timing.' },
   { id: '13', number: 13, title: 'Universal Coherence', description: 'The recognition of belonging to something vast. Alignment with the intelligence that moves through all things.' },
 ];
 
@@ -334,7 +334,7 @@ export const techniques: Technique[] = [
   { id: '2', title: 'Body Scan Awareness', description: 'Systematic attention through the body, cultivating somatic presence and releasing held tension.', level: 1, category: 'Somatic' },
   { id: '3', title: 'Heart Coherence Meditation', description: 'Focused attention on the heart center, cultivating the felt sense of coherence and compassion.', level: 1, category: 'Meditation' },
   { id: '4', title: 'Witnessing Practice', description: 'Developing the capacity to observe thoughts and sensations without identification or reaction.', level: 1, category: 'Awareness' },
-  { id: '5', title: 'Rose Meditation', description: 'The core practice of the lineage: a multi-layered meditation integrating breath, body, and subtle awareness.', level: 1, category: 'Core Practice' },
+  { id: '5', title: 'Rose Meditation', description: 'The core practice of the lineage, a multi-layered meditation integrating breath, body, and subtle awareness.', level: 1, category: 'Core Practice' },
   { id: '6', title: 'Field Sensing', description: 'Developing sensitivity to the energetic field (both personal and shared) as a perceptual capacity.', level: 2, category: 'Energetic' },
   { id: '7', title: 'Chakra Awareness Sequence', description: 'A guided practice moving attention through the seven energy centers, noting qualities and blockages.', level: 2, category: 'Energetic' },
   { id: '8', title: 'Emotional Alchemy', description: 'The practice of meeting difficult emotions with presence, allowing transformation through awareness rather than suppression.', level: 2, category: 'Emotional' },
@@ -377,14 +377,14 @@ export const elevenCapacities: Capacity[] = [
   { id: '1', number: 1, title: 'Stillness', description: 'The capacity to be at rest (internally and externally) as a foundation for all action.' },
   { id: '2', number: 2, title: 'Presence', description: 'The ability to be fully here, now, without the need to be elsewhere.' },
   { id: '3', number: 3, title: 'Breath', description: 'Conscious relationship with the breath as the bridge between body and awareness.' },
-  { id: '4', number: 4, title: 'Feeling', description: 'The willingness to feel completely: pleasure, pain, and everything in between.' },
-  { id: '5', number: 5, title: 'Listening', description: 'Deep receptivity: to self, others, and the intelligence of the larger field.' },
+  { id: '4', number: 4, title: 'Feeling', description: 'The willingness to feel completely, from pleasure to pain and everything in between.' },
+  { id: '5', number: 5, title: 'Listening', description: 'Deep receptivity to self, others, and the intelligence of the larger field.' },
   { id: '6', number: 6, title: 'Discernment', description: 'Clear seeing without judgment. The capacity to distinguish truth from noise.' },
   { id: '7', number: 7, title: 'Courage', description: 'The heart-strength to act on what is true, even when it is uncomfortable.' },
   { id: '8', number: 8, title: 'Surrender', description: 'The art of releasing control without collapsing. Trusting the larger intelligence.' },
   { id: '9', number: 9, title: 'Integration', description: 'The ongoing work of bringing insights into lived experience and daily practice.' },
   { id: '10', number: 10, title: 'Service', description: 'The natural movement from inner coherence to outer contribution.' },
-  { id: '11', number: 11, title: 'Remembrance', description: 'The ultimate capacity: not learning something new but remembering what has always been true.' },
+  { id: '11', number: 11, title: 'Remembrance', description: 'The ultimate capacity is not learning something new but remembering what has always been true.' },
 ];
 
 // =============================================================================
@@ -392,10 +392,10 @@ export const elevenCapacities: Capacity[] = [
 // =============================================================================
 
 export const architectureLayers: ArchitectureLayer[] = [
-  { id: '1', name: 'Hardware', description: 'The physical body: bones, muscles, organs, nervous system. The vessel through which all experience flows.' },
-  { id: '2', name: 'Software', description: 'The mind: beliefs, patterns, conditioning, and the stories we carry. The programs that run our experience.' },
+  { id: '1', name: 'Hardware', description: 'The physical body, including bones, muscles, organs, and the nervous system. The vessel through which all experience flows.' },
+  { id: '2', name: 'Software', description: 'The mind, including beliefs, patterns, conditioning, and the stories we carry. The programs that run our experience.' },
   { id: '3', name: 'Heartware', description: 'The emotional and relational intelligence. The felt sense of connection, compassion, and coherence.' },
-  { id: '4', name: 'Soulware', description: 'The deepest layer: essence, purpose, and the remembrance of who we truly are beneath all conditioning.' },
+  { id: '4', name: 'Soulware', description: 'The deepest layer of essence, purpose, and the remembrance of who we truly are beneath all conditioning.' },
 ];
 
 // =============================================================================
@@ -416,7 +416,7 @@ export const brandQuotes: BrandQuote[] = [
 // =============================================================================
 
 export const messagingPillars = [
-  { id: '1', title: 'The Rose', description: 'A sacred technology of remembrance: a systematic practice for reconnecting with the intelligence that lives within.' },
-  { id: '2', title: 'The Aura', description: 'The energetic body and its role in coherence: subtle awareness as a practical capacity for daily living.' },
+  { id: '1', title: 'The Rose', description: 'A sacred technology of remembrance and a systematic practice for reconnecting with the intelligence that lives within.' },
+  { id: '2', title: 'The Aura', description: 'The energetic body and its role in coherence, where subtle awareness becomes a practical capacity for daily living.' },
   { id: '3', title: 'The Human Journey', description: 'The recognition that every life is a journey of return, and that this journey is supported, not solitary.' },
 ];

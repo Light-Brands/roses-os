@@ -1,7 +1,7 @@
 /**
  * Page Accent Image Generation Script
  * Generates subtle, decorative abstract images for each ROSES OS page
- * These are complimentary details — small flourishes that make the site shine
+ * These are complimentary details, small flourishes that make the site shine
  * Uses Google Gemini for prompt generation + image generation
  *
  * Pages: Home, The Rose, The Codex, Programs, Guardians, Community, Contact
@@ -62,7 +62,7 @@ const PAGES: PageConfig[] = [
     slug: 'home',
     title: 'A Seamless Path to Inner Freedom',
     theme:
-      'Consciousness & remembrance ecosystem. A living architecture for coherent living. The journey home to yourself. A 3D rose already exists on this page — the image should complement it, not duplicate it.',
+      'Consciousness and remembrance ecosystem. A living architecture for coherent living. The journey home to yourself. A 3D rose already exists on this page so the image should complement it, not duplicate it.',
     keywords: [
       'inner freedom',
       'coherence',
@@ -76,7 +76,7 @@ const PAGES: PageConfig[] = [
     slug: 'the-rose',
     title: 'The Intelligence of Silence',
     theme:
-      'The Rose is a technology of remembrance — a living practice rooted in breath, somatic awareness, and inner coherence. It reconnects you with the intelligence already present within your body. It unfolds across three levels.',
+      'The Rose is a technology of remembrance, a living practice rooted in breath, somatic awareness, and inner coherence. It reconnects you with the intelligence already present within your body. It unfolds across three levels.',
     keywords: [
       'silence',
       'breath',
@@ -90,7 +90,7 @@ const PAGES: PageConfig[] = [
     slug: 'the-codex',
     title: 'A Living Document of Coherent Being',
     theme:
-      'The philosophical container of ROSES OS — a map of the territory, 13 domains of coherence, four architectural layers, eleven capacities. A living document, lineage, sacred geometry.',
+      'The philosophical container of ROSES OS encompassing a map of the territory, 13 domains of coherence, four architectural layers, and eleven capacities. A living document of lineage and sacred geometry.',
     keywords: [
       'sacred geometry',
       'codex',
@@ -133,7 +133,7 @@ const PAGES: PageConfig[] = [
     slug: 'community',
     title: 'The Living Field',
     theme:
-      'A network of practitioners devoted to coherent living. Not a membership club — a living field. Coherence is contagious. Four layers of the living system.',
+      'A network of practitioners devoted to coherent living. Not a membership club but a living field. Coherence is contagious. Four layers of the living system.',
     keywords: [
       'field',
       'network',
