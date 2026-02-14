@@ -579,7 +579,7 @@ export default function Home() {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="text-[11px] font-medium uppercase tracking-[0.2em] text-rose-500/80 dark:text-rose-400/70 mb-6 lg:mb-8"
           >
-            A Consciousness &amp; Remembrance Ecosystem
+            A Living Ecosystem for Remembering Who You Are
           </motion.p>
 
           <motion.div
