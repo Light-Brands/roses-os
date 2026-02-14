@@ -1616,24 +1616,10 @@ Only use imagery that feels: warm, human, earthy, devotional, quiet.
 
 ### Graphic Style
 
-- Minimal line icons (Lucide React icon set)
+- Minimal line icons
 - Subtle sacred geometry
 - Soft gradients
 - Spacious compositions
-
-### 3D Elements (Three.js / React Three Fiber)
-
-The site features interactive 3D elements that embody the Rose technology:
-
-- **HeroSphere** -- An iridescent, gently animated 3D sphere on the home page hero, created with custom shaders and post-processing effects
-- **RoseModel** -- A detailed 3D rose model used in key sections
-- **ShaderSphere** -- Custom shader-based sphere with animated materials
-
-These 3D elements should feel:
-- Alive but calm (gentle oscillation, not flashy)
-- Iridescent and warm (rose-gold tones)
-- Ambient, not distracting
-- Like a living presence, not a tech demo
 
 ### Logo System
 
@@ -1862,49 +1848,27 @@ Motion should feel like breath.
 
 ### Buttons
 
-**Navigation CTA Button (Begin)**
+**Primary Button (Invitation CTA)**
 
-- Background: Rose Clay Mauve (`#9C6F6E`)
-- Hover: Darker rose (`#8A5E5D`) with fill-sweep animation
-- Text: White, Inter Medium
-- Shape: Pill + attached circle with ArrowUpRight icon
-- Icon animation: slides out and back in on hover
-- Used only in the navigation bar
-
-**Primary Button (Hero / Section CTAs)**
-
-- Background: `rose-500` (Tailwind)
-- Text: White
+- Background: Quiet Olive Gold (`#9E956B`)
+- Text: Aura White
 - Radius: 999px (pill)
-- Padding: 16px 32px
+- Padding: 16px 28px
 - Font: Inter Medium
-- Shadow: rose-500/25, grows on hover
-- Inline arrow icon that shifts right on hover
-
-Text examples:
-
-- "Begin Your Journey"
-- "Explore The Rose"
-
-**Accent Button (Enrollment / Form CTAs)**
-
-- Background: Antique Olive Brass (`#9E956B`) via CSS variable `--color-accent`
-- Text: Accent foreground (white)
-- Radius: 999px (pill)
 - No harsh shadows
-- Used for enrollment CTAs and form submissions
 
 Text examples:
 
-- "Enroll Now"
-- "Send Message"
+- "Start Your Journey"
+- "Enter the Rose"
+- "Return to Coherence"
 
 **Secondary Button (Ghost)**
 
 - Transparent background
-- Border: 2px rose-300 (light) / rose-700 (dark)
-- Text: Foreground color
-- Hover: subtle bg fill + border darkens
+- Border: Deep Earth 20% opacity
+- Text: Deep Earth
+- Hover: slight warm overlay
 
 ### Cards / Containers
 
@@ -1931,59 +1895,27 @@ Example: ROSES OS | The Rose | Programs | Guardians | Community | Begin
 
 The hero is not promotional. It is a remembering.
 
-**Structure (Home Page):**
+**Structure:**
 
-- Eyebrow label (Inter, uppercase, 11px): "A Living Ecosystem for Remembering Who You Are"
-- Rose icon: Centered, minimal
-- Headline (Cormorant, GSAP word-reveal animation): "A Seamless Path to Inner Freedom"
-- Subtext (Inter): "Technologies of remembrance for those ready to live in coherence."
-- Primary CTA: "Begin Your Journey" → /invitation
-- Secondary CTA: "Explore The Rose" → /the-rose
-- 3D animated sphere (Three.js / React Three Fiber) -- iridescent, gently animating below the text
-- Scroll indicator at bottom with animated pulse line
+- Headline (Cormorant): "A Seamless Path to Inner Freedom"
+- Subtext (Inter): Where inner symmetry becomes the source of leadership, creativity, and conscious prosperity.
+- Single CTA Button: Start Your Journey
 
 **Hero Visual Style:**
 
-- Warm gradient background (rose-50/50 to transparent)
-- Background noise texture overlay
-- 3D HeroSphere filling lower portion of viewport
-- Parallax fade-out on scroll
+- Solid rose clay background OR soft textured field
+- Minimal rose icon centered
 - Nothing busy
-
-**Interior Page Heroes:**
-
-Interior pages use the `PageHero` component with consistent structure:
-- Eyebrow label (sacred label style)
-- Headline (Cormorant)
-- Description text (Inter, muted)
-- Optional page image
-
-**CTA Text Examples (as used on site):**
-
-- "Begin Your Journey" (primary, rose-500 pill button)
-- "Explore The Rose" (secondary, ghost/outline)
-- "Begin" (nav CTA, Rose Clay Mauve pill button)
-- "Enroll Now" (enrollment, olive brass accent)
-- "Learn More" (invitation flow)
-- "Send Message" (contact form)
 
 ### Section Templates
 
-**Quote Spread Section (`QuoteBlock`):** Full-width rose gradient background (`rose-600` via `#9C6F6E` to `rose-800`), linen texture overlay, decorative circles, centered text with large serif quotation mark. No button. Just presence.
+**Quote Spread Section:** Full-width. Silence. Centered text: *"When coherence returns, Genius awakens."* No button. Just presence.
 
-**Three Pillars Section:** Three-column card grid -- The Rose, The Aura, The Human Journey. Each as calm cards with subtle rose gradient backgrounds, rose-tinted icon containers, serif title, muted body text. Not sales blocks.
+**The Journey Section:** Three pillars layout -- The Rose, The Aura, The Human Journey. Each as calm cards, not sales blocks.
 
-**Two Core Questions Section:** Centered section with soft radial rose glow. Two italic serif questions that change everything. Gradient line divider below.
+**Guardians Section:** Photography should feel real, reverent. Photo + Name + 2-line essence. No long resumes. Each photo framed with a white border (Aura White `#F7F5F2` or pure `#FFFFFF`, 4--6px) to create a clean, reverent separation from the background.
 
-**Brand Essence Section:** Dark background (`section-dark`), rose-gold gradient orbs, centered messaging with stats row (30+ Years, 6,000+ Practitioners, 50+ Countries).
-
-**Who It's For Section:** Centered section with page image, trait pills (Seekers, Healers, Teachers, Leaders, Creators) in rose-tinted pill badges, centered prose.
-
-**Guardians Section:** 4-column grid (1 on mobile, 2 on tablet, 4 on desktop). Photography should feel real, reverent. Photo + Name + Role + Bio. `GuardianCard` component with image positioning control.
-
-**Pricing / Contribution Section:** Must feel sacred, not transactional. Three-tier layout (Seed, Bloom, Canopy) with income ranges and pricing for both program options. Language: "We believe this work should be accessible to everyone who is called." No "BUY NOW."
-
-**Invitation CTA Section:** Dark gradient background, centered rose icon, headline "The way is open. Welcome home." with rose-400 accent, primary + secondary CTA buttons.
+**Pricing / Contribution Section:** Must feel sacred, not transactional. Language: "A contribution rooted in truth." No "BUY NOW."
 
 ---
 
