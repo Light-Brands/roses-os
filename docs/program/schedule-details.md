@@ -6,7 +6,7 @@
 
 ---
 
-## 1st Stage -- Rose Meditation Level 1, 2 and 3
+## 1st Stage -- Rose Meditation
 
 **17th to 18th of March**
 
