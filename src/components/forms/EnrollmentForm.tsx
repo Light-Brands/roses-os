@@ -23,30 +23,22 @@ const inputStyles = cn(
   'transition-all duration-200'
 );
 
-const programs = [
-  {
-    id: 'the-rose',
-    title: 'The Rose',
-    subtitle: 'Rose Meditation Level 1, 2 & 3 -- 2 days',
-  },
-  {
-    id: 'the-rose-aura-1',
-    title: 'The Rose + Aura 1',
-    subtitle: 'Complete Immersion -- 11 days',
-  },
-];
+const program = {
+  id: 'the-rose-aura-1',
+  title: 'The Rose + Aura 1',
+  subtitle: 'Complete Immersion -- 11 days',
+};
 
 export function EnrollmentForm({ onSubmit, className }: EnrollmentFormProps) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [program, setProgram] = useState('');
 
-  const isValid = name.trim() !== '' && email.trim() !== '' && program !== '';
+  const isValid = name.trim() !== '' && email.trim() !== '';
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!isValid) return;
-    onSubmit({ name: name.trim(), email: email.trim(), program });
+    onSubmit({ name: name.trim(), email: email.trim(), program: program.id });
   }
 
   return (
@@ -95,44 +87,25 @@ export function EnrollmentForm({ onSubmit, className }: EnrollmentFormProps) {
         />
       </div>
 
-      {/* Program Selection */}
-      <fieldset className="space-y-3">
-        <legend className="block text-sm font-medium text-[var(--color-foreground-subtle)]">
-          Select Program
-        </legend>
-
-        <div className="space-y-3">
-          {programs.map((p) => (
-            <label
-              key={p.id}
-              className={cn(
-                'flex cursor-pointer items-start gap-3 rounded-xl border p-4',
-                'transition-all duration-200',
-                program === p.id
-                  ? 'border-[var(--color-rose-clay)] bg-[var(--color-rose-50)] shadow-[var(--shadow-rose)]'
-                  : 'border-[var(--color-border)] bg-[var(--color-background-elevated)] hover:border-[var(--color-border-strong)]'
-              )}
-            >
-              <input
-                type="radio"
-                name="program"
-                value={p.id}
-                checked={program === p.id}
-                onChange={(e) => setProgram(e.target.value)}
-                className="mt-1 h-4 w-4 shrink-0 accent-[var(--color-rose-clay)]"
-              />
-              <div>
-                <span className="block font-medium text-[var(--color-foreground)]">
-                  {p.title}
-                </span>
-                <span className="text-sm text-[var(--color-foreground-muted)]">
-                  {p.subtitle}
-                </span>
-              </div>
-            </label>
-          ))}
+      {/* Program */}
+      <div className="space-y-2">
+        <span className="block text-sm font-medium text-[var(--color-foreground-subtle)]">
+          Program
+        </span>
+        <div
+          className={cn(
+            'rounded-xl border p-4',
+            'border-[var(--color-rose-clay)] bg-[var(--color-rose-50)] shadow-[var(--shadow-rose)]'
+          )}
+        >
+          <span className="block font-medium text-[var(--color-foreground)]">
+            {program.title}
+          </span>
+          <span className="text-sm text-[var(--color-foreground-muted)]">
+            {program.subtitle}
+          </span>
         </div>
-      </fieldset>
+      </div>
 
       {/* Submit */}
       <motion.button

@@ -113,7 +113,7 @@ function WhatToExpect() {
     {
       number: '04',
       title: 'Begin',
-      description: 'Join live sessions with the guardians and fellow practitioners.',
+      description: 'Access live and recorded content with the guardians and fellow practitioners.',
     },
   ];
 
