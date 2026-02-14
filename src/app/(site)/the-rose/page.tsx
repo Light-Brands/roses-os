@@ -240,7 +240,7 @@ export default function TheRosePage() {
 
       {/* 8. Quote */}
       <QuoteBlock
-        quote="This journey is an invitation into intuition, presence, and truth — a gateway into the mystery of who you are and who you are becoming."
+        quote="The aura is not just about colors. It contains all the information about who you truly are. You just need to learn how to see it."
         variant="fullbleed"
       />
 
