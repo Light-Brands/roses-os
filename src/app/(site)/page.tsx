@@ -163,7 +163,7 @@ function BrandEssence() {
         >
           ROSES OS is a living consciousness ecosystem of practices, teachings,
           and community, designed to help you remember what you already know and
-          live from that place. Not a course. Not a cure. A way home.
+          live from that place. A living path. A way home.
         </motion.p>
 
         {/* Stats row */}
@@ -389,9 +389,8 @@ function WhoItsFor() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-lg text-[var(--color-foreground-muted)] leading-relaxed"
         >
-          You may be someone who knows that the life you are living is not yet
-          the life you came here to live. If something in these words resonates,
-          the way is open.
+          You may be someone who senses the life you came here to live is still
+          unfolding. If something in these words resonates, the way is open.
         </motion.p>
       </div>
     </section>

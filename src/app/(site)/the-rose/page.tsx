@@ -74,7 +74,7 @@ export default function TheRosePage() {
       <PageHero
         eyebrow="The Rose"
         title="The Intelligence of Silence"
-        description="The Rose is a technology of remembrance. A living practice that reconnects you with the intelligence already present within your body, your breath, and your being. It is not something to learn. It is something to remember."
+        description="The Rose is a technology of remembrance. A living practice that reconnects you with the intelligence already present within your body, your breath, and your being. Something already within you, waiting to be remembered."
         image="/page-images/page-the-rose.png"
       />
 
