@@ -175,7 +175,6 @@ export default function ProgramsPage() {
           </div>
         </div>
       </section>
-
     </>
   );
 }
