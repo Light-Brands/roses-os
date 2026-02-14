@@ -3,10 +3,8 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import { pathLevels } from '@/lib/data';
 
 import PageHero from '@/components/sections/PageHero';
-import PathLevels from '@/components/sections/PathLevels';
 import QuoteBlock from '@/components/sections/QuoteBlock';
 import InvitationCTA from '@/components/sections/InvitationCTA';
 import { Tabs, TabsList, TabTrigger, TabContent } from '@/components/ui/Tabs';
@@ -231,12 +229,9 @@ export default function TheRosePage() {
         </div>
       </section>
 
-      {/* 7. Aura Reading Levels */}
-      <PathLevels levels={pathLevels.filter((l) => l.level >= 4 && l.level <= 6)} variant="full" />
-
-      {/* 8. Quote */}
+      {/* 7. Quote */}
       <QuoteBlock
-        quote="The aura is not just about colors. It contains all the information about who you truly are. You just need to learn how to see it."
+        quote="This journey is an invitation into intuition, presence, and truth—a gateway into the mystery of who you are and who you are becoming."
         variant="fullbleed"
       />
 
