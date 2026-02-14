@@ -6,9 +6,15 @@ import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 
+import dynamic from 'next/dynamic';
 import HeroSphere from '@/components/three/HeroSphere';
 import { cn } from '@/lib/utils';
 import { brandQuotes, messagingPillars } from '@/lib/data';
+
+const ConsciousnessField = dynamic(
+  () => import('@/components/three/ConsciousnessField'),
+  { ssr: false }
+);
 
 // =============================================================================
 // SCROLL INDICATOR
@@ -155,9 +161,9 @@ function BrandEssence() {
           transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="text-lg text-white/60 leading-relaxed max-w-2xl mx-auto"
         >
-          ROSES OS is a living ecosystem of practices, teachings, and community —
-          designed to help you remember what you already know and live from that
-          place. Not a course. Not a cure. A way home.
+          ROSES OS is a living consciousness ecosystem of practices, teachings,
+          and community — designed to help you remember what you already know and
+          live from that place. Not a course. Not a cure. A way home.
         </motion.p>
 
         {/* Stats row */}
@@ -571,6 +577,11 @@ export default function Home() {
           }}
         />
 
+        {/* Living Consciousness Ecosystem — animated particle field */}
+        <div className="absolute inset-0 pointer-events-none">
+          <ConsciousnessField />
+        </div>
+
         {/* Hero Content — sits at top, clears navbar */}
         <div className="relative z-10 container-premium flex flex-col items-center text-center pt-36 sm:pt-40 lg:pt-44">
           <motion.p
@@ -579,7 +590,7 @@ export default function Home() {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="text-[11px] font-medium uppercase tracking-[0.2em] text-rose-500/80 dark:text-rose-400/70 mb-6 lg:mb-8"
           >
-            A Living Ecosystem for Remembering Who You Are
+            A Living Consciousness Ecosystem
           </motion.p>
 
           <motion.div
@@ -602,13 +613,11 @@ export default function Home() {
             ref={titleRef}
             className="font-serif text-[clamp(2rem,5.5vw,4.5rem)] leading-[1.05] tracking-tighter text-balance max-w-5xl"
           >
-            <span className="hero-word inline-block mr-[0.25em]">A</span>
-            <span className="hero-word inline-block mr-[0.25em]">Seamless</span>
-            <span className="hero-word inline-block mr-[0.25em]">Path</span>
-            <span className="hero-word inline-block mr-[0.25em]">to</span>
+            <span className="hero-word inline-block mr-[0.25em]">Remember</span>
+            <span className="hero-word inline-block mr-[0.25em]">Who</span>
             <br className="hidden sm:block" />
-            <span className="hero-word inline-block mr-[0.25em] text-rose-600 dark:text-rose-400">Inner</span>
-            <span className="hero-word inline-block text-rose-600 dark:text-rose-400">Freedom</span>
+            <span className="hero-word inline-block mr-[0.25em] text-rose-600 dark:text-rose-400">You</span>
+            <span className="hero-word inline-block text-rose-600 dark:text-rose-400">Are</span>
           </h1>
 
           <motion.p
