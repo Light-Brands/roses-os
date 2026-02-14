@@ -1,7 +1,7 @@
 'use client';
 
-import { useRef, useState } from 'react';
-import { motion, useInView, AnimatePresence } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import type { PathLevel } from '@/lib/data/types';
 
@@ -39,14 +39,10 @@ const stepVariants = {
   },
 };
 
-// Aura 2–3 are levels 5–6; their descriptions are hidden behind a toggle
-const COLLAPSED_LEVELS = new Set([5, 6]);
-
 export default function PathLevels({ levels, variant = 'full', className }: PathLevelsProps) {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-80px' });
   const isCompact = variant === 'compact';
-  const [expanded, setExpanded] = useState<Set<number>>(new Set());
 
   return (
     <section ref={ref} className={cn('section-padding', className)}>
@@ -123,82 +119,26 @@ export default function PathLevels({ levels, variant = 'full', className }: Path
                 </p>
 
                 {/* Full variant: description + focus areas */}
-                {!isCompact && (() => {
-                  const isCollapsible = COLLAPSED_LEVELS.has(level.level);
-                  const isOpen = !isCollapsible || expanded.has(level.level);
-
-                  const details = (
-                    <>
-                      <p className="text-sm text-[var(--color-foreground-muted)] leading-relaxed mb-4">
-                        {level.description}
-                      </p>
-                      {level.focus.length > 0 && (
-                        <ul className="space-y-1.5">
-                          {level.focus.map((item, i) => (
-                            <li
-                              key={i}
-                              className="flex items-start gap-2 text-sm text-[var(--color-foreground-muted)]"
-                            >
-                              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#9E956B]/50 flex-shrink-0" />
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </>
-                  );
-
-                  if (!isCollapsible) return details;
-
-                  return (
-                    <>
-                      <button
-                        type="button"
-                        onClick={() =>
-                          setExpanded((prev) => {
-                            const next = new Set(prev);
-                            if (next.has(level.level)) next.delete(level.level);
-                            else next.add(level.level);
-                            return next;
-                          })
-                        }
-                        className={cn(
-                          'flex items-center gap-1.5 text-xs text-[#9E956B] hover:text-[#9E956B]/80',
-                          'transition-colors duration-200 cursor-pointer mt-1'
-                        )}
-                      >
-                        <svg
-                          width="12"
-                          height="12"
-                          viewBox="0 0 12 12"
-                          fill="none"
-                          className={cn(
-                            'transition-transform duration-200',
-                            isOpen && 'rotate-90'
-                          )}
-                        >
-                          <path d="M4.5 2.5L8 6L4.5 9.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                        <span>{isOpen ? 'Hide details' : 'View details'}</span>
-                      </button>
-                      <AnimatePresence initial={false}>
-                        {isOpen && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: 'auto', opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-                            className="overflow-hidden"
+                {!isCompact && (
+                  <>
+                    <p className="text-sm text-[var(--color-foreground-muted)] leading-relaxed mb-4">
+                      {level.description}
+                    </p>
+                    {level.focus.length > 0 && (
+                      <ul className="space-y-1.5">
+                        {level.focus.map((item, i) => (
+                          <li
+                            key={i}
+                            className="flex items-start gap-2 text-sm text-[var(--color-foreground-muted)]"
                           >
-                            <div className="pt-3">
-                              {details}
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </>
-                  );
-                })()}
+                            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#9E956B]/50 flex-shrink-0" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </>
+                )}
               </motion.div>
             ))}
           </div>
