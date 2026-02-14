@@ -2,7 +2,6 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { pathLevels } from '@/lib/data';
 
@@ -10,6 +9,7 @@ import PageHero from '@/components/sections/PageHero';
 import PathLevels from '@/components/sections/PathLevels';
 import QuoteBlock from '@/components/sections/QuoteBlock';
 import InvitationCTA from '@/components/sections/InvitationCTA';
+import { Tabs, TabsList, TabTrigger, TabContent } from '@/components/ui/Tabs';
 
 // =============================================================================
 // SCROLL-REVEAL TEXT SECTION
@@ -146,41 +146,101 @@ export default function TheRosePage() {
           and the cultivation of inner coherence. Developed over decades by
           Angelina Ataíde and drawn from a deep lineage of consciousness research,
           it offers a clear, grounded pathway for anyone ready to remember who
-          they truly are. The Rose unfolds across three levels. Each one a
-          deepening of the relationship with yourself, your body, and the field of
-          intelligence that surrounds you.
+          they truly are. The path unfolds through two main practices — Rose
+          Meditation and Aura Reading — each one a deepening of the relationship
+          with yourself, your energy, and the field of intelligence that surrounds
+          you.
         </p>
       </RevealSection>
 
-      {/* 6. Path Levels — Rose Meditation 1–3 */}
-      <PathLevels levels={pathLevels.filter((l) => l.level <= 3)} variant="full" />
+      {/* 6. Rose Meditation & Aura Tabs */}
+      <section className="section-padding">
+        <div className="container-premium max-w-4xl mx-auto">
+          <Tabs defaultValue="rose-meditation" variant="underline" size="lg">
+            <TabsList className="justify-center mb-8">
+              <TabTrigger value="rose-meditation">Rose Meditation</TabTrigger>
+              <TabTrigger value="aura">Aura Reading</TabTrigger>
+            </TabsList>
 
-      {/* 7. The Journey */}
-      <RevealSection
-        label="The Journey"
-        title="Six Levels of Deepening"
-      >
-        <p>
-          The path unfolds across six levels, each building on
-          the last. Beginning with the three levels of Rose Meditation —
-          grounding, cleansing, and spiritual activation — the journey
-          extends into reading the energetic body, deepening perceptual
-          capacity, and ultimately navigating the relational and healing
-          dimensions of the subtle field through three levels of Aura Reading.
-        </p>
-        <p>
-          Every level is taught live, in community, and supported by the
-          guardians of this lineage. The path is designed for those who are
-          ready to move beyond concept and into direct experience.
-        </p>
-      </RevealSection>
+            {/* Rose Meditation Tab */}
+            <TabContent value="rose-meditation">
+              <div className="space-y-6">
+                <p className="text-lg text-[var(--color-foreground-muted)] leading-relaxed">
+                  Rose Meditation is the foundational practice of the ROSES OS
+                  path. It begins with grounding, aura awareness, and energetic
+                  cleansing — learning to root yourself, separate your energy from
+                  others, and receive the nourishing forces of Earth and Cosmos.
+                  The practice deepens into the subtle body, where you discover
+                  what your aura carries, transmute past and present energies,
+                  cleanse the seven chakras and aura layers, and release energetic
+                  ties. It culminates in spiritual activation — working with
+                  spiritual agreements, freeing yourself from energetic cords,
+                  transcending limiting beliefs, and learning Reality Creation
+                  through the Mock Up technique.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 pt-2">
+                  {[
+                    'Grounding & presence',
+                    'Aura cleansing & protection',
+                    'Energy separation',
+                    'Earth & Cosmic circuits',
+                    'Chakra & aura layer cleansing',
+                    'Energetic tie release',
+                    'Sacred space creation',
+                    'Environmental protection',
+                    'Spiritual agreements & cords',
+                    'Belief transcendence',
+                    'Mental program cleansing',
+                    'Reality Creation (Mock Up)',
+                  ].map((item) => (
+                    <div
+                      key={item}
+                      className="flex items-start gap-2 text-sm text-[var(--color-foreground-muted)] py-1"
+                    >
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#9E956B]/50 flex-shrink-0" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </TabContent>
 
-      {/* 8. Path Levels — Aura Reading 1–3 */}
+            {/* Aura Reading Tab */}
+            <TabContent value="aura">
+              <div className="space-y-6">
+                <p className="text-lg text-[var(--color-foreground-muted)] leading-relaxed">
+                  Aura Reading course teaches you to see, feel, and listen to the
+                  energy that moves within you and surrounds you, revealing that
+                  everything in life begins as energy and that awareness gives you
+                  the power to transform it.
+                </p>
+                <p className="text-lg text-[var(--color-foreground-muted)] leading-relaxed">
+                  It is as well a conscious conversation between essences. By
+                  reading another person&apos;s aura, you support their journey of
+                  growth and healing while receiving mirrors and insights that
+                  illuminate your own path. Each reading becomes a conscious
+                  exchange where both the reader and the person being read are
+                  touched and transformed.
+                </p>
+                <p className="text-lg text-[var(--color-foreground-muted)] leading-relaxed">
+                  This transformation becomes possible by awakening your
+                  clairvoyance, clairsentience, clairaudience, and other subtle
+                  senses. These abilities allow you to connect directly with what
+                  is real and receive guidance that leads to freedom, clarity, and
+                  growth.
+                </p>
+              </div>
+            </TabContent>
+          </Tabs>
+        </div>
+      </section>
+
+      {/* 7. Aura Reading Levels */}
       <PathLevels levels={pathLevels.filter((l) => l.level >= 4 && l.level <= 6)} variant="full" />
 
-      {/* 9. Quote */}
+      {/* 8. Quote */}
       <QuoteBlock
-        quote="The aura is not something you learn to see. It is something you remember how to feel."
+        quote="This journey is an invitation into intuition, presence, and truth — a gateway into the mystery of who you are and who you are becoming."
         variant="fullbleed"
       />
 
