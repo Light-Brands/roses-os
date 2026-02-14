@@ -11,10 +11,10 @@ import QuoteBlock from '@/components/sections/QuoteBlock';
 import InvitationCTA from '@/components/sections/InvitationCTA';
 
 // =============================================================================
-// AURA LEVEL CARD
+// LEVEL CARD
 // =============================================================================
 
-function AuraLevelCard({
+function LevelCard({
   level,
   index,
   isInView,
@@ -103,11 +103,17 @@ export default function OfferingsPage() {
   const introRef = useRef<HTMLElement>(null);
   const introInView = useInView(introRef, { once: true, margin: '-100px' });
 
+  const roseLevelsRef = useRef<HTMLElement>(null);
+  const roseLevelsInView = useInView(roseLevelsRef, { once: true, margin: '-100px' });
+
   const levelsRef = useRef<HTMLElement>(null);
   const levelsInView = useInView(levelsRef, { once: true, margin: '-100px' });
 
   const ctaRef = useRef<HTMLElement>(null);
   const ctaInView = useInView(ctaRef, { once: true, margin: '-100px' });
+
+  // Rose Meditation levels 1, 2 & 3
+  const roseLevels = pathLevels.filter((l) => l.level >= 1 && l.level <= 3);
 
   // Aura levels 1, 2 & 3 correspond to pathLevels indices 3, 4, 5 (levels 4, 5, 6)
   const auraLevels = pathLevels.filter((l) => l.level >= 4 && l.level <= 6);
@@ -117,8 +123,8 @@ export default function OfferingsPage() {
       {/* 1. Hero */}
       <PageHero
         eyebrow="Offerings"
-        title="The Aura Path"
-        description="A progressive journey into the energetic body. Each level deepens your capacity to perceive, heal, and navigate the subtle field of consciousness that surrounds and moves through all things."
+        title="The Path"
+        description="A progressive journey from inner stillness to energetic mastery. Beginning with the Rose Meditation and deepening through Aura Reading, each level builds on the last — expanding your capacity to perceive, heal, and navigate the subtle field of consciousness."
         image="/page-images/page-offerings.png"
       />
 
@@ -139,7 +145,7 @@ export default function OfferingsPage() {
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-6"
           >
-            Three Levels of Deepening
+            Six Levels of Deepening
           </motion.h2>
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -148,11 +154,12 @@ export default function OfferingsPage() {
             className="text-lg text-[var(--color-foreground-muted)] leading-relaxed space-y-6"
           >
             <p>
-              The Aura path unfolds across three levels, each building on
-              the last. Beginning with the foundational practices of Rose
-              Meditation, the journey extends into reading the energetic body,
-              deepening perceptual capacity, and ultimately navigating the
-              relational and healing dimensions of the subtle field.
+              The path unfolds across six levels, each building on
+              the last. Beginning with the three levels of Rose Meditation —
+              grounding, cleansing, and spiritual activation — the journey
+              extends into reading the energetic body, deepening perceptual
+              capacity, and ultimately navigating the relational and healing
+              dimensions of the subtle field through three levels of Aura Reading.
             </p>
             <p>
               Every level is taught live, in community, and supported by the
@@ -163,8 +170,40 @@ export default function OfferingsPage() {
         </div>
       </section>
 
-      {/* 3. Aura Levels */}
-      <section ref={levelsRef} className="section-padding">
+      {/* 3. Rose Meditation Levels */}
+      <section ref={roseLevelsRef} className="section-padding">
+        <div className="container-premium">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={roseLevelsInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="label-sacred mb-4 text-center"
+          >
+            Rose Meditation
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 24 }}
+            animate={roseLevelsInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-12 text-center"
+          >
+            The Foundation
+          </motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {roseLevels.map((level, i) => (
+              <LevelCard
+                key={level.id}
+                level={level}
+                index={i}
+                isInView={roseLevelsInView}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Aura Levels */}
+      <section ref={levelsRef} className="section-padding bg-[var(--color-background-subtle)]">
         <div className="container-premium">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -180,11 +219,11 @@ export default function OfferingsPage() {
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-12 text-center"
           >
-            The Levels
+            The Deepening
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {auraLevels.map((level, i) => (
-              <AuraLevelCard
+              <LevelCard
                 key={level.id}
                 level={level}
                 index={i}
@@ -195,13 +234,13 @@ export default function OfferingsPage() {
         </div>
       </section>
 
-      {/* 4. Quote */}
+      {/* 5. Quote */}
       <QuoteBlock
         quote="The aura is not something you learn to see. It is something you remember how to feel."
         variant="fullbleed"
       />
 
-      {/* 5. Current Program CTA */}
+      {/* 6. Current Program CTA */}
       <section ref={ctaRef} className="section-padding">
         <div className="container-premium">
           <div className="max-w-2xl mx-auto text-center">
@@ -267,7 +306,7 @@ export default function OfferingsPage() {
         </div>
       </section>
 
-      {/* 6. Invitation CTA */}
+      {/* 7. Invitation CTA */}
       <InvitationCTA />
     </>
   );
