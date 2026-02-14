@@ -234,8 +234,8 @@ export default function TheCodexPage() {
             transition={{ duration: 0.6, delay: 0.2, ease }}
             className="text-lg text-[var(--color-foreground-muted)] leading-relaxed mb-8"
           >
-            The path unfolds across eight levels — three Rose Meditations and five
-            Aura Readings — each deepening your relationship with inner coherence.
+            The path unfolds across eight levels: three Rose Meditations and five
+            Aura Readings, each deepening your relationship with inner coherence.
             From grounding and aura awareness through to spiritual activation and
             advanced perception, every level builds on the last.
           </motion.p>

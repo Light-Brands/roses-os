@@ -228,7 +228,7 @@ export default function OfferingsPage() {
               className="text-lg text-[var(--color-foreground-muted)] leading-relaxed mb-8"
             >
               The first level is now open. Eleven days combining Rose Meditation
-              1, 2 & 3 with Aura Reading Level 1 — a complete foundation for
+              1, 2 & 3 with Aura Reading Level 1: a complete foundation for
               the journey ahead.
             </motion.p>
             <motion.div

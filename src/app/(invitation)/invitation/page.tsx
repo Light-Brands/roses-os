@@ -174,7 +174,7 @@ function GuardiansLink() {
           transition={{ duration: 0.6, delay: 0.2, ease }}
           className="text-lg text-[var(--color-foreground-muted)] leading-relaxed mb-8"
         >
-          Four guardians steward the Rose field — each bringing decades of
+          Four guardians steward the Rose field, each bringing decades of
           practice, devotion, and lived experience to support your journey.
         </motion.p>
         <motion.div
@@ -217,12 +217,12 @@ const awakenings = [
   {
     title: 'Aura',
     description:
-      'When heart aligns with soul, you perceive subtle senses and the energy shaping your choices. Each reading is a mirror — strengthening clarity, relationships, and service.',
+      'When heart aligns with soul, you perceive subtle senses and the energy shaping your choices. Each reading is a mirror, strengthening clarity, relationships, and service.',
   },
   {
     title: 'Human Journey',
     description:
-      'Emotional patterns and imprints dissolve — freed across mental and energetic layers. Love reveals itself as a self-organizing intelligence.',
+      'Emotional patterns and imprints dissolve, freed across mental and energetic layers. Love reveals itself as a self-organizing intelligence.',
   },
   {
     title: 'Intuition',
