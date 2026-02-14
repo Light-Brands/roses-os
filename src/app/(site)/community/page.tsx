@@ -71,7 +71,7 @@ export default function CommunityPage() {
         </div>
       </section>
 
-      {/* 3. The Architecture — brief reference with link to The Codex */}
+      {/* 3. The Architecture — brief reference with link to Coherence */}
       <section className="section-padding bg-[var(--color-background-subtle)]">
         <div className="container-premium max-w-3xl mx-auto text-center">
           <motion.p
@@ -106,7 +106,7 @@ export default function CommunityPage() {
             transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
             <Link
-              href="/the-codex"
+              href="/coherence"
               className={cn(
                 'inline-flex items-center gap-2',
                 'text-sm font-medium',
@@ -116,7 +116,7 @@ export default function CommunityPage() {
                 'transition-colors duration-200'
               )}
             >
-              Explore the full architecture in The Codex
+              Explore the full architecture in Coherence
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
