@@ -78,6 +78,13 @@ export interface CoherenceDomain {
   description: string;
 }
 
+/** Category of alternative words that can replace "Coherence" to vary tone */
+export interface CoherenceAlternativeCategory {
+  id: string;
+  tone: string;
+  words: string[];
+}
+
 /** Path level (Rose One/Two/Three) */
 export interface PathLevel {
   id: string;

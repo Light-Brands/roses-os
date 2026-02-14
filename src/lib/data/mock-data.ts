@@ -4,7 +4,8 @@
 
 import type {
   NavItem, Guardian, Program, ContributionTier,
-  ScheduleStage, CoherenceDomain, PathLevel, LineageEntry,
+  ScheduleStage, CoherenceDomain, CoherenceAlternativeCategory,
+  PathLevel, LineageEntry,
   ArchitectureLayer, Chakra, Technique, TeachingLevel,
   Agreement, Capacity, BrandQuote, Stat,
 } from './types';
@@ -38,7 +39,7 @@ export const guardians: Guardian[] = [
     id: '2',
     name: 'Diego Dosal',
     role: 'Guardian of Architecture & Structure',
-    bio: 'Diego is the bridge between spirit and structure. With over a decade of deep roots in multiple paths of spiritual practice, energy work, and community building, he carries the horizontal axis of ROSES OS — developing platforms, systems, and frameworks that harmonize intuition with strategy and build lasting foundations for remembrance.',
+    bio: 'Diego is the bridge between spirit and structure. With over a decade of deep roots in multiple paths of spiritual practice, energy work, and community building, he carries the horizontal axis of ROSES OS — developing platforms, systems, and frameworks that harmonize intuition with strategy and build lasting foundations for this work.',
     image: '/images/61C5142D-1CB2-414A-BAED-1C2E2E30217E.png',
   },
   {
@@ -208,6 +209,40 @@ export const coherenceDomains: CoherenceDomain[] = [
   { id: '11', number: 11, title: 'Ancestral Coherence', description: 'Healing the lineage. Transforming inherited patterns into gifts and reclaiming the wisdom of those who came before.' },
   { id: '12', number: 12, title: 'Temporal Coherence', description: 'Right relationship with time: neither rushing nor stagnating. The art of sacred timing.' },
   { id: '13', number: 13, title: 'Universal Coherence', description: 'The recognition of belonging to something vast. Alignment with the intelligence that moves through all things.' },
+];
+
+// =============================================================================
+// COHERENCE ALTERNATIVES
+// Optional words that can replace "Coherence" in domain titles and copy
+// to vary tone and resonance across contexts.
+// =============================================================================
+
+export const coherenceAlternatives: CoherenceAlternativeCategory[] = [
+  {
+    id: 'inner-alignment',
+    tone: 'Inner Alignment / Spiritual',
+    words: ['Alignment', 'Harmony', 'Integration', 'Wholeness', 'Inner Order', 'Unity', 'Centeredness'],
+  },
+  {
+    id: 'somatic',
+    tone: 'Nervous System / Somatic',
+    words: ['Regulation', 'Stability', 'Balance', 'Groundedness', 'Equilibrium'],
+  },
+  {
+    id: 'signal',
+    tone: 'Signal / Technology Metaphor',
+    words: ['Clarity', 'Signal Integrity', 'Resolution', 'Synchronization', 'Clean Signal', 'Calibration'],
+  },
+  {
+    id: 'sovereignty',
+    tone: 'Freedom / Sovereignty',
+    words: ['Self-possession', 'Sovereignty', 'Agency', 'Presence', 'Inner Freedom'],
+  },
+  {
+    id: 'everyday',
+    tone: 'Simple Everyday',
+    words: ['Stillness', 'Flow', 'Peace', 'Ease', 'Consistency'],
+  },
 ];
 
 // =============================================================================
