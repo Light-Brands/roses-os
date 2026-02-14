@@ -124,7 +124,7 @@ function WhatIsRosesOS() {
           transition={{ duration: 0.6, delay: 0.1, ease }}
           className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-8"
         >
-          A consciousness and remembrance ecosystem
+          A living ecosystem for remembering who you are
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 24 }}

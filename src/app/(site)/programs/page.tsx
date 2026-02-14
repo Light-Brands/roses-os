@@ -10,7 +10,6 @@ import PageHero from '@/components/sections/PageHero';
 import ProgramCard from '@/components/sections/ProgramCard';
 import ScheduleTable from '@/components/sections/ScheduleTable';
 import ContributionTiers from '@/components/sections/ContributionTiers';
-import InvitationCTA from '@/components/sections/InvitationCTA';
 
 // =============================================================================
 // PROGRAMS PAGE
@@ -177,8 +176,6 @@ export default function ProgramsPage() {
         </div>
       </section>
 
-      {/* 6. Invitation CTA */}
-      <InvitationCTA />
     </>
   );
 }

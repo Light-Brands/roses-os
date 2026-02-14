@@ -155,9 +155,9 @@ function BrandEssence() {
           transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="text-lg text-white/60 leading-relaxed max-w-2xl mx-auto"
         >
-          ROSES OS is a consciousness and remembrance ecosystem. A living architecture
-          of technologies, practices, and community for coherent living. Not a course.
-          Not a cure. A way home.
+          ROSES OS is a living ecosystem of practices, teachings, and community —
+          designed to help you remember what you already know and live from that
+          place. Not a course. Not a cure. A way home.
         </motion.p>
 
         {/* Stats row */}
@@ -168,7 +168,7 @@ function BrandEssence() {
           className="mt-16 grid grid-cols-3 gap-8 max-w-lg mx-auto"
         >
           <AnimatedStat value="30+" label="Years" delay={0.5} />
-          <AnimatedStat value="6,000+" label="Initiated" delay={0.6} />
+          <AnimatedStat value="6,000+" label="Practitioners" delay={0.6} />
           <AnimatedStat value="50+" label="Countries" delay={0.7} />
         </motion.div>
       </div>
