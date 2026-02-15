@@ -1,8 +1,7 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
 import PageHero from '@/components/sections/PageHero';
@@ -15,21 +14,6 @@ export default function ContactPage() {
   const contentRef = useRef<HTMLElement>(null);
   const contentInView = useInView(contentRef, { once: true, margin: '-100px' });
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    const subject = encodeURIComponent(name ? `Contact from ${name}` : 'Contact Form Inquiry');
-    const body = encodeURIComponent(
-      [name && `Name: ${name}`, email && `Email: ${email}`, '', message]
-        .filter(Boolean)
-        .join('\n')
-    );
-    window.location.href = `mailto:dani.ayoub88@gmail.com?subject=${subject}&body=${body}`;
-  }
-
   return (
     <>
       {/* 1. Hero */}
@@ -40,23 +24,22 @@ export default function ContactPage() {
         image="/page-images/page-contact.png"
       />
 
-      {/* 2. Two-Column Layout */}
+      {/* 2. Contact Information */}
       <section ref={contentRef} className="section-padding">
         <div className="container-premium">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 max-w-5xl mx-auto">
-            {/* Left: Contact Information */}
+          <div className="max-w-2xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={contentInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              <h2 className="font-serif text-2xl tracking-tight mb-6">
+              <h2 className="font-serif text-2xl tracking-tight mb-8 text-center">
                 Get in Touch
               </h2>
 
               <div className="space-y-8">
                 {/* WhatsApp */}
-                <div>
+                <div className="text-center">
                   <p className="label-sacred mb-2">WhatsApp</p>
                   <a
                     href="https://wa.me/"
@@ -86,141 +69,46 @@ export default function ContactPage() {
                 </div>
 
                 {/* Email */}
-                <div>
+                <div className="text-center">
                   <p className="label-sacred mb-2">Email</p>
                   <a
-                    href="mailto:dani.ayoub88@gmail.com"
+                    href="mailto:dani.ayoub88@gmail.com?subject=ROSES%20OS%20Inquiry"
                     className={cn(
-                      'block text-[var(--color-foreground)]',
+                      'inline-flex items-center gap-2 text-[var(--color-foreground)]',
                       'underline underline-offset-4 decoration-[var(--color-rose-clay)]',
                       'hover:text-[var(--color-rose-clay)] transition-colors duration-200'
                     )}
                   >
                     dani.ayoub88@gmail.com
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
                   </a>
+                  <p className="text-xs text-[var(--color-foreground-muted)] mt-1">
+                    Opens your email client
+                  </p>
                 </div>
 
                 {/* Response Times */}
-                <div>
+                <div className="text-center">
                   <p className="label-sacred mb-2">Response Times</p>
-                  <p className="text-sm text-[var(--color-foreground-muted)] leading-relaxed max-w-sm">
+                  <p className="text-sm text-[var(--color-foreground-muted)] leading-relaxed max-w-md mx-auto">
                     We aim to respond to all inquiries within 24-48 hours. For
                     enrollment questions, Dara is your primary point of contact
                     and is available via WhatsApp for the quickest response.
                   </p>
                 </div>
               </div>
-            </motion.div>
-
-            {/* Right: Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={contentInView ? { opacity: 1, y: 0 } : {}}
-              transition={{
-                duration: 0.6,
-                delay: 0.15,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-            >
-              <h2 className="font-serif text-2xl tracking-tight mb-6">
-                Send a Message
-              </h2>
-
-              <form
-                onSubmit={handleSubmit}
-                className="space-y-5"
-              >
-                {/* Name */}
-                <div>
-                  <label
-                    htmlFor="contact-name"
-                    className="label-sacred block mb-2"
-                  >
-                    Name
-                  </label>
-                  <input
-                    id="contact-name"
-                    type="text"
-                    placeholder="Your name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className={cn(
-                      'w-full rounded-lg border border-[var(--color-border)]',
-                      'bg-[var(--color-background-subtle)]',
-                      'px-4 py-3 text-sm text-[var(--color-foreground)]',
-                      'placeholder:text-[var(--color-foreground-faint)]',
-                      'focus:outline-none focus:ring-2 focus:ring-[var(--color-rose-clay)] focus:border-transparent',
-                      'transition-all duration-200'
-                    )}
-                  />
-                </div>
-
-                {/* Email */}
-                <div>
-                  <label
-                    htmlFor="contact-email"
-                    className="label-sacred block mb-2"
-                  >
-                    Email
-                  </label>
-                  <input
-                    id="contact-email"
-                    type="email"
-                    placeholder="you@example.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className={cn(
-                      'w-full rounded-lg border border-[var(--color-border)]',
-                      'bg-[var(--color-background-subtle)]',
-                      'px-4 py-3 text-sm text-[var(--color-foreground)]',
-                      'placeholder:text-[var(--color-foreground-faint)]',
-                      'focus:outline-none focus:ring-2 focus:ring-[var(--color-rose-clay)] focus:border-transparent',
-                      'transition-all duration-200'
-                    )}
-                  />
-                </div>
-
-                {/* Message */}
-                <div>
-                  <label
-                    htmlFor="contact-message"
-                    className="label-sacred block mb-2"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="contact-message"
-                    rows={6}
-                    placeholder="How can we support you?"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    className={cn(
-                      'w-full rounded-lg border border-[var(--color-border)]',
-                      'bg-[var(--color-background-subtle)]',
-                      'px-4 py-3 text-sm text-[var(--color-foreground)]',
-                      'placeholder:text-[var(--color-foreground-faint)]',
-                      'focus:outline-none focus:ring-2 focus:ring-[var(--color-rose-clay)] focus:border-transparent',
-                      'transition-all duration-200',
-                      'resize-y'
-                    )}
-                  />
-                </div>
-
-                {/* Submit */}
-                <button
-                  type="submit"
-                  className={cn(
-                    'w-full sm:w-auto px-8 py-3.5 rounded-full',
-                    'bg-[var(--color-accent)] text-[var(--color-accent-foreground)]',
-                    'text-sm font-medium',
-                    'hover:bg-[var(--color-accent-hover)]',
-                    'transition-all duration-200',
-                    'shadow-sm hover:shadow-md'
-                  )}
-                >
-                  Send Message
-                </button>
-              </form>
             </motion.div>
           </div>
         </div>

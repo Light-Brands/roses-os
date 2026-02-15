@@ -100,6 +100,23 @@ export const programs: Program[] = [
       'Multi-timezone support',
     ],
   },
+  {
+    id: '3',
+    title: 'The Rose',
+    subtitle: 'Rose Meditation Levels 1, 2 & 3',
+    duration: '2 days',
+    dates: 'March 17–18, 2026',
+    format: 'Live online + recorded content',
+    description: 'Two immersive days introducing the Rose technology. Six hours per day offered in two three-hour sessions. A systematic practice for remembrance, coherence, and inner freedom.',
+    includes: [
+      '2 immersive days of live instruction',
+      'Rose Meditation Levels 1, 2 & 3',
+      'Two 3-hour sessions per day',
+      'Integration workbook',
+      'Private community access to classes and events',
+      'Multi-timezone support',
+    ],
+  },
 ];
 
 // =============================================================================
@@ -160,6 +177,22 @@ export const scheduleStages: ScheduleStage[] = [
 ];
 
 // =============================================================================
+// ROSE MEDITATION STANDALONE SCHEDULE (March 17–18, 2026)
+// =============================================================================
+
+export const roseMeditationScheduleStages: ScheduleStage[] = [
+  {
+    id: 'rose-1',
+    title: 'Rose Meditation',
+    dateRange: 'March 17–18',
+    sessions: [
+      { day: 'First Class', duration: '3 hours', time: { sanJose: '7:00 AM – 10:00 AM', bogota: '8:00 AM – 11:00 AM', newYork: '9:00 AM – 12:00 PM', brasilia: '10:00 AM – 1:00 PM', london: '1:00 PM – 4:00 PM', madrid: '2:00 – 5:00 PM' } },
+      { day: 'Second Class', duration: '3 hours', time: { sanJose: '11:30 AM – 2:30 PM', bogota: '12:30 – 3:30 PM', newYork: '1:30 PM – 4:30 PM', brasilia: '2:30 PM – 5:30 PM', london: '5:30 PM – 8:30 PM', madrid: '6:30 – 9:30 PM' } },
+    ],
+  },
+];
+
+// =============================================================================
 // AURA 2 SCHEDULE STAGES (September 19–27, 2026)
 // =============================================================================
 
@@ -212,6 +245,34 @@ export const contributionTiers: ContributionTier[] = [
     range: 'Above $70,000 USD annual income',
     description: 'A higher tier that supports accessibility for others and the expansion of this work.',
     price: '$2,111',
+  },
+];
+
+// =============================================================================
+// ROSE MEDITATION CONTRIBUTION TIERS (standalone)
+// =============================================================================
+
+export const roseMeditationTiers: ContributionTier[] = [
+  {
+    id: 'rose-1',
+    name: 'Seed',
+    range: 'Under $30,000 USD annual income',
+    description: 'A lower contribution that honors your reality and current season.',
+    price: '$222',
+  },
+  {
+    id: 'rose-2',
+    name: 'Bloom',
+    range: '$30,000–$70,000 USD annual income',
+    description: 'A mid-range contribution reflecting reciprocity and balance.',
+    price: '$444',
+  },
+  {
+    id: 'rose-3',
+    name: 'Canopy',
+    range: 'Above $70,000 USD annual income',
+    description: 'A higher tier that supports accessibility for others and the expansion of this work.',
+    price: '$777',
   },
 ];
 

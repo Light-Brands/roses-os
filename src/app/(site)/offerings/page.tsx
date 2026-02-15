@@ -7,10 +7,12 @@ import { cn } from '@/lib/utils';
 import {
   programs,
   scheduleStages,
+  roseMeditationScheduleStages,
   aura2ScheduleStages,
   contributionTiers,
+  roseMeditationTiers,
 } from '@/lib/data';
-import type { ScheduleStage } from '@/lib/data/types';
+import type { ScheduleStage, ContributionTier } from '@/lib/data/types';
 
 import PageHero from '@/components/sections/PageHero';
 import ProgramCard from '@/components/sections/ProgramCard';
@@ -24,6 +26,17 @@ import ContributionTiers from '@/components/sections/ContributionTiers';
 const programSchedules: Record<string, ScheduleStage[]> = {
   '1': scheduleStages,
   '2': aura2ScheduleStages,
+  '3': roseMeditationScheduleStages,
+};
+
+// =============================================================================
+// PROGRAM → CONTRIBUTION TIER MAPPING
+// =============================================================================
+
+const programTiers: Record<string, ContributionTier[]> = {
+  '1': contributionTiers,
+  '2': contributionTiers,
+  '3': roseMeditationTiers,
 };
 
 // =============================================================================
@@ -212,7 +225,10 @@ export default function OfferingsPage() {
                                   season is honored while sustaining the
                                   ecosystem for all.
                                 </p>
-                                <ContributionTiers tiers={contributionTiers} />
+                                <ContributionTiers tiers={programTiers[program.id] || contributionTiers} />
+                                <p className="text-sm text-[var(--color-foreground-muted)] leading-relaxed mt-6 text-center italic">
+                                  Repeating a class? Your contribution is 50% of the original price.
+                                </p>
                               </div>
 
                               {/* Enroll CTA */}
