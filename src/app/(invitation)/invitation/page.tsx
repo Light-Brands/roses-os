@@ -240,6 +240,7 @@ function ProgramsSection() {
               compact={expandedId !== program.id}
               selected={expandedId === program.id}
               progressiveDetails
+              scheduleHref={`/offerings?program=${program.id}`}
               onClick={() =>
                 setExpandedId(expandedId === program.id ? null : program.id)
               }
