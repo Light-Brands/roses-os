@@ -113,7 +113,7 @@ function WhatToExpect() {
     {
       number: '03',
       title: 'Prepare',
-      description: 'Review the five sacred agreements, choose your contribution tier, and receive your welcome materials.',
+      description: 'Review the five sacred agreements, choose your contribution tier, and step into a practice that has the power to transform your life.',
     },
     {
       number: '04',
