@@ -36,13 +36,6 @@ export const guardians: Guardian[] = [
     imagePosition: 'center 20%',
   },
   {
-    id: '2',
-    name: 'Diego Dosal',
-    role: 'Guardian of Architecture & Structure',
-    bio: 'Diego is the bridge between spirit and structure. With over a decade of deep roots in multiple paths of spiritual practice, energy work, and community building, he carries the horizontal axis of ROSES OS by developing platforms, systems, and frameworks that harmonize intuition with strategy and build lasting foundations for this work.',
-    image: '/images/61C5142D-1CB2-414A-BAED-1C2E2E30217E.png',
-  },
-  {
     id: '3',
     name: 'Dara Ayoub',
     role: 'Guardian of Community & Programs',
@@ -50,6 +43,13 @@ export const guardians: Guardian[] = [
     image: '/images/39E1608C-8D44-4A6D-B2C2-EEEDA9C8F6C4.png',
     imagePosition: '55% 20%',
     imageScale: 1.0,
+  },
+  {
+    id: '2',
+    name: 'Diego Dosal',
+    role: 'Guardian of Architecture & Structure',
+    bio: 'Diego is the bridge between spirit and structure. With over a decade of deep roots in multiple paths of spiritual practice, energy work, and community building, he carries the horizontal axis of ROSES OS by developing platforms, systems, and frameworks that harmonize intuition with strategy and build lasting foundations for this work.',
+    image: '/images/61C5142D-1CB2-414A-BAED-1C2E2E30217E.png',
   },
   {
     id: '4',
