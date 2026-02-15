@@ -193,7 +193,7 @@ export default function TheRosePage() {
 
       {/* 5. You Feel It */}
       <QuoteBlock
-        quote="When noise dissolves, coherence returns. You awaken the intelligence that guides your life, shapes your reality, and remembers who you are and why you are here."
+        quote="This journey is an invitation into intuition, presence, and truth — a gateway into the mystery of who you are and who you are becoming."
         variant="fullbleed"
       />
 
@@ -294,15 +294,12 @@ export default function TheRosePage() {
         className="bg-[var(--color-background-subtle)]"
       >
         <p>
-          The Rose is not a path you follow. It is a frequency you cultivate.
+          The Rose is a frequency you cultivate.
         </p>
         <p>
           No belief required. Only presence and willingness to return to your
           essence. Then choose yourself, clarity, and freedom. From there, life
           becomes creative and reaching.
-        </p>
-        <p className="font-serif text-xl text-[var(--color-foreground)] italic">
-          And so, remember who you are.
         </p>
       </RevealSection>
 

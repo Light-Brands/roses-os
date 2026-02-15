@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { agreements } from '@/lib/data';
 
 import PageHero from '@/components/sections/PageHero';
 
@@ -14,6 +15,9 @@ export default function ContactPage() {
   const contentRef = useRef<HTMLElement>(null);
   const contentInView = useInView(contentRef, { once: true, margin: '-100px' });
 
+  const agreementsRef = useRef<HTMLElement>(null);
+  const agreementsInView = useInView(agreementsRef, { once: true, margin: '-100px' });
+
   return (
     <>
       {/* 1. Hero */}
@@ -24,7 +28,7 @@ export default function ContactPage() {
         image="/page-images/page-contact.png"
       />
 
-      {/* 2. Contact Information */}
+      {/* 2. Reach Out Directly */}
       <section ref={contentRef} className="section-padding">
         <div className="container-premium">
           <div className="max-w-2xl mx-auto">
@@ -34,7 +38,7 @@ export default function ContactPage() {
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
               <h2 className="font-serif text-2xl tracking-tight mb-8 text-center">
-                Get in Touch
+                Reach Out Directly
               </h2>
 
               <div className="space-y-8">
@@ -94,20 +98,47 @@ export default function ContactPage() {
                       />
                     </svg>
                   </a>
-                  <p className="text-xs text-[var(--color-foreground-muted)] mt-1">
-                    Opens your email client
-                  </p>
                 </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
-                {/* Response Times */}
-                <div className="text-center">
-                  <p className="label-sacred mb-2">Response Times</p>
-                  <p className="text-sm text-[var(--color-foreground-muted)] leading-relaxed max-w-md mx-auto">
-                    We aim to respond to all inquiries within 24-48 hours. For
-                    enrollment questions, Dara is your primary point of contact
-                    and is available via WhatsApp for the quickest response.
-                  </p>
-                </div>
+      {/* 3. Agreements */}
+      <section ref={agreementsRef} className="section-padding bg-[var(--color-background-subtle)]">
+        <div className="container-premium">
+          <div className="max-w-2xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={agreementsInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <p className="label-sacred mb-3 text-center">Agreements</p>
+              <h2 className="font-serif text-2xl tracking-tight mb-8 text-center">
+                Our Shared Agreements
+              </h2>
+
+              <div className="space-y-6">
+                {agreements.map((agreement, i) => (
+                  <motion.div
+                    key={agreement.id}
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={agreementsInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{
+                      duration: 0.5,
+                      delay: 0.1 + i * 0.08,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
+                  >
+                    <h3 className="font-serif text-lg tracking-tight mb-1">
+                      {agreement.title}
+                    </h3>
+                    <p className="text-sm text-[var(--color-foreground-muted)] leading-relaxed">
+                      {agreement.description}
+                    </p>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
           </div>
