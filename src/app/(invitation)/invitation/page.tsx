@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
@@ -211,6 +211,7 @@ function GuardiansLink() {
 function ProgramsSection() {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const [expandedId, setExpandedId] = useState<string | null>(null);
 
   return (
     <section ref={ref} className="section-padding">
@@ -233,7 +234,15 @@ function ProgramsSection() {
         </motion.h2>
         <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {programs.map((program) => (
-            <ProgramCard key={program.id} program={program} />
+            <ProgramCard
+              key={program.id}
+              program={program}
+              compact={expandedId !== program.id}
+              selected={expandedId === program.id}
+              onClick={() =>
+                setExpandedId(expandedId === program.id ? null : program.id)
+              }
+            />
           ))}
         </div>
       </div>
@@ -309,8 +318,8 @@ export default function InvitationPage() {
       <InvitationHero />
       <WhatIsRosesOS />
       <ProgramsSection />
-      <FinalCTA />
       <GuardiansLink />
+      <FinalCTA />
     </>
   );
 }

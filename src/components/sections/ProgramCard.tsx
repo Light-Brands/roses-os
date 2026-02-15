@@ -150,8 +150,8 @@ export default function ProgramCard({
         )}
       </AnimatePresence>
 
-      {/* Compact meta — only shown in compact mode */}
-      {compact && (
+      {/* Compact meta — only shown in compact mode when not clickable */}
+      {compact && !isClickable && (
         <div className="flex flex-wrap gap-x-6 gap-y-3 mt-4">
           {program.duration && (
             <div>
