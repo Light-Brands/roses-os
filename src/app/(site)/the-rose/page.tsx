@@ -219,7 +219,7 @@ export default function TheRosePage() {
           <RevealCard title="" delay={0}>
             <p className="label-sacred mb-2">What You Will Experience</p>
             <h2 className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-2 text-[var(--color-foreground)]">
-              This is not learning. It is remembering.
+              This is remembering what was always true.
             </h2>
           </RevealCard>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 mt-10">
