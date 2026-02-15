@@ -1,10 +1,16 @@
 'use client';
 
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { useRef, useState } from 'react';
+import { motion, useInView, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import { programs, scheduleStages, aura2ScheduleStages, contributionTiers } from '@/lib/data';
+import {
+  programs,
+  scheduleStages,
+  aura2ScheduleStages,
+  contributionTiers,
+} from '@/lib/data';
+import type { ScheduleStage } from '@/lib/data/types';
 
 import PageHero from '@/components/sections/PageHero';
 import ProgramCard from '@/components/sections/ProgramCard';
@@ -12,21 +18,47 @@ import ScheduleTable from '@/components/sections/ScheduleTable';
 import ContributionTiers from '@/components/sections/ContributionTiers';
 
 // =============================================================================
-// OFFERINGS PAGE
+// PROGRAM → SCHEDULE MAPPING
+// =============================================================================
+
+const programSchedules: Record<string, ScheduleStage[]> = {
+  '1': scheduleStages,
+  '2': aura2ScheduleStages,
+};
+
+// =============================================================================
+// EASE CONSTANT
+// =============================================================================
+
+const ease = [0.16, 1, 0.3, 1] as const;
+
+// =============================================================================
+// OFFERINGS PAGE — Progressive Disclosure
+// Programs → Schedule → Contribution → Enroll
 // =============================================================================
 
 export default function OfferingsPage() {
+  const [selectedProgramId, setSelectedProgramId] = useState<string | null>(
+    null
+  );
+  const [showContribution, setShowContribution] = useState(false);
+
   const gridRef = useRef<HTMLElement>(null);
   const gridInView = useInView(gridRef, { once: true, margin: '-100px' });
 
-  const scheduleRef = useRef<HTMLElement>(null);
-  const scheduleInView = useInView(scheduleRef, { once: true, margin: '-100px' });
+  const handleProgramClick = (id: string) => {
+    if (selectedProgramId === id) {
+      // Clicking the same program collapses everything
+      setSelectedProgramId(null);
+      setShowContribution(false);
+    } else {
+      // Select a new program, reset contribution
+      setSelectedProgramId(id);
+      setShowContribution(false);
+    }
+  };
 
-  const contributionRef = useRef<HTMLElement>(null);
-  const contributionInView = useInView(contributionRef, { once: true, margin: '-100px' });
-
-  const ctaRef = useRef<HTMLElement>(null);
-  const ctaInView = useInView(ctaRef, { once: true, margin: '-100px' });
+  const selectedProgram = programs.find((p) => p.id === selectedProgramId);
 
   return (
     <>
@@ -38,169 +70,210 @@ export default function OfferingsPage() {
         image="/page-images/page-programs.png"
       />
 
-      {/* 2. Program Card */}
+      {/* 2. Programs — progressive disclosure */}
       <section ref={gridRef} className="section-padding">
         <div className="container-premium max-w-3xl mx-auto">
-          {programs.map((program, i) => (
-            <motion.div
-              key={program.id}
-              initial={{ opacity: 0, y: 24 }}
-              animate={gridInView ? { opacity: 1, y: 0 } : {}}
-              transition={{
-                duration: 0.6,
-                delay: i * 0.15,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-            >
-              <ProgramCard program={program} />
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* 3. Schedule – The Rose + Aura 1 */}
-      <section
-        ref={scheduleRef}
-        className="section-padding bg-[var(--color-background-subtle)]"
-      >
-        <div className="container-premium max-w-4xl mx-auto">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={scheduleInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="label-sacred mb-4"
-          >
-            Schedule
-          </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 24 }}
-            animate={scheduleInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-4"
-          >
-            The Rose + Aura 1
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 24 }}
-            animate={scheduleInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="text-sm text-[var(--color-foreground-muted)] mb-8"
-          >
-            March 17–27, 2026
-          </motion.p>
-          <ScheduleTable stages={scheduleStages} />
-
-          {/* Aura Reading Level 2 */}
-          <motion.h2
-            initial={{ opacity: 0, y: 24 }}
-            animate={scheduleInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mt-16 mb-4"
-          >
-            Aura Reading Level 2
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 24 }}
-            animate={scheduleInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="text-sm text-[var(--color-foreground-muted)] mb-8"
-          >
-            September 19–27, 2026
-          </motion.p>
-          <ScheduleTable stages={aura2ScheduleStages} />
-        </div>
-      </section>
-
-      {/* 4. Contribution */}
-      <section ref={contributionRef} className="section-padding">
-        <div className="container-premium max-w-4xl mx-auto">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={contributionInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="label-sacred mb-4"
-          >
-            Contribution
-          </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 24 }}
-            animate={contributionInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-4"
-          >
-            Income-Based Model
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 24 }}
-            animate={contributionInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-lg text-[var(--color-foreground-muted)] leading-relaxed mb-10 max-w-2xl"
-          >
-            We believe this work should be accessible to everyone who is called.
-            Our income-based contribution model ensures that your financial season
-            is honored while sustaining the ecosystem for all.
-          </motion.p>
-          <ContributionTiers tiers={contributionTiers} />
-        </div>
-      </section>
-
-      {/* 5. Enroll CTA */}
-      <section ref={ctaRef} className="section-padding bg-[var(--color-background-subtle)]">
-        <div className="container-premium">
-          <div className="max-w-2xl mx-auto text-center">
-            <motion.h2
-              initial={{ opacity: 0, y: 24 }}
-              animate={ctaInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-4"
-            >
-              Ready to Begin?
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 24 }}
-              animate={ctaInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="text-lg text-[var(--color-foreground-muted)] leading-relaxed mb-8"
-            >
-              If something in these words resonates, we invite you to take the
-              next step. Enrollment is open and we are here to support your journey.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={ctaInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <Link
-                href="/enroll"
-                className={cn(
-                  'inline-flex items-center gap-2 px-8 py-3.5 rounded-full',
-                  'bg-[var(--color-accent)] text-[var(--color-accent-foreground)]',
-                  'text-sm font-medium',
-                  'hover:bg-[var(--color-accent-hover)]',
-                  'transition-all duration-200',
-                  'shadow-sm hover:shadow-md'
-                )}
+          {/* Prompt */}
+          <AnimatePresence>
+            {!selectedProgramId && (
+              <motion.p
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.4, ease }}
+                className="text-center text-[var(--color-foreground-muted)] mb-8"
               >
-                Enroll Now
-                <svg
-                  className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </Link>
-            </motion.div>
+                Select a program to view its schedule and contribution details.
+              </motion.p>
+            )}
+          </AnimatePresence>
+
+          {/* Program cards */}
+          <div className="space-y-4">
+            {programs.map((program, i) => {
+              const isSelected = selectedProgramId === program.id;
+              const isOther = selectedProgramId !== null && !isSelected;
+
+              return (
+                <div key={program.id}>
+                  <motion.div
+                    initial={{ opacity: 0, y: 24 }}
+                    animate={
+                      gridInView
+                        ? {
+                            opacity: isOther ? 0.55 : 1,
+                            y: 0,
+                            scale: isOther ? 0.98 : 1,
+                          }
+                        : {}
+                    }
+                    transition={{
+                      duration: 0.5,
+                      delay: i * 0.1,
+                      ease,
+                    }}
+                  >
+                    <ProgramCard
+                      program={program}
+                      compact={!isSelected}
+                      selected={isSelected}
+                      onClick={() => handleProgramClick(program.id)}
+                    />
+                  </motion.div>
+
+                  {/* Expanded content: Schedule → Contribution → CTA */}
+                  <AnimatePresence>
+                    {isSelected && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.5, ease }}
+                        className="overflow-hidden"
+                      >
+                        {/* Schedule section */}
+                        <div className="mt-8 mb-8">
+                          <p className="label-sacred mb-3">Schedule</p>
+                          <h3 className="font-serif text-[clamp(1.25rem,3vw,2rem)] leading-tight tracking-tight mb-2">
+                            {program.title}
+                          </h3>
+                          <p className="text-sm text-[var(--color-foreground-muted)] mb-6">
+                            {program.dates}
+                          </p>
+                          <ScheduleTable
+                            stages={programSchedules[program.id] || []}
+                          />
+                        </div>
+
+                        {/* View Contribution button */}
+                        <AnimatePresence>
+                          {!showContribution && (
+                            <motion.div
+                              initial={{ opacity: 0, y: 12 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              exit={{ opacity: 0, y: -8 }}
+                              transition={{ duration: 0.3, ease }}
+                              className="flex justify-center py-4"
+                            >
+                              <button
+                                type="button"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setShowContribution(true);
+                                }}
+                                className={cn(
+                                  'inline-flex items-center gap-2 px-8 py-3.5 rounded-full',
+                                  'border-2 border-[var(--color-rose-clay)] text-[var(--color-rose-clay)]',
+                                  'text-sm font-medium',
+                                  'hover:bg-[var(--color-rose-clay)] hover:text-[var(--color-foreground-on-rose)]',
+                                  'transition-all duration-200',
+                                  'shadow-sm hover:shadow-md'
+                                )}
+                              >
+                                View Contribution
+                                <svg
+                                  className="w-4 h-4"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke="currentColor"
+                                  strokeWidth={2}
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M19 9l-7 7-7-7"
+                                  />
+                                </svg>
+                              </button>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+
+                        {/* Contribution section */}
+                        <AnimatePresence>
+                          {showContribution && (
+                            <motion.div
+                              initial={{ opacity: 0, y: 24 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              exit={{ opacity: 0, y: -12 }}
+                              transition={{ duration: 0.5, ease }}
+                            >
+                              <div className="pt-6 pb-4">
+                                <p className="label-sacred mb-3">
+                                  Contribution
+                                </p>
+                                <h3 className="font-serif text-[clamp(1.25rem,3vw,2rem)] leading-tight tracking-tight mb-3">
+                                  Income-Based Model
+                                </h3>
+                                <p className="text-base text-[var(--color-foreground-muted)] leading-relaxed mb-8 max-w-2xl">
+                                  We believe this work should be accessible to
+                                  everyone who is called. Our income-based
+                                  contribution model ensures that your financial
+                                  season is honored while sustaining the
+                                  ecosystem for all.
+                                </p>
+                                <ContributionTiers tiers={contributionTiers} />
+                              </div>
+
+                              {/* Enroll CTA */}
+                              <motion.div
+                                initial={{ opacity: 0, y: 16 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{
+                                  duration: 0.5,
+                                  delay: 0.3,
+                                  ease,
+                                }}
+                                className="text-center py-10"
+                              >
+                                <h3 className="font-serif text-[clamp(1.25rem,3vw,2rem)] leading-tight tracking-tight mb-3">
+                                  Ready to Begin?
+                                </h3>
+                                <p className="text-base text-[var(--color-foreground-muted)] leading-relaxed mb-6 max-w-lg mx-auto">
+                                  If something in these words resonates, we
+                                  invite you to take the next step. Enrollment
+                                  is open and we are here to support your
+                                  journey.
+                                </p>
+                                <Link
+                                  href={`/enroll?program=${program.id}`}
+                                  className={cn(
+                                    'inline-flex items-center gap-2 px-8 py-3.5 rounded-full',
+                                    'bg-[var(--color-accent)] text-[var(--color-accent-foreground)]',
+                                    'text-sm font-medium',
+                                    'hover:bg-[var(--color-accent-hover)]',
+                                    'transition-all duration-200',
+                                    'shadow-sm hover:shadow-md'
+                                  )}
+                                >
+                                  Enroll Now
+                                  <svg
+                                    className="w-4 h-4"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    strokeWidth={2}
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                    />
+                                  </svg>
+                                </Link>
+                              </motion.div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
-
     </>
   );
 }

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { programs } from '@/lib/data';
 
 interface EnrollmentFormData {
   name: string;
@@ -12,6 +13,8 @@ interface EnrollmentFormData {
 
 interface EnrollmentFormProps {
   onSubmit: (data: EnrollmentFormData) => void;
+  /** Program ID passed from the offerings page via query param */
+  selectedProgramId?: string;
   className?: string;
 }
 
@@ -23,22 +26,18 @@ const inputStyles = cn(
   'transition-all duration-200'
 );
 
-const program = {
-  id: 'the-rose-aura-1',
-  title: 'The Rose + Aura 1',
-  subtitle: 'Complete Immersion -- 11 days',
-};
-
-export function EnrollmentForm({ onSubmit, className }: EnrollmentFormProps) {
+export function EnrollmentForm({ onSubmit, selectedProgramId, className }: EnrollmentFormProps) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [programId, setProgramId] = useState(selectedProgramId || programs[0]?.id || '');
 
-  const isValid = name.trim() !== '' && email.trim() !== '';
+  const selectedProgram = programs.find((p) => p.id === programId);
+  const isValid = name.trim() !== '' && email.trim() !== '' && !!selectedProgram;
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!isValid) return;
-    onSubmit({ name: name.trim(), email: email.trim(), program: program.id });
+    if (!isValid || !selectedProgram) return;
+    onSubmit({ name: name.trim(), email: email.trim(), program: selectedProgram.id });
   }
 
   return (
@@ -87,23 +86,35 @@ export function EnrollmentForm({ onSubmit, className }: EnrollmentFormProps) {
         />
       </div>
 
-      {/* Program */}
+      {/* Program selection */}
       <div className="space-y-2">
         <span className="block text-sm font-medium text-[var(--color-foreground-subtle)]">
           Program
         </span>
-        <div
-          className={cn(
-            'rounded-xl border p-4',
-            'border-[var(--color-rose-clay)] bg-[var(--color-rose-50)] shadow-[var(--shadow-rose)]'
-          )}
-        >
-          <span className="block font-medium text-[var(--color-foreground)]">
-            {program.title}
-          </span>
-          <span className="text-sm text-[var(--color-foreground-muted)]">
-            {program.subtitle}
-          </span>
+        <div className="space-y-2">
+          {programs.map((p) => {
+            const isActive = programId === p.id;
+            return (
+              <button
+                key={p.id}
+                type="button"
+                onClick={() => setProgramId(p.id)}
+                className={cn(
+                  'w-full text-left rounded-xl border p-4 transition-all duration-200',
+                  isActive
+                    ? 'border-[var(--color-rose-clay)] bg-[var(--color-rose-50)] shadow-[var(--shadow-rose)]'
+                    : 'border-[var(--color-border)] bg-[var(--color-background-elevated)] hover:border-[var(--color-border-strong)]'
+                )}
+              >
+                <span className="block font-medium text-[var(--color-foreground)]">
+                  {p.title}
+                </span>
+                <span className="text-sm text-[var(--color-foreground-muted)]">
+                  {p.subtitle} &mdash; {p.duration}
+                </span>
+              </button>
+            );
+          })}
         </div>
       </div>
 

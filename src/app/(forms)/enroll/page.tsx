@@ -1,6 +1,6 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { FormStepper } from '@/components/forms/FormStepper';
 import EnrollmentForm from '@/components/forms/EnrollmentForm';
@@ -8,6 +8,8 @@ import { cn } from '@/lib/utils';
 
 export default function EnrollPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const programId = searchParams.get('program') || undefined;
 
   return (
     <div className="space-y-8">
@@ -26,7 +28,10 @@ export default function EnrollPage() {
         </p>
       </div>
 
-      <EnrollmentForm onSubmit={() => router.push('/contribute')} />
+      <EnrollmentForm
+        selectedProgramId={programId}
+        onSubmit={() => router.push('/contribute')}
+      />
 
       {/* Divider */}
       <div className="flex items-center gap-4 pt-2">
