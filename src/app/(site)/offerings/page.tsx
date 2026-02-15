@@ -1,6 +1,7 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
@@ -51,6 +52,7 @@ const ease = [0.16, 1, 0.3, 1] as const;
 // =============================================================================
 
 export default function OfferingsPage() {
+  const searchParams = useSearchParams();
   const [selectedProgramId, setSelectedProgramId] = useState<string | null>(
     null
   );
@@ -58,6 +60,14 @@ export default function OfferingsPage() {
 
   const gridRef = useRef<HTMLElement>(null);
   const gridInView = useInView(gridRef, { once: true, margin: '-100px' });
+
+  // Auto-select program from URL query param (e.g. /offerings?program=1)
+  useEffect(() => {
+    const programParam = searchParams.get('program');
+    if (programParam && programs.some((p) => p.id === programParam)) {
+      setSelectedProgramId(programParam);
+    }
+  }, [searchParams]);
 
   const handleProgramClick = (id: string) => {
     if (selectedProgramId === id) {

@@ -2,6 +2,7 @@
 
 import { useRef, useState, useEffect } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 import { ChevronRight, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { Program } from '@/lib/data/types';
@@ -17,6 +18,8 @@ interface ProgramCardProps {
   onClick?: () => void;
   /** When true, hide meta & includes behind a secondary "View details" toggle */
   progressiveDetails?: boolean;
+  /** Optional link to schedule/offerings page for this program */
+  scheduleHref?: string;
 }
 
 export default function ProgramCard({
@@ -26,6 +29,7 @@ export default function ProgramCard({
   selected = false,
   onClick,
   progressiveDetails = false,
+  scheduleHref,
 }: ProgramCardProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
@@ -189,6 +193,29 @@ export default function ProgramCard({
                           </ul>
                         </div>
                       )}
+
+                      {/* View Schedule link */}
+                      {scheduleHref && (
+                        <div className="mt-6 pt-6 border-t border-[var(--color-border)]">
+                          <Link
+                            href={scheduleHref}
+                            onClick={(e) => e.stopPropagation()}
+                            className={cn(
+                              'inline-flex items-center gap-2',
+                              'text-sm font-medium',
+                              'text-[var(--color-foreground)]',
+                              'underline underline-offset-4 decoration-[var(--color-rose-clay)]',
+                              'hover:text-[var(--color-foreground-muted)]',
+                              'transition-colors duration-200'
+                            )}
+                          >
+                            View Schedule
+                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                          </Link>
+                        </div>
+                      )}
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -248,6 +275,29 @@ export default function ProgramCard({
                         </motion.li>
                       ))}
                     </ul>
+                  </div>
+                )}
+
+                {/* View Schedule link */}
+                {scheduleHref && (
+                  <div className="mt-6 pt-6 border-t border-[var(--color-border)]">
+                    <Link
+                      href={scheduleHref}
+                      onClick={(e) => e.stopPropagation()}
+                      className={cn(
+                        'inline-flex items-center gap-2',
+                        'text-sm font-medium',
+                        'text-[var(--color-foreground)]',
+                        'underline underline-offset-4 decoration-[var(--color-rose-clay)]',
+                        'hover:text-[var(--color-foreground-muted)]',
+                        'transition-colors duration-200'
+                      )}
+                    >
+                      View Schedule
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </Link>
                   </div>
                 )}
               </>
