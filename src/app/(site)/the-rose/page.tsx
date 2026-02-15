@@ -213,46 +213,13 @@ export default function TheRosePage() {
         </p>
       </RevealSection>
 
-      {/* 6. What You Will Experience */}
-      <section className="section-padding bg-[var(--color-background-subtle)]">
-        <div className="container-premium max-w-5xl mx-auto">
-          <RevealCard title="" delay={0}>
-            <p className="label-sacred mb-2">What You Will Experience</p>
-            <h2 className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-2 text-[var(--color-foreground)]">
-              This is remembering what was always true.
-            </h2>
-          </RevealCard>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 mt-10">
-            <RevealCard title="The Rose" delay={0.1}>
-              <p>
-                It dissolves distortion and restores coherence. Inner awareness
-                expands, presence and stability deepen. From this state,
-                intuition sharpens, leadership rises, and connection becomes
-                natural.
-              </p>
-            </RevealCard>
-            <RevealCard title="Aura" delay={0.2}>
-              <p>
-                When heart aligns with soul, you perceive subtle senses and the
-                energy shaping your choices. Each reading is a mirror —
-                strengthening clarity, relationships, and service.
-              </p>
-            </RevealCard>
-            <RevealCard title="Human Journey" delay={0.3}>
-              <p>
-                Emotional patterns and imprints dissolve — freed across mental
-                and energetic layers. Love reveals itself as a self-organizing
-                intelligence.
-              </p>
-            </RevealCard>
-          </div>
-        </div>
-      </section>
-
-      {/* 7. Rose Meditation & Aura Reading descriptions */}
+      {/* 6. Rose Meditation & Aura Reading descriptions */}
       <section className="section-padding">
         <div className="container-premium max-w-3xl mx-auto space-y-16">
-          <RevealCard title="Rose Meditation" delay={0}>
+          <RevealCard title="" delay={0}>
+            <p className="label-sacred mb-2">Main Technologies & Practices</p>
+          </RevealCard>
+          <RevealCard title="Rose Meditation" delay={0.1}>
             <p>
               An initiatic path to remember who you are. Through the simple yet
               powerful technology of the roses, you will learn how to cleanse and
@@ -273,7 +240,7 @@ export default function TheRosePage() {
             </p>
           </RevealCard>
 
-          <RevealCard title="Aura Reading" delay={0.1}>
+          <RevealCard title="Aura Reading" delay={0.2}>
             <p>
               Aura Reading course teaches you to see, feel, and listen to the
               energy that moves within you and surrounds you, revealing that
@@ -298,7 +265,7 @@ export default function TheRosePage() {
         </div>
       </section>
 
-      {/* 8. What This Journey Awakens in You */}
+      {/* 7. What This Journey Awakens in You */}
       <section className="section-padding">
         <div className="container-premium max-w-5xl mx-auto">
           <RevealCard title="" delay={0}>
@@ -336,7 +303,7 @@ export default function TheRosePage() {
         </div>
       </section>
 
-      {/* 9. The Frequency */}
+      {/* 8. The Frequency */}
       <RevealSection
         label="The Frequency"
         title="A Frequency You Cultivate"
@@ -352,7 +319,7 @@ export default function TheRosePage() {
         </p>
       </RevealSection>
 
-      {/* 10. Invitation CTA */}
+      {/* 9. Invitation CTA */}
       <InvitationCTA />
     </>
   );

@@ -324,13 +324,13 @@ function ProgramsSection() {
           transition={{ duration: 0.6, ease }}
           className="label-sacred text-center mb-4"
         >
-          Programs
+          Main Technologies and Practices
         </motion.p>
         <motion.h2
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1, ease }}
-          className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight text-center mb-12"
+          className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight text-center mb-4"
         >
           Begin your path
         </motion.h2>
@@ -412,9 +412,9 @@ export default function InvitationPage() {
       <InvitationHero />
       <WhatIsRosesOS />
       <WhatAwakensSection />
-      <GuardiansLink />
       <ProgramsSection />
       <FinalCTA />
+      <GuardiansLink />
     </>
   );
 }
