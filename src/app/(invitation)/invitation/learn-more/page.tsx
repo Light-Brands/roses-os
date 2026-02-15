@@ -46,12 +46,17 @@ function OverviewSection() {
             to meet you exactly where you are. No prior experience is needed.
           </p>
           <p>
+            To enroll, you reach out directly to Dara, our Guardian of Community
+            &amp; Programs, via WhatsApp or email. She will guide you through the
+            process and answer any questions you may have.
+          </p>
+          <p>
             We use an income-based contribution model so that financial
             circumstances never stand between you and this work. You choose the
             tier that reflects your current season of life.
           </p>
           <p>
-            Before enrolling, you will be asked to accept five sacred agreements
+            As part of enrollment, you will review five sacred agreements
             that hold the integrity of our container: Commitment to Practice,
             Confidentiality, Respect for the Lineage, Personal Responsibility,
             and Community Care.
@@ -98,22 +103,22 @@ function WhatToExpect() {
     {
       number: '01',
       title: 'Explore',
-      description: 'Read about the programs and find the offering that resonates with where you are.',
+      description: 'Browse the offerings, schedule, and contribution details to find the program that resonates with you.',
     },
     {
       number: '02',
-      title: 'Enroll',
-      description: 'Complete a brief enrollment form and select your contribution tier.',
+      title: 'Connect',
+      description: 'Reach out to Dara, our Guardian of Community & Programs, via WhatsApp or email to begin your enrollment.',
     },
     {
       number: '03',
       title: 'Prepare',
-      description: 'Accept the five sacred agreements and receive your welcome materials.',
+      description: 'Review the five sacred agreements, choose your contribution tier, and receive your welcome materials.',
     },
     {
       number: '04',
       title: 'Begin',
-      description: 'Access live and recorded content with the guardians and fellow practitioners.',
+      description: 'Join live and recorded sessions with the guardians and fellow practitioners.',
     },
   ];
 
