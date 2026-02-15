@@ -101,6 +101,33 @@ function ActivityCard({
             {program.audience}
           </span>
         )}
+        {program.href && (
+          <Link
+            href={program.href}
+            className={cn(
+              'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium',
+              'text-[var(--color-rose-clay)]',
+              'border border-[var(--color-rose-clay)]/30',
+              'hover:bg-[var(--color-rose-clay)] hover:text-[var(--color-foreground-on-rose)]',
+              'transition-all duration-200'
+            )}
+          >
+            Learn more
+            <svg
+              className="w-3.5 h-3.5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
+            </svg>
+          </Link>
+        )}
       </div>
     </motion.div>
   );

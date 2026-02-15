@@ -30,4 +30,8 @@ export {
   messagingPillars,
   freePrograms,
   paidPrograms,
+  auraForLifePillars,
+  auraForLifeQualities,
 } from './mock-data';
+
+export type { AuraForLifePillar } from './mock-data';

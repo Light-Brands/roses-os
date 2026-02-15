@@ -501,6 +501,7 @@ export const paidPrograms: CommunityProgram[] = [
     id: 'aura-for-life',
     title: 'Aura for Life',
     description: 'A continued practice program for those who have completed the Aura Reading path. A living space to keep your reading skills sharp, deepen your perception, and stay connected to the community of practitioners.',
+    href: '/aura-for-life',
     free: false,
   },
   {
@@ -509,4 +510,53 @@ export const paidPrograms: CommunityProgram[] = [
     description: 'A dedicated training path for those called to share Rose Meditation with others. This program prepares you to hold space, guide meditations, and transmit the practice with clarity, presence, and integrity.',
     free: false,
   },
+];
+
+// =============================================================================
+// AURA FOR LIFE — Continued Practice Program
+// =============================================================================
+
+export interface AuraForLifePillar {
+  id: string;
+  title: string;
+  description: string;
+}
+
+export interface AuraForLifeTestimonial {
+  id: string;
+  quote: string;
+  name: string;
+  level: string;
+}
+
+export const auraForLifePillars: AuraForLifePillar[] = [
+  {
+    id: 'practice-circles',
+    title: 'Practice Circles',
+    description: 'Regular practice sessions where you read and are read by fellow practitioners. A space to keep your clairvoyance, clairsentience, and clairaudience alive and growing — not through theory, but through lived, repeated experience.',
+  },
+  {
+    id: 'deepening-sessions',
+    title: 'Deepening Sessions',
+    description: 'Guided sessions with senior practitioners and guardians that explore specific themes, techniques, and layers of the aura. Each session is an invitation to go further into what you already know and discover what is still waiting to be seen.',
+  },
+  {
+    id: 'community-field',
+    title: 'Community Field',
+    description: 'A living network of practitioners who walk this path together. Share experiences, ask questions, and support one another in the ongoing journey of remembrance. The field grows stronger every time we come together.',
+  },
+  {
+    id: 'guardian-mentorship',
+    title: 'Guardian Mentorship',
+    description: 'Access to guardians who hold the lineage and can guide you through the subtleties of continued practice. Personal support for the questions and experiences that arise as your perception deepens over time.',
+  },
+];
+
+export const auraForLifeQualities: string[] = [
+  'Maintaining and sharpening your reading abilities through consistent practice',
+  'Exploring new dimensions of perception that only emerge with sustained commitment',
+  'Staying connected to the living field of practitioners who share this path',
+  'Receiving ongoing mentorship and support from guardians of the lineage',
+  'Integrating aura reading into your daily life as a natural way of being',
+  'Deepening your understanding of the Rose, the chakras, and the layers of consciousness',
 ];

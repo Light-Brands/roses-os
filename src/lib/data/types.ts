@@ -181,5 +181,7 @@ export interface CommunityProgram {
   description: string;
   schedule?: string;
   audience?: string;
+  /** Optional link to a dedicated page for this program */
+  href?: string;
   free: boolean;
 }
