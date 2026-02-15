@@ -1,5 +1,6 @@
 'use client';
 
+import { Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { FormStepper } from '@/components/forms/FormStepper';
@@ -7,6 +8,14 @@ import EnrollmentForm from '@/components/forms/EnrollmentForm';
 import { cn } from '@/lib/utils';
 
 export default function EnrollPage() {
+  return (
+    <Suspense>
+      <EnrollPageContent />
+    </Suspense>
+  );
+}
+
+function EnrollPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const programId = searchParams.get('program') || undefined;
