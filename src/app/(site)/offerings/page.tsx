@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState, useEffect } from 'react';
+import { Suspense, useRef, useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
@@ -52,6 +52,14 @@ const ease = [0.16, 1, 0.3, 1] as const;
 // =============================================================================
 
 export default function OfferingsPage() {
+  return (
+    <Suspense>
+      <OfferingsContent />
+    </Suspense>
+  );
+}
+
+function OfferingsContent() {
   const searchParams = useSearchParams();
   const [selectedProgramId, setSelectedProgramId] = useState<string | null>(
     null
