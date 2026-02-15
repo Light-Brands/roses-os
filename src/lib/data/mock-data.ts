@@ -7,7 +7,7 @@ import type {
   ScheduleStage, CoherenceDomain, CoherenceAlternativeCategory,
   PathLevel, LineageEntry,
   ArchitectureLayer, Chakra, Technique, TeachingLevel,
-  Agreement, Capacity, BrandQuote, Stat,
+  Agreement, Capacity, BrandQuote, Stat, CommunityProgram,
 } from './types';
 
 // =============================================================================
@@ -17,6 +17,7 @@ import type {
 export const navItems: NavItem[] = [
   { label: 'The Rose', href: '/the-rose' },
   { label: 'Offerings', href: '/offerings' },
+  { label: 'Programs', href: '/programs' },
   { label: 'Guardians', href: '/guardians' },
   { label: 'Community', href: '/community' },
 ];
@@ -464,4 +465,48 @@ export const messagingPillars = [
   { id: '1', title: 'The Rose', description: 'A sacred technology of remembrance and a systematic practice for reconnecting with the intelligence that lives within.' },
   { id: '2', title: 'The Aura', description: 'The energetic body and its role in coherence, where subtle awareness becomes a practical capacity for daily living.' },
   { id: '3', title: 'The Human Journey', description: 'The recognition that every life is a journey of return, and that this journey is supported, not solitary.' },
+];
+
+// =============================================================================
+// ONGOING COMMUNITY PROGRAMS & ACTIVITIES
+// =============================================================================
+
+export const freePrograms: CommunityProgram[] = [
+  {
+    id: 'hummingbirds',
+    title: 'Hummingbirds',
+    description: 'A free weekly gathering open to everyone. A space to connect, practice, and nourish your inner world together with the community. No prior experience needed — just come as you are.',
+    schedule: 'Every Saturday, 10:30 AM – 11:30 AM (Costa Rica time)',
+    free: true,
+  },
+  {
+    id: 'free-live-guidances',
+    title: 'Free Live Guidances',
+    description: 'Live Rose Meditation guidances offered to all who have already been initiated in Rose Meditation. A space to deepen your practice with the support of a guided session and the collective field.',
+    audience: 'For those already initiated in Rose Meditation',
+    free: true,
+  },
+  {
+    id: 'practitioners-meetings',
+    title: 'Meetings of Rose Meditation Practitioners',
+    description: 'A monthly gathering for Rose Meditation practitioners to ask questions, share experiences, and support one another on the path. A living Q&A space held with care and presence.',
+    schedule: 'Once a month',
+    audience: 'Rose Meditation practitioners',
+    free: true,
+  },
+];
+
+export const paidPrograms: CommunityProgram[] = [
+  {
+    id: 'aura-for-life',
+    title: 'Aura for Life',
+    description: 'A continued practice program for those who have completed the Aura Reading path. A living space to keep your reading skills sharp, deepen your perception, and stay connected to the community of practitioners.',
+    free: false,
+  },
+  {
+    id: 'teachers-training',
+    title: 'Rose Meditation Teachers Training',
+    description: 'A dedicated training path for those called to share Rose Meditation with others. This program prepares you to hold space, guide meditations, and transmit the practice with clarity, presence, and integrity.',
+    free: false,
+  },
 ];
