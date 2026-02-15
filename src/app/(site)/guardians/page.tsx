@@ -89,7 +89,7 @@ function PhilosophicalFoundationModal({ onClose }: { onClose: () => void }) {
 
         {/* Content */}
         <div className="px-8 md:px-12 pb-12 pt-2">
-          <p className="label-sacred mb-4">Philosophical Foundation</p>
+          <p className="label-sacred mb-4">Di&apos;s Letter</p>
           <h2 className="font-serif text-[clamp(1.5rem,3.5vw,2.25rem)] leading-tight tracking-tight mb-10">
             The Technologies of Remembrance
           </h2>
@@ -345,7 +345,7 @@ export default function GuardiansPage() {
                         'hover:decoration-[var(--color-foreground-faint)]'
                       )}
                     >
-                      Philosophical Foundation
+                      Di&apos;s Letter: Philosophical Foundation
                     </button>
                   </div>
                 )}
