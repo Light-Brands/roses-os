@@ -42,8 +42,8 @@ function OverviewSection() {
         >
           <p>
             ROSES OS offers guided programs in Rose Meditation and Aura Reading.
-            Each program is held live, online, and designed to meet you exactly
-            where you are. No prior experience is needed.
+            Each program includes live and recorded content, online, and designed
+            to meet you exactly where you are. No prior experience is needed.
           </p>
           <p>
             We use an income-based contribution model so that financial

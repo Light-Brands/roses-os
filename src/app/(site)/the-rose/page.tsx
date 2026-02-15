@@ -252,7 +252,10 @@ export default function TheRosePage() {
       {/* 7. Rose Meditation & Aura Reading descriptions */}
       <section className="section-padding">
         <div className="container-premium max-w-3xl mx-auto space-y-16">
-          <RevealCard title="Rose Meditation" delay={0}>
+          <RevealCard title="" delay={0}>
+            <p className="label-sacred mb-2">Main Technologies & Practices</p>
+          </RevealCard>
+          <RevealCard title="Rose Meditation" delay={0.1}>
             <p>
               An initiatic path to remember who you are. Through the simple yet
               powerful technology of the roses, you will learn how to cleanse and
@@ -273,7 +276,7 @@ export default function TheRosePage() {
             </p>
           </RevealCard>
 
-          <RevealCard title="Aura Reading" delay={0.1}>
+          <RevealCard title="Aura Reading" delay={0.2}>
             <p>
               Aura Reading course teaches you to see, feel, and listen to the
               energy that moves within you and surrounds you, revealing that
