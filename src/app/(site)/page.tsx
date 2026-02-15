@@ -183,7 +183,7 @@ function BrandEssence() {
 }
 
 // =============================================================================
-// SECTION: Three Pillars
+// SECTION: Six Pillars
 // =============================================================================
 
 const pillarIcons = [
@@ -201,9 +201,25 @@ const pillarIcons = [
   <svg key="heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8">
     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
   </svg>,
+  // Intuition icon (placeholder – compass/star)
+  <svg key="intuition" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8">
+    <circle cx="12" cy="12" r="10" />
+    <path d="M12 2v4M12 18v4M2 12h4M18 12h4" />
+    <circle cx="12" cy="12" r="2" />
+  </svg>,
+  // Leadership icon (placeholder – shield)
+  <svg key="leadership" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+  </svg>,
+  // Highest Potential icon (placeholder – diamond/gem)
+  <svg key="potential" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8">
+    <path d="M6 3h12l4 7-10 12L2 10z" />
+    <path d="M2 10h20" />
+    <path d="M12 22L6 3M12 22l6-19" />
+  </svg>,
 ];
 
-function ThreePillars() {
+function SixPillars() {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
@@ -216,7 +232,7 @@ function ThreePillars() {
           transition={{ duration: 0.6 }}
           className="label-sacred text-center mb-4"
         >
-          Three Pillars
+          Six Pillars
         </motion.p>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -673,7 +689,7 @@ export default function Home() {
       {/* CONTENT SECTIONS */}
       <CoreQuestions />
       <BrandEssence />
-      <ThreePillars />
+      <SixPillars />
       <QuoteSection />
       <WhoItsFor />
       <InvitationCTA />
