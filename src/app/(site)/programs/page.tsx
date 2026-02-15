@@ -127,7 +127,7 @@ export default function ProgramsPage() {
         eyebrow="Programs"
         title="Ongoing Programs & Activities"
         description="The living heartbeat of our community. Ongoing gatherings, practices, and programs that nourish the field and support your journey — whether you are just arriving or have been walking this path for years."
-        image="/page-images/page-programs.png"
+        image="/page-images/page-the-codex.png"
       />
 
       {/* 2. Intro */}
