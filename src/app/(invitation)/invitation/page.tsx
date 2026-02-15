@@ -239,6 +239,7 @@ function ProgramsSection() {
               program={program}
               compact={expandedId !== program.id}
               selected={expandedId === program.id}
+              progressiveDetails
               onClick={() =>
                 setExpandedId(expandedId === program.id ? null : program.id)
               }

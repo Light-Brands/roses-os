@@ -1,8 +1,8 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { Program } from '@/lib/data/types';
 
@@ -15,6 +15,8 @@ interface ProgramCardProps {
   selected?: boolean;
   /** Make the card clickable */
   onClick?: () => void;
+  /** When true, hide meta & includes behind a secondary "View details" toggle */
+  progressiveDetails?: boolean;
 }
 
 export default function ProgramCard({
@@ -23,9 +25,16 @@ export default function ProgramCard({
   compact = false,
   selected = false,
   onClick,
+  progressiveDetails = false,
 }: ProgramCardProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
+  const [detailsOpen, setDetailsOpen] = useState(false);
+
+  // Reset details when card collapses
+  useEffect(() => {
+    if (compact) setDetailsOpen(false);
+  }, [compact]);
 
   const isClickable = !!onClick;
 
@@ -91,60 +100,157 @@ export default function ProgramCard({
               </p>
             )}
 
-            {/* Meta details */}
-            <div className="flex flex-wrap gap-x-6 gap-y-3 mb-6 pb-6 border-b border-[var(--color-border)]">
-              {program.duration && (
-                <div>
-                  <span className="label-sacred block mb-1">Duration</span>
-                  <span className="text-sm text-[var(--color-foreground-subtle)]">
-                    {program.duration}
-                  </span>
-                </div>
-              )}
-              {program.dates && (
-                <div>
-                  <span className="label-sacred block mb-1">Dates</span>
-                  <span className="text-sm text-[var(--color-foreground-subtle)]">
-                    {program.dates}
-                  </span>
-                </div>
-              )}
-              {program.format && (
-                <div>
-                  <span className="label-sacred block mb-1">Format</span>
-                  <span className="text-sm text-[var(--color-foreground-subtle)]">
-                    {program.format}
-                  </span>
-                </div>
-              )}
-            </div>
-
-            {/* Includes list */}
-            {program.includes && program.includes.length > 0 && (
-              <div>
-                <span className="label-sacred block mb-3">Includes</span>
-                <ul className="space-y-2">
-                  {program.includes.map((item, index) => (
-                    <motion.li
-                      key={index}
-                      initial={{ opacity: 0, x: -8 }}
-                      animate={isInView ? { opacity: 1, x: 0 } : {}}
-                      transition={{
-                        duration: 0.4,
-                        delay: 0.3 + index * 0.05,
-                        ease: [0.16, 1, 0.3, 1],
-                      }}
-                      className="flex items-start gap-3 text-sm text-[var(--color-foreground-subtle)]"
+            {/* When progressiveDetails is on, wrap meta & includes behind a toggle */}
+            {progressiveDetails ? (
+              <>
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setDetailsOpen(!detailsOpen);
+                  }}
+                  className={cn(
+                    'inline-flex items-center gap-2 text-sm font-medium',
+                    'text-[var(--color-foreground-muted)]',
+                    'hover:text-[var(--color-foreground)]',
+                    'transition-colors duration-200',
+                    'mb-4'
+                  )}
+                >
+                  <ChevronDown
+                    className={cn(
+                      'w-4 h-4 transition-transform duration-200',
+                      detailsOpen && 'rotate-180'
+                    )}
+                  />
+                  {detailsOpen ? 'Hide details' : 'View details'}
+                </button>
+                <AnimatePresence>
+                  {detailsOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                      className="overflow-hidden"
                     >
-                      <span
-                        className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[var(--color-rose-clay)] shrink-0"
-                        aria-hidden="true"
-                      />
-                      {item}
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
+                      {/* Meta details */}
+                      <div className="flex flex-wrap gap-x-6 gap-y-3 mb-6 pb-6 border-b border-[var(--color-border)]">
+                        {program.duration && (
+                          <div>
+                            <span className="label-sacred block mb-1">Duration</span>
+                            <span className="text-sm text-[var(--color-foreground-subtle)]">
+                              {program.duration}
+                            </span>
+                          </div>
+                        )}
+                        {program.dates && (
+                          <div>
+                            <span className="label-sacred block mb-1">Dates</span>
+                            <span className="text-sm text-[var(--color-foreground-subtle)]">
+                              {program.dates}
+                            </span>
+                          </div>
+                        )}
+                        {program.format && (
+                          <div>
+                            <span className="label-sacred block mb-1">Format</span>
+                            <span className="text-sm text-[var(--color-foreground-subtle)]">
+                              {program.format}
+                            </span>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Includes list */}
+                      {program.includes && program.includes.length > 0 && (
+                        <div>
+                          <span className="label-sacred block mb-3">Includes</span>
+                          <ul className="space-y-2">
+                            {program.includes.map((item, index) => (
+                              <motion.li
+                                key={index}
+                                initial={{ opacity: 0, x: -8 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{
+                                  duration: 0.4,
+                                  delay: index * 0.05,
+                                  ease: [0.16, 1, 0.3, 1],
+                                }}
+                                className="flex items-start gap-3 text-sm text-[var(--color-foreground-subtle)]"
+                              >
+                                <span
+                                  className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[var(--color-rose-clay)] shrink-0"
+                                  aria-hidden="true"
+                                />
+                                {item}
+                              </motion.li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </>
+            ) : (
+              <>
+                {/* Meta details */}
+                <div className="flex flex-wrap gap-x-6 gap-y-3 mb-6 pb-6 border-b border-[var(--color-border)]">
+                  {program.duration && (
+                    <div>
+                      <span className="label-sacred block mb-1">Duration</span>
+                      <span className="text-sm text-[var(--color-foreground-subtle)]">
+                        {program.duration}
+                      </span>
+                    </div>
+                  )}
+                  {program.dates && (
+                    <div>
+                      <span className="label-sacred block mb-1">Dates</span>
+                      <span className="text-sm text-[var(--color-foreground-subtle)]">
+                        {program.dates}
+                      </span>
+                    </div>
+                  )}
+                  {program.format && (
+                    <div>
+                      <span className="label-sacred block mb-1">Format</span>
+                      <span className="text-sm text-[var(--color-foreground-subtle)]">
+                        {program.format}
+                      </span>
+                    </div>
+                  )}
+                </div>
+
+                {/* Includes list */}
+                {program.includes && program.includes.length > 0 && (
+                  <div>
+                    <span className="label-sacred block mb-3">Includes</span>
+                    <ul className="space-y-2">
+                      {program.includes.map((item, index) => (
+                        <motion.li
+                          key={index}
+                          initial={{ opacity: 0, x: -8 }}
+                          animate={isInView ? { opacity: 1, x: 0 } : {}}
+                          transition={{
+                            duration: 0.4,
+                            delay: 0.3 + index * 0.05,
+                            ease: [0.16, 1, 0.3, 1],
+                          }}
+                          className="flex items-start gap-3 text-sm text-[var(--color-foreground-subtle)]"
+                        >
+                          <span
+                            className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[var(--color-rose-clay)] shrink-0"
+                            aria-hidden="true"
+                          />
+                          {item}
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </>
             )}
           </motion.div>
         )}
