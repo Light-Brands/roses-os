@@ -47,9 +47,11 @@ function ActivityCard({
       <h3 className="font-serif text-[clamp(1.15rem,2.5vw,1.5rem)] leading-tight tracking-tight mb-3 text-[var(--color-foreground)]">
         {program.title}
       </h3>
-      <p className="text-[var(--color-foreground-muted)] leading-relaxed text-sm sm:text-base mb-4">
-        {program.description}
-      </p>
+      <div className="text-[var(--color-foreground-muted)] leading-relaxed text-sm sm:text-base mb-4 space-y-3">
+        {program.description.split('\n\n').map((paragraph, i) => (
+          <p key={i}>{paragraph}</p>
+        ))}
+      </div>
       <div className="flex flex-wrap gap-3">
         {program.schedule && (
           <span

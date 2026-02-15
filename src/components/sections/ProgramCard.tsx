@@ -99,9 +99,11 @@ export default function ProgramCard({
           >
             {/* Description — shown first and prominently */}
             {program.description && (
-              <p className="text-base md:text-lg text-[var(--color-foreground-muted)] leading-relaxed mb-8">
-                {program.description}
-              </p>
+              <div className="text-base md:text-lg text-[var(--color-foreground-muted)] leading-relaxed mb-8 space-y-4">
+                {program.description.split('\n\n').map((paragraph, i) => (
+                  <p key={i}>{paragraph}</p>
+                ))}
+              </div>
             )}
 
             {/* When progressiveDetails is on, wrap meta & includes behind a toggle */}
