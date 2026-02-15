@@ -68,12 +68,12 @@ export const guardians: Guardian[] = [
 export const programs: Program[] = [
   {
     id: '1',
-    title: 'The Rose + Aura 1',
-    subtitle: 'Rose Meditation + Aura Reading Level 1',
+    title: 'Aura 1',
+    subtitle: 'General Aura Reading',
     duration: '11 days',
     dates: 'March 17–27, 2026',
     format: 'Live online + recorded content',
-    description: 'The complete journey combining Rose Meditation with Aura Reading Level 1. Eleven days of immersive practice across structured and flexible blocks, deepening perception and energetic coherence.',
+    description: 'Aura Reading course teaches you to see, feel, and listen to the energy that moves within you and surrounds you, revealing that everything in life begins as energy and that awareness gives you the power to transform it. It is as well a conscious conversation between essences. By reading another person\u2019s aura, you support their journey of growth and healing while receiving mirrors and insights that illuminate your own path. Each reading becomes a conscious exchange where both the reader and the person being read are touched and transformed. This transformation becomes possible by awakening your clairvoyance, clairsentience, clairaudience, and other subtle senses. These abilities allow you to connect directly with what is real and receive guidance that leads to freedom, clarity, and growth.',
     includes: [
       'Rose Meditation (2 days)',
       'Aura Reading Level 1 (9 days)',
@@ -86,8 +86,8 @@ export const programs: Program[] = [
   },
   {
     id: '2',
-    title: 'Aura Reading Level 2',
-    subtitle: 'Aura Reading Online Course Level 2',
+    title: 'Aura 2',
+    subtitle: 'Thematic Aura Reading',
     duration: '9 days',
     dates: 'September 19–27, 2026',
     format: 'Live online',
@@ -103,14 +103,14 @@ export const programs: Program[] = [
   {
     id: '3',
     title: 'The Rose',
-    subtitle: 'Rose Meditation Levels 1, 2 & 3',
+    subtitle: 'Level 1, 2, 3',
     duration: '2 days',
     dates: 'March 17–18, 2026',
     format: 'Live online + recorded content',
-    description: 'Two immersive days introducing the Rose technology. Six hours per day offered in two three-hour sessions. A systematic practice for remembrance, coherence, and inner freedom.',
+    description: 'An initiatic path to remember who you are. Through the simple yet powerful technology of the roses, you will learn how to cleanse and protect your Aura, so that you no longer live like a sponge, absorbing energies that don\u2019t belong to you. Everyday, we are surrounded by energies \u2014 from people, memories, situations, environments, even our own thoughts. When we are unaware, these energies stick to us, creating confusion, heaviness, and programs that cloud who we truly are. By cleansing and protecting your energy field, you begin to live in the presence of your own essence. You recover your vitality, raise your vibration, and create space for your soul to manifest with clarity and power.',
     includes: [
       '2 immersive days of live instruction',
-      'Rose Meditation Levels 1, 2 & 3',
+      'Rose Meditation',
       'Two 3-hour sessions per day',
       'Integration workbook',
       'Private community access to classes and events',
@@ -331,7 +331,7 @@ export const coherenceAlternatives: CoherenceAlternativeCategory[] = [
 ];
 
 // =============================================================================
-// PATH LEVELS (Rose Meditation 1–3 + Aura 1–5)
+// PATH LEVELS (Rose Meditation + Aura 1–5)
 // Full dataset kept for reference. Aura 4 & 5 (levels 7–8) are excluded from
 // the rose page via the visiblePathLevels export below.
 // =============================================================================
@@ -340,7 +340,7 @@ export const pathLevels: PathLevel[] = [
   {
     id: '1',
     level: 1,
-    title: 'Rose Meditation 1',
+    title: 'Rose Meditation',
     subtitle: 'The Open Threshold',
     description: 'Introduces grounding, aura awareness, and energetic cleansing. Learn to root yourself, separate your energy from others, and receive the nourishing forces of Earth and Cosmos.',
     focus: ['Grounding & presence', 'Aura cleansing & protection', 'Energy separation', 'Earth & Cosmic circuits'],
@@ -348,7 +348,7 @@ export const pathLevels: PathLevel[] = [
   {
     id: '2',
     level: 2,
-    title: 'Rose Meditation 2',
+    title: 'Rose Meditation',
     subtitle: 'The Living Rhythm',
     description: 'Deepens into the subtle body. Discover what your aura carries, transmute past and present energies, cleanse the seven chakras and aura layers, and release energetic ties.',
     focus: ['Chakra & aura layer cleansing', 'Energetic tie release', 'Sacred space creation', 'Environmental protection'],
@@ -356,7 +356,7 @@ export const pathLevels: PathLevel[] = [
   {
     id: '3',
     level: 3,
-    title: 'Rose Meditation 3',
+    title: 'Rose Meditation',
     subtitle: 'The Spiritual Activation',
     description: 'Work with spiritual agreements, free yourself from energetic cords, transcend limiting beliefs, cleanse mental programs, and learn Reality Creation through the Mock Up technique.',
     focus: ['Spiritual agreements & cords', 'Belief transcendence', 'Mental program cleansing', 'Reality Creation (Mock Up)'],
@@ -470,7 +470,7 @@ export const teachingLevels: TeachingLevel[] = [
 
 export const agreements: Agreement[] = [
   { id: '1', title: 'Commitment to Practice', description: 'I commit to engaging with the daily practice for the duration of the program with sincerity and consistency.' },
-  { id: '2', title: 'Confidentiality', description: 'I agree to hold in confidence what is shared in group settings, honoring the sacred container of our community.' },
+  { id: '2', title: 'Confidentiality', description: 'I agree to hold in confidence what is shared in group settings, honoring the container of our community.' },
   { id: '3', title: 'Respect for the Lineage', description: 'I honor the origins of this work and agree not to teach or represent these practices as my own without authorization.' },
   { id: '4', title: 'Personal Responsibility', description: 'I take responsibility for my own well-being and will communicate with the guardians if I need additional support.' },
   { id: '5', title: 'Community Care', description: 'I commit to showing up with care and respect for all participants, guardians, and the shared field of our practice.' },

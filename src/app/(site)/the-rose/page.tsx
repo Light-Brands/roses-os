@@ -193,7 +193,7 @@ export default function TheRosePage() {
 
       {/* 5. You Feel It */}
       <QuoteBlock
-        quote="When noise dissolves, coherence returns. You awaken the intelligence that guides your life, shapes your reality, and remembers who you are and why you are here."
+        quote="This journey is an invitation into intuition, presence, and truth — a gateway into the mystery of who you are and who you are becoming."
         variant="fullbleed"
       />
 
@@ -249,7 +249,56 @@ export default function TheRosePage() {
         </div>
       </section>
 
-      {/* 7. What This Journey Awakens in You */}
+      {/* 7. Rose Meditation & Aura Reading descriptions */}
+      <section className="section-padding">
+        <div className="container-premium max-w-3xl mx-auto space-y-16">
+          <RevealCard title="Rose Meditation" delay={0}>
+            <p>
+              An initiatic path to remember who you are. Through the simple yet
+              powerful technology of the roses, you will learn how to cleanse and
+              protect your Aura, so that you no longer live like a sponge,
+              absorbing energies that don&apos;t belong to you.
+            </p>
+            <p>
+              Everyday, we are surrounded by energies — from people, memories,
+              situations, environments, even our own thoughts. When we are
+              unaware, these energies stick to us, creating confusion, heaviness,
+              and programs that cloud who we truly are.
+            </p>
+            <p>
+              By cleansing and protecting your energy field, you begin to live in
+              the presence of your own essence. You recover your vitality, raise
+              your vibration, and create space for your soul to manifest with
+              clarity and power.
+            </p>
+          </RevealCard>
+
+          <RevealCard title="Aura Reading" delay={0.1}>
+            <p>
+              Aura Reading course teaches you to see, feel, and listen to the
+              energy that moves within you and surrounds you, revealing that
+              everything in life begins as energy and that awareness gives you
+              the power to transform it.
+            </p>
+            <p>
+              It is as well a conscious conversation between essences. By reading
+              another person&apos;s aura, you support their journey of growth
+              and healing while receiving mirrors and insights that illuminate
+              your own path. Each reading becomes a conscious exchange where both
+              the reader and the person being read are touched and transformed.
+            </p>
+            <p>
+              This transformation becomes possible by awakening your
+              clairvoyance, clairsentience, clairaudience, and other subtle
+              senses. These abilities allow you to connect directly with what is
+              real and receive guidance that leads to freedom, clarity, and
+              growth.
+            </p>
+          </RevealCard>
+        </div>
+      </section>
+
+      {/* 8. What This Journey Awakens in You */}
       <section className="section-padding">
         <div className="container-premium max-w-5xl mx-auto">
           <RevealCard title="" delay={0}>
@@ -287,26 +336,23 @@ export default function TheRosePage() {
         </div>
       </section>
 
-      {/* 8. The Frequency */}
+      {/* 9. The Frequency */}
       <RevealSection
         label="The Frequency"
         title="A Frequency You Cultivate"
         className="bg-[var(--color-background-subtle)]"
       >
         <p>
-          The Rose is not a path you follow. It is a frequency you cultivate.
+          The Rose is a frequency you cultivate.
         </p>
         <p>
           No belief required. Only presence and willingness to return to your
           essence. Then choose yourself, clarity, and freedom. From there, life
           becomes creative and reaching.
         </p>
-        <p className="font-serif text-xl text-[var(--color-foreground)] italic">
-          And so, remember who you are.
-        </p>
       </RevealSection>
 
-      {/* 9. Invitation CTA */}
+      {/* 10. Invitation CTA */}
       <InvitationCTA />
     </>
   );

@@ -74,40 +74,7 @@ export default function ProgramCard({
         )}
       </div>
 
-      {/* Meta details */}
-      <div
-        className={cn(
-          'flex flex-wrap gap-x-6 gap-y-3',
-          compact ? 'mt-4' : 'mb-6 pb-6 border-b border-[var(--color-border)]'
-        )}
-      >
-        {program.duration && (
-          <div>
-            <span className="label-sacred block mb-1">Duration</span>
-            <span className="text-sm text-[var(--color-foreground-subtle)]">
-              {program.duration}
-            </span>
-          </div>
-        )}
-        {program.dates && (
-          <div>
-            <span className="label-sacred block mb-1">Dates</span>
-            <span className="text-sm text-[var(--color-foreground-subtle)]">
-              {program.dates}
-            </span>
-          </div>
-        )}
-        {program.format && (
-          <div>
-            <span className="label-sacred block mb-1">Format</span>
-            <span className="text-sm text-[var(--color-foreground-subtle)]">
-              {program.format}
-            </span>
-          </div>
-        )}
-      </div>
-
-      {/* Description & Includes — hidden in compact mode */}
+      {/* Description, Meta & Includes — hidden in compact mode */}
       <AnimatePresence>
         {!compact && (
           <motion.div
@@ -117,12 +84,40 @@ export default function ProgramCard({
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="overflow-hidden"
           >
-            {/* Description */}
+            {/* Description — shown first and prominently */}
             {program.description && (
-              <p className="text-base text-[var(--color-foreground-muted)] leading-relaxed mb-6">
+              <p className="text-base md:text-lg text-[var(--color-foreground-muted)] leading-relaxed mb-8">
                 {program.description}
               </p>
             )}
+
+            {/* Meta details */}
+            <div className="flex flex-wrap gap-x-6 gap-y-3 mb-6 pb-6 border-b border-[var(--color-border)]">
+              {program.duration && (
+                <div>
+                  <span className="label-sacred block mb-1">Duration</span>
+                  <span className="text-sm text-[var(--color-foreground-subtle)]">
+                    {program.duration}
+                  </span>
+                </div>
+              )}
+              {program.dates && (
+                <div>
+                  <span className="label-sacred block mb-1">Dates</span>
+                  <span className="text-sm text-[var(--color-foreground-subtle)]">
+                    {program.dates}
+                  </span>
+                </div>
+              )}
+              {program.format && (
+                <div>
+                  <span className="label-sacred block mb-1">Format</span>
+                  <span className="text-sm text-[var(--color-foreground-subtle)]">
+                    {program.format}
+                  </span>
+                </div>
+              )}
+            </div>
 
             {/* Includes list */}
             {program.includes && program.includes.length > 0 && (
@@ -154,6 +149,36 @@ export default function ProgramCard({
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Compact meta — only shown in compact mode */}
+      {compact && (
+        <div className="flex flex-wrap gap-x-6 gap-y-3 mt-4">
+          {program.duration && (
+            <div>
+              <span className="label-sacred block mb-1">Duration</span>
+              <span className="text-sm text-[var(--color-foreground-subtle)]">
+                {program.duration}
+              </span>
+            </div>
+          )}
+          {program.dates && (
+            <div>
+              <span className="label-sacred block mb-1">Dates</span>
+              <span className="text-sm text-[var(--color-foreground-subtle)]">
+                {program.dates}
+              </span>
+            </div>
+          )}
+          {program.format && (
+            <div>
+              <span className="label-sacred block mb-1">Format</span>
+              <span className="text-sm text-[var(--color-foreground-subtle)]">
+                {program.format}
+              </span>
+            </div>
+          )}
+        </div>
+      )}
     </motion.div>
   );
 }
