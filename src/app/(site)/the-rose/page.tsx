@@ -7,7 +7,6 @@ import { cn } from '@/lib/utils';
 import PageHero from '@/components/sections/PageHero';
 import QuoteBlock from '@/components/sections/QuoteBlock';
 import InvitationCTA from '@/components/sections/InvitationCTA';
-import { Tabs, TabsList, TabTrigger, TabContent } from '@/components/ui/Tabs';
 
 // =============================================================================
 // SCROLL-REVEAL TEXT SECTION
@@ -64,6 +63,39 @@ function RevealSection({
 }
 
 // =============================================================================
+// ANIMATED CARD FOR GRID SECTIONS
+// =============================================================================
+
+function RevealCard({
+  title,
+  children,
+  delay = 0,
+}: {
+  title: string;
+  children: React.ReactNode;
+  delay?: number;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '-80px' });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 24 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
+    >
+      <h3 className="font-serif text-xl md:text-2xl tracking-tight mb-3">
+        {title}
+      </h3>
+      <div className="text-[var(--color-foreground-muted)] leading-relaxed space-y-3">
+        {children}
+      </div>
+    </motion.div>
+  );
+}
+
+// =============================================================================
 // THE ROSE PAGE
 // =============================================================================
 
@@ -73,169 +105,208 @@ export default function TheRosePage() {
       {/* 1. Hero */}
       <PageHero
         eyebrow="The Rose"
-        title="The Intelligence of Silence"
-        description="The Rose is a technology of remembrance. A living practice that reconnects you with the intelligence already present within your body, your breath, and your being. Something already within you, waiting to be remembered."
+        title="When the Rose Awakens, Genius Awakens"
+        description="The Rose restores coherence across emotional, mental, and energetic systems — making intuition precise and presence sovereign. Simple and decentralized, it frees you from endless healing and returns you to natural alignment."
         image="/page-images/page-the-rose.png"
       />
 
-      {/* 2. The Collapse of Old Paradigms */}
-      <RevealSection title="The Old Paradigm Is Dissolving">
-        <p>
-          For decades, we have been told that more information would save us. More
-          knowledge, more productivity, more optimization. We built systems to
-          manage every dimension of life, and still, something essential remained
-          untouched.
-        </p>
-        <p>
-          The old paradigm was built on the assumption that we are broken and need
-          fixing. That healing is a destination. That growth means accumulating
-          more. But what if the opposite is true? What if freedom comes not from
-          adding, but from remembering what was always here?
-        </p>
-      </RevealSection>
-
-      {/* 3. The Era of Acceleration */}
-      <RevealSection
-        label="The Current Moment"
-        title="The Era of Acceleration"
-        className="bg-[var(--color-background-subtle)]"
-      >
-        <p>
-          We live in a time of unprecedented acceleration. The systems we
-          inherited (economic, educational, relational) are rapidly failing to
-          meet the depth of what it means to be human. Burnout is epidemic.
-          Disconnection is normalized. The nervous system is overwhelmed.
-        </p>
-        <p>
-          Technology promised connection but delivered distraction. Wellness
-          culture promised healing but delivered consumption. The acceleration
-          continues, and with it, a growing hunger for something real. Something
-          that cannot be optimized or automated.
-        </p>
-      </RevealSection>
-
-      {/* 4. The Next Revolution */}
-      <RevealSection
-        label="What Is Emerging"
-        title="The Next Revolution"
-      >
-        <p>
-          The next revolution is one of inner coherence. A return to the body. A
-          remembering of the intelligence that lives beneath thought, beneath
-          conditioning, beneath the stories we carry about who we are. It
-          requires only your willingness to be still, to listen, and to let the
-          intelligence of silence do what it has always known how to do: bring
-          you home.
-        </p>
-      </RevealSection>
-
-      {/* 5. Introducing The Rose */}
+      {/* 2. What the Rose Is */}
       <RevealSection
         label="The Technology"
-        title="Introducing The Rose"
-        className="bg-[var(--color-background-subtle)]"
+        title="What the Rose Is"
       >
         <p>
-          The Rose is a systematic practice rooted in imagination, awareness,
-          and the cultivation of inner coherence. Developed over decades by
-          Angelina Ataíde and drawn from a deep lineage of consciousness research,
-          it offers a clear, grounded pathway for anyone ready to remember who
-          they truly are. The path unfolds through two main practices — Rose
-          Meditation and Aura Reading — each one a deepening of the relationship
-          with yourself, your energy, and the field of intelligence that surrounds
-          you.
+          The Rose is a simple, living inner technology. It restores awareness.
+          It restores coherence. It restores real choice.
+        </p>
+        <p>
+          It doesn&apos;t fight the noise and fragmentation — it quietly
+          dissolves the conditions that keep chaos alive.
         </p>
       </RevealSection>
 
-      {/* 6. Rose Meditation & Aura Tabs */}
-      <section className="section-padding">
-        <div className="container-premium max-w-4xl mx-auto">
-          <Tabs defaultValue="rose-meditation" variant="underline" size="lg">
-            <TabsList className="justify-center mb-8">
-              <TabTrigger value="rose-meditation">Rose Meditation</TabTrigger>
-              <TabTrigger value="aura">Aura Reading</TabTrigger>
-            </TabsList>
+      {/* 3. The Two Questions */}
+      <RevealSection
+        title="The Two Questions"
+        className="bg-[var(--color-background-subtle)]"
+      >
+        <p>The Rose asks two questions:</p>
+        <ol className="list-decimal list-inside space-y-2 pl-1">
+          <li>
+            <span className="font-medium text-[var(--color-foreground)]">
+              Are you aware of your inner state at this moment?
+            </span>
+          </li>
+          <li>
+            <span className="font-medium text-[var(--color-foreground)]">
+              Do you feel coherent inside — if not, how can you restore it?
+            </span>
+          </li>
+        </ol>
+        <p>
+          No belief needed. Just an honest awareness and presence. When even a
+          trace of coherence returns, clarity grows, and choice becomes real
+          again.
+        </p>
+      </RevealSection>
 
-            {/* Rose Meditation Tab */}
-            <TabContent value="rose-meditation">
-              <div className="space-y-6">
-                <p className="text-lg text-[var(--color-foreground-muted)] leading-relaxed">
-                  Rose Meditation is the foundational practice of the ROSES OS
-                  path. It begins with grounding, aura awareness, and energetic
-                  cleansing — learning to root yourself, separate your energy from
-                  others, and receive the nourishing forces of Earth and Cosmos.
-                  The practice deepens into the subtle body, where you discover
-                  what your aura carries, transmute past and present energies,
-                  cleanse the seven chakras and aura layers, and release energetic
-                  ties. It culminates in spiritual activation — working with
-                  spiritual agreements, freeing yourself from energetic cords,
-                  transcending limiting beliefs, and learning Reality Creation
-                  through the Mock Up technique.
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 pt-2">
-                  {[
-                    'Grounding & presence',
-                    'Aura cleansing & protection',
-                    'Energy separation',
-                    'Earth & Cosmic circuits',
-                    'Chakra & aura layer cleansing',
-                    'Energetic tie release',
-                    'Sacred space creation',
-                    'Environmental protection',
-                    'Spiritual agreements & cords',
-                    'Belief transcendence',
-                    'Mental program cleansing',
-                    'Reality Creation (Mock Up)',
-                  ].map((item) => (
-                    <div
-                      key={item}
-                      className="flex items-start gap-2 text-sm text-[var(--color-foreground-muted)] py-1"
-                    >
-                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#9E956B]/50 flex-shrink-0" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </TabContent>
-
-            {/* Aura Reading Tab */}
-            <TabContent value="aura">
-              <div className="space-y-6">
-                <p className="text-lg text-[var(--color-foreground-muted)] leading-relaxed">
-                  Aura Reading course teaches you to see, feel, and listen to the
-                  energy that moves within you and surrounds you, revealing that
-                  everything in life begins as energy and that awareness gives you
-                  the power to transform it.
-                </p>
-                <p className="text-lg text-[var(--color-foreground-muted)] leading-relaxed">
-                  It is as well a conscious conversation between essences. By
-                  reading another person&apos;s aura, you support their journey of
-                  growth and healing while receiving mirrors and insights that
-                  illuminate your own path. Each reading becomes a conscious
-                  exchange where both the reader and the person being read are
-                  touched and transformed.
-                </p>
-                <p className="text-lg text-[var(--color-foreground-muted)] leading-relaxed">
-                  This transformation becomes possible by awakening your
-                  clairvoyance, clairsentience, clairaudience, and other subtle
-                  senses. These abilities allow you to connect directly with what
-                  is real and receive guidance that leads to freedom, clarity, and
-                  growth.
-                </p>
-              </div>
-            </TabContent>
-          </Tabs>
+      {/* 4. Who This Is For */}
+      <RevealSection
+        label="Who This Is For"
+        title="For Those Ready to Remember"
+      >
+        <p>
+          For those who feel the world accelerating and know the tools they
+          inherited were not built for this moment.
+        </p>
+        <p>
+          For founders, creators, parents, healers, and leaders who need
+          clarity, intuition, and inner stability to move through complexity
+          without losing themselves.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4">
+          {[
+            {
+              name: 'The Rose',
+              desc: 'awakens perception.',
+            },
+            {
+              name: 'Aura',
+              desc: 'empowers relationship.',
+            },
+            {
+              name: 'Together',
+              desc: 'they restore coherence, love, and confidence.',
+            },
+          ].map((item) => (
+            <div key={item.name} className="text-center">
+              <p className="font-serif text-lg text-[var(--color-foreground)]">
+                {item.name}
+              </p>
+              <p className="text-sm text-[var(--color-foreground-muted)] mt-1">
+                {item.desc}
+              </p>
+            </div>
+          ))}
         </div>
-      </section>
+      </RevealSection>
 
-      {/* 7. Quote */}
+      {/* 5. You Feel It */}
       <QuoteBlock
-        quote="This journey is an invitation into intuition, presence, and truth—a gateway into the mystery of who you are and who you are becoming."
+        quote="When noise dissolves, coherence returns. You awaken the intelligence that guides your life, shapes your reality, and remembers who you are and why you are here."
         variant="fullbleed"
       />
 
-      {/* 10. Invitation CTA */}
+      <RevealSection>
+        <p>
+          What brought us here won&apos;t get us there. The Rose and Aura
+          cleanse your bodies, protect your energy, restore clarity, and return
+          you to your essence.
+        </p>
+        <p>
+          Not techniques, but instruments of consciousness — reminding you
+          that you are the mountain, not the summit.
+        </p>
+        <p className="text-[var(--color-foreground)] font-medium">
+          If life calls you into sovereignty, joy, and presence, the way is
+          open.
+        </p>
+      </RevealSection>
+
+      {/* 6. What You Will Experience */}
+      <section className="section-padding bg-[var(--color-background-subtle)]">
+        <div className="container-premium max-w-5xl mx-auto">
+          <RevealCard title="" delay={0}>
+            <p className="label-sacred mb-2">What You Will Experience</p>
+            <h2 className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-2 text-[var(--color-foreground)]">
+              This is not learning. It is remembering.
+            </h2>
+          </RevealCard>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 mt-10">
+            <RevealCard title="The Rose" delay={0.1}>
+              <p>
+                It dissolves distortion and restores coherence. Inner awareness
+                expands, presence and stability deepen. From this state,
+                intuition sharpens, leadership rises, and connection becomes
+                natural.
+              </p>
+            </RevealCard>
+            <RevealCard title="Aura" delay={0.2}>
+              <p>
+                When heart aligns with soul, you perceive subtle senses and the
+                energy shaping your choices. Each reading is a mirror —
+                strengthening clarity, relationships, and service.
+              </p>
+            </RevealCard>
+            <RevealCard title="Human Journey" delay={0.3}>
+              <p>
+                Emotional patterns and imprints dissolve — freed across mental
+                and energetic layers. Love reveals itself as a self-organizing
+                intelligence.
+              </p>
+            </RevealCard>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. What This Journey Awakens in You */}
+      <section className="section-padding">
+        <div className="container-premium max-w-5xl mx-auto">
+          <RevealCard title="" delay={0}>
+            <p className="label-sacred mb-2">What This Journey Awakens in You</p>
+          </RevealCard>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 mt-10">
+            <RevealCard title="Intuition" delay={0.1}>
+              <p>
+                You learn to listen to truth with clarity and simplicity.
+                Limiting beliefs and unconscious patterns dissolve. Your
+                decisions become aligned, precise, and guided.
+              </p>
+            </RevealCard>
+            <RevealCard title="Leadership" delay={0.2}>
+              <p>
+                It deepens your capacity to feel, support, and relate.
+                Leadership rooted in coherence, empowerment, and trust. You
+                read your own field and the energy around you with discernment
+                and self-mastery.
+              </p>
+            </RevealCard>
+            <RevealCard title="Highest Potential" delay={0.3}>
+              <p>
+                You access the brilliance of your original design. You live
+                your life from pure integrity. These belong to every human who
+                remembers who they are.
+              </p>
+            </RevealCard>
+          </div>
+          <RevealCard title="" delay={0.4}>
+            <p className="text-center pt-6 font-medium text-[var(--color-foreground)]">
+              No prior experience is needed. Only presence.
+            </p>
+          </RevealCard>
+        </div>
+      </section>
+
+      {/* 8. The Frequency */}
+      <RevealSection
+        label="The Frequency"
+        title="A Frequency You Cultivate"
+        className="bg-[var(--color-background-subtle)]"
+      >
+        <p>
+          The Rose is not a path you follow. It is a frequency you cultivate.
+        </p>
+        <p>
+          No belief required. Only presence and willingness to return to your
+          essence. Then choose yourself, clarity, and freedom. From there, life
+          becomes creative and reaching.
+        </p>
+        <p className="font-serif text-xl text-[var(--color-foreground)] italic">
+          And so, remember who you are.
+        </p>
+      </RevealSection>
+
+      {/* 9. Invitation CTA */}
       <InvitationCTA />
     </>
   );
