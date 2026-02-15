@@ -39,7 +39,7 @@ export interface ContributionTier {
   name: string;
   range: string;
   description: string;
-  /** Suggested price for the program (Rose Meditation 1, 2 & 3 + Aura Reading Level 1) */
+  /** Suggested price for the program (Rose Meditation + Aura Reading Level 1) */
   price: string;
 }
 

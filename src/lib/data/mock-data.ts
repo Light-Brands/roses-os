@@ -103,14 +103,14 @@ export const programs: Program[] = [
   {
     id: '3',
     title: 'The Rose',
-    subtitle: 'Rose Meditation Levels 1, 2 & 3',
+    subtitle: 'Rose Meditation',
     duration: '2 days',
     dates: 'March 17–18, 2026',
     format: 'Live online + recorded content',
     description: 'Two immersive days introducing the Rose technology. Six hours per day offered in two three-hour sessions. A systematic practice for remembrance, coherence, and inner freedom.',
     includes: [
       '2 immersive days of live instruction',
-      'Rose Meditation Levels 1, 2 & 3',
+      'Rose Meditation',
       'Two 3-hour sessions per day',
       'Integration workbook',
       'Private community access to classes and events',
@@ -331,7 +331,7 @@ export const coherenceAlternatives: CoherenceAlternativeCategory[] = [
 ];
 
 // =============================================================================
-// PATH LEVELS (Rose Meditation 1–3 + Aura 1–5)
+// PATH LEVELS (Rose Meditation + Aura 1–5)
 // Full dataset kept for reference. Aura 4 & 5 (levels 7–8) are excluded from
 // the rose page via the visiblePathLevels export below.
 // =============================================================================
@@ -340,7 +340,7 @@ export const pathLevels: PathLevel[] = [
   {
     id: '1',
     level: 1,
-    title: 'Rose Meditation 1',
+    title: 'Rose Meditation',
     subtitle: 'The Open Threshold',
     description: 'Introduces grounding, aura awareness, and energetic cleansing. Learn to root yourself, separate your energy from others, and receive the nourishing forces of Earth and Cosmos.',
     focus: ['Grounding & presence', 'Aura cleansing & protection', 'Energy separation', 'Earth & Cosmic circuits'],
@@ -348,7 +348,7 @@ export const pathLevels: PathLevel[] = [
   {
     id: '2',
     level: 2,
-    title: 'Rose Meditation 2',
+    title: 'Rose Meditation',
     subtitle: 'The Living Rhythm',
     description: 'Deepens into the subtle body. Discover what your aura carries, transmute past and present energies, cleanse the seven chakras and aura layers, and release energetic ties.',
     focus: ['Chakra & aura layer cleansing', 'Energetic tie release', 'Sacred space creation', 'Environmental protection'],
@@ -356,7 +356,7 @@ export const pathLevels: PathLevel[] = [
   {
     id: '3',
     level: 3,
-    title: 'Rose Meditation 3',
+    title: 'Rose Meditation',
     subtitle: 'The Spiritual Activation',
     description: 'Work with spiritual agreements, free yourself from energetic cords, transcend limiting beliefs, cleanse mental programs, and learn Reality Creation through the Mock Up technique.',
     focus: ['Spiritual agreements & cords', 'Belief transcendence', 'Mental program cleansing', 'Reality Creation (Mock Up)'],
