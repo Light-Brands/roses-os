@@ -23,7 +23,7 @@ function EnrollPageContent() {
   return (
     <div className="space-y-8">
       <FormStepper
-        steps={['Enroll', 'Contribute', 'Agreements']}
+        steps={['Enroll', 'Contribute']}
         currentStep={1}
       />
 
