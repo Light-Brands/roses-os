@@ -523,9 +523,12 @@ export const brandQuotes: BrandQuote[] = [
 // =============================================================================
 
 export const messagingPillars = [
-  { id: '1', title: 'The Rose', description: 'A sacred technology of remembrance and a systematic practice for reconnecting with the intelligence that lives within.' },
-  { id: '2', title: 'The Aura', description: 'The energetic body and its role in coherence, where subtle awareness becomes a practical capacity for daily living.' },
-  { id: '3', title: 'The Human Journey', description: 'The recognition that every life is a journey of return, and that this journey is supported, not solitary.' },
+  { id: '1', title: 'The Rose', description: 'It dissolves distortion and restores coherence. Inner awareness expands, presence and stability deepen. From this state, intuition sharpens, leadership rises, and connection becomes natural.' },
+  { id: '2', title: 'Aura', description: 'When heart aligns with soul, you perceive subtle senses and the energy shaping your choices. Each reading is a mirror, strengthening clarity, relationships, and service.' },
+  { id: '3', title: 'Human Journey', description: 'Emotional patterns and imprints dissolve, freed across mental and energetic layers. Love reveals itself as a self-organizing intelligence.' },
+  { id: '4', title: 'Intuition', description: 'You learn to listen to truth with clarity and simplicity. Limiting beliefs and unconscious patterns dissolve. Your decisions become aligned, precise, and guided.' },
+  { id: '5', title: 'Leadership', description: 'It deepens your capacity to feel, support, and relate. Leadership rooted in coherence, empowerment, and trust. You read your own field and the energy around you with discernment and self-mastery.' },
+  { id: '6', title: 'Your Highest Potential', description: 'You access the brilliance of your original design. You live your life from pure integrity. These belong to every human who remembers who they are.' },
 ];
 
 // =============================================================================
