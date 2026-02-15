@@ -173,3 +173,13 @@ export interface Stat {
   value: string;
   label: string;
 }
+
+/** Ongoing community program or activity */
+export interface CommunityProgram {
+  id: string;
+  title: string;
+  description: string;
+  schedule?: string;
+  audience?: string;
+  free: boolean;
+}

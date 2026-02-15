@@ -5,6 +5,7 @@ export type {
   PathLevel, LineageEntry,
   ArchitectureLayer, Chakra, Technique, TeachingLevel,
   Agreement, Capacity, MessagingPillar, BrandQuote, Stat,
+  CommunityProgram,
 } from './types';
 
 export {
@@ -27,4 +28,6 @@ export {
   elevenCapacities,
   brandQuotes,
   messagingPillars,
+  freePrograms,
+  paidPrograms,
 } from './mock-data';
