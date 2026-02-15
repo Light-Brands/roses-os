@@ -345,7 +345,7 @@ export default function GuardiansPage() {
                         'hover:decoration-[var(--color-foreground-faint)]'
                       )}
                     >
-                      Philosophical Foundation
+                      Di&apos;s Letter: Philosophical Foundation
                     </button>
                   </div>
                 )}
