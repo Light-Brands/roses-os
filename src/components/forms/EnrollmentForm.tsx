@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { programs } from '@/lib/data';
 
 interface EnrollmentFormData {
   name: string;
@@ -23,22 +24,17 @@ const inputStyles = cn(
   'transition-all duration-200'
 );
 
-const program = {
-  id: 'the-rose-aura-1',
-  title: 'The Rose + Aura 1',
-  subtitle: 'Complete Immersion -- 11 days',
-};
-
 export function EnrollmentForm({ onSubmit, className }: EnrollmentFormProps) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [selectedProgram, setSelectedProgram] = useState(programs[0].id);
 
   const isValid = name.trim() !== '' && email.trim() !== '';
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!isValid) return;
-    onSubmit({ name: name.trim(), email: email.trim(), program: program.id });
+    onSubmit({ name: name.trim(), email: email.trim(), program: selectedProgram });
   }
 
   return (
@@ -87,25 +83,35 @@ export function EnrollmentForm({ onSubmit, className }: EnrollmentFormProps) {
         />
       </div>
 
-      {/* Program */}
-      <div className="space-y-2">
-        <span className="block text-sm font-medium text-[var(--color-foreground-subtle)]">
+      {/* Program Selection */}
+      <fieldset className="space-y-3">
+        <legend className="block text-sm font-medium text-[var(--color-foreground-subtle)]">
           Program
-        </span>
-        <div
-          className={cn(
-            'rounded-xl border p-4',
-            'border-[var(--color-rose-clay)] bg-[var(--color-rose-50)] shadow-[var(--shadow-rose)]'
-          )}
-        >
-          <span className="block font-medium text-[var(--color-foreground)]">
-            {program.title}
-          </span>
-          <span className="text-sm text-[var(--color-foreground-muted)]">
-            {program.subtitle}
-          </span>
-        </div>
-      </div>
+        </legend>
+        {programs.map((program) => {
+          const isSelected = selectedProgram === program.id;
+          return (
+            <button
+              key={program.id}
+              type="button"
+              onClick={() => setSelectedProgram(program.id)}
+              className={cn(
+                'w-full rounded-xl border p-4 text-left transition-all duration-200',
+                isSelected
+                  ? 'border-[var(--color-rose-clay)] bg-[var(--color-rose-50)] shadow-[var(--shadow-rose)]'
+                  : 'border-[var(--color-border)] bg-[var(--color-background-elevated)] hover:border-[var(--color-rose-clay)]/50'
+              )}
+            >
+              <span className="block font-medium text-[var(--color-foreground)]">
+                {program.title}
+              </span>
+              <span className="text-sm text-[var(--color-foreground-muted)]">
+                {program.subtitle} — {program.duration} · {program.dates}
+              </span>
+            </button>
+          );
+        })}
+      </fieldset>
 
       {/* Submit */}
       <motion.button
