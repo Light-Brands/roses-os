@@ -265,6 +265,12 @@ export default function TheRosePage() {
         </div>
       </section>
 
+      {/* Quote — Aura */}
+      <QuoteBlock
+        quote="The aura is not just about colors. It contains all the information about who you truly are. You just need to learn how to see it."
+        variant="fullbleed"
+      />
+
       {/* 7. What This Journey Awakens in You */}
       <section className="section-padding">
         <div className="container-premium max-w-5xl mx-auto">
