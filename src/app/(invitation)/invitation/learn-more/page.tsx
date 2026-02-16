@@ -196,28 +196,16 @@ function ReadyCTA() {
             initial={{ opacity: 0, y: 24 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2, ease }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="flex items-center justify-center"
           >
             <Link
-              href="/enroll"
+              href="/offerings"
               className={cn(
                 'inline-flex items-center px-8 py-3.5 rounded-full',
                 'bg-warm-50 text-[var(--color-section-dark)]',
                 'text-sm font-medium',
                 'hover:bg-warm-100',
                 'transition-colors duration-200'
-              )}
-            >
-              Enroll Now
-            </Link>
-            <Link
-              href="/offerings"
-              className={cn(
-                'px-8 py-3.5 rounded-full',
-                'border-2 border-white/30 text-white',
-                'text-sm font-medium',
-                'hover:border-white/60 hover:bg-white/5',
-                'transition-all duration-200'
               )}
             >
               View Offerings
