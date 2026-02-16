@@ -64,8 +64,6 @@ function OfferingsContent() {
   const [selectedProgramId, setSelectedProgramId] = useState<string | null>(
     null
   );
-  const [showContribution, setShowContribution] = useState(false);
-
   const gridRef = useRef<HTMLElement>(null);
   const gridInView = useInView(gridRef, { once: true, margin: '-100px' });
 
@@ -79,13 +77,9 @@ function OfferingsContent() {
 
   const handleProgramClick = (id: string) => {
     if (selectedProgramId === id) {
-      // Clicking the same program collapses everything
       setSelectedProgramId(null);
-      setShowContribution(false);
     } else {
-      // Select a new program, reset contribution
       setSelectedProgramId(id);
-      setShowContribution(false);
     }
   };
 
@@ -176,129 +170,74 @@ function OfferingsContent() {
                           />
                         </div>
 
-                        {/* View Contribution button */}
-                        <AnimatePresence>
-                          {!showContribution && (
-                            <motion.div
-                              initial={{ opacity: 0, y: 12 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              exit={{ opacity: 0, y: -8 }}
-                              transition={{ duration: 0.3, ease }}
-                              className="flex justify-center py-4"
-                            >
-                              <button
-                                type="button"
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  setShowContribution(true);
-                                }}
-                                className={cn(
-                                  'inline-flex items-center gap-2 px-8 py-3.5 rounded-full',
-                                  'border-2 border-[var(--color-rose-clay)] text-[var(--color-rose-clay)]',
-                                  'text-sm font-medium',
-                                  'hover:bg-[var(--color-rose-clay)] hover:text-[var(--color-foreground-on-rose)]',
-                                  'transition-all duration-200',
-                                  'shadow-sm hover:shadow-md'
-                                )}
-                              >
-                                View Contribution
-                                <svg
-                                  className="w-4 h-4"
-                                  fill="none"
-                                  viewBox="0 0 24 24"
-                                  stroke="currentColor"
-                                  strokeWidth={2}
-                                >
-                                  <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M19 9l-7 7-7-7"
-                                  />
-                                </svg>
-                              </button>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-
                         {/* Contribution section */}
-                        <AnimatePresence>
-                          {showContribution && (
-                            <motion.div
-                              initial={{ opacity: 0, y: 24 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              exit={{ opacity: 0, y: -12 }}
-                              transition={{ duration: 0.5, ease }}
-                            >
-                              <div className="pt-6 pb-4">
-                                <p className="label-sacred mb-3">
-                                  Contribution
-                                </p>
-                                <h3 className="font-serif text-[clamp(1.25rem,3vw,2rem)] leading-tight tracking-tight mb-3">
-                                  Income-Based Model
-                                </h3>
-                                <p className="text-base text-[var(--color-foreground-muted)] leading-relaxed mb-8 max-w-2xl">
-                                  We believe this work should be accessible to
-                                  everyone who is called. Our income-based
-                                  contribution model ensures that your financial
-                                  season is honored while sustaining the
-                                  ecosystem for all.
-                                </p>
-                                <ContributionTiers tiers={programTiers[program.id] || contributionTiers} />
-                                <p className="text-sm text-[var(--color-foreground-muted)] leading-relaxed mt-6 text-center italic">
-                                  Repeating a class? Your contribution is 50% of the original price.
-                                </p>
-                              </div>
+                        <div className="pt-6 pb-4">
+                          <p className="label-sacred mb-3">
+                            Contribution
+                          </p>
+                          <h3 className="font-serif text-[clamp(1.25rem,3vw,2rem)] leading-tight tracking-tight mb-3">
+                            Income-Based Model
+                          </h3>
+                          <p className="text-base text-[var(--color-foreground-muted)] leading-relaxed mb-8 max-w-2xl">
+                            We believe this work should be accessible to
+                            everyone who is called. Our income-based
+                            contribution model ensures that your financial
+                            season is honored while sustaining the
+                            ecosystem for all.
+                          </p>
+                          <ContributionTiers tiers={programTiers[program.id] || contributionTiers} />
+                          <p className="text-sm text-[var(--color-foreground-muted)] leading-relaxed mt-6 text-center italic">
+                            Repeating a class? Your contribution is 50% of the original price.
+                          </p>
+                        </div>
 
-                              {/* Enroll CTA */}
-                              <motion.div
-                                initial={{ opacity: 0, y: 16 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{
-                                  duration: 0.5,
-                                  delay: 0.3,
-                                  ease,
-                                }}
-                                className="text-center py-10"
-                              >
-                                <h3 className="font-serif text-[clamp(1.25rem,3vw,2rem)] leading-tight tracking-tight mb-3">
-                                  Ready to Begin?
-                                </h3>
-                                <p className="text-base text-[var(--color-foreground-muted)] leading-relaxed mb-6 max-w-lg mx-auto">
-                                  If something in these words resonates, we
-                                  invite you to take the next step. Enrollment
-                                  is open and we are here to support your
-                                  journey.
-                                </p>
-                                <Link
-                                  href={`/enroll?program=${program.id}`}
-                                  className={cn(
-                                    'inline-flex items-center gap-2 px-8 py-3.5 rounded-full',
-                                    'bg-[var(--color-accent)] text-[var(--color-accent-foreground)]',
-                                    'text-sm font-medium',
-                                    'hover:bg-[var(--color-accent-hover)]',
-                                    'transition-all duration-200',
-                                    'shadow-sm hover:shadow-md'
-                                  )}
-                                >
-                                  Enroll Now
-                                  <svg
-                                    className="w-4 h-4"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                    strokeWidth={2}
-                                  >
-                                    <path
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                                    />
-                                  </svg>
-                                </Link>
-                              </motion.div>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
+                        {/* Enroll CTA */}
+                        <motion.div
+                          initial={{ opacity: 0, y: 16 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{
+                            duration: 0.5,
+                            delay: 0.3,
+                            ease,
+                          }}
+                          className="text-center py-10"
+                        >
+                          <h3 className="font-serif text-[clamp(1.25rem,3vw,2rem)] leading-tight tracking-tight mb-3">
+                            Ready to Begin?
+                          </h3>
+                          <p className="text-base text-[var(--color-foreground-muted)] leading-relaxed mb-6 max-w-lg mx-auto">
+                            If something in these words resonates, we
+                            invite you to take the next step. Enrollment
+                            is open and we are here to support your
+                            journey.
+                          </p>
+                          <Link
+                            href={`/enroll?program=${program.id}`}
+                            className={cn(
+                              'inline-flex items-center gap-2 px-8 py-3.5 rounded-full',
+                              'bg-[var(--color-accent)] text-[var(--color-accent-foreground)]',
+                              'text-sm font-medium',
+                              'hover:bg-[var(--color-accent-hover)]',
+                              'transition-all duration-200',
+                              'shadow-sm hover:shadow-md'
+                            )}
+                          >
+                            Enroll Now
+                            <svg
+                              className="w-4 h-4"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                              strokeWidth={2}
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"
+                              />
+                            </svg>
+                          </Link>
+                        </motion.div>
                       </motion.div>
                     )}
                   </AnimatePresence>

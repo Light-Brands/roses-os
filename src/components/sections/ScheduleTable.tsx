@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, useState } from 'react';
-import { motion, useInView, AnimatePresence } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { ScheduleStage } from '@/lib/data/types';
@@ -26,15 +26,6 @@ export default function ScheduleTable({ stages, className }: ScheduleTableProps)
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
   const [timezone, setTimezone] = useState<TimezoneKey>('newYork');
-  const [openStages, setOpenStages] = useState<string[]>(
-    stages.length > 0 ? [stages[0].id] : []
-  );
-
-  const toggleStage = (id: string) => {
-    setOpenStages((prev) =>
-      prev.includes(id) ? prev.filter((s) => s !== id) : [...prev, id]
-    );
-  };
 
   return (
     <motion.div
@@ -76,125 +67,87 @@ export default function ScheduleTable({ stages, className }: ScheduleTableProps)
         </div>
       </div>
 
-      {/* Stages accordion */}
+      {/* Stages — all shown open */}
       <div className="space-y-3">
-        {stages.map((stage) => {
-          const isOpen = openStages.includes(stage.id);
+        {stages.map((stage) => (
+          <div
+            key={stage.id}
+            className={cn(
+              'border border-[var(--color-border)] rounded-xl overflow-hidden',
+              'bg-[var(--color-background-elevated)]',
+              'shadow-[var(--shadow-md)]'
+            )}
+          >
+            {/* Stage header */}
+            <div className="px-5 py-4 md:px-6 md:py-5">
+              <h3 className="font-serif text-lg md:text-xl text-[var(--color-foreground)] tracking-tight">
+                {stage.title}
+              </h3>
+              <p className="text-sm text-[var(--color-foreground-faint)] mt-0.5">
+                {stage.dateRange}
+              </p>
+            </div>
 
-          return (
-            <div
-              key={stage.id}
-              className={cn(
-                'border border-[var(--color-border)] rounded-xl overflow-hidden',
-                'bg-[var(--color-background-elevated)]',
-                'transition-shadow duration-300',
-                isOpen && 'shadow-[var(--shadow-md)]'
-              )}
-            >
-              {/* Stage header */}
-              <button
-                type="button"
-                onClick={() => toggleStage(stage.id)}
-                aria-expanded={isOpen}
-                className={cn(
-                  'flex w-full items-center justify-between',
-                  'px-5 py-4 md:px-6 md:py-5',
-                  'text-left',
-                  'hover:bg-[var(--color-background-subtle)]',
-                  'transition-colors duration-200',
-                  'focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--color-rose-clay)]'
-                )}
-              >
-                <div>
-                  <h3 className="font-serif text-lg md:text-xl text-[var(--color-foreground)] tracking-tight">
-                    {stage.title}
-                  </h3>
-                  <p className="text-sm text-[var(--color-foreground-faint)] mt-0.5">
-                    {stage.dateRange}
-                  </p>
-                </div>
-                <motion.span
-                  animate={{ rotate: isOpen ? 180 : 0 }}
-                  transition={{ duration: 0.2, ease: 'easeOut' }}
-                  className="shrink-0 ml-4"
-                >
-                  <ChevronDown className="w-5 h-5 text-[var(--color-foreground-faint)]" />
-                </motion.span>
-              </button>
+            {/* Sessions content */}
+            <div className="px-5 pb-5 md:px-6 md:pb-6">
+              {/* Table header – hidden on mobile, shown on md+ */}
+              <div className="hidden md:grid grid-cols-[1.5fr_1fr_1.5fr] gap-4 pb-3 mb-3 border-b border-[var(--color-border-subtle)]">
+                <span className="label-sacred">Day</span>
+                <span className="label-sacred">Duration</span>
+                <span className="label-sacred">Time</span>
+              </div>
 
-              {/* Sessions content */}
-              <AnimatePresence initial={false}>
-                {isOpen && (
+              {/* Session rows */}
+              <div className="space-y-2">
+                {stage.sessions.map((session, idx) => (
                   <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.25, ease: 'easeOut' }}
-                    className="overflow-hidden"
+                    key={idx}
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{
+                      duration: 0.3,
+                      delay: idx * 0.04,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
+                    className={cn(
+                      'py-2.5 text-sm',
+                      idx < stage.sessions.length - 1 &&
+                        'border-b border-[var(--color-border-subtle)]'
+                    )}
                   >
-                    <div className="px-5 pb-5 md:px-6 md:pb-6">
-                      {/* Table header – hidden on mobile, shown on md+ */}
-                      <div className="hidden md:grid grid-cols-[1.5fr_1fr_1.5fr] gap-4 pb-3 mb-3 border-b border-[var(--color-border-subtle)]">
-                        <span className="label-sacred">Day</span>
-                        <span className="label-sacred">Duration</span>
-                        <span className="label-sacred">Time</span>
+                    {/* Mobile layout: stacked rows */}
+                    <div className="md:hidden">
+                      <div className="flex items-baseline justify-between gap-3">
+                        <span className="text-[var(--color-foreground-subtle)] font-medium">
+                          {session.day}
+                        </span>
+                        <span className="text-[var(--color-foreground-muted)] shrink-0">
+                          {session.duration}
+                        </span>
                       </div>
+                      <p className="text-[var(--color-foreground-faint)] tabular-nums text-xs mt-1">
+                        {session.time[timezone]}
+                      </p>
+                    </div>
 
-                      {/* Session rows */}
-                      <div className="space-y-2">
-                        {stage.sessions.map((session, idx) => (
-                          <motion.div
-                            key={idx}
-                            initial={{ opacity: 0, y: 8 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{
-                              duration: 0.3,
-                              delay: idx * 0.04,
-                              ease: [0.16, 1, 0.3, 1],
-                            }}
-                            className={cn(
-                              'py-2.5 text-sm',
-                              idx < stage.sessions.length - 1 &&
-                                'border-b border-[var(--color-border-subtle)]'
-                            )}
-                          >
-                            {/* Mobile layout: stacked rows */}
-                            <div className="md:hidden">
-                              <div className="flex items-baseline justify-between gap-3">
-                                <span className="text-[var(--color-foreground-subtle)] font-medium">
-                                  {session.day}
-                                </span>
-                                <span className="text-[var(--color-foreground-muted)] shrink-0">
-                                  {session.duration}
-                                </span>
-                              </div>
-                              <p className="text-[var(--color-foreground-faint)] tabular-nums text-xs mt-1">
-                                {session.time[timezone]}
-                              </p>
-                            </div>
-
-                            {/* Desktop layout: 3-column grid */}
-                            <div className="hidden md:grid grid-cols-[1.5fr_1fr_1.5fr] gap-4">
-                              <span className="text-[var(--color-foreground-subtle)] font-medium">
-                                {session.day}
-                              </span>
-                              <span className="text-[var(--color-foreground-muted)]">
-                                {session.duration}
-                              </span>
-                              <span className="text-[var(--color-foreground-faint)] tabular-nums whitespace-nowrap">
-                                {session.time[timezone]}
-                              </span>
-                            </div>
-                          </motion.div>
-                        ))}
-                      </div>
+                    {/* Desktop layout: 3-column grid */}
+                    <div className="hidden md:grid grid-cols-[1.5fr_1fr_1.5fr] gap-4">
+                      <span className="text-[var(--color-foreground-subtle)] font-medium">
+                        {session.day}
+                      </span>
+                      <span className="text-[var(--color-foreground-muted)]">
+                        {session.duration}
+                      </span>
+                      <span className="text-[var(--color-foreground-faint)] tabular-nums whitespace-nowrap">
+                        {session.time[timezone]}
+                      </span>
                     </div>
                   </motion.div>
-                )}
-              </AnimatePresence>
+                ))}
+              </div>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
     </motion.div>
   );
