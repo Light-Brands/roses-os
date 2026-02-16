@@ -42,7 +42,7 @@ export default function EnrollPage() {
           className="flex justify-center pointer-events-none"
         >
           <Image
-            src="/page-images/page-contact.png"
+            src="/page-images/page-enroll.png"
             alt=""
             width={448}
             height={448}
