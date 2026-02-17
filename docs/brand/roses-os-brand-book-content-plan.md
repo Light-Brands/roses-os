@@ -77,13 +77,29 @@
 **What's still needed to write the full Brand Story:**
 
 - [x] ~~**The name origin**~~ -- COMPLETE. The Codex has beautiful, brand-book-ready etymology. This can go straight into the designed book as a 2-3 page spread.
-- [ ] **Angelina Ataíde's personal story** (Guardian of Lineage) -- How she encountered the work, what drew her in, the moment she knew she'd carry this lineage. 30+ years of devotion. She has trained thousands of students, therapists, and teachers across Brazil and Portugal. What drew her to merge spiritual wisdom with practical techniques?
-- [ ] **The "why now" moment** -- What made 2026 the right time to formalize this as ROSES OS? Was there a breaking point, a calling, a conversation? The lineage moved from CELARIS (formerly Escola da Aura & Sueños) to ROSES OS -- what triggered that evolution?
-- [ ] **Diego, Dara, Peggy's entry** -- How did each Guardian find this work? Diego (Guardian of Architecture & Structure) bridges spirit and structure. Dara (Guardian of Community & Programs) has over a decade on the aura reading path. Peggy (Guardian of Methodology) has 20+ years on the aura reading path. Brief moments of encounter, not resumes.
-- [ ] **The 30+ years / 500+ practitioners / 50+ countries** -- These live stats tell a story. How did it grow from California in the 1960s to 50+ countries today? What was the path?
-- [ ] **The emotional arc** -- What was broken in the world that this was the answer to? What did the founders see that others didn't?
+- [ ] **Angelina Ataíde's personal story** -- see Founder Interview Questions below
+- [ ] **The "why now" moment** -- see Founder Interview Questions below
+- [ ] **Diego, Dara, Peggy's entry** -- see Founder Interview Questions below
+- [ ] **The growth arc** (30+ years, 500+ practitioners, 50+ countries) -- see Founder Interview Questions below
 
 **Tone direction:** Written like a quiet origin myth. Think: "There was a time when..." -- grounded, reverent, alive.
+
+### Founder Interview Questions
+
+These questions are designed to unlock the Brand Story. They can be answered in conversation, voice memo, or writing -- whatever feels most natural. The answers will be shaped into a 2-4 page origin narrative for the brand book.
+
+#### For Angelina Ataíde (Guardian of Lineage)
+
+When did you first encounter this work, and what did it feel like? Was there a single moment when you knew this was yours to carry -- and what was happening in your life at that time? Over 30 years you have trained thousands of students, therapists, and teachers across Brazil and Portugal; what kept you going in the early years, before there was a community around this? What does it mean to you to merge spiritual wisdom with practical techniques -- was that always your intention, or did it reveal itself over time? The lineage moved from Lewis Bostwick through the Berkeley Psychic Institute, through Anastasia Plunk, to you -- what did you receive from those who came before, and what did you add that is yours alone? When did you first sense that this work was ready to become something larger than CELARIS -- that it was time for ROSES OS to be born?
+
+#### For All Four Guardians (can be answered individually or together)
+
+What is the moment you remember most clearly from your own journey with this work -- the one that confirmed you were on the right path? ROSES OS launched in 2026 after decades of this lineage being carried through CELARIS (formerly Escola da Aura & Sueños). What shifted? What made this the right moment to give it a new form, a new name, a new architecture? The work has reached 500+ practitioners across 50+ countries. How did that happen -- was it intentional growth, or did people simply find it? What is the one thing about ROSES OS you wish everyone understood immediately? Diego, you bridge spirit and structure -- what does that mean in practice, and when did you know that was your role here? Dara, you hold community and programs -- what does it feel like to hold space for others on this path, and what drew you to this work over a decade ago? Peggy, you have walked the aura reading path for 20+ years -- what has changed in you over that time, and what has remained the same? If the brand story is a single arc -- from the 1960s in California to today -- what is that arc about? What is being remembered?
+
+**Decisions needed:**
+- [ ] Who will conduct or facilitate these conversations?
+- [ ] Format: recorded conversation, written responses, or voice memos?
+- [ ] Timeline: when can these be gathered?
 
 **Zunya reference (page 65):**
 > "Zunya derives from the Sanskrit language and means Nothingness, Zero, the emptiness of the void where everything starts and where everything shall return, the space of Co Creation."
