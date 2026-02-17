@@ -3,20 +3,124 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
+import { freePrograms, paidPrograms } from '@/lib/data';
+import type { CommunityProgram } from '@/lib/data';
 
 import PageHero from '@/components/sections/PageHero';
 import InvitationCTA from '@/components/sections/InvitationCTA';
 
 // =============================================================================
-// COMMUNITY PAGE
+// EASE CONSTANT
+// =============================================================================
+
+const ease = [0.16, 1, 0.3, 1] as const;
+
+// =============================================================================
+// ACTIVITY CARD
+// =============================================================================
+
+function ActivityCard({
+  program,
+  index,
+  inView,
+}: {
+  program: CommunityProgram;
+  index: number;
+  inView: boolean;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.5, delay: index * 0.1, ease }}
+      className={cn(
+        'rounded-2xl p-6 sm:p-8',
+        'bg-gradient-to-b from-rose-50/80 to-[var(--color-background)]',
+        'dark:from-rose-950/30 dark:to-[var(--color-background)]',
+        'border border-rose-200/50 dark:border-rose-800/20',
+        'hover:border-rose-300 dark:hover:border-rose-700/40',
+        'hover:shadow-lg hover:shadow-rose-500/5',
+        'transition-all duration-500'
+      )}
+    >
+      <h3 className="font-serif text-[clamp(1.15rem,2.5vw,1.5rem)] leading-tight tracking-tight mb-3 text-[var(--color-foreground)]">
+        {program.title}
+      </h3>
+      <div className="text-[var(--color-foreground-muted)] leading-relaxed text-sm sm:text-base mb-4 space-y-3">
+        {program.description.split('\n\n').map((paragraph, i) => (
+          <p key={i}>{paragraph}</p>
+        ))}
+      </div>
+      <div className="flex flex-wrap gap-3">
+        {program.schedule && (
+          <span
+            className={cn(
+              'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium',
+              'bg-rose-100/80 dark:bg-rose-900/30',
+              'text-rose-700 dark:text-rose-300',
+              'border border-rose-200/60 dark:border-rose-800/30'
+            )}
+          >
+            <svg
+              className="w-3.5 h-3.5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 6v6l4 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            {program.schedule}
+          </span>
+        )}
+        {program.audience && (
+          <span
+            className={cn(
+              'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium',
+              'bg-[#9E956B]/10 dark:bg-[#9E956B]/15',
+              'text-[#7A7352] dark:text-[#C4BA8A]',
+              'border border-[#9E956B]/20 dark:border-[#9E956B]/25'
+            )}
+          >
+            <svg
+              className="w-3.5 h-3.5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+            {program.audience}
+          </span>
+        )}
+      </div>
+    </motion.div>
+  );
+}
+
+// =============================================================================
+// COMMUNITY PAGE (consolidated: vision + programs & activities)
 // =============================================================================
 
 export default function CommunityPage() {
   const visionRef = useRef<HTMLElement>(null);
   const visionInView = useInView(visionRef, { once: true, margin: '-100px' });
 
-  const participateRef = useRef<HTMLElement>(null);
-  const participateInView = useInView(participateRef, { once: true, margin: '-100px' });
+  const freeRef = useRef<HTMLElement>(null);
+  const freeInView = useInView(freeRef, { once: true, margin: '-100px' });
+
+  const paidRef = useRef<HTMLElement>(null);
+  const paidInView = useInView(paidRef, { once: true, margin: '-100px' });
 
   return (
     <>
@@ -24,7 +128,7 @@ export default function CommunityPage() {
       <PageHero
         eyebrow="Community"
         title="The Living Field"
-        description="A network of practitioners devoted to coherent living. Supporting one another in the remembrance of what is real, what is true, and what is possible."
+        description="A network of practitioners devoted to coherent living. Ongoing gatherings, practices, and programs that nourish the field and support your journey."
         image="/page-images/page-community.png"
       />
 
@@ -34,7 +138,7 @@ export default function CommunityPage() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={visionInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.6, ease }}
             className="label-sacred mb-6"
           >
             Our Vision
@@ -42,7 +146,7 @@ export default function CommunityPage() {
           <motion.h2
             initial={{ opacity: 0, y: 24 }}
             animate={visionInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.6, delay: 0.1, ease }}
             className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-6"
           >
             For Those Called to Coherent Living
@@ -50,7 +154,7 @@ export default function CommunityPage() {
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={visionInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.6, delay: 0.2, ease }}
             className="text-lg text-[var(--color-foreground-muted)] leading-relaxed space-y-6"
           >
             <p>
@@ -74,53 +178,130 @@ export default function CommunityPage() {
         </div>
       </section>
 
-      {/* 3. How to Participate */}
-      <section ref={participateRef} className="section-padding">
+      {/* 3. Free Activities */}
+      <section ref={freeRef} className="section-padding">
         <div className="container-premium max-w-3xl mx-auto">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            animate={participateInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            animate={freeInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, ease }}
             className="label-sacred mb-6"
           >
-            How to Participate
+            Free Activities
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 24 }}
-            animate={participateInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-6"
+            animate={freeInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.1, ease }}
+            className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-4"
           >
-            Join Through Practice
+            Open to All
           </motion.h2>
-          <motion.div
+          <motion.p
             initial={{ opacity: 0, y: 24 }}
-            animate={participateInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-lg text-[var(--color-foreground-muted)] leading-relaxed space-y-6"
+            animate={freeInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.15, ease }}
+            className="text-base text-[var(--color-foreground-muted)] leading-relaxed mb-8"
           >
-            <p>
-              The doorway into the community is through the programs. When you
-              enroll in The Rose or any of our offerings, you become part of a
-              living field of practitioners. From there, the community grows
-              organically, through shared practice, ongoing gatherings, and the
-              quiet bonds that form when people walk this path together.
+            These gatherings are offered freely as a gift to the community.
+            Whether you are new to the Rose field or a long-time practitioner,
+            there is a place for you here.
+          </motion.p>
+          <div className="space-y-4">
+            {freePrograms.map((program, i) => (
+              <ActivityCard
+                key={program.id}
+                program={program}
+                index={i}
+                inView={freeInView}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Continued Programs */}
+      <section ref={paidRef} className="section-padding">
+        <div className="container-premium max-w-3xl mx-auto">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={paidInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, ease }}
+            className="label-sacred mb-6"
+          >
+            Continued Programs
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 24 }}
+            animate={paidInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.1, ease }}
+            className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-4"
+          >
+            Deepening the Path
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 24 }}
+            animate={paidInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.15, ease }}
+            className="text-base text-[var(--color-foreground-muted)] leading-relaxed mb-8"
+          >
+            For those ready to go further, these programs offer sustained
+            practice, mentorship, and the opportunity to embody and share this
+            work at a deeper level.
+          </motion.p>
+          <div className="space-y-4">
+            {paidPrograms.map((program, i) => (
+              <ActivityCard
+                key={program.id}
+                program={program}
+                index={i}
+                inView={paidInView}
+              />
+            ))}
+          </div>
+
+          {/* CTA to Offerings */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={paidInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.4, ease }}
+            className="text-center mt-12"
+          >
+            <p className="text-base text-[var(--color-foreground-muted)] leading-relaxed mb-6 max-w-lg mx-auto">
+              Looking for our foundational courses? Explore The Rose + Aura 1
+              and Aura Reading Level 2 on our offerings page.
             </p>
-            <p>
-              If you feel called, we invite you to explore our{' '}
-              <Link
-                href="/offerings"
-                className="underline underline-offset-4 decoration-[var(--color-rose-clay)] hover:text-[var(--color-foreground)] transition-colors duration-200"
+            <Link
+              href="/offerings"
+              className={cn(
+                'inline-flex items-center gap-2 px-8 py-3.5 rounded-full',
+                'border-2 border-[var(--color-rose-clay)] text-[var(--color-rose-clay)]',
+                'text-sm font-medium',
+                'hover:bg-[var(--color-rose-clay)] hover:text-[var(--color-foreground-on-rose)]',
+                'transition-all duration-200',
+                'shadow-sm hover:shadow-md'
+              )}
+            >
+              View Current Offerings
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
               >
-                current offerings
-              </Link>{' '}
-              and find the offering that resonates with where you are right now.
-            </p>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </Link>
           </motion.div>
         </div>
       </section>
 
-      {/* 4. Invitation CTA */}
+      {/* 5. Invitation CTA */}
       <InvitationCTA />
     </>
   );
