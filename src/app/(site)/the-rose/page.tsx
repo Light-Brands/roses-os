@@ -116,8 +116,10 @@ export default function TheRosePage() {
         title="What the Rose Is"
       >
         <p>
-          The Rose is a simple, living inner technology. It restores awareness.
-          It restores coherence. It restores real choice.
+          The Rose is a simple, living inner technology.{' '}
+          <span className="font-medium text-[var(--color-foreground)]">It restores awareness.</span>{' '}
+          <span className="font-medium text-[var(--color-foreground)]">It restores coherence.</span>{' '}
+          <span className="font-medium text-[var(--color-foreground)]">It restores real choice.</span>
         </p>
         <p>
           It doesn&apos;t fight the noise and fragmentation. It quietly
