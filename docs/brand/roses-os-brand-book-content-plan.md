@@ -66,15 +66,19 @@
 
 **What it is:** A 1-2 page narrative telling the story of how ROSES OS came to exist. Not a timeline -- a living story written in the brand voice.
 
-**What you have now:** A brief lineage paragraph in brand-dna.md:
-> "Aura Reading emerged in the 1960s, in California, channeled by Lewis S. Bostwick..."
-> Lineage: Bostwick -> Plunk -> Angelina Ataide -> ROSES OS
+**What you have now:**
+- Brief lineage paragraph in brand-dna.md: Bostwick -> Plunk -> Angelina Ataíde -> ROSES OS
+- **FOUND: Full name origin in `docs/foundation/the-codex.md` (Section III: Etymology and Numerology)** -- this is rich, brand-book-ready content:
+  - **ROSES** = from *rosa* and *rhodon* -- "essence expressed outwardly, the invisible made perceivable, Spirit unfolding into form." Plural is essential: "not a single center, but a field. Not one authority, but many points of coherence." "It is not a flower. It is the archetype of conscious unfolding."
+  - **OS** = Operating System -- "the invisible structure that governs function: the logic beneath action, the architecture that sustains coherence within complexity." "Roses OS is not a meditation. It is the architecture through which remembrance becomes embodied."
+  - **Numerology**: R(9) O(6) S(1) E(5) S(1) O(6) S(1) = 29 -> 11 -> 2. The 11/2 signature = "the bridge archetype: heightened perception, illumination" resolving into "relationship, coherence through polarity."
+  - **Destiny**: "To function as a living bridge between inner coherence and collective culture. To restore symmetry not through authority, but through resonance."
 
-**What's needed to write it:**
+**What's still needed to write the full Brand Story:**
 
+- [x] ~~**The name origin**~~ -- COMPLETE. The Codex has beautiful, brand-book-ready etymology. This can go straight into the designed book as a 2-3 page spread.
 - [ ] **Angelina Ataíde's personal story** (Guardian of Lineage) -- How she encountered the work, what drew her in, the moment she knew she'd carry this lineage. 30+ years of devotion. She has trained thousands of students, therapists, and teachers across Brazil and Portugal. What drew her to merge spiritual wisdom with practical techniques?
 - [ ] **The "why now" moment** -- What made 2026 the right time to formalize this as ROSES OS? Was there a breaking point, a calling, a conversation? The lineage moved from CELARIS (formerly Escola da Aura & Sueños) to ROSES OS -- what triggered that evolution?
-- [ ] **The name origin** -- Why "ROSES"? Why "OS"? Is there a story behind choosing this specific name? (Zunya has: "derives from Sanskrit, means Nothingness, Zero, the emptiness of the void where everything starts")
 - [ ] **Diego, Dara, Peggy's entry** -- How did each Guardian find this work? Diego (Guardian of Architecture & Structure) bridges spirit and structure. Dara (Guardian of Community & Programs) has over a decade on the aura reading path. Peggy (Guardian of Methodology) has 20+ years on the aura reading path. Brief moments of encounter, not resumes.
 - [ ] **The 30+ years / 500+ practitioners / 50+ countries** -- These live stats tell a story. How did it grow from California in the 1960s to 50+ countries today? What was the path?
 - [ ] **The emotional arc** -- What was broken in the world that this was the answer to? What did the founders see that others didn't?
