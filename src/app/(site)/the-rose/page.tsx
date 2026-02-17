@@ -106,7 +106,7 @@ export default function TheRosePage() {
       <PageHero
         eyebrow="The Rose"
         title="When the Rose Awakens, Genius Awakens"
-        description="The Rose restores coherence across emotional, mental, and energetic systems — making intuition precise and presence sovereign. Simple and decentralized, it frees you from endless healing and returns you to natural alignment."
+        description="The Rose restores coherence across emotional, mental, and energetic systems, making intuition precise and presence sovereign. Simple and decentralized, it frees you from endless healing and returns you to natural alignment."
         image="/page-images/page-the-rose.png"
       />
 
@@ -120,7 +120,7 @@ export default function TheRosePage() {
           It restores coherence. It restores real choice.
         </p>
         <p>
-          It doesn&apos;t fight the noise and fragmentation — it quietly
+          It doesn&apos;t fight the noise and fragmentation. It quietly
           dissolves the conditions that keep chaos alive.
         </p>
       </RevealSection>
@@ -139,7 +139,7 @@ export default function TheRosePage() {
           </li>
           <li>
             <span className="font-medium text-[var(--color-foreground)]">
-              Do you feel coherent inside — if not, how can you restore it?
+              Do you feel coherent inside? If not, how can you restore it?
             </span>
           </li>
         </ol>
@@ -193,7 +193,7 @@ export default function TheRosePage() {
 
       {/* 5. You Feel It */}
       <QuoteBlock
-        quote="This journey is an invitation into intuition, presence, and truth — a gateway into the mystery of who you are and who you are becoming."
+        quote="This journey is an invitation into intuition, presence, and truth. A gateway into the mystery of who you are and who you are becoming."
         variant="fullbleed"
       />
 
@@ -204,7 +204,7 @@ export default function TheRosePage() {
           you to your essence.
         </p>
         <p>
-          Not techniques, but instruments of consciousness — reminding you
+          Not techniques, but instruments of consciousness, reminding you
           that you are the mountain, not the summit.
         </p>
         <p className="text-[var(--color-foreground)] font-medium">
@@ -227,7 +227,7 @@ export default function TheRosePage() {
               absorbing energies that don&apos;t belong to you.
             </p>
             <p>
-              Everyday, we are surrounded by energies — from people, memories,
+              Everyday, we are surrounded by energies: from people, memories,
               situations, environments, even our own thoughts. When we are
               unaware, these energies stick to us, creating confusion, heaviness,
               and programs that cloud who we truly are.

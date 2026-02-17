@@ -66,8 +66,25 @@ export const guardians: Guardian[] = [
 
 export const programs: Program[] = [
   {
+    id: '3',
+    title: 'The Rose',
+    subtitle: 'Level 1, 2, 3',
+    duration: '2 days',
+    dates: 'March 17–18, 2026',
+    format: 'Live online + recorded content',
+    description: 'An initiatic path to remember who you are. Through the simple yet powerful technology of the roses, you will learn how to cleanse and protect your Aura, so that you no longer live like a sponge, absorbing energies that don\u2019t belong to you.\n\nEveryday, we are surrounded by energies: from people, memories, situations, environments, even our own thoughts. When we are unaware, these energies stick to us, creating confusion, heaviness, and programs that cloud who we truly are. By cleansing and protecting your energy field, you begin to live in the presence of your own essence. You recover your vitality, raise your vibration, and create space for your soul to manifest with clarity and power.',
+    includes: [
+      '2 immersive days of live instruction',
+      'Rose Meditation',
+      'Two 3-hour sessions per day',
+      'Integration workbook',
+      'Private community access to classes and events',
+      'Multi-timezone support',
+    ],
+  },
+  {
     id: '1',
-    title: 'Aura 1',
+    title: 'Aura 1 + Rose',
     subtitle: 'General Aura Reading',
     duration: '11 days',
     dates: 'March 17–27, 2026',
@@ -96,23 +113,6 @@ export const programs: Program[] = [
       'Weekday classes and practice sessions (5 days)',
       'Daily Rose Meditation guidance',
       'Practice sessions (choose the time that suits you best)',
-      'Multi-timezone support',
-    ],
-  },
-  {
-    id: '3',
-    title: 'The Rose',
-    subtitle: 'Level 1, 2, 3',
-    duration: '2 days',
-    dates: 'March 17–18, 2026',
-    format: 'Live online + recorded content',
-    description: 'An initiatic path to remember who you are. Through the simple yet powerful technology of the roses, you will learn how to cleanse and protect your Aura, so that you no longer live like a sponge, absorbing energies that don\u2019t belong to you.\n\nEveryday, we are surrounded by energies \u2014 from people, memories, situations, environments, even our own thoughts. When we are unaware, these energies stick to us, creating confusion, heaviness, and programs that cloud who we truly are. By cleansing and protecting your energy field, you begin to live in the presence of your own essence. You recover your vitality, raise your vibration, and create space for your soul to manifest with clarity and power.',
-    includes: [
-      '2 immersive days of live instruction',
-      'Rose Meditation',
-      'Two 3-hour sessions per day',
-      'Integration workbook',
-      'Private community access to classes and events',
       'Multi-timezone support',
     ],
   },
@@ -373,7 +373,7 @@ export const pathLevels: PathLevel[] = [
     level: 5,
     title: 'Aura 2',
     subtitle: 'Thematic Aura Reading',
-    description: 'Aura 2 is the level where your reading gains direction, since you learn how to create new focused paths inside the reading, choosing where to look with clarity and intention. Where the General Aura Reading opens the field so Spirit can show what is most important in the moment, the thematic reading allows you to focus on a specific aspect of someone\'s life and explore it with depth and intention. This course teaches you to anchor the reading in a specific topic — work, relationships, health, abundance, expression, purpose, or any theme alive in the moment — and to follow its energetic thread with confidence. Here, you learn mastery of focus and also gain empowered movement inside the aura, with new technologies that allow you navigating through layers of consciousness to understand how to work with a theme inside the Aura Reading. It is the level where you begin to explore the aura exactly where the question lives — and discover the depth that becomes available when you know how to focus your attention.',
+    description: 'Aura 2 is the level where your reading gains direction, since you learn how to create new focused paths inside the reading, choosing where to look with clarity and intention. Where the General Aura Reading opens the field so Spirit can show what is most important in the moment, the thematic reading allows you to focus on a specific aspect of someone\'s life and explore it with depth and intention. This course teaches you to anchor the reading in a specific topic (work, relationships, health, abundance, expression, purpose, or any theme alive in the moment) and to follow its energetic thread with confidence. Here, you learn mastery of focus and also gain empowered movement inside the aura, with new technologies that allow you navigating through layers of consciousness to understand how to work with a theme inside the Aura Reading. It is the level where you begin to explore the aura exactly where the question lives, and discover the depth that becomes available when you know how to focus your attention.',
     focus: ['Theme readings', 'Refined clairvoyance', 'Advanced reading techniques', 'Deepened perception'],
   },
   {
@@ -509,7 +509,7 @@ export const architectureLayers: ArchitectureLayer[] = [
 // =============================================================================
 
 export const brandQuotes: BrandQuote[] = [
-  { id: '1', text: 'The next revolution is a revolution of remembrance.' },
+  { id: '1', text: 'The next revolution is a revolution of consciousness.' },
   { id: '2', text: 'A seamless path to inner freedom.' },
   { id: '3', text: 'You are whole. You are here. You are remembering.' },
   { id: '4', text: 'Coherence is something you return to.' },
@@ -538,7 +538,7 @@ export const freePrograms: CommunityProgram[] = [
   {
     id: 'hummingbirds',
     title: 'Hummingbirds',
-    description: 'A free weekly gathering open to everyone. A space to connect, practice, and nourish your inner world together with the community. No prior experience needed — just come as you are.',
+    description: 'A free weekly gathering open to everyone. A space to connect, practice, and nourish your inner world together with the community. No prior experience needed. Just come as you are.',
     schedule: 'Every Saturday, 10:30 AM – 11:30 AM (Costa Rica time)',
     free: true,
   },

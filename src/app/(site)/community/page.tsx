@@ -168,8 +168,8 @@ export default function CommunityPage() {
               exists because the journey home is supported, not solitary.
             </p>
             <p>
-              Coherence is the state in which all dimensions of being — body,
-              heart, mind, and soul — move as one integrated field. Not a concept
+              Coherence is the state in which all dimensions of being: body,
+              heart, mind, and soul, move as one integrated field. Not a concept
               to understand, but a reality to embody. We believe that coherence
               is contagious. That when one person remembers, it ripples through
               the field and touches everyone around them.
