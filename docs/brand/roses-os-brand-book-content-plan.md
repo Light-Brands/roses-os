@@ -28,9 +28,9 @@
 
 - Brand Essence & Definition
 - Mission & Vision
-- Brand Positioning (Is / Is Not)
+- Brand Positioning (affirmative -- what ROSES OS is)
 - Brand Personality & Archetype (Mystic Guide x Architect x Modern Oracle)
-- Voice & Tone (principles + avoidances)
+- Voice & Tone (principles and direction)
 - Messaging Pillars (5 pillars with statements)
 - Key Language & Vocabulary (full glossary)
 - The Two Core Questions
@@ -54,7 +54,7 @@
 | 3 | **Brand Values (standalone pages)** | Pages 33-38 (6 values, 1 page each) | Only conduct agreements exist; values not defined |
 | 4 | **Perpetual Actions** | Pages 39-49 (10 active principles) | Nothing exists |
 | 5 | **Brand Drivers** | Pages 51-53 (3 macro drivers) | Nothing exists |
-| 6 | **Consumer Perception** | Pages 54-57 (perceived as / avoid) | Partial in "Is/Is Not"; needs dedicated treatment |
+| 6 | **Brand Perception** | Pages 54-57 (how we are perceived) | Needs affirmative identity statement |
 | 7 | **Extended Audience Narrative** | Pages 62-63 (full-page prose) | List format exists; needs narrative depth |
 | 8 | **Brand Personality Sliders** | Pages 59-60 (slider scales) | Traits exist; slider positions needed |
 | 9 | **Photography Identity** | Pages 113-116 (style, mood, rules) | Brief bullets exist; needs full treatment |
@@ -64,7 +64,7 @@
 
 ## 1. Brand Story / Origin Narrative
 
-**What it is:** A 1-2 page narrative telling the story of how ROSES OS came to exist. Not a timeline -- a living story written in the brand voice.
+**What it is:** A 1-2 page narrative telling the story of how ROSES OS came to exist. A living story written in the brand voice -- quiet, mythic, grounded.
 
 **What you have now:**
 - Brief lineage paragraph in brand-dna.md: Bostwick -> Plunk -> Angelina Ataíde -> ROSES OS
@@ -83,7 +83,7 @@
 - [ ] **The 30+ years / 500+ practitioners / 50+ countries** -- These live stats tell a story. How did it grow from California in the 1960s to 50+ countries today? What was the path?
 - [ ] **The emotional arc** -- What was broken in the world that this was the answer to? What did the founders see that others didn't?
 
-**Tone direction:** Written like a quiet origin myth. Not corporate history. Think: "There was a time when..." Not: "Founded in 2026, ROSES OS..."
+**Tone direction:** Written like a quiet origin myth. Think: "There was a time when..." -- grounded, reverent, alive.
 
 **Zunya reference (page 65):**
 > "Zunya derives from the Sanskrit language and means Nothingness, Zero, the emptiness of the void where everything starts and where everything shall return, the space of Co Creation."
@@ -102,52 +102,47 @@
 **What it is:** A 2-4 page opening statement that sets the emotional and philosophical tone for the entire brand book. The first thing someone reads. It should feel like a declaration.
 
 **What you have now:** Strong manifesto-quality lines across docs AND the live site:
-- "Not as belief. As remembrance."
-- "This is not learning. This is remembering."
-- "When distortion dissolves, Genius awakens."
-- "You are the mountain, not the summit."
 - "Remember Who You Are" (live hero headline)
 - "The next revolution is a revolution of remembrance." (live site)
 - "Technologies of remembrance for those ready to live in coherence." (live sub-hero)
 - "What if the intelligence you seek is already within you, waiting to be remembered?" (live site)
+- "When the Rose awakens, Genius awakens."
+- "You are the mountain."
 - "The way is open. Welcome home." (live closing)
 
 **What's needed to write it:**
 
-- [ ] **A central "state of the world" framing** -- 2-3 sentences about the current moment. The acceleration. The noise. The tools that no longer work. (raw material exists in mission statement)
-- [ ] **The counter-statement** -- What ROSES OS offers in response. Not an argument, a quiet declaration.
-- [ ] **The closing invitation** -- A single sentence that pulls the reader in.
+- [ ] **An affirmative "state of the world" framing** -- 2-3 sentences about the current moment stated as truth, as opening, as readiness. The world is ready for something deeper.
+- [ ] **The declaration** -- What ROSES OS is. A quiet, sovereign statement of identity.
+- [ ] **The closing invitation** -- A single sentence that welcomes the reader in.
 
-**Tone direction:** Poetry meets purpose. Short sentences. Line breaks as breathing room. No explanations -- just truths.
+**Tone direction:** Poetry meets purpose. Short sentences. Line breaks as breathing room. Every line states what IS -- truths, affirmations, declarations. Speak from the center.
 
 **Draft structure (each as a designed spread, pulling from live copy):**
 
 ```
-Page 1: The state of things
-   "The world is moving faster than the tools we inherited."
+Page 1: The readiness
+   "The intelligence you seek is already within you,
+    waiting to be remembered."
 
-Page 2: The question
-   "What if the intelligence you seek is already within you,
-    waiting to be remembered?"
+Page 2: The technology
+   "There is a technology older than language. Simpler than strategy.
+    It restores the conditions where clarity becomes natural."
 
-Page 3: The technology
-   "There is a technology older than noise. Simpler than strategy.
-    It does not fight chaos. It dissolves the conditions that keep chaos alive."
-
-Page 4: The revolution
+Page 3: The revolution
    "The next revolution is a revolution of remembrance."
 
-Page 5: The awakening
+Page 4: The awakening
    "When the Rose awakens, Genius awakens."
 
-Page 6: The welcome
+Page 5: The welcome
    "Remember who you are.
     The way is open. Welcome home."
 ```
 
 **Decisions needed:**
 - [ ] Should the manifesto reference the lineage, or remain purely philosophical?
-- [ ] Should it name the audience ("For founders, creators, leaders...") or stay universal?
+- [ ] Should it name the audience ("For seekers, healers, teachers, leaders, creators...") or stay universal?
 
 ---
 
@@ -155,37 +150,37 @@ Page 6: The welcome
 
 **What it is:** 5-7 core values, each given a full page with: the value name, a subtitle/definition, and a 2-4 sentence description of what it means in practice.
 
-**What you have now:** Conduct agreements (punctuality, confidentiality, co-responsibility, trust, patience/empathy/compassion). These are community rules, not brand values. The "Is / Is Not" list gets closer but isn't framed as values.
+**What you have now:** Conduct agreements (punctuality, confidentiality, co-responsibility, trust, patience/empathy/compassion) -- these are community agreements. The brand values live implicitly throughout the documents but have never been named as standalone declarations.
 
 **What's needed to write it:**
 
-The brand DNA contains implicit values throughout the documents. These need to be extracted, named, and given standalone definitions. Below is a proposed set based on everything in your materials:
+The brand DNA contains clear values throughout. These need to be extracted, named, and given standalone definitions -- each written as an affirmation of what ROSES OS stands FOR.
 
 ### Proposed Values
 
 **1. SOVEREIGN PRESENCE**
 *Being fully here, in this body, in this moment.*
-Source: "The work asks for presence, not perfection." The entire system is built on cultivating presence as the foundation of everything.
+The entire system is built on cultivating presence as the ground of everything. Presence is where clarity lives, where truth is accessible, where genius awakens.
 
 **2. RADICAL SIMPLICITY**
 *Choosing the precise over the complex.*
-Source: "Simple, living inner technology." "Decentralized simplicity." The brand explicitly rejects complexity as a virtue.
+Simple, living inner technology. Decentralized simplicity. The most powerful instruments are the most precise -- and precision is elegant.
 
 **3. LIVING COHERENCE**
 *When inside aligns, outside follows.*
-Source: The central promise. "When coherence returns, life aligns." This is the core operating principle.
+The central promise. "When coherence returns, life aligns." This is the core operating principle -- the organizing intelligence of a life well-lived.
 
 **4. SACRED INTEGRITY**
 *Honoring the source, the lineage, and the truth of this work.*
-Source: Sacred use protocols. "This manual is a sacred companion." The work can't be taught casually -- it requires transmission.
+This work arrives through transmission. It is carried with reverence. Every teaching holds the frequency of those who came before.
 
 **5. QUIET DEVOTION**
-*Doing the work without performance. Returning daily without spectacle.*
-Source: "Modern devotion." "Calm authority." The anti-influencer-spirituality stance.
+*Returning daily. Practicing fully. Living the work.*
+Modern devotion. Calm authority. The kind of discipline that comes from love, the kind of consistency that comes from meaning.
 
 **6. HONEST AWARENESS**
-*Seeing what is, without decoration or defense.*
-Source: The Two Core Questions both begin with awareness. "No belief needed. Just honest awareness and presence."
+*Seeing what is, clearly and completely.*
+The Two Core Questions both begin with awareness. Awareness is the first instrument. Everything else follows from here.
 
 **Decisions needed:**
 - [ ] Review and approve/modify proposed values above
@@ -216,28 +211,28 @@ Source: The Two Core Questions both begin with awareness. "No belief needed. Jus
 The Zunya format uses "Active [noun]" with a description paragraph. For ROSES OS, the language should feel more like the brand voice -- quieter, more precise. Proposed naming: "Living [noun]" or simply the principle name.
 
 **1. LIVING REMEMBRANCE**
-We return. Every practice, every moment of awareness, is a return to what was always true. This is not accumulation -- it is uncovering.
+We return. Every practice, every moment of awareness, is a return to what was always true. Each session is an uncovering. Each day, a homecoming.
 
 **2. LIVING COHERENCE**
-We align. When inner systems are coherent, outer reality responds. We do not force outcomes -- we restore the conditions for clarity.
+We align. When inner systems are coherent, outer reality responds. We restore the conditions for clarity, and clarity organizes everything.
 
 **3. LIVING PRESENCE**
-We stay. In the room, in the body, in the moment. Presence is not a peak state -- it is the ground we stand on.
+We stay. In the room, in the body, in the moment. Presence is the ground we stand on. From here, everything becomes possible.
 
 **4. LIVING SOVEREIGNTY**
-We own our energy. We take responsibility for our inner state without projecting it onto others. Freedom begins with this.
+We own our energy. We take full responsibility for our inner state. Freedom begins here -- in the willingness to be whole.
 
 **5. LIVING SIMPLICITY**
-We strip away. What is not essential dissolves. Complexity is not depth -- simplicity is.
+We choose what is essential. Simplicity is depth. Precision is elegance. The most powerful instruments are the most direct.
 
 **6. LIVING TRANSMISSION**
-We honor the lineage. This work arrived through specific people, in specific moments. We carry it with precision and reverence.
+We honor the lineage. This work arrived through specific people, in specific moments. We carry it with precision and reverence, and pass it forward with care.
 
 **7. LIVING DEVOTION**
-We practice. Not when inspired -- always. The work is daily. The discipline is quiet. The commitment is whole.
+We practice daily. The work is quiet. The discipline is steady. The commitment is whole. Devotion is the rhythm of remembrance.
 
 **8. LIVING SERVICE**
-We give. When coherence is restored, the natural impulse is contribution. We serve from overflow, not obligation.
+We give. When coherence is restored, the natural impulse is contribution. We serve from fullness. We offer from truth.
 
 **Decisions needed:**
 - [ ] Review and approve/modify proposed actions above
@@ -257,47 +252,49 @@ We give. When coherence is restored, the natural impulse is contribution. We ser
 
 ### Proposed Drivers
 
-**1. INNER TECHNOLOGY FOR A NOISY WORLD**
-The tools we inherited -- productivity systems, cognitive frameworks, performance optimization -- were built for a simpler time. Life now moves faster than the mind can process. ROSES OS is the response: inner instruments precise enough for this moment.
+**1. INNER TECHNOLOGY FOR THIS MOMENT**
+Life moves fast. The inner instruments that serve this moment are simple, precise, and alive. ROSES OS is inner technology designed for the speed, complexity, and depth of modern life.
 
 **2. COHERENCE AS LEADERSHIP**
-The world doesn't need more strategies. It needs leaders who are coherent inside. When inner symmetry is restored, leadership becomes natural, creative, and sovereign.
+Leaders who are coherent inside create coherence around them. When inner symmetry is restored, leadership becomes natural, creative, and sovereign. The world is ready for this kind of leadership.
 
 **3. ACCESSIBLE CONSCIOUSNESS**
-These teachings have been transmitted through lineage for decades. ROSES OS makes them structured, available, and accessible -- without diluting their depth or sacred nature.
+These teachings have been transmitted through lineage for decades. ROSES OS makes them structured, available, and accessible -- honoring their depth and sacred nature while opening the door wider.
 
 **Decisions needed:**
 - [ ] Review and approve/modify proposed drivers
-- [ ] Are there macro-level forces the founders care about that aren't captured? (e.g., decentralization, anti-guru culture, family/parenting coherence)
+- [ ] Are there macro-level forces the founders care about that are also important? (e.g., decentralization, collective coherence, family/parenting, conscious prosperity)
 - [ ] Should drivers be presented visually (one word per page like Zunya) or with descriptions?
 
 ---
 
-## 6. Consumer Perception (How We Want to Be Seen)
+## 6. Brand Perception (How We Are Known)
 
-**What it is:** A two-column layout: "How do we want to be perceived?" vs "What do we want to avoid?" This forces clarity about brand positioning at the gut level.
+**What it is:** A single, clear statement of how ROSES OS is perceived in the world. Stated entirely in the affirmative -- who we are, how we feel, what we embody.
 
-**What you have now:** Partial. The "Is / Is Not" section covers this conceptually but isn't framed from the audience's perspective.
+**What you have now:** Partial. Brand positioning exists but needs to be consolidated into a perception identity page.
 
 **What's needed to write it:**
 
-### Draft
+### Draft -- We Are
 
-| HOW WE WANT TO BE PERCEIVED | WHAT WE WANT TO AVOID |
-|---|---|
-| A living inner technology | A wellness brand |
-| A modern sacred practice | A new-age program |
-| A remembrance ecosystem | A self-help course |
-| Calm, precise, grounding | Hype-driven, loud |
-| A lineage-based transmission | A guru personality |
-| An operating system for coherence | A healing modality |
-| A threshold you cross | A product you buy |
-| Sacred technology | Spiritual entertainment |
-| A temple (in digital form) | A marketplace |
+| ROSES OS IS |
+|---|
+| A living consciousness ecosystem |
+| A remembrance ecosystem |
+| Sacred technology for modern life |
+| A lineage-based transmission |
+| An operating system for coherence |
+| A threshold -- a doorway into presence |
+| A temple in digital form |
+| Calm. Precise. Grounding. |
+| A living field of sovereign beings remembering together |
+
+**Summary line:** "Technologies of remembrance for those ready to live in coherence."
 
 **Decisions needed:**
-- [ ] Review and refine both columns
-- [ ] Is there a single summary line? (Zunya: "Looking for ways to live in harmony with themselves, one another, and nature.")
+- [ ] Review and refine the identity statements
+- [ ] Is the summary line from the live site the right anchor, or is there a stronger one?
 
 ---
 
@@ -312,13 +309,13 @@ These teachings have been transmitted through lineage for decades. ROSES OS make
 
 **What's needed to write it:**
 
-### Draft (updated to match live voice)
+### Draft (affirmative voice, matching live site)
 
-> You have built something real. You lead, you create, you carry responsibility. But somewhere inside, you feel the gap between what you've achieved and who you actually are. The world rewards speed, strategy, and performance -- and you've excelled at all of them. But the tools that got you here can't take you where you're going.
+> You have built something real. You lead, you create, you carry responsibility. And somewhere inside, you sense something deeper -- the intelligence beneath all of it. The part of you that already knows.
 >
 > You sense there is more.
 >
-> You're not looking for another framework. You're not interested in hype. What you need isn't new -- it's something you forgot. A way home. A living path back to the intelligence that already lives within you.
+> You are ready for something essential. Something precise. A way home. A living path back to the intelligence that already lives within you, waiting to be remembered.
 >
 > You are ready to remember.
 
@@ -358,9 +355,9 @@ These teachings have been transmitted through lineage for decades. ROSES OS make
 
 ## 9. Photography Identity
 
-**What it is:** 2-4 pages defining the photographic style with clear adjectives, do/don't guidance, and mood direction. Zunya's: "Artistic, Natural, Simple/Classic, Realistic, Pleasurable/Calm, Inspiring, Authentic. Most photos shot at sunset or sunrise."
+**What it is:** 2-4 pages defining the photographic style with clear adjectives, mood direction, and scene guidance. Zunya's: "Artistic, Natural, Simple/Classic, Realistic, Pleasurable/Calm, Inspiring, Authentic. Most photos shot at sunset or sunrise."
 
-**What you have now:** Brief bullets (warm natural light, human presence, earth textures, quiet moments, authenticity over polish). Plus avoid list (neon spirituality, stock wellness cliches).
+**What you have now:** Brief bullets (warm natural light, human presence, earth textures, quiet moments, authenticity over polish).
 
 **What's needed to write it:**
 
@@ -381,23 +378,23 @@ These teachings have been transmitted through lineage for decades. ROSES OS make
 - Hands in practice (meditation, journaling, tea ceremony)
 - Earth textures close-up (clay, stone, linen, wood grain)
 - Natural light through windows, golden hour, morning quiet
-- Human presence without performance (eyes closed, seated, present)
-- Community in stillness (circles, shared meals, listening)
+- Human presence in presence (eyes closed, seated, fully there)
+- Community in stillness (circles, shared meals, deep listening)
 - Architecture of sacred spaces (clean lines, warm materials)
+- Nature as mirror (roots, water, stone, open sky)
 
 **Color Treatment:**
 - Warm tones, desaturated
-- Never over-saturated or neon
-- Earth palette should extend into photography
-- Black and white: selective, for emphasis
+- Earth palette extending into every image
+- Soft, lived-in warmth -- the feeling of linen and clay
+- Black and white: selective, for emphasis and reverence
 
-**What to Avoid:**
-- Posed wellness shots (yoga on cliff, smoothie smiles)
-- Stock photography (of any kind)
-- Artificial lighting
-- Busy, cluttered compositions
-- People looking at camera with "inspirational" expressions
-- Food photography that feels commercial
+**Photography Principles:**
+- Every image should feel authentic and present
+- Composition is spacious -- room to breathe
+- Light is always natural -- golden hour, morning quiet, soft window light
+- People are captured in real moments of presence
+- The feeling of the photograph matters as much as its content
 
 **Decisions needed:**
 - [ ] Do original photography assets exist yet, or is this aspirational?
@@ -462,7 +459,7 @@ The Rose has a natural three-part anatomy that maps to the ROSES OS brand:
 
 **What's needed:**
 - [ ] 1-page community philosophy statement for the brand book
-- [ ] How the community model reflects the brand (not a membership club -- a living field)
+- [ ] How the community model reflects the brand -- a living field of sovereign beings remembering together
 
 ---
 
@@ -475,7 +472,7 @@ The Rose has a natural three-part anatomy that maps to the ROSES OS brand:
 | 3 | Brand Values (x6) | 6 | Yes -- approval of proposed values | Drafts provided |
 | 4 | Perpetual Actions (x8) | 8-10 | Yes -- approval of proposed actions | Drafts provided |
 | 5 | Brand Drivers (x3) | 3-4 | Yes -- approval of proposed drivers | Drafts provided |
-| 6 | Consumer Perception | 1-2 | Light review | Draft provided |
+| 6 | Brand Perception | 1-2 | Light review | Draft provided |
 | 7 | Extended Audience Narrative | 1 | Review for resonance | Draft provided |
 | 8 | Personality Sliders | 1-2 | Approve positions | Positions proposed |
 | 9 | Photography Identity | 2-4 | Need photo assets or shoot plan | Direction provided |
