@@ -660,8 +660,8 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* 3D Rose Model — pulled up to sit close to text */}
-        <div className="relative w-full h-[38vh] sm:h-[42vh] md:h-[55vh] lg:h-[65vh] xl:h-[70vh] -mt-10 sm:-mt-14 md:-mt-16 lg:-mt-20 pointer-events-none">
+        {/* 3D Rose Model */}
+        <div className="relative w-full h-[38vh] sm:h-[42vh] md:h-[55vh] lg:h-[65vh] xl:h-[70vh] mt-2 sm:mt-0 md:-mt-4 lg:-mt-6 pointer-events-none">
           <HeroSphere />
         </div>
 
