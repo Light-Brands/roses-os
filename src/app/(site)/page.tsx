@@ -673,7 +673,7 @@ export default function Home() {
         </div>
 
         {/* 3D Rose Model */}
-        <div className="relative w-full h-[38vh] sm:h-[42vh] md:h-[50vh] lg:h-[55vh] xl:h-[60vh] mt-2 sm:mt-0 md:-mt-2 lg:-mt-4 pointer-events-none">
+        <div className="relative w-full h-[44vh] sm:h-[46vh] md:h-[50vh] lg:h-[55vh] xl:h-[60vh] mt-2 sm:mt-0 md:-mt-2 lg:-mt-4 pointer-events-none">
           <HeroSphere />
         </div>
 
