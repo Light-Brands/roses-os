@@ -624,6 +624,15 @@ export default function Home() {
             ready to live in coherence.
           </motion.p>
 
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={ready ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ delay: 1.35, duration: 0.6 }}
+            className="mt-4 text-base sm:text-lg text-[var(--color-foreground-muted)] max-w-xl leading-relaxed italic"
+          >
+            Become the source of leadership, creativity, sovereignty, and joy.
+          </motion.p>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={ready ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
