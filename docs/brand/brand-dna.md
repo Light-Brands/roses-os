@@ -1,6 +1,14 @@
 # ROSES OS -- Master Brand DNA
 
-> The Operating System of Remembrance
+> A Living Consciousness Ecosystem
+
+---
+
+## Source of Truth
+
+**The live website [rosesos.com](https://rosesos.com) is the canonical source of truth for all ROSES OS brand materials.** When any brand document conflicts with what is live on the site, the site wins. This includes: taglines, navigation structure, audience language, hero copy, guardian bios, community programs, and visual identity (colors, fonts, spacing).
+
+All brand documents -- including this one -- should be reviewed against the live site before being used in design production. This document was last audited against rosesos.com on **17 February 2026**.
 
 ---
 
@@ -61,6 +69,12 @@ ROSES OS exists to dissolve distortion and return people to truth.
 - Awakened leadership
 - Conscious prosperity
 - Intuitive clarity
+
+**Live Tagline (rosesos.com):** "A Living Consciousness Ecosystem"
+
+**Hero Headline (rosesos.com):** "Remember Who You Are"
+
+**Hero Sub-headline (rosesos.com):** "Technologies of remembrance for those ready to live in coherence."
 
 **Brand Statement:** ROSES OS is the operating system of coherence -- where intuition becomes precise and presence becomes sovereign.
 
@@ -147,13 +161,13 @@ These teachings are part of a living energetic lineage. They invite inner stilln
 
 Adults -- women and men -- especially:
 
-- Founders
-- Creators
-- Entrepreneurs
+- Seekers
 - Healers
+- Teachers
 - Leaders
-- Parents
-- Seekers of clarity
+- Creators
+
+> "For those who sense there is more" -- rosesos.com
 
 For those who feel the world accelerating and know the tools they inherited were not built for this moment.
 
@@ -372,14 +386,18 @@ graph TD
 
 ### Signature Phrases
 
-- "The Operating System of Remembrance"
+*Source: rosesos.com (live)*
+
+- "Remember Who You Are" *(hero headline)*
+- "A Living Consciousness Ecosystem" *(tagline)*
+- "Technologies of remembrance for those ready to live in coherence." *(sub-hero)*
+- "The next revolution is a revolution of remembrance." *(live site)*
+- "What if the intelligence you seek is already within you, waiting to be remembered?" *(live site)*
+- "The way is open. Welcome home." *(closing)*
 - "When the Rose awakens, Genius awakens"
 - "Not techniques, but instruments of consciousness"
 - "You are the mountain, not the summit"
-- "A frequency you cultivate"
 - "The Rose is not a path you follow. It is a frequency you remember."
-- "Remember who you are"
-- "Welcome home"
 
 ---
 
@@ -1069,29 +1087,33 @@ mindmap
 
 ## The Guardians
 
-### Angelina Ataide
+*Source: rosesos.com/guardians (live bios)*
 
-For over three decades, she has carried this lineage with unwavering devotion. Her presence opens a field of rare precision and depth, guiding thousands into clarity, safety, and sovereignty. She protects the essence of the Rose and reminds us that true mastery is lived, not taught.
+### Angelina Ataíde -- Guardian of Lineage
 
-### Diego Dosal
+Pioneer in aura reading education across Brazil and Portugal with over three decades dedicated to spiritual development and training aura readers. Her transformative methodology has trained thousands of students, therapists, and teachers, combining spiritual wisdom with practical techniques as the primary steward of the ROSES OS lineage.
 
-He bridges spirit and structure with common clarity. After years exploring multiple energetic paths, he recognized the Rose and Aura as the most powerful, simple, and accessible technologies to awaken Genius.
+### Diego Dosal -- Guardian of Architecture & Structure
 
-### Dara Ayoub
+Bridge between spirit and structure with over a decade of deep roots in multiple spiritual practice paths, energy work, and community building. Develops platforms, systems, and frameworks that harmonize intuition with strategy and build lasting foundations for the work.
 
-Rooted in the ways of embodiment and self-knowledge, she holds human expression and the work. She sustains programs, builds community and coherence, nurturing an environment where students feel held, guided, and safe.
+### Dara Ayoub -- Guardian of Community & Programs
 
-### Peggy Mar
+Walks the aura reading path for over a decade with background in multiple traditions of self-knowledge. Integrates body, mind, and spirit with reverence. Supports creation and delivery of programs and courses, blending intuitive listening with grounded clarity.
 
-She practices the pedagogical methods and integration, ensuring the teachings remain grounded and pure.
+### Peggy Mars -- Guardian of Methodology
+
+Creates bridges between cultures, communities, and inner worlds. Over two decades walking the aura reading path, integrating emotional, ancestral, and spiritual layers with clarity and compassion while sustaining authentic connection between teachers and students.
+
+> "Coherence is something you return to." -- Peggy Mars
 
 ```mermaid
 graph TD
     subgraph GUARDIANS["The Guardians"]
-        AA["Angelina Ataide<br/><i>Lineage holder — precision & sovereignty</i>"]
-        DD["Diego Dosal<br/><i>Spirit & structure — awakening Genius</i>"]
-        DA["Dara Ayoub<br/><i>Embodiment — community & coherence</i>"]
-        PM["Peggy Mar<br/><i>Pedagogy — grounded & pure</i>"]
+        AA["Angelina Ataíde<br/><i>Guardian of Lineage</i>"]
+        DD["Diego Dosal<br/><i>Guardian of Architecture & Structure</i>"]
+        DA["Dara Ayoub<br/><i>Guardian of Community & Programs</i>"]
+        PM["Peggy Mars<br/><i>Guardian of Methodology</i>"]
     end
 
     AA --> ROS((ROSES OS))
@@ -1729,11 +1751,11 @@ Motion should feel like breath.
 - Font: Inter Medium
 - No harsh shadows
 
-Text examples:
+Text examples (live on rosesos.com):
 
-- "Start Your Journey"
-- "Enter the Rose"
-- "Return to Coherence"
+- "Begin Your Journey"
+- "Explore The Rose"
+- "Enter the Rose Field"
 
 **Secondary Button (Ghost)**
 
@@ -1761,17 +1783,17 @@ Navigation should disappear.
 - Small type
 - Wide spacing
 
-Example: ROSES OS | The Rose | The Aura | Journey | Guardians | Begin
+Live navigation (rosesos.com): The Rose | Offerings | Guardians | Community | Begin
 
 ### Hero Section
 
 The hero is not promotional. It is a remembering.
 
-**Structure:**
+**Structure (live on rosesos.com):**
 
-- Headline (Cormorant): "A Seamless Path to Inner Freedom"
-- Subtext (Inter): Where inner symmetry becomes the source of leadership, creativity, and conscious prosperity.
-- Single CTA Button: Start Your Journey
+- Headline (Cormorant): "Remember Who You Are"
+- Subtext (Inter): "Technologies of remembrance for those ready to live in coherence."
+- Single CTA Button: "Begin Your Journey"
 
 **Hero Visual Style:**
 
@@ -1823,15 +1845,14 @@ ROSES OS copy must always feel like:
 
 ## Sitemap & Page Structure
 
-### Core Pages
+### Core Pages (live on rosesos.com, Feb 2026)
 
 1. **Home** -- Entry point, brand essence, invitation
-2. **The Rose** -- Core technology explained (Levels 1--3)
-3. **The Aura** -- Perception, mirror of leadership, relationship work
-4. **The Journey** -- What participants experience, outcomes
-5. **The Guardians** -- Facilitators and lineage holders
-6. **Begin** -- Contribution + application, start your journey
-7. **Journal / Library** -- Content, reflections, resources (later phase)
+2. **The Rose** (/the-rose) -- Core technology explained, includes Aura content
+3. **Offerings** (/offerings) -- Programs, courses, pathway
+4. **Guardians** (/guardians) -- Facilitators and lineage holders
+5. **Community** (/community) -- Living field, Hummingbirds, guidances, practitioner meetings
+6. **Begin** (/invitation) -- "You Have Been Invited" -- personal doorway into the Rose field
 
 ```mermaid
 graph TD
@@ -1898,13 +1919,18 @@ graph LR
 
 ## Document Sources
 
+**Primary source of truth: [rosesos.com](https://rosesos.com)** -- the live website is the canonical reference for all brand decisions. When any document below conflicts with the live site, the site wins.
+
 This Brand DNA was synthesized from:
 
-1. **Brand Guideline Guide** -- Complete brand guidelines and design book (docx)
-2. **Brand Identity** -- Core brand identity document (docs/brand-identity.md)
-3. **Presentation** -- Invitation and program overview (docs/presentation.md)
-4. **Teachers Resource -- Rose Meditation Level 1, 2, 3 -- 2026** -- Complete 46-page visual teaching resource (PDF)
-5. **MDR Teachers Training Manual** -- Text extraction of all teaching content (docs/mdr-teachers-training-manual.md)
+1. **rosesos.com** -- Live website (primary source of truth for taglines, navigation, audience language, hero copy, guardian bios, community programs, visual identity)
+2. **Brand Guideline Guide** -- Complete brand guidelines and design book (docx)
+3. **Brand Identity** -- Core brand identity document (docs/brand-identity.md)
+4. **Presentation** -- Invitation and program overview (docs/presentation.md)
+5. **Teachers Resource -- Rose Meditation Level 1, 2, 3 -- 2026** -- Complete 46-page visual teaching resource (PDF)
+6. **MDR Teachers Training Manual** -- Text extraction of all teaching content (docs/mdr-teachers-training-manual.md)
+
+**Last audited against rosesos.com:** 17 February 2026
 
 ---
 

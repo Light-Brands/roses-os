@@ -1,6 +1,8 @@
 # ROSES OS -- Founder Interview Questions
 
 > For the Brand Story section of the ROSES OS Brand Book
+>
+> Source of truth: [rosesos.com](https://rosesos.com)
 
 These questions are designed to unlock the origin narrative. They can be answered in conversation, voice memo, or writing -- whatever feels most natural. The answers will be shaped into a 2-4 page origin story for the brand book.
 

@@ -4,6 +4,14 @@
 
 ---
 
+## Source of Truth
+
+**[rosesos.com](https://rosesos.com) is the canonical source of truth for all ROSES OS brand materials.** When any brand document conflicts with what is live on the site, the site wins. This includes: taglines, navigation, audience language, hero copy, guardian bios, community programs, visual identity (colors, fonts, spacing), and CTA language.
+
+**Design system references:** `src/design-system/tokens.ts` (tokens), `src/design-system/theme.css` (CSS variables), `src/app/globals.css` (Tailwind config), `src/app/layout.tsx` (font imports).
+
+---
+
 ## Current Brand State (from rosesos.com, Feb 2026)
 
 **Live tagline:** "A Living Consciousness Ecosystem"
