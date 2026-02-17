@@ -617,18 +617,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={ready ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 1.2, duration: 0.6 }}
-            className="mt-6 lg:mt-8 text-lg sm:text-xl text-[var(--color-foreground-muted)] max-w-xl leading-relaxed"
-          >
-            Technologies of remembrance for those
-            <br />
-            ready to live in coherence.
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={ready ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ delay: 1.35, duration: 0.6 }}
-            className="mt-4 text-base sm:text-lg text-[var(--color-foreground-muted)] max-w-xl leading-relaxed italic"
+            className="mt-6 lg:mt-8 text-lg sm:text-xl text-[var(--color-foreground-muted)] max-w-xl leading-relaxed italic"
           >
             Become the source of leadership, creativity, sovereignty, and joy.
           </motion.p>
@@ -684,7 +673,7 @@ export default function Home() {
         </div>
 
         {/* 3D Rose Model */}
-        <div className="relative w-full h-[38vh] sm:h-[42vh] md:h-[55vh] lg:h-[65vh] xl:h-[70vh] mt-2 sm:mt-0 md:-mt-4 lg:-mt-6 pointer-events-none">
+        <div className="relative w-full h-[38vh] sm:h-[42vh] md:h-[50vh] lg:h-[55vh] xl:h-[60vh] mt-2 sm:mt-0 md:-mt-2 lg:-mt-4 pointer-events-none">
           <HeroSphere />
         </div>
 
