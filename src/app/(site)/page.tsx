@@ -342,6 +342,20 @@ function WhoItsFor() {
   return (
     <section ref={ref} className="relative py-24 lg:py-32 overflow-hidden">
       <div className="container-premium max-w-3xl mx-auto text-center">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={isInView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 0.5 }}
+          className="mb-6"
+        >
+          <Image
+            src="/rose.png"
+            alt=""
+            width={48}
+            height={48}
+            className="mx-auto object-contain"
+          />
+        </motion.div>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
