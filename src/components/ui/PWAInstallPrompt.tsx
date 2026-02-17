@@ -1,7 +1,9 @@
 'use client';
 
-import { useEffect, useRef, useCallback } from 'react';
-import { useToast } from '@/components/ui/Toast';
+import { useEffect, useRef, useState, useCallback } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Download, X, Share } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const PWA_DISMISS_KEY = 'pwa-install-dismissed';
 const DISMISS_DURATION_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
@@ -57,9 +59,14 @@ function setDismissed(): void {
 }
 
 export function PWAInstallPrompt() {
-  const { toast, dismiss } = useToast();
+  const [visible, setVisible] = useState(false);
+  const [isIOS, setIsIOS] = useState(false);
   const deferredPrompt = useRef<BeforeInstallPromptEvent | null>(null);
-  const hasShown = useRef(false);
+
+  const handleDismiss = useCallback(() => {
+    setVisible(false);
+    setDismissed();
+  }, []);
 
   const handleInstallClick = useCallback(async () => {
     const prompt = deferredPrompt.current;
@@ -70,13 +77,14 @@ export function PWAInstallPrompt() {
 
     if (outcome === 'accepted') {
       deferredPrompt.current = null;
+      setVisible(false);
     } else {
-      setDismissed();
+      handleDismiss();
     }
-  }, []);
+  }, [handleDismiss]);
 
   useEffect(() => {
-    if (isStandalone() || !isMobile() || wasDismissedRecently() || hasShown.current) {
+    if (isStandalone() || !isMobile() || wasDismissedRecently()) {
       return;
     }
 
@@ -84,40 +92,16 @@ export function PWAInstallPrompt() {
     const onBeforeInstall = (e: Event) => {
       e.preventDefault();
       deferredPrompt.current = e as BeforeInstallPromptEvent;
-
-      if (hasShown.current) return;
-      hasShown.current = true;
-
-      const id = toast({
-        type: 'info',
-        title: 'Install ROSES OS',
-        description: 'Add to your home screen for the full experience.',
-        duration: 0, // persistent
-        action: {
-          label: 'Install',
-          onClick: () => {
-            handleInstallClick();
-            dismiss(id);
-          },
-        },
-      });
+      setVisible(true);
     };
 
     window.addEventListener('beforeinstallprompt', onBeforeInstall);
 
     // iOS Safari: no beforeinstallprompt, show manual instructions
     if (isIOSSafari()) {
-      hasShown.current = true;
-
-      // Small delay so the page settles before showing
       const timer = setTimeout(() => {
-        toast({
-          type: 'info',
-          title: 'Install ROSES OS',
-          description: 'Tap the share button, then "Add to Home Screen" to install.',
-          duration: 8000,
-        });
-        setDismissed();
+        setIsIOS(true);
+        setVisible(true);
       }, 3000);
 
       return () => {
@@ -129,17 +113,111 @@ export function PWAInstallPrompt() {
     return () => {
       window.removeEventListener('beforeinstallprompt', onBeforeInstall);
     };
-  }, [toast, dismiss, handleInstallClick]);
+  }, []);
 
   // Listen for successful install
   useEffect(() => {
     const onInstalled = () => {
       deferredPrompt.current = null;
+      setVisible(false);
     };
 
     window.addEventListener('appinstalled', onInstalled);
     return () => window.removeEventListener('appinstalled', onInstalled);
   }, []);
 
-  return null;
+  return (
+    <AnimatePresence>
+      {visible && (
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: 100, opacity: 0 }}
+          transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+          className={cn(
+            'fixed bottom-0 left-0 right-0 z-toast',
+            'safe-area-bottom'
+          )}
+        >
+          <div
+            className={cn(
+              'mx-3 mb-3 sm:mx-4 sm:mb-4',
+              'rounded-2xl',
+              'bg-neutral-900 dark:bg-white',
+              'shadow-2xl',
+              'border border-neutral-800 dark:border-neutral-200',
+              'overflow-hidden'
+            )}
+          >
+            <div className="flex items-center gap-3 p-4 sm:p-5">
+              {/* Icon */}
+              <div
+                className={cn(
+                  'flex-shrink-0',
+                  'w-11 h-11 rounded-xl',
+                  'bg-white/10 dark:bg-neutral-900/10',
+                  'flex items-center justify-center'
+                )}
+              >
+                {isIOS ? (
+                  <Share className="w-5 h-5 text-white dark:text-neutral-900" />
+                ) : (
+                  <Download className="w-5 h-5 text-white dark:text-neutral-900" />
+                )}
+              </div>
+
+              {/* Text */}
+              <div className="flex-1 min-w-0">
+                <p className="font-semibold text-white dark:text-neutral-900 text-[15px] leading-tight">
+                  Add ROSES OS to Home Screen
+                </p>
+                <p className="mt-0.5 text-sm text-neutral-300 dark:text-neutral-600 leading-snug">
+                  {isIOS
+                    ? 'Tap Share, then "Add to Home Screen"'
+                    : 'Install for the full experience'}
+                </p>
+              </div>
+
+              {/* Actions */}
+              <div className="flex items-center gap-2 flex-shrink-0">
+                {!isIOS && (
+                  <button
+                    type="button"
+                    onClick={handleInstallClick}
+                    className={cn(
+                      'px-5 py-2.5',
+                      'bg-white dark:bg-neutral-900',
+                      'text-neutral-900 dark:text-white',
+                      'text-sm font-semibold',
+                      'rounded-xl',
+                      'hover:bg-neutral-100 dark:hover:bg-neutral-800',
+                      'active:scale-95',
+                      'transition-all duration-150'
+                    )}
+                  >
+                    Install
+                  </button>
+                )}
+                <button
+                  type="button"
+                  onClick={handleDismiss}
+                  className={cn(
+                    'p-2 rounded-xl',
+                    'text-neutral-400 dark:text-neutral-500',
+                    'hover:text-white dark:hover:text-neutral-900',
+                    'hover:bg-white/10 dark:hover:bg-neutral-900/10',
+                    'active:scale-90',
+                    'transition-all duration-150'
+                  )}
+                  aria-label="Dismiss"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
 }
