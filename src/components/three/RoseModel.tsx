@@ -125,7 +125,7 @@ export default function RoseModel({ mouseRef, reducedMotion, isDark }: RoseModel
   });
 
   return (
-    <group rotation={[0, 0, Math.PI / 2]}>
+    <group rotation={[0, 0, 0]}>
       <group ref={groupRef}>
         <primitive object={model} />
       </group>
