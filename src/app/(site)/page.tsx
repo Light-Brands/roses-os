@@ -342,21 +342,6 @@ function WhoItsFor() {
   return (
     <section ref={ref} className="relative py-24 lg:py-32 overflow-hidden">
       <div className="container-premium max-w-3xl mx-auto text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-10 flex justify-center pointer-events-none"
-        >
-          <Image
-            src="/page-images/page-home.png"
-            alt=""
-            width={384}
-            height={384}
-            className="max-w-xs md:max-w-sm w-full h-auto"
-          />
-        </motion.div>
-
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -591,14 +576,14 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={ready ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
             transition={{ delay: 0.15, duration: 0.6 }}
-            className="mb-5 lg:mb-6"
+            className="mb-5 lg:mb-6 pointer-events-none"
           >
             <Image
-              src="/rose.png"
+              src="/page-images/page-home.png"
               alt="ROSES OS"
-              width={48}
-              height={48}
-              className="object-contain"
+              width={384}
+              height={384}
+              className="max-w-xs md:max-w-sm w-full h-auto"
               priority
             />
           </motion.div>
