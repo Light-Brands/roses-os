@@ -84,7 +84,7 @@ export const programs: Program[] = [
   },
   {
     id: '1',
-    title: 'Aura 1 + Rose',
+    title: 'Aura 1',
     subtitle: 'General Aura Reading',
     duration: '11 days',
     dates: 'March 17–27, 2026',
