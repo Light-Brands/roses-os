@@ -343,19 +343,20 @@ function WhoItsFor() {
     <section ref={ref} className="relative py-24 lg:py-32 overflow-hidden">
       <div className="container-premium max-w-3xl mx-auto text-center">
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={isInView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.5 }}
-          className="mb-6"
+          initial={{ opacity: 0, y: 24 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-10 flex justify-center pointer-events-none"
         >
           <Image
-            src="/rose.png"
+            src="/page-images/page-home.png"
             alt=""
-            width={48}
-            height={48}
-            className="mx-auto object-contain"
+            width={384}
+            height={384}
+            className="max-w-xs md:max-w-sm w-full h-auto"
           />
         </motion.div>
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -507,8 +508,8 @@ export default function Home() {
     offset: ['start start', 'end start'],
   });
 
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
-  const heroY = useTransform(scrollYProgress, [0, 0.75], [0, -60]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const heroY = useTransform(scrollYProgress, [0, 0.5], [0, -60]);
 
   // Preloader coordination
   const [ready, setReady] = useState(false);
@@ -590,14 +591,14 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={ready ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
             transition={{ delay: 0.15, duration: 0.6 }}
-            className="mb-5 lg:mb-6 pointer-events-none"
+            className="mb-5 lg:mb-6"
           >
             <Image
-              src="/page-images/page-home.png"
+              src="/rose.png"
               alt="ROSES OS"
-              width={384}
-              height={384}
-              className="max-w-xs md:max-w-sm w-full h-auto"
+              width={48}
+              height={48}
+              className="object-contain"
               priority
             />
           </motion.div>
@@ -617,9 +618,11 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={ready ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 1.2, duration: 0.6 }}
-            className="mt-6 lg:mt-8 text-lg sm:text-xl text-[var(--color-foreground-muted)] max-w-xl leading-relaxed italic"
+            className="mt-6 lg:mt-8 text-lg sm:text-xl text-[var(--color-foreground-muted)] max-w-xl leading-relaxed"
           >
-            Live from the source of your leadership, creativity, and joy.
+            Technologies of remembrance for those
+            <br />
+            ready to live in coherence.
           </motion.p>
 
           <motion.div
@@ -672,8 +675,8 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* 3D Rose Model */}
-        <div className="relative w-full h-[44vh] sm:h-[46vh] md:h-[50vh] lg:h-[55vh] xl:h-[60vh] mt-2 sm:mt-0 md:mt-2 lg:mt-4 pointer-events-none">
+        {/* 3D Rose Model — pulled up to sit close to text */}
+        <div className="relative w-full h-[38vh] sm:h-[42vh] md:h-[55vh] lg:h-[65vh] xl:h-[70vh] -mt-10 sm:-mt-14 md:-mt-16 lg:-mt-20 pointer-events-none">
           <HeroSphere />
         </div>
 

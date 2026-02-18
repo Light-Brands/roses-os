@@ -75,8 +75,8 @@ export default function RoseModel({ mouseRef, reducedMotion, isDark }: RoseModel
   // Rose fills ~85% of the smaller viewport dimension so it's always visible.
   useEffect(() => {
     const vMin = Math.min(viewport.width, viewport.height);
-    // Fill 84% of the smaller dimension — enough breathing room to avoid mobile clipping
-    const scale = (vMin * 0.84) / maxDim;
+    // Fill 96% of the smaller dimension — as large as possible without clipping
+    const scale = (vMin * 0.96) / maxDim;
     model.position.set(
       -centerOffset.x * scale,
       -centerOffset.y * scale,
@@ -125,7 +125,7 @@ export default function RoseModel({ mouseRef, reducedMotion, isDark }: RoseModel
   });
 
   return (
-    <group rotation={[0, 0, 0]}>
+    <group rotation={[0, 0, Math.PI / 2]}>
       <group ref={groupRef}>
         <primitive object={model} />
       </group>
