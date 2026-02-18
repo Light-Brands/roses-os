@@ -441,7 +441,7 @@ function InvitationCTA() {
             className="mx-auto mb-8 w-16 h-16 rounded-full border border-rose-500/30 flex items-center justify-center overflow-hidden bg-[var(--color-section-dark)]/80"
           >
             <Image
-              src="/rose.png"
+              src="/page-images/page-home.png"
               alt="Roses OS"
               width={64}
               height={64}
