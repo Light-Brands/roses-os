@@ -594,11 +594,11 @@ export default function Home() {
             className="mb-5 lg:mb-6"
           >
             <Image
-              src="/rose.png"
+              src="/page-images/page-home.png"
               alt="ROSES OS"
-              width={48}
-              height={48}
-              className="object-contain"
+              width={384}
+              height={384}
+              className="max-w-[48px] w-full h-auto object-contain"
               priority
             />
           </motion.div>

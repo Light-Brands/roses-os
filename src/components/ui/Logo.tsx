@@ -31,7 +31,7 @@ export function Logo({
   const logoContent = (
     <div className={cn('flex items-center gap-2', className)}>
       <Image
-        src="/page-images/page-home.png"
+        src="/rose.png"
         alt=""
         width={iconSize}
         height={iconSize}
