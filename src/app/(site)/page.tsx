@@ -619,7 +619,7 @@ export default function Home() {
             transition={{ delay: 1.2, duration: 0.6 }}
             className="mt-6 lg:mt-8 text-lg sm:text-xl text-[var(--color-foreground-muted)] max-w-xl leading-relaxed italic"
           >
-            Become the source of leadership, creativity, sovereignty, and joy.
+            Live from the source of your leadership, creativity, and joy.
           </motion.p>
 
           <motion.div
