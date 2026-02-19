@@ -140,7 +140,7 @@ At the heart of her work lives a simple truth:
 
 > Every human being can awaken the capacity to perceive, to feel, and to clear their own inner field.
 
-Through a rare convergence of trust and shared responsibility, CELARIS has now joined its lineage with the vision of Roses OS.
+Through a rare convergence of trust and shared responsibility, CELARIS has now extended its lineage internationally through the vision of Roses OS. CELARIS continues as the Brazilian home of this work; Roses OS carries the same lineage to the world.
 
 This alliance is not an innovation. It is a remembering.
 
