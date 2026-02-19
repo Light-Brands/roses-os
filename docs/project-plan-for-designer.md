@@ -253,6 +253,8 @@ The designer must follow this system across the entire platform -- web and PDF.
 
 **Design ethos:** Apple minimalism meets spiritual temple. Clean, intentional, sacred — never busy, never loud.
 
+**Illustration style:** Elegant line drawings. Where humans are featured, they should feel like elegant, unique, timeless beings — as if seen on the streets of California or NYC at a fashion show. Simple, striking, effortless. Reference the brand Caravana for how people could look: linen, silks, raw natural fibers, neutral tones. The people are beautiful but never the point — the emphasis is always on learning the meditation.
+
 **The live website [rosesos.com](https://rosesos.com) is the primary reference** for current font choices, color palette, and overall vibe. The MDR visual aid and the website together will inform the brand book — not the other way around. Align with what's on the site now.
 
 ### Color Palette
