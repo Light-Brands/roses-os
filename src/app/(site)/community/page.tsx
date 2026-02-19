@@ -3,7 +3,7 @@
 import { useRef, useState } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import { ChevronRight, ChevronDown } from 'lucide-react';
+import { ChevronRight, ChevronDown, CalendarPlus } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { freePrograms, communityProgramsDetailed } from '@/lib/data';
 import type { CommunityProgram, CommunityProgramDetailed, CommunityScheduleMonth } from '@/lib/data';
@@ -18,15 +18,75 @@ import InvitationCTA from '@/components/sections/InvitationCTA';
 const ease = [0.16, 1, 0.3, 1] as const;
 
 // =============================================================================
+// GOOGLE CALENDAR URL HELPER
+// =============================================================================
+
+const monthMap: Record<string, number> = {
+  Jan: 1, Feb: 2, Mar: 3, Apr: 4, May: 5, Jun: 6,
+  Jul: 7, Aug: 8, Sep: 9, Oct: 10, Nov: 11, Dec: 12,
+};
+
+function generateGoogleCalendarUrl(
+  title: string,
+  dateStr: string,
+  timeStr: string,
+  year: number = 2026
+): string {
+  // Parse date: "Thu, Mar 12" → month + day
+  const dateParts = dateStr.split(/,\s*/);
+  if (dateParts.length < 2) return '';
+  const [monthStr, dayStr] = dateParts[1].trim().split(/\s+/);
+  const month = monthMap[monthStr];
+  const day = parseInt(dayStr);
+  if (!month || isNaN(day)) return '';
+
+  // Parse time: "12:00 – 1:30 pm" → start/end in 24h
+  const timeParts = timeStr.split(/\s*[–-]\s*/);
+  if (timeParts.length < 2) return '';
+
+  const endMatch = timeParts[1].trim().match(/^(\d{1,2}):(\d{2})\s*(am|pm)$/i);
+  const startMatch = timeParts[0].trim().match(/^(\d{1,2}):(\d{2})$/);
+  if (!endMatch || !startMatch) return '';
+
+  let endHour = parseInt(endMatch[1]);
+  const endMin = parseInt(endMatch[2]);
+  const endPeriod = endMatch[3].toLowerCase();
+
+  if (endPeriod === 'pm' && endHour !== 12) endHour += 12;
+  if (endPeriod === 'am' && endHour === 12) endHour = 0;
+
+  let startHour = parseInt(startMatch[1]);
+  const startMin = parseInt(startMatch[2]);
+
+  // Infer start AM/PM: hours 1-6 are PM, 7-11 are AM, 12 is noon
+  if (startHour >= 1 && startHour <= 6) startHour += 12;
+
+  const pad = (n: number) => n.toString().padStart(2, '0');
+  const startDate = `${year}${pad(month)}${pad(day)}T${pad(startHour)}${pad(startMin)}00`;
+  const endDate = `${year}${pad(month)}${pad(day)}T${pad(endHour)}${pad(endMin)}00`;
+
+  const params = new URLSearchParams({
+    action: 'TEMPLATE',
+    text: title,
+    dates: `${startDate}/${endDate}`,
+    ctz: 'America/Costa_Rica',
+  });
+
+  return `https://calendar.google.com/calendar/render?${params.toString()}`;
+}
+
+// =============================================================================
 // COMMUNITY SCHEDULE TABLE (month-based, no timezone)
 // =============================================================================
 
 function CommunitySchedule({
   months,
   label,
+  programTitle,
 }: {
   months: CommunityScheduleMonth[];
   label?: string;
+  programTitle: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: '-50px' });
@@ -58,40 +118,90 @@ function CommunitySchedule({
               </h4>
             </div>
             <div className="px-5 pb-5 md:px-6 md:pb-6">
-              <div className="hidden md:grid grid-cols-[1.5fr_1fr] gap-4 pb-3 mb-3 border-b border-[var(--color-border-subtle)]">
+              <div className="hidden md:grid grid-cols-[1.5fr_1fr_auto] gap-4 pb-3 mb-3 border-b border-[var(--color-border-subtle)]">
                 <span className="label-sacred">Date</span>
                 <span className="label-sacred">Time</span>
+                <span className="w-8" />
               </div>
               <div className="space-y-2">
-                {month.dates.map((session, idx) => (
-                  <div
-                    key={idx}
-                    className={cn(
-                      'py-2.5 text-sm',
-                      idx < month.dates.length - 1 &&
-                        'border-b border-[var(--color-border-subtle)]'
-                    )}
-                  >
-                    <div className="md:hidden">
-                      <div className="flex items-baseline justify-between gap-3">
+                {month.dates.map((session, idx) => {
+                  const calUrl = generateGoogleCalendarUrl(
+                    programTitle,
+                    session.date,
+                    session.time
+                  );
+
+                  return (
+                    <div
+                      key={idx}
+                      className={cn(
+                        'py-2.5 text-sm',
+                        idx < month.dates.length - 1 &&
+                          'border-b border-[var(--color-border-subtle)]'
+                      )}
+                    >
+                      {/* Mobile layout */}
+                      <div className="md:hidden">
+                        <div className="flex items-center justify-between gap-3">
+                          <div className="flex items-baseline gap-3 min-w-0">
+                            <span className="text-[var(--color-foreground-subtle)] font-medium">
+                              {session.date}
+                            </span>
+                            <span className="text-[var(--color-foreground-muted)] shrink-0">
+                              {session.time}
+                            </span>
+                          </div>
+                          {calUrl && (
+                            <a
+                              href={calUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              title="Add to Google Calendar"
+                              className={cn(
+                                'shrink-0 p-1.5 rounded-lg',
+                                'text-[var(--color-foreground-faint)]',
+                                'hover:text-[var(--color-rose-clay)]',
+                                'hover:bg-rose-50 dark:hover:bg-rose-950/30',
+                                'transition-colors duration-200'
+                              )}
+                            >
+                              <CalendarPlus className="w-4 h-4" />
+                            </a>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Desktop layout */}
+                      <div className="hidden md:grid grid-cols-[1.5fr_1fr_auto] gap-4 items-center">
                         <span className="text-[var(--color-foreground-subtle)] font-medium">
                           {session.date}
                         </span>
-                        <span className="text-[var(--color-foreground-muted)] shrink-0">
+                        <span className="text-[var(--color-foreground-muted)] tabular-nums">
                           {session.time}
                         </span>
+                        {calUrl ? (
+                          <a
+                            href={calUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title="Add to Google Calendar"
+                            className={cn(
+                              'p-1.5 rounded-lg w-8 flex items-center justify-center',
+                              'text-[var(--color-foreground-faint)]',
+                              'hover:text-[var(--color-rose-clay)]',
+                              'hover:bg-rose-50 dark:hover:bg-rose-950/30',
+                              'transition-colors duration-200'
+                            )}
+                          >
+                            <CalendarPlus className="w-4 h-4" />
+                          </a>
+                        ) : (
+                          <span className="w-8" />
+                        )}
                       </div>
                     </div>
-                    <div className="hidden md:grid grid-cols-[1.5fr_1fr] gap-4">
-                      <span className="text-[var(--color-foreground-subtle)] font-medium">
-                        {session.date}
-                      </span>
-                      <span className="text-[var(--color-foreground-muted)] tabular-nums">
-                        {session.time}
-                      </span>
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -228,6 +338,46 @@ function ActivityCard({
           </span>
         )}
       </div>
+
+      {/* WhatsApp CTA */}
+      {program.whatsAppUrl && (
+        <div className="mt-5 pt-5 border-t border-rose-200/40 dark:border-rose-800/20">
+          <a
+            href={program.whatsAppUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn(
+              'inline-flex items-center gap-2.5',
+              'text-sm font-medium',
+              'text-[var(--color-foreground)]',
+              'underline underline-offset-4 decoration-[var(--color-rose-clay)]',
+              'hover:text-[var(--color-rose-clay)] transition-colors duration-200'
+            )}
+          >
+            <svg
+              className="w-4 h-4 shrink-0"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+            Join WhatsApp Group
+            <svg
+              className="w-3.5 h-3.5 shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              />
+            </svg>
+          </a>
+        </div>
+      )}
     </motion.div>
   );
 }
@@ -461,6 +611,7 @@ function DetailedProgramCard({
                       <CommunitySchedule
                         months={program.schedule}
                         label={program.scheduleLabel}
+                        programTitle={program.title}
                       />
                     </motion.div>
                   )}

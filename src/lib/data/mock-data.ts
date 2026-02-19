@@ -547,18 +547,20 @@ export const freePrograms: CommunityProgram[] = [
   {
     id: 'free-live-guidances',
     title: 'Guided Rose Meditations — Live & Free',
-    description: 'We offer live guided Rose Meditations, happening weekly on Saturdays. These meditations are free and held live, creating a shared field of presence and practice.\n\nThe intention is to support continuity in the practice, nourish the relationship with the Rose, and meditate together in a living, guided field.\n\nThis space is only for people already initiated in Rose Meditation. If you have not received a Rose Meditation initiation, this gathering is not open to you.\n\nJoin our WhatsApp group to receive more information and access details for each weekly meditation.',
+    description: 'We offer live guided Rose Meditations, happening weekly on Saturdays. These meditations are free and held live, creating a shared field of presence and practice.\n\nThe intention is to support continuity in the practice, nourish the relationship with the Rose, and meditate together in a living, guided field.\n\nThis space is only for people already initiated in Rose Meditation. If you have not received a Rose Meditation initiation, this gathering is not open to you.',
     schedule: 'Every Saturday · 9:30 AM – 10:00 AM (Costa Rica time)',
     audience: 'Rose Meditation practitioners only',
     free: true,
+    whatsAppUrl: '#whatsapp-rose-meditation',
   },
   {
     id: 'practitioners-meetings',
     title: 'Monthly Rose Meditation Q&A Gathering',
-    description: 'Once a month, we host a free Q&A and sharing circle for Rose Meditation practitioners. This gathering is a space to come together, ask questions, and deepen the understanding of how to live and apply Rose Meditation in daily life.\n\nThis space is for clarifying doubts, sharing experiences, going deeper into the practice, and learning how to integrate the Rose more fully into life.\n\nIt is open only to Rose Meditation practitioners and offered freely to support the living community of the practice.\n\nJoin our WhatsApp group to receive more information and access details for each monthly gathering.',
+    description: 'Once a month, we host a free Q&A and sharing circle for Rose Meditation practitioners. This gathering is a space to come together, ask questions, and deepen the understanding of how to live and apply Rose Meditation in daily life.\n\nThis space is for clarifying doubts, sharing experiences, going deeper into the practice, and learning how to integrate the Rose more fully into life.\n\nIt is open only to Rose Meditation practitioners and offered freely to support the living community of the practice.',
     schedule: 'Once a month',
     audience: 'Rose Meditation practitioners only',
     free: true,
+    whatsAppUrl: '#whatsapp-rose-meditation',
   },
 ];
 
