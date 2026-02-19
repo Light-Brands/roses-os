@@ -96,7 +96,7 @@ Each chakra section includes:
 | 6 | Third Eye | Ajna | I SEE | Indigo | Light |
 | 7 | Crown | Sahasrara | I KNOW | Violet/White | Consciousness |
 
-> **Note:** The existing drawings and logo are references to the original stick-and-line style that has been part of this tradition. The current logo also represents the past logo. The new design should pay homage to this history — honoring the old while creating a new, elevated rendition. Some diagrams may be complex or imperfect due to Procreate edits — this is acceptable to update or digitally strengthen. Teachers are guided to use visuals as references, not absolute representations.
+> **Note:** The existing drawings and logo are references to the original stick-and-line style that has been part of this tradition. The current logo also represents the past logo. The new design should pay homage to this history — honoring the old while creating a new, elevated rendition. The favored illustration style is stick-and-line drawings with color that evokes watercolor — a feeling of a time that came before. The drawings should feel pure, innocent, vibrant, and loving. Some diagrams may be complex or imperfect due to Procreate edits — this is acceptable to update or digitally strengthen. Teachers are guided to use visuals as references, not absolute representations.
 
 ### Section 4 — Level-Specific Teaching Flow
 

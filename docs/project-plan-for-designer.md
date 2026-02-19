@@ -78,6 +78,7 @@ There are **five platform sections**, in priority order:
 - Harmonize saturation across chakra pages so the section feels cohesive
 - Gold accents for headings, dividers, key phrases -- used intentionally, never decoratively
 - **Heritage context:** The existing drawings and logo are references to the original stick-and-line style from the tradition's history. The current logo also represents the past logo. The new design should pay homage to this history — honoring the old while creating a new, elevated rendition
+- **Illustration style:** Stick-and-line drawings with color that evokes watercolor — a feeling of a time that came before. The drawings should feel pure, innocent, vibrant, and loving
 - Some existing Procreate diagrams may need to be digitally redrawn or strengthened
 - Illustrations needed: seated meditation posture, grounding cord, golden sun, aura layers, chakra body placements, the rose (roots/stem/bloom), roses of protection, the Analyzer
 - **Chakra slide imagery:** The chakra section slides do not need the rose logo. Instead, the designer has creative freedom here — the priority is helping viewers clearly understand where in the body each chakra node is located. Body placement visuals should represent diverse people — a variety of body shapes, sizes, and ethnicities. Each chakra page should emphasize that chakra's color — vibrant yet subtle, applied cohesively so it matches the overall slide aesthetic. The designer has discretion on exactly how the color is expressed (background wash, glow, accent, etc.).
