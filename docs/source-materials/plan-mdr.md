@@ -78,9 +78,11 @@ Each chakra section includes:
 - Primary blockages
 - Teaching cues (what to emphasize verbally)
 
-**Chakra slide imagery:** The chakra section slides do not need the rose logo. Instead, the designer has creative freedom here — the priority is helping viewers clearly understand where in the body each chakra node is located. Body placement visuals should use a gender-neutral figure (not distinctly male or female). Each chakra page should emphasize that chakra's color — vibrant yet subtle, applied cohesively so it matches the overall slide aesthetic. The designer has discretion on exactly how the color is expressed (background wash, glow, accent, etc.).
+**Chakra slide imagery:** The chakra section slides do not need the rose logo. Instead, the designer has creative freedom here — the priority is helping viewers clearly understand where in the body each chakra node is located. Body placement visuals should represent diverse people — a variety of body shapes, sizes, and ethnicities. Each chakra page should emphasize that chakra's color — vibrant yet subtle, applied cohesively so it matches the overall slide aesthetic. The designer has discretion on exactly how the color is expressed (background wash, glow, accent, etc.).
 
-**Non-chakra teaching slides (meditation techniques):** Slides that illustrate how things are done in the meditation — grounding cord, golden sun, aura layers, roses of protection, etc. — should use specific, literal imagery that matches what is being taught. These are reference visuals, not abstract or open to creative reinterpretation.
+**Non-chakra teaching slides (meditation techniques):** Slides that illustrate how things are done in the meditation — grounding cord, golden sun, aura layers, roses of protection, etc. — should be specific in the lines and patterns shown. The imagery needs to accurately depict the energetic structures being taught. Figures shown should represent a wide range of body shapes, sizes, and ethnicities — reflecting the whole world, like the United Nations. No single type of person should dominate the imagery.
+
+**Rose depiction rule:** Roses in this system are always depicted as a stem and a flower only — never with thorns or leaves.
 
 **Chakra Reference:**
 
