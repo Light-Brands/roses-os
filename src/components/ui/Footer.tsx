@@ -15,6 +15,7 @@ const navLinks = [
   { label: 'Guardians', href: '/guardians' },
   { label: 'Community', href: '/community' },
   { label: 'Contact', href: '/contact' },
+  { label: 'For Teachers', href: '/teaching' },
 ];
 
 // =============================================================================

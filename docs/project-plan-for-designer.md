@@ -1,64 +1,86 @@
-# ROSES OS -- Project Plan for Designer
+# MDR Teacher's Resource Manual -- Designer Plan
 
-> Web Platform Design Brief -- Everything the designer needs to understand, reference, and deliver.
-
----
-
-## 1. PROJECT OVERVIEW
-
-ROSES OS is a spiritual-modern consciousness technology brand. The design work centers on a **unified web platform** -- a single, living digital environment where all ROSES OS content is accessible online and downloadable as PDF. The platform replaces the need for separate standalone decks, fillable PDFs, and disconnected web forms. Everything lives on the web; everything can be taken offline.
-
-**Core concept:** One web platform. All content accessible in-browser. All content downloadable as beautifully formatted PDF.
-
-**Brand philosophy:** "Apple-level minimalism inside a temple." Sacred-tech minimalism -- earthy, grounded, warm, and quiet. Never loud, never busy, never hype-driven.
-
-**Key reference documents (in this repo):**
-
-| Document | Path | What it contains |
-|---|---|---|
-| Brand DNA (master bible) | `docs/brand/brand-dna.md` | Complete brand identity, visual system, color palette, typography, design book, web guidelines |
-| Invitation Presentation | `docs/program/presentation.md` | Full content for the public-facing invitation deck (Screen 1) |
-| Schedule Details & Contribution | `docs/program/schedule-details.md` | Full schedule times and contribution model for the Learn More page (Screen 2) |
-| Training Manual | `docs/training/mdr-teachers-training-manual.md` | Teaching content for Levels 1-3 (source material for the visual aid deck) |
-| Source Files | `docs/source-materials/` | Original Keynote presentation and brand guideline document |
+> Design brief for the Teacher Visual Aid Manual -- the facilitator's companion for teaching Rose Meditation.
 
 ---
 
-## 2. WHAT NEEDS TO BE DESIGNED
+## At a Glance
 
-The project is a **single web platform** with distinct sections. Every section is designed web-first and includes a **"Download as PDF"** option that produces a beautifully formatted, print-ready document. No standalone decks or separate fillable PDFs -- the web is the source of truth, and PDFs are an export.
-
-There are **five platform sections**, in priority order:
+| Item | Detail |
+|------|--------|
+| **What** | A password-protected teacher's resource manual for guiding live Rose Meditation sessions |
+| **Where** | rosesos.com/teaching (behind PIN gate, password: 4444) with "For Teachers" link in the site footer |
+| **Format** | Web-first presentation optimized for tablet/laptop, with PDF download for printing or offline use |
+| **Content** | Levels 1--3 of Rose Meditation: energetic foundations, chakra system, advanced perception |
+| **Source material** | `docs/training/mdr-teachers-training-manual.md` (complete teaching text and visual descriptions) |
+| **Brand tone** | Sacred-tech minimalism -- earthy, grounded, warm, quiet. Never busy, never loud. |
+| **Priority** | This is the current deliverable. Everything else comes later. |
 
 ---
 
-### Section A -- Teacher Visual Aid Manual
+## 1. PURPOSE
 
-**What it is:** A password-protected section of the web platform that teachers access while guiding live sessions. Not a student workbook -- a facilitator's visual companion, accessible in-browser and downloadable as PDF for offline use.
+This manual is a facilitator's visual companion -- not a student workbook. Teachers access it on a tablet or laptop during live sessions to support clear, consistent teaching of energetic concepts across all facilitators.
 
-**Access:** Password-protected area (password: 4444). Teachers log in or enter the password to access this section.
+**Goals:**
 
-**Purpose:**
 - Support teachers in explaining energetic concepts clearly
 - Provide consistent visual references across all facilitators
 - Reduce cognitive load during live teaching
-- Accessible on any device during a live session (tablet, laptop, phone)
+- Accessible on any device during a live session (tablet preferred, laptop secondary)
 
-**Content structure (5 sections, each a page or scroll section on the web):**
+---
 
-1. **Introduction** -- Purpose of Rose Meditation, how to use the manual, teaching posture, safety and consent
-2. **Energetic Foundations** -- Grounding Cord, Golden Sun, Earth & Cosmos Circuits, The Rose (roots/stem/bloom), The Aura (7 layers), Roses of Protection
-3. **Chakras 1-7** (the core section) -- One consistent layout per chakra, each containing:
-   - Name (English + Sanskrit)
-   - Body location
-   - Color, element
-   - Core statement (I AM, I FEEL, I CAN, I LOVE, I SPEAK & I LISTEN, I SEE, I KNOW)
-   - Focus, balanced/unbalanced expression, primary blockages
-   - Teaching cues
-4. **Level-specific teaching flows** -- Level 1 (foundations), Level 2 (sacred space + chakra activation), Level 3 (the Analyzer + advanced perception)
-5. **Teaching Agreements** -- Core agreements and sacred use guidelines
+## 2. PLATFORM PLACEMENT
 
-**Chakra reference table:**
+The manual lives on the ROSES OS website at `/teaching`, protected by a 4-digit PIN gate (password: 4444).
+
+- A **"For Teachers"** link appears in the site footer navigation bar
+- The link leads to `/teaching`, which triggers the password gate
+- Once authenticated (session-based), teachers access the manual content
+- A **"Download PDF"** button at the top of the section exports the entire manual as a formatted PDF for print or offline reference
+
+**Device priority:** Tablet and laptop first. Phone is tertiary -- this is a teaching tool, not a consumer product.
+
+---
+
+## 3. CONTENT STRUCTURE
+
+The manual has five sections, each a page or scroll section on the web:
+
+### Section 1 -- Introduction
+
+- Purpose of Rose Meditation
+- How to use this manual
+- Teaching posture
+- Safety and consent
+
+### Section 2 -- Energetic Foundations
+
+- Grounding Cord
+- Golden Sun
+- Earth & Cosmos Circuits
+- The Rose (roots / stem / bloom)
+- The Aura (7 layers)
+- Roses of Protection, Observation, and Separation
+- Cleansing Rose
+- Energy Recovery
+- Discharge Excess Energy
+
+### Section 3 -- The Seven Chakras (core section)
+
+One consistent layout per chakra, each containing:
+
+- Name (English + Sanskrit)
+- Body location
+- Color and element
+- Core conscious statement (I AM, I FEEL, I CAN, I LOVE, I SPEAK & I LISTEN, I SEE, I KNOW)
+- Focus area
+- Balanced vs. unbalanced expressions
+- Primary blockages
+- Teaching cues
+
+**Chakra reference:**
 
 | # | Chakra | Sanskrit | Statement | Color | Element |
 |---|--------|----------|-----------|-------|---------|
@@ -70,427 +92,207 @@ There are **five platform sections**, in priority order:
 | 6 | Third Eye | Ajna | I SEE | Indigo | Light |
 | 7 | Crown | Sahasrara | I KNOW | Violet/White | Consciousness |
 
-**Design rules specific to this section:**
-- Non-chakra pages use the warm neutral background (rose clay / peachy neutral)
-- Each chakra page uses its correct chakra color as the dominant color
-- Harmonize saturation across chakra pages so the section feels cohesive
-- Gold accents for headings, dividers, key phrases -- used intentionally, never decoratively
-- Some existing Procreate diagrams may need to be digitally redrawn or strengthened
-- Illustrations needed: seated meditation posture, grounding cord, golden sun, aura layers, chakra body placements, the rose (roots/stem/bloom), roses of protection, the Analyzer
+### Section 4 -- Level-Specific Teaching Flows
 
-**PDF download:** A "Download PDF" button at the top of the section exports the entire manual as a formatted, password-protected PDF -- designed for print or offline reference. The PDF should mirror the web layout as closely as possible.
+- **Level 1 (Foundations):** Posture, grounding, golden sun, aura awareness, circuits, roses of protection, cleansing, recovery, discharge
+- **Level 2 (Sacred Space + Chakra Activation):** Creating sacred space, protecting and cleansing the space, owning the space, chakra deep dive, aura layer cleansing, chakra cleansing (past and present dynamics), energy recovery, golden sticky roses (4 phases)
+- **Level 3 (Advanced Perception):** The Analyzer -- energetic point at the base of the skull for deeper perception, reading, and discernment
 
----
+### Section 5 -- Teaching Agreements
 
-### Section B -- The Invitation (Public-Facing)
+Core agreements all participants honor:
 
-**What it is:** The outward-facing section of the platform that introduces The Rose and Aura to prospective participants. A threshold, not a sales pitch. This section uses a **two-screen architecture:**
+- Punctuality
+- Confidentiality
+- Co-responsibility
+- Trust
+- Patience, Empathy, and Compassion
 
-- **Screen 1 -- The Presentation (Landing Page):** A live, flowing web experience that presents the essence of the work. No detailed times or contribution tiers -- only dates, class types, and the invitation itself. This is the first thing visitors see.
-- **Screen 2 -- Learn More (Detail Page):** Accessed via a "Learn More" action from the presentation. Contains the full schedule with time zone tables and the contribution model. This is where practical details live.
+Sacred use guidelines:
 
-**Content sources:**
-- Presentation (Screen 1): `docs/program/presentation.md`
-- Schedule details & contribution model (Screen 2): `docs/program/schedule-details.md`
-
-**Screen 1 -- Presentation page flow:**
-
-1. **Title** -- "ROSES OS -- A Seamless Path to Inner Freedom"
-2. **The Invitation** -- Einstein quote, the need for new inner tools
-3. **Welcome to the Rose** -- What it restores; "When the Rose awakens, Genius awakens"
-4. **What the Rose Is** -- Three-point simplicity (awareness, coherence, real choice)
-5. **The Two Questions** -- Awareness + coherence
-6. **Who This Is For** -- Founders, creators, parents, healers, leaders
-7. **You Feel It** -- Poetic quote spread (full-width, presence-oriented)
-8. **What You Will Experience** -- The Rose / Aura / Human Journey
-9. **What This Journey Awakens** -- Intuition / Leadership / Highest Potential
-10. **The Frequency** -- "A frequency you cultivate"
-11. **Your Path** -- Option 1 (The Rose), +Aura 1 (dates and class types only -- no times, no contribution model)
-12. **Schedule Overview** -- Dates and class types per stage (no time zone tables)
-13. **The Guardians** -- Profiles for Angelina, Diego, Dara, Peggy (photos framed with white border, `#FFFFFF`, 4-6px)
-14. **Begin** -- "Start your journey. Welcome home."
-
-**Screen 2 -- Learn More page flow:**
-
-1. **Full Schedule** -- All class times across four time zones (San Jose, New York, Brasilia, London), organized by stage, week, and weekend
-2. **Contribution Model** -- Income tiers and invitational language
-3. **Talk with Dara** -- WhatsApp contact button for questions about the program, schedule, or contribution
-
-**Design rules specific to this section:**
-- Generous whitespace -- every section should breathe
-- Quote spreads are full-width, silent, centered
-- Guardian photos framed with clean white borders for reverent separation from background
-- The presentation (Screen 1) should feel complete on its own -- a self-contained invitation with no missing information
-- The Learn More page (Screen 2) should feel like a natural continuation -- practical and detailed, but still within the brand's sacred tone
-- Contribution table should feel inviting, not transactional
-- Tone: a quiet invitation, not a sales deck
-- On the web, sections can use subtle scroll-triggered transitions (fade-in, parallax) to create a meditative pace
-
-**PDF download:** A "Download PDF" button exports the presentation as a beautifully formatted presentation-style PDF -- suitable for sharing, screen sharing, or printing. The PDF should read as a cohesive deck (one section per page). The Learn More page can be exported as a separate companion PDF with schedule and contribution details.
+- Material is for initiated students only
+- Cannot be used to teach or guide others independently
+- Exception: supporting children under the practitioner's care
 
 ---
 
-### Section C -- Forms (Enrollment, Contribution & Agreements)
+## 4. ILLUSTRATION & IMAGERY
 
-**What they are:** Interactive web forms integrated directly into the platform. These are the primary touchpoint where someone transitions from visitor to participant. They must feel like a continuation of the brand experience -- a sacred threshold, not a checkout flow. Completed forms can be downloaded as PDF for personal records.
+### Style
 
-**Forms needed:**
+Stick-and-line drawings with color that evokes watercolor -- a feeling of a time that came before. Drawings should feel pure, innocent, vibrant, and loving.
 
-#### 1. Begin Your Journey (Enrollment)
-- Multi-step flow, not a single long page
-- Step 1: Who you are (name, email, location)
-- Step 2: Your path (program selection with brief descriptions)
-- Step 3: Contribution (income tier selection with the brand's invitational language, not price tags)
-  - Income tiers: Under $30K / $30K-$70K / Above $70K USD
-  - Chosen contribution amount
-  - Payment method preference
-  - Space for personal note (optional)
-- Step 4: Agreements (acknowledgment of core agreements and sacred use)
-  - Core agreements: punctuality, confidentiality, co-responsibility, trust, patience, empathy, compassion
-  - Sacred use agreement -- material is for initiated students only, not to be shared or used to teach independently
-  - Exception acknowledgment (supporting children under care)
-- Step 5: Confirmation ("Welcome home." -- warm confirmation with next steps)
+### Heritage Context
 
-#### 2. Contact / Inquiry Form
-- Name, email
-- Nature of inquiry (dropdown: General, Programs, Guardians, Collaboration)
-- Message field
-- Simple, minimal -- no CAPTCHA clutter if avoidable
+The existing drawings and logo are references to the original stick-and-line style from the tradition's history. The current logo also represents the past logo. The new design should pay homage to this history -- honoring the old while creating a new, elevated rendition.
 
-#### 3. Community Interest / Waitlist
-- Name, email
-- Location / language
-- What draws them to the work (optional, open text)
-- Used for future programs and regional expansions
+### Rose Depiction Rule
 
-**Design rules for forms:**
-- Follow all platform UI component specs (pill-shaped buttons, 20px border radius cards, etc.)
-- Multi-step forms use a subtle progress indicator -- minimal, not a numbered stepper
-- Field styling: warm-toned backgrounds (Golden Ether or Peach Sand), soft borders in Gilded Clay (`#A8896D`)
-- Active/focused fields: border shifts to Antique Olive Brass (`#9E956B`)
-- Submit buttons: pill-shaped, olive gold, with calm invitational labels ("Continue," "Begin," "Submit with Gratitude")
-- Error states: gentle, never alarming -- warm language ("This field needs your attention") with Light Terracotta (`#C4836C`) as the indicator color, not red
-- Success states: Rose Clay Mauve confirmation with a breathing moment before redirect
-- Mobile-first responsive design -- many participants will access from phones
-- Accessibility: WCAG 2.1 AA compliant (contrast ratios, keyboard navigation, screen reader labels)
-- No dark patterns, no urgency indicators, no countdown timers
+Roses in this system are always depicted as a stem and a flower only -- never with thorns or leaves.
 
-**Contribution tier selection (special component):**
-- Three cards side by side (stacked on mobile)
-- Each card shows the income range and invitational description from the contribution model
-- Selected card gets a subtle Rose Clay Mauve border glow
-- No "best value" badges or pricing psychology -- this is devotion, not commerce
+### Rose Imagery in Opening Pages
 
-**PDF download:** After submission, participants receive a "Download your confirmation" option that generates a branded PDF summary of their enrollment, selected contribution tier, and signed agreements -- a personal record.
+Where a logo is called for in the opening slides (Sections 1--3), use both the rose logo (minimal line icon) and a realistic rose image. These set the visual tone for the manual.
 
----
+### Illustrations Needed
 
-### Section D -- The Platform Pages (Website)
+- Seated meditation posture
+- Grounding cord (from base of spine into earth)
+- Golden sun (above head, radiating downward)
+- Aura layers (7 concentric layers around the body)
+- Chakra body placements (7 chakra points on the body)
+- The Rose anatomy (roots / stem / bloom)
+- Roses of protection (placed at aura boundary)
+- Cleansing rose (outside aura, absorbing energy)
+- Earth circuit (energy rising through feet and legs)
+- Cosmos circuit (energy descending through crown)
+- Combined circuit (both flows active simultaneously)
+- Full meditation setup (posture + aura + grounding + golden sun)
+- Sacred space grid (roses at corners, golden lines connecting)
+- Golden sticky roses (4 phases: chakra, body joints, full coverage, integration)
+- The Analyzer (energetic point at back of head)
 
-**What it is:** The public-facing pages of the ROSES OS web platform -- "a threshold, not a marketing site." These pages frame the entire experience and house all other sections.
+### Figure Diversity
 
-**Sitemap:**
+Body placement visuals should represent diverse people -- a variety of body shapes, sizes, and ethnicities. Figures should reflect the whole world. No single type of person should dominate the imagery.
 
-1. **Home** -- Entry point, brand essence, invitation to explore
-2. **The Rose** -- Core technology (Levels 1-3)
-3. **The Aura** -- Perception and relationship work
-4. **The Journey** -- What participants experience
-5. **The Guardians** -- Facilitators and lineage
-6. **Begin** -- Enrollment and contribution model (links to Section C forms)
-7. **Journal / Library** -- Content and resources (later phase)
+### Non-Chakra Teaching Slides
 
-**UI component specs:**
-- Buttons: pill-shaped, olive gold accent (`#9E956B`), calm and inviting
-- Cards: soft stone feel, 20px border radius, subtle tactile presence
-- Navigation: minimal, disappearing on scroll, unobtrusive
-- Hero sections: full-width, breathing space, centered typography
-- Spacing: generous whitespace throughout -- every element has room to breathe
+Slides illustrating meditation techniques (grounding cord, golden sun, aura layers, roses of protection, etc.) should be specific in the lines and patterns shown. The imagery needs to accurately depict the energetic structures being taught.
 
-**PDF download:** Key content pages (The Rose, The Aura, The Journey) include a "Download as PDF" option so visitors can take the information with them. The PDF should be a clean, branded document -- not a raw browser print.
+### Chakra Section Imagery
+
+The chakra pages do not need the rose logo. The designer has creative freedom here -- the priority is helping viewers clearly understand where in the body each chakra is located. Each chakra page should emphasize that chakra's color -- vibrant yet subtle, applied cohesively across the section. The designer has discretion on how the color is expressed (background wash, glow, accent, etc.).
+
+### Fashion & Figure References
+
+People depicted should evoke high-end ancient-meets-modern style -- natural materials like linen, silk, raw natural fibers in neutral tones.
+
+Key references:
+- [Caravana](https://caravana.land) -- artisan-driven luxury resort wear
+- High-end Greek fashion blending ancient heritage with modern minimalism -- designers like Zeus+Dione, Celia Dragouni, Vassilis Zoulias; brands like Greek Archaic Kori, Pearl and Caviar, Parthenis
+- [Yeva](https://yeva.world) -- design inspiration
 
 ---
 
-### Section E -- PDF Export System (Cross-Platform Feature)
+## 5. VISUAL IDENTITY (Condensed)
 
-**What it is:** A unified PDF export system that works across the entire platform. This is not a separate section visitors see, but a design and development deliverable that ensures every downloadable PDF feels like a first-class ROSES OS artifact.
+The live website [rosesos.com](https://rosesos.com) is the primary reference for font choices, color palette, and overall vibe. Align with what is on the site now.
 
-**Requirements:**
-- Every PDF export uses the same branded template: ROSES OS wordmark, Aura White background, consistent margins and typography
-- PDFs are formatted for both screen reading and print (A4 / Letter)
-- Cormorant Garamond for headers, Inter for body -- matching the web exactly
-- Subtle brand texture on each page (clay, linen, or fogged light -- light enough to print cleanly)
-- Rose Clay Mauve (`#9C6F6E`) for section headers and dividers
-- Antique Olive Brass (`#9E956B`) for accent lines
-- Page numbers, section headers in footer
-- Teacher Visual Aid Manual PDF is password-protected (password: 4444); all other PDFs are open
-- Illustrations and diagrams must render cleanly in both web and PDF formats (SVG preferred)
+**Design ethos:** Apple-level minimalism inside a temple. Sacred-tech minimalism -- earthy, grounded, warm, quiet.
 
-**PDF types across the platform:**
+### Color Rules for the Manual
 
-| Source Section | PDF Type | Access |
-|---|---|---|
-| Teacher Visual Aid Manual | Full manual export | Password-protected (4444) |
-| The Invitation | Presentation-style PDF (one section per page) | Public |
-| Forms (post-submission) | Confirmation summary with signed agreements | Per-participant |
-| The Rose / The Aura / The Journey | Content page exports | Public |
+| Context | Treatment |
+|---------|-----------|
+| Non-chakra pages | Warm neutral background (rose clay / peachy neutral) |
+| Chakra pages | Each chakra's correct color as the dominant color |
+| Gold accents | For headings, dividers, key phrases -- used intentionally, never decoratively |
+| Cross-chakra cohesion | Harmonize saturation so the chakra section feels unified |
 
-**Design principle:** The PDF should feel intentional -- not like a printed webpage, but like a designed document that happens to share content with the web. Same information, optimized for the medium.
-
----
-
-## 3. VISUAL IDENTITY SYSTEM
-
-The designer must follow this system across the entire platform -- web and PDF.
-
-### Color Palette
-
-#### Primary Colors (Warm, Earthy, Gender-Neutral)
+### Primary Palette
 
 | Color | HEX | Role |
-|---|---|---|
-| **Rose Clay Mauve** | `#9C6F6E` | THE signature color -- field color, not accent. The "human interface layer" of ROSES OS |
-| Warm Rose-Clay Brown | `#9B6A66` to `#9E6F6B` | Dusty mauve tones, supporting warmth |
-| Light Terracotta | `#C4836C` to `#CB8E7E` | Sun-warmed clay accents, grounding and luminous |
-
-#### Secondary / Neutral Colors
-
-| Color | HEX | Role |
-|---|---|---|
-| Gilded Clay | `#A8896D` | Warm neutral |
-| Honeyed Stone | `#C7AE8C` | Background support |
-| Peach Sand | `#EBD6C1` | Light background |
-| Golden Ether | `#F5E8E2` | Warm blush background, pairs with gold |
+|-------|-----|------|
+| Rose Clay Mauve | `#9C6F6E` | Signature field color -- the human interface layer |
 | Aura White | `#F7F5F2` | Primary background |
-| Soft Charcoal | `#3F3E3C` | Text, dark elements |
-
-#### Accent
-
-| Color | HEX | Role |
-|---|---|---|
-| **Antique Olive Brass** | `#9E956B` | Accent, buttons, highlights -- "like gold in a temple" |
-
-**Rules:**
-- No bright colors
-- No harsh contrasts
-- Gold is used intentionally, never decoratively
-- Chakra pages are the only exception where vivid color is used (each chakra's true color)
+| Soft Charcoal | `#3F3E3C` | Body text, navigation |
+| Antique Olive Brass | `#9E956B` | Accent -- headings, highlights, buttons ("like gold in a temple") |
+| Honeyed Stone | `#C7AE8C` | Background support |
+| Peach Sand | `#EBD6C1` | Light backgrounds |
+| Golden Ether | `#F5E8E2` | Warm blush background, pairs with gold |
 
 ### Typography
 
-| Use | Typeface | Character |
-|---|---|---|
-| Headlines | **Cormorant Garamond** | Elegant, serif, devotional, timeless |
-| Body text | **Inter** | Clean, modern, readable, tech-quiet |
+| Use | Typeface |
+|-----|----------|
+| Headlines, sacred text | Cormorant Garamond |
+| Body, UI, buttons, navigation | Inter |
 
-**Hierarchy:** Titles > Subtitles > Body > Callouts -- consistent across web and PDF.
+### Texture
 
-### Texture & Visual Language
-
-- Clay, linen, stone, paper, soft fogged light
-- Soft gradients, subtle particle or light textures
-- Calm, grounded, sacred-tech feel
-- No overly busy visuals
-- Centered, calm, devotional layouts
-
-### Imagery Style
-
-- Warm, reverent photography for guardian portraits
-- Energetic diagrams: clean, minimal, precise
-- Illustrations should feel hand-touched but refined (not clinical, not messy)
-- Body/anatomy references should be anatomically grounded but energetically expressive
+Surfaces should feel like clay, linen, stone, paper, soft fogged light. Rose Clay Mauve should always be paired with subtle texture (linen, paper grain, soft mineral noise) -- flat fills make it feel cosmetic, texture makes it architectural.
 
 ---
 
-## 4. PRODUCTION PHASES
+## 6. PDF DOWNLOAD
 
-### Phase 1 -- Foundation & Design System
+A "Download PDF" button at the top of the teaching section exports the entire manual as a formatted PDF designed for print or offline reference.
 
-- [ ] Review all brand documents in this repo
-- [ ] Review source Keynote file (`docs/source-materials/Rose + Aura - Invite .key`)
-- [ ] Review source brand guideline document (`docs/source-materials/Brand Guideline Guide-compressed.docx`)
-- [ ] Finalize color palette application (confirm swatches work together on screen and in print)
-- [ ] Lock typography choices and create type scale (web + PDF)
-- [ ] Design the web platform's core UI component library:
-  - Navigation and global layout
-  - Page templates (content page, scroll-based presentation, protected section)
-  - Card components, button styles, spacing tokens
-  - Form field components (inputs, dropdowns, textareas, checkboxes)
-  - Form interaction states (default, hover, focus, error, success)
-  - Contribution tier selection component (card-based)
-  - PDF download button component
-- [ ] Design the branded PDF template system:
-  - PDF page layout (margins, headers, footers, page numbers)
-  - PDF-optimized typography and color application
-  - Background textures for PDF (must print cleanly)
-- [ ] Create background textures and visual assets (clay, linen, stone, fogged light)
-- [ ] Establish responsive breakpoints (mobile, tablet, desktop)
+**Requirements:**
 
-### Phase 2 -- Platform Pages (Section D)
-
-- [ ] Design Home page -- entry point, brand essence, clear navigation to all sections
-- [ ] Design The Rose page -- core technology explained (Levels 1-3)
-- [ ] Design The Aura page -- perception and relationship work
-- [ ] Design The Journey page -- what participants experience
-- [ ] Design The Guardians page -- facilitator profiles with photo framing
-- [ ] Design Begin page -- enrollment gateway, links to forms
-- [ ] Design mobile responsive versions of all pages
-- [ ] Design "Download as PDF" integration for content pages (The Rose, The Aura, The Journey)
-- [ ] Verify accessibility (WCAG 2.1 AA)
-
-### Phase 3 -- Teacher Visual Aid Manual (Section A)
-
-- [ ] Design the password-protected entry gate for this section
-- [ ] Build Introduction pages (purpose, how to use, teaching posture, safety and consent)
-- [ ] Build Energetic Foundations pages (grounding cord, golden sun, earth & cosmos, the rose, the aura, roses of protection)
-- [ ] Create or refine illustrations for each energetic concept
-- [ ] Build Chakra 1-7 pages (one per chakra, consistent layout)
-- [ ] Build Level-specific teaching flow pages
-- [ ] Build Teaching Agreements pages
-- [ ] Update/digitally strengthen any existing Procreate diagrams
-- [ ] Design the PDF export for this section (full manual as password-protected PDF)
-- [ ] Review all pages for consistency (layout, color, typography, iconography)
-- [ ] Test the section on tablet and mobile (teachers will use these devices during live sessions)
-
-### Phase 4 -- The Invitation (Section B)
-
-- [ ] Build Screen 1 (Presentation) -- all 14 sections following `docs/program/presentation.md`
-- [ ] Design the scrolling web experience with section transitions
-- [ ] Design quote spreads (full-width, presence-oriented)
-- [ ] Design Guardian profile sections with photo framing
-- [ ] Design the "Learn More" action/transition from Screen 1 to Screen 2
-- [ ] Build Screen 2 (Learn More) -- full schedule times and contribution model following `docs/program/schedule-details.md`
-- [ ] Design contribution model table (inviting, not transactional) for Screen 2
-- [ ] Design the PDF exports: presentation deck (Screen 1) and schedule/contribution companion PDF (Screen 2)
-- [ ] Review for brand consistency with the platform and Section A
-
-### Phase 5 -- Forms (Section C)
-
-- [ ] Build Begin Your Journey multi-step enrollment flow (5 steps)
-- [ ] Build Contact / Inquiry form
-- [ ] Build Community Interest / Waitlist form
-- [ ] Design post-submission confirmation pages
-- [ ] Design the PDF export for form confirmations (branded summary of enrollment + agreements)
-- [ ] Design mobile responsive versions of all forms
-- [ ] Verify accessibility (WCAG 2.1 AA)
-- [ ] Review for brand consistency with all platform sections
-
-### Phase 6 -- PDF Export System (Section E) & Integration
-
-- [ ] Finalize the branded PDF template across all sections
-- [ ] Test PDF exports for: Teacher Visual Aid Manual, The Invitation, form confirmations, content pages
-- [ ] Verify PDFs render correctly across readers (browser, Acrobat, Preview)
-- [ ] Verify illustrations and diagrams render cleanly in both web and PDF (SVG assets)
-- [ ] Test password protection on Teacher Visual Aid Manual PDF
-- [ ] End-to-end review: navigate the full platform, download all PDF types, verify brand coherence
-- [ ] Internal review with Guardians and facilitators
-- [ ] Address feedback and refine
-
-### Phase 7 -- Localization
-
-- [ ] Translate all platform content to Portuguese and Spanish
-  - Maintain identical layouts, swap text only
-  - Respect linguistic nuance (not literal translation)
-- [ ] Verify translated content works in both web and PDF formats
-- [ ] Test all forms in translated versions
-- [ ] Deliver platform access to teachers and set up credentials
+- PDF mirrors the web layout as closely as possible
+- Branded template: ROSES OS wordmark, Aura White background, consistent margins and typography
+- Formatted for both screen reading and print (A4 / Letter)
+- Cormorant Garamond for headers, Inter for body
+- Illustrations and diagrams render cleanly (SVG preferred)
+- Page numbers and section headers in footer
+- Subtle brand texture on each page (light enough to print cleanly)
 
 ---
 
-## 5. DESIGN PRINCIPLES -- THE NON-NEGOTIABLES
+## 7. DESIGN PRINCIPLES
 
-These principles must guide every design decision:
+These principles guide every design decision in the manual:
 
 1. **Silence is sacred** -- Whitespace is not empty. It is intentional breathing room.
 2. **Warmth over polish** -- The brand should feel like clay, not chrome.
 3. **Centered and calm** -- Layouts are devotional, not dynamic. Centered, not asymmetric.
 4. **Gold is earned** -- Use `#9E956B` for emphasis, never decoration.
-5. **No hype** -- Nothing should feel urgent, loud, or sales-driven. This is an invitation, not a pitch.
-6. **Consistency is coherence** -- Same background style, same layout logic, same color rules, same iconography style across every page and PDF.
-7. **Texture has meaning** -- Clay, linen, stone, paper evoke earthiness and groundedness. Use them with intention.
-8. **The Rose Clay Mauve (`#9C6F6E`) is the brand** -- It is the field, not the accent. It should feel like home.
+5. **No hype** -- Nothing should feel urgent, loud, or sales-driven. This is a teaching instrument.
+6. **Consistency is coherence** -- Same background style, same layout logic, same color rules, same iconography across every page and PDF.
+7. **Texture has meaning** -- Clay, linen, stone, paper evoke earthiness. Use them with intention.
+8. **Rose Clay Mauve is the brand** -- It is the field, not the accent. It should feel like home.
 
 ---
 
-## 6. VOICE & TONE REFERENCE (FOR COPY ON THE PLATFORM)
+## 8. ACCESSIBILITY
 
-The designer should understand the language world they are designing for:
+The designer has discretion on accessibility approach. The goal is that the manual works well as a teaching presentation on tablets and laptops. Key considerations:
 
-- **Simplicity** -- Clear, unadorned
-- **Reverence** -- Sacred without being religious
-- **Clarity** -- Precise, never vague
-- **Spaciousness** -- Room to breathe in every message
-- **Calm authority** -- Grounded, never forceful
-
-**Key phrases that appear across materials:**
-- "The Operating System of Remembrance"
-- "When the Rose awakens, Genius awakens"
-- "Not techniques, but instruments of consciousness"
-- "You are the mountain, not the summit"
-- "This is not learning. This is remembering."
-- "Welcome home."
+- Sufficient contrast for readability in varied lighting (teaching environments)
+- Clear typographic hierarchy so teachers can scan quickly during live sessions
+- Touch-friendly navigation for tablet use
+- Legible at arm's length (presentation context)
 
 ---
 
-## 7. FILE DELIVERY EXPECTATIONS
+## 9. CREATIVE FREEDOM
 
-| Deliverable | Format | Notes |
-|---|---|---|
-| Web Platform Design | Figma (or equivalent) | Complete component library, page designs, responsive breakpoints, interaction states, design tokens, developer-ready specs |
-| PDF Template System | Figma (or equivalent) + sample PDF exports | Branded PDF template with typography, margins, headers/footers. Sample exports for each PDF type |
-| Teacher Visual Aid Manual | Web section design + PDF export design | Password-protected PDF export (4444). Web section must work on tablet during live sessions |
-| The Invitation | Web section design + PDF export design | PDF optimized for screen sharing (one section per page) |
-| Forms | Web form designs | Multi-step enrollment flow, contact, waitlist. All interaction states. Post-submission PDF confirmation design |
-| Platform Pages | Web page designs | All 7 sitemap pages, responsive, with PDF download integration for content pages |
-| Assets | SVG/PNG | All illustrations, icons, textures exported as reusable assets. SVG preferred for cross-medium rendering (web + PDF) |
+The designer has creative freedom in executing this manual. These guidelines provide intention and tonal foundation -- not rigid constraints. We trust the designer's eye and craft to interpret these principles and bring them to life. Where something is not specified, follow your instinct within the brand's tone -- warm, sacred, grounded, quiet.
 
 ---
 
-## 8. LANGUAGE VERSIONS REQUIRED
+## 10. PRODUCTION CHECKLIST
 
-**Phase 1 languages:**
-1. English (primary)
-2. Portuguese (secondary)
-3. Spanish
-
-All platform content and PDF exports must support all three languages with identical layouts and text-only swaps. The web platform should support language switching (via navigation or URL path). PDF exports should generate in the user's selected language. Translations should respect linguistic nuance -- not be literal word-for-word translations.
-
----
-
-## 9. STRATEGIC CONTEXT
-
-This work is more than design production. The web platform is a unified digital home for ROSES OS that demonstrates:
-
-- Design coherence across every touchpoint
-- Educational clarity for teachers and participants
-- Energetic intelligence embedded in every interaction
-- Platform readiness for future growth (app, additional programs, regional expansion)
-
-The web-first approach means content is always current, always accessible, and always shareable -- while PDF downloads ensure nothing is lost when someone is offline, in a session, or wants a personal record. One source of truth, two mediums.
-
-It shows: *"This is how we think, teach, and build."*
-
-The designer is building the visual foundation for an entire ecosystem. Every decision made now carries forward.
+- [ ] Review source content: `docs/training/mdr-teachers-training-manual.md`
+- [ ] Review live site [rosesos.com](https://rosesos.com) for current visual reference
+- [ ] Review source Keynote file: `docs/source-materials/Rose + Aura - Invite .key`
+- [ ] Design the password-protected entry gate
+- [ ] Build Introduction pages (purpose, posture, safety)
+- [ ] Build Energetic Foundations pages (grounding, golden sun, circuits, the rose, aura, protection roses)
+- [ ] Create or refine illustrations for each energetic concept
+- [ ] Build Chakra 1--7 pages (one per chakra, consistent layout)
+- [ ] Build Level-specific teaching flow pages (Level 1, 2, 3)
+- [ ] Build Teaching Agreements pages
+- [ ] Design the PDF export (full manual as downloadable PDF)
+- [ ] Review all pages for consistency (layout, color, typography)
+- [ ] Test on tablet and laptop (teachers will use these devices during live sessions)
 
 ---
 
-## 10. IDEAS FOR DESIGNER REVIEW
+## REFERENCE DOCUMENTS
 
-The following ideas are proposals for the designer to evaluate. They are not approved directions — they require designer review, exploration, and feedback before any decision is made.
+| Document | Path |
+|----------|------|
+| Teaching Manual (source content) | `docs/training/mdr-teachers-training-manual.md` |
+| Brand DNA | `docs/brand/brand-dna.md` |
+| Source Keynote | `docs/source-materials/Rose + Aura - Invite .key` |
 
-### Idea: Pastel Chakra Colors
+---
 
-**Current approach:** Each chakra page uses the standard, vivid chakra color (red, orange, yellow, green/pink, light blue, indigo, violet) as its dominant color, with harmonized saturation across pages.
+## LANGUAGE VERSIONS
 
-**Proposed exploration:** Use **pastel** versions of the chakra colors instead of their full-saturation counterparts. This would mean softer, muted tones — a pastel red/rose for Root, pastel orange/peach for Sacral, pastel yellow/cream for Solar Plexus, and so on through the seven chakras.
+**Phase 1:** English (primary)
 
-**Rationale to consider:**
-- Pastel tones may integrate more naturally with the brand's warm, earthy, quiet visual identity
-- The current palette (Rose Clay Mauve, Peach Sand, Golden Ether) already lives in a soft, muted tonal range — pastels could create a more cohesive transition between non-chakra pages and chakra pages
-- Reduces visual contrast when moving from the warm neutral backgrounds into the chakra section
-- Aligns with the design principle "no harsh contrasts"
-
-**Questions for the designer:**
-- Do pastel chakra colors maintain enough visual distinction between the seven chakras, or do they risk blending together?
-- Can the chakra identity (each color's energetic meaning) still read clearly in pastel form?
-- Would a gradient approach work — pastel as the background field with the true chakra color as an accent — to preserve both softness and clarity?
-- How does this interact with the gold accents on chakra pages?
+Future phases: Portuguese, Spanish -- identical layouts, text-only swaps.

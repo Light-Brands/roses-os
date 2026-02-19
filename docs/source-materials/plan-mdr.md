@@ -50,6 +50,8 @@ The manual helps teachers:
 - Teaching posture: guiding, not diagnosing
 - Safety, consent, and energetic responsibility
 
+**Rose imagery in opening pages:** Where a logo is called for in the opening slides (Sections 1–3), use both the rose logo (minimal line icon) and a realistic rose image. These set the visual tone for the manual.
+
 ### Section 2 — Energetic Foundations
 
 Core tools and concepts introduced before the chakra deep-dive:
@@ -76,6 +78,12 @@ Each chakra section includes:
 - Primary blockages
 - Teaching cues (what to emphasize verbally)
 
+**Chakra slide imagery:** The chakra section slides do not need the rose logo. Instead, the designer has creative freedom here — the priority is helping viewers clearly understand where in the body each chakra node is located. Body placement visuals should represent diverse people — a variety of body shapes, sizes, and ethnicities. Each chakra page should emphasize that chakra's color — vibrant yet subtle, applied cohesively so it matches the overall slide aesthetic. The designer has discretion on exactly how the color is expressed (background wash, glow, accent, etc.).
+
+**Non-chakra teaching slides (meditation techniques):** Slides that illustrate how things are done in the meditation — grounding cord, golden sun, aura layers, roses of protection, etc. — should be specific in the lines and patterns shown. The imagery needs to accurately depict the energetic structures being taught. Figures shown should represent a wide range of body shapes, sizes, and ethnicities — reflecting the whole world, like the United Nations. No single type of person should dominate the imagery.
+
+**Rose depiction rule:** Roses in this system are always depicted as a stem and a flower only — never with thorns or leaves.
+
 **Chakra Reference:**
 
 | # | Chakra | Sanskrit | Statement | Color | Element |
@@ -88,7 +96,7 @@ Each chakra section includes:
 | 6 | Third Eye | Ajna | I SEE | Indigo | Light |
 | 7 | Crown | Sahasrara | I KNOW | Violet/White | Consciousness |
 
-> **Note:** Some diagrams may be complex or imperfect due to Procreate edits — this is acceptable to update or digitally strengthen. Teachers are guided to use visuals as references, not absolute representations.
+> **Note:** The existing drawings and logo are references to the original stick-and-line style that has been part of this tradition. The current logo also represents the past logo. The new design should pay homage to this history — honoring the old while creating a new, elevated rendition. The favored illustration style is stick-and-line drawings with color that evokes watercolor — a feeling of a time that came before. The drawings should feel pure, innocent, vibrant, and loving. Some diagrams may be complex or imperfect due to Procreate edits — this is acceptable to update or digitally strengthen. Teachers are guided to use visuals as references, not absolute representations.
 
 ### Section 4 — Level-Specific Teaching Flow
 
@@ -130,6 +138,10 @@ Each chakra section includes:
 
 ## 4. VISUAL & BRAND GUIDELINES
 
+### Creative Freedom
+
+The designer has creative freedom in executing this manual. The guidelines here provide direction and intention, not rigid constraints. We trust the designer's eye and craft to interpret these principles and bring them to life in ways that may exceed what we've described. Where something isn't specified, the designer should follow their instinct within the brand's tone — warm, sacred, grounded, quiet.
+
 ### Color System
 
 - **Primary background:** Neutral, warm tone (peachy neutral / rose clay)
@@ -142,6 +154,19 @@ Each chakra section includes:
 - **Gold accents:**
   - Used for headings, dividers, key phrases
   - Represents highest vibration, coherence, clarity
+
+### Design Reference
+
+**Design ethos:** Simple, peaceful, ceremonial elegance. Bare feet on temple stone. Apple minimalism meets spiritual temple. Clean, intentional, sacred — never busy, never loud.
+
+**Illustration style:** Elegant line drawings. Where humans are featured, they should feel like elegant, unique, timeless beings — as if seen on the streets of California or NYC at a fashion show. Simple, striking, effortless. The people are beautiful but never the point — the emphasis is always on learning the meditation. A variety of hair styles and shapes, never distracting — just representing the cross section of humanity and its beauty.
+
+**Fashion & figure references:** The way people are depicted should evoke high-end ancient-meets-modern style — natural materials like linen, silk, raw natural fibers in neutral tones. Key references:
+- [Caravana](https://caravana.land) — artisan-driven luxury resort wear
+- High-end Greek fashion that blends ancient heritage with modern minimalism — designers like Zeus+Dione, Celia Dragouni, Vassilis Zoulias; brands like Greek Archaic Kori, Pearl and Caviar, Parthenis — the sophisticated Aegean aesthetic
+- [Yeva](https://yeva.world) — design inspiration
+
+**The live website [rosesos.com](https://rosesos.com) is the primary reference** for current font choices, color palette, and overall vibe. The MDR visual aid and the website together will inform the brand book — not the other way around. Align with what's on the site now.
 
 ### Typography (open to suggestions)
 
