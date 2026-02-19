@@ -157,7 +157,7 @@ The designer has creative freedom in executing this manual. The guidelines here 
 
 ### Design Reference
 
-**Design ethos:** Simple elegance. Apple minimalism meets spiritual temple. Clean, intentional, sacred — never busy, never loud.
+**Design ethos:** Simple, peaceful elegance. Apple minimalism meets spiritual temple. Clean, intentional, sacred — never busy, never loud.
 
 **Illustration style:** Elegant line drawings. Where humans are featured, they should feel like elegant, unique, timeless beings — as if seen on the streets of California or NYC at a fashion show. Simple, striking, effortless. The people are beautiful but never the point — the emphasis is always on learning the meditation.
 
