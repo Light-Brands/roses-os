@@ -18,7 +18,31 @@ import InvitationCTA from '@/components/sections/InvitationCTA';
 const ease = [0.16, 1, 0.3, 1] as const;
 
 // =============================================================================
-// GOOGLE CALENDAR URL HELPER
+// TIMEZONE SUPPORT (matching offerings ScheduleTable pattern)
+// =============================================================================
+
+type TimezoneKey = 'sanJose' | 'bogota' | 'newYork' | 'brasilia' | 'london' | 'madrid';
+
+const timezoneLabels: Record<TimezoneKey, string> = {
+  sanJose: 'San Jose',
+  bogota: 'Bogota',
+  newYork: 'New York',
+  brasilia: 'Brasilia',
+  london: 'London',
+  madrid: 'Madrid',
+};
+
+const timezoneIANA: Record<TimezoneKey, string> = {
+  sanJose: 'America/Costa_Rica',
+  bogota: 'America/Bogota',
+  newYork: 'America/New_York',
+  brasilia: 'America/Sao_Paulo',
+  london: 'Europe/London',
+  madrid: 'Europe/Madrid',
+};
+
+// =============================================================================
+// TIME PARSING & CONVERSION HELPERS
 // =============================================================================
 
 const monthMap: Record<string, number> = {
@@ -26,44 +50,88 @@ const monthMap: Record<string, number> = {
   Jul: 7, Aug: 8, Sep: 9, Oct: 10, Nov: 11, Dec: 12,
 };
 
-function generateGoogleCalendarUrl(
-  title: string,
+/**
+ * Parse a date string ("Thu, Mar 12") and time string ("12:00 – 1:30 pm")
+ * from Costa Rica (UTC-6) into UTC Date objects.
+ */
+function parseToUtc(
   dateStr: string,
   timeStr: string,
   year: number = 2026
-): string {
-  // Parse date: "Thu, Mar 12" → month + day
+): { start: Date; end: Date; month: number; day: number } | null {
   const dateParts = dateStr.split(/,\s*/);
-  if (dateParts.length < 2) return '';
+  if (dateParts.length < 2) return null;
   const [monthStr, dayStr] = dateParts[1].trim().split(/\s+/);
   const month = monthMap[monthStr];
   const day = parseInt(dayStr);
-  if (!month || isNaN(day)) return '';
+  if (!month || isNaN(day)) return null;
 
-  // Parse time: "12:00 – 1:30 pm" → start/end in 24h
   const timeParts = timeStr.split(/\s*[–-]\s*/);
-  if (timeParts.length < 2) return '';
+  if (timeParts.length < 2) return null;
 
   const endMatch = timeParts[1].trim().match(/^(\d{1,2}):(\d{2})\s*(am|pm)$/i);
   const startMatch = timeParts[0].trim().match(/^(\d{1,2}):(\d{2})$/);
-  if (!endMatch || !startMatch) return '';
+  if (!endMatch || !startMatch) return null;
 
   let endHour = parseInt(endMatch[1]);
   const endMin = parseInt(endMatch[2]);
   const endPeriod = endMatch[3].toLowerCase();
-
   if (endPeriod === 'pm' && endHour !== 12) endHour += 12;
   if (endPeriod === 'am' && endHour === 12) endHour = 0;
 
   let startHour = parseInt(startMatch[1]);
   const startMin = parseInt(startMatch[2]);
-
-  // Infer start AM/PM: hours 1-6 are PM, 7-11 are AM, 12 is noon
+  // Infer AM/PM: 1-6 → PM, 7-11 → AM, 12 → noon
   if (startHour >= 1 && startHour <= 6) startHour += 12;
 
+  // Costa Rica is UTC-6 (no DST), so add 6 hours to get UTC
+  const start = new Date(Date.UTC(year, month - 1, day, startHour + 6, startMin));
+  const end = new Date(Date.UTC(year, month - 1, day, endHour + 6, endMin));
+
+  return { start, end, month, day };
+}
+
+/** Format a UTC Date into a localized time string for a given IANA timezone. */
+function formatTime(d: Date, ianaZone: string): string {
+  return new Intl.DateTimeFormat('en-US', {
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true,
+    timeZone: ianaZone,
+  }).format(d);
+}
+
+/** Convert a Costa Rica time range to a display string in the target timezone. */
+function convertTimeRange(
+  dateStr: string,
+  timeStr: string,
+  targetTz: TimezoneKey
+): string {
+  // San Jose is the base timezone — return raw data as-is
+  if (targetTz === 'sanJose') return timeStr;
+
+  const parsed = parseToUtc(dateStr, timeStr);
+  if (!parsed) return timeStr;
+
+  const iana = timezoneIANA[targetTz];
+  return `${formatTime(parsed.start, iana)} – ${formatTime(parsed.end, iana)}`;
+}
+
+/** Generate a Google Calendar URL for a session (always in Costa Rica time). */
+function generateGoogleCalendarUrl(
+  title: string,
+  dateStr: string,
+  timeStr: string
+): string {
+  const parsed = parseToUtc(dateStr, timeStr);
+  if (!parsed) return '';
+
   const pad = (n: number) => n.toString().padStart(2, '0');
-  const startDate = `${year}${pad(month)}${pad(day)}T${pad(startHour)}${pad(startMin)}00`;
-  const endDate = `${year}${pad(month)}${pad(day)}T${pad(endHour)}${pad(endMin)}00`;
+  // Use Costa Rica local time for the calendar dates
+  const startHourCR = parsed.start.getUTCHours() - 6;
+  const endHourCR = parsed.end.getUTCHours() - 6;
+  const startDate = `2026${pad(parsed.month)}${pad(parsed.day)}T${pad(startHourCR)}${pad(parsed.start.getUTCMinutes())}00`;
+  const endDate = `2026${pad(parsed.month)}${pad(parsed.day)}T${pad(endHourCR)}${pad(parsed.end.getUTCMinutes())}00`;
 
   const params = new URLSearchParams({
     action: 'TEMPLATE',
@@ -90,6 +158,7 @@ function CommunitySchedule({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: '-50px' });
+  const [timezone, setTimezone] = useState<TimezoneKey>('newYork');
 
   return (
     <motion.div
@@ -102,6 +171,39 @@ function CommunitySchedule({
       {label && (
         <p className="label-sacred mb-4">{label}</p>
       )}
+
+      {/* Timezone selector — matches ScheduleTable in offerings */}
+      <div className="flex items-center justify-end mb-6">
+        <label className="label-sacred mr-3" htmlFor="community-tz-select">
+          Timezone
+        </label>
+        <div className="relative">
+          <select
+            id="community-tz-select"
+            value={timezone}
+            onChange={(e) => setTimezone(e.target.value as TimezoneKey)}
+            className={cn(
+              'appearance-none cursor-pointer',
+              'bg-[var(--color-background-subtle)] border border-[var(--color-border)]',
+              'rounded-lg px-4 py-2 pr-9',
+              'text-sm text-[var(--color-foreground-subtle)]',
+              'focus-premium',
+              'transition-colors duration-200'
+            )}
+          >
+            {(Object.keys(timezoneLabels) as TimezoneKey[]).map((tz) => (
+              <option key={tz} value={tz}>
+                {timezoneLabels[tz]}
+              </option>
+            ))}
+          </select>
+          <ChevronDown
+            className="absolute right-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--color-foreground-faint)] pointer-events-none"
+            aria-hidden="true"
+          />
+        </div>
+      </div>
+
       <div className="space-y-3">
         {months.map((month) => (
           <div
@@ -130,6 +232,11 @@ function CommunitySchedule({
                     session.date,
                     session.time
                   );
+                  const displayTime = convertTimeRange(
+                    session.date,
+                    session.time,
+                    timezone
+                  );
 
                   return (
                     <div
@@ -143,12 +250,12 @@ function CommunitySchedule({
                       {/* Mobile layout */}
                       <div className="md:hidden">
                         <div className="flex items-center justify-between gap-3">
-                          <div className="flex items-baseline gap-3 min-w-0">
-                            <span className="text-[var(--color-foreground-subtle)] font-medium">
+                          <div className="min-w-0">
+                            <span className="text-[var(--color-foreground-subtle)] font-medium block">
                               {session.date}
                             </span>
-                            <span className="text-[var(--color-foreground-muted)] shrink-0">
-                              {session.time}
+                            <span className="text-[var(--color-foreground-muted)] text-xs tabular-nums mt-0.5 block">
+                              {displayTime}
                             </span>
                           </div>
                           {calUrl && (
@@ -176,8 +283,8 @@ function CommunitySchedule({
                         <span className="text-[var(--color-foreground-subtle)] font-medium">
                           {session.date}
                         </span>
-                        <span className="text-[var(--color-foreground-muted)] tabular-nums">
-                          {session.time}
+                        <span className="text-[var(--color-foreground-muted)] tabular-nums whitespace-nowrap">
+                          {displayTime}
                         </span>
                         {calUrl ? (
                           <a
