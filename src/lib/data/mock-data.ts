@@ -8,6 +8,7 @@ import type {
   PathLevel, LineageEntry,
   ArchitectureLayer, Chakra, Technique, TeachingLevel,
   Agreement, Capacity, BrandQuote, Stat, CommunityProgram,
+  CommunityProgramDetailed,
 } from './types';
 
 // =============================================================================
@@ -537,39 +538,321 @@ export const messagingPillars = [
 export const freePrograms: CommunityProgram[] = [
   {
     id: 'hummingbirds',
-    title: 'Hummingbirds',
-    description: 'A free weekly gathering open to everyone. A space to connect, practice, and nourish your inner world together with the community. No prior experience needed. Just come as you are.',
-    schedule: 'Every Saturday, 10:30 AM – 11:30 AM (Costa Rica time)',
+    title: 'Hummingbirds — Free Group Aura Readings',
+    description: 'Hummingbirds are free group aura readings offered weekly to the community. They are a gentle and accessible way to receive a reading, connect with the field, and have a first taste of what an Aura Reading is.\n\nPeople come to receive short aura readings, connect with the energetic field, feel the atmosphere of the school, and experience how aura reading works in practice.\n\nThis space is open to everyone. No previous courses or training in the Aura Reading School are required.',
+    schedule: 'Every Saturday · 10:30 AM – 11:30 AM (Costa Rica time)',
+    audience: 'Open to everyone',
     free: true,
   },
   {
     id: 'free-live-guidances',
-    title: 'Free Live Guidances',
-    description: 'Live Rose Meditation guidances offered to all who have already been initiated in Rose Meditation. A space to deepen your practice with the support of a guided session and the collective field.',
-    audience: 'Rose Meditation Practitioner',
+    title: 'Guided Rose Meditations — Live & Free',
+    description: 'We offer live guided Rose Meditations, happening weekly on Saturdays. These meditations are free and held live, creating a shared field of presence and practice.\n\nThe intention is to support continuity in the practice, nourish the relationship with the Rose, and meditate together in a living, guided field.\n\nThis space is only for people already initiated in Rose Meditation. If you have not received a Rose Meditation initiation, this gathering is not open to you.\n\nJoin our WhatsApp group to receive more information and access details for each weekly meditation.',
+    schedule: 'Every Saturday · 9:30 AM – 10:00 AM (Costa Rica time)',
+    audience: 'Rose Meditation practitioners only',
     free: true,
   },
   {
     id: 'practitioners-meetings',
-    title: 'Meetings of Rose Meditation Practitioners',
-    description: 'A monthly gathering for Rose Meditation practitioners to ask questions, share experiences, and support one another on the path. A living Q&A space held with care and presence.',
+    title: 'Monthly Rose Meditation Q&A Gathering',
+    description: 'Once a month, we host a free Q&A and sharing circle for Rose Meditation practitioners. This gathering is a space to come together, ask questions, and deepen the understanding of how to live and apply Rose Meditation in daily life.\n\nThis space is for clarifying doubts, sharing experiences, going deeper into the practice, and learning how to integrate the Rose more fully into life.\n\nIt is open only to Rose Meditation practitioners and offered freely to support the living community of the practice.\n\nJoin our WhatsApp group to receive more information and access details for each monthly gathering.',
     schedule: 'Once a month',
-    audience: 'Rose Meditation practitioners',
+    audience: 'Rose Meditation practitioners only',
     free: true,
   },
 ];
 
 export const paidPrograms: CommunityProgram[] = [
   {
-    id: 'aura-for-life',
-    title: 'Aura for Life',
-    description: 'A continued practice program for those who have completed the Aura Reading path. A living space to keep your reading skills sharp, deepen your perception, and stay connected to the community of practitioners.',
+    id: 'teachers-training',
+    title: 'Rose Meditation Teachers Training',
+    description: 'This training is designed to prepare facilitators to guide and teach Rose Meditation with presence, maturity, and responsibility. More than learning a technique, this program offers a genuine deepening into the Path of the Roses.',
     free: false,
   },
   {
+    id: 'aura-for-life',
+    title: 'Aura for Life',
+    description: 'A living space of continuity, care, and deepening for those who have already entered the language of Aura Reading. A place of supervision, practice, and integration where nothing is "finished," but everything can keep unfolding.',
+    free: false,
+  },
+];
+
+// =============================================================================
+// DETAILED COMMUNITY PROGRAMS (Teacher Training & Aura for Life)
+// =============================================================================
+
+export const communityProgramsDetailed: CommunityProgramDetailed[] = [
+  {
     id: 'teachers-training',
     title: 'Rose Meditation Teachers Training',
-    description: 'A dedicated training path for those called to share Rose Meditation with others. This program prepares you to hold space, guide meditations, and transmit the practice with clarity, presence, and integrity.',
-    free: false,
+    intro: [
+      'This training is designed to prepare facilitators to guide and teach Rose Meditation with presence, maturity, and responsibility.',
+      'More than learning a technique, this program offers a genuine deepening into the Path of the Roses, integrating personal experience, technical refinement, and the development of inner listening.',
+      'The moment when each participant will be ready to begin offering their own guidances and teaching will depend on their individual process, level of integration, and maturity in the practice.',
+    ],
+    requirement: 'Completion of Rose Meditation Level 1, 2 and 3',
+    howClassesWork: {
+      description: 'The sessions combine theory and practice, including:',
+      items: [
+        'Conceptual foundations',
+        'Technical refinement',
+        'Guided experience of the technique presented in each class',
+      ],
+    },
+    supervisedPractice: {
+      title: 'Supervised Guidance',
+      description: 'Guided practices will be scheduled according to the number of participants, ensuring that each student has the opportunity to guide at least once.',
+      items: [
+        'One student guides the practice',
+        'Peers provide constructive feedback',
+        'The teacher shares direction and adjustments',
+      ],
+      closing: 'This space is dedicated to refining facilitation skills, strengthening confidence, and maturing as a facilitator.',
+    },
+    structure: {
+      format: 'Weekly live sessions',
+      facilitation: 'Angel, Dara, Peggy, Julia, Nicole, and Ana Leite',
+      note: 'This training unfolds in two five-month cycles, with the same teachings, content and intention. The journey is similar — the only difference is when you enter: One cycle runs from March to July; the other from August to December.',
+    },
+    investment: [
+      { label: 'First Cycle of Training', period: 'March to July', price: '$600' },
+      { label: 'Second Cycle of Training', period: 'August to December', price: '$600' },
+    ],
+    scheduleLabel: '2026 Class Schedule',
+    schedule: [
+      {
+        month: 'February — Introduction Class',
+        dates: [
+          { date: 'Wed, Feb 25', time: '12:00 – 1:30 pm' },
+        ],
+      },
+      {
+        month: 'Program 1 | March',
+        dates: [
+          { date: 'Fri, Mar 6', time: '3:00 – 4:30 pm' },
+          { date: 'Thu, Mar 12', time: '12:00 – 1:30 pm' },
+          { date: 'Thu, Mar 19', time: '11:00 – 12:30 pm' },
+          { date: 'Thu, Mar 26', time: '12:00 – 1:30 pm' },
+        ],
+      },
+      {
+        month: 'April',
+        dates: [
+          { date: 'Thu, Apr 2', time: '11:00 – 12:30 pm' },
+          { date: 'Thu, Apr 16', time: '12:00 – 1:30 pm' },
+          { date: 'Wed, Apr 22', time: '3:00 – 4:30 pm' },
+          { date: 'Thu, Apr 30', time: '12:00 – 1:30 pm' },
+        ],
+      },
+      {
+        month: 'May',
+        dates: [
+          { date: 'Mon, May 4', time: '4:00 – 5:30 pm' },
+          { date: 'Thu, May 14', time: '12:00 – 1:30 pm' },
+          { date: 'Thu, May 21', time: '12:00 – 1:30 pm' },
+          { date: 'Thu, May 28', time: '1:00 – 2:30 pm' },
+        ],
+      },
+      {
+        month: 'June',
+        dates: [
+          { date: 'Thu, Jun 4', time: '12:00 – 1:30 pm' },
+          { date: 'Thu, Jun 11', time: '11:00 – 12:30 pm' },
+          { date: 'Thu, Jun 18', time: '12:00 – 1:30 pm' },
+          { date: 'Thu, Jun 25', time: '1:00 – 2:00 pm' },
+        ],
+      },
+      {
+        month: 'July',
+        dates: [
+          { date: 'Thu, Jul 2', time: '12:00 – 1:30 pm' },
+          { date: 'Thu, Jul 9', time: '12:00 – 1:30 pm' },
+          { date: 'Mon, Jul 20', time: '3:00 – 4:30 pm' },
+          { date: 'Thu, Jul 30', time: '3:00 – 4:30 pm' },
+        ],
+      },
+      {
+        month: 'Program 2 | August',
+        dates: [
+          { date: 'Thu, Aug 6', time: '12:00 – 1:30 pm' },
+          { date: 'Thu, Aug 13', time: '1:00 – 2:30 pm' },
+          { date: 'Thu, Aug 20', time: '11:00 – 12:30 pm' },
+          { date: 'Thu, Aug 27', time: '12:00 – 1:30 pm' },
+        ],
+      },
+      {
+        month: 'September',
+        dates: [
+          { date: 'Thu, Sep 3', time: '11:00 – 12:30 pm' },
+          { date: 'Thu, Sep 10', time: '1:00 – 2:30 pm' },
+          { date: 'Thu, Sep 17', time: '12:00 – 1:30 pm' },
+          { date: 'Thu, Sep 24', time: '12:00 – 1:30 pm' },
+        ],
+      },
+      {
+        month: 'October',
+        dates: [
+          { date: 'Wed, Oct 7', time: '1:00 – 2:30 pm' },
+          { date: 'Thu, Oct 15', time: '12:00 – 1:30 pm' },
+          { date: 'Thu, Oct 22', time: '11:00 – 12:30 pm' },
+          { date: 'Thu, Oct 29', time: '12:00 – 1:30 pm' },
+        ],
+      },
+      {
+        month: 'November',
+        dates: [
+          { date: 'Thu, Nov 5', time: '11:00 – 12:30 pm' },
+          { date: 'Thu, Nov 12', time: '12:00 – 1:30 pm' },
+          { date: 'Thu, Nov 19', time: '12:00 – 1:30 pm' },
+          { date: 'Thu, Nov 26', time: '12:00 – 1:30 pm' },
+        ],
+      },
+      {
+        month: 'December',
+        dates: [
+          { date: 'Thu, Dec 3', time: '12:00 – 1:30 pm' },
+          { date: 'Thu, Dec 10', time: '12:00 – 1:30 pm' },
+          { date: 'Mon, Dec 14', time: '1:00 – 2:00 pm' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'aura-for-life',
+    title: 'Aura for Life',
+    intro: [
+      'Aura for Life is a living space of continuity, care, and deepening for those who have already entered the language of Aura Reading. Created for students who have completed Aura 1, Aura 2 and 3, this program exists as a place of supervision, practice, and integration. A space where nothing is "finished," but everything can keep unfolding.',
+      'Aura Reading is not something we simply learn once. It matures with life, with the questions that arise in practice, with the subtle challenges that appear when we read for others and for ourselves. Aura for Life was born to embrace these moments.',
+    ],
+    requirement: 'Completion of Aura 1',
+    requirementNote: 'Also open to students who have completed Aura 2 and 3.',
+    howClassesWork: {
+      description: 'The sessions combine supervision and practice, and each class might include:',
+      items: [
+        'Practices of Aura Reading',
+        'Conceptual and practical integration',
+        'Refinement of perception and language',
+        'Sharings related to personal processes and discoveries',
+        'Shared reflection on real cases and experiences',
+      ],
+    },
+    supervisedPractice: {
+      title: 'Supervised Practice',
+      description: 'Aura Reading practices will be scheduled according to the number of participants, ensuring that each student has the opportunity to both read and receive supervision.',
+      items: [
+        'One student offers a reading',
+        'The supervisor observes and supports the process',
+        'Peers provide constructive feedback',
+        'The teacher shares direction and adjustments',
+      ],
+      closing: 'This space is dedicated to refining perception, strengthening trust in inner seeing, and integrating Aura Reading into life, work, and relationships.\n\nAura for Life is not another level to achieve, but a field of accompaniment that adapts to different rhythms, experiences, and demands, honoring where each person truly is.',
+    },
+    structure: {
+      format: 'Weekly live sessions',
+      facilitation: 'Angel, Dara, Peggy, Julia, Nicole, and Ana Leite',
+    },
+    investment: [
+      { label: 'Cycle 1', period: 'March to July', price: '$400' },
+      { label: 'Cycle 2', period: 'August to December', price: '$400' },
+      { label: 'Full Cycle', period: 'March to December', price: '$700' },
+    ],
+    scheduleLabel: '2026 Class Schedule',
+    schedule: [
+      {
+        month: 'February',
+        dates: [
+          { date: 'Tue, Feb 24', time: '12:00 – 1:30 pm' },
+        ],
+      },
+      {
+        month: 'March',
+        dates: [
+          { date: 'Tue, Mar 3', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, Mar 10', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, Mar 17', time: '11:00 – 12:30 pm' },
+          { date: 'Tue, Mar 24', time: '12:00 – 1:30 pm' },
+        ],
+      },
+      {
+        month: 'April',
+        dates: [
+          { date: 'Tue, Apr 7', time: '11:00 – 12:30 pm' },
+          { date: 'Tue, Apr 14', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, Apr 21', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, Apr 28', time: '12:00 – 1:30 pm' },
+        ],
+      },
+      {
+        month: 'May',
+        dates: [
+          { date: 'Tue, May 5', time: '1:00 – 2:30 pm' },
+          { date: 'Tue, May 12', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, May 19', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, May 26', time: '11:00 – 12:30 pm' },
+        ],
+      },
+      {
+        month: 'June',
+        dates: [
+          { date: 'Tue, Jun 9', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, Jun 16', time: '12:00 – 1:30 pm' },
+          { date: 'Wed, Jun 24', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, Jun 30', time: '11:00 – 12:30 pm' },
+        ],
+      },
+      {
+        month: 'July',
+        dates: [
+          { date: 'Tue, Jul 7', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, Jul 21', time: '3:00 – 4:30 pm' },
+          { date: 'Thu, Jul 23', time: '3:00 – 4:30 pm' },
+          { date: 'Tue, Jul 28', time: '3:00 – 4:30 pm' },
+        ],
+      },
+      {
+        month: 'August',
+        dates: [
+          { date: 'Wed, Aug 5', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, Aug 11', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, Aug 18', time: '11:00 – 12:30 pm' },
+          { date: 'Tue, Aug 25', time: '12:00 – 1:30 pm' },
+        ],
+      },
+      {
+        month: 'September',
+        dates: [
+          { date: 'Tue, Sep 1', time: '11:00 – 12:30 pm' },
+          { date: 'Tue, Sep 8', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, Sep 15', time: '1:00 – 2:30 pm' },
+          { date: 'Tue, Sep 22', time: '12:00 – 1:30 pm' },
+        ],
+      },
+      {
+        month: 'October',
+        dates: [
+          { date: 'Thu, Oct 1', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, Oct 6', time: '11:00 – 12:30 pm' },
+          { date: 'Tue, Oct 20', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, Oct 27', time: '12:00 – 1:30 pm' },
+        ],
+      },
+      {
+        month: 'November',
+        dates: [
+          { date: 'Tue, Nov 3', time: '11:00 – 12:30 pm' },
+          { date: 'Tue, Nov 10', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, Nov 17', time: '1:00 – 2:30 pm' },
+          { date: 'Tue, Nov 24', time: '12:00 – 1:30 pm' },
+        ],
+      },
+      {
+        month: 'December',
+        dates: [
+          { date: 'Tue, Dec 1', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, Dec 8', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, Dec 15', time: '12:00 – 1:00 pm' },
+        ],
+      },
+    ],
   },
 ];

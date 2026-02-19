@@ -183,3 +183,49 @@ export interface CommunityProgram {
   audience?: string;
   free: boolean;
 }
+
+/** Schedule entry for a community program class date */
+export interface CommunityScheduleDate {
+  date: string;
+  time: string;
+}
+
+/** Monthly group of schedule dates */
+export interface CommunityScheduleMonth {
+  month: string;
+  dates: CommunityScheduleDate[];
+}
+
+/** Investment/pricing option for a community program */
+export interface CommunityInvestment {
+  label: string;
+  period: string;
+  price: string;
+}
+
+/** Detailed community program (Teacher Training, Aura for Life) */
+export interface CommunityProgramDetailed {
+  id: string;
+  title: string;
+  intro: string[];
+  requirement: string;
+  requirementNote?: string;
+  howClassesWork: {
+    description?: string;
+    items: string[];
+  };
+  supervisedPractice: {
+    title: string;
+    description?: string;
+    items: string[];
+    closing: string;
+  };
+  structure: {
+    format: string;
+    facilitation: string;
+    note?: string;
+  };
+  investment: CommunityInvestment[];
+  scheduleLabel?: string;
+  schedule: CommunityScheduleMonth[];
+}

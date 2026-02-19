@@ -6,6 +6,7 @@ export type {
   ArchitectureLayer, Chakra, Technique, TeachingLevel,
   Agreement, Capacity, MessagingPillar, BrandQuote, Stat,
   CommunityProgram,
+  CommunityProgramDetailed, CommunityScheduleMonth, CommunityScheduleDate, CommunityInvestment,
 } from './types';
 
 export {
@@ -32,4 +33,5 @@ export {
   messagingPillars,
   freePrograms,
   paidPrograms,
+  communityProgramsDetailed,
 } from './mock-data';
