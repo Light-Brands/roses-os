@@ -249,6 +249,10 @@ There are **five platform sections**, in priority order:
 
 The designer must follow this system across the entire platform -- web and PDF.
 
+### Design Reference
+
+**The live website [rosesos.com](https://rosesos.com) is the primary reference** for current font choices, color palette, and overall vibe. The MDR visual aid and the website together will inform the brand book — not the other way around. Align with what's on the site now.
+
 ### Color Palette
 
 #### Primary Colors (Warm, Earthy, Gender-Neutral)

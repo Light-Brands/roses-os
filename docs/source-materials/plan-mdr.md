@@ -155,6 +155,10 @@ The designer has creative freedom in executing this manual. The guidelines here 
   - Used for headings, dividers, key phrases
   - Represents highest vibration, coherence, clarity
 
+### Design Reference
+
+**The live website [rosesos.com](https://rosesos.com) is the primary reference** for current font choices, color palette, and overall vibe. The MDR visual aid and the website together will inform the brand book — not the other way around. Align with what's on the site now.
+
 ### Typography (open to suggestions)
 
 - **Primary font:** Clean, modern serif or humanist sans-serif (e.g., Cormorant Garamond)
