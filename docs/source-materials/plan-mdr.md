@@ -50,6 +50,8 @@ The manual helps teachers:
 - Teaching posture: guiding, not diagnosing
 - Safety, consent, and energetic responsibility
 
+**Rose imagery in opening pages:** Where a logo is called for in the opening slides (Sections 1–3), use both the rose logo (minimal line icon) and a realistic rose image. These set the visual tone for the manual.
+
 ### Section 2 — Energetic Foundations
 
 Core tools and concepts introduced before the chakra deep-dive:
@@ -76,7 +78,7 @@ Each chakra section includes:
 - Primary blockages
 - Teaching cues (what to emphasize verbally)
 
-**Rose imagery in chakra slides:** The opening/title pages of each chakra section should include the same kinds of rose imagery used in the manual's opening pages — both the rose logo (minimal line icon) and a realistic rose. Where a logo is called for on these chakra section slides, pair it with a realistic rose image consistent with the style established in the introduction pages. This creates visual continuity between the opening of the manual and the opening of each chakra section.
+**Chakra slide imagery:** The chakra section slides do not need the rose logo. Instead, the designer has creative freedom here — the priority is helping viewers clearly understand where in the body each chakra node is located. Body placement visuals, anatomical references, and creative approaches to showing the chakra's position are ideal.
 
 **Chakra Reference:**
 

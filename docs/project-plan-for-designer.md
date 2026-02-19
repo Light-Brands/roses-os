@@ -58,6 +58,8 @@ There are **five platform sections**, in priority order:
 4. **Level-specific teaching flows** -- Level 1 (foundations), Level 2 (sacred space + chakra activation), Level 3 (the Analyzer + advanced perception)
 5. **Teaching Agreements** -- Core agreements and sacred use guidelines
 
+**Rose imagery in opening pages:** Where a logo is called for in the opening slides (Sections 1–3), use both the rose logo (minimal line icon) and a realistic rose image. These set the visual tone for the manual.
+
 **Chakra reference table:**
 
 | # | Chakra | Sanskrit | Statement | Color | Element |
@@ -77,7 +79,7 @@ There are **five platform sections**, in priority order:
 - Gold accents for headings, dividers, key phrases -- used intentionally, never decoratively
 - Some existing Procreate diagrams may need to be digitally redrawn or strengthened
 - Illustrations needed: seated meditation posture, grounding cord, golden sun, aura layers, chakra body placements, the rose (roots/stem/bloom), roses of protection, the Analyzer
-- **Rose imagery in chakra sections:** The opening/title pages of each chakra section should include the same kinds of rose imagery used in the manual's opening pages — both the rose logo (minimal line icon) and a realistic rose. Where a logo is called for on these chakra section slides, pair it with a realistic rose image consistent with the style established in the introduction pages. This creates visual continuity between the opening of the manual and the opening of each chakra section.
+- **Chakra slide imagery:** The chakra section slides do not need the rose logo. Instead, the designer has creative freedom here — the priority is helping viewers clearly understand where in the body each chakra node is located. Body placement visuals, anatomical references, and creative approaches to showing the chakra's position are ideal.
 
 **PDF download:** A "Download PDF" button at the top of the section exports the entire manual as a formatted, password-protected PDF -- designed for print or offline reference. The PDF should mirror the web layout as closely as possible.
 
