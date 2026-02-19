@@ -87,7 +87,16 @@ export default function ProgramCard({
         )}
       </div>
 
-      {/* Description, Meta & Includes — hidden in compact mode */}
+      {/* Description — always visible so first-time visitors see what each course offers */}
+      {program.description && (
+        <div className={cn('text-base md:text-lg text-[var(--color-foreground-muted)] leading-relaxed space-y-4', compact ? 'mt-4' : 'mb-8')}>
+          {program.description.split('\n\n').map((paragraph, i) => (
+            <p key={i}>{paragraph}</p>
+          ))}
+        </div>
+      )}
+
+      {/* Meta & Includes — hidden in compact mode */}
       <AnimatePresence>
         {!compact && (
           <motion.div
@@ -97,15 +106,6 @@ export default function ProgramCard({
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="overflow-hidden"
           >
-            {/* Description — shown first and prominently */}
-            {program.description && (
-              <div className="text-base md:text-lg text-[var(--color-foreground-muted)] leading-relaxed mb-8 space-y-4">
-                {program.description.split('\n\n').map((paragraph, i) => (
-                  <p key={i}>{paragraph}</p>
-                ))}
-              </div>
-            )}
-
             {/* When progressiveDetails is on, wrap meta & includes behind a toggle */}
             {progressiveDetails ? (
               <>
