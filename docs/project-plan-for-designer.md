@@ -253,7 +253,11 @@ The designer must follow this system across the entire platform -- web and PDF.
 
 **Design ethos:** Apple minimalism meets spiritual temple. Clean, intentional, sacred — never busy, never loud.
 
-**Illustration style:** Elegant line drawings. Where humans are featured, they should feel like elegant, unique, timeless beings — as if seen on the streets of California or NYC at a fashion show. Simple, striking, effortless. Reference the brand Caravana for how people could look: linen, silks, raw natural fibers, neutral tones. The people are beautiful but never the point — the emphasis is always on learning the meditation.
+**Illustration style:** Elegant line drawings. Where humans are featured, they should feel like elegant, unique, timeless beings — as if seen on the streets of California or NYC at a fashion show. Simple, striking, effortless. The people are beautiful but never the point — the emphasis is always on learning the meditation.
+
+**Fashion & figure references:** The way people are depicted should evoke high-end ancient-meets-modern style — natural materials like linen, silk, raw natural fibers in neutral tones. Key references:
+- [Caravana](https://caravana.land) — artisan-driven luxury resort wear
+- High-end Greek fashion that blends ancient heritage with modern minimalism — designers like Zeus+Dione, Celia Dragouni, Vassilis Zoulias; brands like Greek Archaic Kori, Pearl and Caviar, Parthenis — the sophisticated Aegean aesthetic
 
 **The live website [rosesos.com](https://rosesos.com) is the primary reference** for current font choices, color palette, and overall vibe. The MDR visual aid and the website together will inform the brand book — not the other way around. Align with what's on the site now.
 
