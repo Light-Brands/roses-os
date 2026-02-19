@@ -67,7 +67,7 @@ export const guardians: Guardian[] = [
 export const programs: Program[] = [
   {
     id: '3',
-    title: 'The Rose',
+    title: 'Rose Meditation',
     subtitle: 'Level 1, 2, 3',
     duration: '2 days',
     dates: 'March 17–18, 2026',
@@ -227,21 +227,21 @@ export const contributionTiers: ContributionTier[] = [
   {
     id: '1',
     name: 'Seed',
-    range: 'Under $30,000 USD annual income',
+    range: 'Lower income range',
     description: 'A lower contribution that honors your reality and current season.',
     price: '$888',
   },
   {
     id: '2',
     name: 'Bloom',
-    range: '$30,000–$70,000 USD annual income',
+    range: 'Middle income range',
     description: 'A mid-range contribution reflecting reciprocity and balance.',
     price: '$1,444',
   },
   {
     id: '3',
     name: 'Canopy',
-    range: 'Above $70,000 USD annual income',
+    range: 'Higher income range',
     description: 'A higher tier that supports accessibility for others and the expansion of this work.',
     price: '$2,111',
   },
@@ -255,21 +255,21 @@ export const roseMeditationTiers: ContributionTier[] = [
   {
     id: 'rose-1',
     name: 'Seed',
-    range: 'Under $30,000 USD annual income',
+    range: 'Lower income range',
     description: 'A lower contribution that honors your reality and current season.',
     price: '$222',
   },
   {
     id: 'rose-2',
     name: 'Bloom',
-    range: '$30,000–$70,000 USD annual income',
+    range: 'Middle income range',
     description: 'A mid-range contribution reflecting reciprocity and balance.',
     price: '$444',
   },
   {
     id: 'rose-3',
     name: 'Canopy',
-    range: 'Above $70,000 USD annual income',
+    range: 'Higher income range',
     description: 'A higher tier that supports accessibility for others and the expansion of this work.',
     price: '$777',
   },
@@ -546,7 +546,7 @@ export const freePrograms: CommunityProgram[] = [
     id: 'free-live-guidances',
     title: 'Free Live Guidances',
     description: 'Live Rose Meditation guidances offered to all who have already been initiated in Rose Meditation. A space to deepen your practice with the support of a guided session and the collective field.',
-    audience: 'For those already initiated in Rose Meditation',
+    audience: 'Rose Meditation Practitioner',
     free: true,
   },
   {
