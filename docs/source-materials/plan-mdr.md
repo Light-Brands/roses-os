@@ -76,6 +76,8 @@ Each chakra section includes:
 - Primary blockages
 - Teaching cues (what to emphasize verbally)
 
+**Rose imagery in chakra slides:** The opening/title pages of each chakra section should include the same kinds of rose imagery used in the manual's opening pages — both the rose logo (minimal line icon) and a realistic rose. Where a logo is called for on these chakra section slides, pair it with a realistic rose image consistent with the style established in the introduction pages. This creates visual continuity between the opening of the manual and the opening of each chakra section.
+
 **Chakra Reference:**
 
 | # | Chakra | Sanskrit | Statement | Color | Element |
@@ -129,6 +131,10 @@ Each chakra section includes:
 ---
 
 ## 4. VISUAL & BRAND GUIDELINES
+
+### Creative Freedom
+
+The designer has creative freedom in executing this manual. The guidelines here provide direction and intention, not rigid constraints. We trust the designer's eye and craft to interpret these principles and bring them to life in ways that may exceed what we've described. Where something isn't specified, the designer should follow their instinct within the brand's tone — warm, sacred, grounded, quiet.
 
 ### Color System
 

@@ -77,6 +77,7 @@ There are **five platform sections**, in priority order:
 - Gold accents for headings, dividers, key phrases -- used intentionally, never decoratively
 - Some existing Procreate diagrams may need to be digitally redrawn or strengthened
 - Illustrations needed: seated meditation posture, grounding cord, golden sun, aura layers, chakra body placements, the rose (roots/stem/bloom), roses of protection, the Analyzer
+- **Rose imagery in chakra sections:** The opening/title pages of each chakra section should include the same kinds of rose imagery used in the manual's opening pages — both the rose logo (minimal line icon) and a realistic rose. Where a logo is called for on these chakra section slides, pair it with a realistic rose image consistent with the style established in the introduction pages. This creates visual continuity between the opening of the manual and the opening of each chakra section.
 
 **PDF download:** A "Download PDF" button at the top of the section exports the entire manual as a formatted, password-protected PDF -- designed for print or offline reference. The PDF should mirror the web layout as closely as possible.
 
@@ -396,7 +397,13 @@ The designer must follow this system across the entire platform -- web and PDF.
 
 ---
 
-## 5. DESIGN PRINCIPLES -- THE NON-NEGOTIABLES
+## 5. CREATIVE FREEDOM
+
+The designer has creative freedom in executing this project. The guidelines, color palettes, and directions here provide intention and a tonal foundation — not rigid constraints. We trust the designer's eye and craft to interpret these principles and bring them to life in ways that may exceed what we've described. Where something isn't specified, the designer should follow their instinct within the brand's tone — warm, sacred, grounded, quiet.
+
+---
+
+## 6. DESIGN PRINCIPLES -- THE NON-NEGOTIABLES
 
 These principles must guide every design decision:
 
@@ -411,7 +418,7 @@ These principles must guide every design decision:
 
 ---
 
-## 6. VOICE & TONE REFERENCE (FOR COPY ON THE PLATFORM)
+## 7. VOICE & TONE REFERENCE (FOR COPY ON THE PLATFORM)
 
 The designer should understand the language world they are designing for:
 
@@ -431,7 +438,7 @@ The designer should understand the language world they are designing for:
 
 ---
 
-## 7. FILE DELIVERY EXPECTATIONS
+## 8. FILE DELIVERY EXPECTATIONS
 
 | Deliverable | Format | Notes |
 |---|---|---|
@@ -445,7 +452,7 @@ The designer should understand the language world they are designing for:
 
 ---
 
-## 8. LANGUAGE VERSIONS REQUIRED
+## 9. LANGUAGE VERSIONS REQUIRED
 
 **Phase 1 languages:**
 1. English (primary)
@@ -456,7 +463,7 @@ All platform content and PDF exports must support all three languages with ident
 
 ---
 
-## 9. STRATEGIC CONTEXT
+## 10. STRATEGIC CONTEXT
 
 This work is more than design production. The web platform is a unified digital home for ROSES OS that demonstrates:
 
@@ -473,7 +480,7 @@ The designer is building the visual foundation for an entire ecosystem. Every de
 
 ---
 
-## 10. IDEAS FOR DESIGNER REVIEW
+## 11. IDEAS FOR DESIGNER REVIEW
 
 The following ideas are proposals for the designer to evaluate. They are not approved directions — they require designer review, exploration, and feedback before any decision is made.
 
