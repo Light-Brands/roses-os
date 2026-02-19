@@ -558,6 +558,7 @@ export const freePrograms: CommunityProgram[] = [
     schedule: 'Once a month',
     audience: 'Rose Meditation practitioners',
     free: true,
+    calendarLink: 'https://calendar.google.com/calendar/u/0?cid=MjFlMGExMGFjNmMzZWY5YTNmNTEwYTM1ZmFlZTRiMGFjYzU2Y2NlNjA3ODcyMzY0Y2M5NzNhODc0YTJiZDM2NEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
   },
 ];
 
@@ -568,11 +569,13 @@ export const paidPrograms: CommunityProgram[] = [
     description: 'A continued practice program for those who have completed the Aura Reading path. A living space to keep your reading skills sharp, deepen your perception, and stay connected to the community of practitioners.',
     free: false,
     whatsappLink: 'https://chat.whatsapp.com/BeowpnN4CtvJdqFysxxy41',
+    calendarLink: 'https://calendar.google.com/calendar/u/0?cid=ZDI4MjY5YzA5ZWY1NTZjYTQ1OTM1ZmQ1OWY2ODQ2YzAyMDhhZTllNDY4MWU4NzA0NDVmZmZiZTAxMTIxNjQ5MUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
   },
   {
     id: 'teachers-training',
     title: 'Rose Meditation Teachers Training',
     description: 'A dedicated training path for those called to share Rose Meditation with others. This program prepares you to hold space, guide meditations, and transmit the practice with clarity, presence, and integrity.',
     free: false,
+    calendarLink: 'https://calendar.google.com/calendar/u/0?cid=NmM1YmU5MmVhZTc3MDNjMDQyMzU2ZWRiNTBjZDY3OWFiMDQyYWM0ZGRiNWNhOGNhNjhmOWIzN2Y3N2RmOWRlOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
   },
 ];
