@@ -182,4 +182,6 @@ export interface CommunityProgram {
   schedule?: string;
   audience?: string;
   free: boolean;
+  whatsappLink?: string;
+  calendarLink?: string;
 }
