@@ -541,6 +541,7 @@ export const freePrograms: CommunityProgram[] = [
     description: 'A free weekly gathering open to everyone. A space to connect, practice, and nourish your inner world together with the community. No prior experience needed. Just come as you are.',
     schedule: 'Every Saturday, 10:30 AM – 11:30 AM (Costa Rica time)',
     free: true,
+    whatsappLink: 'https://chat.whatsapp.com/C2C0DgvSVtW3fOB231vpRc?mode=gi_t',
   },
   {
     id: 'free-live-guidances',
@@ -548,6 +549,7 @@ export const freePrograms: CommunityProgram[] = [
     description: 'Live Rose Meditation guidances offered to all who have already been initiated in Rose Meditation. A space to deepen your practice with the support of a guided session and the collective field.',
     audience: 'Rose Meditation Practitioner',
     free: true,
+    whatsappLink: 'https://chat.whatsapp.com/Lh6bJlDmliMIryvKz63tzi?mode=gi_t',
   },
   {
     id: 'practitioners-meetings',
@@ -565,6 +567,7 @@ export const paidPrograms: CommunityProgram[] = [
     title: 'Aura for Life',
     description: 'A continued practice program for those who have completed the Aura Reading path. A living space to keep your reading skills sharp, deepen your perception, and stay connected to the community of practitioners.',
     free: false,
+    whatsappLink: 'https://chat.whatsapp.com/BeowpnN4CtvJdqFysxxy41',
   },
   {
     id: 'teachers-training',
