@@ -44,9 +44,8 @@ export default function ContributePage() {
           Choose Your Contribution
         </h1>
         <p className="text-[var(--color-foreground-muted)] max-w-md mx-auto">
-          Our income-based model ensures that everyone can participate
-          regardless of financial circumstances. Choose the tier that
-          feels right for you.
+          We trust you to choose what feels right for where you are
+          in life. There is no judgment, only gratitude.
         </p>
       </div>
 

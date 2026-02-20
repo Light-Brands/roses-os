@@ -51,9 +51,9 @@ function OverviewSection() {
             process and answer any questions you may have.
           </p>
           <p>
-            We use an income-based contribution model so that financial
+            We use a pay-what-feels-right model so that financial
             circumstances never stand between you and this work. You choose the
-            tier that reflects your current season of life.
+            contribution that reflects your current season of life.
           </p>
           <p>
             As part of enrollment, you will review five sacred agreements

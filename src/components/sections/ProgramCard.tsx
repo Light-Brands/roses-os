@@ -87,6 +87,13 @@ export default function ProgramCard({
         )}
       </div>
 
+      {/* Price range — shown on collapsed clickable cards */}
+      {compact && isClickable && program.priceRange && (
+        <p className="mt-2 text-sm text-[var(--color-foreground-faint)]">
+          {program.priceRange}
+        </p>
+      )}
+
       {/* Description — always visible so first-time visitors see what each course offers */}
       {program.description && (
         <div className={cn('text-base md:text-lg text-[var(--color-foreground-muted)] leading-relaxed space-y-4', compact ? 'mt-4' : 'mb-8')}>

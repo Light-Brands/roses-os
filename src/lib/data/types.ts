@@ -31,9 +31,11 @@ export interface Program {
   format: string;
   description: string;
   includes: string[];
+  /** Price range summary shown on collapsed cards (e.g. "$222 – $777") */
+  priceRange?: string;
 }
 
-/** Contribution tier (income-based) */
+/** Contribution tier (pay what feels right) */
 export interface ContributionTier {
   id: string;
   name: string;
