@@ -73,6 +73,7 @@ export const programs: Program[] = [
     duration: '2 days',
     dates: 'March 17–18, 2026',
     format: 'Live online + recorded content',
+    priceRange: '$222 – $777',
     description: 'An initiatic path to remember who you are. Through the simple yet powerful technology of the roses, you will learn how to cleanse and protect your Aura, so that you no longer live like a sponge, absorbing energies that don\u2019t belong to you.\n\nEveryday, we are surrounded by energies: from people, memories, situations, environments, even our own thoughts. When we are unaware, these energies stick to us, creating confusion, heaviness, and programs that cloud who we truly are. By cleansing and protecting your energy field, you begin to live in the presence of your own essence. You recover your vitality, raise your vibration, and create space for your soul to manifest with clarity and power.',
     includes: [
       '2 immersive days of live instruction',
@@ -90,6 +91,7 @@ export const programs: Program[] = [
     duration: '11 days',
     dates: 'March 17–27, 2026',
     format: 'Live online + recorded content',
+    priceRange: '$888 – $2,111',
     description: 'Aura Reading course teaches you to see, feel, and listen to the energy that moves within you and surrounds you, revealing that everything in life begins as energy and that awareness gives you the power to transform it.\n\nIt is as well a conscious conversation between essences. By reading another person\u2019s aura, you support their journey of growth and healing while receiving mirrors and insights that illuminate your own path. Each reading becomes a conscious exchange where both the reader and the person being read are touched and transformed. This transformation becomes possible by awakening your clairvoyance, clairsentience, clairaudience, and other subtle senses. These abilities allow you to connect directly with what is real and receive guidance that leads to freedom, clarity, and growth.',
     includes: [
       'Rose Meditation (2 days)',
@@ -108,6 +110,7 @@ export const programs: Program[] = [
     duration: '9 days',
     dates: 'September 19–27, 2026',
     format: 'Live online',
+    priceRange: '$888 – $2,111',
     description: 'Perception sharpens through theme readings and focused practice. Clairvoyance, clairsentience, and clairaudience refine as reading becomes more precise, nuanced, and confident. Weekend intensive classes combined with weekday practice sessions.',
     includes: [
       'Weekend intensive classes (4 days)',
@@ -228,22 +231,22 @@ export const contributionTiers: ContributionTier[] = [
   {
     id: '1',
     name: 'Seed',
-    range: 'Lower income range',
-    description: 'A lower contribution that honors your reality and current season.',
+    range: 'A gentle entry',
+    description: 'For those in a quieter financial season. Your presence matters more than the amount.',
     price: '$888',
   },
   {
     id: '2',
     name: 'Bloom',
-    range: 'Middle income range',
-    description: 'A mid-range contribution reflecting reciprocity and balance.',
+    range: 'A balanced exchange',
+    description: 'A contribution that reflects reciprocity and sustains this work with ease.',
     price: '$1,444',
   },
   {
     id: '3',
     name: 'Canopy',
-    range: 'Higher income range',
-    description: 'A higher tier that supports accessibility for others and the expansion of this work.',
+    range: 'A generous offering',
+    description: 'For those moved to give more, supporting accessibility for others who are called.',
     price: '$2,111',
   },
 ];
@@ -256,22 +259,22 @@ export const roseMeditationTiers: ContributionTier[] = [
   {
     id: 'rose-1',
     name: 'Seed',
-    range: 'Lower income range',
-    description: 'A lower contribution that honors your reality and current season.',
+    range: 'A gentle entry',
+    description: 'For those in a quieter financial season. Your presence matters more than the amount.',
     price: '$222',
   },
   {
     id: 'rose-2',
     name: 'Bloom',
-    range: 'Middle income range',
-    description: 'A mid-range contribution reflecting reciprocity and balance.',
+    range: 'A balanced exchange',
+    description: 'A contribution that reflects reciprocity and sustains this work with ease.',
     price: '$444',
   },
   {
     id: 'rose-3',
     name: 'Canopy',
-    range: 'Higher income range',
-    description: 'A higher tier that supports accessibility for others and the expansion of this work.',
+    range: 'A generous offering',
+    description: 'For those moved to give more, supporting accessibility for others who are called.',
     price: '$777',
   },
 ];
