@@ -184,4 +184,5 @@ export interface CommunityProgram {
   free: boolean;
   whatsappLink?: string;
   calendarLink?: string;
+  googleCalendarUrl?: string;
 }

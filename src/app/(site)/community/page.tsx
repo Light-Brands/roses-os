@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { freePrograms, paidPrograms } from '@/lib/data';
 import type { CommunityProgram } from '@/lib/data';
+import SubscribeCalendar from '@/components/ui/SubscribeCalendar';
 
 import PageHero from '@/components/sections/PageHero';
 import InvitationCTA from '@/components/sections/InvitationCTA';
@@ -126,36 +127,11 @@ function ActivityCard({
               Join WhatsApp Group
             </a>
           )}
-          {program.calendarLink && (
-            <a
-              href={program.calendarLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                'inline-flex items-center gap-2 px-5 py-2.5 rounded-full',
-                'bg-[var(--color-foreground)] text-[var(--color-background)]',
-                'dark:bg-white dark:text-neutral-900',
-                'text-sm font-medium',
-                'hover:opacity-90',
-                'transition-all duration-200',
-                'shadow-sm hover:shadow-md'
-              )}
-            >
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                />
-              </svg>
-              Add to Calendar
-            </a>
+          {program.calendarLink && program.googleCalendarUrl && (
+            <SubscribeCalendar
+              googleCalendarUrl={program.googleCalendarUrl}
+              icsUrl={program.calendarLink}
+            />
           )}
         </div>
       )}
