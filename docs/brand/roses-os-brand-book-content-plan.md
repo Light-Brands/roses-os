@@ -487,6 +487,60 @@ The Rose has a natural three-part anatomy that maps to the ROSES OS brand:
 
 ---
 
+## 13. Color Origin & Symbolism -- The Butterfly Wing
+
+**What it is:** A 2-4 page section in the brand book that tells the origin story of the ROSES OS color palette, anchored by the image of the butterfly wing as the natural source of the rose-pink tone. This section connects color choices to spiritual meaning (divine love), natural science (structural coloration), and brand philosophy (transformation through dissolution, not effort).
+
+**Why it matters:** The Zunya Brand Book dedicates pages 83-88 to its color palette but presents colors purely as design specifications. ROSES OS has the opportunity to go deeper -- to tell *why* these colors exist. The butterfly wing gives the palette a living origin story that reinforces the brand's core themes.
+
+**What you have now (written in `brand-dna.md`):**
+
+Full written content exists, including:
+- The butterfly wing as the natural source of the rose-pink palette tone
+- Structural coloration as a metaphor for how ROSES OS works (beauty revealed through architecture, not applied)
+- The connection between pink and divine love (Heart Chakra: "I Am Love")
+- Five symbolic parallels between the butterfly wing and the ROSES OS brand
+- Visual usage guidelines for butterfly wing macro photography as a secondary brand element
+- Complete color symbolism table connecting every palette color to its philosophical meaning
+
+**What's needed for the brand book:**
+
+- [x] Written content (complete in `brand-dna.md` -- Color Palette section)
+- [ ] **Macro photography or illustration of butterfly wing scales** -- close-up imagery showing the microscopic scale structure that creates the rose-pink color. Should feel scientific and sacred.
+- [ ] **Color origin spread** -- A full-page or double-spread showing the butterfly wing alongside the Rose Clay Mauve color swatch, with the origin text
+- [ ] **Color symbolism table spread** -- Each color with its symbolic meaning, formatted like the Zunya value pages (one color per half-page or third-page)
+- [ ] **Visual treatment decision:** Should the wing imagery be photographic (macro photography) or illustrated (detailed scientific illustration)? Both fit the sacred-tech aesthetic.
+
+**Tone direction:** Scientific reverence. The language of a naturalist who is also a mystic. Precise observation that opens into deeper meaning.
+
+**Structure in the brand book (suggested placement: Part V -- Visual Identity, before or alongside color palette swatches):**
+
+```
+Page 1: The Butterfly Wing (full bleed macro image of rose-toned wing scales)
+   Overlay text: "The color of divine love,
+    revealed through structure."
+
+Page 2: Color Origin
+   The rose-pink tone at the heart of the ROSES OS palette
+   came from the butterfly wing. [Full origin text]
+
+Page 3: Five Parallels
+   Structural Revelation / Transformation Through Dissolution /
+   Divine Love Made Visible / Precision in Delicacy /
+   Sovereignty in Lightness
+
+Page 4: Color Symbolism Table
+   Every color in the palette with its symbolic meaning
+```
+
+**Decisions needed:**
+- [ ] Approve the butterfly wing as a secondary visual element in the brand system
+- [ ] Photography vs. illustration for the wing imagery
+- [ ] Placement in the book: before color swatches (as origin), or after (as deepening)?
+- [ ] Should the butterfly wing texture be integrated into the design system as an optional texture option (alongside linen, paper grain, mineral noise)?
+
+---
+
 ## Summary: Content Production Checklist
 
 | # | Piece | Pages in Book | Writer Needs Input From Founders? | Draft Ready? |
@@ -503,10 +557,11 @@ The Rose has a natural three-part anatomy that maps to the ROSES OS brand:
 | 10 | Framework Diagram Copy | 2-3 | Review concept | Concept provided |
 | 11 | Six Pillars (expanded) | 6-12 | Expand existing live copy | Live copy as starting point |
 | 12 | Community Identity | 1-2 | Light review | Live copy exists |
+| 13 | Color Origin & Symbolism (Butterfly Wing) | 2-4 | Approve butterfly wing as secondary visual element | **Written content complete** |
 
-**Total new written pages: ~38-50**
-**Combined with existing content (brand DNA, visual system, website guide): ~80-95 pages of written content**
-**With designed visual pages (color swatches, typography specimens, logo specs, mockups, white space): 110-130 page brand book**
+**Total new written pages: ~40-54**
+**Combined with existing content (brand DNA, visual system, website guide): ~82-99 pages of written content**
+**With designed visual pages (color swatches, typography specimens, logo specs, mockups, white space): 112-134 page brand book**
 
 ---
 
@@ -514,5 +569,6 @@ The Rose has a natural three-part anatomy that maps to the ROSES OS brand:
 
 1. **Founder Input Sessions** -- Brand Story, Values, and Perpetual Actions all need founder voice. 2-3 short conversations would unlock all of these.
 2. **Review Drafts** -- Consumer perception, audience narrative, and drivers can be reviewed and refined from the drafts above.
-3. **Photography Planning** -- Decide if a shoot is needed or if existing assets can be curated.
+3. **Photography Planning** -- Decide if a shoot is needed or if existing assets can be curated. **New: Source or commission macro butterfly wing photography for the Color Origin section.**
 4. **Design Production** -- Once all written content is approved, hand off to InDesign/Figma for layout.
+5. **Butterfly Wing Visual Decision** -- Confirm photography vs. illustration approach and placement within the book structure.

@@ -79,6 +79,7 @@ Almost all written content exists. The brand DNA alone is 1900+ lines of compreh
 | Agreements & Sacred Use | `brand-dna.md` -- Agreements section | 1--2 |
 | Course Structure & Contribution | `brand-dna.md` -- Course Structure section | 2--3 |
 | Color Palette (full system) | `brand-dna.md` -- Color Palette section | 4--6 |
+| Color Origin & Symbolism (Butterfly Wing) | `brand-dna.md` -- Color Palette section (Butterfly Wing subsections) + `content-plan.md` -- Section 13 | 2--4 |
 | Typography | `brand-dna.md` -- Typography section | 2--3 |
 | Imagery & Graphics | `brand-dna.md` -- Imagery section | 2--3 |
 | Design Book | `brand-dna.md` -- Design Book section | 3--4 |
@@ -174,20 +175,21 @@ The following structure follows the Zunya Brand Book pattern, adapted for ROSES 
 28. **Community Identity** (the living field)
 29. **Agreements & Sacred Use**
 
-### Part V -- Visual Identity (pages 106--125)
+### Part V -- Visual Identity (pages 106--129)
 
 30. **Visual Identity System** (overview, sacred-tech blend)
-31. **Color Palette** (full swatches with usage rules, Rose Clay Mauve spotlight)
-32. **Typography** (specimens, hierarchy, rules)
-33. **Imagery & Graphics** (photography identity, illustration style, logo system)
-34. **Design Book** (texture language, layout philosophy, design keywords)
-35. **Application Examples** (mockups -- invitations, digital portals, course materials)
+31. **Color Origin & Symbolism -- The Butterfly Wing** (2-4 pages: macro wing imagery, origin story of the rose-pink, five symbolic parallels, color symbolism table linking every palette color to its meaning. Source: `brand-dna.md` Color Palette section + `content-plan.md` Section 13. **Note:** This section should precede the color swatches to establish *why* before *what*.)
+32. **Color Palette** (full swatches with usage rules, Rose Clay Mauve spotlight)
+33. **Typography** (specimens, hierarchy, rules)
+34. **Imagery & Graphics** (photography identity, illustration style, logo system)
+35. **Design Book** (texture language, layout philosophy, design keywords)
+36. **Application Examples** (mockups -- invitations, digital portals, course materials)
 
-### Closing (pages 126--130)
+### Closing (pages 130--134)
 
-36. **Course Structure & Contribution Model**
-37. **The Frequency** -- closing statement
-38. **"Welcome home."**
+37. **Course Structure & Contribution Model**
+38. **The Frequency** -- closing statement
+39. **"Welcome home."**
 
 ---
 
@@ -222,6 +224,8 @@ Apple-level minimalism inside a temple. Sacred-tech minimalism -- earthy, ground
 
 Pages should feel textured, not flat. Rose Clay Mauve backgrounds always paired with subtle texture (linen, paper grain, soft mineral noise). The book should feel like holding something made of clay and paper -- not a glossy corporate brochure.
 
+**New texture element -- Butterfly wing:** Macro photography or abstracted patterns derived from butterfly wing scale structures may be used as a secondary texture option, particularly on the Color Origin & Symbolism pages. Should feel scientific and sacred -- like viewing nature through a microscope and a temple window at once. Always desaturated and warm-toned within the brand palette. See `brand-dna.md` Color Palette section for full usage guidelines.
+
 ### Layout Philosophy
 
 - Centered, quiet, minimal, devotional, balanced
@@ -242,7 +246,7 @@ These principles guide every page:
 4. **Gold is earned** -- Use `#9E956B` for emphasis, never decoration.
 5. **No hype** -- This is an identity document, not a sales pitch.
 6. **Consistency is coherence** -- Same visual logic throughout.
-7. **Texture has meaning** -- Clay, linen, stone, paper evoke earthiness.
+7. **Texture has meaning** -- Clay, linen, stone, paper, and butterfly wing scales evoke earthiness and structural beauty.
 8. **Rose Clay Mauve is the brand** -- It is the field, not the accent.
 
 ---
@@ -284,8 +288,9 @@ Where something is not specified, follow your instinct within the brand's tone -
 - [ ] Lay out Part IV -- The People
 - [ ] Lay out Part V -- Visual Identity
 - [ ] Lay out Closing
+- [ ] Design Color Origin & Symbolism pages (butterfly wing macro imagery, origin narrative, five parallels, color symbolism table -- see `content-plan.md` Section 13)
+- [ ] Source or commission macro butterfly wing photography (rose-toned wing scales, desaturated to brand palette)
 - [ ] Create color palette swatch pages (full spreads with HEX, usage rules)
-- [ ] Create typography specimen pages
 - [ ] Create logo specification and usage rule pages
 - [ ] Create mockup / application example pages
 - [ ] Create photography mood pages
