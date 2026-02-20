@@ -1285,6 +1285,58 @@ It is not feminine -- it is biological + geological.
 
 > A warm mineral field color used for moments of reflection, invitation, and remembrance. It represents the human interface of ROSES OS -- where presence meets structure. This color should feel lived-in, not decorative. Always textured. Always quiet.
 
+#### The Butterfly Wing -- Origin of the Rose Pink
+
+The rose-pink tone at the heart of the ROSES OS palette did not originate from a design trend or a color wheel. It came from the butterfly wing.
+
+Certain butterfly species -- among them the rose-toned wings of the *Dryocampa rubicunda* (Rosy Maple Moth) and select *Pieridae* -- carry this exact mineral-pink: warm, muted, alive. Not a cosmetic pink. A biological one. A color born from the intersection of light and living structure.
+
+Butterfly wings produce their color not through pigment alone, but through **structural coloration** -- microscopic scales that refract light, revealing beauty through architecture. The color is not applied. It is *revealed* when the structure is precise. This is how ROSES OS works: coherence is not added from outside -- it becomes visible when distortion is removed. The architecture makes the essence perceivable.
+
+**This is why pink was chosen as a foundational tone of ROSES OS: pink is the color of divine love.**
+
+In the Heart Chakra system carried through this lineage, green represents human love -- empathy, compassion, the love between beings. Pink represents divine love -- unconditional, sourceless, the love that simply is. The statement of the green heart is "I Love." The statement of the pink heart is "I Am Love."
+
+The butterfly wing carries both truths: the delicacy of divine love and the precision of living architecture. It is simultaneously one of the most fragile structures in nature and one of the most precisely engineered. Quietly powerful. Elegant. Sovereign.
+
+#### Butterfly Symbolism -- Why It Belongs in This Brand
+
+The butterfly is one of the most universal symbols of transformation. But the transformation of the butterfly is not effort-based. The caterpillar does not *try* to become a butterfly. Inside the chrysalis, the caterpillar dissolves entirely -- its old form liquefies -- and from that dissolution, a wholly new architecture reorganizes itself. Nothing is added from outside. Everything needed was already encoded within.
+
+This is the exact movement of ROSES OS: not self-improvement, but remembrance. Not adding something new, but dissolving distortion so what was always present can emerge.
+
+**Five parallels between the butterfly wing and the ROSES OS brand:**
+
+1. **Structural Revelation** -- The butterfly's color comes from structure, not surface. ROSES OS restores inner architecture so coherence becomes naturally visible.
+2. **Transformation Through Dissolution** -- The chrysalis dissolves the old form entirely. The Rose dissolves distortion. Both reveal what was always there.
+3. **Divine Love Made Visible** -- The rose-pink of the butterfly wing is the color of divine love -- unconditional, quiet, and whole. This is the frequency the brand carries.
+4. **Precision in Delicacy** -- The butterfly wing is microscopically precise yet appears effortlessly beautiful. ROSES OS is simple, precise inner technology that feels like warmth and silence.
+5. **Sovereignty in Lightness** -- The butterfly moves freely, guided by an intelligence it does not need to understand. When coherence returns, life organizes itself. Sovereignty becomes natural.
+
+> The butterfly wing reminds us: what appears most beautiful in nature was never decorated. It was revealed.
+
+#### The Butterfly Wing as Visual Element
+
+The image of a butterfly wing -- specifically close-up, macro-scale views showing the microscopic scale structure -- can be used as a secondary visual element within the ROSES OS brand system.
+
+**Appropriate Uses:**
+
+- Full-bleed or cropped background texture on color palette pages in the brand book
+- Macro photography of wing scales as a visual metaphor for structural coloration alongside the color palette spreads
+- Section divider imagery in the brand book (Color Symbolism pages)
+- Subtle overlay textures inspired by wing-scale geometry (in place of or alongside linen/paper grain)
+- Photography mood boards and design inspiration references
+
+**Design Rules:**
+
+- Always macro or abstract -- never a full butterfly illustration or decorative motif
+- Color treatment should remain within the brand palette (desaturated, warm-toned, earthy)
+- Should feel scientific and sacred simultaneously -- like viewing nature through a microscope and a temple window at once
+- Never cute, never decorative, never whimsical
+- Pairs naturally with the existing texture language: clay, linen, stone, paper -- and now, wing
+
+**The butterfly wing does not replace the Rose as the primary brand symbol. It deepens the origin story of the color palette and adds a layer of natural symbolism that strengthens the brand's philosophical foundation.**
+
 #### How to Use Rose Clay Mauve
 
 This color should never be used like an accent button color. **It is a field color, not a highlight.**
@@ -1348,6 +1400,26 @@ This color should never be used like an accent button color. **It is a field col
 - Still warm, refined, and modern
 - Feels good for men + women + non-binary audiences
 - No bright colors. No saturation. Calm only.
+
+### Color Symbolism -- Why These Colors
+
+Every color in the ROSES OS palette carries intention. These are not arbitrary aesthetic choices -- they are symbolic decisions rooted in the brand's philosophy and lineage.
+
+| Color | Symbolic Meaning |
+|-------|-----------------|
+| **Rose Clay Mauve** (`#9C6F6E`) | **Divine love made material.** The rose-pink of the butterfly wing -- the color of the Heart Chakra's highest expression (I Am Love). Grounded in clay and mineral, it carries the frequency of unconditional love without sentimentality. Biological, geological, devotional. |
+| **Warm Rose-Clay Brown** (`#9B6A66`) | **The body remembering.** Terracotta dust, sun-warmed stone. The color of embodiment -- where spirit enters matter. The human body as sacred ground. |
+| **Light Terracotta** (`#C4836C`) | **Warmth without condition.** Sun-warmed clay, soft earth. The feeling of being held by the land. Approachable luminosity. |
+| **Gilded Clay** (`#A8896D`) | **Sacred labor.** Golden-tan, earthy, sun-kissed. The color of hands that have worked with devotion. Humble gold. |
+| **Honeyed Stone** (`#C7AE8C`) | **Ancient architecture.** Warm golden, architectural. The color of temples, sandstone, and structures built to last centuries. Inviting permanence. |
+| **Peach Sand** (`#EBD6C1`) | **Soft ground.** Peachy cream, the color of dawn on sand. Gentleness as a foundation. |
+| **Golden Ether** (`#F5E8E2`) | **The veil between worlds.** Parchment ivory with golden cast. The color of sacred documents, of light passing through handmade paper. Where the material meets the luminous. |
+| **Cream Veil** (`#FFF8E7`) | **Silence before the word.** Warm ivory, the color of emptiness that holds everything. Potential. |
+| **Aura White** (`#F7F5F2`) | **The field itself.** Not sterile white but living white -- the color of the aura at rest. Sacred space. Breathing room. |
+| **Soft Charcoal** (`#3F3E3C`) | **Grounded truth.** Not black but deep warm earth. The color of certainty without severity. Calm authority. |
+| **Antique Olive Brass** (`#9E956B`) | **Earned radiance.** Like gold in a temple -- present but not ostentatious. The color of wisdom that has been lived, not acquired. Sacred detail. |
+
+> The palette moves from divine love (rose-pink) through embodiment (clay, terracotta) into sacred architecture (stone, gold) and finally into the open field of presence (white, silence). This is the chromatic journey of remembrance: from heart to body to structure to space.
 
 ### Golden Ether -- Usage Guide
 
