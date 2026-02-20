@@ -543,6 +543,7 @@ export const freePrograms: CommunityProgram[] = [
     schedule: 'Every Saturday · 10:30 AM – 11:30 AM (Costa Rica time)',
     audience: 'Open to everyone',
     free: true,
+    whatsappLink: 'https://chat.whatsapp.com/C2C0DgvSVtW3fOB231vpRc?mode=gi_t',
   },
   {
     id: 'free-live-guidances',
@@ -551,7 +552,7 @@ export const freePrograms: CommunityProgram[] = [
     schedule: 'Every Saturday · 9:30 AM – 10:00 AM (Costa Rica time)',
     audience: 'Rose Meditation practitioners only',
     free: true,
-    whatsAppUrl: '#whatsapp-rose-meditation',
+    whatsappLink: 'https://chat.whatsapp.com/Lh6bJlDmliMIryvKz63tzi?mode=gi_t',
   },
   {
     id: 'practitioners-meetings',
@@ -560,7 +561,7 @@ export const freePrograms: CommunityProgram[] = [
     schedule: 'Once a month',
     audience: 'Rose Meditation practitioners only',
     free: true,
-    whatsAppUrl: '#whatsapp-rose-meditation',
+    calendarLink: 'https://calendar.google.com/calendar/u/0?cid=MjFlMGExMGFjNmMzZWY5YTNmNTEwYTM1ZmFlZTRiMGFjYzU2Y2NlNjA3ODcyMzY0Y2M5NzNhODc0YTJiZDM2NEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
   },
 ];
 
@@ -570,12 +571,15 @@ export const paidPrograms: CommunityProgram[] = [
     title: 'Rose Meditation Teachers Training',
     description: 'This training is designed to prepare facilitators to guide and teach Rose Meditation with presence, maturity, and responsibility. More than learning a technique, this program offers a genuine deepening into the Path of the Roses.',
     free: false,
+    calendarLink: 'https://calendar.google.com/calendar/u/0?cid=NmM1YmU5MmVhZTc3MDNjMDQyMzU2ZWRiNTBjZDY3OWFiMDQyYWM0ZGRiNWNhOGNhNjhmOWIzN2Y3N2RmOWRlOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
   },
   {
     id: 'aura-for-life',
     title: 'Aura for Life',
     description: 'A living space of continuity, care, and deepening for those who have already entered the language of Aura Reading. A place of supervision, practice, and integration where nothing is "finished," but everything can keep unfolding.',
     free: false,
+    whatsappLink: 'https://chat.whatsapp.com/BeowpnN4CtvJdqFysxxy41',
+    calendarLink: 'https://calendar.google.com/calendar/u/0?cid=ZDI4MjY5YzA5ZWY1NTZjYTQ1OTM1ZmQ1OWY2ODQ2YzAyMDhhZTllNDY4MWU4NzA0NDVmZmZiZTAxMTIxNjQ5MUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
   },
 ];
 
@@ -718,6 +722,7 @@ export const communityProgramsDetailed: CommunityProgramDetailed[] = [
         ],
       },
     ],
+    calendarLink: 'https://calendar.google.com/calendar/u/0?cid=NmM1YmU5MmVhZTc3MDNjMDQyMzU2ZWRiNTBjZDY3OWFiMDQyYWM0ZGRiNWNhOGNhNjhmOWIzN2Y3N2RmOWRlOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
   },
   {
     id: 'aura-for-life',
@@ -856,5 +861,7 @@ export const communityProgramsDetailed: CommunityProgramDetailed[] = [
         ],
       },
     ],
+    whatsappLink: 'https://chat.whatsapp.com/BeowpnN4CtvJdqFysxxy41',
+    calendarLink: 'https://calendar.google.com/calendar/u/0?cid=ZDI4MjY5YzA5ZWY1NTZjYTQ1OTM1ZmQ1OWY2ODQ2YzAyMDhhZTllNDY4MWU4NzA0NDVmZmZiZTAxMTIxNjQ5MUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
   },
 ];

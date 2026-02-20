@@ -182,8 +182,10 @@ export interface CommunityProgram {
   schedule?: string;
   audience?: string;
   free: boolean;
-  /** WhatsApp group invite URL — renders a "Join WhatsApp Group" button on the card */
-  whatsAppUrl?: string;
+  /** WhatsApp group invite URL */
+  whatsappLink?: string;
+  /** Google Calendar subscription URL */
+  calendarLink?: string;
 }
 
 /** Schedule entry for a community program class date */
@@ -230,4 +232,8 @@ export interface CommunityProgramDetailed {
   investment: CommunityInvestment[];
   scheduleLabel?: string;
   schedule: CommunityScheduleMonth[];
+  /** WhatsApp group invite URL */
+  whatsappLink?: string;
+  /** Google Calendar subscription URL */
+  calendarLink?: string;
 }
