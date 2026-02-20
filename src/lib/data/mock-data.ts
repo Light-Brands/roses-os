@@ -8,6 +8,7 @@ import type {
   PathLevel, LineageEntry,
   ArchitectureLayer, Chakra, Technique, TeachingLevel,
   Agreement, Capacity, BrandQuote, Stat, CommunityProgram,
+  CommunityScheduleCycle, InvestmentOption,
 } from './types';
 
 // =============================================================================
@@ -547,6 +548,7 @@ export const freePrograms: CommunityProgram[] = [
     id: 'free-live-guidances',
     title: 'Free Live Guidances',
     description: 'Live Rose Meditation guidances offered to all who have already been initiated in Rose Meditation. A space to deepen your practice with the support of a guided session and the collective field.',
+    schedule: 'Every Saturday, 9:30 AM – 10:00 AM (Costa Rica time)',
     audience: 'Rose Meditation Practitioner',
     free: true,
     whatsappLink: 'https://chat.whatsapp.com/Lh6bJlDmliMIryvKz63tzi?mode=gi_t',
@@ -563,6 +565,255 @@ export const freePrograms: CommunityProgram[] = [
   },
 ];
 
+// =============================================================================
+// COMMUNITY: TEACHERS TRAINING — 2026 SCHEDULE
+// =============================================================================
+
+export const teachersTrainingSchedule: CommunityScheduleCycle[] = [
+  {
+    id: 'tt-intro',
+    title: 'Introduction Class',
+    months: [
+      {
+        month: 'February',
+        sessions: [
+          { date: 'Wed, Feb 25', time: '12:00 – 1:30 pm' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'tt-program-1',
+    title: 'Program 1 | March to July',
+    months: [
+      {
+        month: 'March',
+        sessions: [
+          { date: 'Fri, Mar 6', time: '3:00 – 4:30 pm' },
+          { date: 'Thu, Mar 12', time: '12:00 – 1:30 pm' },
+          { date: 'Thu, Mar 19', time: '11:00 – 12:30 pm' },
+          { date: 'Thu, Mar 26', time: '12:00 – 1:30 pm' },
+        ],
+      },
+      {
+        month: 'April',
+        sessions: [
+          { date: 'Thu, Apr 2', time: '11:00 – 12:30 pm' },
+          { date: 'Thu, Apr 16', time: '12:00 – 1:30 pm' },
+          { date: 'Wed, Apr 22', time: '3:00 – 4:30 pm' },
+          { date: 'Thu, Apr 30', time: '12:00 – 1:30 pm' },
+        ],
+      },
+      {
+        month: 'May',
+        sessions: [
+          { date: 'Mon, May 4', time: '4:00 – 5:30 pm' },
+          { date: 'Thu, May 14', time: '12:00 – 1:30 pm' },
+          { date: 'Thu, May 21', time: '12:00 – 1:30 pm' },
+          { date: 'Thu, May 28', time: '1:00 – 2:30 pm' },
+        ],
+      },
+      {
+        month: 'June',
+        sessions: [
+          { date: 'Thu, Jun 4', time: '12:00 – 1:30 pm' },
+          { date: 'Thu, Jun 11', time: '11:00 – 12:30 pm' },
+          { date: 'Thu, Jun 18', time: '12:00 – 1:30 pm' },
+          { date: 'Thu, Jun 25', time: '1:00 – 2:00 pm' },
+        ],
+      },
+      {
+        month: 'July',
+        sessions: [
+          { date: 'Thu, Jul 2', time: '12:00 – 1:30 pm' },
+          { date: 'Thu, Jul 9', time: '12:00 – 1:30 pm' },
+          { date: 'Mon, Jul 20', time: '3:00 – 4:30 pm' },
+          { date: 'Thu, Jul 30', time: '3:00 – 4:30 pm' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'tt-program-2',
+    title: 'Program 2 | August to December',
+    months: [
+      {
+        month: 'August',
+        sessions: [
+          { date: 'Thu, Aug 6', time: '12:00 – 1:30 pm' },
+          { date: 'Thu, Aug 13', time: '1:00 – 2:30 pm' },
+          { date: 'Thu, Aug 20', time: '11:00 – 12:30 pm' },
+          { date: 'Thu, Aug 27', time: '12:00 – 1:30 pm' },
+        ],
+      },
+      {
+        month: 'September',
+        sessions: [
+          { date: 'Thu, Sep 3', time: '11:00 – 12:30 pm' },
+          { date: 'Thu, Sep 10', time: '1:00 – 2:30 pm' },
+          { date: 'Thu, Sep 17', time: '12:00 – 1:30 pm' },
+          { date: 'Thu, Sep 24', time: '12:00 – 1:30 pm' },
+        ],
+      },
+      {
+        month: 'October',
+        sessions: [
+          { date: 'Wed, Oct 7', time: '1:00 – 2:30 pm' },
+          { date: 'Thu, Oct 15', time: '12:00 – 1:30 pm' },
+          { date: 'Thu, Oct 22', time: '11:00 – 12:30 pm' },
+          { date: 'Thu, Oct 29', time: '12:00 – 1:30 pm' },
+        ],
+      },
+      {
+        month: 'November',
+        sessions: [
+          { date: 'Thu, Nov 5', time: '11:00 – 12:30 pm' },
+          { date: 'Thu, Nov 12', time: '12:00 – 1:30 pm' },
+          { date: 'Thu, Nov 19', time: '12:00 – 1:30 pm' },
+          { date: 'Thu, Nov 26', time: '12:00 – 1:30 pm' },
+        ],
+      },
+      {
+        month: 'December',
+        sessions: [
+          { date: 'Thu, Dec 3', time: '12:00 – 1:30 pm' },
+          { date: 'Thu, Dec 10', time: '12:00 – 1:30 pm' },
+          { date: 'Mon, Dec 14', time: '1:00 – 2:00 pm' },
+        ],
+      },
+    ],
+  },
+];
+
+export const teachersTrainingInvestment: InvestmentOption[] = [
+  { id: 'tt-cycle-1', label: 'First Cycle of Training', period: 'March to July', price: '$600' },
+  { id: 'tt-cycle-2', label: 'Second Cycle of Training', period: 'August to December', price: '$600' },
+];
+
+// =============================================================================
+// COMMUNITY: AURA FOR LIFE — 2026 SCHEDULE
+// =============================================================================
+
+export const auraForLifeSchedule: CommunityScheduleCycle[] = [
+  {
+    id: 'afl-cycle-1',
+    title: 'Cycle 1 | February to July',
+    months: [
+      {
+        month: 'February',
+        sessions: [
+          { date: 'Tue, Feb 24', time: '12:00 – 1:30 pm' },
+        ],
+      },
+      {
+        month: 'March',
+        sessions: [
+          { date: 'Tue, Mar 3', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, Mar 10', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, Mar 17', time: '11:00 – 12:30 pm' },
+          { date: 'Tue, Mar 24', time: '12:00 – 1:30 pm' },
+        ],
+      },
+      {
+        month: 'April',
+        sessions: [
+          { date: 'Tue, Apr 7', time: '11:00 – 12:30 pm' },
+          { date: 'Tue, Apr 14', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, Apr 21', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, Apr 28', time: '12:00 – 1:30 pm' },
+        ],
+      },
+      {
+        month: 'May',
+        sessions: [
+          { date: 'Tue, May 5', time: '1:00 – 2:30 pm' },
+          { date: 'Tue, May 12', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, May 19', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, May 26', time: '11:00 – 12:30 pm' },
+        ],
+      },
+      {
+        month: 'June',
+        sessions: [
+          { date: 'Tue, Jun 9', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, Jun 16', time: '12:00 – 1:30 pm' },
+          { date: 'Wed, Jun 24', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, Jun 30', time: '11:00 – 12:30 pm' },
+        ],
+      },
+      {
+        month: 'July',
+        sessions: [
+          { date: 'Tue, Jul 7', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, Jul 21', time: '3:00 – 4:30 pm' },
+          { date: 'Thu, Jul 23', time: '3:00 – 4:30 pm' },
+          { date: 'Tue, Jul 28', time: '3:00 – 4:30 pm' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'afl-cycle-2',
+    title: 'Cycle 2 | August to December',
+    months: [
+      {
+        month: 'August',
+        sessions: [
+          { date: 'Wed, Aug 5', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, Aug 11', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, Aug 18', time: '11:00 – 12:30 pm' },
+          { date: 'Tue, Aug 25', time: '12:00 – 1:30 pm' },
+        ],
+      },
+      {
+        month: 'September',
+        sessions: [
+          { date: 'Tue, Sep 1', time: '11:00 – 12:30 pm' },
+          { date: 'Tue, Sep 8', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, Sep 15', time: '1:00 – 2:30 pm' },
+          { date: 'Tue, Sep 22', time: '12:00 – 1:30 pm' },
+        ],
+      },
+      {
+        month: 'October',
+        sessions: [
+          { date: 'Thu, Oct 1', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, Oct 6', time: '11:00 – 12:30 pm' },
+          { date: 'Tue, Oct 20', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, Oct 27', time: '12:00 – 1:30 pm' },
+        ],
+      },
+      {
+        month: 'November',
+        sessions: [
+          { date: 'Tue, Nov 3', time: '11:00 – 12:30 pm' },
+          { date: 'Tue, Nov 10', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, Nov 17', time: '1:00 – 2:30 pm' },
+          { date: 'Tue, Nov 24', time: '12:00 – 1:30 pm' },
+        ],
+      },
+      {
+        month: 'December',
+        sessions: [
+          { date: 'Tue, Dec 1', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, Dec 8', time: '12:00 – 1:30 pm' },
+          { date: 'Tue, Dec 15', time: '12:00 – 1:00 pm' },
+        ],
+      },
+    ],
+  },
+];
+
+export const auraForLifeInvestment: InvestmentOption[] = [
+  { id: 'afl-cycle-1', label: 'Cycle 1', period: 'March to July', price: '$400' },
+  { id: 'afl-cycle-2', label: 'Cycle 2', period: 'August to December', price: '$400' },
+  { id: 'afl-full', label: 'Full Cycle', period: 'March to December', price: '$700' },
+];
+
+// =============================================================================
+// ONGOING COMMUNITY PROGRAMS & ACTIVITIES (with schedule + investment)
+// =============================================================================
+
 export const paidPrograms: CommunityProgram[] = [
   {
     id: 'aura-for-life',
@@ -572,6 +823,8 @@ export const paidPrograms: CommunityProgram[] = [
     whatsappLink: 'https://chat.whatsapp.com/BeowpnN4CtvJdqFysxxy41',
     calendarLink: 'https://calendar.google.com/calendar/ical/d28269c09ef556ca45935fd59f6846c0208ae9e4681e870445fffbe011216491%40group.calendar.google.com/public/basic.ics',
     googleCalendarUrl: 'https://calendar.google.com/calendar/u/1?cid=ZDI4MjY5YzA5ZWY1NTZjYTQ1OTM1ZmQ1OWY2ODQ2YzAyMDhhZTllNDY4MWU4NzA0NDVmZmZiZTAxMTIxNjQ5MUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
+    scheduleCycles: auraForLifeSchedule,
+    investment: auraForLifeInvestment,
   },
   {
     id: 'teachers-training',
@@ -580,5 +833,7 @@ export const paidPrograms: CommunityProgram[] = [
     free: false,
     calendarLink: 'https://calendar.google.com/calendar/ical/6c5be92eae7703c042356edb50cd679ab042ac4ddb5ca8ca68f9b37f77df9de8%40group.calendar.google.com/public/basic.ics',
     googleCalendarUrl: 'https://calendar.google.com/calendar/u/1?cid=NmM1YmU5MmVhZTc3MDNjMDQyMzU2ZWRiNTBjZDY3OWFiMDQyYWM0ZGRiNWNhOGNhNjhmOWIzN2Y3N2RmOWRlOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
+    scheduleCycles: teachersTrainingSchedule,
+    investment: teachersTrainingInvestment,
   },
 ];
