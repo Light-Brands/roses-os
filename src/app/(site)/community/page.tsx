@@ -7,9 +7,26 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { freePrograms, paidPrograms } from '@/lib/data';
 import type { CommunityProgram } from '@/lib/data';
+import SubscribeCalendar from '@/components/ui/SubscribeCalendar';
 
+import type { TimeZoneEntry } from '@/lib/data/types';
 import PageHero from '@/components/sections/PageHero';
 import InvitationCTA from '@/components/sections/InvitationCTA';
+
+// =============================================================================
+// TIMEZONE SELECTOR (matches ScheduleTable on offerings page)
+// =============================================================================
+
+type TimezoneKey = keyof TimeZoneEntry;
+
+const timezoneLabels: Record<TimezoneKey, string> = {
+  sanJose: 'San Jose',
+  bogota: 'Bogota',
+  newYork: 'New York',
+  brasilia: 'Brasilia',
+  london: 'London',
+  madrid: 'Madrid',
+};
 
 // =============================================================================
 // EASE CONSTANT
@@ -134,36 +151,11 @@ function ActivityCard({
               Join WhatsApp Group
             </a>
           )}
-          {program.calendarLink && (
-            <a
-              href={program.calendarLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                'inline-flex items-center gap-2 px-5 py-2.5 rounded-full',
-                'bg-[var(--color-foreground)] text-[var(--color-background)]',
-                'dark:bg-white dark:text-neutral-900',
-                'text-sm font-medium',
-                'hover:opacity-90',
-                'transition-all duration-200',
-                'shadow-sm hover:shadow-md'
-              )}
-            >
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                />
-              </svg>
-              Add to Calendar
-            </a>
+          {program.calendarLink && program.googleCalendarUrl && (
+            <SubscribeCalendar
+              googleCalendarUrl={program.googleCalendarUrl}
+              icsUrl={program.calendarLink}
+            />
           )}
         </div>
       )}
@@ -199,6 +191,7 @@ function ActivityCard({
 
 export default function CommunityPage() {
   const [expandedProgramId, setExpandedProgramId] = useState<string | null>(null);
+  const [timezone, setTimezone] = useState<TimezoneKey>('newYork');
 
   const visionRef = useRef<HTMLElement>(null);
   const visionInView = useInView(visionRef, { once: true, margin: '-100px' });
@@ -367,13 +360,44 @@ export default function CommunityPage() {
                         {/* Schedule section */}
                         {program.scheduleCycles && (
                           <div className="mt-8 mb-8">
-                            <p className="label-sacred mb-3">Schedule</p>
-                            <h3 className="font-serif text-[clamp(1.25rem,3vw,2rem)] leading-tight tracking-tight mb-2">
-                              2026 Class Schedule
-                            </h3>
-                            <p className="text-sm text-[var(--color-foreground-muted)] mb-6">
-                              All times shown in Costa Rica time (CST)
-                            </p>
+                            <div className="flex flex-wrap items-end justify-between gap-4 mb-6">
+                              <div>
+                                <p className="label-sacred mb-3">Schedule</p>
+                                <h3 className="font-serif text-[clamp(1.25rem,3vw,2rem)] leading-tight tracking-tight">
+                                  2026 Class Schedule
+                                </h3>
+                              </div>
+                              <div className="flex items-center">
+                                <label className="label-sacred mr-3" htmlFor={`tz-select-${program.id}`}>
+                                  Timezone
+                                </label>
+                                <div className="relative">
+                                  <select
+                                    id={`tz-select-${program.id}`}
+                                    value={timezone}
+                                    onChange={(e) => setTimezone(e.target.value as TimezoneKey)}
+                                    className={cn(
+                                      'appearance-none cursor-pointer',
+                                      'bg-[var(--color-background-subtle)] border border-[var(--color-border)]',
+                                      'rounded-lg px-4 py-2 pr-9',
+                                      'text-sm text-[var(--color-foreground-subtle)]',
+                                      'focus-premium',
+                                      'transition-colors duration-200'
+                                    )}
+                                  >
+                                    {(Object.keys(timezoneLabels) as TimezoneKey[]).map((tz) => (
+                                      <option key={tz} value={tz}>
+                                        {timezoneLabels[tz]}
+                                      </option>
+                                    ))}
+                                  </select>
+                                  <ChevronDown
+                                    className="absolute right-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--color-foreground-faint)] pointer-events-none"
+                                    aria-hidden="true"
+                                  />
+                                </div>
+                              </div>
+                            </div>
 
                             <div className="space-y-4">
                               {program.scheduleCycles.map((cycle) => (
@@ -413,7 +437,7 @@ export default function CommunityPage() {
                                                 {session.date}
                                               </span>
                                               <span className="text-[var(--color-foreground-muted)] tabular-nums shrink-0">
-                                                {session.time}
+                                                {session.time[timezone]}
                                               </span>
                                             </div>
                                           ))}
