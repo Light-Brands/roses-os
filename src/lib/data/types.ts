@@ -174,10 +174,10 @@ export interface Stat {
   label: string;
 }
 
-/** Community program class session (date + time) */
+/** Community program class session (date + time across timezones) */
 export interface CommunityClassSession {
   date: string;
-  time: string;
+  time: TimeZoneEntry;
 }
 
 /** Community program schedule month */
