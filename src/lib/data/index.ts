@@ -6,6 +6,8 @@ export type {
   ArchitectureLayer, Chakra, Technique, TeachingLevel,
   Agreement, Capacity, MessagingPillar, BrandQuote, Stat,
   CommunityProgram,
+  CommunityClassSession, CommunityScheduleMonth,
+  CommunityScheduleCycle, InvestmentOption,
 } from './types';
 
 export {
