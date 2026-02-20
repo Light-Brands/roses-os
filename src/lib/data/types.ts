@@ -174,6 +174,33 @@ export interface Stat {
   label: string;
 }
 
+/** Community program class session (date + time) */
+export interface CommunityClassSession {
+  date: string;
+  time: string;
+}
+
+/** Community program schedule month */
+export interface CommunityScheduleMonth {
+  month: string;
+  sessions: CommunityClassSession[];
+}
+
+/** Community program schedule cycle (group of months) */
+export interface CommunityScheduleCycle {
+  id: string;
+  title: string;
+  months: CommunityScheduleMonth[];
+}
+
+/** Investment option for community programs */
+export interface InvestmentOption {
+  id: string;
+  label: string;
+  period: string;
+  price: string;
+}
+
 /** Ongoing community program or activity */
 export interface CommunityProgram {
   id: string;
@@ -184,4 +211,6 @@ export interface CommunityProgram {
   free: boolean;
   whatsappLink?: string;
   calendarLink?: string;
+  scheduleCycles?: CommunityScheduleCycle[];
+  investment?: InvestmentOption[];
 }

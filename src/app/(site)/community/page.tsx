@@ -1,7 +1,8 @@
 'use client';
 
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { useRef, useState } from 'react';
+import { motion, useInView, AnimatePresence } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { freePrograms, paidPrograms } from '@/lib/data';
@@ -24,11 +25,17 @@ function ActivityCard({
   program,
   index,
   inView,
+  expanded,
+  onToggle,
 }: {
   program: CommunityProgram;
   index: number;
   inView: boolean;
+  expanded?: boolean;
+  onToggle?: () => void;
 }) {
+  const hasDetails = program.scheduleCycles || program.investment;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
@@ -41,7 +48,8 @@ function ActivityCard({
         'border border-rose-200/50 dark:border-rose-800/20',
         'hover:border-rose-300 dark:hover:border-rose-700/40',
         'hover:shadow-lg hover:shadow-rose-500/5',
-        'transition-all duration-500'
+        'transition-all duration-500',
+        expanded && 'border-rose-300 dark:border-rose-700/40 shadow-lg shadow-rose-500/5'
       )}
     >
       <h3 className="font-serif text-[clamp(1.15rem,2.5vw,1.5rem)] leading-tight tracking-tight mb-3 text-[var(--color-foreground)]">
@@ -159,6 +167,28 @@ function ActivityCard({
           )}
         </div>
       )}
+
+      {/* View Details toggle for programs with schedule/investment */}
+      {hasDetails && onToggle && (
+        <button
+          onClick={onToggle}
+          className={cn(
+            'mt-6 inline-flex items-center gap-2',
+            'text-sm font-medium',
+            'text-[var(--color-foreground-muted)]',
+            'hover:text-[var(--color-foreground)]',
+            'transition-colors duration-200'
+          )}
+        >
+          {expanded ? 'Hide Schedule & Investment' : 'View 2026 Schedule & Investment'}
+          <ChevronDown
+            className={cn(
+              'w-4 h-4 transition-transform duration-300',
+              expanded && 'rotate-180'
+            )}
+          />
+        </button>
+      )}
     </motion.div>
   );
 }
@@ -168,6 +198,8 @@ function ActivityCard({
 // =============================================================================
 
 export default function CommunityPage() {
+  const [expandedProgramId, setExpandedProgramId] = useState<string | null>(null);
+
   const visionRef = useRef<HTMLElement>(null);
   const visionInView = useInView(visionRef, { once: true, margin: '-100px' });
 
@@ -176,6 +208,10 @@ export default function CommunityPage() {
 
   const paidRef = useRef<HTMLElement>(null);
   const paidInView = useInView(paidRef, { once: true, margin: '-100px' });
+
+  const handleToggle = (id: string) => {
+    setExpandedProgramId((prev) => (prev === id ? null : id));
+  };
 
   return (
     <>
@@ -305,14 +341,137 @@ export default function CommunityPage() {
             work at a deeper level.
           </motion.p>
           <div className="space-y-4">
-            {paidPrograms.map((program, i) => (
-              <ActivityCard
-                key={program.id}
-                program={program}
-                index={i}
-                inView={paidInView}
-              />
-            ))}
+            {paidPrograms.map((program, i) => {
+              const isExpanded = expandedProgramId === program.id;
+
+              return (
+                <div key={program.id}>
+                  <ActivityCard
+                    program={program}
+                    index={i}
+                    inView={paidInView}
+                    expanded={isExpanded}
+                    onToggle={() => handleToggle(program.id)}
+                  />
+
+                  {/* Expanded: Schedule + Investment */}
+                  <AnimatePresence>
+                    {isExpanded && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.5, ease }}
+                        className="overflow-hidden"
+                      >
+                        {/* Schedule section */}
+                        {program.scheduleCycles && (
+                          <div className="mt-8 mb-8">
+                            <p className="label-sacred mb-3">Schedule</p>
+                            <h3 className="font-serif text-[clamp(1.25rem,3vw,2rem)] leading-tight tracking-tight mb-2">
+                              2026 Class Schedule
+                            </h3>
+                            <p className="text-sm text-[var(--color-foreground-muted)] mb-6">
+                              All times shown in Costa Rica time (CST)
+                            </p>
+
+                            <div className="space-y-4">
+                              {program.scheduleCycles.map((cycle) => (
+                                <div
+                                  key={cycle.id}
+                                  className={cn(
+                                    'border border-[var(--color-border)] rounded-xl overflow-hidden',
+                                    'bg-[var(--color-background-elevated)]',
+                                    'shadow-[var(--shadow-md)]'
+                                  )}
+                                >
+                                  {/* Cycle header */}
+                                  <div className="px-5 py-4 md:px-6 md:py-5">
+                                    <h4 className="font-serif text-lg md:text-xl text-[var(--color-foreground)] tracking-tight">
+                                      {cycle.title}
+                                    </h4>
+                                  </div>
+
+                                  {/* Month groups */}
+                                  <div className="px-5 pb-5 md:px-6 md:pb-6">
+                                    {cycle.months.map((month, monthIdx) => (
+                                      <div key={month.month} className={cn(monthIdx > 0 && 'mt-4')}>
+                                        <p className="label-sacred mb-2 text-xs">
+                                          {month.month}
+                                        </p>
+                                        <div className="space-y-1">
+                                          {month.sessions.map((session, sIdx) => (
+                                            <div
+                                              key={sIdx}
+                                              className={cn(
+                                                'flex items-baseline justify-between gap-3 py-2 text-sm',
+                                                sIdx < month.sessions.length - 1 &&
+                                                  'border-b border-[var(--color-border-subtle)]'
+                                              )}
+                                            >
+                                              <span className="text-[var(--color-foreground-subtle)] font-medium">
+                                                {session.date}
+                                              </span>
+                                              <span className="text-[var(--color-foreground-muted)] tabular-nums shrink-0">
+                                                {session.time}
+                                              </span>
+                                            </div>
+                                          ))}
+                                        </div>
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Investment section */}
+                        {program.investment && (
+                          <div className="pt-6 pb-4">
+                            <p className="label-sacred mb-3">Investment</p>
+                            <h3 className="font-serif text-[clamp(1.25rem,3vw,2rem)] leading-tight tracking-tight mb-6">
+                              {program.title}
+                            </h3>
+
+                            <div className={cn(
+                              'grid gap-4',
+                              program.investment.length === 3
+                                ? 'sm:grid-cols-3'
+                                : 'sm:grid-cols-2'
+                            )}>
+                              {program.investment.map((option) => (
+                                <div
+                                  key={option.id}
+                                  className={cn(
+                                    'rounded-xl p-5',
+                                    'border border-[var(--color-border)]',
+                                    'bg-[var(--color-background-elevated)]',
+                                    'shadow-[var(--shadow-md)]',
+                                    'text-center'
+                                  )}
+                                >
+                                  <p className="font-serif text-lg text-[var(--color-foreground)] mb-1">
+                                    {option.label}
+                                  </p>
+                                  <p className="text-xs text-[var(--color-foreground-faint)] mb-3">
+                                    {option.period}
+                                  </p>
+                                  <p className="font-serif text-2xl text-[var(--color-foreground)] tracking-tight">
+                                    {option.price}
+                                  </p>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
           </div>
 
           {/* CTA to Offerings */}
