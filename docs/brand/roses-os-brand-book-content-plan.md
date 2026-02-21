@@ -17,16 +17,21 @@
 **Live tagline:** "A Living Consciousness Ecosystem"
 **Hero:** "Remember Who You Are"
 **Sub-hero:** "Technologies of remembrance for those ready to live in coherence."
-**Key new phrase:** "The next revolution is a revolution of remembrance."
-**Navigation:** The Rose | Offerings | Guardians | Community | Begin
-**Stats:** 30+ Years | 500+ Practitioners | 50+ Countries
+**Key new phrase:** "The next revolution is a revolution of consciousness."
+**Navigation:** The Rose | Offerings | Community | Guardians (Begin is a CTA button linking to /invitation)
+**Stats:** 30+ Years | 5,000+ Initiates | 50+ Countries
 **Audience (live):** Seekers, Healers, Teachers, Leaders, Creators -- "For those who sense there is more"
 **Six Pillars (live):** The Rose, Aura, Human Journey, Intuition, Leadership, Your Highest Potential
 **Guardian Titles:** Guardian of Lineage (Angelina), Guardian of Community & Programs (Dara), Guardian of Architecture & Structure (Diego), Guardian of Methodology (Peggy)
-**Community Programs:** Hummingbirds (weekly Saturday), Free Live Guidances, Practitioner Meetings, Aura for Life, Rose Meditation Teachers Training
+**Community Programs:** Hummingbirds (weekly Saturday 10:30 AM CT), Free Live Guidances (weekly Saturday 9:30 AM CT), Meetings of Rose Meditation Practitioners (monthly), Aura for Life (paid, bi-annual cycles), Rose Meditation Teachers Training (paid, bi-annual cycles)
 **Invitation:** "You Have Been Invited" -- personal doorway framing
 **Closing:** "The way is open. Welcome home."
-**Design:** Cormorant Garamond (variable) + Inter (variable) | Light #F7F5F2 / Dark #1A1716 | Built with Next.js by LIGHT BRANDS
+**Contribution Model:** "Pay What Feels Right" — Seed / Bloom / Canopy tiers (varies by program)
+**Pages:** Home, The Rose, Offerings, Community, Guardians, Contact, Invitation (+ Learn More), Enroll, Contribute
+**Architecture Layers (The Rose page):** Hardware, Software, Heartware, Soulware
+**13 Coherence Domains (The Rose page):** Physical, Emotional, Mental, Relational, Creative, Vocational, Financial, Sexual, Spiritual, Environmental, Ancestral, Temporal, Universal
+**Eleven Capacities:** Stillness, Presence, Breath, Feeling, Listening, Discernment, Courage, Surrender, Integration, Service, Remembrance
+**Design:** Cormorant Garamond (variable) + Inter (variable) | Light #F7F5F2 / Dark #1A1716 | Built with Next.js 16 by LIGHT BRANDS
 
 ---
 
@@ -39,19 +44,23 @@
 - Brand Positioning (affirmative -- what ROSES OS is)
 - Brand Personality & Archetype (Mystic Guide x Architect x Modern Oracle)
 - Voice & Tone (principles and direction)
-- Messaging Pillars (5 pillars with statements)
+- Messaging Pillars (6 pillars with statements -- The Rose, Aura, Human Journey, Intuition, Leadership, Your Highest Potential)
 - Key Language & Vocabulary (full glossary)
 - The Two Core Questions
-- The Technology (Rose, Levels 1-3, Aura)
+- The Technology (Rose Meditation Levels 1-3, Aura 1-5)
+- Architecture Layers (Hardware, Software, Heartware, Soulware -- live on The Rose page)
+- 13 Coherence Domains (live on The Rose page)
+- Eleven Capacities (Stillness through Remembrance)
 - Six Pillars of Awakening (live on homepage)
-- The Guardians (with formal titles, live bios)
-- Community Structure (Hummingbirds, Guidances, Practitioner Meetings)
+- The Guardians (with formal titles, live bios, live on Guardians page)
+- Community Structure (Hummingbirds, Free Live Guidances, Meetings of Rose Meditation Practitioners, Aura for Life, Teachers Training -- all live on Community page)
 - Color Palette (full system with usage rules, light + dark themes)
 - Typography (Cormorant Garamond + Inter with rules)
 - Design Book (texture language, layout philosophy, sacred-tech blend)
 - Website Style Guide (UI components, spacing, copy rules)
-- Sitemap & Page Structure
-- Contribution Model (income-based tiers)
+- Sitemap & Page Structure (Home, The Rose, Offerings, Community, Guardians, Contact, Invitation + Learn More, Enroll, Contribute)
+- Contribution Model ("Pay What Feels Right" with Seed / Bloom / Canopy tiers)
+- Invitation Flow ("You Have Been Invited" → Learn More → Offerings → Enroll)
 
 ### Missing Written Content (this plan)
 
@@ -88,7 +97,7 @@
 - [ ] **Angelina Ataíde's personal story** -- see Founder Interview Questions below
 - [ ] **The "why now" moment** -- see Founder Interview Questions below
 - [ ] **Diego, Dara, Peggy's entry** -- see Founder Interview Questions below
-- [ ] **The growth arc** (30+ years, 500+ practitioners, 50+ countries) -- see Founder Interview Questions below
+- [ ] **The growth arc** (30+ years, 5,000+ initiates, 50+ countries) -- see Founder Interview Questions below
 
 **Tone direction:** Written like a quiet origin myth. Think: "There was a time when..." -- grounded, reverent, alive.
 
@@ -102,7 +111,7 @@ When did you first encounter this work, and what did it feel like? Was there a s
 
 #### For All Four Guardians (can be answered individually or together)
 
-What is the moment you remember most clearly from your own journey with this work -- the one that confirmed you were on the right path? ROSES OS launched in 2026 as the international expression of a lineage carried for decades through CELARIS (formerly Escola da Aura & Sueños) in Brazil. What made this the right moment to create an international arm with its own identity and architecture? The work has reached 500+ practitioners across 50+ countries. How did that happen -- was it intentional growth, or did people simply find it? What is the one thing about ROSES OS you wish everyone understood immediately? Diego, you bridge spirit and structure -- what does that mean in practice, and when did you know that was your role here? Dara, you hold community and programs -- what does it feel like to hold space for others on this path, and what drew you to this work over a decade ago? Peggy, you have walked the aura reading path for 20+ years -- what has changed in you over that time, and what has remained the same? If the brand story is a single arc -- from the 1960s in California to today -- what is that arc about? What is being remembered?
+What is the moment you remember most clearly from your own journey with this work -- the one that confirmed you were on the right path? ROSES OS launched in 2026 as the international expression of a lineage carried for decades through CELARIS (Center of Aura Readings, Reiki, Intuition and Dreams) in Brazil. What made this the right moment to create an international arm with its own identity and architecture? The work has reached 5,000+ initiates across 50+ countries. How did that happen -- was it intentional growth, or did people simply find it? What is the one thing about ROSES OS you wish everyone understood immediately? Diego, you bridge spirit and structure -- what does that mean in practice, and when did you know that was your role here? Dara, you hold community and programs -- what does it feel like to hold space for others on this path, and what drew you to this work over a decade ago? Peggy, you have walked the aura reading path for 20+ years -- what has changed in you over that time, and what has remained the same? If the brand story is a single arc -- from the 1960s in California to today -- what is that arc about? What is being remembered?
 
 **Decisions needed:**
 - [ ] Who will conduct or facilitate these conversations?
@@ -125,14 +134,18 @@ What is the moment you remember most clearly from your own journey with this wor
 
 **What it is:** A 2-4 page opening statement that sets the emotional and philosophical tone for the entire brand book. The first thing someone reads. It should feel like a declaration.
 
-**What you have now:** Strong manifesto-quality lines across docs AND the live site:
+**What you have now:** Strong manifesto-quality lines live on rosesos.com:
 - "Remember Who You Are" (live hero headline)
-- "The next revolution is a revolution of remembrance." (live site)
+- "A Living Consciousness Ecosystem" (live eyebrow/tagline)
 - "Technologies of remembrance for those ready to live in coherence." (live sub-hero)
-- "What if the intelligence you seek is already within you, waiting to be remembered?" (live site)
-- "When the Rose awakens, Genius awakens."
-- "You are the mountain."
-- "The way is open. Welcome home." (live closing)
+- "The next revolution is a revolution of consciousness." (live quote section)
+- "What if the intelligence you seek is already within you, waiting to be remembered?" (live brand essence)
+- "When the Rose awakens, Genius awakens." (live on The Rose page hero)
+- "You are the mountain." (live on The Rose page)
+- "A seamless path to inner freedom." (live brand quote)
+- "You are whole. You are here. You are remembering." (live brand quote)
+- "Coherence is something you return to." (live on Guardians page)
+- "The way is open. Welcome home." (live closing CTA)
 
 **What's needed to write it:**
 
@@ -154,7 +167,7 @@ Page 2: The technology
     It restores the conditions where clarity becomes natural."
 
 Page 3: The revolution
-   "The next revolution is a revolution of remembrance."
+   "The next revolution is a revolution of consciousness."
 
 Page 4: The awakening
    "When the Rose awakens, Genius awakens."
@@ -327,9 +340,11 @@ These teachings have been transmitted through lineage for decades. ROSES OS make
 **What it is:** A full-page prose description of the ideal participant. Not a bullet list -- a paragraph that someone reads and thinks, "That's me."
 
 **What you have now:**
-- Docs list: founders, creators, entrepreneurs, healers, leaders, parents, seekers
-- Live site uses: Seekers, Healers, Teachers, Leaders, Creators -- "For those who sense there is more"
-- Live site framing: "A living path. A way home."
+- Homepage uses: Seekers, Healers, Teachers, Leaders, Creators -- "For those who sense there is more"
+- Homepage body: "You may be someone who senses the life you came here to live is still unfolding. If something in these words resonates, the way is open."
+- The Rose page uses: "For founders, creators, parents, healers, and leaders who need clarity, intuition, and inner stability to move through complexity without losing themselves."
+- Community page: "A gathering of individuals who have chosen to walk the path of remembrance together as fellow practitioners."
+- Invitation page: "A living architecture of technologies, practices, and community for coherent living. A way home."
 
 **What's needed to write it:**
 
@@ -345,7 +360,7 @@ These teachings have been transmitted through lineage for decades. ROSES OS make
 
 **Decisions needed:**
 - [ ] Does this resonate with how the founders see their audience?
-- [ ] The live site added "Teachers" and dropped "Founders/Entrepreneurs/Parents" -- is the new list (Seekers, Healers, Teachers, Leaders, Creators) the definitive audience set?
+- [ ] The homepage uses "Seekers, Healers, Teachers, Leaders, Creators" while The Rose page uses "founders, creators, parents, healers, and leaders" -- which is the definitive audience set for the brand book?
 - [ ] Should the narrative address families/parents specifically or keep it individual?
 
 ---
@@ -454,14 +469,14 @@ The Rose has a natural three-part anatomy that maps to the ROSES OS brand:
 
 **What it is:** The live site features six pillars that describe what the ROSES OS journey awakens. These already exist as homepage cards but need full-page brand book treatment with expanded copy.
 
-**What you have now (live on rosesos.com):**
+**What you have now (live on rosesos.com homepage):**
 
-1. **The Rose** -- Dissolves distortion, restores coherence, deepens presence
-2. **Aura** -- Heart-soul alignment, subtle perception, energetic clarity
-3. **Human Journey** -- Emotional pattern dissolution, love as intelligence
-4. **Intuition** -- Truth listening, limiting belief dissolution, aligned decisions
-5. **Leadership** -- Coherence-based capacity, empowerment, field mastery
-6. **Your Highest Potential** -- Original design access, pure integrity living
+1. **The Rose** -- "It dissolves distortion and restores coherence. Inner awareness expands, presence and stability deepen. From this state, intuition sharpens, leadership rises, and connection becomes natural."
+2. **Aura** -- "When heart aligns with soul, you perceive subtle senses and the energy shaping your choices. Each reading is a mirror, strengthening clarity, relationships, and service."
+3. **Human Journey** -- "Emotional patterns and imprints dissolve, freed across mental and energetic layers. Love reveals itself as a self-organizing intelligence."
+4. **Intuition** -- "You learn to listen to truth with clarity and simplicity. Limiting beliefs and unconscious patterns dissolve. Your decisions become aligned, precise, and guided."
+5. **Leadership** -- "It deepens your capacity to feel, support, and relate. Leadership rooted in coherence, empowerment, and trust. You read your own field and the energy around you with discernment and self-mastery."
+6. **Your Highest Potential** -- "You access the brilliance of your original design. You live your life from pure integrity. These belong to every human who remembers who they are."
 
 **What's needed:** Each pillar gets a full spread (2 pages) in the brand book -- one page with the pillar name in large Cormorant Garamond, the second with a 3-5 sentence expansion.
 
@@ -473,16 +488,19 @@ The Rose has a natural three-part anatomy that maps to the ROSES OS brand:
 
 ## 12. Community Identity Page
 
-**What it is:** The live site has a defined community structure that didn't exist in earlier docs. This is brand book material.
+**What it is:** The live site has a fully defined community structure with dedicated page copy. This is brand book material.
 
-**What you have now (live):**
-- Vision: "A living field" for those pursuing integrated well-being
-- Members: "Individuals who have chosen to walk the path of remembrance together"
-- Definition: "Coherence is the state in which all dimensions of being -- body, heart, mind, and soul -- move as one integrated field."
-- Programs: Hummingbirds (weekly), Free Live Guidances, Practitioner Meetings, Aura for Life, Teachers Training
+**What you have now (live on /community):**
+- Hero: "The Living Field" — "A network of practitioners devoted to coherent living."
+- Vision: "The ROSES OS community is a living field. A gathering of individuals who have chosen to walk the path of remembrance together as fellow practitioners."
+- Community Philosophy: "We hold space for one another through daily practice, shared inquiry, and the quiet commitment to showing up as we are. The community exists because the journey home is supported, not solitary."
+- Definition: "Coherence is the state in which all dimensions of being: body, heart, mind, and soul, move as one integrated field. Not a concept to understand, but a reality to embody. We believe that coherence is contagious."
+- Free Programs: Hummingbirds (weekly Saturday 10:30 AM CT), Free Live Guidances (weekly Saturday 9:30 AM CT), Meetings of Rose Meditation Practitioners (monthly)
+- Paid Programs: Aura for Life ($400/cycle or $700/year, bi-annual cycles), Rose Meditation Teachers Training ($600/cycle, bi-annual cycles)
+- Both paid programs have full 2026 schedules with multi-timezone support
 
 **What's needed:**
-- [ ] 1-page community philosophy statement for the brand book
+- [ ] 1-page community philosophy statement for the brand book (strong draft exists in live copy)
 - [ ] How the community model reflects the brand -- a living field of sovereign beings remembering together
 
 ---
@@ -555,8 +573,8 @@ Page 4: Color Symbolism Table
 | 8 | Personality Sliders | 1-2 | Approve positions | Positions proposed |
 | 9 | Photography Identity | 2-4 | Need photo assets or shoot plan | Direction provided |
 | 10 | Framework Diagram Copy | 2-3 | Review concept | Concept provided |
-| 11 | Six Pillars (expanded) | 6-12 | Expand existing live copy | Live copy as starting point |
-| 12 | Community Identity | 1-2 | Light review | Live copy exists |
+| 11 | Six Pillars (expanded) | 6-12 | Light review -- full descriptions now live | **Live copy as strong starting point** |
+| 12 | Community Identity | 1-2 | Light review | **Live copy substantially expanded** |
 | 13 | Color Origin & Symbolism (Butterfly Wing) | 2-4 | Approve butterfly wing as secondary visual element | **Written content complete** |
 
 **Total new written pages: ~40-54**
