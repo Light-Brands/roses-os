@@ -140,8 +140,10 @@ toc_items = [
     ('Section 7: Brand Personality Sliders', '18'),
     ('Reference: Color Palette & Symbolism', ''),
     ('Reference: Typography & Typeface', ''),
-    ('Section 8: Butterfly Wing \u2014 Pending Decisions', '20'),
-    ('Section 9: Brand Story / Origin Narrative \u2014 Interview Questions', '22'),
+    ('Section 8: Photography Identity', ''),
+    ('Section 9: Framework Diagram \u2014 The Rose as Brand Architecture', ''),
+    ('Section 10: Butterfly Wing \u2014 Pending Decisions', ''),
+    ('Section 11: Brand Story / Origin Narrative \u2014 Interview Questions', ''),
 ]
 for title, _ in toc_items:
     p = doc.add_paragraph()
@@ -886,9 +888,173 @@ add_quote(doc, 'Think: Apple-level minimalism inside a temple.')
 doc.add_page_break()
 
 # ============================================================
-# SECTION 8: BUTTERFLY WING — PENDING DECISIONS
+# SECTION 8: PHOTOGRAPHY IDENTITY
 # ============================================================
-doc.add_heading('Section 8: The Butterfly Wing \u2014 Pending Decisions', level=1)
+doc.add_heading('Section 8: Photography Identity', level=1)
+doc.add_paragraph(
+    'The photographic style of ROSES OS \u2014 defining how imagery feels across the brand book, '
+    'website, social media, and all materials. This direction needs founder approval and a decision '
+    'on whether original photography assets exist or need to be commissioned.'
+)
+
+doc.add_heading('The ROSES OS Photographic Style', level=2)
+doc.add_paragraph('Our imagery reflects our essence: grounded, warm, quiet.')
+
+doc.add_heading('Style Words', level=3)
+style_words = ['Earthy', 'Warm', 'Still', 'Intimate', 'Textured', 'Natural light', 'Unhurried']
+for w in style_words:
+    p = doc.add_paragraph()
+    run = p.add_run(f'\u2022  {w}')
+    run.font.size = Pt(11)
+    p.paragraph_format.left_indent = Inches(0.25)
+    p.paragraph_format.space_after = Pt(2)
+
+doc.add_heading('Scene Direction', level=3)
+scenes = [
+    'Hands in practice (meditation, journaling, tea ceremony)',
+    'Earth textures close-up (clay, stone, linen, wood grain)',
+    'Natural light through windows, golden hour, morning quiet',
+    'Human presence in presence (eyes closed, seated, fully there)',
+    'Community in stillness (circles, shared meals, deep listening)',
+    'Architecture of sacred spaces (clean lines, warm materials)',
+    'Nature as mirror (roots, water, stone, open sky)',
+]
+for s in scenes:
+    p = doc.add_paragraph()
+    run = p.add_run(f'\u2022  {s}')
+    run.font.size = Pt(10.5)
+    p.paragraph_format.left_indent = Inches(0.25)
+    p.paragraph_format.space_after = Pt(2)
+
+doc.add_heading('Color Treatment', level=3)
+treatments = [
+    'Warm tones, desaturated',
+    'Earth palette extending into every image',
+    'Soft, lived-in warmth \u2014 the feeling of linen and clay',
+    'Black and white: selective, for emphasis and reverence',
+]
+for t in treatments:
+    p = doc.add_paragraph()
+    run = p.add_run(f'\u2022  {t}')
+    run.font.size = Pt(10.5)
+    p.paragraph_format.left_indent = Inches(0.25)
+    p.paragraph_format.space_after = Pt(2)
+
+doc.add_heading('Photography Principles', level=3)
+principles = [
+    'Every image should feel authentic and present',
+    'Composition is spacious \u2014 room to breathe',
+    'Light is always natural \u2014 golden hour, morning quiet, soft window light',
+    'People are captured in real moments of presence',
+    'The feeling of the photograph matters as much as its content',
+]
+for pr in principles:
+    p = doc.add_paragraph()
+    run = p.add_run(f'\u2022  {pr}')
+    run.font.size = Pt(10.5)
+    p.paragraph_format.left_indent = Inches(0.25)
+    p.paragraph_format.space_after = Pt(2)
+
+doc.add_paragraph()
+
+add_decision_box(doc, [
+    'Approve or modify the photographic style direction above',
+    'Do original photography assets exist, or does a shoot need to be commissioned?',
+    'Should the photography guide include specific shoot briefs (headshots, environment, practice, community)?',
+    'Are there existing images from CELARIS or events that could be adapted for the brand book?',
+])
+add_notes_area(doc)
+doc.add_page_break()
+
+# ============================================================
+# SECTION 9: FRAMEWORK DIAGRAM — THE ROSE AS BRAND ARCHITECTURE
+# ============================================================
+doc.add_heading('Section 9: The Rose as Brand Framework', level=1)
+doc.add_paragraph(
+    'The Zunya Brand Book centers on the "Seed of Life" sacred geometry diagram as its organizing visual. '
+    'ROSES OS needs an equivalent \u2014 the Rose itself as a visual framework that maps to the brand architecture. '
+    'This concept needs founder approval before the designer creates the diagram.'
+)
+
+doc.add_heading('Concept: Rose Anatomy = Brand Architecture', level=2)
+doc.add_paragraph(
+    'The Rose has a natural three-part anatomy that maps directly to the ROSES OS brand layers:'
+)
+
+# Framework table
+fw_table = doc.add_table(rows=4, cols=3)
+fw_table.alignment = WD_TABLE_ALIGNMENT.CENTER
+
+# Header
+for i, header in enumerate(['Rose Part', 'Brand Layer', 'Description']):
+    cell = fw_table.rows[0].cells[i]
+    cell.text = header
+    for paragraph in cell.paragraphs:
+        for run in paragraph.runs:
+            run.bold = True
+            run.font.size = Pt(10)
+    set_cell_shading(cell, 'EEEEEE')
+
+fw_rows = [
+    ('ROOTS', 'Foundation',
+     'The lineage, the source, the grounding. Where the work comes from. '
+     '30+ years of transmission from Bostwick \u2192 Plunk \u2192 Angelina.'),
+    ('STEM', 'Practice',
+     'The channel, the daily work, the living discipline. How you do it. '
+     'The Rose meditation, Levels 1\u20133, the daily return.'),
+    ('BLOOM', 'Awakening',
+     'The radiance, the genius, the coherence. What emerges. '
+     'The Six Pillars, leadership, your highest potential.'),
+]
+for row_idx, (part, layer, desc) in enumerate(fw_rows, 1):
+    row = fw_table.rows[row_idx]
+    # Rose Part cell
+    p = row.cells[0].paragraphs[0]
+    run = p.add_run(part)
+    run.bold = True
+    run.font.size = Pt(10)
+    run.font.color.rgb = RGBColor(0x9C, 0x6F, 0x6E)
+    # Layer cell
+    p = row.cells[1].paragraphs[0]
+    run = p.add_run(layer)
+    run.bold = True
+    run.font.size = Pt(10)
+    # Description cell
+    row.cells[2].text = desc
+    for paragraph in row.cells[2].paragraphs:
+        for run in paragraph.runs:
+            run.font.size = Pt(9.5)
+
+doc.add_paragraph()
+
+doc.add_heading('How It Works in the Brand Book', level=2)
+doc.add_paragraph(
+    'This framework becomes a visual diagram \u2014 a single illustration of the Rose with its three layers '
+    'labeled \u2014 that appears early in the brand book (after the Manifest, before the detailed sections). '
+    'It serves as a visual map: the reader sees the whole architecture before exploring each part.'
+)
+doc.add_paragraph()
+
+p = doc.add_paragraph()
+run = p.add_run('Unifying statement (draft): ')
+run.bold = True
+add_quote(doc, 'The Rose is not a symbol. It is the architecture. Roots hold the lineage. '
+          'The stem carries the practice. The bloom is what awakens when coherence returns.')
+
+doc.add_paragraph()
+
+add_decision_box(doc, [
+    'Does the three-part mapping (Roots/Stem/Bloom = Foundation/Practice/Awakening) feel right?',
+    'Should the diagram be botanical (naturalistic illustration) or abstract (geometric/minimal)?',
+    'Is there a different unifying statement that better captures this framework?',
+])
+add_notes_area(doc)
+doc.add_page_break()
+
+# ============================================================
+# SECTION 10: BUTTERFLY WING — PENDING DECISIONS
+# ============================================================
+doc.add_heading('Section 10: The Butterfly Wing \u2014 Pending Decisions', level=1)
 doc.add_paragraph(
     'The ROSES OS color palette origin story is anchored by the butterfly wing as the natural source '
     'of the rose-pink tone. Full written content exists for this section (2\u20134 pages in the brand book). '
@@ -956,9 +1122,9 @@ add_notes_area(doc)
 doc.add_page_break()
 
 # ============================================================
-# SECTION 9: BRAND STORY / ORIGIN NARRATIVE
+# SECTION 11: BRAND STORY / ORIGIN NARRATIVE
 # ============================================================
-doc.add_heading('Section 9: Brand Story / Origin Narrative', level=1)
+doc.add_heading('Section 11: Brand Story / Origin Narrative', level=1)
 doc.add_paragraph(
     'The brand story is a 2\u20134 page narrative telling the living story of how ROSES OS came to exist. '
     'Written in the brand voice \u2014 quiet, mythic, grounded. This section cannot be written without '
