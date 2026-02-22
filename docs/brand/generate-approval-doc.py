@@ -797,7 +797,7 @@ examples_inter = [
      'making intuition precise and presence sovereign.', 11, 'Regular'),
     ('For those who sense there is more', 11, 'Medium'),
     ('BEGIN YOUR JOURNEY', 10, 'Medium \u2014 Button'),
-    ('The Rose  |  Offerings  |  Guardians  |  Community  |  Begin', 10, 'Regular \u2014 Navigation'),
+    ('The Rose  |  Offerings  |  Community  |  Guardians  |  Begin', 10, 'Regular \u2014 Navigation'),
 ]
 for text, size, label in examples_inter:
     p = doc.add_paragraph()
@@ -1215,7 +1215,7 @@ doc.add_paragraph()
 
 guardian_qs = [
     'What is the moment you remember most clearly from your own journey with this work \u2014 the one that confirmed you were on the right path?',
-    'ROSES OS launched in 2026 as the international expression of a lineage carried for decades through CELARIS (formerly Escola da Aura & Sue\u00f1os) in Brazil. What made this the right moment to create an international arm with its own identity and architecture?',
+    'ROSES OS launched in 2026 as the international expression of a lineage carried for decades through CELARIS (Center of Aura Readings, Reiki, Intuition and Dreams) in Brazil. What made this the right moment to create an international arm with its own identity and architecture?',
     'The work has reached 5,000+ initiates across 50+ countries. How did that happen \u2014 was it intentional growth, or did people simply find it?',
     'What is the one thing about ROSES OS you wish everyone understood immediately?',
     'Diego, you bridge spirit and structure \u2014 what does that mean in practice, and when did you know that was your role here?',
