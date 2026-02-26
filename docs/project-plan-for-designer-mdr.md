@@ -101,9 +101,9 @@ Below is the **complete inventory** of every image in the repository, organized 
 | 7 | **Grounding Cord** -- Energy connection from base of spine into the center of the Earth. | *(use reimagined as primary)* | `7-Groundingcord.PNG` |
 | 8 | **Golden Sun** -- Radiant golden sun above the head, restoring personal life-force energy. | *(use reimagined as primary)* | `8-golden-sun.PNG` |
 | 9 | **Aura Exercise** -- Golden silhouette surrounded by concentric layers of glowing energy. | `9-auraexercise-original .PNG` | `9-aura-exercise .PNG` |
-| 10 | **Grounding Cord with Aura** -- Person within aura egg, grounding cord extending through aura into earth. | `10-grounding-cord-expansion-original .PNG` | `10-Grounding cord expand .PNG` |
-| 11 | **Full Meditation Setup** -- Posture + aura + grounding cord. | `11-expansion fill with golden sun - original .PNG` | `11-expansion-grounding-cord.PNG` |
-| 11a | **Full Setup with Golden Sun** -- Posture + aura + grounding cord + golden sun above crown. | `11-expansion fill with golden sun - original .PNG` | `11aExpand auragoldensunexpanded.PNG` |
+| 10 | **Expansion of Grounding Cord** -- Grounding cord expands with the aura, anchoring the entire energy field into the Earth. | `10-grounding-cord-expansion-original .PNG` | `10-Grounding cord expand .PNG` |
+| 11 | **Full Meditation Setup** -- Posture + aura + expanded grounding cord. | *(see slide 10 original)* | `11-expansion-grounding-cord.PNG` |
+| 11a | **Golden Sun Fills You** -- Golden sun above the crown pours golden light down, filling the entire aura and body. | `11-expansion fill with golden sun - original .PNG` | `11aExpand auragoldensunexpanded.PNG` |
 | 12 | **Earth Circuit** -- Energy rising through feet and legs into the body. | *(use reimagined)* | `12a-earth energy .PNG`, `Circuitofthenergyofearth.PNG` |
 | 13 | **Cosmos Circuit** -- Cosmic energy descending through the crown into the body. | `13-cosmos-original.PNG` | `12Circuitofenergycismos .PNG` |
 | 13a | **Combined Earth + Cosmos Circuit** -- Both flows active simultaneously through the body. | *(use reimagined)* | `13a-cosmos:earthcycle.PNG`, `13cosmosearth.PNG` |
@@ -122,7 +122,14 @@ Below is the **complete inventory** of every image in the repository, organized 
 | 21 | **Cleansing of the Space** -- Large rose above the grid pouring golden light downward. | `21-cleansing space - original .PNG` | `21-cleansingphysicalspace.PNG` |
 | 22 | **Owning Your Space** -- Person radiating energy from within, filling the grid with their own light. | `22-protect the space- original .PNG` | `22-owningurspace.PNG` |
 | 23 | **The Seven Chakras (body map)** -- Figures with color-coded chakra points on the body. | `23-chakras-original .PNG` | `23-chakras.jpg` |
-| 23a | **Chakra Slide Example** -- Reference for how individual chakra pages could look. | *(n/a)* | `23a-example of chakra slides .PNG` |
+| 23a | **Chakra Slide Example** -- Reference for how individual chakra pages could look. This is a **style reference** for the designer, not a final slide. | *(n/a)* | `23a-example of chakra slides .PNG` |
+| -- | **Root Chakra (individual slide)** -- Body illustration emphasizing root location, dominant red. | *(needs to be created)* | *(needs to be created)* |
+| -- | **Sacral Chakra (individual slide)** -- Body illustration emphasizing sacral location, dominant orange. | *(needs to be created)* | *(needs to be created)* |
+| -- | **Solar Plexus Chakra (individual slide)** -- Body illustration emphasizing solar plexus location, dominant yellow. | *(needs to be created)* | *(needs to be created)* |
+| -- | **Heart Chakra (individual slide)** -- Body illustration emphasizing heart location, dominant green/pink. | *(needs to be created)* | *(needs to be created)* |
+| -- | **Throat Chakra (individual slide)** -- Body illustration emphasizing throat location, dominant light blue. | *(needs to be created)* | *(needs to be created)* |
+| -- | **Third Eye Chakra (individual slide)** -- Body illustration emphasizing third eye location, dominant indigo. | *(needs to be created)* | *(needs to be created)* |
+| -- | **Crown Chakra (individual slide)** -- Body illustration emphasizing crown location, dominant violet/white. | *(needs to be created)* | *(needs to be created)* |
 | 24 | **Cleansing Each Chakra** -- Roses on either side for past and present dynamics. | `24-cleansingeachchakra-original .jpg` | `24-cleansing each chakra.PNG` |
 | 25 | **Cleansing Each Aura Layer** -- Seven distinct color-coded aura layers. | `25-cleansing layers- original .jpg` | `25-cleansineachlayer.PNG` |
 | 25a | **Chakra Cleansing (detail)** -- Close-up reference for chakra cleansing technique. | `25a-chakracleansing-original.jpg` | *(use original as reference)* |
@@ -140,12 +147,14 @@ Below is the **complete inventory** of every image in the repository, organized 
 
 ### Coverage Summary
 
-| Category | Total Concepts | Have Original | Have Reimagined | Fully Covered (both) |
-|----------|---------------|--------------|-----------------|---------------------|
-| Level 1: Foundations | 14 | 11 | 13 | 10 |
-| Level 2: Sacred Space & Chakras | 12 | 12 | 10 | 10 |
-| Level 3: The Analyzer | 1 | 1 | 1 | 1 |
-| **Total** | **27** | **24** | **24** | **21** |
+| Category | Total Slides | Have Original | Have Reimagined | Fully Covered (both) | Need to Create |
+|----------|-------------|--------------|-----------------|---------------------|----------------|
+| Level 1: Foundations | 15 | 11 | 14 | 10 | 0 |
+| Level 2: Sacred Space & Chakras | 19 | 12 | 10 | 10 | 8 |
+| Level 3: The Analyzer | 1 | 1 | 1 | 1 | 0 |
+| **Total** | **35** | **24** | **25** | **21** | **8** |
+
+**8 slides need images created from scratch:** 7 individual chakra slides + 6th/7th chakra location slide. All have complete teaching text ready -- only the visuals are missing. The designer has one example image (`23a-example of chakra slides .PNG`) as a style reference for the chakra slides.
 
 ### Images Still Needing a Reimagined Version
 
@@ -158,11 +167,22 @@ The following concepts have original images but no reimagined version yet. The d
 | 25a | **Chakra Cleansing (detail)** | `25a-chakracleansing-original.jpg` |
 | 25b | **Energy Recovery -- Level 2 (detail)** | `25b-energyrecoveryeachchakra-original.jpg` |
 
-### Image Not Yet Available (no original or reimagined)
+### Images Not Yet Available (no original or reimagined -- designer must create)
 
-| Concept | Description | Manual Section |
-|---------|-------------|----------------|
-| **6th and 7th Chakra Locations** | Side profile showing precise locations of third eye and crown chakras. | Level 2: Chakras |
+These are the slides that need to be created from scratch. The designer has full creative freedom for the individual chakra slides, guided by the example in `23a-example of chakra slides .PNG`.
+
+| Concept | Description | Manual Section | Notes |
+|---------|-------------|----------------|-------|
+| **6th and 7th Chakra Locations** | Side profile showing precise locations of third eye and crown chakras. | Level 2: Chakras | |
+| **Root Chakra** | Body illustration emphasizing root chakra location, dominant red color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference |
+| **Sacral Chakra** | Body illustration emphasizing sacral chakra location, dominant orange color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference |
+| **Solar Plexus Chakra** | Body illustration emphasizing solar plexus location, dominant yellow color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference |
+| **Heart Chakra** | Body illustration emphasizing heart chakra location, dominant green/pink color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference |
+| **Throat Chakra** | Body illustration emphasizing throat chakra location, dominant light blue color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference |
+| **Third Eye Chakra** | Body illustration emphasizing third eye location, dominant indigo color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference |
+| **Crown Chakra** | Body illustration emphasizing crown chakra location, dominant violet/white color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference |
+
+**Note on chakra slides:** We have one example image (`23a-example of chakra slides .PNG`) that shows an idea of what the individual chakra pages could look like. The designer should use this as a starting point but has creative freedom. The priority is helping viewers clearly understand where in the body each chakra is located. Each slide should emphasize that chakra's color -- vibrant yet subtle. Body figures should represent diverse people.
 
 ---
 
@@ -248,7 +268,7 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 ---
 
-#### Slide: Grounding Cord (with Aura)
+#### Slide: Expansion of Grounding Cord
 **Original:** `10-grounding-cord-expansion-original .PNG` | **Reimagined:** `10-Grounding cord expand .PNG`
 
 > Once you are aware of your aura, the grounding cord practice deepens. You ground not only the physical body but also the aura itself -- allowing the entire energy field to anchor into the Earth.
@@ -256,9 +276,16 @@ Below is the complete teaching text that accompanies each image/slide in the man
 ---
 
 #### Slide: Full Meditation Setup
-**Original:** `11-expansion fill with golden sun - original .PNG` | **Reimagined:** `11-expansion-grounding-cord.PNG`, `11aExpand auragoldensunexpanded.PNG`
+**Reimagined:** `11-expansion-grounding-cord.PNG`
 
-> The complete foundational setup combines all three elements: the person is seated in proper posture, enclosed within their aura, with the grounding cord descending into the earth and the golden sun shining above the crown.
+> The complete foundational setup combines posture, aura, and expanded grounding cord: the person is seated in proper posture, enclosed within their aura, with the grounding cord descending into the earth.
+
+---
+
+#### Slide: Golden Sun Fills You
+**Original:** `11-expansion fill with golden sun - original .PNG` | **Reimagined:** `11aExpand auragoldensunexpanded.PNG`
+
+> The Golden Sun above the crown pours golden light downward, filling the entire aura and body with your own highest vibration. This completes the full energetic architecture: posture, aura, grounding cord, and golden sun -- all active together.
 
 ---
 
@@ -290,8 +317,8 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 ---
 
-#### Slide: Roses of Protection, Observation and Separation
-**Original:** `15-four roses original .PNG` | **Reimagined:** *Needs to be created*
+#### Slide: Roses of Protection, Observation and Separation (Four Roses)
+**Original:** `15-four roses original .PNG` *(labeled "four roses" -- the four roses placed at the aura boundary)* | **Reimagined:** *Needs to be created*
 
 > Roses are placed at the edges of the aura to serve as energetic sentinels. They perform three functions:
 >
