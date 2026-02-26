@@ -183,7 +183,7 @@ These are the slides that need to be created from scratch. The designer has full
 | **Third Eye Chakra** | Body illustration emphasizing third eye location, dominant indigo color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference |
 | **Crown Chakra** | Body illustration emphasizing crown chakra location, dominant violet/white color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference |
 
-**Note on chakra slides:** We have one example image (`23a-example of chakra slides .PNG`) that shows an idea of what the individual chakra pages could look like. The designer should use this as a starting point but has creative freedom. The priority is helping viewers clearly understand where in the body each chakra is located. Each slide should emphasize that chakra's color -- vibrant yet subtle. Body figures should represent diverse people.
+**Note on chakra slides:** We have one example image (`23a-example of chakra slides .PNG`) that shows an idea of what the individual chakra pages could look like. The designer should use this as a starting point but has creative freedom. The priority is helping viewers clearly understand where in the body each chakra is located and the nadis (energy channels) associated with it. Each slide should emphasize that chakra's color -- vibrant yet subtle. Body figures should represent diverse people.
 
 ---
 
@@ -816,6 +816,8 @@ Slides illustrating meditation techniques (grounding cord, golden sun, aura laye
 ### Chakra Section Imagery
 
 The chakra pages do not need the rose logo. The designer has creative freedom here -- the priority is helping viewers clearly understand where in the body each chakra is located. Each chakra page should emphasize that chakra's color -- vibrant yet subtle, applied cohesively across the section. The designer has discretion on how the color is expressed (background wash, glow, accent, etc.).
+
+**Nadis:** Each chakra page should also show the nadis (energy channels) associated with that chakra on the body. The nadis illustrate how energy flows into and out of each chakra -- they are part of the teaching and help the viewer understand each chakra as a living, connected energy center, not just a point on the body.
 
 ### Fashion & Figure References
 
