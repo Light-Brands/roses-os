@@ -587,21 +587,6 @@ export default function Home() {
             A Living Consciousness Ecosystem
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={ready ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-            transition={{ delay: 0.15, duration: 0.6 }}
-            className="mb-5 lg:mb-6"
-          >
-            <Image
-              src="/page-images/page-home.png"
-              alt="ROSES OS"
-              width={384}
-              height={384}
-              className="max-w-[48px] w-full h-auto object-contain"
-              priority
-            />
-          </motion.div>
 
           <h1
             ref={titleRef}
