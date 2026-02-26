@@ -150,11 +150,11 @@ Below is the **complete inventory** of every image in the repository, organized 
 | Category | Total Slides | Have Original | Have Reimagined | Fully Covered (both) | Need to Create |
 |----------|-------------|--------------|-----------------|---------------------|----------------|
 | Level 1: Foundations | 15 | 11 | 14 | 10 | 0 |
-| Level 2: Sacred Space & Chakras | 19 | 12 | 10 | 10 | 8 |
+| Level 2: Sacred Space & Chakras | 19 | 13 | 11 | 11 | 7 |
 | Level 3: The Analyzer | 1 | 1 | 1 | 1 | 0 |
-| **Total** | **35** | **24** | **25** | **21** | **8** |
+| **Total** | **35** | **25** | **26** | **22** | **7** |
 
-**8 slides need images created from scratch:** 7 individual chakra slides + 6th/7th chakra location slide. All have complete teaching text ready -- only the visuals are missing. The designer has one example image (`23a-example of chakra slides .PNG`) as a style reference for the chakra slides.
+**7 slides need images created from scratch:** The 7 individual chakra slides (Root through Crown). All have complete teaching text ready -- only the visuals are missing. The designer has one example image (`23a-example of chakra slides .PNG`) as a style reference.
 
 ### Images Still Needing a Reimagined Version
 
@@ -173,7 +173,6 @@ These are the slides that need to be created from scratch. The designer has full
 
 | Concept | Description | Manual Section | Notes |
 |---------|-------------|----------------|-------|
-| **6th and 7th Chakra Locations** | Side profile showing precise locations of third eye and crown chakras. | Level 2: Chakras | |
 | **Root Chakra** | Body illustration emphasizing root chakra location, dominant red color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference |
 | **Sacral Chakra** | Body illustration emphasizing sacral chakra location, dominant orange color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference |
 | **Solar Plexus Chakra** | Body illustration emphasizing solar plexus location, dominant yellow color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference |
@@ -360,8 +359,8 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 ---
 
-#### Slide: The 6th and 7th Chakras
-**Image:** *Needs to be created -- no original or reimagined exists yet*
+#### Slide: The 6th and 7th Chakras (Sacred Space)
+**Original:** `19-sacredspace-original.jpg` | **Reimagined:** `19-sacred space.PNG` *(part of the sacred space slide sequence)*
 
 > Understanding the locations and roles of the upper chakras is essential for Level 2 work:
 >
