@@ -803,7 +803,7 @@ Roses in this system are always depicted as a stem and a flower only -- never wi
 
 ### Rose Imagery in Opening Pages
 
-Where a logo is called for in the opening slides (Sections 1--3), use both the rose logo (minimal line icon) and a realistic rose image. These set the visual tone for the manual.
+Where a logo is called for in the opening slides (Sections 1--3), use the logos from the live website (rosesos.com) alongside a realistic rose image. These set the visual tone for the manual. The website logos are the source of truth -- do not recreate or reinterpret them.
 
 ### Figure Diversity
 
