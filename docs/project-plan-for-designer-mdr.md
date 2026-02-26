@@ -83,10 +83,12 @@ The teaching section already exists on the website with this structure:
 
 All images live in `public/rose med images/`. The designer has **two versions** for nearly every teaching concept:
 
-1. **Original images** -- Hand-drawn stick-and-line illustrations from the tradition, marked with "original" in the filename. These are the most accurate depictions of the energetic structures. They are the **source of truth** for what should be shown.
-2. **Reimagined images** -- Modernized, elevated versions that honor the originals while bringing them into the ROSES OS brand language. These are the larger PNG files without "original" in the filename.
+1. **Original images** -- Hand-drawn stick-and-line illustrations from the tradition, marked with "original" in the filename. These are the most accurate depictions of the energetic structures. They are the **source of truth** for what should be shown. **New designs must reflect what the originals depict** -- the energetic structures, placements, and relationships shown in the originals are what is real and must be preserved.
+2. **Reimagined images** -- Modernized, elevated versions that honor the originals while bringing them into the ROSES OS brand language. These are the larger PNG files without "original" in the filename. The reimagined images are there for **feel** -- they show the target for clothing, design style, and overall aesthetic direction. They are not the accuracy reference.
 
-**The designer should use both sets.** The originals are the accuracy reference -- they show exactly what each energetic structure looks like and how it works. The reimagined versions are the aesthetic target -- they show how the final manual should feel. Where a reimagined image exists, use it as the primary visual. The original should remain accessible as a supplementary reference that teachers may prefer for accuracy.
+**The designer should use both sets.** The originals define *what* to show. The reimagined versions define *how it should feel*. The new designs must always honor the connection between old and new -- paying homage to the original tradition while elevating it into the modern brand language. Where a reimagined image exists, use it as inspiration for feel, clothing, and design style. The original should remain accessible as a supplementary reference that teachers may prefer for accuracy.
+
+**Representation matters.** All new imagery must include both male and female figures and represent diverse ethnicities -- not just white people. The figures should reflect the whole world.
 
 ### Complete Image-to-Concept Mapping
 
@@ -98,7 +100,7 @@ Below is the **complete inventory** of every image in the repository, organized 
 |-------|---------|---------------|-----------------|
 | 5 | **The Rose** -- Foundational symbol and energetic tool. Roots, stem, bloom. | `14-the rose original .PNG` | `5-the-rose.PNG` |
 | 6 | **Meditation Posture** -- Seated upright, feet flat, hands on knees, eyes closed. | `6-posture-original.PNG` | `6-posture.PNG` |
-| 7 | **Grounding Cord** -- Energy connection from base of spine into the center of the Earth. | *(use reimagined as primary)* | `7-Groundingcord.PNG` |
+| 7 | **Grounding Cord** -- Energy connection from base of spine into the center of the Earth. | *(see slide 10 original for accuracy -- it is more accurate than the reimagined)* | `7-Groundingcord.PNG` |
 | 8 | **Golden Sun** -- Radiant golden sun above the head, restoring personal life-force energy. | *(use reimagined as primary)* | `8-golden-sun.PNG` |
 | 9 | **Aura Exercise** -- Golden silhouette surrounded by concentric layers of glowing energy. | `9-auraexercise-original .PNG` | `9-aura-exercise .PNG` |
 | 10 | **Expansion of Grounding Cord** -- Grounding cord expands with the aura, anchoring the entire energy field into the Earth. | `10-grounding-cord-expansion-original .PNG` | `10-Grounding cord expand .PNG` |
@@ -106,7 +108,7 @@ Below is the **complete inventory** of every image in the repository, organized 
 | 11a | **Golden Sun Fills You** -- Golden sun above the crown pours golden light down, filling the entire aura and body. | `11-expansion fill with golden sun - original .PNG` | `11aExpand auragoldensunexpanded.PNG` |
 | 12 | **Earth Circuit** -- Energy rising through feet and legs into the body. | *(use reimagined)* | `12a-earth energy .PNG`, `Circuitofthenergyofearth.PNG` |
 | 13 | **Cosmos Circuit** -- Cosmic energy descending through the crown into the body. | `13-cosmos-original.PNG` | `12Circuitofenergycismos .PNG` |
-| 13a | **Combined Earth + Cosmos Circuit** -- Both flows active simultaneously through the body. | *(use reimagined)* | `13a-cosmos:earthcycle.PNG`, `13cosmosearth.PNG` |
+| 13a | **Combined Earth + Cosmos Circuit** -- Both flows active simultaneously through the body. | *(no original exists -- this combined view is reimagined only)* | `13a-cosmos:earthcycle.PNG`, `13cosmosearth.PNG` |
 | 14 | **The Rose (as Energetic Tool)** -- Roots, stem, bloom in detail. Functions: place, move, open, close, release. | `14-the rose original .PNG` | `5-the-rose.PNG` |
 | 15 | **Roses of Protection, Observation, and Separation** -- Roses at the edges of the aura as energetic sentinels. | `15-four roses original .PNG` | *(needs reimagined version)* |
 | 16 | **Cleansing Rose** -- Rose outside the aura absorbing and transmuting foreign energy. | `16-cleansingrose-original.PNG` | *(needs reimagined version)* |
@@ -247,7 +249,7 @@ Below is the complete teaching text that accompanies each image/slide in the man
 ---
 
 #### Slide: Grounding Cord
-**Reimagined:** `7-Groundingcord.PNG`
+**Reimagined:** `7-Groundingcord.PNG` | **Note:** The original grounding cord (see slide 10 original: `10-grounding-cord-expansion-original .PNG`) is more accurate than the reimagined version. New designs should reflect the original's depiction.
 
 > The grounding cord is an energetic connection that extends from the base of the spine (first chakra) downward into the center of the Earth. It anchors your energy body to the planet, providing stability, safety, and a channel for releasing unwanted energy.
 
@@ -774,7 +776,7 @@ Stick-and-line drawings with color that evokes watercolor -- a feeling of a time
 
 ### Heritage Context
 
-The existing drawings and logo are references to the original stick-and-line style from the tradition's history. The current logo also represents the past logo. The new design should pay homage to this history -- honoring the old while creating a new, elevated rendition.
+The existing drawings and logo are references to the original stick-and-line style from the tradition's history. The current logo also represents the past logo. The new design should pay homage to this history -- honoring the old while creating a new, elevated rendition. The viewer should always feel the connection between old and new. The originals carry the truth of the teaching; the new designs carry that same truth forward in a modern visual language.
 
 ### Working with Two Image Sets
 
@@ -784,15 +786,16 @@ All images are in the same directory (`public/rose med images/`). They are diffe
 
 | Image Set | Location | How to Identify | Purpose |
 |-----------|----------|----------------|---------|
-| **Originals** | `public/rose med images/` | Filename contains "original" | Accuracy reference -- shows exactly what each energetic structure should depict |
-| **Reimagined** | `public/rose med images/` | Filename does NOT contain "original" | Modernized versions in the ROSES OS brand language |
+| **Originals** | `public/rose med images/` | Filename contains "original" | **Accuracy reference** -- shows exactly what each energetic structure should depict. New designs must reflect what the originals show. |
+| **Reimagined** | `public/rose med images/` | Filename does NOT contain "original" | **Feel reference** -- shows the target for clothing, design style, and aesthetic. Not the accuracy source. |
 | **Original PDF** | `docs/source-materials/MDR - VISUAL SUPPORT - FEB2024.pdf` | The full 46-page source deck | Complete original visual presentation for cross-reference |
 
 **Designer workflow:**
-1. Review the original image for each concept to understand what must be shown
-2. Review the reimagined version (if available) for the target aesthetic
+1. Review the original image for each concept to understand **what must be shown** -- the original is more accurate and the new design must reflect it
+2. Review the reimagined version (if available) for **feel** -- clothing, design style, aesthetic direction
 3. Where no reimagined version exists (only 4 concepts -- see Section 3), create a new illustration that honors the original's accuracy while matching the reimagined style
-4. Both originals and reimagined images should be accessible on the website -- the originals serve as a supplementary reference that teachers may prefer for their accuracy
+4. Always maintain the connection between old and new -- pay homage to the original tradition while elevating it
+5. Both originals and reimagined images should be accessible on the website -- the originals serve as a supplementary reference that teachers may prefer for their accuracy
 
 ### Rose Depiction Rule
 
@@ -804,7 +807,7 @@ Where a logo is called for in the opening slides (Sections 1--3), use both the r
 
 ### Figure Diversity
 
-Body placement visuals should represent diverse people -- a variety of body shapes, sizes, and ethnicities. Figures should reflect the whole world, like the United Nations. No single type of person should dominate the imagery.
+Body placement visuals must include both male and female figures and represent diverse ethnicities -- not just white people. Figures should reflect the whole world, like the United Nations. No single type of person should dominate the imagery. A variety of body shapes, sizes, and skin tones should be represented throughout the manual.
 
 ### Non-Chakra Teaching Slides
 
