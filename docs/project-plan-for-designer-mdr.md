@@ -383,6 +383,11 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 > The physical meditation space is protected by creating an energetic grid using roses. Golden roses are placed at the four corners (and above/below) of the space, connected by lines of golden energy forming a sacred geometric structure -- a container for the work.
 
+**Designer Notes:**
+- The lines of the room/grid are all in **gold**
+- The image should also show a **thick, transparent grounding cord** that expands within the space
+- Challenge: how to visually convey a grounding cord that is both thick and transparent -- needs exploration. Consider layered opacity, soft glow effects, or a translucent cylindrical form with visible energy flow inside
+
 ---
 
 #### Slide: Cleansing of the Space
