@@ -110,7 +110,7 @@ Below is the **complete inventory** of every image in the repository, organized 
 | 13 | **Cosmos Circuit** -- Cosmic energy descending through the crown into the body. | `13-cosmos-original.PNG` | `12Circuitofenergycismos .PNG` |
 | 13a | **Combined Earth + Cosmos Circuit** -- Both flows active simultaneously through the body. | *(no original exists -- this combined view is reimagined only)* | `13a-cosmos:earthcycle.PNG`, `13cosmosearth.PNG` |
 | 14 | **The Rose (as Energetic Tool)** -- Roots, stem, bloom in detail. Functions: place, move, open, close, release. | `14-the rose original .PNG` | `5-the-rose.PNG` |
-| 15 | **Roses of Protection, Observation, and Separation** -- Roses at the edges of the aura as energetic sentinels. | `15-four roses original .PNG` | *(needs reimagined version)* |
+| 15 | **Roses of Protection, Observation, and Separation** -- Roses at the edges of the aura as energetic sentinels. | `15-four roses original .PNG` | `15-Four roses.PNG` |
 | 16 | **Cleansing Rose** -- Rose outside the aura absorbing and transmuting foreign energy. | `16-cleansingrose-original.PNG` | *(needs reimagined version)* |
 | 17 | **Energy Recovery** -- Rose gathering and returning life-force energy to each chakra. | `17-recovery-rose-original .PNG` | `17-recoveryrose.PNG` |
 | 18 | **Discharge Excess Energy** -- Leaning forward, energy flowing from hands into the earth. | `18-discharge energy original .PNG` | `18-discharge-excess .PNG` |
@@ -164,7 +164,6 @@ The following concepts have original images but no reimagined version yet. The d
 
 | Slide | Concept | Original Available |
 |-------|---------|-------------------|
-| 15 | **Roses of Protection, Observation, and Separation** | `15-four roses original .PNG` |
 | 16 | **Cleansing Rose** | `16-cleansingrose-original.PNG` |
 | 25a | **Chakra Cleansing (detail)** | `25a-chakracleansing-original.jpg` |
 | 25b | **Energy Recovery -- Level 2 (detail)** | `25b-energyrecoveryeachchakra-original.jpg` |
@@ -319,7 +318,7 @@ Below is the complete teaching text that accompanies each image/slide in the man
 ---
 
 #### Slide: Roses of Protection, Observation and Separation (Four Roses)
-**Original:** `15-four roses original .PNG` *(labeled "four roses" -- the four roses placed at the aura boundary)* | **Reimagined:** *Needs to be created*
+**Original:** `15-four roses original .PNG` *(labeled "four roses" -- the four roses placed at the aura boundary)* | **Reimagined:** `15-Four roses.PNG`
 
 > Roses are placed at the edges of the aura to serve as energetic sentinels. They perform three functions:
 >
