@@ -1,350 +1,349 @@
 {
   "ui": {
-    "teacherVisualAidManual": "Teacher Visual Aid Manual",
-    "facilitatorCompanion": "A facilitator’s visual companion for teaching Rose Meditation.",
-    "selectTeachingLevel": "Select a Teaching Level",
-    "allLevels": "All Levels",
-    "level": "Level",
-    "slide": "Slide",
-    "designerNote": "Designer note",
-    "downloadPdf": "Download PDF",
-    "sacredSpace": "Sacred Space",
-    "theChakraSystem": "The Chakra System",
-    "cleansingAndRecovery": "Cleansing & Recovery",
-    "goldenStickyRoses": "Golden Sticky Roses",
-    "balancedExpression": "Balanced Expression",
-    "unbalancedExpression": "Unbalanced Expression",
-    "primaryBlockages": "Primary Blockages",
-    "color": "Color",
-    "element": "Element",
-    "location": "Location",
-    "energy": "Energy",
-    "focus": "Focus",
-    "lineage": "Lineage",
+    "teacherVisualAidManual": "Οπτικό Εγχειρίδιο για Δασκάλους",
+    "facilitatorCompanion": "Ένας οπτικός σύντροφος του εκπαιδευτή για τη διδασκαλία του Διαλογισμού του Τριαντάφυλλου.",
+    "selectTeachingLevel": "Επιλέξτε Επίπεδο Διδασκαλίας",
+    "allLevels": "Όλα τα Επίπεδα",
+    "level": "Επίπεδο",
+    "slide": "Διαφάνεια",
+    "designerNote": "Σημείωση σχεδιαστή",
+    "downloadPdf": "Λήψη PDF",
+    "sacredSpace": "Ιερός Χώρος",
+    "theChakraSystem": "Το Σύστημα των Τσάκρα",
+    "cleansingAndRecovery": "Καθαρισμός και Ανάκτηση",
+    "goldenStickyRoses": "Χρυσά Κολλώδη Τριαντάφυλλα",
+    "balancedExpression": "Ισορροπημένη Έκφραση",
+    "unbalancedExpression": "Ανισόρροπη Έκφραση",
+    "primaryBlockages": "Κύρια Μπλοκαρίσματα",
+    "color": "Χρώμα",
+    "element": "Στοιχείο",
+    "location": "Τοποθεσία",
+    "energy": "Ενέργεια",
+    "focus": "Εστίαση",
+    "lineage": "Καταγωγή",
     "rosesOs": "ROSES OS"
   },
   "opening": {
     "agreements": {
-      "title": "Agreements & Virtues",
-      "text": "Before beginning, all participants honor these agreements:",
+      "title": "Συμφωνίες και Αρετές",
+      "text": "Πριν ξεκινήσουμε, όλοι οι συμμετέχοντες τιμούν αυτές τις συμφωνίες:",
       "items": [
-        "Punctuality",
-        "Confidentiality",
-        "Co-responsibility",
-        "Trust",
-        "Patience, Empathy and Compassion"
+        "Συνέπεια",
+        "Εμπιστευτικότητα",
+        "Συνυπευθυνότητα",
+        "Εμπιστοσύνη",
+        "Υπομονή, Ενσυναίσθηση και Συμπόνια"
       ]
     },
     "sacredCompanion": {
-      "title": "Sacred Companion",
+      "title": "Ιερός Σύντροφος",
       "paragraphs": [
-        "This manual is a sacred companion for those who have been initiated into the path of Rose Meditation.",
-        "These teachings are part of a living energetic lineage. They invite inner stillness, gentle discipline, and deep self-responsibility. ROSES OS is not a system to be imposed or taught casually — it is an energetic operating system revealed through direct practice and transmission."
+        "Αυτό το εγχειρίδιο είναι ένας ιερός σύντροφος για όσους έχουν μυηθεί στο μονοπάτι του Διαλογισμού του Τριαντάφυλλου.",
+        "Αυτές οι διδασκαλίες αποτελούν μέρος μιας ζωντανής ενεργειακής καταγωγής. Προσκαλούν στην εσωτερική ηρεμία, την ήπια πειθαρχία και τη βαθιά αυτοευθύνη. Το ROSES OS δεν είναι ένα σύστημα που επιβάλλεται ή διδάσκεται επιπόλαια — είναι ένα ενεργειακό λειτουργικό σύστημα που αποκαλύπτεται μέσω της άμεσης πρακτικής και της μετάδοσης."
       ],
-      "guidelinesTitle": "To honor the integrity of this work:",
+      "guidelinesTitle": "Για να τιμήσουμε την ακεραιότητα αυτού του έργου:",
       "guidelinesItems": [
-        "Please do not share this material with others who have not received the transmission.",
-        "This manual is for personal use only and cannot be used to teach or guide others.",
-        "You are welcome to support children under your care with these tools."
+        "Παρακαλούμε μη μοιράζεστε αυτό το υλικό με άλλους που δεν έχουν λάβει τη μετάδοση.",
+        "Αυτό το εγχειρίδιο είναι μόνο για προσωπική χρήση και δεν μπορεί να χρησιμοποιηθεί για να διδάξετε ή να καθοδηγήσετε άλλους.",
+        "Μπορείτε να στηρίξετε τα παιδιά υπό τη φροντίδα σας με αυτά τα εργαλεία."
       ],
-      "closing": "Let each page be a reminder of the sacred space within you."
+      "closing": "Ας είναι κάθε σελίδα μια υπενθύμιση του ιερού χώρου μέσα σας."
     },
     "history": {
-      "title": "History & Lineage",
-      "text": "Aura Reading emerged in the 1960s, in California, channeled by a North American called Lewis S. Bostwick. Founder of the Berkeley Psychic Institute and the Church of the Divine Man, he channeled and systematized the techniques and tools sent by the angels, to assist in the process of evolution of humanity.",
+      "title": "Ιστορία και Καταγωγή",
+      "text": "Η Ανάγνωση Αύρας εμφανίστηκε τη δεκαετία του 1960, στην Καλιφόρνια, διοχετευμένη από έναν Βορειοαμερικανό ονόματι Lewis S. Bostwick. Ιδρυτής του Berkeley Psychic Institute και της Church of the Divine Man, διοχέτευσε και συστηματοποίησε τις τεχνικές και τα εργαλεία που στάλθηκαν από τους αγγέλους, για να βοηθήσουν στη διαδικασία εξέλιξης της ανθρωπότητας.",
       "lineage": "Berkeley Psychic Institute → Anastasia Plunk → Angelina Ataide → ROSES OS"
     }
   },
   "levels": {
     "1": {
-      "title": "Level 1: Foundation",
-      "subtitle": "Core Practices",
-      "description": "The essential practices that form the foundation of all ROSES OS work. Breath, body, heart, and the Rose Meditation."
+      "title": "Επίπεδο 1: Θεμέλιο",
+      "subtitle": "Θεμελιώδεις Πρακτικές",
+      "description": "Οι βασικές πρακτικές που αποτελούν τη βάση όλης της εργασίας του ROSES OS. Αναπνοή, σώμα, καρδιά και ο Διαλογισμός του Τριαντάφυλλου."
     },
     "2": {
-      "title": "Level 2: Deepening",
-      "subtitle": "Energetic & Relational",
-      "description": "Advanced practices for subtle body awareness, emotional alchemy, and relational coherence."
+      "title": "Επίπεδο 2: Εμβάθυνση",
+      "subtitle": "Ενεργειακό και Σχεσιακό",
+      "description": "Προχωρημένες πρακτικές για την επίγνωση του λεπτού σώματος, την συναισθηματική αλχημεία και τη σχεσιακή συνοχή."
     },
     "3": {
-      "title": "Level 3: Teaching",
-      "subtitle": "Transmission & Facilitation",
-      "description": "Practices and principles for holding space, transmitting the work, and serving as a guardian of the lineage."
+      "title": "Επίπεδο 3: Διδασκαλία",
+      "subtitle": "Μετάδοση και Διευκόλυνση",
+      "description": "Πρακτικές και αρχές για τη διατήρηση του χώρου, τη μετάδοση της εργασίας και την υπηρεσία ως φύλακας της καταγωγής."
     }
   },
   "slides": {
     "l1-the-rose": {
-      "concept": "The Rose",
-      "teachingText": "The Rose is the foundational symbol and tool of this practice — a living energetic instrument used throughout all levels of the work."
+      "concept": "Το Τριαντάφυλλο",
+      "teachingText": "Το Τριαντάφυλλο είναι το θεμελιώδες σύμβολο και εργαλείο αυτής της πρακτικής — ένα ζωντανό ενεργειακό όργανο που χρησιμοποιείται σε όλα τα επίπεδα της εργασίας."
     },
     "l1-posture": {
-      "concept": "Meditation Posture",
-      "teachingText": "Proper meditation posture is seated upright in a chair. Feet are flat on the floor, hands resting gently on the thighs or knees, spine upright, eyes closed. The body is relaxed yet alert — grounded and receptive."
+      "concept": "Στάση Διαλογισμού",
+      "teachingText": "Η σωστή στάση διαλογισμού είναι καθισμένος όρθια σε μια καρέκλα. Τα πόδια είναι επίπεδα στο πάτωμα, τα χέρια ακουμπούν ελαφρά στους μηρούς ή τα γόνατα, η σπονδυλική στήλη ευθεία, τα μάτια κλειστά. Το σώμα είναι χαλαρό αλλά σε εγρήγορση — γειωμένο και δεκτικό."
     },
     "l1-grounding-cord": {
-      "concept": "Grounding Cord",
-      "teachingText": "The grounding cord is an energetic connection that extends from the base of the spine (first chakra) downward into the center of the Earth. It anchors your energy body to the planet, providing stability, safety, and a channel for releasing unwanted energy."
+      "concept": "Σχοινί Γείωσης",
+      "teachingText": "Το σχοινί γείωσης είναι μια ενεργειακή σύνδεση που εκτείνεται από τη βάση της σπονδυλικής στήλης (πρώτο τσάκρα) προς τα κάτω μέχρι το κέντρο της Γης. Αγκυροβολεί το ενεργειακό σας σώμα στον πλανήτη, παρέχοντας σταθερότητα, ασφάλεια και ένα κανάλι για την απελευθέρωση ανεπιθύμητης ενέργειας."
     },
     "l1-golden-sun": {
-      "concept": "Golden Sun",
-      "teachingText": "The Golden Sun is a tool for replenishing and restoring your own energy. Visualize a radiant golden sun above your head. It calls back your own life-force energy from wherever you may have left it — in people, places, situations, or time. It fills you with your own highest vibration."
+      "concept": "Χρυσός Ήλιος",
+      "teachingText": "Ο Χρυσός Ήλιος είναι ένα εργαλείο για την αναπλήρωση και αποκατάσταση της δικής σας ενέργειας. Οραματιστείτε έναν λαμπερό χρυσό ήλιο πάνω από το κεφάλι σας. Καλεί πίσω τη δική σας ζωτική ενέργεια από οπουδήποτε μπορεί να την αφήσατε — σε ανθρώπους, τόπους, καταστάσεις ή στον χρόνο. Σας γεμίζει με τη δική σας υψηλότερη δόνηση."
     },
     "l1-aura-exercise": {
-      "concept": "An Exercise to Feel Your Aura",
-      "teachingText": "The aura is the energetic field that surrounds your physical body. This exercise helps you become aware of its presence, its edges, and its quality. The aura consists of multiple layers radiating outward from the body."
+      "concept": "Μια Άσκηση για να Αισθανθείτε την Αύρα σας",
+      "teachingText": "Η αύρα είναι το ενεργειακό πεδίο που περιβάλλει το φυσικό σας σώμα. Αυτή η άσκηση σας βοηθά να αποκτήσετε επίγνωση της παρουσίας, των ορίων και της ποιότητάς της. Η αύρα αποτελείται από πολλαπλά στρώματα που ακτινοβολούν προς τα έξω από το σώμα."
     },
     "l1-grounding-expansion": {
-      "concept": "Expansion of Grounding Cord",
-      "teachingText": "Once you are aware of your aura, the grounding cord practice deepens. You ground not only the physical body but also the aura itself — allowing the entire energy field to anchor into the Earth."
+      "concept": "Επέκταση του Σχοινιού Γείωσης",
+      "teachingText": "Μόλις αποκτήσετε επίγνωση της αύρας σας, η πρακτική γείωσης βαθαίνει. Γειώνετε όχι μόνο το φυσικό σώμα αλλά και την ίδια την αύρα — επιτρέποντας σε ολόκληρο το ενεργειακό πεδίο να αγκυροβολήσει στη Γη."
     },
     "l1-full-setup": {
-      "concept": "Full Meditation Setup",
-      "teachingText": "The complete foundational setup combines posture, aura, and expanded grounding cord: the person is seated in proper posture, enclosed within their aura, with the grounding cord descending into the earth."
+      "concept": "Πλήρης Ρύθμιση Διαλογισμού",
+      "teachingText": "Η πλήρης θεμελιώδης ρύθμιση συνδυάζει στάση, αύρα και εκτεταμένο σχοινί γείωσης: το άτομο κάθεται σε σωστή στάση, περικλεισμένο μέσα στην αύρα του, με το σχοινί γείωσης να κατεβαίνει στη γη."
     },
     "l1-golden-sun-fills": {
-      "concept": "Golden Sun Fills You",
-      "teachingText": "The Golden Sun above the crown pours golden light downward, filling the entire aura and body with your own highest vibration. This completes the full energetic architecture: posture, aura, grounding cord, and golden sun — all active together."
+      "concept": "Ο Χρυσός Ήλιος σας Γεμίζει",
+      "teachingText": "Ο Χρυσός Ήλιος πάνω από την κορυφή χύνει χρυσό φως προς τα κάτω, γεμίζοντας ολόκληρη την αύρα και το σώμα με τη δική σας υψηλότερη δόνηση. Αυτό ολοκληρώνει την πλήρη ενεργειακή αρχιτεκτονική: στάση, αύρα, σχοινί γείωσης και χρυσός ήλιος — όλα ενεργά μαζί."
     },
     "l1-earth-circuit": {
-      "concept": "Circuit of the Energy of the Earth",
-      "teachingText": "The Earth circuit is an energetic pathway that draws the energy of the Earth upward through the feet, rising through the legs and into the body. This circuit connects you to the grounding, nourishing, stabilizing force of the planet."
+      "concept": "Κύκλωμα της Ενέργειας της Γης",
+      "teachingText": "Το κύκλωμα της Γης είναι ένα ενεργειακό μονοπάτι που έλκει την ενέργεια της Γης προς τα πάνω μέσω των ποδιών, ανεβαίνοντας μέσα από τα πόδια και εισερχόμενο στο σώμα. Αυτό το κύκλωμα σας συνδέει με τη γειωτική, θρεπτική, σταθεροποιητική δύναμη του πλανήτη."
     },
     "l1-cosmos-circuit": {
-      "concept": "Circuit of the Energy of the Cosmos",
-      "teachingText": "The Cosmic circuit is an energetic pathway that draws cosmic energy downward through the crown of the head (7th chakra) and into the body. This circuit connects you to the higher frequencies of universal consciousness, inspiration, and spiritual guidance."
+      "concept": "Κύκλωμα της Ενέργειας του Κόσμου",
+      "teachingText": "Το Κοσμικό κύκλωμα είναι ένα ενεργειακό μονοπάτι που έλκει την κοσμική ενέργεια προς τα κάτω μέσω της κορυφής του κεφαλιού (7ο τσάκρα) και μέσα στο σώμα. Αυτό το κύκλωμα σας συνδέει με τις υψηλότερες συχνότητες της παγκόσμιας συνείδησης, της έμπνευσης και της πνευματικής καθοδήγησης."
     },
     "l1-combined-circuit": {
-      "concept": "Circuit of Energy of Cosmos and Earth",
-      "teachingText": "When both circuits are activated simultaneously, the energies of the Earth and Cosmos flow together through the body. Earth energy rises from below; Cosmic energy descends from above. They meet and blend within the body, creating a unified field of balanced, integrated energy."
+      "concept": "Κύκλωμα Ενέργειας του Κόσμου και της Γης",
+      "teachingText": "Όταν και τα δύο κυκλώματα ενεργοποιούνται ταυτόχρονα, οι ενέργειες της Γης και του Κόσμου ρέουν μαζί μέσα στο σώμα. Η ενέργεια της Γης ανεβαίνει από κάτω· η Κοσμική ενέργεια κατεβαίνει από πάνω. Συναντώνται και αναμειγνύονται μέσα στο σώμα, δημιουργώντας ένα ενοποιημένο πεδίο ισορροπημένης, ολοκληρωμένης ενέργειας."
     },
     "l1-rose-tool": {
-      "concept": "The Rose (as Energetic Tool)",
-      "teachingText": "The Rose is used as a living energetic instrument throughout the practice. It has roots (connection to source), a stem (channel of energy), and a bloom (the active, radiant tool). The Rose can be placed, moved, opened, closed, and released according to the needs of the meditation."
+      "concept": "Το Τριαντάφυλλο (ως Ενεργειακό Εργαλείο)",
+      "teachingText": "Το Τριαντάφυλλο χρησιμοποιείται ως ζωντανό ενεργειακό όργανο σε όλη την πρακτική. Έχει ρίζες (σύνδεση με την πηγή), ένα στέλεχος (κανάλι ενέργειας) και ένα άνθος (το ενεργό, ακτινοβόλο εργαλείο). Το Τριαντάφυλλο μπορεί να τοποθετηθεί, να μετακινηθεί, να ανοίξει, να κλείσει και να απελευθερωθεί ανάλογα με τις ανάγκες του διαλογισμού."
     },
     "l1-four-roses": {
-      "concept": "Roses of Protection, Observation and Separation",
-      "teachingText": "Roses are placed at the edges of the aura to serve as energetic sentinels. They perform three functions:\n\n1. Protection — They define and guard the boundary of your aura\n2. Observation — They help you notice what energies are approaching or interacting with your field\n3. Separation — They create healthy energetic distinction between your energy and the energy of others"
+      "concept": "Τριαντάφυλλα Προστασίας, Παρατήρησης και Διαχωρισμού",
+      "teachingText": "Τα Τριαντάφυλλα τοποθετούνται στα άκρα της αύρας για να λειτουργούν ως ενεργειακοί φρουροί. Εκτελούν τρεις λειτουργίες:\n\n1. Προστασία — Ορίζουν και φυλάσσουν τα όρια της αύρας σας\n2. Παρατήρηση — Σας βοηθούν να παρατηρήσετε ποιες ενέργειες πλησιάζουν ή αλληλεπιδρούν με το πεδίο σας\n3. Διαχωρισμός — Δημιουργούν υγιή ενεργειακή διάκριση μεταξύ της δικής σας ενέργειας και της ενέργειας των άλλων"
     },
     "l1-cleansing-rose": {
-      "concept": "Cleansing Rose",
-      "teachingText": "The Cleansing Rose is placed outside of the aura. It is used to absorb and transmute foreign or stagnant energy from within your field. Energy that does not belong to you — from other people, environments, or experiences — is drawn out of the aura and into the Cleansing Rose, where it is neutralized."
+      "concept": "Τριαντάφυλλο Καθαρισμού",
+      "teachingText": "Το Τριαντάφυλλο Καθαρισμού τοποθετείται έξω από την αύρα. Χρησιμοποιείται για να απορροφήσει και να μετατρέψει ξένη ή στάσιμη ενέργεια μέσα από το πεδίο σας. Ενέργεια που δεν σας ανήκει — από άλλους ανθρώπους, περιβάλλοντα ή εμπειρίες — έλκεται έξω από την αύρα και μέσα στο Τριαντάφυλλο Καθαρισμού, όπου εξουδετερώνεται."
     },
     "l1-energy-recovery": {
-      "concept": "Energy Recovery of Each Chakra",
-      "teachingText": "After cleansing, the Rose is used to recover your own energy that has been left in or taken by others. The Rose is sent out as an instrument to gather and return your own life-force energy to each chakra, restoring fullness and sovereignty to each energy center."
+      "concept": "Ενεργειακή Ανάκτηση Κάθε Τσάκρα",
+      "teachingText": "Μετά τον καθαρισμό, το Τριαντάφυλλο χρησιμοποιείται για να ανακτήσει τη δική σας ενέργεια που αφέθηκε ή πάρθηκε από άλλους. Το Τριαντάφυλλο στέλνεται ως όργανο για να συγκεντρώσει και να επιστρέψει τη δική σας ζωτική ενέργεια σε κάθε τσάκρα, αποκαθιστώντας πληρότητα και κυριαρχία σε κάθε ενεργειακό κέντρο."
     },
     "l1-discharge": {
-      "concept": "Discharge Excess Energy",
-      "teachingText": "After deep meditation or energy work, excess energy may accumulate in the body. To discharge it, lean forward from the seated position with hands reaching toward the ground. Allow the excess energy to flow out through the hands and into the earth, returning the body to a calm, balanced state."
+      "concept": "Εκφόρτιση Πλεονάζουσας Ενέργειας",
+      "teachingText": "Μετά από βαθύ διαλογισμό ή ενεργειακή εργασία, πλεονάζουσα ενέργεια μπορεί να συσσωρευτεί στο σώμα. Για να την εκφορτίσετε, σκύψτε μπροστά από την καθιστή θέση με τα χέρια να φτάνουν προς το έδαφος. Αφήστε την πλεονάζουσα ενέργεια να ρεύσει μέσα από τα χέρια και μέσα στη γη, επαναφέροντας το σώμα σε μια ήρεμη, ισορροπημένη κατάσταση."
     },
     "l2-sacred-space": {
-      "concept": "Let’s Create Your Sacred Space",
-      "teachingText": "Level 2 begins with creating your own sacred space — an internal energetic environment that serves as your meditation home. This is the space from which all deeper work is conducted."
+      "concept": "Ας Δημιουργήσουμε τον Ιερό σας Χώρο",
+      "teachingText": "Το Επίπεδο 2 ξεκινά με τη δημιουργία του δικού σας ιερού χώρου — ενός εσωτερικού ενεργειακού περιβάλλοντος που χρησιμεύει ως το σπίτι διαλογισμού σας. Αυτός είναι ο χώρος από τον οποίο διεξάγεται κάθε βαθύτερη εργασία."
     },
     "l2-6th-7th-chakras": {
-      "concept": "The 6th and 7th Chakras (Sacred Space)",
-      "teachingText": "Understanding the locations and roles of the upper chakras is essential for Level 2 work:\n\n• 6th Chakra (Third Eye) — Located at the center of the forehead, between and slightly above the eyebrows\n• 7th Chakra (Crown) — Located at the top of the head"
+      "concept": "Το 6ο και 7ο Τσάκρα (Ιερός Χώρος)",
+      "teachingText": "Η κατανόηση των θέσεων και ρόλων των ανώτερων τσάκρα είναι απαραίτητη για την εργασία του Επιπέδου 2:\n\n• 6ο Τσάκρα (Τρίτο Μάτι) — Βρίσκεται στο κέντρο του μετώπου, ανάμεσα και λίγο πάνω από τα φρύδια\n• 7ο Τσάκρα (Στέμμα) — Βρίσκεται στην κορυφή του κεφαλιού"
     },
     "l2-physical-space": {
-      "concept": "Let’s Prepare Your Physical Space",
-      "teachingText": "Before meditation, prepare your physical environment to support the energetic work. The external space should mirror the internal intention: clean, clear, quiet, and intentionally held."
+      "concept": "Ας Προετοιμάσουμε τον Φυσικό σας Χώρο",
+      "teachingText": "Πριν από τον διαλογισμό, προετοιμάστε τον φυσικό σας χώρο για να στηρίξει την ενεργειακή εργασία. Ο εξωτερικός χώρος πρέπει να αντικατοπτρίζει την εσωτερική πρόθεση: καθαρός, ξεκάθαρος, ήσυχος και σκόπιμα διατηρημένος."
     },
     "l2-protection-space": {
-      "concept": "Protection of the Space",
-      "teachingText": "The physical meditation space is protected by creating an energetic grid using roses. Golden roses are placed at the four corners (and above/below) of the space, connected by lines of golden energy forming a sacred geometric structure — a container for the work."
+      "concept": "Προστασία του Χώρου",
+      "teachingText": "Ο φυσικός χώρος διαλογισμού προστατεύεται δημιουργώντας ένα ενεργειακό πλέγμα χρησιμοποιώντας τριαντάφυλλα. Χρυσά τριαντάφυλλα τοποθετούνται στις τέσσερις γωνίες (και πάνω/κάτω) του χώρου, συνδεδεμένα με γραμμές χρυσής ενέργειας σχηματίζοντας μια ιερή γεωμετρική δομή — ένα δοχείο για την εργασία."
     },
     "l2-cleansing-space": {
-      "concept": "Cleansing of the Space",
-      "teachingText": "Once the space is protected, it is cleansed. A large Cleansing Rose is placed above the grid, and golden energy pours downward through the entire structure, clearing all foreign, stagnant, or disruptive energies from the space."
+      "concept": "Καθαρισμός του Χώρου",
+      "teachingText": "Μόλις ο χώρος προστατευθεί, καθαρίζεται. Ένα μεγάλο Τριαντάφυλλο Καθαρισμού τοποθετείται πάνω από το πλέγμα, και χρυσή ενέργεια χύνεται προς τα κάτω μέσα από ολόκληρη τη δομή, καθαρίζοντας κάθε ξένη, στάσιμη ή διαταρακτική ενέργεια από τον χώρο."
     },
     "l2-owning-space": {
-      "concept": "Owning Your Space",
-      "teachingText": "After protection and cleansing, you claim ownership of the space. This is an act of energetic sovereignty — declaring the space as yours, filling it with your own energy and intention. The space becomes an extension of your aura and your practice."
+      "concept": "Κατοχή του Χώρου σας",
+      "teachingText": "Μετά την προστασία και τον καθαρισμό, διεκδικείτε την κυριότητα του χώρου. Αυτή είναι μια πράξη ενεργειακής κυριαρχίας — δηλώνοντας τον χώρο ως δικό σας, γεμίζοντάς τον με τη δική σας ενέργεια και πρόθεση. Ο χώρος γίνεται μια επέκταση της αύρας σας και της πρακτικής σας."
     },
     "l2-chakras-intro": {
-      "concept": "Let’s Talk About Chakras",
-      "teachingText": "The chakra system is the energetic anatomy of the human body. There are seven primary chakras, each governing specific aspects of physical, emotional, mental, and spiritual life."
+      "concept": "Ας Μιλήσουμε για τα Τσάκρα",
+      "teachingText": "Το σύστημα τσάκρα είναι η ενεργειακή ανατομία του ανθρώπινου σώματος. Υπάρχουν επτά κύρια τσάκρα, καθένα από τα οποία διέπει συγκεκριμένες πτυχές της σωματικής, συναισθηματικής, νοητικής και πνευματικής ζωής."
     },
     "l2-seven-chakras": {
-      "concept": "The Seven Chakras",
-      "teachingText": "The seven primary chakras, from crown to root:\n\n7. Crown — Top of head\n6. Third Eye — Center of forehead\n5. Throat — Throat\n4. Heart — Center of chest\n3. Solar Plexus — Upper abdomen\n2. Sacral — Lower abdomen\n1. Root — Base of spine"
+      "concept": "Τα Επτά Τσάκρα",
+      "teachingText": "Τα επτά κύρια τσάκρα, από το στέμμα ως τη ρίζα:\n\n7. Στέμμα — Κορυφή του κεφαλιού\n6. Τρίτο Μάτι — Κέντρο του μετώπου\n5. Λαιμός — Λαιμός\n4. Καρδιά — Κέντρο του στήθους\n3. Ηλιακό Πλέγμα — Άνω κοιλία\n2. Ιερό — Κάτω κοιλία\n1. Ρίζα — Βάση της σπονδυλικής στήλης"
     },
     "l2-cleansing-aura-layers": {
-      "concept": "Cleansing of Each Aura Layer",
-      "teachingText": "The aura is composed of seven layers, each corresponding to a chakra. In Level 2, each layer is individually cleansed from the outermost to the innermost:\n\n7. 7th Aura layer\n6. 6th Aura layer\n5. 5th Aura layer\n4. 4th Aura layer\n3. 3rd Aura layer\n2. 2nd Aura layer\n1. 1st Aura layer"
+      "concept": "Καθαρισμός Κάθε Στρώματος της Αύρας",
+      "teachingText": "Η αύρα αποτελείται από επτά στρώματα, καθένα αντιστοιχεί σε ένα τσάκρα. Στο Επίπεδο 2, κάθε στρώμα καθαρίζεται ξεχωριστά από το εξωτερικότερο στο εσωτερικότερο:\n\n7. 7ο στρώμα Αύρας\n6. 6ο στρώμα Αύρας\n5. 5ο στρώμα Αύρας\n4. 4ο στρώμα Αύρας\n3. 3ο στρώμα Αύρας\n2. 2ο στρώμα Αύρας\n1. 1ο στρώμα Αύρας"
     },
     "l2-cleansing-each-chakra": {
-      "concept": "Cleansing of Each Chakra",
-      "teachingText": "Each individual chakra is cleansed using roses. The roses address two dimensions:\n\n• Dynamics of the Past — Energetic patterns, imprints, and blockages carried from past experiences\n• Dynamics of the Present — Current energetic influences, relationships, and situations affecting the chakra"
+      "concept": "Καθαρισμός Κάθε Τσάκρα",
+      "teachingText": "Κάθε μεμονωμένο τσάκρα καθαρίζεται χρησιμοποιώντας τριαντάφυλλα. Τα τριαντάφυλλα αντιμετωπίζουν δύο διαστάσεις:\n\n• Δυναμικές του Παρελθόντος — Ενεργειακά μοτίβα, αποτυπώματα και μπλοκαρίσματα που κουβαλιούνται από παρελθοντικές εμπειρίες\n• Δυναμικές του Παρόντος — Τρέχουσες ενεργειακές επιρροές, σχέσεις και καταστάσεις που επηρεάζουν το τσάκρα"
     },
     "l2-energy-recovery": {
-      "concept": "Energy Recovery of Each Chakra (Level 2)",
-      "teachingText": "After cleansing, the energy recovery process is repeated at a deeper level. The Rose is sent out to gather and return your own energy to each individual chakra, restoring sovereignty, vitality, and wholeness to each energy center."
+      "concept": "Ενεργειακή Ανάκτηση Κάθε Τσάκρα (Επίπεδο 2)",
+      "teachingText": "Μετά τον καθαρισμό, η διαδικασία ενεργειακής ανάκτησης επαναλαμβάνεται σε βαθύτερο επίπεδο. Το Τριαντάφυλλο στέλνεται για να συγκεντρώσει και να επιστρέψει τη δική σας ενέργεια σε κάθε μεμονωμένο τσάκρα, αποκαθιστώντας κυριαρχία, ζωτικότητα και ολότητα σε κάθε ενεργειακό κέντρο."
     },
     "l2-golden-sticky-1": {
-      "concept": "Golden Sticky Roses — Phase 1 (Chakra Placement)",
-      "teachingText": "Golden sticky roses are placed on each of the seven chakras, drawing out foreign energy lodged in the energy centers."
+      "concept": "Χρυσά Κολλώδη Τριαντάφυλλα — Φάση 1 (Τοποθέτηση στα Τσάκρα)",
+      "teachingText": "Χρυσά κολλώδη τριαντάφυλλα τοποθετούνται σε καθένα από τα επτά τσάκρα, εξάγοντας ξένη ενέργεια που έχει εγκατασταθεί στα ενεργειακά κέντρα."
     },
     "l2-golden-sticky-2": {
-      "concept": "Golden Sticky Roses — Phase 2 (Body Placement)",
-      "teachingText": "Golden sticky roses are placed at the joints and extremities of the body — shoulders, elbows, wrists, hands, hips, knees, ankles, feet — drawing out foreign energy stored in the physical body."
+      "concept": "Χρυσά Κολλώδη Τριαντάφυλλα — Φάση 2 (Τοποθέτηση στο Σώμα)",
+      "teachingText": "Χρυσά κολλώδη τριαντάφυλλα τοποθετούνται στις αρθρώσεις και τα άκρα του σώματος — ώμους, αγκώνες, καρπούς, χέρια, γοφούς, γόνατα, αστραγάλους, πόδια — εξάγοντας ξένη ενέργεια αποθηκευμένη στο φυσικό σώμα."
     },
     "l2-golden-sticky-3": {
-      "concept": "Golden Sticky Roses — Phase 3 (Full Body Coverage)",
-      "teachingText": "Golden sticky roses are placed throughout the entire body — covering the torso, limbs, and all remaining areas — for a thorough, complete energetic cleansing."
+      "concept": "Χρυσά Κολλώδη Τριαντάφυλλα — Φάση 3 (Πλήρης Κάλυψη Σώματος)",
+      "teachingText": "Χρυσά κολλώδη τριαντάφυλλα τοποθετούνται σε ολόκληρο το σώμα — καλύπτοντας τον κορμό, τα άκρα και όλες τις υπόλοιπες περιοχές — για έναν ολοκληρωμένο, πλήρη ενεργειακό καθαρισμό."
     },
     "l2-golden-sticky-4": {
-      "concept": "Golden Sticky Roses — Phase 4 (Integration)",
-      "teachingText": "After the golden sticky roses have done their work, a large Golden Rose appears above the head. All foreign energy gathered by the sticky roses is released, and the entire body is bathed in golden light — restoring, sealing, and integrating the energy body."
+      "concept": "Χρυσά Κολλώδη Τριαντάφυλλα — Φάση 4 (Ολοκλήρωση)",
+      "teachingText": "Αφού τα χρυσά κολλώδη τριαντάφυλλα ολοκληρώσουν το έργο τους, ένα μεγάλο Χρυσό Τριαντάφυλλο εμφανίζεται πάνω από το κεφάλι. Κάθε ξένη ενέργεια που συγκεντρώθηκε από τα κολλώδη τριαντάφυλλα απελευθερώνεται, και ολόκληρο το σώμα λούζεται σε χρυσό φως — αποκαθιστώντας, σφραγίζοντας και ολοκληρώνοντας το ενεργειακό σώμα."
     },
     "l3-analyzer": {
-      "concept": "The Analyzer",
-      "teachingText": "The Analyzer is an advanced tool introduced in Level 3. It is an energetic point located at the back of the head, at the base of the skull (the occipital ridge / brainstem area). The Analyzer is used for deeper perception, reading, and discernment of energy — a tool for precise energetic analysis."
+      "concept": "Ο Αναλυτής",
+      "teachingText": "Ο Αναλυτής είναι ένα προχωρημένο εργαλείο που εισάγεται στο Επίπεδο 3. Είναι ένα ενεργειακό σημείο που βρίσκεται στο πίσω μέρος του κεφαλιού, στη βάση του κρανίου (η ινιακή ακρολοφία / περιοχή του εγκεφαλικού στελέχους). Ο Αναλυτής χρησιμοποιείται για βαθύτερη αντίληψη, ανάγνωση και διάκριση ενέργειας — ένα εργαλείο για ακριβή ενεργειακή ανάλυση."
     }
   },
   "chakras": {
     "l2-chakra-root": {
-      "concept": "Root Chakra",
-      "teachingText": "Muladhara — Grounding & Safety",
-      "focus": "Stability — Safety — Embodiment",
-      "energy": "Masculine — Survival / Foundation",
-      "bodyLocation": "Base of spine, Legs, Feet",
+      "concept": "Τσάκρα της Ρίζας",
+      "teachingText": "Muladhara — Γείωση και Ασφάλεια",
+      "focus": "Σταθερότητα — Ασφάλεια — Ενσωμάτωση",
+      "energy": "Αρσενική — Επιβίωση / Θεμέλιο",
+      "bodyLocation": "Βάση της σπονδυλικής στήλης, Πόδια, Πέλματα",
       "balanced": [
-        "Grounded presence",
-        "Physical vitality",
-        "Trust in life",
-        "Feeling safe in the body"
+        "Γειωμένη παρουσία",
+        "Σωματική ζωτικότητα",
+        "Εμπιστοσύνη στη ζωή",
+        "Αίσθηση ασφάλειας στο σώμα"
       ],
       "unbalanced": [
-        "Fear and insecurity",
-        "Survival anxiety",
-        "Disconnection from body",
-        "Scarcity mindset"
+        "Φόβος και ανασφάλεια",
+        "Άγχος επιβίωσης",
+        "Αποσύνδεση από το σώμα",
+        "Νοοτροπία έλλειψης"
       ],
-      "blockages": "Fear — Insecurity — Survival Trauma"
+      "blockages": "Φόβος — Ανασφάλεια — Τραύμα Επιβίωσης"
     },
     "l2-chakra-sacral": {
-      "concept": "Sacral Chakra",
-      "teachingText": "Svadhisthana — Emotion & Creativity",
-      "focus": "Emotions — Creativity — Pleasure",
-      "energy": "Feminine — Flow & Flexibility",
-      "bodyLocation": "Lower abdomen, Sexual Organs",
+      "concept": "Ιερό Τσάκρα",
+      "teachingText": "Svadhisthana — Συναίσθημα και Δημιουργικότητα",
+      "focus": "Συναισθήματα — Δημιουργικότητα — Ηδονή",
+      "energy": "Θηλυκή — Ροή και Ευελιξία",
+      "bodyLocation": "Κάτω κοιλία, Γεννητικά Όργανα",
       "balanced": [
-        "Emotional well-being",
-        "Sensuality and intimacy",
-        "Passion and pleasure",
-        "Adaptability"
+        "Συναισθηματική ευημερία",
+        "Αισθησιασμός και οικειότητα",
+        "Πάθος και ηδονή",
+        "Προσαρμοστικότητα"
       ],
       "unbalanced": [
-        "Depression and numbness",
-        "Sexual dysfunction",
-        "Emotional instability",
-        "Fear of change"
+        "Κατάθλιψη και μούδιασμα",
+        "Σεξουαλική δυσλειτουργία",
+        "Συναισθηματική αστάθεια",
+        "Φόβος αλλαγής"
       ],
-      "blockages": "Shame — Emotional Repression — Guilt"
+      "blockages": "Ντροπή — Συναισθηματική Καταστολή — Ενοχή"
     },
     "l2-chakra-solar-plexus": {
-      "concept": "Solar Plexus Chakra",
-      "teachingText": "Manipura — Willpower & Confidence",
-      "focus": "Personal Power — Self-Esteem — Drive",
-      "energy": "Masculine — Power & Transformation",
-      "bodyLocation": "Upper abdomen, Diaphragm",
+      "concept": "Τσάκρα του Ηλιακού Πλέγματος",
+      "teachingText": "Manipura — Δύναμη Θέλησης και Αυτοπεποίθηση",
+      "focus": "Προσωπική Δύναμη — Αυτοεκτίμηση — Κίνητρο",
+      "energy": "Αρσενική — Δύναμη και Μεταμόρφωση",
+      "bodyLocation": "Άνω κοιλία, Διάφραγμα",
       "balanced": [
-        "Confidence and motivation",
-        "Responsible and disciplined",
-        "Healthy sense of self",
-        "Autonomy"
+        "Αυτοπεποίθηση και κίνητρο",
+        "Υπεύθυνος και πειθαρχημένος",
+        "Υγιής αίσθηση εαυτού",
+        "Αυτονομία"
       ],
       "unbalanced": [
-        "Low self-esteem",
-        "Aggression or controlling",
-        "Stubborn and domineering",
-        "Lack of direction or purpose"
+        "Χαμηλή αυτοεκτίμηση",
+        "Επιθετικότητα ή ελεγκτικότητα",
+        "Πεισματάρης και κυριαρχικός",
+        "Έλλειψη κατεύθυνσης ή σκοπού"
       ],
-      "blockages": "Self-Doubt — Insecurity — Fear of Rejection"
+      "blockages": "Αμφιβολία για τον Εαυτό — Ανασφάλεια — Φόβος Απόρριψης"
     },
     "l2-chakra-heart": {
-      "concept": "Heart Chakra",
-      "teachingText": "Anahata — Love & Integration",
-      "focus": "Love — Compassion — Connection",
-      "energy": "Bridge between physical & spiritual",
-      "bodyLocation": "Center of chest, Heart, Lungs",
+      "concept": "Τσάκρα της Καρδιάς",
+      "teachingText": "Anahata — Αγάπη και Ολοκλήρωση",
+      "focus": "Αγάπη — Συμπόνια — Σύνδεση",
+      "energy": "Γέφυρα μεταξύ φυσικού και πνευματικού",
+      "bodyLocation": "Κέντρο του στήθους, Καρδιά, Πνεύμονες",
       "balanced": [
-        "Compassion and empathy",
-        "Emotional openness",
-        "Forgiveness",
-        "Healthy intimacy and self-love"
+        "Συμπόνια και ενσυναίσθηση",
+        "Συναισθηματική ανοιχτότητα",
+        "Συγχώρεση",
+        "Υγιής οικειότητα και αυτοαγάπη"
       ],
       "unbalanced": [
-        "Emotional withdrawal or over-giving",
-        "Fear of intimacy",
-        "Cold or detachment",
-        "Difficulty forgiving"
+        "Συναισθηματική απόσυρση ή υπερβολική προσφορά",
+        "Φόβος οικειότητας",
+        "Ψυχρότητα ή αποστασιοποίηση",
+        "Δυσκολία στη συγχώρεση"
       ],
-      "blockages": "Grief — Betrayal — Heartbreak",
-      "extraContent": "Human Love & Spiritual Love:\n\nHuman Love — Statement: I LOVE — Empathy, compassion, forgiveness, healthy relationships, romantic and familial love.\n\nSpiritual Love — Statement: I AM LOVE — Unconditional compassion, interconnectedness, divine and universal love, oneness."
+      "blockages": "Θλίψη — Προδοσία — Ραγισμένη Καρδιά",
+      "extraContent": "Ανθρώπινη Αγάπη και Πνευματική Αγάπη:\n\nΑνθρώπινη Αγάπη — Δήλωση: ΑΓΑΠΩ — Ενσυναίσθηση, συμπόνια, συγχώρεση, υγιείς σχέσεις, ρομαντική και οικογενειακή αγάπη.\n\nΠνευματική Αγάπη — Δήλωση: ΕΙΜΑΙ ΑΓΑΠΗ — Ανεπιφύλακτη συμπόνια, αλληλοσύνδεση, θεϊκή και παγκόσμια αγάπη, ενότητα."
     },
     "l2-chakra-throat": {
-      "concept": "Throat Chakra",
-      "teachingText": "Vishuddha — Communication & Expression",
-      "focus": "Communication — Truth — Authenticity",
-      "energy": "Learning to align will with divine truth",
-      "bodyLocation": "Throat, Neck, Jaw, Mouth",
+      "concept": "Τσάκρα του Λαιμού",
+      "teachingText": "Vishuddha — Επικοινωνία και Έκφραση",
+      "focus": "Επικοινωνία — Αλήθεια — Αυθεντικότητα",
+      "energy": "Μαθαίνοντας να ευθυγραμμίζει τη θέληση με τη θεϊκή αλήθεια",
+      "bodyLocation": "Λαιμός, Αυχένας, Σαγόνι, Στόμα",
       "balanced": [
-        "Clear, honest communication",
-        "Authentic self-expression",
-        "Good listener",
-        "Strong voice and balanced speech"
+        "Σαφής, ειλικρινής επικοινωνία",
+        "Αυθεντική αυτοέκφραση",
+        "Καλός ακροατής",
+        "Δυνατή φωνή και ισορροπημένος λόγος"
       ],
       "unbalanced": [
-        "Fear of speaking up",
-        "Being unheard or misunderstood",
-        "People-pleasing",
-        "Suppressed feelings or lies"
+        "Φόβος να μιλήσει",
+        "Να μην ακούγεται ή να παρεξηγείται",
+        "Αρεσκεία",
+        "Καταπιεσμένα συναισθήματα ή ψέματα"
       ],
-      "blockages": "Suppressed Truth — Fear of Expression — Miscommunication"
+      "blockages": "Καταπιεσμένη Αλήθεια — Φόβος Έκφρασης — Κακή Επικοινωνία"
     },
     "l2-chakra-third-eye": {
-      "concept": "Third Eye Chakra",
-      "teachingText": "Ajna — Intuition & Insight",
-      "focus": "Imagination — Perception — Visualization",
-      "energy": "Feminine aspects of awareness",
-      "bodyLocation": "Forehead, Brow, Eye center",
+      "concept": "Τσάκρα του Τρίτου Ματιού",
+      "teachingText": "Ajna — Διαίσθηση και Ενόραση",
+      "focus": "Φαντασία — Αντίληψη — Οραματισμός",
+      "energy": "Θηλυκές πτυχές της επίγνωσης",
+      "bodyLocation": "Μέτωπο, Φρύδι, Κέντρο ματιού",
       "balanced": [
-        "Clear seeing and intuition",
-        "Good memory and imagination",
-        "Inner location",
-        "Wisdom and vision"
+        "Διαυγής όραση και διαίσθηση",
+        "Καλή μνήμη και φαντασία",
+        "Εσωτερική θέαση",
+        "Σοφία και όραμα"
       ],
       "unbalanced": [
-        "Overthinking",
-        "Mental fog",
-        "Disconnection with inner guidance",
-        "Escaping reality or spiritual bypassing"
+        "Υπερβολική σκέψη",
+        "Νοητική ομίχλη",
+        "Αποσύνδεση από την εσωτερική καθοδήγηση",
+        "Απόδραση από την πραγματικότητα ή πνευματική παράκαμψη"
       ],
-      "blockages": "Suppressed Truth — Fear of Expression — Miscommunication"
+      "blockages": "Καταπιεσμένη Αλήθεια — Φόβος Έκφρασης — Κακή Επικοινωνία"
     },
     "l2-chakra-crown": {
-      "concept": "Crown Chakra",
-      "teachingText": "Sahasrara — Spirituality & Consciousness",
-      "focus": "Spiritual Connection — Inner Wisdom — Higher States of Awareness",
-      "energy": "Transcending ego, merging with source",
-      "bodyLocation": "Top of head",
+      "concept": "Τσάκρα του Στέμματος",
+      "teachingText": "Sahasrara — Πνευματικότητα και Συνείδηση",
+      "focus": "Πνευματική Σύνδεση — Εσωτερική Σοφία — Ανώτερες Καταστάσεις Επίγνωσης",
+      "energy": "Υπέρβαση του εγώ, ενοποίηση με την πηγή",
+      "bodyLocation": "Κορυφή του κεφαλιού",
       "balanced": [
-        "Spiritual faith and connection",
-        "Inner peace, trust, and wisdom",
-        "Openness and awareness",
-        "Sense of life purpose"
+        "Πνευματική πίστη και σύνδεση",
+        "Εσωτερική ειρήνη, εμπιστοσύνη και σοφία",
+        "Ανοιχτότητα και επίγνωση",
+        "Αίσθηση σκοπού ζωής"
       ],
       "unbalanced": [
-        "Spiritual emptiness",
-        "Existential doubt",
-        "Feeling isolated or alone",
-        "Lack of purpose"
+        "Πνευματικό κενό",
+        "Υπαρξιακή αμφιβολία",
+        "Αίσθηση απομόνωσης ή μοναξιάς",
+        "Έλλειψη σκοπού"
       ],
-      "blockages": "Disconnection — Cynicism — Loss of Meaning"
+      "blockages": "Αποσύνδεση — Κυνισμός — Απώλεια Νοήματος"
     }
   },
-  "_translationStatus": "pending",
-  "_note": "This file contains English text as placeholder. All values need to be translated to the target language."
+  "_translationStatus": "complete"
 }
