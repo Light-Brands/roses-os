@@ -551,10 +551,58 @@ export const freePrograms: CommunityProgram[] = [
     id: 'free-live-guidances',
     title: 'Free Live Guidances',
     description: 'Live Rose Meditation guidances offered to all who have already been initiated in Rose Meditation. A space to deepen your practice with the support of a guided session and the collective field.',
-    schedule: 'Every Saturday, 9:30 AM – 10:00 AM (Costa Rica time)',
+    schedule: 'Weekly — times vary, see full schedule below',
     audience: 'Rose Meditation Practitioner',
     free: true,
     whatsappLink: 'https://chat.whatsapp.com/Lh6bJlDmliMIryvKz63tzi?mode=gi_t',
+    scheduleCycles: [
+      {
+        id: 'guidances-feb-jun',
+        title: 'Guidance Schedule',
+        months: [
+          {
+            month: 'February',
+            sessions: [
+              { date: 'Sat, Feb 28 — Silvia C', time: { sanJose: '7:00 AM', bogota: '8:00 AM', newYork: '8:00 AM', brasilia: '10:00 AM', london: '1:00 PM', madrid: '2:00 PM' } },
+            ],
+          },
+          {
+            month: 'March',
+            sessions: [
+              { date: 'Sat, Mar 7 — Jennifer', time: { sanJose: '9:00 AM', bogota: '10:00 AM', newYork: '10:00 AM', brasilia: '12:00 PM', london: '3:00 PM', madrid: '4:00 PM' } },
+              { date: 'Sun, Mar 9 — Iryna', time: { sanJose: '9:00 AM', bogota: '10:00 AM', newYork: '11:00 AM', brasilia: '12:00 PM', london: '3:00 PM', madrid: '4:00 PM' } },
+              { date: 'Sat, Mar 29 — Jennifer', time: { sanJose: '9:00 AM', bogota: '10:00 AM', newYork: '11:00 AM', brasilia: '12:00 PM', london: '4:00 PM', madrid: '5:00 PM' } },
+            ],
+          },
+          {
+            month: 'April',
+            sessions: [
+              { date: 'Sat, Apr 5 — Jennifer', time: { sanJose: '9:00 AM', bogota: '10:00 AM', newYork: '11:00 AM', brasilia: '12:00 PM', london: '4:00 PM', madrid: '5:00 PM' } },
+              { date: 'Sat, Apr 18 — Silvia C', time: { sanJose: '7:00 AM', bogota: '8:00 AM', newYork: '9:00 AM', brasilia: '10:00 AM', london: '2:00 PM', madrid: '3:00 PM' } },
+              { date: 'Sun, Apr 19 — Jennifer', time: { sanJose: '9:00 AM', bogota: '10:00 AM', newYork: '11:00 AM', brasilia: '12:00 PM', london: '4:00 PM', madrid: '5:00 PM' } },
+              { date: 'Sun, Apr 27 — Dara', time: { sanJose: '7:00 AM', bogota: '8:00 AM', newYork: '9:00 AM', brasilia: '10:00 AM', london: '2:00 PM', madrid: '3:00 PM' } },
+            ],
+          },
+          {
+            month: 'May',
+            sessions: [
+              { date: 'Mon, May 5 — Nicole', time: { sanJose: 'TBD', bogota: 'TBD', newYork: 'TBD', brasilia: 'TBD', london: 'TBD', madrid: 'TBD' } },
+              { date: 'Sat, May 9 — Silvia F', time: { sanJose: 'TBD', bogota: 'TBD', newYork: 'TBD', brasilia: 'TBD', london: 'TBD', madrid: 'TBD' } },
+              { date: 'Sun, May 11 — Dara', time: { sanJose: '7:30 AM', bogota: '8:30 AM', newYork: '9:30 AM', brasilia: '10:30 AM', london: '2:30 PM', madrid: '3:30 PM' } },
+              { date: 'TBD — Iryna', time: { sanJose: 'TBD', bogota: 'TBD', newYork: 'TBD', brasilia: 'TBD', london: 'TBD', madrid: 'TBD' } },
+              { date: 'Sun, May 25 — Julia', time: { sanJose: '8:00 AM', bogota: '9:00 AM', newYork: '10:00 AM', brasilia: '11:00 AM', london: '3:00 PM', madrid: '4:00 PM' } },
+            ],
+          },
+          {
+            month: 'June',
+            sessions: [
+              { date: 'Mon, Jun 2 — Silvia C', time: { sanJose: '6:00 AM', bogota: '7:00 AM', newYork: '8:00 AM', brasilia: '9:00 AM', london: '1:00 PM', madrid: '2:00 PM' } },
+              { date: 'Wed, Jun 10 — Nicole', time: { sanJose: 'TBD', bogota: 'TBD', newYork: 'TBD', brasilia: 'TBD', london: 'TBD', madrid: 'TBD' } },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     id: 'practitioners-meetings',

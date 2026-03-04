@@ -1,7 +1,8 @@
 'use client';
 
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { useRef, useState } from 'react';
+import { motion, useInView, AnimatePresence } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { freePrograms } from '@/lib/data';
 import type { CommunityProgram } from '@/lib/data';
@@ -9,6 +10,17 @@ import SubscribeCalendar from '@/components/ui/SubscribeCalendar';
 
 import PageHero from '@/components/sections/PageHero';
 import InvitationCTA from '@/components/sections/InvitationCTA';
+
+type TimezoneKey = 'sanJose' | 'bogota' | 'newYork' | 'brasilia' | 'london' | 'madrid';
+
+const timezoneLabels: Record<TimezoneKey, string> = {
+  sanJose: 'San Jose',
+  bogota: 'Bogota',
+  newYork: 'New York',
+  brasilia: 'Brasilia',
+  london: 'London',
+  madrid: 'Madrid',
+};
 
 // =============================================================================
 // EASE CONSTANT
@@ -29,6 +41,10 @@ function ActivityCard({
   index: number;
   inView: boolean;
 }) {
+  const [expanded, setExpanded] = useState(false);
+  const [timezone, setTimezone] = useState<TimezoneKey>('newYork');
+  const hasSchedule = !!program.scheduleCycles;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
@@ -41,7 +57,8 @@ function ActivityCard({
         'border border-rose-200/50 dark:border-rose-800/20',
         'hover:border-rose-300 dark:hover:border-rose-700/40',
         'hover:shadow-lg hover:shadow-rose-500/5',
-        'transition-all duration-500'
+        'transition-all duration-500',
+        expanded && 'border-rose-300 dark:border-rose-700/40 shadow-lg shadow-rose-500/5'
       )}
     >
       <h3 className="font-serif text-[clamp(1.15rem,2.5vw,1.5rem)] leading-tight tracking-tight mb-3 text-[var(--color-foreground)]">
@@ -135,6 +152,133 @@ function ActivityCard({
         </div>
       )}
 
+      {/* View Schedule toggle */}
+      {hasSchedule && (
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className={cn(
+            'mt-6 inline-flex items-center gap-2',
+            'text-sm font-medium',
+            'text-[var(--color-foreground-muted)]',
+            'hover:text-[var(--color-foreground)]',
+            'transition-colors duration-200'
+          )}
+        >
+          {expanded ? 'Hide Schedule' : 'View Full Schedule'}
+          <ChevronDown
+            className={cn(
+              'w-4 h-4 transition-transform duration-300',
+              expanded && 'rotate-180'
+            )}
+          />
+        </button>
+      )}
+
+      {/* Expanded schedule */}
+      <AnimatePresence>
+        {expanded && program.scheduleCycles && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.5, ease }}
+            className="overflow-hidden"
+          >
+            <div className="mt-8 mb-4">
+              <div className="flex flex-wrap items-end justify-between gap-4 mb-6">
+                <div>
+                  <p className="label-sacred mb-3">Schedule</p>
+                  <h4 className="font-serif text-[clamp(1.1rem,2.5vw,1.5rem)] leading-tight tracking-tight">
+                    Upcoming Guidances
+                  </h4>
+                </div>
+                <div className="flex items-center">
+                  <label className="label-sacred mr-3" htmlFor={`tz-select-${program.id}`}>
+                    Timezone
+                  </label>
+                  <div className="relative">
+                    <select
+                      id={`tz-select-${program.id}`}
+                      value={timezone}
+                      onChange={(e) => setTimezone(e.target.value as TimezoneKey)}
+                      className={cn(
+                        'appearance-none cursor-pointer',
+                        'bg-[var(--color-background-subtle)] border border-[var(--color-border)]',
+                        'rounded-lg px-4 py-2 pr-9',
+                        'text-sm text-[var(--color-foreground-subtle)]',
+                        'focus-premium',
+                        'transition-colors duration-200'
+                      )}
+                    >
+                      {(Object.keys(timezoneLabels) as TimezoneKey[]).map((tz) => (
+                        <option key={tz} value={tz}>
+                          {timezoneLabels[tz]}
+                        </option>
+                      ))}
+                    </select>
+                    <ChevronDown
+                      className="absolute right-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--color-foreground-faint)] pointer-events-none"
+                      aria-hidden="true"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                {program.scheduleCycles.map((cycle) => (
+                  <div
+                    key={cycle.id}
+                    className={cn(
+                      'border border-[var(--color-border)] rounded-xl overflow-hidden',
+                      'bg-[var(--color-background-elevated)]',
+                      'shadow-[var(--shadow-md)]'
+                    )}
+                  >
+                    {/* Cycle header */}
+                    <div className="px-4 py-3 sm:px-5 sm:py-4 md:px-6 md:py-5">
+                      <h4 className="font-serif text-base sm:text-lg md:text-xl text-[var(--color-foreground)] tracking-tight">
+                        {cycle.title}
+                      </h4>
+                    </div>
+
+                    {/* Month groups */}
+                    <div className="px-4 pb-4 sm:px-5 sm:pb-5 md:px-6 md:pb-6">
+                      {cycle.months.map((month, monthIdx) => (
+                        <div key={month.month} className={cn(monthIdx > 0 && 'mt-4')}>
+                          <p className="label-sacred mb-2 text-xs">
+                            {month.month}
+                          </p>
+                          {month.sessions.length > 0 && (
+                            <div className="space-y-1">
+                              {month.sessions.map((session, sIdx) => (
+                                <div
+                                  key={sIdx}
+                                  className={cn(
+                                    'flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-0.5 sm:gap-3 py-2.5 sm:py-2 text-sm',
+                                    sIdx < month.sessions.length - 1 &&
+                                      'border-b border-[var(--color-border-subtle)]'
+                                  )}
+                                >
+                                  <span className="text-[var(--color-foreground-subtle)] font-medium">
+                                    {session.date}
+                                  </span>
+                                  <span className="text-[var(--color-foreground-muted)] tabular-nums shrink-0 text-xs sm:text-sm">
+                                    {session.time[timezone]}
+                                  </span>
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 }
