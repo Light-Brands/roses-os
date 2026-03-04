@@ -89,7 +89,7 @@ All images live in `public/rose med images/`. The designer has **two versions** 
 
 **The designer should use both sets.** The originals define *what* to show. The reimagined versions define *how it should feel*. The new designs must always honor the connection between old and new -- paying homage to the original tradition while elevating it into the modern brand language. Where a reimagined image exists, use it as inspiration for feel, clothing, and design style. The original should remain accessible as a supplementary reference that teachers may prefer for accuracy.
 
-**Representation matters.** All new imagery must include both male and female figures and represent diverse ethnicities -- not just white people. The figures should reflect the whole world.
+**Representation matters.** All new imagery must include both male and female figures and represent a wide variety of types of people, nationalities, and ethnicities -- not just white people. The figures should reflect the whole world. The designer is encouraged to create their own diverse examples and interpretations -- the reimagined images are there as **inspiration**, not as exact templates. Each figure should feel fresh and unique. Use the reimagined images as a starting point for feel and aesthetic direction, then bring your own vision to the diversity of people represented.
 
 ### Complete Image-to-Concept Mapping
 
@@ -183,7 +183,7 @@ These are the slides that need to be created from scratch. The designer has full
 | **Third Eye Chakra** | Body illustration emphasizing third eye location, dominant indigo color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference |
 | **Crown Chakra** | Body illustration emphasizing crown chakra location, dominant violet/white color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference |
 
-**Note on chakra slides:** We have one example image (`23a-example of chakra slides .PNG`) that shows an idea of what the individual chakra pages could look like. The designer should use this as a starting point but has creative freedom. The priority is helping viewers clearly understand where in the body each chakra is located and the nadis (energy channels) associated with it. Each slide should emphasize that chakra's color -- vibrant yet subtle. Body figures should represent diverse people.
+**Note on chakra slides:** We have one example image (`23a-example of chakra slides .PNG`) that shows an idea of what the individual chakra pages could look like. The designer should use this as a starting point but has full creative freedom. The priority is helping viewers clearly understand where in the body each chakra is located and the nadis (energy channels) associated with it. Each slide should emphasize that chakra's color -- vibrant yet subtle. Body figures should represent a wide variety of types of people, nationalities, and ethnicities. The designer is encouraged to create their own diverse examples -- each chakra slide is an opportunity to depict a different person. Use the reimagined images as inspiration for the overall feel, not as exact references to replicate.
 
 ---
 
@@ -812,7 +812,9 @@ Where a logo is called for in the opening slides (Sections 1--3), use the logos 
 
 ### Figure Diversity
 
-Body placement visuals must include both male and female figures and represent diverse ethnicities -- not just white people. Figures should reflect the whole world, like the United Nations. No single type of person should dominate the imagery. A variety of body shapes, sizes, and skin tones should be represented throughout the manual.
+Body placement visuals must include both male and female figures and represent a wide variety of types of people, nationalities, and ethnicities -- not just white people. Figures should reflect the whole world, like the United Nations. No single type of person should dominate the imagery. A variety of body shapes, sizes, skin tones, and cultural backgrounds should be represented throughout the manual.
+
+**The designer has creative freedom here.** The reimagined images serve as **inspiration** -- they show the feel, clothing style, and aesthetic direction we're going for. But the designer should create their own diverse examples and bring new interpretations. Each person depicted can and should be different. Think of the reimagined images as a mood board, not a blueprint. We want the designer to imagine new figures that represent the full spectrum of humanity.
 
 ### Non-Chakra Teaching Slides
 
