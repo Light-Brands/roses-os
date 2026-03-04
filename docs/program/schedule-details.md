@@ -109,7 +109,7 @@
 | Time Zone | Hours |
 |---|---|
 | San Jose | 7:00 AM -- 7:30 AM |
-| New York | 8:00 AM -- 8:30 AM |
+| New York | 9:00 AM -- 9:30 AM |
 | Brasilia | 10:00 AM -- 10:30 AM |
 | London | 1:00 PM -- 1:30 PM |
 
@@ -158,7 +158,7 @@
 | Time Zone | Hours |
 |---|---|
 | San Jose | 7:00 AM -- 7:30 AM |
-| New York | 8:00 AM -- 8:30 AM |
+| New York | 9:00 AM -- 9:30 AM |
 | Brasilia | 10:00 AM -- 10:30 AM |
 | London | 1:00 PM -- 1:30 PM |
 

@@ -161,7 +161,7 @@ export const scheduleStages: ScheduleStage[] = [
     title: 'Aura Reading: Week 2',
     dateRange: 'March 23–26 (Mon–Thu)',
     sessions: [
-      { day: 'Rose Meditation Guidance', duration: '30 min', time: { sanJose: '7:00 – 7:30 AM', bogota: '8:00 – 8:30 AM', newYork: '8:00 – 8:30 AM', brasilia: '10:00 – 10:30 AM', london: '1:00 – 1:30 PM', madrid: '2:00 – 2:30 PM' } },
+      { day: 'Rose Meditation Guidance', duration: '30 min', time: { sanJose: '7:00 – 7:30 AM', bogota: '8:00 – 8:30 AM', newYork: '9:00 – 9:30 AM', brasilia: '10:00 – 10:30 AM', london: '1:00 – 1:30 PM', madrid: '2:00 – 2:30 PM' } },
       { day: 'Class (mandatory)', duration: '3 hours', time: { sanJose: '8:00 – 11:00 AM', bogota: '9:00 AM – 12:00 PM', newYork: '10:00 AM – 1:00 PM', brasilia: '11:00 AM – 2:00 PM', london: '2:00 – 5:00 PM', madrid: '3:00 – 6:00 PM' } },
       { day: 'Practice 1: Europe', duration: '1.5 hours', time: { sanJose: '-', bogota: '-', newYork: '-', brasilia: '7:00 – 8:30 AM', london: '10:00 – 11:30 AM', madrid: '11:00 AM – 12:30 PM' } },
       { day: 'Practice 2', duration: '1.5 hours', time: { sanJose: '12:00 – 1:30 PM', bogota: '1:00 – 2:30 PM', newYork: '2:00 – 3:30 PM', brasilia: '3:00 – 4:30 PM', london: '6:00 – 7:30 PM', madrid: '7:00 – 8:30 PM' } },
@@ -173,7 +173,7 @@ export const scheduleStages: ScheduleStage[] = [
     title: 'Special Practice Day',
     dateRange: 'March 27 (Fri)',
     sessions: [
-      { day: 'Rose Meditation Guidance', duration: '30 min', time: { sanJose: '7:00 – 7:30 AM', bogota: '8:00 – 8:30 AM', newYork: '8:00 – 8:30 AM', brasilia: '10:00 – 10:30 AM', london: '1:00 – 1:30 PM', madrid: '2:00 – 2:30 PM' } },
+      { day: 'Rose Meditation Guidance', duration: '30 min', time: { sanJose: '7:00 – 7:30 AM', bogota: '8:00 – 8:30 AM', newYork: '9:00 – 9:30 AM', brasilia: '10:00 – 10:30 AM', london: '1:00 – 1:30 PM', madrid: '2:00 – 2:30 PM' } },
       { day: 'Q&A and Practice Time', duration: '3 hours', time: { sanJose: '8:00 – 11:00 AM', bogota: '9:00 AM – 12:00 PM', newYork: '10:00 AM – 1:00 PM', brasilia: '11:00 AM – 2:00 PM', london: '2:00 – 5:00 PM', madrid: '3:00 – 6:00 PM' } },
     ],
   },
@@ -205,9 +205,9 @@ export const aura2ScheduleStages: ScheduleStage[] = [
     title: 'Aura Reading Level 2: Weekends',
     dateRange: 'September 19, 20, 26 & 27 (Sat & Sun)',
     sessions: [
-      { day: 'Rose Meditation Guidance', duration: '30 min', time: { sanJose: '7:00 – 7:30 AM', bogota: '8:00 – 8:30 AM', newYork: '8:00 – 8:30 AM', brasilia: '10:00 – 10:30 AM', london: '1:00 – 1:30 PM', madrid: '2:00 – 2:30 PM' } },
-      { day: 'First Class', duration: '2.5 hours', time: { sanJose: '8:00 – 10:30 AM', bogota: '9:00 – 11:30 AM', newYork: '9:00 – 11:30 AM', brasilia: '11:00 AM – 1:30 PM', london: '2:00 – 4:30 PM', madrid: '3:00 – 5:30 PM' } },
-      { day: 'Second Class', duration: '2.5 hours', time: { sanJose: '12:00 – 2:30 PM', bogota: '1:00 – 3:30 PM', newYork: '1:00 – 3:30 PM', brasilia: '3:00 – 5:30 PM', london: '6:00 – 8:30 PM', madrid: '7:00 – 9:30 PM' } },
+      { day: 'Rose Meditation Guidance', duration: '30 min', time: { sanJose: '7:00 – 7:30 AM', bogota: '8:00 – 8:30 AM', newYork: '9:00 – 9:30 AM', brasilia: '10:00 – 10:30 AM', london: '2:00 – 2:30 PM', madrid: '3:00 – 3:30 PM' } },
+      { day: 'First Class', duration: '2.5 hours', time: { sanJose: '8:00 – 10:30 AM', bogota: '9:00 – 11:30 AM', newYork: '10:00 AM – 12:30 PM', brasilia: '11:00 AM – 1:30 PM', london: '3:00 – 5:30 PM', madrid: '4:00 – 6:30 PM' } },
+      { day: 'Second Class', duration: '2.5 hours', time: { sanJose: '12:00 – 2:30 PM', bogota: '1:00 – 3:30 PM', newYork: '2:00 – 4:30 PM', brasilia: '3:00 – 5:30 PM', london: '7:00 – 9:30 PM', madrid: '8:00 – 10:30 PM' } },
     ],
   },
   {
@@ -215,10 +215,10 @@ export const aura2ScheduleStages: ScheduleStage[] = [
     title: 'Aura Reading Level 2: Weekdays',
     dateRange: 'September 21–25 (Mon–Fri)',
     sessions: [
-      { day: 'Rose Meditation Guidance', duration: '30 min', time: { sanJose: '7:00 – 7:30 AM', bogota: '8:00 – 8:30 AM', newYork: '8:00 – 8:30 AM', brasilia: '10:00 – 10:30 AM', london: '1:00 – 1:30 PM', madrid: '2:00 – 2:30 PM' } },
-      { day: 'First Practice (choose at least one)', duration: '1.5 hours', time: { sanJose: '8:00 – 9:30 AM', bogota: '9:00 – 10:30 AM', newYork: '9:00 – 10:30 AM', brasilia: '11:00 AM – 12:30 PM', london: '2:00 – 3:30 PM', madrid: '3:00 – 4:30 PM' } },
-      { day: 'Second Practice (choose at least one)', duration: '1.5 hours', time: { sanJose: '10:00 – 11:30 AM', bogota: '11:00 AM – 12:30 PM', newYork: '11:00 AM – 12:30 PM', brasilia: '1:00 – 2:30 PM', london: '4:00 – 5:30 PM', madrid: '5:00 – 6:30 PM' } },
-      { day: 'Class', duration: '1.5 hours', time: { sanJose: '12:00 – 1:30 PM', bogota: '1:00 – 2:30 PM', newYork: '1:00 – 2:30 PM', brasilia: '3:00 – 4:30 PM', london: '6:00 – 7:30 PM', madrid: '7:00 – 8:30 PM' } },
+      { day: 'Rose Meditation Guidance', duration: '30 min', time: { sanJose: '7:00 – 7:30 AM', bogota: '8:00 – 8:30 AM', newYork: '9:00 – 9:30 AM', brasilia: '10:00 – 10:30 AM', london: '2:00 – 2:30 PM', madrid: '3:00 – 3:30 PM' } },
+      { day: 'First Practice (choose at least one)', duration: '1.5 hours', time: { sanJose: '8:00 – 9:30 AM', bogota: '9:00 – 10:30 AM', newYork: '10:00 – 11:30 AM', brasilia: '11:00 AM – 12:30 PM', london: '3:00 – 4:30 PM', madrid: '4:00 – 5:30 PM' } },
+      { day: 'Second Practice (choose at least one)', duration: '1.5 hours', time: { sanJose: '10:00 – 11:30 AM', bogota: '11:00 AM – 12:30 PM', newYork: '12:00 – 1:30 PM', brasilia: '1:00 – 2:30 PM', london: '5:00 – 6:30 PM', madrid: '6:00 – 7:30 PM' } },
+      { day: 'Class', duration: '1.5 hours', time: { sanJose: '12:00 – 1:30 PM', bogota: '1:00 – 2:30 PM', newYork: '2:00 – 3:30 PM', brasilia: '3:00 – 4:30 PM', london: '7:00 – 8:30 PM', madrid: '8:00 – 9:30 PM' } },
     ],
   },
 ];
@@ -580,7 +580,7 @@ export const teachersTrainingSchedule: CommunityScheduleCycle[] = [
       {
         month: 'February',
         sessions: [
-          { date: 'Wed, Feb 25', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '2:00 PM – 3:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '7:00 PM – 8:30 PM', madrid: '8:00 PM – 9:30 PM' } },
+          { date: 'Wed, Feb 25', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '1:00 PM – 2:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '6:00 PM – 7:30 PM', madrid: '7:00 PM – 8:30 PM' } },
         ],
       },
     ],
@@ -592,10 +592,10 @@ export const teachersTrainingSchedule: CommunityScheduleCycle[] = [
       {
         month: 'March',
         sessions: [
-          { date: 'Fri, Mar 6', time: { sanJose: '3:00 PM – 4:30 PM', bogota: '4:00 PM – 5:30 PM', newYork: '5:00 PM – 6:30 PM', brasilia: '6:00 PM – 7:30 PM', london: '10:00 PM – 11:30 PM', madrid: '11:00 PM – 12:30 AM' } },
-          { date: 'Thu, Mar 12', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '2:00 PM – 3:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '7:00 PM – 8:30 PM', madrid: '8:00 PM – 9:30 PM' } },
-          { date: 'Thu, Mar 19', time: { sanJose: '11:00 AM – 12:30 PM', bogota: '12:00 PM – 1:30 PM', newYork: '1:00 PM – 2:30 PM', brasilia: '2:00 PM – 3:30 PM', london: '6:00 PM – 7:30 PM', madrid: '7:00 PM – 8:30 PM' } },
-          { date: 'Thu, Mar 26', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '2:00 PM – 3:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '7:00 PM – 8:30 PM', madrid: '8:00 PM – 9:30 PM' } },
+          { date: 'Fri, Mar 6', time: { sanJose: '3:00 PM – 4:30 PM', bogota: '4:00 PM – 5:30 PM', newYork: '4:00 PM – 5:30 PM', brasilia: '6:00 PM – 7:30 PM', london: '9:00 PM – 10:30 PM', madrid: '10:00 PM – 11:30 PM' } },
+          { date: 'Thu, Mar 12', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '2:00 PM – 3:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '6:00 PM – 7:30 PM', madrid: '7:00 PM – 8:30 PM' } },
+          { date: 'Thu, Mar 19', time: { sanJose: '11:00 AM – 12:30 PM', bogota: '12:00 PM – 1:30 PM', newYork: '1:00 PM – 2:30 PM', brasilia: '2:00 PM – 3:30 PM', london: '5:00 PM – 6:30 PM', madrid: '6:00 PM – 7:30 PM' } },
+          { date: 'Thu, Mar 26', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '2:00 PM – 3:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '6:00 PM – 7:30 PM', madrid: '7:00 PM – 8:30 PM' } },
         ],
       },
       {
@@ -664,24 +664,24 @@ export const teachersTrainingSchedule: CommunityScheduleCycle[] = [
           { date: 'Wed, Oct 7', time: { sanJose: '1:00 PM – 2:30 PM', bogota: '2:00 PM – 3:30 PM', newYork: '3:00 PM – 4:30 PM', brasilia: '4:00 PM – 5:30 PM', london: '8:00 PM – 9:30 PM', madrid: '9:00 PM – 10:30 PM' } },
           { date: 'Thu, Oct 15', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '2:00 PM – 3:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '7:00 PM – 8:30 PM', madrid: '8:00 PM – 9:30 PM' } },
           { date: 'Thu, Oct 22', time: { sanJose: '11:00 AM – 12:30 PM', bogota: '12:00 PM – 1:30 PM', newYork: '1:00 PM – 2:30 PM', brasilia: '2:00 PM – 3:30 PM', london: '6:00 PM – 7:30 PM', madrid: '7:00 PM – 8:30 PM' } },
-          { date: 'Thu, Oct 29', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '2:00 PM – 3:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '7:00 PM – 8:30 PM', madrid: '8:00 PM – 9:30 PM' } },
+          { date: 'Thu, Oct 29', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '2:00 PM – 3:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '6:00 PM – 7:30 PM', madrid: '7:00 PM – 8:30 PM' } },
         ],
       },
       {
         month: 'November',
         sessions: [
-          { date: 'Thu, Nov 5', time: { sanJose: '11:00 AM – 12:30 PM', bogota: '12:00 PM – 1:30 PM', newYork: '1:00 PM – 2:30 PM', brasilia: '2:00 PM – 3:30 PM', london: '6:00 PM – 7:30 PM', madrid: '7:00 PM – 8:30 PM' } },
-          { date: 'Thu, Nov 12', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '2:00 PM – 3:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '7:00 PM – 8:30 PM', madrid: '8:00 PM – 9:30 PM' } },
-          { date: 'Thu, Nov 19', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '2:00 PM – 3:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '7:00 PM – 8:30 PM', madrid: '8:00 PM – 9:30 PM' } },
-          { date: 'Thu, Nov 26', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '2:00 PM – 3:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '7:00 PM – 8:30 PM', madrid: '8:00 PM – 9:30 PM' } },
+          { date: 'Thu, Nov 5', time: { sanJose: '11:00 AM – 12:30 PM', bogota: '12:00 PM – 1:30 PM', newYork: '12:00 PM – 1:30 PM', brasilia: '2:00 PM – 3:30 PM', london: '5:00 PM – 6:30 PM', madrid: '6:00 PM – 7:30 PM' } },
+          { date: 'Thu, Nov 12', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '1:00 PM – 2:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '6:00 PM – 7:30 PM', madrid: '7:00 PM – 8:30 PM' } },
+          { date: 'Thu, Nov 19', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '1:00 PM – 2:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '6:00 PM – 7:30 PM', madrid: '7:00 PM – 8:30 PM' } },
+          { date: 'Thu, Nov 26', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '1:00 PM – 2:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '6:00 PM – 7:30 PM', madrid: '7:00 PM – 8:30 PM' } },
         ],
       },
       {
         month: 'December',
         sessions: [
-          { date: 'Thu, Dec 3', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '2:00 PM – 3:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '7:00 PM – 8:30 PM', madrid: '8:00 PM – 9:30 PM' } },
-          { date: 'Thu, Dec 10', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '2:00 PM – 3:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '7:00 PM – 8:30 PM', madrid: '8:00 PM – 9:30 PM' } },
-          { date: 'Mon, Dec 14', time: { sanJose: '1:00 PM – 2:00 PM', bogota: '2:00 PM – 3:00 PM', newYork: '3:00 PM – 4:00 PM', brasilia: '4:00 PM – 5:00 PM', london: '8:00 PM – 9:00 PM', madrid: '9:00 PM – 10:00 PM' } },
+          { date: 'Thu, Dec 3', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '1:00 PM – 2:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '6:00 PM – 7:30 PM', madrid: '7:00 PM – 8:30 PM' } },
+          { date: 'Thu, Dec 10', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '1:00 PM – 2:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '6:00 PM – 7:30 PM', madrid: '7:00 PM – 8:30 PM' } },
+          { date: 'Mon, Dec 14', time: { sanJose: '1:00 PM – 2:00 PM', bogota: '2:00 PM – 3:00 PM', newYork: '2:00 PM – 3:00 PM', brasilia: '4:00 PM – 5:00 PM', london: '7:00 PM – 8:00 PM', madrid: '8:00 PM – 9:00 PM' } },
         ],
       },
     ],
@@ -705,16 +705,16 @@ export const auraForLifeSchedule: CommunityScheduleCycle[] = [
       {
         month: 'February',
         sessions: [
-          { date: 'Tue, Feb 24', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '2:00 PM – 3:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '7:00 PM – 8:30 PM', madrid: '8:00 PM – 9:30 PM' } },
+          { date: 'Tue, Feb 24', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '1:00 PM – 2:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '6:00 PM – 7:30 PM', madrid: '7:00 PM – 8:30 PM' } },
         ],
       },
       {
         month: 'March',
         sessions: [
-          { date: 'Tue, Mar 3', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '2:00 PM – 3:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '7:00 PM – 8:30 PM', madrid: '8:00 PM – 9:30 PM' } },
-          { date: 'Tue, Mar 10', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '2:00 PM – 3:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '7:00 PM – 8:30 PM', madrid: '8:00 PM – 9:30 PM' } },
-          { date: 'Tue, Mar 17', time: { sanJose: '11:00 AM – 12:30 PM', bogota: '12:00 PM – 1:30 PM', newYork: '1:00 PM – 2:30 PM', brasilia: '2:00 PM – 3:30 PM', london: '6:00 PM – 7:30 PM', madrid: '7:00 PM – 8:30 PM' } },
-          { date: 'Tue, Mar 24', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '2:00 PM – 3:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '7:00 PM – 8:30 PM', madrid: '8:00 PM – 9:30 PM' } },
+          { date: 'Tue, Mar 3', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '1:00 PM – 2:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '6:00 PM – 7:30 PM', madrid: '7:00 PM – 8:30 PM' } },
+          { date: 'Tue, Mar 10', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '2:00 PM – 3:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '6:00 PM – 7:30 PM', madrid: '7:00 PM – 8:30 PM' } },
+          { date: 'Tue, Mar 17', time: { sanJose: '11:00 AM – 12:30 PM', bogota: '12:00 PM – 1:30 PM', newYork: '1:00 PM – 2:30 PM', brasilia: '2:00 PM – 3:30 PM', london: '5:00 PM – 6:30 PM', madrid: '6:00 PM – 7:30 PM' } },
+          { date: 'Tue, Mar 24', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '2:00 PM – 3:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '6:00 PM – 7:30 PM', madrid: '7:00 PM – 8:30 PM' } },
         ],
       },
       {
@@ -783,24 +783,24 @@ export const auraForLifeSchedule: CommunityScheduleCycle[] = [
           { date: 'Thu, Oct 1', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '2:00 PM – 3:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '7:00 PM – 8:30 PM', madrid: '8:00 PM – 9:30 PM' } },
           { date: 'Tue, Oct 6', time: { sanJose: '11:00 AM – 12:30 PM', bogota: '12:00 PM – 1:30 PM', newYork: '1:00 PM – 2:30 PM', brasilia: '2:00 PM – 3:30 PM', london: '6:00 PM – 7:30 PM', madrid: '7:00 PM – 8:30 PM' } },
           { date: 'Tue, Oct 20', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '2:00 PM – 3:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '7:00 PM – 8:30 PM', madrid: '8:00 PM – 9:30 PM' } },
-          { date: 'Tue, Oct 27', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '2:00 PM – 3:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '7:00 PM – 8:30 PM', madrid: '8:00 PM – 9:30 PM' } },
+          { date: 'Tue, Oct 27', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '2:00 PM – 3:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '6:00 PM – 7:30 PM', madrid: '7:00 PM – 8:30 PM' } },
         ],
       },
       {
         month: 'November',
         sessions: [
-          { date: 'Tue, Nov 3', time: { sanJose: '11:00 AM – 12:30 PM', bogota: '12:00 PM – 1:30 PM', newYork: '1:00 PM – 2:30 PM', brasilia: '2:00 PM – 3:30 PM', london: '6:00 PM – 7:30 PM', madrid: '7:00 PM – 8:30 PM' } },
-          { date: 'Tue, Nov 10', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '2:00 PM – 3:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '7:00 PM – 8:30 PM', madrid: '8:00 PM – 9:30 PM' } },
-          { date: 'Tue, Nov 17', time: { sanJose: '1:00 PM – 2:30 PM', bogota: '2:00 PM – 3:30 PM', newYork: '3:00 PM – 4:30 PM', brasilia: '4:00 PM – 5:30 PM', london: '8:00 PM – 9:30 PM', madrid: '9:00 PM – 10:30 PM' } },
-          { date: 'Tue, Nov 24', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '2:00 PM – 3:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '7:00 PM – 8:30 PM', madrid: '8:00 PM – 9:30 PM' } },
+          { date: 'Tue, Nov 3', time: { sanJose: '11:00 AM – 12:30 PM', bogota: '12:00 PM – 1:30 PM', newYork: '12:00 PM – 1:30 PM', brasilia: '2:00 PM – 3:30 PM', london: '5:00 PM – 6:30 PM', madrid: '6:00 PM – 7:30 PM' } },
+          { date: 'Tue, Nov 10', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '1:00 PM – 2:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '6:00 PM – 7:30 PM', madrid: '7:00 PM – 8:30 PM' } },
+          { date: 'Tue, Nov 17', time: { sanJose: '1:00 PM – 2:30 PM', bogota: '2:00 PM – 3:30 PM', newYork: '2:00 PM – 3:30 PM', brasilia: '4:00 PM – 5:30 PM', london: '7:00 PM – 8:30 PM', madrid: '8:00 PM – 9:30 PM' } },
+          { date: 'Tue, Nov 24', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '1:00 PM – 2:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '6:00 PM – 7:30 PM', madrid: '7:00 PM – 8:30 PM' } },
         ],
       },
       {
         month: 'December',
         sessions: [
-          { date: 'Tue, Dec 1', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '2:00 PM – 3:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '7:00 PM – 8:30 PM', madrid: '8:00 PM – 9:30 PM' } },
-          { date: 'Tue, Dec 8', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '2:00 PM – 3:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '7:00 PM – 8:30 PM', madrid: '8:00 PM – 9:30 PM' } },
-          { date: 'Tue, Dec 15', time: { sanJose: '12:00 PM – 1:00 PM', bogota: '1:00 PM – 2:00 PM', newYork: '2:00 PM – 3:00 PM', brasilia: '3:00 PM – 4:00 PM', london: '7:00 PM – 8:00 PM', madrid: '8:00 PM – 9:00 PM' } },
+          { date: 'Tue, Dec 1', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '1:00 PM – 2:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '6:00 PM – 7:30 PM', madrid: '7:00 PM – 8:30 PM' } },
+          { date: 'Tue, Dec 8', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '1:00 PM – 2:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '6:00 PM – 7:30 PM', madrid: '7:00 PM – 8:30 PM' } },
+          { date: 'Tue, Dec 15', time: { sanJose: '12:00 PM – 1:00 PM', bogota: '1:00 PM – 2:00 PM', newYork: '1:00 PM – 2:00 PM', brasilia: '3:00 PM – 4:00 PM', london: '6:00 PM – 7:00 PM', madrid: '7:00 PM – 8:00 PM' } },
         ],
       },
     ],
