@@ -20,6 +20,7 @@
 | **Original images** | `public/rose med images/` -- files with "original" in the name (hand-drawn tradition illustrations) |
 | **Reimagined images** | `public/rose med images/` -- files without "original" in the name (modernized versions) |
 | **Brand tone** | Sacred-tech minimalism -- earthy, grounded, warm, quiet. Never busy, never loud. |
+| **Languages** | English (primary), Portuguese, Spanish, Greek -- identical layouts, text-only swaps per language |
 | **Priority** | This is the current deliverable. Everything else comes later. |
 
 ---
@@ -876,7 +877,7 @@ Surfaces should feel like clay, linen, stone, paper, soft fogged light. Rose Cla
 
 ## 8. PDF DOWNLOAD
 
-A "Download PDF" button at the top of the teaching section exports the entire manual as a formatted PDF designed for print or offline reference.
+A "Download PDF" button at the top of the teaching section exports the entire manual as a formatted PDF designed for print or offline reference. Each level page also has its own download button for exporting that level individually.
 
 **Requirements:**
 
@@ -887,6 +888,9 @@ A "Download PDF" button at the top of the teaching section exports the entire ma
 - Illustrations and diagrams render cleanly (SVG preferred)
 - Page numbers and section headers in footer
 - Subtle brand texture on each page (light enough to print cleanly)
+- **Multilingual:** Export in the currently selected language. Include the language code in the filename (e.g., `roses-os-mdr-level-1-pt.pdf`). The PDF cover page should display the language name (e.g., "Português" for Portuguese exports)
+- **Per-level download:** Each level page (Level 1, 2, 3) has a "Download PDF" button that exports only that level's content as a standalone PDF
+- **Full manual download:** The teaching hub page has a "Download Full Manual" button that exports all levels as a single PDF
 
 ---
 
@@ -940,8 +944,15 @@ The designer has creative freedom in executing this manual. These guidelines pro
 - [ ] Build Teaching Agreements pages
 - [ ] Ensure each slide pairs an image with its corresponding teaching text from Section 4 of this document
 - [ ] Design the PDF export (full manual as downloadable PDF)
+- [ ] Add per-level PDF download buttons (Level 1, 2, 3 each export individually)
+- [ ] Add "Download Full Manual" button on the teaching hub page
 - [ ] Review all pages for consistency (layout, color, typography)
 - [ ] Test on tablet and laptop (teachers will use these devices during live sessions)
+- [ ] Verify Cormorant Garamond and Inter render Greek characters correctly
+- [ ] Design the language selector component (EN / PT / ES / EL toggle)
+- [ ] Create translation content structure (`src/content/teaching/{en,pt,es,el}.json`)
+- [ ] Test text expansion in Portuguese, Spanish, and Greek -- ensure layouts accommodate longer strings
+- [ ] Test PDF export in each language
 
 ---
 
@@ -962,6 +973,47 @@ The designer has creative freedom in executing this manual. These guidelines pro
 
 ## LANGUAGE VERSIONS
 
-**Phase 1:** English (primary)
+The MDR Teacher's Resource Manual will be available in **four languages**:
 
-Future phases: Portuguese, Spanish -- identical layouts, text-only swaps.
+| Language | Code | Status | Notes |
+|----------|------|--------|-------|
+| **English** | `en` | Primary -- build first | Source language for all content |
+| **Portuguese** | `pt` | Phase 2 | Core community language -- many practitioners are Portuguese-speaking |
+| **Spanish** | `es` | Phase 2 | Growing community in Spanish-speaking regions |
+| **Greek** | `el` | Phase 2 | Community presence in Greece; supports Mediterranean expansion |
+
+### Multilingual Design Approach
+
+**Identical layouts, text-only swaps.** The visual design, imagery, and layout structure remain exactly the same across all languages. Only the teaching text, UI labels, headings, and navigation elements change.
+
+#### Design Considerations
+
+1. **Text expansion:** Portuguese, Spanish, and Greek text is typically 15--30% longer than English. Layouts must accommodate longer strings without breaking. Allow flexible text containers -- do not hard-code widths based on English string lengths.
+
+2. **Greek script:** Greek uses a different alphabet (e.g., Ελληνικά). Ensure the chosen typefaces (Cormorant Garamond and Inter) support the Greek character set with proper diacritics (polytonic and monotonic accents). Both fonts have Greek support -- verify rendering quality during design.
+
+3. **Chakra terminology:** Sanskrit terms (Muladhara, Svadhisthana, etc.) remain the same across all languages -- they are universal. Only the descriptive text, conscious statements, and teaching cues are translated.
+
+4. **Language selector:** Add a language selector (dropdown or toggle) to the teaching section header. It should:
+   - Appear next to the "Download PDF" button
+   - Show language names in their native script: English, Português, Español, Ελληνικά
+   - Default to English
+   - Persist the selection for the session (cookie or localStorage)
+   - Be visible on both the teaching hub page and all level pages
+
+5. **PDF export per language:** The "Download PDF" button should export the manual in the currently selected language. The PDF filename should include the language code (e.g., `roses-os-mdr-manual-pt.pdf`).
+
+6. **Direction:** All four languages are left-to-right (LTR). No RTL support is needed.
+
+7. **Translation management:** Teaching text translations will be provided as structured content files (one per language). The website should load the correct content file based on the selected language. Suggested structure:
+   - `src/content/teaching/en.json` -- English (source)
+   - `src/content/teaching/pt.json` -- Portuguese
+   - `src/content/teaching/es.json` -- Spanish
+   - `src/content/teaching/el.json` -- Greek
+
+8. **Image text:** All teaching images are language-neutral (no embedded text). No image localization is needed -- only the accompanying teaching text changes.
+
+#### Implementation Priority
+
+- **Phase 1:** Build the complete manual in English. All design, layout, imagery, and interaction work happens here.
+- **Phase 2:** Once the English version is approved, add the language selector and integrate translated content files. This is a content swap -- no design changes needed.

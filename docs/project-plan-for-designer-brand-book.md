@@ -318,4 +318,4 @@ Where something is not specified, follow your instinct within the brand's tone -
 
 **Phase 1:** English (primary)
 
-Future phases: Portuguese, Spanish -- identical layouts, text-only swaps.
+Future phases: Portuguese, Spanish, Greek -- identical layouts, text-only swaps.

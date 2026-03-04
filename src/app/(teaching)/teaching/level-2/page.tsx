@@ -5,6 +5,7 @@ import { teachingLevels, techniques, chakras } from '@/lib/data';
 import LevelNav from '@/components/teaching/LevelNav';
 import ChakraChart from '@/components/teaching/ChakraChart';
 import TechniqueCard from '@/components/teaching/TechniqueCard';
+import { PdfExportButton } from '@/components/ui/PdfExportButton';
 
 export default function Level2Page() {
   const level = teachingLevels[1];
@@ -43,6 +44,7 @@ export default function Level2Page() {
               <p className="text-[var(--color-foreground-muted)] max-w-2xl">
                 {level.description}
               </p>
+              <PdfExportButton className="mt-4" />
             </div>
 
             {/* Chakra Chart */}
