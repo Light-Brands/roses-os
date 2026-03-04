@@ -120,7 +120,7 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'The complete foundational setup combines posture, aura, and expanded grounding cord: the person is seated in proper posture, enclosed within their aura, with the grounding cord descending into the earth.',
     reimaginedImage: '11-expansion-grounding-cord.PNG',
-    imageNote: 'See slide 10 original for accuracy reference.',
+    imageNote: 'See slide 10 original for accuracy reference. The grounding cord is missing from this image — it should be clearly visible, expanded, thick, transparent, and strong (same direction as slides 7 and 10).',
     level: 1,
     section: 'foundations',
   },
@@ -132,6 +132,7 @@ export const level1Slides: TeachingSlide[] = [
       'The Golden Sun above the crown pours golden light downward, filling the entire aura and body with your own highest vibration. This completes the full energetic architecture: posture, aura, grounding cord, and golden sun — all active together.',
     originalImage: '11-expansion fill with golden sun - original .PNG',
     reimaginedImage: '11aExpand auragoldensunexpanded.PNG',
+    imageNote: 'The expanded grounding cord should also be represented in this image — it is part of the full energetic architecture. Same visual direction: thick, transparent, strong, less gold.',
     level: 1,
     section: 'foundations',
   },

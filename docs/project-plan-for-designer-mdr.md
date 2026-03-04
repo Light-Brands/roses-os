@@ -295,12 +295,21 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 > The complete foundational setup combines posture, aura, and expanded grounding cord: the person is seated in proper posture, enclosed within their aura, with the grounding cord descending into the earth.
 
+**Designer Notes:**
+- The **grounding cord is missing** from the current reimagined image -- it needs to be added
+- This slide depicts the full setup which includes the expanded grounding cord; it must be clearly visible
+- Same visual direction as slides 7 and 10: **thick, transparent, strong, less gold**
+
 ---
 
 #### Slide: Golden Sun Fills You
 **Original:** `11-expansion fill with golden sun - original .PNG` | **Reimagined:** `11aExpand auragoldensunexpanded.PNG`
 
 > The Golden Sun above the crown pours golden light downward, filling the entire aura and body with your own highest vibration. This completes the full energetic architecture: posture, aura, grounding cord, and golden sun -- all active together.
+
+**Designer Notes:**
+- The **expanded grounding cord** should also be represented in this image -- it is part of the full energetic architecture (posture + aura + grounding cord + golden sun)
+- Same visual direction: **thick, transparent, strong, less gold**
 
 ---
 
