@@ -50,7 +50,6 @@ export const level1Slides: TeachingSlide[] = [
     concept: 'The Rose',
     teachingText:
       'The Rose is the foundational symbol and tool of this practice — a living energetic instrument used throughout all levels of the work.',
-    originalImage: '14-the rose original .PNG',
     reimaginedImage: '5-the-rose.PNG',
     level: 1,
     section: 'foundations',
@@ -74,7 +73,7 @@ export const level1Slides: TeachingSlide[] = [
       'The grounding cord is an energetic connection that extends from the base of the spine (first chakra) downward into the center of the Earth. It anchors your energy body to the planet, providing stability, safety, and a channel for releasing unwanted energy.',
     reimaginedImage: '7-Groundingcord.PNG',
     imageNote:
-      'The original grounding cord (see slide 10 original: 10-grounding-cord-expansion-original .PNG) is more accurate than the reimagined version. New designs should reflect the original\'s depiction.',
+      'The original grounding cord (see slide 10 original: 10-grounding-cord-expansion-original .PNG) is more accurate than the reimagined version. New designs should reflect the original\'s depiction. The grounding cord should be more opaque/transparent, thick and strong, and less gold.',
     level: 1,
     section: 'foundations',
   },
@@ -107,6 +106,8 @@ export const level1Slides: TeachingSlide[] = [
       'Once you are aware of your aura, the grounding cord practice deepens. You ground not only the physical body but also the aura itself — allowing the entire energy field to anchor into the Earth.',
     originalImage: '10-grounding-cord-expansion-original .PNG',
     reimaginedImage: '10-Grounding cord expand .PNG',
+    imageNote:
+      'The grounding cord should be more opaque/transparent, thick and strong, and less gold — same direction as slide 7.',
     level: 1,
     section: 'foundations',
   },
@@ -172,7 +173,6 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'The Rose is used as a living energetic instrument throughout the practice. It has roots (connection to source), a stem (channel of energy), and a bloom (the active, radiant tool). The Rose can be placed, moved, opened, closed, and released according to the needs of the meditation.',
     originalImage: '14-the rose original .PNG',
-    reimaginedImage: '5-the-rose.PNG',
     level: 1,
     section: 'foundations',
   },
@@ -269,7 +269,7 @@ export const level2Slides: TeachingSlide[] = [
     originalImage: '20-protectthespace- original .jpg',
     reimaginedImage: '20-protectionphysicalspace.PNG',
     imageNote:
-      'Designer notes: The lines of the room/grid are all in gold. The image should also show a thick, transparent grounding cord that expands within the space.',
+      'Designer notes: The lines of the room/grid are all in gold. A grounding cord also exists in this room/space but is not depicted in the current image — it needs to be added. The grounding cord should be opaque/transparent, thick and strong, and less gold.',
     level: 2,
     section: 'sacred-space',
   },

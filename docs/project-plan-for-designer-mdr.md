@@ -253,6 +253,11 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 > The grounding cord is an energetic connection that extends from the base of the spine (first chakra) downward into the center of the Earth. It anchors your energy body to the planet, providing stability, safety, and a channel for releasing unwanted energy.
 
+**Designer Notes:**
+- The grounding cord should be **more opaque and transparent** -- thick and strong, not thin or wispy
+- It should be **less gold** than the current reimagined version -- refer to the original images for the correct visual tone
+- The cord conveys stability and weight; the visual should feel solid, grounded, and substantial
+
 ---
 
 #### Slide: Golden Sun
@@ -273,6 +278,10 @@ Below is the complete teaching text that accompanies each image/slide in the man
 **Original:** `10-grounding-cord-expansion-original .PNG` | **Reimagined:** `10-Grounding cord expand .PNG`
 
 > Once you are aware of your aura, the grounding cord practice deepens. You ground not only the physical body but also the aura itself -- allowing the entire energy field to anchor into the Earth.
+
+**Designer Notes:**
+- Same grounding cord visual direction as slide 7: **more opaque and transparent, thick and strong, less gold**
+- The expanded grounding cord should feel even more substantial as it now anchors the entire aura
 
 ---
 
@@ -385,7 +394,8 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 **Designer Notes:**
 - The lines of the room/grid are all in **gold**
-- The image should also show a **thick, transparent grounding cord** that expands within the space
+- The image should also show a **thick, transparent grounding cord** that expands within the space -- this grounding cord exists in the room but is **not depicted in the current image** and needs to be added
+- The grounding cord in the room follows the same visual direction as slides 7 and 10: **opaque, transparent, thick and strong, less gold**
 - Challenge: how to visually convey a grounding cord that is both thick and transparent -- needs exploration. Consider layered opacity, soft glow effects, or a translucent cylindrical form with visible energy flow inside
 
 ---
