@@ -272,7 +272,7 @@ export const level2Slides: TeachingSlide[] = [
     originalImage: '20-protectthespace- original .jpg',
     reimaginedImage: '20-protectionphysicalspace.PNG',
     imageNote:
-      'Designer notes: The lines of the room/grid are all in gold. A grounding cord also exists in this room/space but is not depicted in the current image — it needs to be added. The grounding cord should be opaque/transparent, thick and strong, and less gold.',
+      'Designer notes: The lines of the room/grid are all in gold. The room also has its own grounding cord that expands within the space — not depicted in the current image. This is a visual challenge given the complexity of the grid; the designer has creative freedom to find a solution.',
     level: 2,
     section: 'sacred-space',
   },

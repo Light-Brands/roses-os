@@ -408,9 +408,9 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 **Designer Notes:**
 - The lines of the room/grid are all in **gold**
-- The image should also show a **thick, transparent grounding cord** that expands within the space -- this grounding cord exists in the room but is **not depicted in the current image** and needs to be added
-- The grounding cord in the room follows the same visual direction as slides 7 and 10: **opaque, transparent, thick and strong, less gold**
-- Challenge: how to visually convey a grounding cord that is both thick and transparent -- needs exploration. Consider layered opacity, soft glow effects, or a translucent cylindrical form with visible energy flow inside
+- The room also has its own **grounding cord that expands within the space** -- this exists energetically but is **not depicted in the current image**
+- **This is a known visual challenge** -- the room grid is already complex with roses and connecting lines, so adding an expanded grounding cord is difficult to represent clearly. The designer has creative freedom here to find a solution that works without cluttering the composition. Possible approaches: a subtle translucent wash beneath the grid floor, a soft downward glow from the base of the room, or a separate companion detail image. If it cannot be shown clearly in the main image, a note or caption acknowledging the room's grounding cord may suffice
+- The grounding cord visual direction (when depicted): **opaque, transparent, thick and strong, less gold** -- same as slides 7 and 10
 
 ---
 
