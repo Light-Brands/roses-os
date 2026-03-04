@@ -50,7 +50,6 @@ export const level1Slides: TeachingSlide[] = [
     concept: 'The Rose',
     teachingText:
       'The Rose is the foundational symbol and tool of this practice — a living energetic instrument used throughout all levels of the work.',
-    originalImage: '14-the rose original .PNG',
     reimaginedImage: '5-the-rose.PNG',
     level: 1,
     section: 'foundations',
@@ -74,7 +73,7 @@ export const level1Slides: TeachingSlide[] = [
       'The grounding cord is an energetic connection that extends from the base of the spine (first chakra) downward into the center of the Earth. It anchors your energy body to the planet, providing stability, safety, and a channel for releasing unwanted energy.',
     reimaginedImage: '7-Groundingcord.PNG',
     imageNote:
-      'The original grounding cord (see slide 10 original: 10-grounding-cord-expansion-original .PNG) is more accurate than the reimagined version. New designs should reflect the original\'s depiction.',
+      'The original grounding cord (see slide 10 original: 10-grounding-cord-expansion-original .PNG) is more accurate than the reimagined version. New designs should reflect the original\'s depiction. The grounding cord should be more opaque/transparent, thick and strong, and less gold.',
     level: 1,
     section: 'foundations',
   },
@@ -85,6 +84,8 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'The Golden Sun is a tool for replenishing and restoring your own energy. Visualize a radiant golden sun above your head. It calls back your own life-force energy from wherever you may have left it — in people, places, situations, or time. It fills you with your own highest vibration.',
     reimaginedImage: '8-golden-sun.PNG',
+    imageNote:
+      'The grounding cord in this image should be thick, transparent, and strong — and should start lower in the body, under the crotch, as it comes from the base of the spine (1st chakra). Currently it appears too high and too golden.',
     level: 1,
     section: 'foundations',
   },
@@ -107,6 +108,8 @@ export const level1Slides: TeachingSlide[] = [
       'Once you are aware of your aura, the grounding cord practice deepens. You ground not only the physical body but also the aura itself — allowing the entire energy field to anchor into the Earth.',
     originalImage: '10-grounding-cord-expansion-original .PNG',
     reimaginedImage: '10-Grounding cord expand .PNG',
+    imageNote:
+      'The grounding cord should be more opaque/transparent, thick and strong, and less gold — same direction as slide 7.',
     level: 1,
     section: 'foundations',
   },
@@ -117,7 +120,7 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'The complete foundational setup combines posture, aura, and expanded grounding cord: the person is seated in proper posture, enclosed within their aura, with the grounding cord descending into the earth.',
     reimaginedImage: '11-expansion-grounding-cord.PNG',
-    imageNote: 'See slide 10 original for accuracy reference.',
+    imageNote: 'See slide 10 original for accuracy reference. The grounding cord is missing from this image — it should be clearly visible, expanded, thick, transparent, and strong (same direction as slides 7 and 10).',
     level: 1,
     section: 'foundations',
   },
@@ -129,6 +132,7 @@ export const level1Slides: TeachingSlide[] = [
       'The Golden Sun above the crown pours golden light downward, filling the entire aura and body with your own highest vibration. This completes the full energetic architecture: posture, aura, grounding cord, and golden sun — all active together.',
     originalImage: '11-expansion fill with golden sun - original .PNG',
     reimaginedImage: '11aExpand auragoldensunexpanded.PNG',
+    imageNote: 'The expanded grounding cord should also be represented in this image — it is part of the full energetic architecture. Same visual direction: thick, transparent, strong, less gold.',
     level: 1,
     section: 'foundations',
   },
@@ -172,7 +176,6 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'The Rose is used as a living energetic instrument throughout the practice. It has roots (connection to source), a stem (channel of energy), and a bloom (the active, radiant tool). The Rose can be placed, moved, opened, closed, and released according to the needs of the meditation.',
     originalImage: '14-the rose original .PNG',
-    reimaginedImage: '5-the-rose.PNG',
     level: 1,
     section: 'foundations',
   },
@@ -269,7 +272,7 @@ export const level2Slides: TeachingSlide[] = [
     originalImage: '20-protectthespace- original .jpg',
     reimaginedImage: '20-protectionphysicalspace.PNG',
     imageNote:
-      'Designer notes: The lines of the room/grid are all in gold. The image should also show a thick, transparent grounding cord that expands within the space.',
+      'Designer notes: The lines of the room/grid are all in gold. The room also has its own grounding cord that expands within the space — not depicted in the current image. This is a visual challenge given the complexity of the grid; the designer has creative freedom to find a solution.',
     level: 2,
     section: 'sacred-space',
   },

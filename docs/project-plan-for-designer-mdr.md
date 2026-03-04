@@ -253,12 +253,22 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 > The grounding cord is an energetic connection that extends from the base of the spine (first chakra) downward into the center of the Earth. It anchors your energy body to the planet, providing stability, safety, and a channel for releasing unwanted energy.
 
+**Designer Notes:**
+- The grounding cord should be **more opaque and transparent** -- thick and strong, not thin or wispy
+- It should be **less gold** than the current reimagined version -- refer to the original images for the correct visual tone
+- The cord conveys stability and weight; the visual should feel solid, grounded, and substantial
+
 ---
 
 #### Slide: Golden Sun
 **Reimagined:** `8-golden-sun.PNG`
 
 > The Golden Sun is a tool for replenishing and restoring your own energy. Visualize a radiant golden sun above your head. It calls back your own life-force energy from wherever you may have left it -- in people, places, situations, or time. It fills you with your own highest vibration.
+
+**Designer Notes:**
+- The grounding cord in this image should be **thick, transparent, and strong**
+- It should **start lower in the body, under the crotch** — the grounding cord comes from the base of the spine (1st chakra), not from higher up
+- Same visual direction as slides 7 and 10: less gold, more opaque/translucent, substantial
 
 ---
 
@@ -274,6 +284,10 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 > Once you are aware of your aura, the grounding cord practice deepens. You ground not only the physical body but also the aura itself -- allowing the entire energy field to anchor into the Earth.
 
+**Designer Notes:**
+- Same grounding cord visual direction as slide 7: **more opaque and transparent, thick and strong, less gold**
+- The expanded grounding cord should feel even more substantial as it now anchors the entire aura
+
 ---
 
 #### Slide: Full Meditation Setup
@@ -281,12 +295,21 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 > The complete foundational setup combines posture, aura, and expanded grounding cord: the person is seated in proper posture, enclosed within their aura, with the grounding cord descending into the earth.
 
+**Designer Notes:**
+- The **grounding cord is missing** from the current reimagined image -- it needs to be added
+- This slide depicts the full setup which includes the expanded grounding cord; it must be clearly visible
+- Same visual direction as slides 7 and 10: **thick, transparent, strong, less gold**
+
 ---
 
 #### Slide: Golden Sun Fills You
 **Original:** `11-expansion fill with golden sun - original .PNG` | **Reimagined:** `11aExpand auragoldensunexpanded.PNG`
 
 > The Golden Sun above the crown pours golden light downward, filling the entire aura and body with your own highest vibration. This completes the full energetic architecture: posture, aura, grounding cord, and golden sun -- all active together.
+
+**Designer Notes:**
+- The **expanded grounding cord** should also be represented in this image -- it is part of the full energetic architecture (posture + aura + grounding cord + golden sun)
+- Same visual direction: **thick, transparent, strong, less gold**
 
 ---
 
@@ -385,8 +408,9 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 **Designer Notes:**
 - The lines of the room/grid are all in **gold**
-- The image should also show a **thick, transparent grounding cord** that expands within the space
-- Challenge: how to visually convey a grounding cord that is both thick and transparent -- needs exploration. Consider layered opacity, soft glow effects, or a translucent cylindrical form with visible energy flow inside
+- The room also has its own **grounding cord that expands within the space** -- this exists energetically but is **not depicted in the current image**
+- **This is a known visual challenge** -- the room grid is already complex with roses and connecting lines, so adding an expanded grounding cord is difficult to represent clearly. The designer has creative freedom here to find a solution that works without cluttering the composition. Possible approaches: a subtle translucent wash beneath the grid floor, a soft downward glow from the base of the room, or a separate companion detail image. If it cannot be shown clearly in the main image, a note or caption acknowledging the room's grounding cord may suffice
+- The grounding cord visual direction (when depicted): **opaque, transparent, thick and strong, less gold** -- same as slides 7 and 10
 
 ---
 

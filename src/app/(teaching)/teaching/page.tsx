@@ -31,12 +31,22 @@ export default function TeachingPage() {
       </header>
 
       <main className="max-w-4xl mx-auto px-6 py-12 lg:py-16">
-        {/* Title */}
-        <div className="space-y-3 text-center mb-12">
-          <h1 className="font-serif text-3xl md:text-4xl text-[var(--color-foreground)]">
-            {t?.ui.teacherVisualAidManual ?? 'Teacher Visual Aid Manual'}
+        {/* ROSES OS Hero Header */}
+        <div className="flex flex-col items-center justify-center mb-12">
+          <img
+            src="/rose.png"
+            alt="ROSES OS"
+            width={72}
+            height={72}
+            className="object-contain mb-4"
+          />
+          <h1 className="font-serif text-4xl md:text-5xl tracking-wide text-[var(--color-foreground)] mb-2">
+            {t?.ui.rosesOs ?? 'ROSES OS'}
           </h1>
-          <p className="text-[var(--color-foreground-muted)]">
+          <p className="text-sm uppercase tracking-widest text-[var(--color-foreground-muted)] mb-6">
+            {t?.ui.teacherVisualAidManual ?? 'Teacher Visual Aid Manual'}
+          </p>
+          <p className="text-[var(--color-foreground-muted)] text-center max-w-lg">
             {t?.ui.facilitatorCompanion ?? 'A facilitator\u2019s visual companion for teaching Rose Meditation.'}
           </p>
           <div className="flex items-center justify-center gap-3 pt-4">
