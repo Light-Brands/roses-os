@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { ImageIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useLanguage } from '@/lib/i18n';
 import type { TeachingSlide } from '@/lib/data/types';
 
 interface TeachingSlideCardProps {
@@ -21,8 +22,12 @@ function getImageSrc(slide: TeachingSlide): string | null {
 export default function TeachingSlideCard({ slide, index = 0, className }: TeachingSlideCardProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
+  const { t } = useLanguage();
 
   const imageSrc = getImageSrc(slide);
+  const slideT = t?.slides[slide.id];
+  const concept = slideT?.concept ?? slide.concept;
+  const teachingText = slideT?.teachingText ?? slide.teachingText;
 
   return (
     <motion.div
@@ -46,12 +51,12 @@ export default function TeachingSlideCard({ slide, index = 0, className }: Teach
         <div className="relative bg-[var(--color-background-subtle)]">
           <img
             src={imageSrc}
-            alt={slide.concept}
+            alt={concept}
             className="w-full h-auto object-contain"
             loading="lazy"
           />
           <span className="absolute top-3 left-3 text-[10px] font-medium uppercase tracking-wider text-[#9E956B]/60 bg-[#9E956B]/10 backdrop-blur-sm px-2 py-0.5 rounded-full">
-            Slide {slide.slideNumber}
+            {t?.ui.slide ?? 'Slide'} {slide.slideNumber}
           </span>
         </div>
       ) : (
@@ -65,7 +70,7 @@ export default function TeachingSlideCard({ slide, index = 0, className }: Teach
         >
           <ImageIcon className="w-10 h-10 text-[#9C6F6E]/40" strokeWidth={1.5} />
           <p className="font-serif text-lg text-[#9C6F6E]/70 text-center px-6">
-            {slide.concept}
+            {concept}
           </p>
           {slide.imageNote && (
             <p className="text-xs text-[var(--color-foreground-faint)] text-center px-6 max-w-md">
@@ -73,7 +78,7 @@ export default function TeachingSlideCard({ slide, index = 0, className }: Teach
             </p>
           )}
           <span className="absolute top-3 left-3 text-[10px] font-medium uppercase tracking-wider text-[#9E956B]/60 bg-[#9E956B]/10 px-2 py-0.5 rounded-full">
-            Slide {slide.slideNumber}
+            {t?.ui.slide ?? 'Slide'} {slide.slideNumber}
           </span>
         </div>
       )}
@@ -81,14 +86,14 @@ export default function TeachingSlideCard({ slide, index = 0, className }: Teach
       {/* Teaching Text */}
       <div className="p-5 lg:p-6 space-y-3">
         <h3 className="font-serif font-semibold text-lg lg:text-xl text-[var(--color-foreground)]">
-          {slide.concept}
+          {concept}
         </h3>
         <div className="text-sm text-[var(--color-foreground-muted)] leading-relaxed whitespace-pre-line">
-          {slide.teachingText}
+          {teachingText}
         </div>
         {slide.imageNote && imageSrc && (
           <p className="text-xs text-[var(--color-foreground-faint)] italic border-t border-[var(--color-border-subtle)] pt-3 mt-3">
-            Designer note: {slide.imageNote}
+            {t?.ui.designerNote ?? 'Designer note'}: {slide.imageNote}
           </p>
         )}
       </div>

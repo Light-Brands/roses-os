@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { ImageIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useLanguage } from '@/lib/i18n';
 import type { ChakraSlideData } from '@/lib/data/types';
 
 interface ChakraSlideCardProps {
@@ -15,6 +16,17 @@ interface ChakraSlideCardProps {
 export default function ChakraSlideCard({ chakra, index = 0, className }: ChakraSlideCardProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
+  const { t } = useLanguage();
+
+  const chakraT = t?.chakras[chakra.id];
+  const concept = chakraT?.concept ?? chakra.concept;
+  const focus = chakraT?.focus ?? chakra.focus;
+  const energy = chakraT?.energy ?? chakra.energy;
+  const bodyLocation = chakraT?.bodyLocation ?? chakra.bodyLocation;
+  const balanced = chakraT?.balanced ?? chakra.balanced;
+  const unbalanced = chakraT?.unbalanced ?? chakra.unbalanced;
+  const blockages = chakraT?.blockages ?? chakra.blockages;
+  const extraContent = chakraT?.extraContent ?? chakra.extraContent;
 
   return (
     <motion.div
@@ -50,7 +62,7 @@ export default function ChakraSlideCard({ chakra, index = 0, className }: Chakra
           className="font-serif text-lg text-center px-6"
           style={{ color: `${chakra.chakraColor}90` }}
         >
-          {chakra.concept}
+          {concept}
         </p>
         <p className="text-xs text-[var(--color-foreground-faint)] text-center px-6 max-w-md">
           {chakra.imageNote || `Body illustration — dominant ${chakra.chakraColor} color`}
@@ -71,7 +83,7 @@ export default function ChakraSlideCard({ chakra, index = 0, className }: Chakra
         {/* Header */}
         <div className="space-y-1">
           <h3 className="font-serif font-semibold text-lg lg:text-xl text-[var(--color-foreground)]">
-            {chakra.sanskritName} — {chakra.concept.replace(' Chakra', '')}
+            {chakra.sanskritName} — {concept.replace(' Chakra', '')}
           </h3>
           <p
             className="font-serif text-2xl font-bold"
@@ -84,7 +96,7 @@ export default function ChakraSlideCard({ chakra, index = 0, className }: Chakra
         {/* Attributes */}
         <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-sm">
           <div>
-            <span className="text-[var(--color-foreground-faint)] text-xs uppercase tracking-wider">Color</span>
+            <span className="text-[var(--color-foreground-faint)] text-xs uppercase tracking-wider">{t?.ui.color ?? 'Color'}</span>
             <div className="flex items-center gap-2 mt-0.5">
               <span
                 className="w-3 h-3 rounded-full border border-black/10"
@@ -96,33 +108,33 @@ export default function ChakraSlideCard({ chakra, index = 0, className }: Chakra
             </div>
           </div>
           <div>
-            <span className="text-[var(--color-foreground-faint)] text-xs uppercase tracking-wider">Element</span>
+            <span className="text-[var(--color-foreground-faint)] text-xs uppercase tracking-wider">{t?.ui.element ?? 'Element'}</span>
             <p className="text-[var(--color-foreground-muted)] mt-0.5">{chakra.element}</p>
           </div>
           <div>
-            <span className="text-[var(--color-foreground-faint)] text-xs uppercase tracking-wider">Location</span>
-            <p className="text-[var(--color-foreground-muted)] mt-0.5">{chakra.bodyLocation}</p>
+            <span className="text-[var(--color-foreground-faint)] text-xs uppercase tracking-wider">{t?.ui.location ?? 'Location'}</span>
+            <p className="text-[var(--color-foreground-muted)] mt-0.5">{bodyLocation}</p>
           </div>
           <div>
-            <span className="text-[var(--color-foreground-faint)] text-xs uppercase tracking-wider">Energy</span>
-            <p className="text-[var(--color-foreground-muted)] mt-0.5">{chakra.energy}</p>
+            <span className="text-[var(--color-foreground-faint)] text-xs uppercase tracking-wider">{t?.ui.energy ?? 'Energy'}</span>
+            <p className="text-[var(--color-foreground-muted)] mt-0.5">{energy}</p>
           </div>
         </div>
 
         {/* Focus */}
         <div className="text-sm">
-          <span className="text-[var(--color-foreground-faint)] text-xs uppercase tracking-wider">Focus</span>
-          <p className="text-[var(--color-foreground)] font-medium mt-0.5">{chakra.focus}</p>
+          <span className="text-[var(--color-foreground-faint)] text-xs uppercase tracking-wider">{t?.ui.focus ?? 'Focus'}</span>
+          <p className="text-[var(--color-foreground)] font-medium mt-0.5">{focus}</p>
         </div>
 
         {/* Balanced / Unbalanced */}
         <div className="grid grid-cols-2 gap-4 text-sm">
           <div className="space-y-2">
             <span className="text-[var(--color-foreground-faint)] text-xs uppercase tracking-wider">
-              Balanced Expression
+              {t?.ui.balancedExpression ?? 'Balanced Expression'}
             </span>
             <ul className="space-y-1">
-              {chakra.balanced.map((item) => (
+              {balanced.map((item) => (
                 <li key={item} className="text-[var(--color-foreground-muted)] flex items-start gap-1.5">
                   <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: chakra.chakraColor }} />
                   {item}
@@ -132,10 +144,10 @@ export default function ChakraSlideCard({ chakra, index = 0, className }: Chakra
           </div>
           <div className="space-y-2">
             <span className="text-[var(--color-foreground-faint)] text-xs uppercase tracking-wider">
-              Unbalanced Expression
+              {t?.ui.unbalancedExpression ?? 'Unbalanced Expression'}
             </span>
             <ul className="space-y-1">
-              {chakra.unbalanced.map((item) => (
+              {unbalanced.map((item) => (
                 <li key={item} className="text-[var(--color-foreground-muted)] flex items-start gap-1.5">
                   <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0 bg-[var(--color-foreground-faint)]" />
                   {item}
@@ -148,16 +160,16 @@ export default function ChakraSlideCard({ chakra, index = 0, className }: Chakra
         {/* Blockages */}
         <div className="text-sm border-t border-[var(--color-border-subtle)] pt-3">
           <span className="text-[var(--color-foreground-faint)] text-xs uppercase tracking-wider">
-            Primary Blockages
+            {t?.ui.primaryBlockages ?? 'Primary Blockages'}
           </span>
-          <p className="text-[var(--color-foreground-muted)] mt-0.5 font-medium">{chakra.blockages}</p>
+          <p className="text-[var(--color-foreground-muted)] mt-0.5 font-medium">{blockages}</p>
         </div>
 
         {/* Extra content (e.g. Heart Chakra's Human/Spiritual Love) */}
-        {chakra.extraContent && (
+        {extraContent && (
           <div className="text-sm border-t border-[var(--color-border-subtle)] pt-3">
             <div className="text-[var(--color-foreground-muted)] whitespace-pre-line leading-relaxed">
-              {chakra.extraContent}
+              {extraContent}
             </div>
           </div>
         )}

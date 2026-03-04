@@ -7,9 +7,13 @@ import LevelNav from '@/components/teaching/LevelNav';
 import TeachingSlideCard from '@/components/teaching/TeachingSlideCard';
 import ChakraSlideCard from '@/components/teaching/ChakraSlideCard';
 import { PdfExportButton } from '@/components/ui/PdfExportButton';
+import LanguageSelector from '@/components/teaching/LanguageSelector';
+import { useLanguage } from '@/lib/i18n';
 
 export default function Level2Page() {
   const level = teachingLevels[1];
+  const { t } = useLanguage();
+  const levelT = t?.levels['2'];
 
   const sacredSpaceSlides = level2Slides.filter((s) => s.section === 'sacred-space');
   const chakraIntroSlides = level2Slides.filter((s) => s.section === 'chakras');
@@ -23,13 +27,13 @@ export default function Level2Page() {
           href="/"
           className="font-sans text-sm font-medium tracking-wide uppercase text-[var(--color-foreground)]"
         >
-          ROSES OS
+          {t?.ui.rosesOs ?? 'ROSES OS'}
         </Link>
         <Link
           href="/teaching"
           className="text-sm text-[var(--color-foreground-muted)] hover:text-[var(--color-foreground)] transition-colors"
         >
-          &larr; All Levels
+          &larr; {t?.ui.allLevels ?? 'All Levels'}
         </Link>
       </header>
 
@@ -43,18 +47,21 @@ export default function Level2Page() {
             {/* Header */}
             <div className="space-y-3">
               <h1 className="font-serif text-3xl md:text-4xl text-[var(--color-foreground)]">
-                Level 2: {level.title}
+                {levelT?.title ?? `Level 2: ${level.title}`}
               </h1>
               <p className="text-[var(--color-foreground-muted)] max-w-2xl">
-                {level.description}
+                {levelT?.description ?? level.description}
               </p>
-              <PdfExportButton className="mt-4" />
+              <div className="flex items-center gap-3 mt-4">
+                <PdfExportButton />
+                <LanguageSelector />
+              </div>
             </div>
 
             {/* Sacred Space Section */}
             <section className="space-y-8">
               <h2 className="font-serif text-2xl text-[var(--color-foreground)]">
-                Sacred Space
+                {t?.ui.sacredSpace ?? 'Sacred Space'}
               </h2>
               {sacredSpaceSlides.map((slide, index) => (
                 <TeachingSlideCard
@@ -68,7 +75,7 @@ export default function Level2Page() {
             {/* Chakra Introduction */}
             <section className="space-y-8">
               <h2 className="font-serif text-2xl text-[var(--color-foreground)]">
-                The Chakra System
+                {t?.ui.theChakraSystem ?? 'The Chakra System'}
               </h2>
               {chakraIntroSlides.map((slide, index) => (
                 <TeachingSlideCard
@@ -93,7 +100,7 @@ export default function Level2Page() {
             {/* Cleansing & Recovery */}
             <section className="space-y-8">
               <h2 className="font-serif text-2xl text-[var(--color-foreground)]">
-                Cleansing &amp; Recovery
+                {t?.ui.cleansingAndRecovery ?? 'Cleansing & Recovery'}
               </h2>
               {cleansingSlides.map((slide, index) => (
                 <TeachingSlideCard
@@ -107,7 +114,7 @@ export default function Level2Page() {
             {/* Golden Sticky Roses */}
             <section className="space-y-8">
               <h2 className="font-serif text-2xl text-[var(--color-foreground)]">
-                Golden Sticky Roses
+                {t?.ui.goldenStickyRoses ?? 'Golden Sticky Roses'}
               </h2>
               {goldenStickySlides.map((slide, index) => (
                 <TeachingSlideCard

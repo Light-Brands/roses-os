@@ -6,9 +6,13 @@ import { level1Slides } from '@/lib/data/teaching-slides';
 import LevelNav from '@/components/teaching/LevelNav';
 import TeachingSlideCard from '@/components/teaching/TeachingSlideCard';
 import { PdfExportButton } from '@/components/ui/PdfExportButton';
+import LanguageSelector from '@/components/teaching/LanguageSelector';
+import { useLanguage } from '@/lib/i18n';
 
 export default function Level1Page() {
   const level = teachingLevels[0];
+  const { t } = useLanguage();
+  const levelT = t?.levels['1'];
 
   return (
     <div className="min-h-screen bg-[var(--color-background)]">
@@ -17,13 +21,13 @@ export default function Level1Page() {
           href="/"
           className="font-sans text-sm font-medium tracking-wide uppercase text-[var(--color-foreground)]"
         >
-          ROSES OS
+          {t?.ui.rosesOs ?? 'ROSES OS'}
         </Link>
         <Link
           href="/teaching"
           className="text-sm text-[var(--color-foreground-muted)] hover:text-[var(--color-foreground)] transition-colors"
         >
-          &larr; All Levels
+          &larr; {t?.ui.allLevels ?? 'All Levels'}
         </Link>
       </header>
 
@@ -37,12 +41,15 @@ export default function Level1Page() {
             {/* Header */}
             <div className="space-y-3">
               <h1 className="font-serif text-3xl md:text-4xl text-[var(--color-foreground)]">
-                Level 1: {level.title}
+                {levelT?.title ?? `Level 1: ${level.title}`}
               </h1>
               <p className="text-[var(--color-foreground-muted)] max-w-2xl">
-                {level.description}
+                {levelT?.description ?? level.description}
               </p>
-              <PdfExportButton className="mt-4" />
+              <div className="flex items-center gap-3 mt-4">
+                <PdfExportButton />
+                <LanguageSelector />
+              </div>
             </div>
 
             {/* Teaching Slides */}
