@@ -573,7 +573,8 @@ export const level2CleansingSlides: TeachingSlide[] = [
     teachingText:
       'After cleansing, the energy recovery process is repeated at a deeper level. The Rose is sent out to gather and return your own energy to each individual chakra, restoring sovereignty, vitality, and wholeness to each energy center.',
     originalImage: '25b-energyrecoveryeachchakra-original.jpg',
-    imageNote: 'Use Level 1 reimagined 17-recoveryrose.PNG as reference.',
+    reimaginedImage: '17-recoveryrose.PNG',
+    imageNote: 'Placeholder: using Level 1 recovery rose. Dedicated Level 2 version needs to be created.',
     level: 2,
     section: 'cleansing',
   },
