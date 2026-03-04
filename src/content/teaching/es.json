@@ -1,0 +1,350 @@
+{
+  "ui": {
+    "teacherVisualAidManual": "Teacher Visual Aid Manual",
+    "facilitatorCompanion": "A facilitator’s visual companion for teaching Rose Meditation.",
+    "selectTeachingLevel": "Select a Teaching Level",
+    "allLevels": "All Levels",
+    "level": "Level",
+    "slide": "Slide",
+    "designerNote": "Designer note",
+    "downloadPdf": "Download PDF",
+    "sacredSpace": "Sacred Space",
+    "theChakraSystem": "The Chakra System",
+    "cleansingAndRecovery": "Cleansing & Recovery",
+    "goldenStickyRoses": "Golden Sticky Roses",
+    "balancedExpression": "Balanced Expression",
+    "unbalancedExpression": "Unbalanced Expression",
+    "primaryBlockages": "Primary Blockages",
+    "color": "Color",
+    "element": "Element",
+    "location": "Location",
+    "energy": "Energy",
+    "focus": "Focus",
+    "lineage": "Lineage",
+    "rosesOs": "ROSES OS"
+  },
+  "opening": {
+    "agreements": {
+      "title": "Agreements & Virtues",
+      "text": "Before beginning, all participants honor these agreements:",
+      "items": [
+        "Punctuality",
+        "Confidentiality",
+        "Co-responsibility",
+        "Trust",
+        "Patience, Empathy and Compassion"
+      ]
+    },
+    "sacredCompanion": {
+      "title": "Sacred Companion",
+      "paragraphs": [
+        "This manual is a sacred companion for those who have been initiated into the path of Rose Meditation.",
+        "These teachings are part of a living energetic lineage. They invite inner stillness, gentle discipline, and deep self-responsibility. ROSES OS is not a system to be imposed or taught casually — it is an energetic operating system revealed through direct practice and transmission."
+      ],
+      "guidelinesTitle": "To honor the integrity of this work:",
+      "guidelinesItems": [
+        "Please do not share this material with others who have not received the transmission.",
+        "This manual is for personal use only and cannot be used to teach or guide others.",
+        "You are welcome to support children under your care with these tools."
+      ],
+      "closing": "Let each page be a reminder of the sacred space within you."
+    },
+    "history": {
+      "title": "History & Lineage",
+      "text": "Aura Reading emerged in the 1960s, in California, channeled by a North American called Lewis S. Bostwick. Founder of the Berkeley Psychic Institute and the Church of the Divine Man, he channeled and systematized the techniques and tools sent by the angels, to assist in the process of evolution of humanity.",
+      "lineage": "Berkeley Psychic Institute → Anastasia Plunk → Angelina Ataide → ROSES OS"
+    }
+  },
+  "levels": {
+    "1": {
+      "title": "Level 1: Foundation",
+      "subtitle": "Core Practices",
+      "description": "The essential practices that form the foundation of all ROSES OS work. Breath, body, heart, and the Rose Meditation."
+    },
+    "2": {
+      "title": "Level 2: Deepening",
+      "subtitle": "Energetic & Relational",
+      "description": "Advanced practices for subtle body awareness, emotional alchemy, and relational coherence."
+    },
+    "3": {
+      "title": "Level 3: Teaching",
+      "subtitle": "Transmission & Facilitation",
+      "description": "Practices and principles for holding space, transmitting the work, and serving as a guardian of the lineage."
+    }
+  },
+  "slides": {
+    "l1-the-rose": {
+      "concept": "The Rose",
+      "teachingText": "The Rose is the foundational symbol and tool of this practice — a living energetic instrument used throughout all levels of the work."
+    },
+    "l1-posture": {
+      "concept": "Meditation Posture",
+      "teachingText": "Proper meditation posture is seated upright in a chair. Feet are flat on the floor, hands resting gently on the thighs or knees, spine upright, eyes closed. The body is relaxed yet alert — grounded and receptive."
+    },
+    "l1-grounding-cord": {
+      "concept": "Grounding Cord",
+      "teachingText": "The grounding cord is an energetic connection that extends from the base of the spine (first chakra) downward into the center of the Earth. It anchors your energy body to the planet, providing stability, safety, and a channel for releasing unwanted energy."
+    },
+    "l1-golden-sun": {
+      "concept": "Golden Sun",
+      "teachingText": "The Golden Sun is a tool for replenishing and restoring your own energy. Visualize a radiant golden sun above your head. It calls back your own life-force energy from wherever you may have left it — in people, places, situations, or time. It fills you with your own highest vibration."
+    },
+    "l1-aura-exercise": {
+      "concept": "An Exercise to Feel Your Aura",
+      "teachingText": "The aura is the energetic field that surrounds your physical body. This exercise helps you become aware of its presence, its edges, and its quality. The aura consists of multiple layers radiating outward from the body."
+    },
+    "l1-grounding-expansion": {
+      "concept": "Expansion of Grounding Cord",
+      "teachingText": "Once you are aware of your aura, the grounding cord practice deepens. You ground not only the physical body but also the aura itself — allowing the entire energy field to anchor into the Earth."
+    },
+    "l1-full-setup": {
+      "concept": "Full Meditation Setup",
+      "teachingText": "The complete foundational setup combines posture, aura, and expanded grounding cord: the person is seated in proper posture, enclosed within their aura, with the grounding cord descending into the earth."
+    },
+    "l1-golden-sun-fills": {
+      "concept": "Golden Sun Fills You",
+      "teachingText": "The Golden Sun above the crown pours golden light downward, filling the entire aura and body with your own highest vibration. This completes the full energetic architecture: posture, aura, grounding cord, and golden sun — all active together."
+    },
+    "l1-earth-circuit": {
+      "concept": "Circuit of the Energy of the Earth",
+      "teachingText": "The Earth circuit is an energetic pathway that draws the energy of the Earth upward through the feet, rising through the legs and into the body. This circuit connects you to the grounding, nourishing, stabilizing force of the planet."
+    },
+    "l1-cosmos-circuit": {
+      "concept": "Circuit of the Energy of the Cosmos",
+      "teachingText": "The Cosmic circuit is an energetic pathway that draws cosmic energy downward through the crown of the head (7th chakra) and into the body. This circuit connects you to the higher frequencies of universal consciousness, inspiration, and spiritual guidance."
+    },
+    "l1-combined-circuit": {
+      "concept": "Circuit of Energy of Cosmos and Earth",
+      "teachingText": "When both circuits are activated simultaneously, the energies of the Earth and Cosmos flow together through the body. Earth energy rises from below; Cosmic energy descends from above. They meet and blend within the body, creating a unified field of balanced, integrated energy."
+    },
+    "l1-rose-tool": {
+      "concept": "The Rose (as Energetic Tool)",
+      "teachingText": "The Rose is used as a living energetic instrument throughout the practice. It has roots (connection to source), a stem (channel of energy), and a bloom (the active, radiant tool). The Rose can be placed, moved, opened, closed, and released according to the needs of the meditation."
+    },
+    "l1-four-roses": {
+      "concept": "Roses of Protection, Observation and Separation",
+      "teachingText": "Roses are placed at the edges of the aura to serve as energetic sentinels. They perform three functions:\n\n1. Protection — They define and guard the boundary of your aura\n2. Observation — They help you notice what energies are approaching or interacting with your field\n3. Separation — They create healthy energetic distinction between your energy and the energy of others"
+    },
+    "l1-cleansing-rose": {
+      "concept": "Cleansing Rose",
+      "teachingText": "The Cleansing Rose is placed outside of the aura. It is used to absorb and transmute foreign or stagnant energy from within your field. Energy that does not belong to you — from other people, environments, or experiences — is drawn out of the aura and into the Cleansing Rose, where it is neutralized."
+    },
+    "l1-energy-recovery": {
+      "concept": "Energy Recovery of Each Chakra",
+      "teachingText": "After cleansing, the Rose is used to recover your own energy that has been left in or taken by others. The Rose is sent out as an instrument to gather and return your own life-force energy to each chakra, restoring fullness and sovereignty to each energy center."
+    },
+    "l1-discharge": {
+      "concept": "Discharge Excess Energy",
+      "teachingText": "After deep meditation or energy work, excess energy may accumulate in the body. To discharge it, lean forward from the seated position with hands reaching toward the ground. Allow the excess energy to flow out through the hands and into the earth, returning the body to a calm, balanced state."
+    },
+    "l2-sacred-space": {
+      "concept": "Let’s Create Your Sacred Space",
+      "teachingText": "Level 2 begins with creating your own sacred space — an internal energetic environment that serves as your meditation home. This is the space from which all deeper work is conducted."
+    },
+    "l2-6th-7th-chakras": {
+      "concept": "The 6th and 7th Chakras (Sacred Space)",
+      "teachingText": "Understanding the locations and roles of the upper chakras is essential for Level 2 work:\n\n• 6th Chakra (Third Eye) — Located at the center of the forehead, between and slightly above the eyebrows\n• 7th Chakra (Crown) — Located at the top of the head"
+    },
+    "l2-physical-space": {
+      "concept": "Let’s Prepare Your Physical Space",
+      "teachingText": "Before meditation, prepare your physical environment to support the energetic work. The external space should mirror the internal intention: clean, clear, quiet, and intentionally held."
+    },
+    "l2-protection-space": {
+      "concept": "Protection of the Space",
+      "teachingText": "The physical meditation space is protected by creating an energetic grid using roses. Golden roses are placed at the four corners (and above/below) of the space, connected by lines of golden energy forming a sacred geometric structure — a container for the work."
+    },
+    "l2-cleansing-space": {
+      "concept": "Cleansing of the Space",
+      "teachingText": "Once the space is protected, it is cleansed. A large Cleansing Rose is placed above the grid, and golden energy pours downward through the entire structure, clearing all foreign, stagnant, or disruptive energies from the space."
+    },
+    "l2-owning-space": {
+      "concept": "Owning Your Space",
+      "teachingText": "After protection and cleansing, you claim ownership of the space. This is an act of energetic sovereignty — declaring the space as yours, filling it with your own energy and intention. The space becomes an extension of your aura and your practice."
+    },
+    "l2-chakras-intro": {
+      "concept": "Let’s Talk About Chakras",
+      "teachingText": "The chakra system is the energetic anatomy of the human body. There are seven primary chakras, each governing specific aspects of physical, emotional, mental, and spiritual life."
+    },
+    "l2-seven-chakras": {
+      "concept": "The Seven Chakras",
+      "teachingText": "The seven primary chakras, from crown to root:\n\n7. Crown — Top of head\n6. Third Eye — Center of forehead\n5. Throat — Throat\n4. Heart — Center of chest\n3. Solar Plexus — Upper abdomen\n2. Sacral — Lower abdomen\n1. Root — Base of spine"
+    },
+    "l2-cleansing-aura-layers": {
+      "concept": "Cleansing of Each Aura Layer",
+      "teachingText": "The aura is composed of seven layers, each corresponding to a chakra. In Level 2, each layer is individually cleansed from the outermost to the innermost:\n\n7. 7th Aura layer\n6. 6th Aura layer\n5. 5th Aura layer\n4. 4th Aura layer\n3. 3rd Aura layer\n2. 2nd Aura layer\n1. 1st Aura layer"
+    },
+    "l2-cleansing-each-chakra": {
+      "concept": "Cleansing of Each Chakra",
+      "teachingText": "Each individual chakra is cleansed using roses. The roses address two dimensions:\n\n• Dynamics of the Past — Energetic patterns, imprints, and blockages carried from past experiences\n• Dynamics of the Present — Current energetic influences, relationships, and situations affecting the chakra"
+    },
+    "l2-energy-recovery": {
+      "concept": "Energy Recovery of Each Chakra (Level 2)",
+      "teachingText": "After cleansing, the energy recovery process is repeated at a deeper level. The Rose is sent out to gather and return your own energy to each individual chakra, restoring sovereignty, vitality, and wholeness to each energy center."
+    },
+    "l2-golden-sticky-1": {
+      "concept": "Golden Sticky Roses — Phase 1 (Chakra Placement)",
+      "teachingText": "Golden sticky roses are placed on each of the seven chakras, drawing out foreign energy lodged in the energy centers."
+    },
+    "l2-golden-sticky-2": {
+      "concept": "Golden Sticky Roses — Phase 2 (Body Placement)",
+      "teachingText": "Golden sticky roses are placed at the joints and extremities of the body — shoulders, elbows, wrists, hands, hips, knees, ankles, feet — drawing out foreign energy stored in the physical body."
+    },
+    "l2-golden-sticky-3": {
+      "concept": "Golden Sticky Roses — Phase 3 (Full Body Coverage)",
+      "teachingText": "Golden sticky roses are placed throughout the entire body — covering the torso, limbs, and all remaining areas — for a thorough, complete energetic cleansing."
+    },
+    "l2-golden-sticky-4": {
+      "concept": "Golden Sticky Roses — Phase 4 (Integration)",
+      "teachingText": "After the golden sticky roses have done their work, a large Golden Rose appears above the head. All foreign energy gathered by the sticky roses is released, and the entire body is bathed in golden light — restoring, sealing, and integrating the energy body."
+    },
+    "l3-analyzer": {
+      "concept": "The Analyzer",
+      "teachingText": "The Analyzer is an advanced tool introduced in Level 3. It is an energetic point located at the back of the head, at the base of the skull (the occipital ridge / brainstem area). The Analyzer is used for deeper perception, reading, and discernment of energy — a tool for precise energetic analysis."
+    }
+  },
+  "chakras": {
+    "l2-chakra-root": {
+      "concept": "Root Chakra",
+      "teachingText": "Muladhara — Grounding & Safety",
+      "focus": "Stability — Safety — Embodiment",
+      "energy": "Masculine — Survival / Foundation",
+      "bodyLocation": "Base of spine, Legs, Feet",
+      "balanced": [
+        "Grounded presence",
+        "Physical vitality",
+        "Trust in life",
+        "Feeling safe in the body"
+      ],
+      "unbalanced": [
+        "Fear and insecurity",
+        "Survival anxiety",
+        "Disconnection from body",
+        "Scarcity mindset"
+      ],
+      "blockages": "Fear — Insecurity — Survival Trauma"
+    },
+    "l2-chakra-sacral": {
+      "concept": "Sacral Chakra",
+      "teachingText": "Svadhisthana — Emotion & Creativity",
+      "focus": "Emotions — Creativity — Pleasure",
+      "energy": "Feminine — Flow & Flexibility",
+      "bodyLocation": "Lower abdomen, Sexual Organs",
+      "balanced": [
+        "Emotional well-being",
+        "Sensuality and intimacy",
+        "Passion and pleasure",
+        "Adaptability"
+      ],
+      "unbalanced": [
+        "Depression and numbness",
+        "Sexual dysfunction",
+        "Emotional instability",
+        "Fear of change"
+      ],
+      "blockages": "Shame — Emotional Repression — Guilt"
+    },
+    "l2-chakra-solar-plexus": {
+      "concept": "Solar Plexus Chakra",
+      "teachingText": "Manipura — Willpower & Confidence",
+      "focus": "Personal Power — Self-Esteem — Drive",
+      "energy": "Masculine — Power & Transformation",
+      "bodyLocation": "Upper abdomen, Diaphragm",
+      "balanced": [
+        "Confidence and motivation",
+        "Responsible and disciplined",
+        "Healthy sense of self",
+        "Autonomy"
+      ],
+      "unbalanced": [
+        "Low self-esteem",
+        "Aggression or controlling",
+        "Stubborn and domineering",
+        "Lack of direction or purpose"
+      ],
+      "blockages": "Self-Doubt — Insecurity — Fear of Rejection"
+    },
+    "l2-chakra-heart": {
+      "concept": "Heart Chakra",
+      "teachingText": "Anahata — Love & Integration",
+      "focus": "Love — Compassion — Connection",
+      "energy": "Bridge between physical & spiritual",
+      "bodyLocation": "Center of chest, Heart, Lungs",
+      "balanced": [
+        "Compassion and empathy",
+        "Emotional openness",
+        "Forgiveness",
+        "Healthy intimacy and self-love"
+      ],
+      "unbalanced": [
+        "Emotional withdrawal or over-giving",
+        "Fear of intimacy",
+        "Cold or detachment",
+        "Difficulty forgiving"
+      ],
+      "blockages": "Grief — Betrayal — Heartbreak",
+      "extraContent": "Human Love & Spiritual Love:\n\nHuman Love — Statement: I LOVE — Empathy, compassion, forgiveness, healthy relationships, romantic and familial love.\n\nSpiritual Love — Statement: I AM LOVE — Unconditional compassion, interconnectedness, divine and universal love, oneness."
+    },
+    "l2-chakra-throat": {
+      "concept": "Throat Chakra",
+      "teachingText": "Vishuddha — Communication & Expression",
+      "focus": "Communication — Truth — Authenticity",
+      "energy": "Learning to align will with divine truth",
+      "bodyLocation": "Throat, Neck, Jaw, Mouth",
+      "balanced": [
+        "Clear, honest communication",
+        "Authentic self-expression",
+        "Good listener",
+        "Strong voice and balanced speech"
+      ],
+      "unbalanced": [
+        "Fear of speaking up",
+        "Being unheard or misunderstood",
+        "People-pleasing",
+        "Suppressed feelings or lies"
+      ],
+      "blockages": "Suppressed Truth — Fear of Expression — Miscommunication"
+    },
+    "l2-chakra-third-eye": {
+      "concept": "Third Eye Chakra",
+      "teachingText": "Ajna — Intuition & Insight",
+      "focus": "Imagination — Perception — Visualization",
+      "energy": "Feminine aspects of awareness",
+      "bodyLocation": "Forehead, Brow, Eye center",
+      "balanced": [
+        "Clear seeing and intuition",
+        "Good memory and imagination",
+        "Inner location",
+        "Wisdom and vision"
+      ],
+      "unbalanced": [
+        "Overthinking",
+        "Mental fog",
+        "Disconnection with inner guidance",
+        "Escaping reality or spiritual bypassing"
+      ],
+      "blockages": "Suppressed Truth — Fear of Expression — Miscommunication"
+    },
+    "l2-chakra-crown": {
+      "concept": "Crown Chakra",
+      "teachingText": "Sahasrara — Spirituality & Consciousness",
+      "focus": "Spiritual Connection — Inner Wisdom — Higher States of Awareness",
+      "energy": "Transcending ego, merging with source",
+      "bodyLocation": "Top of head",
+      "balanced": [
+        "Spiritual faith and connection",
+        "Inner peace, trust, and wisdom",
+        "Openness and awareness",
+        "Sense of life purpose"
+      ],
+      "unbalanced": [
+        "Spiritual emptiness",
+        "Existential doubt",
+        "Feeling isolated or alone",
+        "Lack of purpose"
+      ],
+      "blockages": "Disconnection — Cynicism — Loss of Meaning"
+    }
+  },
+  "_translationStatus": "pending",
+  "_note": "This file contains English text as placeholder. All values need to be translated to the target language."
+}
