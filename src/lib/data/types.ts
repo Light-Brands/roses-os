@@ -141,6 +141,34 @@ export interface TeachingLevel {
   description: string;
 }
 
+/** Teaching slide -- pairs an image with teaching text */
+export interface TeachingSlide {
+  id: string;
+  slideNumber: number | string;
+  concept: string;
+  teachingText: string;
+  originalImage?: string;
+  reimaginedImage?: string;
+  imageNote?: string;
+  level: number;
+  section?: string;
+}
+
+/** Chakra-specific teaching slide with detailed chakra data */
+export interface ChakraSlideData extends TeachingSlide {
+  sanskritName: string;
+  chakraColor: string;
+  element: string;
+  coreStatement: string;
+  focus: string;
+  bodyLocation: string;
+  energy: string;
+  balanced: string[];
+  unbalanced: string[];
+  blockages: string;
+  extraContent?: string;
+}
+
 /** Program agreement */
 export interface Agreement {
   id: string;
