@@ -1,350 +1,349 @@
 {
   "ui": {
-    "teacherVisualAidManual": "Teacher Visual Aid Manual",
-    "facilitatorCompanion": "A facilitator’s visual companion for teaching Rose Meditation.",
-    "selectTeachingLevel": "Select a Teaching Level",
-    "allLevels": "All Levels",
-    "level": "Level",
-    "slide": "Slide",
-    "designerNote": "Designer note",
-    "downloadPdf": "Download PDF",
-    "sacredSpace": "Sacred Space",
-    "theChakraSystem": "The Chakra System",
-    "cleansingAndRecovery": "Cleansing & Recovery",
-    "goldenStickyRoses": "Golden Sticky Roses",
-    "balancedExpression": "Balanced Expression",
-    "unbalancedExpression": "Unbalanced Expression",
-    "primaryBlockages": "Primary Blockages",
+    "teacherVisualAidManual": "Manual Visual para Profesores",
+    "facilitatorCompanion": "Un compañero visual del facilitador para la enseñanza de la Meditación de la Rosa.",
+    "selectTeachingLevel": "Seleccione un Nivel de Enseñanza",
+    "allLevels": "Todos los Niveles",
+    "level": "Nivel",
+    "slide": "Diapositiva",
+    "designerNote": "Nota del diseñador",
+    "downloadPdf": "Descargar PDF",
+    "sacredSpace": "Espacio Sagrado",
+    "theChakraSystem": "El Sistema de Chakras",
+    "cleansingAndRecovery": "Limpieza y Recuperación",
+    "goldenStickyRoses": "Rosas Doradas Adhesivas",
+    "balancedExpression": "Expresión Equilibrada",
+    "unbalancedExpression": "Expresión Desequilibrada",
+    "primaryBlockages": "Bloqueos Primarios",
     "color": "Color",
-    "element": "Element",
-    "location": "Location",
-    "energy": "Energy",
-    "focus": "Focus",
-    "lineage": "Lineage",
+    "element": "Elemento",
+    "location": "Ubicación",
+    "energy": "Energía",
+    "focus": "Enfoque",
+    "lineage": "Linaje",
     "rosesOs": "ROSES OS"
   },
   "opening": {
     "agreements": {
-      "title": "Agreements & Virtues",
-      "text": "Before beginning, all participants honor these agreements:",
+      "title": "Acuerdos y Virtudes",
+      "text": "Antes de comenzar, todos los participantes honran estos acuerdos:",
       "items": [
-        "Punctuality",
-        "Confidentiality",
-        "Co-responsibility",
-        "Trust",
-        "Patience, Empathy and Compassion"
+        "Puntualidad",
+        "Confidencialidad",
+        "Corresponsabilidad",
+        "Confianza",
+        "Paciencia, Empatía y Compasión"
       ]
     },
     "sacredCompanion": {
-      "title": "Sacred Companion",
+      "title": "Compañero Sagrado",
       "paragraphs": [
-        "This manual is a sacred companion for those who have been initiated into the path of Rose Meditation.",
-        "These teachings are part of a living energetic lineage. They invite inner stillness, gentle discipline, and deep self-responsibility. ROSES OS is not a system to be imposed or taught casually — it is an energetic operating system revealed through direct practice and transmission."
+        "Este manual es un compañero sagrado para quienes han sido iniciados en el camino de la Meditación de la Rosa.",
+        "Estas enseñanzas forman parte de un linaje energético vivo. Invitan a la quietud interior, la disciplina gentil y la profunda autorresponsabilidad. ROSES OS no es un sistema para ser impuesto o enseñado casualmente — es un sistema operativo energético revelado a través de la práctica directa y la transmisión."
       ],
-      "guidelinesTitle": "To honor the integrity of this work:",
+      "guidelinesTitle": "Para honrar la integridad de este trabajo:",
       "guidelinesItems": [
-        "Please do not share this material with others who have not received the transmission.",
-        "This manual is for personal use only and cannot be used to teach or guide others.",
-        "You are welcome to support children under your care with these tools."
+        "Por favor, no comparta este material con otras personas que no hayan recibido la transmisión.",
+        "Este manual es solo para uso personal y no puede ser utilizado para enseñar u orientar a otros.",
+        "Puede apoyar a los niños bajo su cuidado con estas herramientas."
       ],
-      "closing": "Let each page be a reminder of the sacred space within you."
+      "closing": "Que cada página sea un recordatorio del espacio sagrado dentro de usted."
     },
     "history": {
-      "title": "History & Lineage",
-      "text": "Aura Reading emerged in the 1960s, in California, channeled by a North American called Lewis S. Bostwick. Founder of the Berkeley Psychic Institute and the Church of the Divine Man, he channeled and systematized the techniques and tools sent by the angels, to assist in the process of evolution of humanity.",
+      "title": "Historia y Linaje",
+      "text": "La Lectura del Aura surgió en la década de 1960, en California, canalizada por un norteamericano llamado Lewis S. Bostwick. Fundador del Berkeley Psychic Institute y de la Church of the Divine Man, canalizó y sistematizó las técnicas y herramientas enviadas por los ángeles, para asistir en el proceso de evolución de la humanidad.",
       "lineage": "Berkeley Psychic Institute → Anastasia Plunk → Angelina Ataide → ROSES OS"
     }
   },
   "levels": {
     "1": {
-      "title": "Level 1: Foundation",
-      "subtitle": "Core Practices",
-      "description": "The essential practices that form the foundation of all ROSES OS work. Breath, body, heart, and the Rose Meditation."
+      "title": "Nivel 1: Fundamento",
+      "subtitle": "Prácticas Fundamentales",
+      "description": "Las prácticas esenciales que forman la base de todo el trabajo de ROSES OS. Respiración, cuerpo, corazón y la Meditación de la Rosa."
     },
     "2": {
-      "title": "Level 2: Deepening",
-      "subtitle": "Energetic & Relational",
-      "description": "Advanced practices for subtle body awareness, emotional alchemy, and relational coherence."
+      "title": "Nivel 2: Profundización",
+      "subtitle": "Energético y Relacional",
+      "description": "Prácticas avanzadas para la conciencia del cuerpo sutil, alquimia emocional y coherencia relacional."
     },
     "3": {
-      "title": "Level 3: Teaching",
-      "subtitle": "Transmission & Facilitation",
-      "description": "Practices and principles for holding space, transmitting the work, and serving as a guardian of the lineage."
+      "title": "Nivel 3: Enseñanza",
+      "subtitle": "Transmisión y Facilitación",
+      "description": "Prácticas y principios para sostener el espacio, transmitir el trabajo y servir como guardián del linaje."
     }
   },
   "slides": {
     "l1-the-rose": {
-      "concept": "The Rose",
-      "teachingText": "The Rose is the foundational symbol and tool of this practice — a living energetic instrument used throughout all levels of the work."
+      "concept": "La Rosa",
+      "teachingText": "La Rosa es el símbolo y la herramienta fundamental de esta práctica — un instrumento energético vivo utilizado en todos los niveles del trabajo."
     },
     "l1-posture": {
-      "concept": "Meditation Posture",
-      "teachingText": "Proper meditation posture is seated upright in a chair. Feet are flat on the floor, hands resting gently on the thighs or knees, spine upright, eyes closed. The body is relaxed yet alert — grounded and receptive."
+      "concept": "Postura de Meditación",
+      "teachingText": "La postura correcta de meditación es sentada erguida en una silla. Los pies están apoyados en el suelo, las manos descansando suavemente sobre los muslos o las rodillas, la columna erguida, los ojos cerrados. El cuerpo está relajado pero alerta — enraizado y receptivo."
     },
     "l1-grounding-cord": {
-      "concept": "Grounding Cord",
-      "teachingText": "The grounding cord is an energetic connection that extends from the base of the spine (first chakra) downward into the center of the Earth. It anchors your energy body to the planet, providing stability, safety, and a channel for releasing unwanted energy."
+      "concept": "Cordón de Enraizamiento",
+      "teachingText": "El cordón de enraizamiento es una conexión energética que se extiende desde la base de la columna (primer chakra) hacia abajo hasta el centro de la Tierra. Ancla su cuerpo energético al planeta, proporcionando estabilidad, seguridad y un canal para liberar energía no deseada."
     },
     "l1-golden-sun": {
-      "concept": "Golden Sun",
-      "teachingText": "The Golden Sun is a tool for replenishing and restoring your own energy. Visualize a radiant golden sun above your head. It calls back your own life-force energy from wherever you may have left it — in people, places, situations, or time. It fills you with your own highest vibration."
+      "concept": "Sol Dorado",
+      "teachingText": "El Sol Dorado es una herramienta para reabastecer y restaurar su propia energía. Visualice un sol dorado radiante sobre su cabeza. Llama de vuelta su propia energía vital de dondequiera que la haya dejado — en personas, lugares, situaciones o en el tiempo. Lo llena con su vibración más elevada."
     },
     "l1-aura-exercise": {
-      "concept": "An Exercise to Feel Your Aura",
-      "teachingText": "The aura is the energetic field that surrounds your physical body. This exercise helps you become aware of its presence, its edges, and its quality. The aura consists of multiple layers radiating outward from the body."
+      "concept": "Un Ejercicio para Sentir Su Aura",
+      "teachingText": "El aura es el campo energético que rodea su cuerpo físico. Este ejercicio le ayuda a tomar conciencia de su presencia, sus bordes y su calidad. El aura consiste en múltiples capas que irradian hacia afuera del cuerpo."
     },
     "l1-grounding-expansion": {
-      "concept": "Expansion of Grounding Cord",
-      "teachingText": "Once you are aware of your aura, the grounding cord practice deepens. You ground not only the physical body but also the aura itself — allowing the entire energy field to anchor into the Earth."
+      "concept": "Expansión del Cordón de Enraizamiento",
+      "teachingText": "Una vez que usted es consciente de su aura, la práctica del cordón de enraizamiento se profundiza. Usted enraíza no solo el cuerpo físico, sino también el aura misma — permitiendo que todo el campo energético se ancle en la Tierra."
     },
     "l1-full-setup": {
-      "concept": "Full Meditation Setup",
-      "teachingText": "The complete foundational setup combines posture, aura, and expanded grounding cord: the person is seated in proper posture, enclosed within their aura, with the grounding cord descending into the earth."
+      "concept": "Configuración Completa de la Meditación",
+      "teachingText": "La configuración fundamental completa combina postura, aura y cordón de enraizamiento expandido: la persona está sentada en postura correcta, envuelta dentro de su aura, con el cordón de enraizamiento descendiendo hacia la tierra."
     },
     "l1-golden-sun-fills": {
-      "concept": "Golden Sun Fills You",
-      "teachingText": "The Golden Sun above the crown pours golden light downward, filling the entire aura and body with your own highest vibration. This completes the full energetic architecture: posture, aura, grounding cord, and golden sun — all active together."
+      "concept": "El Sol Dorado Lo Llena",
+      "teachingText": "El Sol Dorado sobre la corona derrama luz dorada hacia abajo, llenando toda el aura y el cuerpo con su vibración más elevada. Esto completa la arquitectura energética completa: postura, aura, cordón de enraizamiento y sol dorado — todos activos juntos."
     },
     "l1-earth-circuit": {
-      "concept": "Circuit of the Energy of the Earth",
-      "teachingText": "The Earth circuit is an energetic pathway that draws the energy of the Earth upward through the feet, rising through the legs and into the body. This circuit connects you to the grounding, nourishing, stabilizing force of the planet."
+      "concept": "Circuito de la Energía de la Tierra",
+      "teachingText": "El circuito de la Tierra es un camino energético que atrae la energía de la Tierra hacia arriba a través de los pies, subiendo por las piernas y entrando al cuerpo. Este circuito lo conecta con la fuerza enraizadora, nutritiva y estabilizadora del planeta."
     },
     "l1-cosmos-circuit": {
-      "concept": "Circuit of the Energy of the Cosmos",
-      "teachingText": "The Cosmic circuit is an energetic pathway that draws cosmic energy downward through the crown of the head (7th chakra) and into the body. This circuit connects you to the higher frequencies of universal consciousness, inspiration, and spiritual guidance."
+      "concept": "Circuito de la Energía del Cosmos",
+      "teachingText": "El circuito Cósmico es un camino energético que atrae la energía cósmica hacia abajo a través de la corona de la cabeza (7º chakra) y hacia el interior del cuerpo. Este circuito lo conecta con las frecuencias más elevadas de la conciencia universal, la inspiración y la guía espiritual."
     },
     "l1-combined-circuit": {
-      "concept": "Circuit of Energy of Cosmos and Earth",
-      "teachingText": "When both circuits are activated simultaneously, the energies of the Earth and Cosmos flow together through the body. Earth energy rises from below; Cosmic energy descends from above. They meet and blend within the body, creating a unified field of balanced, integrated energy."
+      "concept": "Circuito de la Energía del Cosmos y de la Tierra",
+      "teachingText": "Cuando ambos circuitos se activan simultáneamente, las energías de la Tierra y del Cosmos fluyen juntas a través del cuerpo. La energía de la Tierra asciende desde abajo; la energía Cósmica desciende desde arriba. Se encuentran y se mezclan dentro del cuerpo, creando un campo unificado de energía equilibrada e integrada."
     },
     "l1-rose-tool": {
-      "concept": "The Rose (as Energetic Tool)",
-      "teachingText": "The Rose is used as a living energetic instrument throughout the practice. It has roots (connection to source), a stem (channel of energy), and a bloom (the active, radiant tool). The Rose can be placed, moved, opened, closed, and released according to the needs of the meditation."
+      "concept": "La Rosa (como Herramienta Energética)",
+      "teachingText": "La Rosa se utiliza como un instrumento energético vivo a lo largo de toda la práctica. Tiene raíces (conexión con la fuente), un tallo (canal de energía) y una flor (la herramienta activa y radiante). La Rosa puede ser colocada, movida, abierta, cerrada y liberada según las necesidades de la meditación."
     },
     "l1-four-roses": {
-      "concept": "Roses of Protection, Observation and Separation",
-      "teachingText": "Roses are placed at the edges of the aura to serve as energetic sentinels. They perform three functions:\n\n1. Protection — They define and guard the boundary of your aura\n2. Observation — They help you notice what energies are approaching or interacting with your field\n3. Separation — They create healthy energetic distinction between your energy and the energy of others"
+      "concept": "Rosas de Protección, Observación y Separación",
+      "teachingText": "Las Rosas se colocan en los bordes del aura para servir como centinelas energéticos. Cumplen tres funciones:\n\n1. Protección — Definen y protegen los límites de su aura\n2. Observación — Le ayudan a percibir qué energías se acercan o interactúan con su campo\n3. Separación — Crean una distinción energética saludable entre su energía y la energía de los demás"
     },
     "l1-cleansing-rose": {
-      "concept": "Cleansing Rose",
-      "teachingText": "The Cleansing Rose is placed outside of the aura. It is used to absorb and transmute foreign or stagnant energy from within your field. Energy that does not belong to you — from other people, environments, or experiences — is drawn out of the aura and into the Cleansing Rose, where it is neutralized."
+      "concept": "Rosa de Limpieza",
+      "teachingText": "La Rosa de Limpieza se coloca fuera del aura. Se utiliza para absorber y transmutar energía ajena o estancada de su campo. La energía que no le pertenece — de otras personas, ambientes o experiencias — es atraída fuera del aura y hacia la Rosa de Limpieza, donde es neutralizada."
     },
     "l1-energy-recovery": {
-      "concept": "Energy Recovery of Each Chakra",
-      "teachingText": "After cleansing, the Rose is used to recover your own energy that has been left in or taken by others. The Rose is sent out as an instrument to gather and return your own life-force energy to each chakra, restoring fullness and sovereignty to each energy center."
+      "concept": "Recuperación Energética de Cada Chakra",
+      "teachingText": "Después de la limpieza, la Rosa se utiliza para recuperar su propia energía que ha sido dejada o tomada por otros. La Rosa es enviada como un instrumento para reunir y devolver su propia energía vital a cada chakra, restaurando plenitud y soberanía a cada centro energético."
     },
     "l1-discharge": {
-      "concept": "Discharge Excess Energy",
-      "teachingText": "After deep meditation or energy work, excess energy may accumulate in the body. To discharge it, lean forward from the seated position with hands reaching toward the ground. Allow the excess energy to flow out through the hands and into the earth, returning the body to a calm, balanced state."
+      "concept": "Descarga del Exceso de Energía",
+      "teachingText": "Después de una meditación profunda o trabajo energético, el exceso de energía puede acumularse en el cuerpo. Para descargarlo, inclínese hacia adelante desde la posición sentada con las manos alcanzando el suelo. Permita que el exceso de energía fluya a través de las manos y entre en la tierra, devolviendo el cuerpo a un estado calmado y equilibrado."
     },
     "l2-sacred-space": {
-      "concept": "Let’s Create Your Sacred Space",
-      "teachingText": "Level 2 begins with creating your own sacred space — an internal energetic environment that serves as your meditation home. This is the space from which all deeper work is conducted."
+      "concept": "Creemos Su Espacio Sagrado",
+      "teachingText": "El Nivel 2 comienza con la creación de su propio espacio sagrado — un entorno energético interno que sirve como su hogar de meditación. Este es el espacio desde el cual se conduce todo el trabajo más profundo."
     },
     "l2-6th-7th-chakras": {
-      "concept": "The 6th and 7th Chakras (Sacred Space)",
-      "teachingText": "Understanding the locations and roles of the upper chakras is essential for Level 2 work:\n\n• 6th Chakra (Third Eye) — Located at the center of the forehead, between and slightly above the eyebrows\n• 7th Chakra (Crown) — Located at the top of the head"
+      "concept": "El 6º y el 7º Chakras (Espacio Sagrado)",
+      "teachingText": "Comprender las ubicaciones y funciones de los chakras superiores es esencial para el trabajo del Nivel 2:\n\n• 6º Chakra (Tercer Ojo) — Ubicado en el centro de la frente, entre y ligeramente por encima de las cejas\n• 7º Chakra (Corona) — Ubicado en la parte superior de la cabeza"
     },
     "l2-physical-space": {
-      "concept": "Let’s Prepare Your Physical Space",
-      "teachingText": "Before meditation, prepare your physical environment to support the energetic work. The external space should mirror the internal intention: clean, clear, quiet, and intentionally held."
+      "concept": "Preparemos Su Espacio Físico",
+      "teachingText": "Antes de la meditación, prepare su entorno físico para apoyar el trabajo energético. El espacio externo debe reflejar la intención interna: limpio, claro, silencioso y sostenido intencionalmente."
     },
     "l2-protection-space": {
-      "concept": "Protection of the Space",
-      "teachingText": "The physical meditation space is protected by creating an energetic grid using roses. Golden roses are placed at the four corners (and above/below) of the space, connected by lines of golden energy forming a sacred geometric structure — a container for the work."
+      "concept": "Protección del Espacio",
+      "teachingText": "El espacio físico de meditación se protege creando una rejilla energética usando rosas. Rosas doradas se colocan en las cuatro esquinas (y arriba/abajo) del espacio, conectadas por líneas de energía dorada formando una estructura geométrica sagrada — un contenedor para el trabajo."
     },
     "l2-cleansing-space": {
-      "concept": "Cleansing of the Space",
-      "teachingText": "Once the space is protected, it is cleansed. A large Cleansing Rose is placed above the grid, and golden energy pours downward through the entire structure, clearing all foreign, stagnant, or disruptive energies from the space."
+      "concept": "Limpieza del Espacio",
+      "teachingText": "Una vez que el espacio está protegido, se limpia. Una gran Rosa de Limpieza se coloca encima de la rejilla, y la energía dorada fluye hacia abajo a través de toda la estructura, limpiando todas las energías ajenas, estancadas o perturbadoras del espacio."
     },
     "l2-owning-space": {
-      "concept": "Owning Your Space",
-      "teachingText": "After protection and cleansing, you claim ownership of the space. This is an act of energetic sovereignty — declaring the space as yours, filling it with your own energy and intention. The space becomes an extension of your aura and your practice."
+      "concept": "Apropiarse de Su Espacio",
+      "teachingText": "Después de la protección y la limpieza, usted toma posesión del espacio. Este es un acto de soberanía energética — declarando el espacio como suyo, llenándolo con su propia energía e intención. El espacio se convierte en una extensión de su aura y de su práctica."
     },
     "l2-chakras-intro": {
-      "concept": "Let’s Talk About Chakras",
-      "teachingText": "The chakra system is the energetic anatomy of the human body. There are seven primary chakras, each governing specific aspects of physical, emotional, mental, and spiritual life."
+      "concept": "Hablemos de los Chakras",
+      "teachingText": "El sistema de chakras es la anatomía energética del cuerpo humano. Hay siete chakras primarios, cada uno gobernando aspectos específicos de la vida física, emocional, mental y espiritual."
     },
     "l2-seven-chakras": {
-      "concept": "The Seven Chakras",
-      "teachingText": "The seven primary chakras, from crown to root:\n\n7. Crown — Top of head\n6. Third Eye — Center of forehead\n5. Throat — Throat\n4. Heart — Center of chest\n3. Solar Plexus — Upper abdomen\n2. Sacral — Lower abdomen\n1. Root — Base of spine"
+      "concept": "Los Siete Chakras",
+      "teachingText": "Los siete chakras primarios, de la corona a la raíz:\n\n7. Corona — Parte superior de la cabeza\n6. Tercer Ojo — Centro de la frente\n5. Garganta — Garganta\n4. Corazón — Centro del pecho\n3. Plexo Solar — Abdomen superior\n2. Sacro — Abdomen inferior\n1. Raíz — Base de la columna"
     },
     "l2-cleansing-aura-layers": {
-      "concept": "Cleansing of Each Aura Layer",
-      "teachingText": "The aura is composed of seven layers, each corresponding to a chakra. In Level 2, each layer is individually cleansed from the outermost to the innermost:\n\n7. 7th Aura layer\n6. 6th Aura layer\n5. 5th Aura layer\n4. 4th Aura layer\n3. 3rd Aura layer\n2. 2nd Aura layer\n1. 1st Aura layer"
+      "concept": "Limpieza de Cada Capa del Aura",
+      "teachingText": "El aura se compone de siete capas, cada una correspondiente a un chakra. En el Nivel 2, cada capa se limpia individualmente desde la más externa hasta la más interna:\n\n7. 7ª capa del Aura\n6. 6ª capa del Aura\n5. 5ª capa del Aura\n4. 4ª capa del Aura\n3. 3ª capa del Aura\n2. 2ª capa del Aura\n1. 1ª capa del Aura"
     },
     "l2-cleansing-each-chakra": {
-      "concept": "Cleansing of Each Chakra",
-      "teachingText": "Each individual chakra is cleansed using roses. The roses address two dimensions:\n\n• Dynamics of the Past — Energetic patterns, imprints, and blockages carried from past experiences\n• Dynamics of the Present — Current energetic influences, relationships, and situations affecting the chakra"
+      "concept": "Limpieza de Cada Chakra",
+      "teachingText": "Cada chakra individual se limpia usando rosas. Las rosas abordan dos dimensiones:\n\n• Dinámicas del Pasado — Patrones energéticos, impresiones y bloqueos cargados de experiencias pasadas\n• Dinámicas del Presente — Influencias energéticas actuales, relaciones y situaciones que afectan el chakra"
     },
     "l2-energy-recovery": {
-      "concept": "Energy Recovery of Each Chakra (Level 2)",
-      "teachingText": "After cleansing, the energy recovery process is repeated at a deeper level. The Rose is sent out to gather and return your own energy to each individual chakra, restoring sovereignty, vitality, and wholeness to each energy center."
+      "concept": "Recuperación Energética de Cada Chakra (Nivel 2)",
+      "teachingText": "Después de la limpieza, el proceso de recuperación energética se repite a un nivel más profundo. La Rosa es enviada para reunir y devolver su propia energía a cada chakra individual, restaurando soberanía, vitalidad e integridad a cada centro energético."
     },
     "l2-golden-sticky-1": {
-      "concept": "Golden Sticky Roses — Phase 1 (Chakra Placement)",
-      "teachingText": "Golden sticky roses are placed on each of the seven chakras, drawing out foreign energy lodged in the energy centers."
+      "concept": "Rosas Doradas Adhesivas — Fase 1 (Colocación en los Chakras)",
+      "teachingText": "Las rosas doradas adhesivas se colocan en cada uno de los siete chakras, extrayendo energía ajena alojada en los centros energéticos."
     },
     "l2-golden-sticky-2": {
-      "concept": "Golden Sticky Roses — Phase 2 (Body Placement)",
-      "teachingText": "Golden sticky roses are placed at the joints and extremities of the body — shoulders, elbows, wrists, hands, hips, knees, ankles, feet — drawing out foreign energy stored in the physical body."
+      "concept": "Rosas Doradas Adhesivas — Fase 2 (Colocación en el Cuerpo)",
+      "teachingText": "Las rosas doradas adhesivas se colocan en las articulaciones y extremidades del cuerpo — hombros, codos, muñecas, manos, caderas, rodillas, tobillos, pies — extrayendo energía ajena almacenada en el cuerpo físico."
     },
     "l2-golden-sticky-3": {
-      "concept": "Golden Sticky Roses — Phase 3 (Full Body Coverage)",
-      "teachingText": "Golden sticky roses are placed throughout the entire body — covering the torso, limbs, and all remaining areas — for a thorough, complete energetic cleansing."
+      "concept": "Rosas Doradas Adhesivas — Fase 3 (Cobertura Total del Cuerpo)",
+      "teachingText": "Las rosas doradas adhesivas se colocan por todo el cuerpo — cubriendo el torso, las extremidades y todas las áreas restantes — para una limpieza energética completa y profunda."
     },
     "l2-golden-sticky-4": {
-      "concept": "Golden Sticky Roses — Phase 4 (Integration)",
-      "teachingText": "After the golden sticky roses have done their work, a large Golden Rose appears above the head. All foreign energy gathered by the sticky roses is released, and the entire body is bathed in golden light — restoring, sealing, and integrating the energy body."
+      "concept": "Rosas Doradas Adhesivas — Fase 4 (Integración)",
+      "teachingText": "Después de que las rosas doradas adhesivas han realizado su trabajo, una gran Rosa Dorada aparece sobre la cabeza. Toda la energía ajena reunida por las rosas adhesivas es liberada, y todo el cuerpo es bañado en luz dorada — restaurando, sellando e integrando el cuerpo energético."
     },
     "l3-analyzer": {
-      "concept": "The Analyzer",
-      "teachingText": "The Analyzer is an advanced tool introduced in Level 3. It is an energetic point located at the back of the head, at the base of the skull (the occipital ridge / brainstem area). The Analyzer is used for deeper perception, reading, and discernment of energy — a tool for precise energetic analysis."
+      "concept": "El Analizador",
+      "teachingText": "El Analizador es una herramienta avanzada introducida en el Nivel 3. Es un punto energético ubicado en la parte posterior de la cabeza, en la base del cráneo (la cresta occipital / área del tronco encefálico). El Analizador se utiliza para una percepción más profunda, lectura y discernimiento de energía — una herramienta para el análisis energético preciso."
     }
   },
   "chakras": {
     "l2-chakra-root": {
-      "concept": "Root Chakra",
-      "teachingText": "Muladhara — Grounding & Safety",
-      "focus": "Stability — Safety — Embodiment",
-      "energy": "Masculine — Survival / Foundation",
-      "bodyLocation": "Base of spine, Legs, Feet",
+      "concept": "Chakra Raíz",
+      "teachingText": "Muladhara — Enraizamiento y Seguridad",
+      "focus": "Estabilidad — Seguridad — Corporización",
+      "energy": "Masculino — Supervivencia / Fundamento",
+      "bodyLocation": "Base de la columna, Piernas, Pies",
       "balanced": [
-        "Grounded presence",
-        "Physical vitality",
-        "Trust in life",
-        "Feeling safe in the body"
+        "Presencia enraizada",
+        "Vitalidad física",
+        "Confianza en la vida",
+        "Sentirse seguro en el cuerpo"
       ],
       "unbalanced": [
-        "Fear and insecurity",
-        "Survival anxiety",
-        "Disconnection from body",
-        "Scarcity mindset"
+        "Miedo e inseguridad",
+        "Ansiedad de supervivencia",
+        "Desconexión del cuerpo",
+        "Mentalidad de escasez"
       ],
-      "blockages": "Fear — Insecurity — Survival Trauma"
+      "blockages": "Miedo — Inseguridad — Trauma de Supervivencia"
     },
     "l2-chakra-sacral": {
-      "concept": "Sacral Chakra",
-      "teachingText": "Svadhisthana — Emotion & Creativity",
-      "focus": "Emotions — Creativity — Pleasure",
-      "energy": "Feminine — Flow & Flexibility",
-      "bodyLocation": "Lower abdomen, Sexual Organs",
+      "concept": "Chakra Sacro",
+      "teachingText": "Svadhisthana — Emoción y Creatividad",
+      "focus": "Emociones — Creatividad — Placer",
+      "energy": "Femenino — Flujo y Flexibilidad",
+      "bodyLocation": "Abdomen inferior, Órganos Sexuales",
       "balanced": [
-        "Emotional well-being",
-        "Sensuality and intimacy",
-        "Passion and pleasure",
-        "Adaptability"
+        "Bienestar emocional",
+        "Sensualidad e intimidad",
+        "Pasión y placer",
+        "Adaptabilidad"
       ],
       "unbalanced": [
-        "Depression and numbness",
-        "Sexual dysfunction",
-        "Emotional instability",
-        "Fear of change"
+        "Depresión y entumecimiento",
+        "Disfunción sexual",
+        "Inestabilidad emocional",
+        "Miedo al cambio"
       ],
-      "blockages": "Shame — Emotional Repression — Guilt"
+      "blockages": "Vergüenza — Represión Emocional — Culpa"
     },
     "l2-chakra-solar-plexus": {
-      "concept": "Solar Plexus Chakra",
-      "teachingText": "Manipura — Willpower & Confidence",
-      "focus": "Personal Power — Self-Esteem — Drive",
-      "energy": "Masculine — Power & Transformation",
-      "bodyLocation": "Upper abdomen, Diaphragm",
+      "concept": "Chakra del Plexo Solar",
+      "teachingText": "Manipura — Fuerza de Voluntad y Confianza",
+      "focus": "Poder Personal — Autoestima — Determinación",
+      "energy": "Masculino — Poder y Transformación",
+      "bodyLocation": "Abdomen superior, Diafragma",
       "balanced": [
-        "Confidence and motivation",
-        "Responsible and disciplined",
-        "Healthy sense of self",
-        "Autonomy"
+        "Confianza y motivación",
+        "Responsable y disciplinado",
+        "Sentido saludable de sí mismo",
+        "Autonomía"
       ],
       "unbalanced": [
-        "Low self-esteem",
-        "Aggression or controlling",
-        "Stubborn and domineering",
-        "Lack of direction or purpose"
+        "Baja autoestima",
+        "Agresión o control",
+        "Terco y dominante",
+        "Falta de dirección o propósito"
       ],
-      "blockages": "Self-Doubt — Insecurity — Fear of Rejection"
+      "blockages": "Autoduda — Inseguridad — Miedo al Rechazo"
     },
     "l2-chakra-heart": {
-      "concept": "Heart Chakra",
-      "teachingText": "Anahata — Love & Integration",
-      "focus": "Love — Compassion — Connection",
-      "energy": "Bridge between physical & spiritual",
-      "bodyLocation": "Center of chest, Heart, Lungs",
+      "concept": "Chakra del Corazón",
+      "teachingText": "Anahata — Amor e Integración",
+      "focus": "Amor — Compasión — Conexión",
+      "energy": "Puente entre lo físico y lo espiritual",
+      "bodyLocation": "Centro del pecho, Corazón, Pulmones",
       "balanced": [
-        "Compassion and empathy",
-        "Emotional openness",
-        "Forgiveness",
-        "Healthy intimacy and self-love"
+        "Compasión y empatía",
+        "Apertura emocional",
+        "Perdón",
+        "Intimidad saludable y amor propio"
       ],
       "unbalanced": [
-        "Emotional withdrawal or over-giving",
-        "Fear of intimacy",
-        "Cold or detachment",
-        "Difficulty forgiving"
+        "Retraimiento emocional o entrega excesiva",
+        "Miedo a la intimidad",
+        "Frialdad o distanciamiento",
+        "Dificultad para perdonar"
       ],
-      "blockages": "Grief — Betrayal — Heartbreak",
-      "extraContent": "Human Love & Spiritual Love:\n\nHuman Love — Statement: I LOVE — Empathy, compassion, forgiveness, healthy relationships, romantic and familial love.\n\nSpiritual Love — Statement: I AM LOVE — Unconditional compassion, interconnectedness, divine and universal love, oneness."
+      "blockages": "Duelo — Traición — Corazón Roto",
+      "extraContent": "Amor Humano y Amor Espiritual:\n\nAmor Humano — Declaración: YO AMO — Empatía, compasión, perdón, relaciones saludables, amor romántico y familiar.\n\nAmor Espiritual — Declaración: YO SOY AMOR — Compasión incondicional, interconectividad, amor divino y universal, unidad."
     },
     "l2-chakra-throat": {
-      "concept": "Throat Chakra",
-      "teachingText": "Vishuddha — Communication & Expression",
-      "focus": "Communication — Truth — Authenticity",
-      "energy": "Learning to align will with divine truth",
-      "bodyLocation": "Throat, Neck, Jaw, Mouth",
+      "concept": "Chakra de la Garganta",
+      "teachingText": "Vishuddha — Comunicación y Expresión",
+      "focus": "Comunicación — Verdad — Autenticidad",
+      "energy": "Aprendiendo a alinear la voluntad con la verdad divina",
+      "bodyLocation": "Garganta, Cuello, Mandíbula, Boca",
       "balanced": [
-        "Clear, honest communication",
-        "Authentic self-expression",
-        "Good listener",
-        "Strong voice and balanced speech"
+        "Comunicación clara y honesta",
+        "Autoexpresión auténtica",
+        "Buen oyente",
+        "Voz fuerte y habla equilibrada"
       ],
       "unbalanced": [
-        "Fear of speaking up",
-        "Being unheard or misunderstood",
-        "People-pleasing",
-        "Suppressed feelings or lies"
+        "Miedo a expresarse",
+        "No ser escuchado o ser malinterpretado",
+        "Complacer a los demás",
+        "Sentimientos reprimidos o mentiras"
       ],
-      "blockages": "Suppressed Truth — Fear of Expression — Miscommunication"
+      "blockages": "Verdad Reprimida — Miedo a la Expresión — Falta de Comunicación"
     },
     "l2-chakra-third-eye": {
-      "concept": "Third Eye Chakra",
-      "teachingText": "Ajna — Intuition & Insight",
-      "focus": "Imagination — Perception — Visualization",
-      "energy": "Feminine aspects of awareness",
-      "bodyLocation": "Forehead, Brow, Eye center",
+      "concept": "Chakra del Tercer Ojo",
+      "teachingText": "Ajna — Intuición y Percepción",
+      "focus": "Imaginación — Percepción — Visualización",
+      "energy": "Aspectos femeninos de la conciencia",
+      "bodyLocation": "Frente, Cejas, Centro del ojo",
       "balanced": [
-        "Clear seeing and intuition",
-        "Good memory and imagination",
-        "Inner location",
-        "Wisdom and vision"
+        "Visión clara e intuición",
+        "Buena memoria e imaginación",
+        "Ubicación interior",
+        "Sabiduría y visión"
       ],
       "unbalanced": [
-        "Overthinking",
-        "Mental fog",
-        "Disconnection with inner guidance",
-        "Escaping reality or spiritual bypassing"
+        "Pensamiento excesivo",
+        "Niebla mental",
+        "Desconexión con la guía interior",
+        "Escapismo o evasión espiritual"
       ],
-      "blockages": "Suppressed Truth — Fear of Expression — Miscommunication"
+      "blockages": "Verdad Reprimida — Miedo a la Expresión — Falta de Comunicación"
     },
     "l2-chakra-crown": {
-      "concept": "Crown Chakra",
-      "teachingText": "Sahasrara — Spirituality & Consciousness",
-      "focus": "Spiritual Connection — Inner Wisdom — Higher States of Awareness",
-      "energy": "Transcending ego, merging with source",
-      "bodyLocation": "Top of head",
+      "concept": "Chakra de la Corona",
+      "teachingText": "Sahasrara — Espiritualidad y Conciencia",
+      "focus": "Conexión Espiritual — Sabiduría Interior — Estados Superiores de Conciencia",
+      "energy": "Trascendiendo el ego, fundiéndose con la fuente",
+      "bodyLocation": "Parte superior de la cabeza",
       "balanced": [
-        "Spiritual faith and connection",
-        "Inner peace, trust, and wisdom",
-        "Openness and awareness",
-        "Sense of life purpose"
+        "Fe y conexión espiritual",
+        "Paz interior, confianza y sabiduría",
+        "Apertura y conciencia",
+        "Sentido de propósito de vida"
       ],
       "unbalanced": [
-        "Spiritual emptiness",
-        "Existential doubt",
-        "Feeling isolated or alone",
-        "Lack of purpose"
+        "Vacío espiritual",
+        "Duda existencial",
+        "Sentirse aislado o solo",
+        "Falta de propósito"
       ],
-      "blockages": "Disconnection — Cynicism — Loss of Meaning"
+      "blockages": "Desconexión — Cinismo — Pérdida de Significado"
     }
   },
-  "_translationStatus": "pending",
-  "_note": "This file contains English text as placeholder. All values need to be translated to the target language."
+  "_translationStatus": "complete"
 }
