@@ -551,7 +551,7 @@ export const freePrograms: CommunityProgram[] = [
     id: 'free-live-guidances',
     title: 'Free Live Guidances',
     description: 'Live Rose Meditation guidances offered to all who have already been initiated in Rose Meditation. A space to deepen your practice with the support of a guided session and the collective field.',
-    schedule: 'Weekly — see full schedule below',
+    schedule: 'Weekly — times vary, see full schedule below',
     audience: 'Rose Meditation Practitioner',
     free: true,
     whatsappLink: 'https://chat.whatsapp.com/Lh6bJlDmliMIryvKz63tzi?mode=gi_t',
