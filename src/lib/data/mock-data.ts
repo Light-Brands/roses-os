@@ -571,14 +571,14 @@ export const freePrograms: CommunityProgram[] = [
             sessions: [
               { date: 'Sat, Mar 7 — Jennifer', time: { sanJose: '9:00 AM', bogota: '10:00 AM', newYork: '10:00 AM', brasilia: '12:00 PM', london: '3:00 PM', madrid: '4:00 PM' } },
               { date: 'Sun, Mar 9 — Iryna', time: { sanJose: '9:00 AM', bogota: '10:00 AM', newYork: '11:00 AM', brasilia: '12:00 PM', london: '3:00 PM', madrid: '4:00 PM' } },
-              { date: 'Sat, Mar 29 — Jennifer · Caminho do amor', time: { sanJose: '9:00 AM', bogota: '10:00 AM', newYork: '11:00 AM', brasilia: '12:00 PM', london: '4:00 PM', madrid: '5:00 PM' } },
+              { date: 'Sat, Mar 29 — Jennifer', time: { sanJose: '9:00 AM', bogota: '10:00 AM', newYork: '11:00 AM', brasilia: '12:00 PM', london: '4:00 PM', madrid: '5:00 PM' } },
             ],
           },
           {
             month: 'April',
             sessions: [
-              { date: 'Sat, Apr 5 — Jennifer · Caminho do amor', time: { sanJose: '9:00 AM', bogota: '10:00 AM', newYork: '11:00 AM', brasilia: '12:00 PM', london: '4:00 PM', madrid: '5:00 PM' } },
-              { date: 'Sat, Apr 18 — Silvia C · Caminho do amor', time: { sanJose: '7:00 AM', bogota: '8:00 AM', newYork: '9:00 AM', brasilia: '10:00 AM', london: '2:00 PM', madrid: '3:00 PM' } },
+              { date: 'Sat, Apr 5 — Jennifer', time: { sanJose: '9:00 AM', bogota: '10:00 AM', newYork: '11:00 AM', brasilia: '12:00 PM', london: '4:00 PM', madrid: '5:00 PM' } },
+              { date: 'Sat, Apr 18 — Silvia C', time: { sanJose: '7:00 AM', bogota: '8:00 AM', newYork: '9:00 AM', brasilia: '10:00 AM', london: '2:00 PM', madrid: '3:00 PM' } },
               { date: 'Sun, Apr 19 — Jennifer', time: { sanJose: '9:00 AM', bogota: '10:00 AM', newYork: '11:00 AM', brasilia: '12:00 PM', london: '4:00 PM', madrid: '5:00 PM' } },
               { date: 'Sun, Apr 27 — Dara', time: { sanJose: '7:00 AM', bogota: '8:00 AM', newYork: '9:00 AM', brasilia: '10:00 AM', london: '2:00 PM', madrid: '3:00 PM' } },
             ],
@@ -599,26 +599,6 @@ export const freePrograms: CommunityProgram[] = [
               { date: 'Mon, Jun 2 — Silvia C', time: { sanJose: '6:00 AM', bogota: '7:00 AM', newYork: '8:00 AM', brasilia: '9:00 AM', london: '1:00 PM', madrid: '2:00 PM' } },
               { date: 'Wed, Jun 10 — Nicole', time: { sanJose: 'TBD', bogota: 'TBD', newYork: 'TBD', brasilia: 'TBD', london: 'TBD', madrid: 'TBD' } },
             ],
-          },
-        ],
-      },
-      {
-        id: 'aura-1-march',
-        title: 'March Aura 1 Course · Mar 17–26',
-        months: [
-          {
-            month: 'Guidances are likely to be daily during this period. Schedule to follow soon.',
-            sessions: [],
-          },
-        ],
-      },
-      {
-        id: 'aura-1-june',
-        title: 'June Aura 1 Course · Jun 13–23',
-        months: [
-          {
-            month: 'Schedule to follow.',
-            sessions: [],
           },
         ],
       },
