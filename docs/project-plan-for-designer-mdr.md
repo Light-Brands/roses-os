@@ -265,6 +265,11 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 > The Golden Sun is a tool for replenishing and restoring your own energy. Visualize a radiant golden sun above your head. It calls back your own life-force energy from wherever you may have left it -- in people, places, situations, or time. It fills you with your own highest vibration.
 
+**Designer Notes:**
+- The grounding cord in this image should be **thick, transparent, and strong**
+- It should **start lower in the body, under the crotch** — the grounding cord comes from the base of the spine (1st chakra), not from higher up
+- Same visual direction as slides 7 and 10: less gold, more opaque/translucent, substantial
+
 ---
 
 #### Slide: An Exercise to Feel Your Aura

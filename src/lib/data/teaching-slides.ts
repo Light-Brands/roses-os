@@ -84,6 +84,8 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'The Golden Sun is a tool for replenishing and restoring your own energy. Visualize a radiant golden sun above your head. It calls back your own life-force energy from wherever you may have left it — in people, places, situations, or time. It fills you with your own highest vibration.',
     reimaginedImage: '8-golden-sun.PNG',
+    imageNote:
+      'The grounding cord in this image should be thick, transparent, and strong — and should start lower in the body, under the crotch, as it comes from the base of the spine (1st chakra). Currently it appears too high and too golden.',
     level: 1,
     section: 'foundations',
   },
