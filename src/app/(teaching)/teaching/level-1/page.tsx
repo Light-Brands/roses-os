@@ -1,15 +1,14 @@
 'use client';
 
 import Link from 'next/link';
-import { teachingLevels, techniques, chakras } from '@/lib/data';
+import { teachingLevels } from '@/lib/data';
+import { level1Slides } from '@/lib/data/teaching-slides';
 import LevelNav from '@/components/teaching/LevelNav';
-import ChakraChart from '@/components/teaching/ChakraChart';
-import TechniqueCard from '@/components/teaching/TechniqueCard';
+import TeachingSlideCard from '@/components/teaching/TeachingSlideCard';
 import { PdfExportButton } from '@/components/ui/PdfExportButton';
 
 export default function Level1Page() {
   const level = teachingLevels[0];
-  const levelTechniques = techniques.filter((t) => t.level === 1);
 
   return (
     <div className="min-h-screen bg-[var(--color-background)]">
@@ -24,19 +23,18 @@ export default function Level1Page() {
           href="/teaching"
           className="text-sm text-[var(--color-foreground-muted)] hover:text-[var(--color-foreground)] transition-colors"
         >
-          ← All Levels
+          &larr; All Levels
         </Link>
       </header>
 
       <div className="flex flex-col md:flex-row">
-        {/* Sidebar nav on desktop, top tabs on mobile */}
         <aside className="md:w-64 md:min-h-[calc(100vh-57px)] md:border-r border-b md:border-b-0 border-[var(--color-border)] p-4 md:p-6">
           <LevelNav levels={teachingLevels} activeLevel={1} />
         </aside>
 
-        {/* Main content */}
         <main className="flex-1 px-6 py-10 lg:py-14 max-w-4xl">
-          <div className="space-y-12">
+          <div className="space-y-10">
+            {/* Header */}
             <div className="space-y-3">
               <h1 className="font-serif text-3xl md:text-4xl text-[var(--color-foreground)]">
                 Level 1: {level.title}
@@ -47,28 +45,15 @@ export default function Level1Page() {
               <PdfExportButton className="mt-4" />
             </div>
 
-            {/* Chakra Chart */}
-            <section className="space-y-4">
-              <h2 className="font-serif text-2xl text-[var(--color-foreground)]">
-                Chakra System
-              </h2>
-              <ChakraChart chakras={chakras} />
-            </section>
-
-            {/* Techniques */}
-            <section className="space-y-6">
-              <h2 className="font-serif text-2xl text-[var(--color-foreground)]">
-                Techniques
-              </h2>
-              <div className="grid gap-6 sm:grid-cols-2">
-                {levelTechniques.map((technique, index) => (
-                  <TechniqueCard
-                    key={technique.id ?? index}
-                    technique={technique}
-                    index={index}
-                  />
-                ))}
-              </div>
+            {/* Teaching Slides */}
+            <section className="space-y-8">
+              {level1Slides.map((slide, index) => (
+                <TeachingSlideCard
+                  key={slide.id}
+                  slide={slide}
+                  index={index}
+                />
+              ))}
             </section>
           </div>
         </main>

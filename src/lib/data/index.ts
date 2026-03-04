@@ -4,11 +4,23 @@ export type {
   CoherenceDomain, CoherenceAlternativeCategory,
   PathLevel, LineageEntry,
   ArchitectureLayer, Chakra, Technique, TeachingLevel,
+  TeachingSlide, ChakraSlideData,
   Agreement, Capacity, MessagingPillar, BrandQuote, Stat,
   CommunityProgram,
   CommunityClassSession, CommunityScheduleMonth,
   CommunityScheduleCycle, InvestmentOption,
 } from './types';
+
+export {
+  openingAgreements,
+  openingSacredCompanion,
+  openingHistory,
+  level1Slides,
+  level2Slides,
+  chakraSlides,
+  level2CleansingSlides,
+  level3Slides,
+} from './teaching-slides';
 
 export {
   navItems,
