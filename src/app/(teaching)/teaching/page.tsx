@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { teachingLevels } from '@/lib/data';
+import { PdfExportButton } from '@/components/ui/PdfExportButton';
 
 export default function TeachingPage() {
   return (
@@ -23,6 +24,9 @@ export default function TeachingPage() {
           <p className="text-[var(--color-foreground-muted)]">
             Select a teaching level to begin.
           </p>
+          <div className="pt-4">
+            <PdfExportButton />
+          </div>
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
