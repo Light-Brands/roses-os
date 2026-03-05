@@ -515,41 +515,42 @@ LEVEL_3_HTML = """<!DOCTYPE html>
 <!-- COPYRIGHT -->
 <div class="copyright">
   <p><strong>Teachings by Angelina Ataíde</strong></p>
-  <p>No part of this manual may be reproduced and/or shown to people who have not attended a Level 3 Rose Meditation Course.</p>
-  <p>Teaching the Rose Meditation and Aura Reading requires specific training, as well as a lot of experience with Aura Reading and energy work. Therefore, for your own protection, please do not share this information.</p>
-  <p>Illustrations: Saraswati Noemi, Cecilia Lynch, Drica Voivodic</p>
-  <p style="margin-top: 1cm; font-size: 8pt; color: #B5A89D;">2021 Review &bull; ROSES OS 2026 Edition</p>
+  <p>No part of this manual may be reproduced and/or shown to people who have not participated in a Level 3 Rose Meditation course. Prerequisite for participating in this course is having participated in Roses 1 and 2 courses.</p>
+  <p>To teach Rose Meditation and Aura Reading, specific training is required, in addition to extensive experience with Aura Reading and energy work. Therefore, for your own protection, do not share this information.</p>
+  <p>Illustrations: Drica Voivodic and Ana Leite</p>
+  <p>Translation: Dara Ayoub</p>
+  <p style="margin-top: 1cm; font-size: 8pt; color: #B5A89D;">ROSES OS 2026 Edition</p>
 </div>
 
 <!-- INTRODUCTION -->
 <h2>Introduction</h2>
 
-<p>Rose Meditation is a tool for cleansing the aura and the seven main chakras, providing protection and energy balance. Through this technique it is possible to release blocked energies, energies that are not ours, become aware of our life force and deprogram patterns that prevent direct contact with our essence.</p>
+<p>Rose Meditation is a tool for cleansing, protection, and energy balance. Through this technique, it is possible to release retained energies in our aura, in the seven main chakras, cleanse energies that are not ours but that we attract for some reason, and everything that is not beneficial to us. In addition, it generates awareness of our life force and aims to deprogram patterns and genuinely express our essence.</p>
 
 <div class="highlight">
-  Roses represent the Spirit. Roses absorb all the energies, emotions and situations that don't belong to you or that no longer serve your present moment. We can create and explode them as many times as necessary.
+  Roses represent the Spirit. They absorb all energies, emotions, and situations that do not serve your present moment. We can create them and explode them as many times as necessary. When we explode the Roses, they purify and transmute the energy, and send it back to its origin.
 </div>
 
 <!-- 5 BODIES -->
 <div class="page-break"></div>
 <h2>The 5 Bodies &amp; 5 Levels of Existence</h2>
 
-<p>Everything that manifests itself in matter has an origin on a spiritual level. Everything is also energy. The denser the energy, the more it moves towards manifestation and thus comes into existence in a way that we can perceive objectively.</p>
+<p>Everything that manifests itself in matter has its origin in the spiritual realm. This is the same as saying that everything has a reason for being. Everything is also energy. The denser the energy, the more it moves toward manifestation and thus comes into existence in a way that we can perceive objectively.</p>
 
 <h3>1. Spiritual</h3>
-<p>On the spiritual level, everything is perfect and complete. Here there is no suffering or adversity. It is the field of learning, where the existence of each event, relationship or being is determined. There is no value judgment here. There is no right or wrong, good or bad. It simply is. It's where we can find answers to what may seem unfair or cruel from our limited perspective.</p>
+<p>On the spiritual level, every experience is valid. There is no value judgment here: suffering and adversity are understood as learning experiences. Everything that occurs has a spiritual reason for being. There is no right or wrong, no good or bad — it simply is. From this perspective, we can find answers to what may appear unfair or cruel through a limited lens. Within the spiritual body, we can perceive the deeper lessons one is choosing to experience in the present moment.</p>
 
 <h3>2. Energetic</h3>
-<p>This is the field of the subtle, of potential, of vibration. It's where our Aura is formed and where we work in Rose Meditation. This is where everything that will one day manifest in matter can already be felt, but where there is also much more. It's where non-incarnate energies or entities act. When we have deep and meaningful relationships, it is in the energetic body that we form cords that bind us and through which we continue to feel the other beyond time and space.</p>
+<p>This is the realm of the subtle — of power and vibration. It is where the aura is formed and where we work in Rose Meditation. Here, everything that will one day manifest in matter can already be felt, yet there is also much more. It is the domain in which non-incarnated energies or entities operate. When we form deep and meaningful relationships, it is within the energetic body that bonds are created — connections through which we continue to feel the other beyond time and space.</p>
 
 <h3>3. Mental</h3>
-<p>When the subtle energies densify, the first place we perceive them is in the world of ideas, thoughts, programs and beliefs. The ideas we have about the world and every element in it are stored in our mental body. Here we confront the reality perceived by the senses with the programs that — within us — dictate how the world should be.</p>
+<p>When subtle energies become denser, the first place we perceive them is in the world of ideas, thoughts, programs, and beliefs. Our mental body stores the ideas we have about the world and every element that exists in it (at all levels). Here we confront the reality perceived by the senses with the programs that — within us — dictate how the world should be.</p>
 
 <h3>4. Emotional</h3>
-<p>This is where everything we feel stays. We have an emotional body where the marks of the feelings that have passed through us, but which we haven't been able to release, remain. Here is the burden left by the traumas we have experienced throughout our lives. The emotional body connects with the physical body mainly through the organs, which change their functioning depending on the emotions we are feeling.</p>
+<p>The emotional body is where everything is felt. Within it are stored the imprints of emotions that have passed through us but have not yet been released. It is here that the weight of the traumas experienced throughout life resides. The emotional body connects with the physical body primarily through the organs, whose functioning shifts in response to the emotions we experience — for example, the heart beating faster.</p>
 
 <h3>5. Physical</h3>
-<p>Everything we experience in matter, with our body. It's the world we perceive through our five senses: what we see, hear, touch, smell and taste. The physical plane is the only one that is perceived in the same way (objectively) by everyone. That's why it's the reference and where we can turn to investigate and check what's happening on all the other planes.</p>
+<p>This body is related to everything we experience in matter. It is the world perceived through the five senses: what we see, hear, touch, smell, and taste. The physical plane is the only plane perceived in the same way — objectively — by all people. For this reason, it serves as a reference point, offering a place from which we can investigate and verify what is occurring across all other planes.</p>
 
 <!-- CLEANSING TECHNIQUES -->
 <div class="page-break"></div>
@@ -557,202 +558,185 @@ LEVEL_3_HTML = """<!DOCTYPE html>
 
 <h3>Breaking Spiritual Agreements</h3>
 
-<p>Any relationship can only exist in matter if there has been a spiritual agreement to support that relationship. These agreements can only be created with the consent of both parts on the spiritual level and can be broken by either part through their conscious will.</p>
+<p>A relationship can only manifest in the material world if it is sustained by a spiritual agreement. Such agreements are formed with the consent of both parties on a spiritual level and may be dissolved by either party through conscious will.</p>
 
-<p>Sometimes these agreements are in line with our conscious will, for example when two people get married. At other times, they resonate with unconscious desires — this is when things happen that we don't want. However, using this Rose Meditation technique, we can always break these agreement sticks.</p>
+<p>Each time a spiritual agreement is created, a 'stick of agreements' is formed between the individuals involved. At times, these agreements align with our conscious intentions — for example, when two people choose to marry. At other times, they resonate with unconscious desires, which is when situations may unfold that we do not consciously want. Through this Rose Meditation technique, however, it is always possible to dissolve these sticks of agreements.</p>
 
 <div class="callout">
-  <p>This should always be done with great awareness, as it has very real consequences for our lives.</p>
+  <p>This process should be approached with great awareness, as it carries very tangible consequences in our lives.</p>
 </div>
 
 <h4>To Break Agreements</h4>
 <ul>
-  <li>Create a high-vibration situation, for example, right after the Rose Meditation.</li>
-  <li>View the agreements stick that contains all the agreements you want to break.</li>
-  <li>Break the stick into three pieces.</li>
+  <li>Create a high-vibration situation, for example, right after the Roses Meditation.</li>
+  <li>Visualize the stick of agreements that contains all the agreements you want to break.</li>
+  <li>Break this stick into three pieces.</li>
   <li>Create a grounded Rose.</li>
-  <li>Place the three pieces of stick in the Rose.</li>
-  <li>Explode the Rose out of the Aura.</li>
+  <li>Place the three pieces of the stick in this Rose.</li>
+  <li>Explode the Rose outside the Aura.</li>
 </ul>
 
 <h3>Cutting Energetic Cords</h3>
 
-<p>We have energetic interactions with people all the time we see them, hear them, touch them and even think about them. And when we form bonds, our auras connect through the cords where energy passes through. That's why we can often feel what's happening with people who are close to us, even if they're far away.</p>
+<p>We engage in energetic interactions with others constantly — when we see them, hear them, touch them, and even when we think about them. When energetic cords are formed, our auras connect through these ties, allowing energy to flow between us. This is why we can often sense what is happening to people close to us, even at a distance.</p>
+
+<p>When relationships come to an end, we may be deeply affected by the energies that continue to reach us through these bonds. For this reason, it is important to know how to consciously cut them:</p>
 
 <h4>To Cut Cords</h4>
 <ul>
   <li>Close your eyes.</li>
-  <li>Visualize your Aura with cords coming out of your chakras.</li>
-  <li>Place your dominant hand on the 7th cervical vertebra, which is at the junction of the neck and back, at the level of the 5th chakra.</li>
-  <li>Intend that your hand has the power to cut all the cords.</li>
-  <li>Make the movement of cutting the cords up to under your 1st chakra, leaning your hand on the chair where you are sitting.</li>
+  <li>Visualize your aura with bonds coming out of your chakras.</li>
+  <li>Place your dominant hand on the 7th cervical vertebra, located at the junction of the neck and back at the level of the 5th chakra.</li>
+  <li>Intend that your hand has the power to cut all cords.</li>
+  <li>Make the cutting motion under your 1st chakra, placing your hand on the chair where you are sitting.</li>
 </ul>
 
-<p>We can also cut cords when the relationship hasn't ended, but we feel we need more neutrality. These bonds form again very quickly when we reconnect with the person.</p>
+<p>We can also cut the ties when the relationship has not ended, but we feel we need more neutrality. These ties reform very quickly when we reconnect with the person.</p>
 
-<!-- SEXUAL INTERCOURSE -->
-<h3>After Sexual Intercourse</h3>
+<!-- SEXUAL RELATIONSHIPS -->
+<h3>Sexual Relationships</h3>
 
-<p>After a sexual intercourse, if you want to recover your energy that may have remained with the person and return the energy of the person who may have remained with you:</p>
+<p>After sexual intercourse, if you want to recover any energy you may have left with the other person and return any energy they may have left with you, simply follow these steps:</p>
 
 <ul>
-  <li>Do the preparation techniques (grounding cord, Golden Sun, energy of the Earth and the Cosmos, sacred space).</li>
-  <li>Create an orange Rose and place the person's energy in the Rose (you can visualize the person entering the Rose, the situation, emotions and feelings that may appear at that moment); explode.</li>
-  <li>Create an unrooted orange Rose that cleanses the person's energy that may have remained in any layer of their Aura; explode.</li>
-  <li>Create a grounded orange Rose and intend for this Rose to recover all your energy that was left with this person; explode.</li>
-  <li>If you want to remain energetically separated, cut the energetic cords.</li>
-  <li>Create an unrooted pink Rose, place the person on it, visualize the person happy and in complete health. Repeat mentally: "Happy, healthy, complete, body, mind, Spirit." Bring the Rose up towards the center of the Universe.</li>
+  <li>Perform the preparation techniques (grounding cord, Golden Sun, Earth and Cosmos energy, sacred space).</li>
+  <li>Create an orange Rose and place the person's energy in it with their physical body, emotions, and feelings that may arise at that moment — you can visualize the person entering the rose, the situation you just experienced; explode (you can repeat this step as many times as necessary).</li>
+  <li>Create an orange-colored unrooted Rose that cleanses any energy from the person that may have remained in any layer of your aura; explode.</li>
+  <li>Create a grounded orange Rose and intend for this rose to recover energy that remained with this person; explode.</li>
+  <li>If you want to remain energetically separate from this person, make the movement of cutting the energetic cords that have been established during the relationship.</li>
+  <li>Create an unrooted pink Rose, place the person in it, visualize them happy with complete health in their body, mind, and soul. Repeat mentally: "Happy, healthy, whole, body, mind and soul." Make the Rose rise toward the center of the universe, wishing the best for them.</li>
   <li>Renew your grounding cord.</li>
   <li>Fill yourself with the light of the Golden Sun.</li>
-  <li>Place your hands on the floor to discharge excess energy.</li>
+  <li>Place your hands on the ground to discharge excess energy.</li>
 </ul>
 
-<!-- CLASSES AND CONSULTATIONS -->
-<div class="page-break"></div>
-<h2>Classes &amp; Consultations</h2>
+<p>You can also use this technique for relationships that happened a long time ago or when you end a relationship. In this case, it may be interesting to break the stick of agreements you have with that person as well.</p>
 
-<p>When you are working in any field — or when you are a teacher or lecturer — you can use Rose Meditation to maintain your energy integrity.</p>
+<!-- CLASSES AND SERVICES -->
+<div class="page-break"></div>
+<h2>Classes &amp; Services</h2>
+
+<p>When you provide services in any area — or when you are a teacher or lecturer — you can use the Rose Meditation to maintain your energetic integrity.</p>
 
 <h3>Before</h3>
-<p>Do all the preparation techniques for the Rose Meditation (grounding cord, Golden Sun, energy of the Earth and the Cosmos, sacred space) and cleanse and protect the physical space where the service or class will take place.</p>
+<p>Perform all the preparation techniques for Rose Meditation (grounding cord, Golden Sun, Earth and Cosmos energy, sacred space) and cleanse and protect the physical space where the consultation or class will take place.</p>
 
 <h3>After</h3>
-<p>After saying goodbye to the person you have assisted or the students, take a few moments to reorganize the energies and do the energy separation techniques, because during a class or service many emotional, energetic and spiritual bonds can be formed:</p>
+<p>After saying goodbye to the person you treated or your students, you can take a few moments to reorganize your energies and perform the energy separation techniques, as many emotional, energetic, and spiritual bonds can form during a class or treatment.</p>
 
 <ul>
-  <li>Create a new grounding cord.</li>
-  <li>Explode the Roses of separation, protection and observation and create new ones.</li>
-  <li>Create a grounded Rose in front of you, call your own energy into the Rose and explode the Rose — this recovers your energy that may have remained in the person(s)' Aura.</li>
-  <li>Create a Rose, place the person you have assisted or the students inside the Rose and explode the Rose. This way you return energies that may have remained in your aura.</li>
-  <li>Cut the cords that bind your Aura to the other person's Aura.</li>
-  <li>In the case of closing contracts, when you no longer have plans to serve the person: break spiritual agreements.</li>
-  <li>Create an unrooted pink Rose, place the person(s) on this Rose, visualize the person(s) happy and in complete health. Repeat mentally: "Happy, healthy, complete, body, mind, Spirit." Raise the Rose towards the center of the Universe.</li>
-  <li>Do the Golden Sticky Rose cleansing meditation (or the full meditation if necessary).</li>
-  <li>Explode the 4 roses in the corners of the room.</li>
   <li>Cut the grounding cord and create a new one.</li>
   <li>Fill yourself with the light of the Golden Sun.</li>
+  <li>Cut the cords that bind your Aura to the Aura of the person(s).</li>
+  <li>Create a grounded Rose in front of you, draw your own energy into the Rose, and explode the Rose — this recovers your energy that may have remained in the Aura of the person(s).</li>
+  <li>Explode the Roses of separation, protection, and observation and create new ones.</li>
+  <li>Create a Rose, place the person you served or your students inside the Rose, and explode the Rose. This way, you return any energies that may have remained in your aura.</li>
+  <li>When ending contracts, when you no longer plan to serve the person: break the spiritual agreements.</li>
+  <li>Create an unrooted pink Rose, place the person(s) in this Rose, visualize the person(s) happy with complete health in their body, mind, and Soul. Repeat mentally: "Happy, healthy, complete, body, mind, Soul." Make the rose rise toward the center of the Universe.</li>
+  <li>Do the cleansing meditation of the Golden Sticky Roses (or the complete meditation if necessary).</li>
+  <li>Create a new grounding cord.</li>
+  <li>Fill yourself with the light of the Golden Sun.</li>
   <li>Eliminate excess energy by placing your hands on the floor.</li>
+  <li>Explode the 4 Roses in the corners of the room.</li>
 </ul>
 
 <!-- THE ANALYZER -->
 <div class="page-break"></div>
 <h2>The Analyzer</h2>
 
-<p>The Analyzer is located inside the head. Its functions are to analyze, judge and criticize. It stores our programs and beliefs. Cleansing the Analyzer and the energies that are stored there allows you to free yourself from limitations that impact your life and also helps you to perceive life in a more objective way.</p>
+<p>The Analyzer is located inside the head. Its functions are: to analyze, judge, and criticize. It stores our programs and beliefs. Cleansing the Analyzer and the energies stored there allows you to free yourself from limitations that impact your life and also perceive life in a more objective way.</p>
 
-<p>The cleansing of the Analyzer is done on all the chakra colors. Here is the description for the color red:</p>
+<p>The Analyzer is cleansed in all the colors of the chakras. Here is the description for the color red:</p>
 
 <ul>
   <li>See the Analyzer in red.</li>
   <li>Ground the Analyzer to the center of the Earth with a red cord.</li>
-  <li>Create a red Rose grounded behind you outside your Aura at the height of the Analyzer.</li>
-  <li>The Rose now cleanses the Analyzer in this vibration.</li>
-  <li>The Rose comes down through the grounding cord.</li>
-  <li>Create a Golden Sticky Rose the size of the Analyzer.</li>
-  <li>It enters the Analyzer and spirals inside and out, cleansing away any hidden energy that may have remained there.</li>
-  <li>Now see the Analyzer in gold, raising its vibration.</li>
-  <li>Now close the Analyzer completely.</li>
-  <li>Explode the Rose always outside the Aura.</li>
+  <li>Create a red Rose rooted behind you outside your Aura at the height of the Analyzer.</li>
+  <li>The Rose now cleanses the Analyzer at that vibration.</li>
+  <li>Explode the Rose always outside the aura.</li>
 </ul>
 
-<p>This same procedure should be done with the vibration of all the chakras (orange, yellow, green, pink, sky blue, indigo blue and violet).</p>
-
-<div class="callout">
-  <p>When closing the Analyzer you may feel your intuition working more strongly and your rational side may be limited. If you need to use your rational faculties, just intend it and the Analyzer will open again.</p>
-</div>
-
-<!-- TRANSMEDIUM CHANNELS -->
-<h2>Transmedium Channels</h2>
-
-<p>The Transmedium Channels are located at the back of the neck. It is through them that our Spirit incarnates in our body and through them that disincarnate energies of all kinds can exert an influence on us. Cleansing and closing the Transmedium Channels regularly increases energetic authority and allows us to free ourselves from unwanted habits that are being sustained by tendencies and influences outside of us.</p>
-
-<p>Cleansing the Transmedium Channels is similar to cleansing the Analyzer and is also done on all the chakra colors. For the color red:</p>
+<p>This same procedure should be done with the vibration of all the chakras (orange, yellow, green, pink, sky blue, indigo blue, and violet).</p>
 
 <ul>
-  <li>See the Transmedium Channels in red.</li>
-  <li>Ground the Transmedium Channels to the center of the Earth with a red cord for each one.</li>
-  <li>Create two red Roses grounded behind you outside your Aura at the height of the Transmedium Channels (or one Rose that splits in two when it reaches the height of the channels).</li>
-  <li>The Roses now clean the Transmedium Channels in this vibration.</li>
-  <li>The Roses descend through the grounding cords of the channels.</li>
-  <li>Create two golden sticky Roses the size of the Transmedium Channels.</li>
-  <li>They enter the channels and spiral clean inside and out, cleansing away any hidden energy that may have remained there.</li>
-  <li>Now see the Transmedium Channels in gold, raising their vibration.</li>
-  <li>Now close the Transmedium Channels completely 100%.</li>
-  <li>Always explode the Roses outside the Aura.</li>
+  <li>Now see the Analyzer in golden color raising its vibration.</li>
+  <li>Create a Golden Sticky Rose the size of the Analyzer.</li>
+  <li>It enters the Analyzer and spirals around inside and out, cleaning up any remaining hidden energy that may have been left there.</li>
+  <li>The Rose descends through the rooting cord.</li>
+  <li>Now close the Analyzer completely.</li>
 </ul>
 
-<p>This same procedure should be done with the vibration of all the chakras (orange, yellow, green, pink, sky blue, indigo blue and violet).</p>
+<div class="callout">
+  <p>When you close the Analyzer, you may feel your intuition working more strongly and your rational side may be limited. If you need to use your rational faculties, simply intend for the Analyzer to open again.</p>
+</div>
 
 <!-- CREATING REALITY -->
 <div class="page-break"></div>
-<h2>Creating Reality</h2>
+<h2>Creation of Reality</h2>
+
+<p>We humans are complex beings, endowed with the capacity to create inner worlds through imagination and mind. This same capacity allows us to shape complex realities outside ourselves. The reality we experience today is the result of what we have planted in the past, whether in this lifetime or in previous ones. If we wish to transform the reality around us, we must observe how we are living and begin a process of transformation from the inside out.</p>
 
 <h3>Impeccability</h3>
 
-<p>We humans are complex beings endowed with the ability to create worlds within ourselves through our imagination, our mind. This allows us to create complex worlds outside ourselves too. The reality we live in today is the fruit of what we have planted in the past, whether in this life or in previous lives. If we want to transform the reality around us, we must pay attention to how we are living and begin a process of transformation from inside out.</p>
+<p>We often find ourselves living realities we do not desire, without understanding why we are unable to manifest what we long for. This occurs because different parts of ourselves attempt to move in different directions at the same time, all using the same body. Such inner conflict makes forward movement impossible and results in stagnation.</p>
 
-<p>We often experience unwanted realities, but we don't know why we can't manifest what we really want. This is because different parts of us are trying to move in different directions at the same time using the same body. This is not possible and causes stagnation. The science of creating reality involves learning to be impeccable with ourselves, putting our energy and our chakras all in the same direction.</p>
+<p>The science of creating reality involves learning to be impeccable with ourselves, putting all our energy and chakras in the same direction.</p>
 
 <div class="callout">
-  <p><strong>Intention</strong> — want / ask / pray — connected to the 7th chakra</p>
-  <p><strong>Thinking</strong> — I think / imagine / see — connected to the 6th chakra</p>
-  <p><strong>Word</strong> — I say / talk / ponder — linked to the 5th chakra</p>
-  <p><strong>Feeling</strong> — feel / digest / alchemize — connected to the 2nd and 4th chakras</p>
-  <p><strong>Action</strong> — act / do / renounce — connected to the 1st and 3rd chakras</p>
+  <p><strong>Intention</strong> — I want / I ask / I pray — connected to the 7th chakra</p>
+  <p><strong>Thought</strong> — I think / imagine / see — connected to the 6th chakra</p>
+  <p><strong>Word</strong> — I say / I keep quiet / I ponder — connected to the 5th chakra</p>
+  <p><strong>Feeling</strong> — I feel / digest / alchemize — connected to the 2nd and 4th chakras</p>
+  <p><strong>Action</strong> — I act / I do / I renounce — connected to the 1st and 3rd chakras</p>
 </div>
 
 <h3>Mock-Up</h3>
 
-<p>This is a technique for manifesting things or situations on the physical plane. It is important to note that this technique should only be used for yourself — it cannot be done for someone else. It must be done 7 days in a row to be effective and it must be done for one goal at a time. The higher your vibration when you do the Mock-up, the more effective it will be. A good time to do it is just after finishing Rose Meditation.</p>
+<p>This is a technique for manifesting situations or outcomes on the physical plane. It is important to note that this practice should be used only for oneself; it cannot be performed on behalf of another person. For it to be effective, it must be practiced for seven consecutive days and focused on one goal at a time. The higher your vibrational state while creating the mock-up, the more effective the process will be. For this reason, an ideal moment to practice it is, for example, immediately after completing the Rose Meditation.</p>
 
 <ol>
   <li>Create a grounded Rose and inside that Rose imagine what you want, creating the image with as much detail as you can.</li>
-  <li>Create a second grounded Rose which should be placed on the right side of the first Rose. We intend this Rose to clear any energy that doesn't belong to the first Rose, any kind of blockage that interferes with achieving what you want. Don't focus on what is being cleansed, simply place the intention to cleanse.</li>
-  <li>Create a third pink grounded Rose (the color of Divine Love). Into the interior of this Rose you bring the image of something you love very much, something that gives you a lot of satisfaction and pleasure so that you can raise your vibration to the maximum, to the vibration of Love.</li>
-  <li>Inspired by the previous Rose, now imagine the energy of Divine Love coming out of your heart, in pink, and enveloping the whole of the first Rose, placing it in a beautiful pink circle, like a bubble.</li>
-  <li>Cut the roots of the first Rose and let it go up to the center of the Universe. Always ask for it to come true if it is for the Supreme Good.</li>
+  <li>Create a second grounded Rose that should be placed to the right of the first Rose. We intend for this Rose to cleanse all energy that does not belong to the first Rose, any type of blockage that interferes with the realization of what you desire. Do not focus on what is being cleansed, simply set the intention to cleanse.</li>
+  <li>Create a third pink grounded Rose (the color of Divine Love). In this Rose, we bring into your inner self the image of something you love very much, something that gives you great satisfaction and pleasure so that you can raise your vibration to the maximum, to the vibration of love.</li>
+  <li>Inspired by the previous Rose, now imagine the energy of Divine Love, in pink, coming out of your heart and enveloping the first Rose, placing it in a beautiful pink circle, like a bubble.</li>
+  <li>Cut the roots of the first Rose and let it rise to the center of the Universe. Always ask for it to be done if it is for the greater good.</li>
   <li>Explode the third Rose (the pink one).</li>
   <li>Explode the second Rose (the cleansing rose).</li>
 </ol>
 
 <div class="callout">
-  <p>Remember to repeat this technique for 7 consecutive days. If you don't do it one day before completing the 7-day cycle, go back to the beginning. Once you've completed the mock-up, live your life trying to align yourself on all levels, handing over the fulfillment of your desires to the Supreme Being and open to receiving in whatever way the Great Mystery allows.</p>
+  <p>Remember to repeat this technique for 7 consecutive days. If you miss a day before completing the 7-day cycle, go back to the beginning. After completing the mock-up, live your life trying to align yourself on all levels, surrendering the fulfillment of your desires to the Supreme Being, open to receiving in whatever way the Great Mystery allows.</p>
 </div>
 
 <!-- ELEMENTS SUMMARY -->
 <div class="page-break"></div>
 <div class="elements-box">
-  <h3>Elements of Rose Meditation — Level 3 Daily</h3>
+  <h3>Elements of the Daily Rose Meditation Level 3</h3>
   <ul>
     <li>Grounding cord</li>
     <li>Golden Sun</li>
     <li>Aura boundaries and cord expansion</li>
     <li>Roses of protection, separation and observation</li>
-    <li>Energies of the Earth and Cosmos</li>
+    <li>Earth and Cosmic Energies</li>
     <li>Cleansing Rose</li>
-    <li>Energy Recovery Rose</li>
+    <li>Rose of energy recovery</li>
     <li>Sacred space</li>
     <li>Space protection</li>
-    <li>Unrooted roses that cleanse the layers of the Aura</li>
-    <li>Grounded Roses that cleanse the front and back of the chakras</li>
+    <li>Grounded roses that cleanse the front and back chakras</li>
+    <li>Unrooted roses that cleanse the layers of the aura</li>
     <li>Golden Sticky Roses</li>
     <li>Cleansing the Analyzer</li>
-    <li>Cleansing the Transmedium Channels</li>
+    <li>Finishing: Cord + Golden Sun + Discharging excess energy</li>
   </ul>
 </div>
 
-<h3>Other Elements of Level 3</h3>
+<h3>Other Elements of Level 3 Rose Meditation</h3>
 <ul>
   <li>Breaking spiritual agreements</li>
-  <li>Cutting the energetic cords</li>
+  <li>Cutting energetic cords</li>
   <li>Cleansing the energy of sexual partners</li>
-  <li>Preparation and cleansing for classes and appointments</li>
+  <li>Preparation and cleansing for classes and consultations</li>
   <li>Mock-up</li>
-</ul>
-
-<h3>To End the Meditation</h3>
-<ul>
-  <li>Cord + Golden Sun + discharge excess energy</li>
 </ul>
 
 <!-- END -->
