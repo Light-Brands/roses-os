@@ -193,6 +193,8 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 **Source:** `docs/training/mdr-teachers-training-manual.md`
 
+> **Important:** All "Designer Notes" throughout this section are internal guidance for the designer only. Once the designer has completed the work for a given slide, the corresponding designer notes should be **removed from the slide deck / final deliverable** -- they should **not** appear in the finished product. The notes should remain here in this `.md` file as a permanent reference, but the final slides and website pages must contain only the teaching text and imagery.
+
 ---
 
 ### Opening -- Agreements and Virtues
