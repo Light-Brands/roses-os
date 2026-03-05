@@ -382,7 +382,8 @@ export const chakraSlides: ChakraSlideData[] = [
     blockages: 'Shame — Emotional Repression — Guilt',
     teachingText:
       'Svadhisthana — Emotion & Creativity',
-    imageNote: 'Body illustration emphasizing Sacral Chakra location, dominant orange color. Needs to be created — use 23a-example of chakra slides .PNG as style reference.',
+    reimaginedImage: '23a-example of chakra slides .PNG',
+    imageNote: 'Placeholder — using 23a example chakra slide. Final: Body illustration emphasizing Sacral Chakra location, dominant orange color.',
     level: 2,
     section: 'chakras',
   },
