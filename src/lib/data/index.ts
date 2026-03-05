@@ -9,6 +9,7 @@ export type {
   CommunityProgram,
   CommunityClassSession, CommunityScheduleMonth,
   CommunityScheduleCycle, InvestmentOption,
+  MeditationTechnique, TechniqueStep, SubTechnique,
 } from './types';
 
 export {
@@ -21,6 +22,13 @@ export {
   level2CleansingSlides,
   level3Slides,
 } from './teaching-slides';
+
+export {
+  level1Techniques,
+  getLevel1TechniquesSorted,
+  getTechniqueById,
+  getTechniquesByCategory,
+} from './level1-techniques';
 
 export {
   navItems,
