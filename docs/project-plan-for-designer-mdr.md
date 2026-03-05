@@ -411,6 +411,7 @@ Below is the complete teaching text that accompanies each image/slide in the man
 - The room also has its own **grounding cord that expands within the space** -- this exists energetically but is **not depicted in the current image**
 - **This is a known visual challenge** -- the room grid is already complex with roses and connecting lines, so adding an expanded grounding cord is difficult to represent clearly. The designer has creative freedom here to find a solution that works without cluttering the composition. Possible approaches: a subtle translucent wash beneath the grid floor, a soft downward glow from the base of the room, or a separate companion detail image. If it cannot be shown clearly in the main image, a note or caption acknowledging the room's grounding cord may suffice
 - The grounding cord visual direction (when depicted): **opaque, transparent, thick and strong, less gold** -- same as slides 7 and 10
+- **Correction:** The golden energy shown under the figure in the current image is **not accurate** -- the figure does not radiate golden energy beneath it for protection. If anything is shown beneath the figure, it should only be a **grounding cord**, not a pool or field of golden energy
 
 ---
 
@@ -418,6 +419,9 @@ Below is the complete teaching text that accompanies each image/slide in the man
 **Original:** `21-cleansing space - original .PNG` | **Reimagined:** `21-cleansingphysicalspace.PNG`
 
 > Once the space is protected, it is cleansed. A large Cleansing Rose is placed above the grid, and golden energy pours downward through the entire structure, clearing all foreign, stagnant, or disruptive energies from the space.
+
+**Designer Notes:**
+- **Correction:** The rose itself does **not beam or emit golden light** -- the golden energy pours downward through the structure to cleanse, but the rose is not the source of a golden light beam. The rose directs the cleansing, but the visual should not show rays or beams of golden light radiating from the rose
 
 ---
 
@@ -689,12 +693,18 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 > Golden sticky roses are placed on each of the seven chakras, drawing out foreign energy lodged in the energy centers.
 
+**Designer Notes:**
+- Add a few **subtle arrows** to indicate the direction of energy being drawn out by the sticky roses
+
 ---
 
 #### Slide: Golden Sticky Roses -- Phase 2 (Body Placement)
 **Original:** `27-golden sticky 2 - original .PNG` | **Reimagined:** `27-golden sticky2 .PNG`
 
 > Golden sticky roses are placed at the joints and extremities of the body -- shoulders, elbows, wrists, hands, hips, knees, ankles, feet -- drawing out foreign energy stored in the physical body.
+
+**Designer Notes:**
+- Add a few **subtle arrows** to indicate the direction of energy being drawn out by the sticky roses
 
 ---
 
@@ -703,12 +713,18 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 > Golden sticky roses are placed throughout the entire body -- covering the torso, limbs, and all remaining areas -- for a thorough, complete energetic cleansing.
 
+**Designer Notes:**
+- Add a few **subtle arrows** to indicate the direction of energy being drawn out by the sticky roses
+
 ---
 
 #### Slide: Golden Sticky Roses -- Phase 4 (Integration)
 **Original:** `29-golden sticky 4- original .PNG` | **Reimagined:** `29-golden sticky 4.PNG`
 
 > After the golden sticky roses have done their work, a large Golden Rose appears above the head. All foreign energy gathered by the sticky roses is released, and the entire body is bathed in golden light -- restoring, sealing, and integrating the energy body.
+
+**Designer Notes:**
+- Add a few **subtle arrows** to indicate the direction of energy release and golden light cascading through the body
 
 ---
 
