@@ -153,7 +153,7 @@ export const scheduleStages: ScheduleStage[] = [
     sessions: [
       { day: 'Rose Meditation Guidance', duration: '30 min', time: { sanJose: '7:00 – 7:30 AM', bogota: '8:00 – 8:30 AM', newYork: '9:00 – 9:30 AM', brasilia: '10:00 – 10:30 AM', london: '1:00 – 1:30 PM', madrid: '2:00 – 2:30 PM' } },
       { day: 'First Class', duration: '3 hours', time: { sanJose: '8:00 – 11:00 AM', bogota: '9:00 AM – 12:00 PM', newYork: '10:00 AM – 1:00 PM', brasilia: '11:00 AM – 2:00 PM', london: '2:00 – 5:00 PM', madrid: '3:00 – 6:00 PM' } },
-      { day: 'Second Class', duration: '3 hours', time: { sanJose: '12:30 – 2:30 PM', bogota: '1:30 – 4:30 PM', newYork: '2:30 – 5:30 PM', brasilia: '3:30 – 6:30 PM', london: '6:30 – 9:30 PM', madrid: '7:30 – 10:30 PM' } },
+      { day: 'Second Class', duration: '3 hours', time: { sanJose: '12:30 – 3:30 PM', bogota: '1:30 – 4:30 PM', newYork: '2:30 – 5:30 PM', brasilia: '3:30 – 6:30 PM', london: '6:30 – 9:30 PM', madrid: '7:30 – 10:30 PM' } },
     ],
   },
   {
@@ -570,33 +570,33 @@ export const freePrograms: CommunityProgram[] = [
             month: 'March',
             sessions: [
               { date: 'Sat, Mar 7 — Jennifer', time: { sanJose: '9:00 AM', bogota: '10:00 AM', newYork: '10:00 AM', brasilia: '12:00 PM', london: '3:00 PM', madrid: '4:00 PM' } },
-              { date: 'Sun, Mar 9 — Iryna', time: { sanJose: '9:00 AM', bogota: '10:00 AM', newYork: '11:00 AM', brasilia: '12:00 PM', london: '3:00 PM', madrid: '4:00 PM' } },
-              { date: 'Sat, Mar 29 — Jennifer', time: { sanJose: '9:00 AM', bogota: '10:00 AM', newYork: '11:00 AM', brasilia: '12:00 PM', london: '4:00 PM', madrid: '5:00 PM' } },
+              { date: 'Mon, Mar 9 — Iryna', time: { sanJose: '9:00 AM', bogota: '10:00 AM', newYork: '11:00 AM', brasilia: '12:00 PM', london: '3:00 PM', madrid: '4:00 PM' } },
+              { date: 'Sun, Mar 29 — Jennifer', time: { sanJose: '9:00 AM', bogota: '10:00 AM', newYork: '11:00 AM', brasilia: '12:00 PM', london: '4:00 PM', madrid: '5:00 PM' } },
             ],
           },
           {
             month: 'April',
             sessions: [
-              { date: 'Sat, Apr 5 — Jennifer', time: { sanJose: '9:00 AM', bogota: '10:00 AM', newYork: '11:00 AM', brasilia: '12:00 PM', london: '4:00 PM', madrid: '5:00 PM' } },
+              { date: 'Sun, Apr 5 — Jennifer', time: { sanJose: '9:00 AM', bogota: '10:00 AM', newYork: '11:00 AM', brasilia: '12:00 PM', london: '4:00 PM', madrid: '5:00 PM' } },
               { date: 'Sat, Apr 18 — Silvia C', time: { sanJose: '7:00 AM', bogota: '8:00 AM', newYork: '9:00 AM', brasilia: '10:00 AM', london: '2:00 PM', madrid: '3:00 PM' } },
               { date: 'Sun, Apr 19 — Jennifer', time: { sanJose: '9:00 AM', bogota: '10:00 AM', newYork: '11:00 AM', brasilia: '12:00 PM', london: '4:00 PM', madrid: '5:00 PM' } },
-              { date: 'Sun, Apr 27 — Dara', time: { sanJose: '7:00 AM', bogota: '8:00 AM', newYork: '9:00 AM', brasilia: '10:00 AM', london: '2:00 PM', madrid: '3:00 PM' } },
+              { date: 'Mon, Apr 27 — Dara', time: { sanJose: '7:00 AM', bogota: '8:00 AM', newYork: '9:00 AM', brasilia: '10:00 AM', london: '2:00 PM', madrid: '3:00 PM' } },
             ],
           },
           {
             month: 'May',
             sessions: [
-              { date: 'Mon, May 5 — Nicole', time: { sanJose: 'TBD', bogota: 'TBD', newYork: 'TBD', brasilia: 'TBD', london: 'TBD', madrid: 'TBD' } },
+              { date: 'Tue, May 5 — Nicole', time: { sanJose: 'TBD', bogota: 'TBD', newYork: 'TBD', brasilia: 'TBD', london: 'TBD', madrid: 'TBD' } },
               { date: 'Sat, May 9 — Silvia F', time: { sanJose: 'TBD', bogota: 'TBD', newYork: 'TBD', brasilia: 'TBD', london: 'TBD', madrid: 'TBD' } },
-              { date: 'Sun, May 11 — Dara', time: { sanJose: '7:30 AM', bogota: '8:30 AM', newYork: '9:30 AM', brasilia: '10:30 AM', london: '2:30 PM', madrid: '3:30 PM' } },
+              { date: 'Mon, May 11 — Dara', time: { sanJose: '7:30 AM', bogota: '8:30 AM', newYork: '9:30 AM', brasilia: '10:30 AM', london: '2:30 PM', madrid: '3:30 PM' } },
               { date: 'TBD — Iryna', time: { sanJose: 'TBD', bogota: 'TBD', newYork: 'TBD', brasilia: 'TBD', london: 'TBD', madrid: 'TBD' } },
-              { date: 'Sun, May 25 — Julia', time: { sanJose: '8:00 AM', bogota: '9:00 AM', newYork: '10:00 AM', brasilia: '11:00 AM', london: '3:00 PM', madrid: '4:00 PM' } },
+              { date: 'Mon, May 25 — Julia', time: { sanJose: '8:00 AM', bogota: '9:00 AM', newYork: '10:00 AM', brasilia: '11:00 AM', london: '3:00 PM', madrid: '4:00 PM' } },
             ],
           },
           {
             month: 'June',
             sessions: [
-              { date: 'Mon, Jun 2 — Silvia C', time: { sanJose: '6:00 AM', bogota: '7:00 AM', newYork: '8:00 AM', brasilia: '9:00 AM', london: '1:00 PM', madrid: '2:00 PM' } },
+              { date: 'Tue, Jun 2 — Silvia C', time: { sanJose: '6:00 AM', bogota: '7:00 AM', newYork: '8:00 AM', brasilia: '9:00 AM', london: '1:00 PM', madrid: '2:00 PM' } },
               { date: 'Wed, Jun 10 — Nicole', time: { sanJose: 'TBD', bogota: 'TBD', newYork: 'TBD', brasilia: 'TBD', london: 'TBD', madrid: 'TBD' } },
             ],
           },
