@@ -175,15 +175,15 @@ These are the slides that need to be created from scratch. The designer has full
 
 | Concept | Description | Manual Section | Notes |
 |---------|-------------|----------------|-------|
-| **Root Chakra** | Body illustration emphasizing root chakra location, dominant red color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference |
-| **Sacral Chakra** | Body illustration emphasizing sacral chakra location, dominant orange color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference |
-| **Solar Plexus Chakra** | Body illustration emphasizing solar plexus location, dominant yellow color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference |
-| **Heart Chakra** | Body illustration emphasizing heart chakra location, dominant green/pink color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference |
-| **Throat Chakra** | Body illustration emphasizing throat chakra location, dominant light blue color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference |
-| **Third Eye Chakra** | Body illustration emphasizing third eye location, dominant indigo color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference |
-| **Crown Chakra** | Body illustration emphasizing crown chakra location, dominant violet/white color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference |
+| **Root Chakra** | Body illustration emphasizing root chakra location, dominant red color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference, or any design the designer thinks would be good for this section |
+| **Sacral Chakra** | Body illustration emphasizing sacral chakra location, dominant orange color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference, or any design the designer thinks would be good for this section |
+| **Solar Plexus Chakra** | Body illustration emphasizing solar plexus location, dominant yellow color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference, or any design the designer thinks would be good for this section |
+| **Heart Chakra** | Body illustration emphasizing heart chakra location, dominant green/pink color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference, or any design the designer thinks would be good for this section |
+| **Throat Chakra** | Body illustration emphasizing throat chakra location, dominant light blue color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference, or any design the designer thinks would be good for this section |
+| **Third Eye Chakra** | Body illustration emphasizing third eye location, dominant indigo color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference, or any design the designer thinks would be good for this section |
+| **Crown Chakra** | Body illustration emphasizing crown chakra location, dominant violet/white color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference, or any design the designer thinks would be good for this section |
 
-**Note on chakra slides:** We have one example image (`23a-example of chakra slides .PNG`) that shows an idea of what the individual chakra pages could look like. The designer should use this as a starting point but has full creative freedom. The priority is helping viewers clearly understand where in the body each chakra is located and the nadis (energy channels) associated with it. Each slide should emphasize that chakra's color -- vibrant yet subtle. Use the reimagined images as inspiration for the overall feel, not as exact references to replicate.
+**Note on chakra slides:** We have one example image (`23a-example of chakra slides .PNG`) that shows an idea of what the individual chakra pages could look like. The designer should use this as a starting point but has full creative freedom -- or any design the designer thinks would be good for this section. The priority is helping viewers clearly understand where in the body each chakra is located and the nadis (energy channels) associated with it. Each slide should emphasize that chakra's color -- vibrant yet subtle. Use the reimagined images as inspiration for the overall feel, not as exact references to replicate.
 
 ---
 
@@ -422,6 +422,7 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 **Designer Notes:**
 - **Correction:** The rose itself does **not beam or emit golden light** -- the golden energy pours downward through the structure to cleanse, but the rose is not the source of a golden light beam. The rose directs the cleansing, but the visual should not show rays or beams of golden light radiating from the rose
+- The room should show its own **grounding cord expanding within the space** -- the grounding cord should be clear and transparent so people understand the cord also expands within the room (same visual direction as slide 20)
 
 ---
 
@@ -429,6 +430,11 @@ Below is the complete teaching text that accompanies each image/slide in the man
 **Original:** `22-protect the space- original .PNG` | **Reimagined:** `22-owningurspace.PNG`
 
 > After protection and cleansing, you claim ownership of the space. This is an act of energetic sovereignty -- declaring the space as yours, filling it with your own energy and intention. The space becomes an extension of your aura and your practice.
+
+**Designer Notes:**
+- The room should show its own **grounding cord expanding within the space** -- the grounding cord should be clear and transparent so people understand the cord also expands within the room (same visual direction as slide 20)
+- **Four golden lines go from the perineum to the four bottom corners of the room**, and **four golden lines from the crown to the top four corners of the room** -- this should be clearly depicted as this is what the slide demonstrates
+- Same grounding cord visual direction as slides 7 and 10: **opaque, transparent, thick and strong, less gold**
 
 ---
 
@@ -841,6 +847,10 @@ All images are in the same directory (`public/rose med images/`). They are diffe
 3. Where no reimagined version exists (only 4 concepts -- see Section 3), create a new illustration that honors the original's accuracy while matching the reimagined style
 4. Always maintain the connection between old and new -- pay homage to the original tradition while elevating it
 5. Both originals and reimagined images should be accessible on the website -- the originals serve as a supplementary reference that teachers may prefer for their accuracy
+
+### Transparent Backgrounds
+
+All images must have **true transparent backgrounds**. No checkerboard patterns or solid-color fills behind figures. If any existing images have checkerboard backgrounds, they need to be cleaned up to use proper transparency.
 
 ### Rose Depiction Rule
 
