@@ -231,6 +231,13 @@ export interface InvestmentOption {
   price: string;
 }
 
+/** Detail section for community program (e.g. requirements, how classes work) */
+export interface ProgramDetailSection {
+  heading: string;
+  body: string;
+  bullets?: string[];
+}
+
 /** Ongoing community program or activity */
 export interface CommunityProgram {
   id: string;
@@ -244,4 +251,8 @@ export interface CommunityProgram {
   googleCalendarUrl?: string;
   scheduleCycles?: CommunityScheduleCycle[];
   investment?: InvestmentOption[];
+  /** Optional structured detail sections shown in the expanded area */
+  detailSections?: ProgramDetailSection[];
+  /** Facilitator names */
+  facilitation?: string;
 }

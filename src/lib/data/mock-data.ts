@@ -880,11 +880,40 @@ export const paidPrograms: CommunityProgram[] = [
   {
     id: 'teachers-training',
     title: 'Rose Meditation Teachers Training',
-    description: 'A dedicated training path for those called to share Rose Meditation with others. This program prepares you to hold space, guide meditations, and transmit the practice with clarity, presence, and integrity.',
+    description: 'This training is designed to prepare facilitators to guide and teach Rose Meditation with presence, maturity, and responsibility.\n\nMore than learning a technique, this program offers a genuine deepening into the Path of the Roses, integrating personal experience, technical refinement, and the development of inner listening.\n\nThe moment when each participant will be ready to begin offering their own guidances and teaching will depend on their individual process, level of integration, and maturity in the practice.\n\nThis training unfolds in two five-month cycles, with the same teachings, content and intention. The journey is similar — the only difference is when you enter: One cycle runs from March to July; the other from August to December.',
     free: false,
     calendarLink: 'https://calendar.google.com/calendar/ical/6c5be92eae7703c042356edb50cd679ab042ac4ddb5ca8ca68f9b37f77df9de8%40group.calendar.google.com/public/basic.ics',
     googleCalendarUrl: 'https://calendar.google.com/calendar/u/1?cid=NmM1YmU5MmVhZTc3MDNjMDQyMzU2ZWRiNTBjZDY3OWFiMDQyYWM0ZGRiNWNhOGNhNjhmOWIzN2Y3N2RmOWRlOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
     scheduleCycles: teachersTrainingSchedule,
     investment: teachersTrainingInvestment,
+    facilitation: 'Angel, Dara, Peggy, Júlia, Nicole, and Ana Leite',
+    detailSections: [
+      {
+        heading: 'Minimum Requirement',
+        body: 'Completion of Rose Meditation Level 1, 2 and 3',
+      },
+      {
+        heading: 'How Do the Classes Work?',
+        body: 'The sessions combine theory and practice, including:',
+        bullets: [
+          'Conceptual foundations',
+          'Technical refinement',
+          'Guided experience of the technique presented in each class',
+        ],
+      },
+      {
+        heading: 'Supervised Guidance',
+        body: 'Guided practices will be scheduled according to the number of participants, ensuring that each student has the opportunity to guide at least once.',
+        bullets: [
+          'One student guides the practice',
+          'Peers provide constructive feedback',
+          'The teacher shares direction and adjustments',
+        ],
+      },
+      {
+        heading: 'Structure',
+        body: 'Weekly live sessions',
+      },
+    ],
   },
 ];
