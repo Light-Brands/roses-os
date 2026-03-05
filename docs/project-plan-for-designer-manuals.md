@@ -268,3 +268,17 @@ All manuals follow the unified ROSES OS PDF template system:
 The designer has creative freedom in executing these manuals. The reimagined Greek-style / Yeva World / Caravana aesthetic should feel natural and beautiful -- but **accuracy of the teaching depiction is always the priority**. Every illustration must faithfully show the meditation position, energetic structure, or imagination technique being taught. Within that constraint, the designer should bring their full creative vision -- the clothing, the settings, the color treatment, the composition are all open to interpretation. Where something isn't specified, follow the brand's tone -- warm, sacred, grounded, quiet.
 
 Given the tight timeline, the designer should work efficiently -- reusing and adapting Teacher's Resource Manual imagery where possible, creating new only where needed. Speed matters, but the brand standard must hold.
+
+---
+
+## 10. PLANNED FUTURE CHANGE -- SACRED SPACE CONTENT MOVE
+
+> **This change happens after all manuals are complete.** Not part of the March 15 deadline.
+
+Once all manuals are done, the **Sacred Space teaching and imagery will move from the Level 2 manual to the Level 1 manual**. This means:
+
+- The Sacred Space content (teaching text and all associated illustrations) will be **removed from Level 2** and **added to Level 1**
+- Level 1 will be updated to include Sacred Space as part of the foundational teachings
+- Level 2 will be updated to remove Sacred Space, keeping only the chakra-focused and advanced energy work content
+- All four language versions of both Level 1 and Level 2 will need to be regenerated after this move
+- The designer should be aware of this upcoming change so that the Sacred Space imagery is designed as a modular section that can be relocated cleanly
