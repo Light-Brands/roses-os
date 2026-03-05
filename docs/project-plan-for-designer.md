@@ -12,10 +12,10 @@ Each major deliverable has its own detailed designer plan. This master document 
 |---|-------------|--------|---------------|
 | 1 | **MDR Teacher's Resource Manual** | Current -- active deliverable | [`project-plan-for-designer-mdr.md`](project-plan-for-designer-mdr.md) |
 | 2 | **Brand Book** (110-130 pages) | Next -- content ~90% ready, pending long Guardian bios | [`project-plan-for-designer-brand-book.md`](project-plan-for-designer-brand-book.md) |
-| 3 | **Manuals** (redo / redesign) | Future | Plan to be created when active |
+| 3 | **Manuals** (redo / redesign) | Planned -- brief ready | [`project-plan-for-designer-manuals.md`](project-plan-for-designer-manuals.md) |
 | 4 | **Platform sections** (invitation, forms, website pages) | Future | Covered in this document (Sections B-E below) |
 
-**Current focus:** The MDR Teacher's Resource Manual is the first deliverable. The brand book follows. Manuals and platform sections come later. The design system and visual language established in the MDR will carry through everything that follows.
+**Current focus:** The MDR Teacher's Resource Manual is the first deliverable. The brand book follows. The manuals redesign (Level 2 and Level 3 2026) is **urgent -- classes start March 15, 2026**. All imagery reimagined in the Greek-style / Yeva World / Caravana aesthetic, available as downloadable PDFs in four languages (English, Spanish, Portuguese, Greek) from the Resources section. Level 1 content is not duplicated as it is already covered in the Level 1 manual. Platform sections come later. The design system and visual language established in the MDR will carry through everything that follows.
 
 ---
 
@@ -259,6 +259,7 @@ There are **five platform sections**, in priority order:
 | The Invitation | Presentation-style PDF (one section per page) | Public |
 | Forms (post-submission) | Confirmation summary with signed agreements | Per-participant |
 | The Rose / The Aura / The Journey | Content page exports | Public |
+| Student Manuals (Resources) | Level 2, Level 3 2026 -- each in EN, ES, PT, EL | Public (enrolled students) |
 
 **Design principle:** The PDF should feel intentional -- not like a printed webpage, but like a designed document that happens to share content with the web. Same information, optimized for the medium.
 
@@ -424,12 +425,26 @@ The designer must follow this system across the entire platform -- web and PDF.
 - [ ] Internal review with Guardians and facilitators
 - [ ] Address feedback and refine
 
-### Phase 7 -- Localization
+### Phase 7 -- Student Manuals Redesign (Section F)
 
-- [ ] Translate all platform content to Portuguese and Spanish
+> **This phase has its own detailed designer plan:** [`project-plan-for-designer-manuals.md`](project-plan-for-designer-manuals.md)
+
+**URGENT -- must be complete before March 15, 2026 (class start date).**
+
+- [ ] Review legacy manuals and inventory content to carry forward (Level 2 content only from legacy L1&2 manual -- Level 1 is excluded)
+- [ ] Design **Level 2 Manual** with reimagined imagery in Greek-style / Yeva World / Caravana aesthetic -- pull from Teacher's Resource Manual or create new, always accurate to the teaching
+- [ ] Design **Level 3 Manual (2026 edition)** with same reimagined aesthetic
+- [ ] Translate both manuals into Spanish, Portuguese, and Greek (8 total PDFs)
+- [ ] Upload all manuals to the Resources section with language selector and download functionality
+- [ ] Review for visual consistency across both manuals and all four languages
+
+### Phase 8 -- Localization
+
+- [ ] Translate all platform content to Portuguese, Spanish, and Greek
   - Maintain identical layouts, swap text only
   - Respect linguistic nuance (not literal translation)
 - [ ] Verify translated content works in both web and PDF formats
+- [ ] Verify all downloadable manuals are available in all four languages
 - [ ] Test all forms in translated versions
 - [ ] Deliver platform access to teachers and set up credentials
 
@@ -453,6 +468,7 @@ These principles must guide every design decision:
 6. **Consistency is coherence** -- Same background style, same layout logic, same color rules, same iconography style across every page and PDF.
 7. **Texture has meaning** -- Clay, linen, stone, paper evoke earthiness and groundedness. Use them with intention.
 8. **The Rose Clay Mauve (`#9C6F6E`) is the brand** -- It is the field, not the accent. It should feel like home.
+9. **Modular by default** -- Every teaching technique, meditation position, and imagination exercise must be designed as a self-contained module that can be moved between manuals or reordered without redesign. The curriculum evolves; the design must accommodate that without starting over.
 
 ---
 
@@ -487,18 +503,20 @@ The designer should understand the language world they are designing for:
 | Forms | Web form designs | Multi-step enrollment flow, contact, waitlist. All interaction states. Post-submission PDF confirmation design |
 | Platform Pages | Web page designs | All 7 sitemap pages, responsive, with PDF download integration for content pages |
 | Brand Book | InDesign or Figma + PDF export | 110-130 page designed brand book. See [`project-plan-for-designer-brand-book.md`](project-plan-for-designer-brand-book.md) |
+| Student Manuals | PDF (8 files) | 2 manuals × 4 languages (EN, ES, PT, EL). Level 2 and Level 3 2026. See [`project-plan-for-designer-manuals.md`](project-plan-for-designer-manuals.md) |
 | Assets | SVG/PNG | All illustrations, icons, textures exported as reusable assets. SVG preferred for cross-medium rendering (web + PDF) |
 
 ---
 
 ## 9. LANGUAGE VERSIONS REQUIRED
 
-**Phase 1 languages:**
+**Languages:**
 1. English (primary)
-2. Portuguese (secondary)
+2. Portuguese
 3. Spanish
+4. Greek
 
-All platform content and PDF exports must support all three languages with identical layouts and text-only swaps. The web platform should support language switching (via navigation or URL path). PDF exports should generate in the user's selected language. Translations should respect linguistic nuance -- not be literal word-for-word translations.
+All platform content, manuals, and PDF exports must support all four languages with identical layouts and text-only swaps. The web platform should support language switching (via navigation or URL path). PDF exports should generate in the user's selected language. Downloadable manuals in the Resources section must be available in all four languages. Translations should respect linguistic nuance -- not be literal word-for-word translations.
 
 ---
 
