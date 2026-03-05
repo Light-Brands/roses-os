@@ -15,7 +15,7 @@ Each major deliverable has its own detailed designer plan. This master document 
 | 3 | **Manuals** (redo / redesign) | Planned -- brief ready | [`project-plan-for-designer-manuals.md`](project-plan-for-designer-manuals.md) |
 | 4 | **Platform sections** (invitation, forms, website pages) | Future | Covered in this document (Sections B-E below) |
 
-**Current focus:** The MDR Teacher's Resource Manual is the first deliverable. The brand book follows. The manuals redesign (Level 2, Level 1 & 2 combined, and Level 3 2026) comes next -- creative imagery aligned with the Teacher's Resource Manual, available as downloadable PDFs in four languages (English, Spanish, Portuguese, Greek) from the Resources section. Platform sections come later. The design system and visual language established in the MDR will carry through everything that follows.
+**Current focus:** The MDR Teacher's Resource Manual is the first deliverable. The brand book follows. The manuals redesign (Level 2 and Level 3 2026) is **urgent -- classes start March 15, 2026**. All imagery reimagined in the Greek-style / Yeva World / Caravana aesthetic, available as downloadable PDFs in four languages (English, Spanish, Portuguese, Greek) from the Resources section. Level 1 content is not duplicated as it is already covered in the Level 1 manual. Platform sections come later. The design system and visual language established in the MDR will carry through everything that follows.
 
 ---
 
@@ -259,7 +259,7 @@ There are **five platform sections**, in priority order:
 | The Invitation | Presentation-style PDF (one section per page) | Public |
 | Forms (post-submission) | Confirmation summary with signed agreements | Per-participant |
 | The Rose / The Aura / The Journey | Content page exports | Public |
-| Student Manuals (Resources) | Level 2, Levels 1 & 2 combined, Level 3 2026 -- each in EN, ES, PT, EL | Public (enrolled students) |
+| Student Manuals (Resources) | Level 2, Level 3 2026 -- each in EN, ES, PT, EL | Public (enrolled students) |
 
 **Design principle:** The PDF should feel intentional -- not like a printed webpage, but like a designed document that happens to share content with the web. Same information, optimized for the medium.
 
@@ -429,13 +429,14 @@ The designer must follow this system across the entire platform -- web and PDF.
 
 > **This phase has its own detailed designer plan:** [`project-plan-for-designer-manuals.md`](project-plan-for-designer-manuals.md)
 
-- [ ] Review legacy manuals and inventory content to carry forward
-- [ ] Design **Level 2 Manual** with creative imagery matching the Teacher's Resource Manual style
-- [ ] Design **Level 1 & 2 Combined Manual** with cohesive visual flow from foundations to deepening
-- [ ] Design **Level 3 Manual (2026 edition)** with imagery reflecting advanced, integrative content
-- [ ] Translate all three manuals into Spanish, Portuguese, and Greek (12 total PDFs)
+**URGENT -- must be complete before March 15, 2026 (class start date).**
+
+- [ ] Review legacy manuals and inventory content to carry forward (Level 2 content only from legacy L1&2 manual -- Level 1 is excluded)
+- [ ] Design **Level 2 Manual** with reimagined imagery in Greek-style / Yeva World / Caravana aesthetic -- pull from Teacher's Resource Manual or create new, always accurate to the teaching
+- [ ] Design **Level 3 Manual (2026 edition)** with same reimagined aesthetic
+- [ ] Translate both manuals into Spanish, Portuguese, and Greek (8 total PDFs)
 - [ ] Upload all manuals to the Resources section with language selector and download functionality
-- [ ] Review for visual consistency across all manuals and languages
+- [ ] Review for visual consistency across both manuals and all four languages
 
 ### Phase 8 -- Localization
 
@@ -501,7 +502,7 @@ The designer should understand the language world they are designing for:
 | Forms | Web form designs | Multi-step enrollment flow, contact, waitlist. All interaction states. Post-submission PDF confirmation design |
 | Platform Pages | Web page designs | All 7 sitemap pages, responsive, with PDF download integration for content pages |
 | Brand Book | InDesign or Figma + PDF export | 110-130 page designed brand book. See [`project-plan-for-designer-brand-book.md`](project-plan-for-designer-brand-book.md) |
-| Student Manuals | PDF (12 files) | 3 manuals × 4 languages (EN, ES, PT, EL). Level 2, Levels 1 & 2 combined, Level 3 2026. See [`project-plan-for-designer-manuals.md`](project-plan-for-designer-manuals.md) |
+| Student Manuals | PDF (8 files) | 2 manuals × 4 languages (EN, ES, PT, EL). Level 2 and Level 3 2026. See [`project-plan-for-designer-manuals.md`](project-plan-for-designer-manuals.md) |
 | Assets | SVG/PNG | All illustrations, icons, textures exported as reusable assets. SVG preferred for cross-medium rendering (web + PDF) |
 
 ---
