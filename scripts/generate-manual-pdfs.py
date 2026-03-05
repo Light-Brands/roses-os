@@ -647,6 +647,13 @@ LEVEL_3_HTML = """<!DOCTYPE html>
 <!-- INTRODUCTION -->
 <h2>Introduction</h2>
 
+<div class="image-placeholder">
+  <div class="ph-icon">&#9702;</div>
+  <p class="ph-label">Illustration — Rose Meditation Level 3</p>
+  <p class="ph-desc">An elevated, radiant figure seated in meditation, surrounded by golden roses and subtle light — representing the advanced practitioner entering deeper levels of awareness and energetic mastery.</p>
+  <p class="ph-ref">Ref: Level 3 Introduction</p>
+</div>
+
 <p>Rose Meditation is a tool for cleansing the aura and the seven main chakras, providing protection and energy balance. Through this technique it is possible to release blocked energies, energies that are not ours, become aware of our life force and deprogram patterns that prevent direct contact with our essence.</p>
 
 <div class="highlight">
@@ -656,6 +663,13 @@ LEVEL_3_HTML = """<!DOCTYPE html>
 <!-- 5 BODIES -->
 <div class="page-break"></div>
 <h2>The 5 Bodies &amp; 5 Levels of Existence</h2>
+
+<div class="image-placeholder">
+  <div class="ph-icon">&#9702;</div>
+  <p class="ph-label">Illustration — The 5 Bodies</p>
+  <p class="ph-desc">A figure shown with five concentric layers radiating outward — Physical (innermost), Emotional, Mental, Energetic, and Spiritual (outermost) — each layer progressively more subtle and luminous, illustrating how everything originates from the spiritual level and densifies into matter.</p>
+  <p class="ph-ref">Ref: The 5 Bodies &amp; 5 Levels of Existence</p>
+</div>
 
 <p>Everything that manifests itself in matter has an origin on a spiritual level. Everything is also energy. The denser the energy, the more it moves towards manifestation and thus comes into existence in a way that we can perceive objectively.</p>
 
@@ -680,6 +694,13 @@ LEVEL_3_HTML = """<!DOCTYPE html>
 
 <h3>Breaking Spiritual Agreements</h3>
 
+<div class="image-placeholder">
+  <div class="ph-icon">&#9702;</div>
+  <p class="ph-label">Illustration — Breaking Agreements</p>
+  <p class="ph-desc">A person in meditation visualizing a stick (representing the spiritual agreement) being broken into three pieces. The three pieces are placed into a grounded rose, which is then exploded outside the aura — releasing the agreement.</p>
+  <p class="ph-ref">Ref: Breaking Spiritual Agreements</p>
+</div>
+
 <p>Any relationship can only exist in matter if there has been a spiritual agreement to support that relationship. These agreements can only be created with the consent of both parts on the spiritual level and can be broken by either part through their conscious will.</p>
 
 <p>Sometimes these agreements are in line with our conscious will, for example when two people get married. At other times, they resonate with unconscious desires — this is when things happen that we don't want. However, using this Rose Meditation technique, we can always break these agreement sticks.</p>
@@ -700,6 +721,13 @@ LEVEL_3_HTML = """<!DOCTYPE html>
 
 <h3>Cutting Energetic Cords</h3>
 
+<div class="image-placeholder">
+  <div class="ph-icon">&#9702;</div>
+  <p class="ph-label">Illustration — Cutting Energetic Cords</p>
+  <p class="ph-desc">A person seated in meditation with their aura visible. Energetic cords extend from the chakras outward. The dominant hand is placed at the 7th cervical vertebra (back of the neck at the 5th chakra level), making a cutting motion downward to the 1st chakra to sever the cords.</p>
+  <p class="ph-ref">Ref: Cutting Energetic Cords</p>
+</div>
+
 <p>We have energetic interactions with people all the time we see them, hear them, touch them and even think about them. And when we form bonds, our auras connect through the cords where energy passes through. That's why we can often feel what's happening with people who are close to us, even if they're far away.</p>
 
 <h4>To Cut Cords</h4>
@@ -715,6 +743,13 @@ LEVEL_3_HTML = """<!DOCTYPE html>
 
 <!-- SEXUAL INTERCOURSE -->
 <h3>After Sexual Intercourse</h3>
+
+<div class="image-placeholder">
+  <div class="ph-icon">&#9702;</div>
+  <p class="ph-label">Illustration — Energy Cleansing After Intimacy</p>
+  <p class="ph-desc">A person seated in meditation with an orange rose in front of them, representing the process of returning the other person's energy and recovering one's own. Energetic cords between the two auras are shown being cut and cleansed.</p>
+  <p class="ph-ref">Ref: After Sexual Intercourse — Energy Recovery</p>
+</div>
 
 <p>After a sexual intercourse, if you want to recover your energy that may have remained with the person and return the energy of the person who may have remained with you:</p>
 
@@ -733,6 +768,13 @@ LEVEL_3_HTML = """<!DOCTYPE html>
 <!-- CLASSES AND CONSULTATIONS -->
 <div class="page-break"></div>
 <h2>Classes &amp; Consultations</h2>
+
+<div class="image-placeholder">
+  <div class="ph-icon">&#9702;</div>
+  <p class="ph-label">Illustration — Classes &amp; Consultations</p>
+  <p class="ph-desc">A teacher or practitioner seated across from a student or client, both within their own auras. The practitioner's aura is shown with roses of protection, separation and observation. Energetic cords connect the two auras, illustrating the bonds that form during a session and need to be cleansed afterward.</p>
+  <p class="ph-ref">Ref: Classes &amp; Consultations — Energy Separation</p>
+</div>
 
 <p>When you are working in any field — or when you are a teacher or lecturer — you can use Rose Meditation to maintain your energy integrity.</p>
 
@@ -761,6 +803,13 @@ LEVEL_3_HTML = """<!DOCTYPE html>
 <div class="page-break"></div>
 <h2>The Analyzer</h2>
 
+<div class="image-placeholder">
+  <div class="ph-icon">&#9702;</div>
+  <p class="ph-label">Illustration — The Analyzer</p>
+  <p class="ph-desc">A person in meditation with a transparent view of the head, showing the Analyzer as an energetic structure inside the head. A colored rose (matching the chakra being cleansed) is grounded behind the person outside the aura at the height of the Analyzer. A golden sticky rose spirals through the Analyzer, cleansing hidden energies.</p>
+  <p class="ph-ref">Ref: Slide 30 — The Analyzer</p>
+</div>
+
 <p>The Analyzer is located inside the head. Its functions are to analyze, judge and criticize. It stores our programs and beliefs. Cleansing the Analyzer and the energies that are stored there allows you to free yourself from limitations that impact your life and also helps you to perceive life in a more objective way.</p>
 
 <p>The cleansing of the Analyzer is done on all the chakra colors. Here is the description for the color red:</p>
@@ -787,6 +836,13 @@ LEVEL_3_HTML = """<!DOCTYPE html>
 <!-- TRANSMEDIUM CHANNELS -->
 <h2>Transmedium Channels</h2>
 
+<div class="image-placeholder">
+  <div class="ph-icon">&#9702;</div>
+  <p class="ph-label">Illustration — Transmedium Channels</p>
+  <p class="ph-desc">A person shown from the side or back, with the Transmedium Channels visible at the back of the neck. Each channel has its own grounding cord to the center of the Earth. Two colored roses (matching the chakra vibration being cleansed) are grounded behind the person outside the aura at the height of the channels. Golden sticky roses spiral through the channels for deep cleansing.</p>
+  <p class="ph-ref">Ref: Transmedium Channels</p>
+</div>
+
 <p>The Transmedium Channels are located at the back of the neck. It is through them that our Spirit incarnates in our body and through them that disincarnate energies of all kinds can exert an influence on us. Cleansing and closing the Transmedium Channels regularly increases energetic authority and allows us to free ourselves from unwanted habits that are being sustained by tendencies and influences outside of us.</p>
 
 <p>Cleansing the Transmedium Channels is similar to cleansing the Analyzer and is also done on all the chakra colors. For the color red:</p>
@@ -812,6 +868,13 @@ LEVEL_3_HTML = """<!DOCTYPE html>
 
 <h3>Impeccability</h3>
 
+<div class="image-placeholder">
+  <div class="ph-icon">&#9702;</div>
+  <p class="ph-label">Illustration — Impeccability &amp; Chakra Alignment</p>
+  <p class="ph-desc">A figure shown with all seven chakras aligned and radiating in the same direction. Labels connect each chakra to its function in creating reality: Intention (7th), Thinking (6th), Word (5th), Feeling (2nd &amp; 4th), and Action (1st &amp; 3rd) — illustrating the principle of energetic coherence.</p>
+  <p class="ph-ref">Ref: Creating Reality — Impeccability</p>
+</div>
+
 <p>We humans are complex beings endowed with the ability to create worlds within ourselves through our imagination, our mind. This allows us to create complex worlds outside ourselves too. The reality we live in today is the fruit of what we have planted in the past, whether in this life or in previous lives. If we want to transform the reality around us, we must pay attention to how we are living and begin a process of transformation from inside out.</p>
 
 <p>We often experience unwanted realities, but we don't know why we can't manifest what we really want. This is because different parts of us are trying to move in different directions at the same time using the same body. This is not possible and causes stagnation. The science of creating reality involves learning to be impeccable with ourselves, putting our energy and our chakras all in the same direction.</p>
@@ -825,6 +888,13 @@ LEVEL_3_HTML = """<!DOCTYPE html>
 </div>
 
 <h3>Mock-Up</h3>
+
+<div class="image-placeholder">
+  <div class="ph-icon">&#9702;</div>
+  <p class="ph-label">Illustration — Mock-Up Technique</p>
+  <p class="ph-desc">Three grounded roses side by side: the first (center) contains a vivid image of what is being manifested; the second (right) is a cleansing rose removing blockages; the third (left, pink) holds the image of something deeply loved, radiating the vibration of Divine Love. Pink energy flows from the heart, enveloping the first rose in a pink bubble before it is released upward to the center of the Universe.</p>
+  <p class="ph-ref">Ref: Mock-Up — Creating Reality</p>
+</div>
 
 <p>This is a technique for manifesting things or situations on the physical plane. It is important to note that this technique should only be used for yourself — it cannot be done for someone else. It must be done 7 days in a row to be effective and it must be done for one goal at a time. The higher your vibration when you do the Mock-up, the more effective it will be. A good time to do it is just after finishing Rose Meditation.</p>
 
