@@ -6,6 +6,7 @@ import { level1Slides } from '@/lib/data/teaching-slides';
 import LevelNav from '@/components/teaching/LevelNav';
 import TeachingSlideCard from '@/components/teaching/TeachingSlideCard';
 import { PdfExportButton } from '@/components/ui/PdfExportButton';
+import ManualPdfButton from '@/components/teaching/ManualPdfButton';
 import LanguageSelector from '@/components/teaching/LanguageSelector';
 import { useLanguage } from '@/lib/i18n';
 
@@ -46,7 +47,8 @@ export default function Level1Page() {
               <p className="text-[var(--color-foreground-muted)] max-w-2xl">
                 {levelT?.description ?? level.description}
               </p>
-              <div className="flex items-center gap-3 mt-4">
+              <div className="flex items-center gap-3 mt-4 flex-wrap">
+                <ManualPdfButton />
                 <PdfExportButton />
                 <LanguageSelector />
               </div>
