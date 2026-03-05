@@ -235,8 +235,7 @@ export const level2Slides: TeachingSlide[] = [
     concept: "Let's Create Your Sacred Space",
     teachingText:
       'Level 2 begins with creating your own sacred space — an internal energetic environment that serves as your meditation home. This is the space from which all deeper work is conducted.',
-    originalImage: '19-sacredspace-original.jpg',
-    reimaginedImage: '19-sacred space.PNG',
+    imageNote: 'Text-only slide, or subtle illustration. This is an introductory placeholder — no detailed image needed.',
     level: 2,
     section: 'sacred-space',
   },
@@ -283,6 +282,8 @@ export const level2Slides: TeachingSlide[] = [
       'Once the space is protected, it is cleansed. A large Cleansing Rose is placed above the grid, and golden energy pours downward through the entire structure, clearing all foreign, stagnant, or disruptive energies from the space.',
     originalImage: '21-cleansing space - original .PNG',
     reimaginedImage: '21-cleansingphysicalspace.PNG',
+    imageNote:
+      'The room should also show its own grounding cord expanding within the space — same as noted for slide 20 (Protection of the Space). The grounding cord should be visible, thick, transparent, and strong.',
     level: 2,
     section: 'sacred-space',
   },
@@ -294,6 +295,8 @@ export const level2Slides: TeachingSlide[] = [
       'After protection and cleansing, you claim ownership of the space. This is an act of energetic sovereignty — declaring the space as yours, filling it with your own energy and intention. The space becomes an extension of your aura and your practice.',
     originalImage: '22-protect the space- original .PNG',
     reimaginedImage: '22-owningurspace.PNG',
+    imageNote:
+      'The room should also show its own grounding cord expanding within the space — same as noted for slide 20 (Protection of the Space). The grounding cord should be visible, thick, transparent, and strong.',
     level: 2,
     section: 'sacred-space',
   },
