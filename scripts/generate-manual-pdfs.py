@@ -833,35 +833,6 @@ LEVEL_3_HTML = """<!DOCTYPE html>
   <p>When closing the Analyzer you may feel your intuition working more strongly and your rational side may be limited. If you need to use your rational faculties, just intend it and the Analyzer will open again.</p>
 </div>
 
-<!-- TRANSMEDIUM CHANNELS -->
-<h2>Transmedium Channels</h2>
-
-<div class="image-placeholder">
-  <div class="ph-icon">&#9702;</div>
-  <p class="ph-label">Illustration — Transmedium Channels</p>
-  <p class="ph-desc">A person shown from the side or back, with the Transmedium Channels visible at the back of the neck. Each channel has its own grounding cord to the center of the Earth. Two colored roses (matching the chakra vibration being cleansed) are grounded behind the person outside the aura at the height of the channels. Golden sticky roses spiral through the channels for deep cleansing.</p>
-  <p class="ph-ref">Ref: Transmedium Channels</p>
-</div>
-
-<p>The Transmedium Channels are located at the back of the neck. It is through them that our Spirit incarnates in our body and through them that disincarnate energies of all kinds can exert an influence on us. Cleansing and closing the Transmedium Channels regularly increases energetic authority and allows us to free ourselves from unwanted habits that are being sustained by tendencies and influences outside of us.</p>
-
-<p>Cleansing the Transmedium Channels is similar to cleansing the Analyzer and is also done on all the chakra colors. For the color red:</p>
-
-<ul>
-  <li>See the Transmedium Channels in red.</li>
-  <li>Ground the Transmedium Channels to the center of the Earth with a red cord for each one.</li>
-  <li>Create two red Roses grounded behind you outside your Aura at the height of the Transmedium Channels (or one Rose that splits in two when it reaches the height of the channels).</li>
-  <li>The Roses now clean the Transmedium Channels in this vibration.</li>
-  <li>The Roses descend through the grounding cords of the channels.</li>
-  <li>Create two golden sticky Roses the size of the Transmedium Channels.</li>
-  <li>They enter the channels and spiral clean inside and out, cleansing away any hidden energy that may have remained there.</li>
-  <li>Now see the Transmedium Channels in gold, raising their vibration.</li>
-  <li>Now close the Transmedium Channels completely 100%.</li>
-  <li>Always explode the Roses outside the Aura.</li>
-</ul>
-
-<p>This same procedure should be done with the vibration of all the chakras (orange, yellow, green, pink, sky blue, indigo blue and violet).</p>
-
 <!-- CREATING REALITY -->
 <div class="page-break"></div>
 <h2>Creating Reality</h2>
@@ -930,7 +901,6 @@ LEVEL_3_HTML = """<!DOCTYPE html>
     <li>Grounded Roses that cleanse the front and back of the chakras</li>
     <li>Golden Sticky Roses</li>
     <li>Cleansing the Analyzer</li>
-    <li>Cleansing the Transmedium Channels</li>
   </ul>
 </div>
 
