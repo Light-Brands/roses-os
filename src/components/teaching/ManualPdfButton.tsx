@@ -7,7 +7,7 @@ import { useLanguage } from '@/lib/i18n';
 import type { Locale } from '@/lib/i18n/types';
 
 const MANUAL_PATHS: Record<Locale, string | null> = {
-  en: '/manuals/roses-level-1-manual-en.pdf',
+  en: '/manuals/rose-meditation-level-1-final.pdf',
   el: '/manuals/roses-level-1-manual-el.pdf',
   es: '/manuals/roses-level-1-manual-es.pdf',
   pt: '/manuals/roses-level-1-manual-pt.pdf',
