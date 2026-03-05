@@ -130,7 +130,7 @@ When both circuits are activated simultaneously, the energies of the Earth and C
 
 The Rose is used as a living energetic instrument throughout the practice. It has roots (connection to source), a stem (channel of energy), and a bloom (the active, radiant tool). The Rose can be placed, moved, opened, closed, and released according to the needs of the meditation.
 
-*[Visual reference: A golden rose with visible roots, long stem, and open bloom]*
+![The Rose](../../public/rose%20med%20images/14-the%20rose%20original%20.PNG)
 
 ---
 
