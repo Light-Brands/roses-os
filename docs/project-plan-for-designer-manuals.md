@@ -17,7 +17,7 @@
 | Item | Detail |
 |------|--------|
 | **What** | Reimagined student manuals with creative imagery in the Greek-style / Yeva World / Caravana aesthetic, aligned with the Teacher's Resource Manual |
-| **Manuals** | Two deliverables: Level 2 Manual, Level 3 Manual (2026 edition) |
+| **Manuals** | Three in Resources: Level 1 Manual (existing or reimagined if time permits), Level 2 Manual (priority), Level 3 Manual 2026 (priority) |
 | **Where** | Resources section of the ROSES OS platform -- accessible for enrolled students |
 | **Format** | Web-viewable PDF and direct download -- each manual is a beautifully designed PDF document |
 | **Languages** | English, Spanish, Portuguese, Greek -- four language versions of each manual |
@@ -33,10 +33,10 @@
 
 The student manuals are personal companions for participants -- reference documents they keep after completing each level. Unlike the Teacher's Resource Manual (which is a facilitator's live-session tool), these manuals are for students to review, reflect, and deepen their understanding of the teachings.
 
-**Why only Level 2 and Level 3:**
-- Level 1 content is already covered in the existing Level 1 manual -- no need to duplicate it
+**Manual scope:**
+- **Level 2** and **Level 3** are the priority -- these must be reimagined and ready before March 15
+- **Level 1** is also in the Resources section as a reference for students. If time permits, Level 1 should also be reimagined with the same Greek-style dress aesthetic as Level 2 and Level 3. If time does not permit, the existing Level 1 manual is uploaded as-is and redesigned in a later pass
 - The Level 2 manual is a standalone document for Level 2 content only (not combined with Level 1)
-- Level 3 is updated as the 2026 edition
 
 **Goals:**
 
@@ -96,10 +96,11 @@ Both manuals live in the **Resources** section of the ROSES OS platform.
 - Each language version is a separate PDF file -- identical layout, text-only swaps
 - The Resources section organizes manuals clearly by level:
 
-| Resource | Label | Languages |
-|----------|-------|-----------|
-| Level 2 Manual | Level 2 Manual | EN, ES, PT, EL |
-| Level 3 Manual (2026) | Level 3 2026 | EN, ES, PT, EL |
+| Resource | Label | Languages | Priority |
+|----------|-------|-----------|----------|
+| Level 1 Manual | Level 1 Manual | EN, ES, PT, EL | In Resources as reference -- reimagine if time permits, otherwise upload existing |
+| Level 2 Manual | Level 2 Manual | EN, ES, PT, EL | **Priority -- must be ready before March 15** |
+| Level 3 Manual (2026) | Level 3 2026 | EN, ES, PT, EL | **Priority -- must be ready before March 15** |
 
 ---
 
@@ -169,7 +170,9 @@ Each manual must be produced in **four languages:**
 - Each language version is a separate, standalone PDF
 - All four language versions must be available for download from the Resources section
 
-**Total deliverables:** 2 manuals × 4 languages = **8 PDF documents**
+**Total deliverables (priority):** 2 manuals × 4 languages = **8 PDF documents** (Level 2 + Level 3)
+
+**Stretch goal:** Level 1 reimagined = 4 additional PDFs (bringing total to 12 if time permits)
 
 ---
 
@@ -233,11 +236,19 @@ All manuals follow the unified ROSES OS PDF template system:
 - [ ] Verify all language versions are correctly labeled and accessible
 
 ### Phase F -- Review & Finalize (Days 9-10)
+- [ ] Ensure Level 1 manual is uploaded to Resources section (existing version if reimagine is not yet done)
 - [ ] Internal review with Guardians and facilitators
 - [ ] Verify visual consistency across both manuals and all four languages
 - [ ] Verify consistency with Teacher's Resource Manual
 - [ ] Address feedback and refine
 - [ ] Final delivery -- **must be live before March 15**
+
+### Phase G -- Level 1 Manual Reimagine (Stretch Goal -- If Time Permits)
+- [ ] Reimagine Level 1 manual imagery in the same Greek-style / Yeva World / Caravana dress aesthetic as Level 2 and Level 3
+- [ ] Pull from Teacher's Resource Manual or create new illustrations -- always accurate to the teaching
+- [ ] Translate into Spanish, Portuguese, and Greek (4 total PDFs)
+- [ ] Upload reimagined Level 1 versions to Resources, replacing the existing uploads
+- [ ] Review for visual consistency with Level 2 and Level 3 manuals
 
 ---
 
