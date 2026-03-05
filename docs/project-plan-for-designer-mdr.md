@@ -310,6 +310,7 @@ Below is the complete teaching text that accompanies each image/slide in the man
 **Designer Notes:**
 - The **expanded grounding cord** should also be represented in this image -- it is part of the full energetic architecture (posture + aura + grounding cord + golden sun)
 - Same visual direction: **thick, transparent, strong, less gold**
+- **Image repetition issue:** The current reimagined image uses the same human figure as slide 11 -- please use a **different human man** for slide 11a so the two slides are visually distinct
 
 ---
 
