@@ -128,8 +128,8 @@
 
 | Time Zone | Hours |
 |---|---|
-| Brasilia | 7:00 AM -- 8:30 AM |
-| London | 10:00 AM -- 11:30 AM |
+| Brasilia | 8:00 AM -- 9:30 AM |
+| London | 11:00 AM -- 12:30 PM |
 
 **Second Practice (1.5 hours)**
 
