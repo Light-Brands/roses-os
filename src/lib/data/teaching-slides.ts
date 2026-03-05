@@ -142,8 +142,7 @@ export const level1Slides: TeachingSlide[] = [
     concept: 'Circuit of the Energy of the Earth',
     teachingText:
       'The Earth circuit is an energetic pathway that draws the energy of the Earth upward through the feet, rising through the legs and into the body. This circuit connects you to the grounding, nourishing, stabilizing force of the planet.',
-    reimaginedImage: '12a-earth energy .PNG',
-    imageNote: 'Also see: Circuitofthenergyofearth.PNG',
+    reimaginedImage: '12a-earthenergy-new.PNG',
     level: 1,
     section: 'foundations',
   },
