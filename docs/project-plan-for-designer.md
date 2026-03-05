@@ -468,6 +468,7 @@ These principles must guide every design decision:
 6. **Consistency is coherence** -- Same background style, same layout logic, same color rules, same iconography style across every page and PDF.
 7. **Texture has meaning** -- Clay, linen, stone, paper evoke earthiness and groundedness. Use them with intention.
 8. **The Rose Clay Mauve (`#9C6F6E`) is the brand** -- It is the field, not the accent. It should feel like home.
+9. **Modular by default** -- Every teaching technique, meditation position, and imagination exercise must be designed as a self-contained module that can be moved between manuals or reordered without redesign. The curriculum evolves; the design must accommodate that without starting over.
 
 ---
 

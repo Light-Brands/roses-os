@@ -275,10 +275,36 @@ Given the tight timeline, the designer should work efficiently -- reusing and ad
 
 > **This change happens after all manuals are complete.** Not part of the March 15 deadline.
 
-Once all manuals are done, the **Sacred Space teaching and imagery will move from the Level 2 manual to the Level 1 manual**. This means:
+The first known change is that **Sacred Space teaching and imagery will move from the Level 2 manual to the Level 1 manual**. More technique movements between levels may follow.
 
-- The Sacred Space content (teaching text and all associated illustrations) will be **removed from Level 2** and **added to Level 1**
-- Level 1 will be updated to include Sacred Space as part of the foundational teachings
-- Level 2 will be updated to remove Sacred Space, keeping only the chakra-focused and advanced energy work content
-- All four language versions of both Level 1 and Level 2 will need to be regenerated after this move
-- The designer should be aware of this upcoming change so that the Sacred Space imagery is designed as a modular section that can be relocated cleanly
+**This is why all content must be built modular** (see Section 11 below). Because the manuals are modular, relocating Sacred Space -- or any other technique -- is simply a matter of moving the module from one manual to another and regenerating the PDFs.
+
+---
+
+## 11. MODULAR DESIGN PRINCIPLE
+
+> **Every teaching technique, meditation position, and imagination exercise must be designed as a self-contained, movable module.**
+
+Techniques may be reassigned between levels as the curriculum evolves. The designer must build each content component so it can be lifted from one manual and placed into another without redesign.
+
+**What "modular" means in practice:**
+
+- Each technique (Sacred Space, Grounding Cord, Golden Sun, Roses of Protection, each Chakra, the Analyzer, etc.) is a **self-contained section** with its own illustrations, teaching text, and layout
+- Modules do not depend on surrounding content for visual context -- they work on their own
+- Page breaks fall between modules, not within them
+- Illustrations belong to their technique module, not to the manual as a whole
+- Headers, footers, and page numbers are manual-level (auto-generated), not baked into the module content
+- Each module has a consistent internal structure: title, illustration(s), teaching text, key points
+- Modules can be **reordered within a manual** or **moved between manuals** with minimal adjustment
+
+**What this enables:**
+- Sacred Space can move from Level 2 to Level 1 by simply relocating the module
+- Any technique can be reassigned between levels as the teaching curriculum evolves
+- New techniques can be added as new modules without disrupting existing content
+- Manuals can be restructured without a full redesign -- just rearrange the modules and regenerate
+- All four language versions of a module move together (EN, ES, PT, EL)
+
+**Design file organization:**
+- In the design tool (Figma, InDesign, etc.), each technique module should live as its own component/artboard/section
+- The manual is assembled by arranging modules in sequence, with the cover, table of contents, and closing pages as separate structural components
+- This makes it easy to produce different manual configurations from the same set of modules
