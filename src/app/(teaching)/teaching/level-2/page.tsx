@@ -7,6 +7,7 @@ import LevelNav from '@/components/teaching/LevelNav';
 import TeachingSlideCard from '@/components/teaching/TeachingSlideCard';
 import ChakraSlideCard from '@/components/teaching/ChakraSlideCard';
 import { PdfExportButton } from '@/components/ui/PdfExportButton';
+import { ManualDownloadButton } from '@/components/teaching/ManualDownloadButton';
 import LanguageSelector from '@/components/teaching/LanguageSelector';
 import { useLanguage } from '@/lib/i18n';
 
@@ -52,8 +53,12 @@ export default function Level2Page() {
               <p className="text-[var(--color-foreground-muted)] max-w-2xl">
                 {levelT?.description ?? level.description}
               </p>
-              <div className="flex items-center gap-3 mt-4">
+              <div className="flex items-center gap-3 mt-4 flex-wrap">
                 <PdfExportButton />
+                <ManualDownloadButton
+                  href="/resources/manuals/ROSES-OS-Levels-1-2-Manual-EN.pdf"
+                  label="Download Manual (Levels 1 & 2)"
+                />
                 <LanguageSelector />
               </div>
             </div>
