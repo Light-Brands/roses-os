@@ -519,6 +519,7 @@ LEVEL_3_HTML = """<!DOCTYPE html>
   <p>To teach Rose Meditation and Aura Reading, specific training is required, in addition to extensive experience with Aura Reading and energy work. Therefore, for your own protection, do not share this information.</p>
   <p>Illustrations: Drica Voivodic and Ana Leite</p>
   <p>Translation: Dara Ayoub</p>
+  <p>Formatting &amp; Design: Jennifer Lawless</p>
   <p style="margin-top: 1cm; font-size: 8pt; color: #B5A89D;">ROSES OS 2026 Edition</p>
 </div>
 
