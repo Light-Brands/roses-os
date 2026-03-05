@@ -124,6 +124,26 @@ export default function Level2Page() {
                 />
               ))}
             </section>
+
+            {/* Continue to Level 3 */}
+            <div className="border-t border-[var(--color-border)] pt-10">
+              <Link
+                href="/teaching/level-3"
+                className="group flex items-center justify-between rounded-xl border border-[var(--color-border-subtle)] bg-[var(--color-surface)] px-6 py-5 transition-all duration-200 hover:border-[var(--color-border)] hover:shadow-sm"
+              >
+                <div className="space-y-1">
+                  <span className="text-xs font-medium uppercase tracking-wider text-[var(--color-foreground-faint)]">
+                    {t?.ui.nextLevel ?? 'Next'}
+                  </span>
+                  <p className="font-serif text-lg text-[var(--color-foreground)]">
+                    Level 3: {teachingLevels[2]?.title}
+                  </p>
+                </div>
+                <span className="text-[var(--color-foreground-muted)] transition-transform duration-200 group-hover:translate-x-1">
+                  &rarr;
+                </span>
+              </Link>
+            </div>
           </div>
         </main>
       </div>
