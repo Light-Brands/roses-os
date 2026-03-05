@@ -355,7 +355,7 @@ export const chakraSlides: ChakraSlideData[] = [
     blockages: 'Fear — Insecurity — Survival Trauma',
     teachingText:
       'Muladhara — Grounding & Safety',
-    imageNote: 'Body illustration emphasizing Root Chakra location, dominant red color. Needs to be created — use 23a-example of chakra slides .PNG as style reference.',
+    imageNote: 'Body illustration emphasizing Root Chakra location, dominant red color. Needs to be created — use 23a-example of chakra slides .PNG as style reference, or any design the designer thinks would be good for this section.',
     level: 2,
     section: 'chakras',
   },
@@ -386,7 +386,7 @@ export const chakraSlides: ChakraSlideData[] = [
     teachingText:
       'Svadhisthana — Emotion & Creativity',
     reimaginedImage: '23a-example of chakra slides .PNG',
-    imageNote: 'Placeholder — using 23a example chakra slide. Final: Body illustration emphasizing Sacral Chakra location, dominant orange color.',
+    imageNote: 'Placeholder — using 23a example chakra slide. Final: Body illustration emphasizing Sacral Chakra location, dominant orange color, or any design the designer thinks would be good for this section.',
     level: 2,
     section: 'chakras',
   },
@@ -416,7 +416,7 @@ export const chakraSlides: ChakraSlideData[] = [
     blockages: 'Self-Doubt — Insecurity — Fear of Rejection',
     teachingText:
       'Manipura — Willpower & Confidence',
-    imageNote: 'Body illustration emphasizing Solar Plexus location, dominant yellow color. Needs to be created — use 23a-example of chakra slides .PNG as style reference.',
+    imageNote: 'Body illustration emphasizing Solar Plexus location, dominant yellow color. Needs to be created — use 23a-example of chakra slides .PNG as style reference, or any design the designer thinks would be good for this section.',
     level: 2,
     section: 'chakras',
   },
@@ -448,7 +448,7 @@ export const chakraSlides: ChakraSlideData[] = [
       'Anahata — Love & Integration',
     extraContent:
       'Human Love & Spiritual Love:\n\nHuman Love — Statement: I LOVE — Empathy, compassion, forgiveness, healthy relationships, romantic and familial love.\n\nSpiritual Love — Statement: I AM LOVE — Unconditional compassion, interconnectedness, divine and universal love, oneness.',
-    imageNote: 'Body illustration emphasizing Heart Chakra location, dominant green/pink color. Needs to be created — use 23a-example of chakra slides .PNG as style reference.',
+    imageNote: 'Body illustration emphasizing Heart Chakra location, dominant green/pink color. Needs to be created — use 23a-example of chakra slides .PNG as style reference, or any design the designer thinks would be good for this section.',
     level: 2,
     section: 'chakras',
   },
@@ -478,7 +478,7 @@ export const chakraSlides: ChakraSlideData[] = [
     blockages: 'Suppressed Truth — Fear of Expression — Miscommunication',
     teachingText:
       'Vishuddha — Communication & Expression',
-    imageNote: 'Body illustration emphasizing Throat Chakra location, dominant light blue color. Needs to be created — use 23a-example of chakra slides .PNG as style reference.',
+    imageNote: 'Body illustration emphasizing Throat Chakra location, dominant light blue color. Needs to be created — use 23a-example of chakra slides .PNG as style reference, or any design the designer thinks would be good for this section.',
     level: 2,
     section: 'chakras',
   },
@@ -508,7 +508,7 @@ export const chakraSlides: ChakraSlideData[] = [
     blockages: 'Suppressed Truth — Fear of Expression — Miscommunication',
     teachingText:
       'Ajna — Intuition & Insight',
-    imageNote: 'Body illustration emphasizing Third Eye location, dominant indigo color. Needs to be created — use 23a-example of chakra slides .PNG as style reference.',
+    imageNote: 'Body illustration emphasizing Third Eye location, dominant indigo color. Needs to be created — use 23a-example of chakra slides .PNG as style reference, or any design the designer thinks would be good for this section.',
     level: 2,
     section: 'chakras',
   },
@@ -538,7 +538,7 @@ export const chakraSlides: ChakraSlideData[] = [
     blockages: 'Disconnection — Cynicism — Loss of Meaning',
     teachingText:
       'Sahasrara — Spirituality & Consciousness',
-    imageNote: 'Body illustration emphasizing Crown Chakra location, dominant violet/white color. Needs to be created — use 23a-example of chakra slides .PNG as style reference.',
+    imageNote: 'Body illustration emphasizing Crown Chakra location, dominant violet/white color. Needs to be created — use 23a-example of chakra slides .PNG as style reference, or any design the designer thinks would be good for this section.',
     level: 2,
     section: 'chakras',
   },
