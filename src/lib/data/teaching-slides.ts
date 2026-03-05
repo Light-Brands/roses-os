@@ -235,7 +235,7 @@ export const level2Slides: TeachingSlide[] = [
     concept: "Let's Create Your Sacred Space",
     teachingText:
       'Level 2 begins with creating your own sacred space — an internal energetic environment that serves as your meditation home. This is the space from which all deeper work is conducted.',
-    imageNote: 'Text-only slide, or subtle illustration. This is an introductory placeholder — no detailed image needed.',
+    imageNote: 'Illustration needed: A person seated in meditation posture, with a glowing point of awareness at the center of the head — the sacred space. Should convey inner stillness, spiritual authority, and the feeling of being safely centered within. Reference: PDF source "CENTER OF THE HEAD - SACRED SPACE" section.',
     level: 2,
     section: 'sacred-space',
   },
@@ -257,7 +257,7 @@ export const level2Slides: TeachingSlide[] = [
     concept: "Let's Prepare Your Physical Space",
     teachingText:
       'Before meditation, prepare your physical environment to support the energetic work. The external space should mirror the internal intention: clean, clear, quiet, and intentionally held.',
-    imageNote: 'Text-only slide, or subtle illustration.',
+    imageNote: 'Illustration needed: A clean, serene meditation room — tidy and intentionally arranged. Could show a chair in a quiet room with soft light, conveying readiness and sacred intention. This bridges the inner sacred space with the physical environment. Reference: PDF source "PHASE B - PREPARING THE SPACE" introduction.',
     level: 2,
     section: 'sacred-space',
   },
@@ -306,7 +306,7 @@ export const level2Slides: TeachingSlide[] = [
     concept: "Let's Talk About Chakras",
     teachingText:
       'The chakra system is the energetic anatomy of the human body. There are seven primary chakras, each governing specific aspects of physical, emotional, mental, and spiritual life.',
-    imageNote: 'Text-only slide or simple illustration.',
+    imageNote: 'Illustration needed: An overview of the seven-chakra system along the human body — showing all seven chakras aligned from root to crown with their corresponding colors (red, orange, yellow, green, blue, indigo, violet). Reference: PDF source "PHASE C - CHAKRA CLEANSING" diagram showing chakra positions and colors.',
     level: 2,
     section: 'chakras',
   },

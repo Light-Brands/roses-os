@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { ImageIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useLanguage } from '@/lib/i18n';
 import type { ChakraSlideData } from '@/lib/data/types';
@@ -44,29 +45,67 @@ export default function ChakraSlideCard({ chakra, index = 0, className }: Chakra
         className
       )}
     >
-      {/* Image area — show reimagined/original image if available, otherwise chakra overview placeholder */}
+      {/* Image area — show reimagined/original image if available, otherwise show placeholder */}
       {(() => {
-        const imageSrc = chakra.reimaginedImage
-          ? `/rose med images/${chakra.reimaginedImage}`
-          : chakra.originalImage
-            ? `/rose med images/${chakra.originalImage}`
-            : '/rose med images/23-chakras.jpg';
+        const hasOwnImage = chakra.reimaginedImage || chakra.originalImage;
+        const imageSrc = hasOwnImage
+          ? `/rose med images/${chakra.reimaginedImage || chakra.originalImage}`
+          : null;
+
+        if (imageSrc) {
+          return (
+            <div
+              className="relative bg-[var(--color-background-subtle)]"
+              style={{
+                borderBottom: `2px solid ${chakra.chakraColor}40`,
+              }}
+            >
+              <img
+                src={imageSrc}
+                alt={concept}
+                className="w-full h-auto object-contain"
+                loading="lazy"
+              />
+              <span
+                className="absolute top-3 left-3 text-[10px] font-medium uppercase tracking-wider px-2 py-0.5 rounded-full backdrop-blur-sm"
+                style={{
+                  color: `${chakra.chakraColor}80`,
+                  backgroundColor: `${chakra.chakraColor}15`,
+                }}
+              >
+                {chakra.sanskritName}
+              </span>
+            </div>
+          );
+        }
 
         return (
           <div
-            className="relative bg-[var(--color-background-subtle)]"
+            className={cn(
+              'relative flex flex-col items-center justify-center gap-3',
+              'aspect-[16/10]',
+              'bg-[var(--color-background-subtle)]',
+            )}
             style={{
-              borderBottom: `2px solid ${chakra.chakraColor}40`,
+              borderBottom: `2px dashed ${chakra.chakraColor}40`,
             }}
           >
-            <img
-              src={imageSrc}
-              alt={concept}
-              className="w-full h-auto object-contain"
-              loading="lazy"
-            />
+            <div
+              className="w-12 h-12 rounded-full flex items-center justify-center"
+              style={{ backgroundColor: `${chakra.chakraColor}15` }}
+            >
+              <ImageIcon className="w-6 h-6" style={{ color: `${chakra.chakraColor}60` }} strokeWidth={1.5} />
+            </div>
+            <p className="font-serif text-lg text-center px-6" style={{ color: `${chakra.chakraColor}90` }}>
+              {concept}
+            </p>
+            {chakra.imageNote && (
+              <p className="text-xs text-[var(--color-foreground-faint)] text-center px-6 max-w-md">
+                {chakra.imageNote}
+              </p>
+            )}
             <span
-              className="absolute top-3 left-3 text-[10px] font-medium uppercase tracking-wider px-2 py-0.5 rounded-full backdrop-blur-sm"
+              className="absolute top-3 left-3 text-[10px] font-medium uppercase tracking-wider px-2 py-0.5 rounded-full"
               style={{
                 color: `${chakra.chakraColor}80`,
                 backgroundColor: `${chakra.chakraColor}15`,
