@@ -108,7 +108,7 @@ Below is the **complete inventory** of every image in the repository, organized 
 | 11 | **Full Meditation Setup** -- Posture + aura + expanded grounding cord. | *(see slide 10 original)* | `11-expansion-grounding-cord.PNG` |
 | 11a | **Golden Sun Fills You** -- Golden sun above the crown pours golden light down, filling the entire aura and body. | `11-expansion fill with golden sun - original .PNG` | `11aExpand auragoldensunexpanded.PNG` |
 | 12 | **Earth Circuit** -- Energy rising through feet and legs into the body. | *(use reimagined)* | `12a-earth energy .PNG`, `Circuitofthenergyofearth.PNG` |
-| 13 | **Cosmos Circuit** -- Cosmic energy descending through the crown into the body. | `13-cosmos-original.PNG` | `12Circuitofenergycismos .PNG` |
+| 13 | **Cosmos Circuit** -- Cosmic energy descending through the crown into the body. | `13-cosmos-original.PNG` | `IMG_6954.jpeg` |
 | 13a | **Combined Earth + Cosmos Circuit** -- Both flows active simultaneously through the body. | *(no original exists -- this combined view is reimagined only)* | `13a-cosmos:earthcycle.PNG`, `13cosmosearth.PNG` |
 | 14 | **The Rose (as Energetic Tool)** -- Roots, stem, bloom in detail. Functions: place, move, open, close, release. | `14-the rose original .PNG` | `5-the-rose.PNG` |
 | 15 | **Roses of Protection, Observation, and Separation** -- Roses at the edges of the aura as energetic sentinels. | `15-four roses original .PNG` | `15-Four roses.PNG` |
@@ -324,7 +324,7 @@ Below is the complete teaching text that accompanies each image/slide in the man
 ---
 
 #### Slide: Circuit of the Energy of the Cosmos
-**Original:** `13-cosmos-original.PNG` | **Reimagined:** `12Circuitofenergycismos .PNG`
+**Original:** `13-cosmos-original.PNG` | **Reimagined:** `IMG_6954.jpeg` *(Updated: arrows more refined)*
 
 > The Cosmic circuit is an energetic pathway that draws cosmic energy downward through the crown of the head (7th chakra) and into the body. This circuit connects you to the higher frequencies of universal consciousness, inspiration, and spiritual guidance.
 
