@@ -124,13 +124,52 @@ export interface Chakra {
   blockages: string;
 }
 
-/** Teaching technique */
+/** Teaching technique (legacy — kept for backward compatibility) */
 export interface Technique {
   id: string;
   title: string;
   description: string;
   level: number;
   category: string;
+}
+
+/** A single step within a technique */
+export interface TechniqueStep {
+  order: number;
+  instruction: string;
+}
+
+/** A sub-technique nested inside a parent technique */
+export interface SubTechnique {
+  id: string;
+  title: string;
+  description: string;
+  steps?: TechniqueStep[];
+}
+
+/** Modular meditation technique sourced from the manuals */
+export interface MeditationTechnique {
+  id: string;
+  /** Position in the meditation sequence (can be changed to reorder) */
+  order: number;
+  title: string;
+  level: number;
+  category:
+    | 'preparation'
+    | 'foundation'
+    | 'protection'
+    | 'energy-circuit'
+    | 'cleansing'
+    | 'gift'
+    | 'closing';
+  /** Short summary of purpose */
+  description: string;
+  /** Full teaching instruction from the manual */
+  instruction: string;
+  steps?: TechniqueStep[];
+  subTechniques?: SubTechnique[];
+  /** IDs of related TeachingSlide entries */
+  linkedSlideIds?: string[];
 }
 
 /** Teaching level section */

@@ -440,21 +440,22 @@ export const chakras: Chakra[] = [
 // =============================================================================
 
 export const techniques: Technique[] = [
-  { id: '1', title: 'Grounding Breath', description: 'A foundational breath practice connecting awareness to the body through slow, rhythmic nasal breathing.', level: 1, category: 'Breath' },
-  { id: '2', title: 'Body Scan Awareness', description: 'Systematic attention through the body, cultivating somatic presence and releasing held tension.', level: 1, category: 'Somatic' },
-  { id: '3', title: 'Heart Coherence Meditation', description: 'Focused attention on the heart center, cultivating the felt sense of coherence and compassion.', level: 1, category: 'Meditation' },
-  { id: '4', title: 'Witnessing Practice', description: 'Developing the capacity to observe thoughts and sensations without identification or reaction.', level: 1, category: 'Awareness' },
-  { id: '5', title: 'Rose Meditation', description: 'The core practice of the lineage, a multi-layered meditation integrating breath, body, and subtle awareness.', level: 1, category: 'Core Practice' },
-  { id: '6', title: 'Field Sensing', description: 'Developing sensitivity to the energetic field (both personal and shared) as a perceptual capacity.', level: 2, category: 'Energetic' },
-  { id: '7', title: 'Chakra Awareness Sequence', description: 'A guided practice moving attention through the seven energy centers, noting qualities and blockages.', level: 2, category: 'Energetic' },
-  { id: '8', title: 'Emotional Alchemy', description: 'The practice of meeting difficult emotions with presence, allowing transformation through awareness rather than suppression.', level: 2, category: 'Emotional' },
-  { id: '9', title: 'Relational Presence', description: 'Partnered practices for maintaining authentic presence in connection with others.', level: 2, category: 'Relational' },
-  { id: '10', title: 'Advanced Breath Protocols', description: 'Extended breath sequences for deeper states of coherence and expanded awareness.', level: 2, category: 'Breath' },
-  { id: '11', title: 'Space-Holding Fundamentals', description: 'The art of creating and maintaining a sacred container for individual and group practice.', level: 3, category: 'Teaching' },
-  { id: '12', title: 'Transmission Practice', description: 'Developing the capacity to transmit the quality of practice through presence rather than instruction alone.', level: 3, category: 'Teaching' },
-  { id: '13', title: 'Group Field Navigation', description: 'Reading and responding to the energetic dynamics of a group in real time.', level: 3, category: 'Teaching' },
-  { id: '14', title: 'Adaptive Sequencing', description: 'The skill of adjusting practice sequences in response to what is present in the room.', level: 3, category: 'Teaching' },
-  { id: '15', title: 'Integration Facilitation', description: 'Supporting others in grounding transformative experiences into daily life.', level: 3, category: 'Teaching' },
+  // Level 1 — sourced from Rose Meditation Level 1 manual
+  { id: '1', title: 'Grounding Cord', description: 'An energetic cord from the first chakra to the center of the Earth that anchors, stabilizes, and clears energy.', level: 1, category: 'Foundation' },
+  { id: '2', title: 'Golden Sun', description: 'A radiant sun above the head that fills the aura and body with Divine energy, raising vibration.', level: 1, category: 'Foundation' },
+  { id: '3', title: 'Limits of the Aura', description: 'Define the boundary of the aura at 50 cm (20 inches) around the entire body.', level: 1, category: 'Foundation' },
+  { id: '4', title: 'Expansion of the Grounding Cord', description: 'Widen the grounding cord to match the width of the aura, grounding the entire energy field.', level: 1, category: 'Foundation' },
+  { id: '5', title: 'Renewal of the Grounding Cord', description: 'Cut and replace the grounding cord using a personal cutting tool to refresh the energetic anchor.', level: 1, category: 'Foundation' },
+  { id: '6', title: 'Four Roses of Protection, Separation and Observation', description: 'Four roses placed at the edges of the aura serving as energetic sentinels for protection, separation, and observation.', level: 1, category: 'Protection' },
+  { id: '7', title: 'Circuit of the Energies of Earth and Cosmos', description: 'Activate the dual flow of Earth and Cosmic energy through the body for transmutation, vitality, and spiritual information.', level: 1, category: 'Energy Circuit' },
+  { id: '8', title: 'Cleansing Rose', description: 'A rose placed outside the aura to absorb and transmute foreign or stagnant energy from within your field.', level: 1, category: 'Cleansing' },
+  { id: '9', title: 'Recovery Rose', description: 'A rose that attracts and returns your own energy scattered throughout the universe back to you.', level: 1, category: 'Cleansing' },
+  { id: '10', title: 'Pink Rose', description: 'An unrooted pink rose offered as a gift of well-being — for yourself or another person.', level: 1, category: 'Gift' },
+  // Level 2 & 3 — placeholders until those manuals are modularized
+  { id: '11', title: 'Sacred Space Creation', description: 'Creating an internal energetic environment that serves as your meditation home.', level: 2, category: 'Sacred Space' },
+  { id: '12', title: 'Chakra Cleansing', description: 'Individual chakra cleansing using roses addressing dynamics of past and present.', level: 2, category: 'Cleansing' },
+  { id: '13', title: 'Golden Sticky Roses', description: 'Golden roses placed on chakras, joints, and throughout the body for thorough energetic cleansing.', level: 2, category: 'Cleansing' },
+  { id: '14', title: 'The Analyzer', description: 'An advanced energetic point at the base of the skull used for deeper perception and discernment of energy.', level: 3, category: 'Advanced' },
 ];
 
 // =============================================================================
