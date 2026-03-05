@@ -177,6 +177,7 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'The Rose is used as a living energetic instrument throughout the practice. It has roots (connection to source), a stem (channel of energy), and a bloom (the active, radiant tool). The Rose can be placed, moved, opened, closed, and released according to the needs of the meditation.',
     originalImage: '14-Therosegold.PNG',
+    reimaginedImage: '14-Therosegold.PNG',
     level: 1,
     section: 'foundations',
   },
