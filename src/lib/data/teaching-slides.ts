@@ -153,7 +153,9 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'The Cosmic circuit is an energetic pathway that draws cosmic energy downward through the crown of the head (7th chakra) and into the body. This circuit connects you to the higher frequencies of universal consciousness, inspiration, and spiritual guidance.',
     originalImage: '13-cosmos-original.PNG',
-    reimaginedImage: '12Circuitofenergycismos .PNG',
+    reimaginedImage: 'IMG_6954.jpeg',
+    imageNote:
+      'Updated: New image with more refined arrows showing the cosmic energy circuit pathway. Previous version: 12Circuitofenergycismos .PNG',
     level: 1,
     section: 'foundations',
   },
