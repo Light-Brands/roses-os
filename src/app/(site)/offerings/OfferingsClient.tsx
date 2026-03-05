@@ -15,7 +15,7 @@ import {
   contributionTiers,
   roseMeditationTiers,
 } from '@/lib/data';
-import type { ScheduleStage, ContributionTier, TimeZoneEntry, CommunityProgram } from '@/lib/data/types';
+import type { ScheduleStage, ContributionTier, TimeZoneEntry, CommunityProgram, ProgramDetailSection } from '@/lib/data/types';
 
 import PageHero from '@/components/sections/PageHero';
 import ProgramCard from '@/components/sections/ProgramCard';
@@ -81,6 +81,12 @@ function ContinuedProgramCard({
           <p key={i}>{paragraph}</p>
         ))}
       </div>
+      {program.facilitation && (
+        <p className="text-sm text-[var(--color-foreground-muted)] mb-4">
+          <span className="font-medium text-[var(--color-foreground-subtle)]">Facilitation:</span>{' '}
+          {program.facilitation}
+        </p>
+      )}
       <div className="flex flex-wrap gap-3">
         {program.schedule && (
           <span
@@ -478,6 +484,30 @@ function OfferingsContent() {
                         transition={{ duration: 0.5, ease }}
                         className="overflow-hidden"
                       >
+                        {/* Detail sections (requirements, how classes work, etc.) */}
+                        {program.detailSections && program.detailSections.length > 0 && (
+                          <div className="mt-8 mb-4 space-y-6">
+                            {program.detailSections.map((section, sIdx) => (
+                              <div key={sIdx}>
+                                <p className="label-sacred mb-2">{section.heading}</p>
+                                <p className="text-sm text-[var(--color-foreground-muted)] leading-relaxed">
+                                  {section.body}
+                                </p>
+                                {section.bullets && (
+                                  <ul className="mt-2 space-y-1.5 text-sm text-[var(--color-foreground-muted)]">
+                                    {section.bullets.map((bullet, bIdx) => (
+                                      <li key={bIdx} className="flex items-start gap-2">
+                                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-rose-400/60 shrink-0" />
+                                        {bullet}
+                                      </li>
+                                    ))}
+                                  </ul>
+                                )}
+                              </div>
+                            ))}
+                          </div>
+                        )}
+
                         {/* Schedule section */}
                         {program.scheduleCycles && (
                           <div className="mt-8 mb-8">

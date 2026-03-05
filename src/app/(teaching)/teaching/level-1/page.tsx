@@ -6,7 +6,7 @@ import { level1Slides } from '@/lib/data/teaching-slides';
 import LevelNav from '@/components/teaching/LevelNav';
 import TeachingSlideCard from '@/components/teaching/TeachingSlideCard';
 import { PdfExportButton } from '@/components/ui/PdfExportButton';
-import ManualPdfButton from '@/components/teaching/ManualPdfButton';
+import { ManualDownloadButton } from '@/components/teaching/ManualDownloadButton';
 import LanguageSelector from '@/components/teaching/LanguageSelector';
 import { useLanguage } from '@/lib/i18n';
 
@@ -48,8 +48,11 @@ export default function Level1Page() {
                 {levelT?.description ?? level.description}
               </p>
               <div className="flex items-center gap-3 mt-4 flex-wrap">
-                <ManualPdfButton />
                 <PdfExportButton />
+                <ManualDownloadButton
+                  href="/resources/manuals/ROSES-OS-Level-1-Manual-EN.pdf"
+                  label="Download Manual (Level 1)"
+                />
                 <LanguageSelector />
               </div>
             </div>
