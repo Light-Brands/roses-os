@@ -322,6 +322,50 @@ li::marker {
   color: #9E956B;
 }
 
+/* Image Placeholder */
+.image-placeholder {
+  border: 2px dashed #C4B8AE;
+  border-radius: 8px;
+  background: #F0EBE6;
+  padding: 1.2cm 1cm;
+  margin: 0.8cm 0;
+  text-align: center;
+  page-break-inside: avoid;
+}
+
+.image-placeholder .ph-icon {
+  font-size: 18pt;
+  color: #B5A89D;
+  margin-bottom: 0.3cm;
+}
+
+.image-placeholder .ph-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 9pt;
+  font-weight: 500;
+  color: #9C6F6E;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.2cm;
+}
+
+.image-placeholder .ph-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 8.5pt;
+  color: #8C7E73;
+  line-height: 1.5;
+  max-width: 30em;
+  margin: 0 auto;
+}
+
+.image-placeholder .ph-ref {
+  font-family: 'Inter', sans-serif;
+  font-size: 7.5pt;
+  color: #B5A89D;
+  margin-top: 0.3cm;
+  font-style: italic;
+}
+
 /* End Page */
 .end-page {
   page-break-before: always;
@@ -373,6 +417,13 @@ LEVEL_2_HTML = """<!DOCTYPE html>
 <!-- SACRED SPACE -->
 <h2>Sacred Space — Center of the Head</h2>
 
+<div class="image-placeholder">
+  <div class="ph-icon">&#9702;</div>
+  <p class="ph-label">Illustration — Sacred Space</p>
+  <p class="ph-desc">Person seated in meditation posture with the center of the head illuminated — the sacred space where the Spirit resides and from which all energy work is conducted.</p>
+  <p class="ph-ref">Ref: Slide 19 — Sacred Space</p>
+</div>
+
 <p>Place yourself in the center of your head, in your sacred space, where you are safe and aware of your energetic authority. It is from there that you can do the Rose Meditation or any energy work safely, clearly, clairvoyantly and saving your energy.</p>
 
 <p>This space is dedicated to your Spirit, which is the purest part of you. It should always be tightly closed and protected. Go to this place whenever you do the Rose Meditation or whenever you need to make important decisions and want to be in alignment with your spiritual essence.</p>
@@ -384,6 +435,13 @@ LEVEL_2_HTML = """<!DOCTYPE html>
 
 <h3>Preparing the Room</h3>
 
+<div class="image-placeholder">
+  <div class="ph-icon">&#9702;</div>
+  <p class="ph-label">Illustration — Room Protection</p>
+  <p class="ph-desc">Room with 4 Golden Roses at the corners, golden lines connecting from the top four corners to the ceiling center and bottom four corners to the floor center, with a vertical golden line unifying them. A transparent grounding cord descends from the center of the floor to the Earth.</p>
+  <p class="ph-ref">Ref: Slide 20 — Protection of the Space</p>
+</div>
+
 <p>Now prepare the room you're in so that it's clean and protected:</p>
 
 <ul>
@@ -394,6 +452,13 @@ LEVEL_2_HTML = """<!DOCTYPE html>
 </ul>
 
 <h3>Owning Your Space</h3>
+
+<div class="image-placeholder">
+  <div class="ph-icon">&#9702;</div>
+  <p class="ph-label">Illustration — Owning Your Space</p>
+  <p class="ph-desc">Person seated within the golden grid room. Four golden lines extend from the crown chakra to the top four corners, and four golden lines from the root chakra to the bottom four corners — establishing energetic authority over the space.</p>
+  <p class="ph-ref">Ref: Slide 22 — Owning Your Space</p>
+</div>
 
 <p>Own the room to have authority over the space where you are meditating:</p>
 
@@ -417,6 +482,13 @@ LEVEL_2_HTML = """<!DOCTYPE html>
 <div class="page-break"></div>
 <h2>Chakra Cleansing</h2>
 
+<div class="image-placeholder">
+  <div class="ph-icon">&#9702;</div>
+  <p class="ph-label">Illustration — Chakra Cleansing</p>
+  <p class="ph-desc">Person seated in meditation with two grounded roses placed outside the aura — one in front and one behind — at the level of a chakra. The roses act like magnets, drawing out foreign energy. The front rose cleanses present energies, the back rose cleanses past energies.</p>
+  <p class="ph-ref">Ref: Slide 24 — Cleansing of Each Chakra</p>
+</div>
+
 <p>Start cleansing the chakras by creating and exploding roses. Roses work like a vacuum cleaner or magnet and suck in energies that don't belong to you:</p>
 
 <ul>
@@ -428,7 +500,21 @@ LEVEL_2_HTML = """<!DOCTYPE html>
   <li>When you feel the need, explode this Rose out of your Aura and create a new Rose.</li>
 </ul>
 
+<div class="image-placeholder">
+  <div class="ph-icon">&#9702;</div>
+  <p class="ph-label">Illustration — Aura Layer Cleansing</p>
+  <p class="ph-desc">Person seated within their aura, showing an unrooted rose at the level of a chakra cleansing the corresponding aura layer. The seven aura layers are visible radiating outward from the body.</p>
+  <p class="ph-ref">Ref: Slide 25 — Cleansing of Each Aura Layer</p>
+</div>
+
 <p>This procedure should be done equally for all the other chakras, starting from the first and going through each chakra in ascending order up to the seventh chakra:</p>
+
+<div class="image-placeholder">
+  <div class="ph-icon">&#9702;</div>
+  <p class="ph-label">Illustration — The Seven Chakras</p>
+  <p class="ph-desc">Diagram of the human body showing all seven chakras aligned from root to crown with their corresponding colors: Red (1st), Orange (2nd), Yellow (3rd), Green/Pink (4th), Sky Blue (5th), Indigo (6th), Violet (7th).</p>
+  <p class="ph-ref">Ref: Slide 23 — The Seven Chakras</p>
+</div>
 
 <ul class="chakra-list">
   <li class="chakra-1">1st Chakra (Root) — Red</li>
@@ -448,10 +534,47 @@ LEVEL_2_HTML = """<!DOCTYPE html>
 
 <ul>
   <li><strong>The first:</strong> it enters through the crown chakra, cleansing all the chakras up to the root chakra, and exits through the grounding cord.</li>
+</ul>
+
+<div class="image-placeholder">
+  <div class="ph-icon">&#9702;</div>
+  <p class="ph-label">Illustration — Golden Sticky Rose: Phase 1</p>
+  <p class="ph-desc">A golden sticky rose enters through the crown chakra and travels downward through all seven chakras, exiting through the grounding cord.</p>
+  <p class="ph-ref">Ref: Slide 26 — Golden Sticky Roses Phase 1</p>
+</div>
+
+<ul>
   <li><strong>The second:</strong> it enters through the crown chakra, descends to the throat chakra, splits into two Roses that follow the channels of the arms, exiting through the chakras of the hands, and explode outside the Aura or exit through the grounding cord.</li>
+</ul>
+
+<div class="image-placeholder">
+  <div class="ph-icon">&#9702;</div>
+  <p class="ph-label">Illustration — Golden Sticky Rose: Phase 2</p>
+  <p class="ph-desc">A golden sticky rose enters through the crown, descends to the throat chakra, then splits into two roses that travel down the arms and exit through the hands.</p>
+  <p class="ph-ref">Ref: Slide 27 — Golden Sticky Roses Phase 2</p>
+</div>
+
+<ul>
   <li><strong>The third:</strong> it enters through the crown chakra, descends to the root chakra, turns into two Roses that follow the channels of the legs, exit through the foot chakras and explode outside the Aura or exit through the grounding cord.</li>
+</ul>
+
+<div class="image-placeholder">
+  <div class="ph-icon">&#9702;</div>
+  <p class="ph-label">Illustration — Golden Sticky Rose: Phase 3</p>
+  <p class="ph-desc">A golden sticky rose enters through the crown, descends to the root chakra, then splits into two roses that travel down the legs and exit through the feet.</p>
+  <p class="ph-ref">Ref: Slide 28 — Golden Sticky Roses Phase 3</p>
+</div>
+
+<ul>
   <li><strong>The fourth:</strong> it has a size that spans the entire width of the Aura, it enters and descends, cleansing our entire Aura, and exits through the grounding cord.</li>
 </ul>
+
+<div class="image-placeholder">
+  <div class="ph-icon">&#9702;</div>
+  <p class="ph-label">Illustration — Golden Sticky Rose: Phase 4</p>
+  <p class="ph-desc">A large golden rose spans the entire width of the aura, descending from above and cleansing the whole aura as it passes through and exits via the grounding cord. The body is bathed in golden light.</p>
+  <p class="ph-ref">Ref: Slide 29 — Golden Sticky Roses Phase 4</p>
+</div>
 
 <!-- ELEMENTS SUMMARY -->
 <div class="page-break"></div>
