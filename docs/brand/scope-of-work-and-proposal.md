@@ -146,52 +146,95 @@ All strategic and brand documentation living in the repository:
 
 ---
 
-## 4. Proposed Agreement Structure
+## 4. Value & Pricing
 
-### 4.1 Scope Categories
+The pricing below reflects two columns: **Market Value** (what this work would cost at standard industry rates from an agency or senior freelance professional) and **Contribution Rate** (a mission-aligned rate that honors the work while reflecting the shared purpose of the project).
 
-The work spans four distinct disciplines:
+The market values are based on current industry benchmarks for senior-level full-stack development ($150–200/hr), brand strategy ($125–175/hr), design production ($100–150/hr), and specialized work like 3D/WebGL ($175–250/hr).
 
-1. **Platform Development** — Full-stack engineering, 3D graphics, API development, authentication, admin systems
-2. **Brand & Design System** — Visual identity, design system, color/typography, PDF templates, design language
-3. **Content Strategy & Architecture** — Brand DNA, Codex, content plans, documentation structure, multilingual strategy
-4. **Design Production** — Teaching manuals, brand book visual design, student materials, illustrations
+---
 
-### 4.2 Considerations for Discussion
+### 4.1 Phase 1 — Completed Work
 
-The following points are offered as a starting framework for the team to discuss together:
+| # | Deliverable | Scope | Market Value | Contribution Rate |
+|---|-------------|-------|--------------|-------------------|
+| 1 | **Web Platform MVP** | 23 pages, 65+ components, responsive, animations, page transitions | $55,000 | $33,000 |
+| 2 | **Teaching Platform** | 3 levels, visual slide cards, technique data layer, downloads, password protection | $22,000 | $13,200 |
+| 3 | **Design System** | Full color palette, typography, component library, dark mode, branded templates | $15,000 | $9,000 |
+| 4 | **Content Architecture** | Brand DNA (80KB), Codex (731 lines), training manual, 4 designer specs, program materials | $18,000 | $10,800 |
+| 5 | **Multilingual Infrastructure** | 4 languages (EN, ES, PT, EL) across teaching content and UI | $10,000 | $6,000 |
+| 6 | **Admin Dashboard** | Analytics, user management, content CMS, media library, feedback system, role-based access | $15,000 | $9,000 |
+| 7 | **API Layer & Backend** | 7 endpoints, Supabase integration, auth (OAuth + SSR), AI personalization | $12,000 | $7,200 |
+| 8 | **3D Brand Experience** | Custom Three.js rose, GLSL shaders, bloom/particles, 48 textures, responsive canvas | $18,000 | $10,800 |
+| | | | | |
+| | **Phase 1 Total** | | **$165,000** | **$99,000** |
+
+### 4.2 Phase 2 — In Progress
+
+| # | Deliverable | Scope | Market Value | Contribution Rate |
+|---|-------------|-------|--------------|-------------------|
+| 9 | **MDR Teacher's Visual Manual** | 46-page manual, custom illustrations, chakra diagrams, diverse representation, print-ready | $14,000 | $8,400 |
+| 10 | **Student Manuals Redesign** | Level 2 + Level 3 manuals, 4 languages each (8–12 PDFs), Yeva World aesthetic | $16,000 | $9,600 |
+| 11 | **Brand Book** | 110–130 page brand identity book, 13 sections, visual design, print-ready | $24,000 | $14,400 |
+| | | | | |
+| | **Phase 2 Total** | | **$54,000** | **$32,400** |
+
+### 4.3 Phase 3 — Proposed Ongoing
+
+| Deliverable | Scope | Market Value | Contribution Rate |
+|-------------|-------|--------------|-------------------|
+| **Platform Maintenance & Hosting** | Updates, security, bug fixes, hosting management | $3,000/mo | $1,800/mo |
+| **UX Refinement & New Features** | Flow optimization, GEO architecture, new sections | $5,000/mo | $3,000/mo |
+| **Content Updates & Expansion** | New levels, Aura integration, program materials | $3,000/mo | $1,800/mo |
+| | | | |
+| **Phase 3 Monthly Retainer** | | **$11,000/mo** | **$6,600/mo** |
+
+*Phase 3 retainer can be structured as needed — monthly, quarterly, or per-project.*
+
+---
+
+### 4.4 Summary
+
+| Phase | Market Value | Contribution Rate | Savings |
+|-------|--------------|-------------------|---------|
+| Phase 1 (Completed) | $165,000 | $99,000 | 40% |
+| Phase 2 (In Progress) | $54,000 | $32,400 | 40% |
+| Phase 3 (Ongoing) | $11,000/mo | $6,600/mo | 40% |
+| | | | |
+| **Total (Phases 1 & 2)** | **$219,000** | **$131,400** | **$87,600 in value contributed to the mission** |
+
+The 40% difference between market value and contribution rate represents **$87,600 in value** being contributed directly to the mission — in the same spirit of conscious contribution that ROSES OS extends to its community.
+
+---
+
+### 4.5 Payment Structure Options
+
+For the team to consider:
+
+**Option A — Milestone-Based**
+- Phase 1 settled upon agreement signing
+- Phase 2 paid in milestones (e.g., 50% at start, 50% on delivery)
+- Phase 3 monthly retainer
+
+**Option B — Phased Over Time**
+- Phase 1 settled over 3–6 months
+- Phase 2 paid on delivery
+- Phase 3 monthly retainer
+
+**Option C — Equity + Reduced Cash**
+- Reduced cash compensation offset by equity/ownership stake in ROSES OS
+- Details to be discussed based on the project's corporate structure
+
+*Open to discussing what works best for everyone. The goal is sustainability for the project and fairness for all contributors.*
+
+---
+
+### 4.6 Considerations for Discussion
 
 - **Ownership & IP** — How do we define ownership of the platform code, brand assets, and content? What belongs to the project vs. individual contributors?
 - **Ongoing Maintenance** — The platform requires ongoing technical maintenance, hosting, updates, and security. How is this accounted for?
-- **Contribution Model** — Given the project's values around conscious contribution, how do we structure compensation in a way that honors both the work and the mission?
 - **Licensing** — Are there licensing considerations for the teaching content, brand assets, or platform code?
 - **Future Development** — As the platform grows (Rose App, Aura levels, community features), how do we structure agreements for ongoing development?
-
-### 4.3 What I'd Like to Propose
-
-Rather than a single flat rate, I'd suggest we consider a structure that reflects both the work already completed and the ongoing nature of the engagement:
-
-**A. Completed Work (Phase 1)**
-- Full-stack platform build
-- Teaching platform with 3 levels
-- Design system implementation
-- Content architecture and documentation
-- Admin dashboard and API layer
-- 3D brand experience
-- Multilingual infrastructure
-
-**B. Current Phase (Phase 2)**
-- MDR Visual Manual production
-- Student manual redesign (4 languages)
-- Brand Book completion and visual design
-
-**C. Ongoing Engagement (Phase 3+)**
-- Platform maintenance and hosting
-- UX refinement and optimization
-- New feature development
-- Content updates and expansion
-
-I'd like to discuss specific numbers in our meeting next week once the team has reviewed this scope. Having everyone aligned on what's been built and what's ahead will make that conversation much more productive.
 
 ---
 
