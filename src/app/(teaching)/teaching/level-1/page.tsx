@@ -7,6 +7,7 @@ import LevelNav from '@/components/teaching/LevelNav';
 import TeachingSlideCard from '@/components/teaching/TeachingSlideCard';
 import { PdfExportButton } from '@/components/ui/PdfExportButton';
 import { ManualDownloadButton } from '@/components/teaching/ManualDownloadButton';
+import { ImageDownloadButton } from '@/components/teaching/ImageDownloadButton';
 import LanguageSelector from '@/components/teaching/LanguageSelector';
 import { useLanguage } from '@/lib/i18n';
 
@@ -53,6 +54,7 @@ export default function Level1Page() {
                   href="/manuals/rose-meditation-level-1-final.pdf"
                   label="Download Manual (Level 1)"
                 />
+                <ImageDownloadButton slides={level1Slides} level={1} />
                 <LanguageSelector />
               </div>
             </div>

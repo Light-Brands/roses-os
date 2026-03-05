@@ -8,6 +8,7 @@ import TeachingSlideCard from '@/components/teaching/TeachingSlideCard';
 import ChakraSlideCard from '@/components/teaching/ChakraSlideCard';
 import { PdfExportButton } from '@/components/ui/PdfExportButton';
 import { ManualDownloadButton } from '@/components/teaching/ManualDownloadButton';
+import { ImageDownloadButton } from '@/components/teaching/ImageDownloadButton';
 import LanguageSelector from '@/components/teaching/LanguageSelector';
 import { useLanguage } from '@/lib/i18n';
 
@@ -59,6 +60,7 @@ export default function Level2Page() {
                   href="/resources/manuals/ROSES-OS-Level-2-Manual-EN.pdf"
                   label="Download Manual (Level 2)"
                 />
+                <ImageDownloadButton slides={[...level2Slides, ...chakraSlides, ...level2CleansingSlides]} level={2} />
                 <LanguageSelector />
               </div>
             </div>
