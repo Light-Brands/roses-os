@@ -193,6 +193,8 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 **Source:** `docs/training/mdr-teachers-training-manual.md`
 
+> **Important:** All "Designer Notes" throughout this section are internal guidance for the designer only. Once the designer has completed the work for a given slide, the corresponding designer notes should be **removed from the slide deck / final deliverable** -- they should **not** appear in the finished product. The notes should remain here in this `.md` file as a permanent reference, but the final slides and website pages must contain only the teaching text and imagery.
+
 ---
 
 ### Opening -- Agreements and Virtues
@@ -310,6 +312,7 @@ Below is the complete teaching text that accompanies each image/slide in the man
 **Designer Notes:**
 - The **expanded grounding cord** should also be represented in this image -- it is part of the full energetic architecture (posture + aura + grounding cord + golden sun)
 - Same visual direction: **thick, transparent, strong, less gold**
+- **Image repetition issue:** The current reimagined image uses the same human figure as slide 11 -- please use a **different human man** for slide 11a so the two slides are visually distinct
 
 ---
 
