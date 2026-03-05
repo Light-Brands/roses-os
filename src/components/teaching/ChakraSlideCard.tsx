@@ -173,6 +173,13 @@ export default function ChakraSlideCard({ chakra, index = 0, className }: Chakra
             </div>
           </div>
         )}
+
+        {/* Designer note — how the chakra image should look */}
+        {chakra.imageNote && (
+          <p className="text-xs text-[var(--color-foreground-faint)] italic border-t border-[var(--color-border-subtle)] pt-3 mt-3">
+            {t?.ui.designerNote ?? 'Designer note'}: {chakra.imageNote}
+          </p>
+        )}
       </div>
     </motion.div>
   );
