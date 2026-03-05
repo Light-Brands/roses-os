@@ -50,8 +50,8 @@ export default function Level1Page() {
               <div className="flex items-center gap-3 mt-4 flex-wrap">
                 <PdfExportButton />
                 <ManualDownloadButton
-                  href="/resources/manuals/ROSES-OS-Levels-1-2-Manual-EN.pdf"
-                  label="Download Manual (Levels 1 & 2)"
+                  href="/resources/manuals/ROSES-OS-Level-1-Manual-EN.pdf"
+                  label="Download Manual (Level 1)"
                 />
                 <LanguageSelector />
               </div>
