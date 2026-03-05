@@ -127,5 +127,7 @@ pnpm build
 
 ## About
 
-Designed & developed by **LIGHT BRANDS**.  
+Designed & developed by **LIGHT BRANDS**.
 Documentation and planning: [github.com/Light-Brands/roses-os](https://github.com/Light-Brands/roses-os).
+
+Made with love.
