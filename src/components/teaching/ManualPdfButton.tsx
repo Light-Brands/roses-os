@@ -6,28 +6,22 @@ import { cn } from '@/lib/utils';
 import { useLanguage } from '@/lib/i18n';
 import type { Locale } from '@/lib/i18n/types';
 
-const MANUAL_PATHS: Record<Locale, string | null> = {
-  en: '/manuals/rose-meditation-level-1-final.pdf',
-  el: '/manuals/roses-level-1-manual-el.pdf',
-  es: '/manuals/roses-level-1-manual-es.pdf',
-  pt: '/manuals/roses-level-1-manual-pt.pdf',
-};
-
-const MANUAL_LABELS: Record<Locale, string> = {
-  en: 'Level 1 Manual (PDF)',
-  el: 'Εγχειρίδιο Επίπεδο 1 (PDF)',
-  es: 'Manual Nivel 1 (PDF)',
-  pt: 'Manual Nível 1 (PDF)',
-};
-
 interface ManualPdfButtonProps {
+  paths: Partial<Record<Locale, string>>;
+  labels: Partial<Record<Locale, string>>;
   className?: string;
 }
 
-export default function ManualPdfButton({ className }: ManualPdfButtonProps) {
+export default function ManualPdfButton({
+  paths,
+  labels,
+  className,
+}: ManualPdfButtonProps) {
   const { locale } = useLanguage();
-  const href = MANUAL_PATHS[locale] ?? MANUAL_PATHS.en!;
-  const label = MANUAL_LABELS[locale] ?? MANUAL_LABELS.en;
+  const href = paths[locale] ?? paths.en;
+  const label = labels[locale] ?? labels.en ?? 'Manual (PDF)';
+
+  if (!href) return null;
 
   return (
     <div className={cn('inline-flex items-center gap-2 print:hidden', className)}>
