@@ -136,7 +136,7 @@ export default function Level2Page() {
                     {t?.ui.nextLevel ?? 'Next'}
                   </span>
                   <p className="font-serif text-lg text-[var(--color-foreground)]">
-                    Level 3: {teachingLevels[2]?.title}
+                    {teachingLevels[2]?.title}
                   </p>
                 </div>
                 <span className="text-[var(--color-foreground-muted)] transition-transform duration-200 group-hover:translate-x-1">
