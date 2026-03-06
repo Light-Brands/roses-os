@@ -641,10 +641,8 @@ export const teachersTrainingSchedule: CommunityScheduleCycle[] = [
       {
         month: 'March',
         sessions: [
-          { date: 'Fri, Mar 6', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '1:00 PM – 2:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '6:00 PM – 7:30 PM', madrid: '7:00 PM – 8:30 PM' } },
+          { date: 'Fri, Mar 6', time: { sanJose: '9:00 AM – 10:30 AM', bogota: '10:00 AM – 11:30 AM', newYork: '10:00 AM – 11:30 AM', brasilia: '12:00 PM – 1:30 PM', london: '3:00 PM – 4:30 PM', madrid: '4:00 PM – 5:30 PM' } },
           { date: 'Thu, Mar 12', time: { sanJose: '9:00 AM – 10:30 AM', bogota: '10:00 AM – 11:30 AM', newYork: '11:00 AM – 12:30 PM', brasilia: '12:00 PM – 1:30 PM', london: '3:00 PM – 4:30 PM', madrid: '4:00 PM – 5:30 PM' } },
-          { date: 'Thu, Mar 19', time: { sanJose: '8:00 AM – 9:30 AM', bogota: '9:00 AM – 10:30 AM', newYork: '10:00 AM – 11:30 AM', brasilia: '11:00 AM – 12:30 PM', london: '2:00 PM – 3:30 PM', madrid: '3:00 PM – 4:30 PM' } },
-          { date: 'Thu, Mar 26', time: { sanJose: '9:00 AM – 10:30 AM', bogota: '10:00 AM – 11:30 AM', newYork: '11:00 AM – 12:30 PM', brasilia: '12:00 PM – 1:30 PM', london: '3:00 PM – 4:30 PM', madrid: '4:00 PM – 5:30 PM' } },
         ],
       },
       {
@@ -652,14 +650,14 @@ export const teachersTrainingSchedule: CommunityScheduleCycle[] = [
         sessions: [
           { date: 'Thu, Apr 2', time: { sanJose: '8:00 AM – 9:30 AM', bogota: '9:00 AM – 10:30 AM', newYork: '10:00 AM – 11:30 AM', brasilia: '11:00 AM – 12:30 PM', london: '3:00 PM – 4:30 PM', madrid: '4:00 PM – 5:30 PM' } },
           { date: 'Thu, Apr 16', time: { sanJose: '9:00 AM – 10:30 AM', bogota: '10:00 AM – 11:30 AM', newYork: '11:00 AM – 12:30 PM', brasilia: '12:00 PM – 1:30 PM', london: '4:00 PM – 5:30 PM', madrid: '5:00 PM – 6:30 PM' } },
-          { date: 'Wed, Apr 22', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '2:00 PM – 3:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '7:00 PM – 8:30 PM', madrid: '8:00 PM – 9:30 PM' } },
+          { date: 'Wed, Apr 22', time: { sanJose: '9:00 AM – 10:30 AM', bogota: '10:00 AM – 11:30 AM', newYork: '11:00 AM – 12:30 PM', brasilia: '12:00 PM – 1:30 PM', london: '4:00 PM – 5:30 PM', madrid: '5:00 PM – 6:30 PM' } },
           { date: 'Thu, Apr 30', time: { sanJose: '9:00 AM – 10:30 AM', bogota: '10:00 AM – 11:30 AM', newYork: '11:00 AM – 12:30 PM', brasilia: '12:00 PM – 1:30 PM', london: '4:00 PM – 5:30 PM', madrid: '5:00 PM – 6:30 PM' } },
         ],
       },
       {
         month: 'May',
         sessions: [
-          { date: 'Mon, May 4', time: { sanJose: '1:00 PM – 2:30 PM', bogota: '2:00 PM – 3:30 PM', newYork: '3:00 PM – 4:30 PM', brasilia: '4:00 PM – 5:30 PM', london: '8:00 PM – 9:30 PM', madrid: '9:00 PM – 10:30 PM' } },
+          { date: 'Mon, May 4', time: { sanJose: '10:00 AM – 11:30 AM', bogota: '11:00 AM – 12:30 PM', newYork: '12:00 PM – 1:30 PM', brasilia: '1:00 PM – 2:30 PM', london: '5:00 PM – 6:30 PM', madrid: '6:00 PM – 7:30 PM' } },
           { date: 'Thu, May 14', time: { sanJose: '9:00 AM – 10:30 AM', bogota: '10:00 AM – 11:30 AM', newYork: '11:00 AM – 12:30 PM', brasilia: '12:00 PM – 1:30 PM', london: '4:00 PM – 5:30 PM', madrid: '5:00 PM – 6:30 PM' } },
           { date: 'Thu, May 21', time: { sanJose: '9:00 AM – 10:30 AM', bogota: '10:00 AM – 11:30 AM', newYork: '11:00 AM – 12:30 PM', brasilia: '12:00 PM – 1:30 PM', london: '4:00 PM – 5:30 PM', madrid: '5:00 PM – 6:30 PM' } },
           { date: 'Thu, May 28', time: { sanJose: '10:00 AM – 11:30 AM', bogota: '11:00 AM – 12:30 PM', newYork: '12:00 PM – 1:30 PM', brasilia: '1:00 PM – 2:30 PM', london: '5:00 PM – 6:30 PM', madrid: '6:00 PM – 7:30 PM' } },
@@ -671,7 +669,7 @@ export const teachersTrainingSchedule: CommunityScheduleCycle[] = [
           { date: 'Thu, Jun 4', time: { sanJose: '9:00 AM – 10:30 AM', bogota: '10:00 AM – 11:30 AM', newYork: '11:00 AM – 12:30 PM', brasilia: '12:00 PM – 1:30 PM', london: '4:00 PM – 5:30 PM', madrid: '5:00 PM – 6:30 PM' } },
           { date: 'Thu, Jun 11', time: { sanJose: '8:00 AM – 9:30 AM', bogota: '9:00 AM – 10:30 AM', newYork: '10:00 AM – 11:30 AM', brasilia: '11:00 AM – 12:30 PM', london: '3:00 PM – 4:30 PM', madrid: '4:00 PM – 5:30 PM' } },
           { date: 'Thu, Jun 18', time: { sanJose: '9:00 AM – 10:30 AM', bogota: '10:00 AM – 11:30 AM', newYork: '11:00 AM – 12:30 PM', brasilia: '12:00 PM – 1:30 PM', london: '4:00 PM – 5:30 PM', madrid: '5:00 PM – 6:30 PM' } },
-          { date: 'Thu, Jun 25', time: { sanJose: '10:00 AM – 11:00 AM', bogota: '11:00 AM – 12:00 PM', newYork: '12:00 PM – 1:00 PM', brasilia: '1:00 PM – 2:00 PM', london: '5:00 PM – 6:00 PM', madrid: '6:00 PM – 7:00 PM' } },
+          { date: 'Thu, Jun 25', time: { sanJose: '10:00 AM – 11:30 AM', bogota: '11:00 AM – 12:30 PM', newYork: '12:00 PM – 1:30 PM', brasilia: '1:00 PM – 2:30 PM', london: '5:00 PM – 6:30 PM', madrid: '6:00 PM – 7:30 PM' } },
         ],
       },
       {
@@ -679,8 +677,8 @@ export const teachersTrainingSchedule: CommunityScheduleCycle[] = [
         sessions: [
           { date: 'Thu, Jul 2', time: { sanJose: '9:00 AM – 10:30 AM', bogota: '10:00 AM – 11:30 AM', newYork: '11:00 AM – 12:30 PM', brasilia: '12:00 PM – 1:30 PM', london: '4:00 PM – 5:30 PM', madrid: '5:00 PM – 6:30 PM' } },
           { date: 'Thu, Jul 9', time: { sanJose: '9:00 AM – 10:30 AM', bogota: '10:00 AM – 11:30 AM', newYork: '11:00 AM – 12:30 PM', brasilia: '12:00 PM – 1:30 PM', london: '4:00 PM – 5:30 PM', madrid: '5:00 PM – 6:30 PM' } },
-          { date: 'Mon, Jul 20', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '2:00 PM – 3:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '7:00 PM – 8:30 PM', madrid: '8:00 PM – 9:30 PM' } },
-          { date: 'Thu, Jul 30', time: { sanJose: '12:00 PM – 1:30 PM', bogota: '1:00 PM – 2:30 PM', newYork: '2:00 PM – 3:30 PM', brasilia: '3:00 PM – 4:30 PM', london: '7:00 PM – 8:30 PM', madrid: '8:00 PM – 9:30 PM' } },
+          { date: 'Mon, Jul 20', time: { sanJose: '9:00 AM – 10:30 AM', bogota: '10:00 AM – 11:30 AM', newYork: '11:00 AM – 12:30 PM', brasilia: '12:00 PM – 1:30 PM', london: '4:00 PM – 5:30 PM', madrid: '5:00 PM – 6:30 PM' } },
+          { date: 'Thu, Jul 30', time: { sanJose: '9:00 AM – 10:30 AM', bogota: '10:00 AM – 11:30 AM', newYork: '11:00 AM – 12:30 PM', brasilia: '12:00 PM – 1:30 PM', london: '4:00 PM – 5:30 PM', madrid: '5:00 PM – 6:30 PM' } },
         ],
       },
     ],
