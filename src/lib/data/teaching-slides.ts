@@ -248,6 +248,7 @@ export const level2Slides: TeachingSlide[] = [
     concept: "Let's Prepare Your Physical Space",
     teachingText:
       'Before meditation, prepare your physical environment to support the energetic work. The external space should mirror the internal intention: clean, clear, quiet, and intentionally held.',
+    reimaginedImage: 'C0F3BC73-8CAA-4033-AC62-E0B55E88006F.png',
     imageNote: 'Illustration needed: A clean, serene meditation room — tidy and intentionally arranged. Could show a chair in a quiet room with soft light, conveying readiness and sacred intention. This bridges the inner sacred space with the physical environment. Reference: PDF source "PHASE B - PREPARING THE SPACE" introduction.',
     level: 2,
     section: 'sacred-space',
@@ -297,6 +298,7 @@ export const level2Slides: TeachingSlide[] = [
     concept: "Let's Talk About Chakras",
     teachingText:
       'The chakra system is the energetic anatomy of the human body. There are seven primary chakras, each governing specific aspects of physical, emotional, mental, and spiritual life.',
+    reimaginedImage: 'IMG_6958.jpeg',
     imageNote: 'Illustration needed: An overview of the seven-chakra system along the human body — showing all seven chakras aligned from root to crown with their corresponding colors (red, orange, yellow, green, blue, indigo, violet). Reference: PDF source "PHASE C - CHAKRA CLEANSING" diagram showing chakra positions and colors.',
     level: 2,
     section: 'chakras',
