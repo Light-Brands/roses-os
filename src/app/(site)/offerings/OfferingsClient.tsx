@@ -477,6 +477,12 @@ function OfferingsContent() {
             practice, mentorship, and the opportunity to embody and share this
             work at a deeper level.
           </motion.p>
+
+          {/* Download Additional Programs Guide */}
+          <div className="flex justify-center pt-2 pb-8 print:hidden">
+            <PaidProgramsDownloadButton variant="light" />
+          </div>
+
           <div className="space-y-4">
             {paidPrograms.map((program, i) => {
               const isExpanded = expandedProgramId === program.id;
@@ -667,10 +673,6 @@ function OfferingsContent() {
             })}
           </div>
 
-          {/* Download Additional Programs Guide */}
-          <div className="flex justify-center pt-8 print:hidden">
-            <PaidProgramsDownloadButton variant="light" />
-          </div>
         </div>
       </section>
 
