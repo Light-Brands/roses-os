@@ -12,10 +12,10 @@ Each major deliverable has its own detailed designer plan. This master document 
 |---|-------------|--------|---------------|
 | 1 | **MDR Teacher's Resource Manual** | Current -- active deliverable | [`project-plan-for-designer-mdr.md`](project-plan-for-designer-mdr.md) |
 | 2 | **Brand Book** (110-130 pages) | Next -- content ~90% ready, pending long Guardian bios | [`project-plan-for-designer-brand-book.md`](project-plan-for-designer-brand-book.md) |
-| 3 | **Manuals** (redo / redesign) | Planned -- brief ready | [`project-plan-for-designer-manuals.md`](project-plan-for-designer-manuals.md) |
+| 3 | **Manuals** (redo / redesign) | Planned -- brief ready, image mapping from teachers training included | [`project-plan-for-designer-manuals.md`](project-plan-for-designer-manuals.md) |
 | 4 | **Platform sections** (invitation, forms, website pages) | Future | Covered in this document (Sections B-E below) |
 
-**Current focus:** The MDR Teacher's Resource Manual is the first deliverable. The brand book follows. The manuals redesign (Level 2 and Level 3 2026) is **urgent -- classes start March 15, 2026**. All imagery reimagined in the Greek-style / Yeva World / Caravana aesthetic, available as downloadable PDFs in four languages (English, Spanish, Portuguese, Greek) from the Resources section. Level 1 content is not duplicated as it is already covered in the Level 1 manual. Platform sections come later. The design system and visual language established in the MDR will carry through everything that follows.
+**Current focus:** The MDR Teacher's Resource Manual is the first deliverable. The brand book follows. The manuals redesign (Level 2 and Level 3 2026) is **urgent -- classes start March 15, 2026**. All imagery is already on the site in the Teachers Training section -- the manuals plan now includes a complete image-to-manual mapping (Section 3.5 of the manuals doc) so the designer knows exactly which image goes with which manual concept. No new images needed. Manuals available as downloadable PDFs in four languages (English, Spanish, Portuguese, Greek) from the Resources section. Level 1 content is not duplicated as it is already covered in the Level 1 manual. Platform sections come later. The design system and visual language established in the MDR will carry through everything that follows.
 
 ---
 
