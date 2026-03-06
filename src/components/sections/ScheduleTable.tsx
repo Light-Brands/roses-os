@@ -17,6 +17,15 @@ const timezoneLabels: Record<TimezoneKey, string> = {
   madrid: 'Madrid',
 };
 
+const timezoneAbbreviations: Record<TimezoneKey, string> = {
+  sanJose: 'CST',
+  bogota: 'COT',
+  newYork: 'EST',
+  brasilia: 'BRT',
+  london: 'GMT',
+  madrid: 'CET',
+};
+
 interface ScheduleTableProps {
   stages: ScheduleStage[];
   className?: string;
@@ -126,7 +135,8 @@ export default function ScheduleTable({ stages, className }: ScheduleTableProps)
                         </span>
                       </div>
                       <p className="text-[var(--color-foreground-faint)] tabular-nums text-xs mt-1">
-                        {session.time[timezone]}
+                        {session.time[timezone]}{' '}
+                        <span className="text-[var(--color-foreground-faint)] text-xs">{timezoneAbbreviations[timezone]}</span>
                       </p>
                     </div>
 
@@ -139,7 +149,8 @@ export default function ScheduleTable({ stages, className }: ScheduleTableProps)
                         {session.duration}
                       </span>
                       <span className="text-[var(--color-foreground-faint)] tabular-nums whitespace-nowrap">
-                        {session.time[timezone]}
+                        {session.time[timezone]}{' '}
+                        <span className="text-xs">{timezoneAbbreviations[timezone]}</span>
                       </span>
                     </div>
                   </motion.div>

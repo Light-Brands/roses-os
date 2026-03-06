@@ -22,6 +22,15 @@ const timezoneLabels: Record<TimezoneKey, string> = {
   madrid: 'Madrid',
 };
 
+const timezoneAbbreviations: Record<TimezoneKey, string> = {
+  sanJose: 'CST',
+  bogota: 'COT',
+  newYork: 'EST',
+  brasilia: 'BRT',
+  london: 'GMT',
+  madrid: 'CET',
+};
+
 // =============================================================================
 // EASE CONSTANT
 // =============================================================================
@@ -263,7 +272,8 @@ function ActivityCard({
                                     {session.date}
                                   </span>
                                   <span className="text-[var(--color-foreground-muted)] tabular-nums shrink-0 text-xs sm:text-sm">
-                                    {session.time[timezone]}
+                                    {session.time[timezone]}{' '}
+                                    <span className="text-[var(--color-foreground-faint)] text-xs">{timezoneAbbreviations[timezone]}</span>
                                   </span>
                                 </div>
                               ))}
