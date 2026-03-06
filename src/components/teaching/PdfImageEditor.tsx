@@ -19,6 +19,7 @@ interface PdfImageEditorProps {
 }
 
 const DEFAULT_MANUALS = [
+  'rose-meditation-level-1-final.pdf',
   'roses-level-1-manual-en.pdf',
   'roses-level-1-manual-es.pdf',
   'roses-level-1-manual-pt.pdf',
