@@ -16,6 +16,9 @@ export default function Level1Page() {
   const { t } = useLanguage();
   const levelT = t?.levels['1'];
 
+  const foundationSlides = level1Slides.filter((s) => s.section !== 'sacred-space');
+  const sacredSpaceSlides = level1Slides.filter((s) => s.section === 'sacred-space');
+
   return (
     <div className="min-h-screen bg-[var(--color-background)]">
       <header className="flex items-center justify-between px-6 py-4 border-b border-[var(--color-border)]">
@@ -61,7 +64,21 @@ export default function Level1Page() {
 
             {/* Teaching Slides */}
             <section className="space-y-8">
-              {level1Slides.map((slide, index) => (
+              {foundationSlides.map((slide, index) => (
+                <TeachingSlideCard
+                  key={slide.id}
+                  slide={slide}
+                  index={index}
+                />
+              ))}
+            </section>
+
+            {/* Sacred Space */}
+            <section className="space-y-8">
+              <h2 className="font-serif text-2xl text-[var(--color-foreground)]">
+                {t?.ui.sacredSpace ?? 'Sacred Space'}
+              </h2>
+              {sacredSpaceSlides.map((slide, index) => (
                 <TeachingSlideCard
                   key={slide.id}
                   slide={slide}

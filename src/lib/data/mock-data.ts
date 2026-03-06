@@ -452,7 +452,7 @@ export const techniques: Technique[] = [
   { id: '9', title: 'Recovery Rose', description: 'A rose that attracts and returns your own energy scattered throughout the universe back to you.', level: 1, category: 'Cleansing' },
   { id: '10', title: 'Pink Rose', description: 'An unrooted pink rose offered as a gift of well-being — for yourself or another person.', level: 1, category: 'Gift' },
   // Level 2 & 3 — placeholders until those manuals are modularized
-  { id: '11', title: 'Sacred Space Creation', description: 'Creating an internal energetic environment that serves as your meditation home.', level: 2, category: 'Sacred Space' },
+  { id: '11', title: 'Sacred Space Creation', description: 'Creating an internal energetic environment that serves as your meditation home.', level: 1, category: 'Sacred Space' },
   { id: '12', title: 'Chakra Cleansing', description: 'Individual chakra cleansing using roses addressing dynamics of past and present.', level: 2, category: 'Cleansing' },
   { id: '13', title: 'Golden Sticky Roses', description: 'Golden roses placed on chakras, joints, and throughout the body for thorough energetic cleansing.', level: 2, category: 'Cleansing' },
   { id: '14', title: 'The Analyzer', description: 'An advanced energetic point at the base of the skull used for deeper perception and discernment of energy.', level: 3, category: 'Advanced' },
