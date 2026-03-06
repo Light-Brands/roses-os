@@ -21,7 +21,7 @@
 | **Where** | Resources section of the ROSES OS platform -- accessible for enrolled students |
 | **Format** | Web-viewable PDF and direct download -- each manual is a beautifully designed PDF document |
 | **Languages** | English, Spanish, Portuguese, Greek -- four language versions of each manual |
-| **Image direction** | Reimagined illustrations featuring figures in Greek-style clothing (Yeva World / Caravana aesthetic) -- can pull from Teacher's Resource Manual or create new, but must always accurately depict the teaching position or imagination technique |
+| **Image direction** | All images are sourced from the Teachers Training section on the site -- the same images used in the Teacher's Resource Manual. No new images or modifications needed. Every illustration accurately depicts the teaching position or imagination technique. See Section 3.5 for the complete image-to-manual mapping. |
 | **Source materials** | `docs/source-materials/ROSES MANUAL 1 and 2 _2022_ English V1 .pdf` (legacy -- Level 2 content only), `docs/source-materials/ROSES 3 MANUAL _2022 English_ V1.pdf` (legacy Level 3) |
 | **Brand tone** | Sacred-tech minimalism -- earthy, grounded, warm, quiet. Never busy, never loud. |
 | **Priority** | **URGENT -- classes start March 15, 2026** |
@@ -40,9 +40,8 @@ The student manuals are personal companions for participants -- reference docume
 
 **Goals:**
 
-- Reimagine all level imagery with figures in Greek-style clothing (Yeva World / Caravana aesthetic)
-- Pull imagery from the Teacher's Resource Manual where appropriate, or create new illustrations
-- **Always maintain accuracy** -- every illustration must faithfully depict the teaching position or imagination technique it represents
+- All images sourced from the Teachers Training section on the site (see Section 3.5 for complete mapping)
+- **Always maintain accuracy** -- every illustration faithfully depicts the teaching position or imagination technique it represents
 - Make manuals available in four languages for the global community
 - Deliver before March 15 class start date
 
@@ -61,7 +60,7 @@ The student manuals are personal companions for participants -- reference docume
 - Energy flow and balance
 - Level 2 meditation practices and techniques
 
-**Image direction:** All illustrations reimagined with figures wearing Greek-style, ancient-meets-modern clothing (Yeva World / Caravana aesthetic). Images can be pulled from the Teacher's Resource Manual image set or created new. **Critical:** every illustration must accurately depict the meditation position, energetic structure, or imagination technique being taught -- the beauty of the imagery must never compromise the teaching accuracy.
+**Image direction:** All images are sourced directly from the Teachers Training section on the site -- the same illustrations used in the Teacher's Resource Manual. No new images needed. See Section 3.5 for the complete image-to-manual mapping. **Critical:** every illustration accurately depicts the meditation position, energetic structure, or imagination technique being taught -- the beauty of the imagery never compromises the teaching accuracy.
 
 **Source reference:** `docs/source-materials/ROSES MANUAL 1 and 2 _2022_ English V1 .pdf` -- extract Level 2 content only from this legacy document.
 
@@ -78,7 +77,7 @@ The student manuals are personal companions for participants -- reference docume
 - Integration practices
 - Level 3 meditation techniques
 
-**Image direction:** Same reimagined aesthetic as Manual A -- figures in Greek-style clothing, Yeva World / Caravana feel. Level 3 imagery should reflect the more advanced, integrative nature of this level while maintaining the same warm, grounded, ancient-meets-modern aesthetic. Pull from Teacher's Resource Manual or create new. **Critical:** accuracy of the teaching depiction always comes first.
+**Image direction:** Same approach as Manual A -- all images sourced from the Teachers Training section on the site. No new images needed. See Section 3.5 for the complete image-to-manual mapping. **Critical:** accuracy of the teaching depiction always comes first.
 
 **Source reference:** `docs/source-materials/ROSES 3 MANUAL _2022 English_ V1.pdf` -- this is the legacy version being replaced and elevated.
 
@@ -104,6 +103,72 @@ Both manuals live in the **Resources** section of the ROSES OS platform.
 
 ---
 
+## 3.5. IMAGE MAPPING FROM TEACHERS TRAINING
+
+All images for the student manuals come directly from the Teachers Training section on the site. These are the same images used in the Teacher's Resource Manual, already live at `rosesos.com/teaching`. All image files live in `public/rose med images/`. No new images or modifications are needed.
+
+For designer-specific notes on individual images (corrections, visual direction), see `project-plan-for-designer-mdr.md` Section 4.
+
+### Level 2 Manual -- Core Images
+
+These images map to the Level 2 manual concepts (sacred space preparation, chakras, cleansing, recovery, and golden sticky roses):
+
+| Manual Concept | Site Slide | Reimagined Image | Original Image |
+|---|---|---|---|
+| **Prepare Physical Space** | 16 | `16-physical-space.png` | -- |
+| **Protection of the Space** | 17 | `17-create-the-room.jpg` | `17-protectthespace-original.jpg` |
+| **Cleansing of the Space** | 18 | `18-cleanse-the-space.jpg` | `18-cleansing-space-original.PNG` |
+| **Owning Your Space** | 19 | `19-owning-space.jpg` | `19-protect-the-space-original.PNG` |
+| **Chakras Intro** | 20 | `20-chakras-intro.jpeg` | -- |
+| **The Seven Chakras** | 21 | `21-chakras.jpg` | `21-chakras-original.PNG` |
+| **Root Chakra** | 22 | `22-root-chakra.png` | -- |
+| **Sacral Chakra** | 23 | `23-sacral-chakra.png` | -- |
+| **Solar Plexus Chakra** | 24 | `24-solar-plexus-chakra.png` | -- |
+| **Heart Chakra** | 25 | `25-heart-chakra.png` | -- |
+| **Throat Chakra** | 26 | `26-throat-chakra.png` | -- |
+| **Third Eye Chakra** | 27 | `27-third-eye-chakra.jpeg` | -- |
+| **Crown Chakra** | 28 | `28-crown-chakra.png` | -- |
+| **Cleansing Each Aura Layer** | 29 | `29-cleansing-each-layer.PNG` | `29-cleansing-layers-original.jpg` |
+| **Cleansing Each Chakra** | 30 | `30-cleansing-each-chakra.PNG` | `30-cleansingeachchakra-original.jpg` |
+| **Energy Recovery (Level 2)** | 31 | `31-energy-recovery.jpeg` | `31-energyrecoveryeachchakra-original.jpg` |
+| **Golden Sticky Roses -- Phase 1** | 32 | `32-golden-sticky-1.jpg` | `32-golden-sticky-1-original.jpg` |
+| **Golden Sticky Roses -- Phase 2** | 33 | `33-golden-sticky-2.jpg` | `33-golden-sticky-2-original.PNG` |
+| **Golden Sticky Roses -- Phase 3** | 34 | `34-golden-sticky-3.jpg` | `34-golden-sticky-3-original.PNG` |
+| **Golden Sticky Roses -- Phase 4** | 35 | `35-golden-sticky-4.jpg` | `35-golden-sticky-4-original.PNG` |
+
+### Level 2 Manual -- Foundational Reference Images (from Level 1 Teachers Training)
+
+These Level 1 images may appear in the Level 2 manual as foundational context or recap:
+
+| Manual Concept | Site Slide | Reimagined Image | Original Image |
+|---|---|---|---|
+| **The Rose** | 1 | `1-the-rose.PNG` | -- |
+| **Grounding Cord** | 3 | `3-grounding-cord.jpeg` | -- |
+| **Aura Exercise** | 5 | `5-aura-exercise.PNG` | `5-auraexercise-original.PNG` |
+| **Energy Recovery (Level 1)** | 14 | `14-energy-recovery-background.png` | `14-recovery-rose-original.PNG` |
+| **Sacred Space** | 15 | `15-sacred-space.png` | -- |
+| **6th and 7th Chakras** | 16 | `16-sacred-space.PNG` | `16-sacredspace-original.jpg` |
+
+### Level 3 Manual -- Images
+
+| Manual Concept | Site Slide | Reimagined Image | Original Image |
+|---|---|---|---|
+| **The Analyzer** | 36 | `36-analyzer.PNG` | `36-analyzer-original-reimagined.jpg` |
+
+### Supplementary Reference Images
+
+These files exist in `public/rose med images/` and are referenced as supplementary references in the Teachers Training data. They are not displayed as primary slide images but may be useful for the designer:
+
+| File | Referenced In | Purpose |
+|---|---|---|
+| `8-circuitofenergycosmos.PNG` | Slide 9 note | Previous version of cosmos circuit |
+| `10-cosmosearth.PNG` | Slide 10 note | Alternate cosmos + earth view |
+| `21a-example-of-chakra-slides.PNG` | Slide 21 note | Style reference for chakra pages |
+| `29a-chakracleansing-original.jpg` | Slide 30 note | Detail reference for chakra cleansing |
+| `34-golden-sticky-3-original-alt.PNG` | Slide 34 note | Alternate original for golden sticky phase 3 |
+
+---
+
 ## 4. CREATIVE DIRECTION -- THE REIMAGINED IMAGE STYLE
 
 ### The Aesthetic: Greek-Meets-Modern
@@ -117,12 +182,9 @@ All figures in the manuals should be depicted wearing **Greek-style clothing in 
 
 ### Image Sourcing
 
-Images can come from two sources:
+All images come from the Teachers Training section on the site -- the same images used in the Teacher's Resource Manual. The complete mapping of which image goes with which manual concept is in Section 3.5 above.
 
-1. **Pulled from the Teacher's Resource Manual** -- reuse or adapt illustrations already created for the MDR where they fit the student manual context
-2. **Created new** -- where the Teacher's Resource Manual doesn't have what's needed, create new illustrations in the same style
-
-**The non-negotiable rule:** Every illustration must **accurately depict the teaching position or imagination technique** it represents. The creative reimagining is about the aesthetic wrapper (clothing, style, setting) -- not about changing what is being taught. The grounding cord must still look like a grounding cord. The golden sun must still be clearly recognizable. Chakra placements must be anatomically correct. The beauty serves the teaching, never the other way around.
+**The non-negotiable rule:** Every illustration must **accurately depict the teaching position or imagination technique** it represents. The grounding cord must still look like a grounding cord. The golden sun must still be clearly recognizable. Chakra placements must be anatomically correct. The beauty serves the teaching, never the other way around.
 
 ### Illustration Style
 - Elegant line drawings with color that evokes watercolor -- a feeling of a time that came before
@@ -200,15 +262,13 @@ All manuals follow the unified ROSES OS PDF template system:
 - [ ] Review legacy manuals (`ROSES MANUAL 1 and 2 _2022_ English V1 .pdf` for Level 2 content only, and `ROSES 3 MANUAL _2022 English_ V1.pdf`)
 - [ ] Inventory Level 2 content (separate from Level 1 -- Level 1 is excluded)
 - [ ] Inventory Level 3 content
-- [ ] Identify which illustrations can be pulled from the Teacher's Resource Manual
-- [ ] Identify which new illustrations need to be created
+- [ ] Match manual concepts to teachers training images using the mapping in Section 3.5
 - [ ] Plan page layouts for each manual
 
 ### Phase B -- Level 2 Manual (English Master) (Days 2-5)
 - [ ] Design cover page
 - [ ] Build all content pages with reimagined imagery (Greek-style / Yeva World / Caravana aesthetic)
-- [ ] Pull illustrations from Teacher's Resource Manual where appropriate
-- [ ] Create new illustrations where needed -- always accurate to the teaching position or technique
+- [ ] Match illustrations from Teachers Training section using the image mapping in Section 3.5
 - [ ] Apply brand palette, typography, and PDF template
 - [ ] Review for visual consistency with Teacher's Resource Manual
 - [ ] Export English PDF
@@ -216,7 +276,7 @@ All manuals follow the unified ROSES OS PDF template system:
 ### Phase C -- Level 3 Manual 2026 (English Master) (Days 3-6)
 - [ ] Design cover page
 - [ ] Build all content pages with reimagined imagery
-- [ ] Pull or create illustrations (the Analyzer, coherence flow, advanced concepts)
+- [ ] Match illustrations from Teachers Training section using the image mapping in Section 3.5 (the Analyzer)
 - [ ] Apply brand palette, typography, and PDF template
 - [ ] Review for visual consistency
 - [ ] Export English PDF
@@ -244,8 +304,7 @@ All manuals follow the unified ROSES OS PDF template system:
 - [ ] Final delivery -- **must be live before March 15**
 
 ### Phase G -- Level 1 Manual Reimagine (Stretch Goal -- If Time Permits)
-- [ ] Reimagine Level 1 manual imagery in the same Greek-style / Yeva World / Caravana dress aesthetic as Level 2 and Level 3
-- [ ] Pull from Teacher's Resource Manual or create new illustrations -- always accurate to the teaching
+- [ ] Apply Level 1 images from Teachers Training section (slides 1-17) to the Level 1 manual layout
 - [ ] Translate into Spanish, Portuguese, and Greek (4 total PDFs)
 - [ ] Upload reimagined Level 1 versions to Resources, replacing the existing uploads
 - [ ] Review for visual consistency with Level 2 and Level 3 manuals
@@ -256,7 +315,7 @@ All manuals follow the unified ROSES OS PDF template system:
 
 | Deliverable | Relationship |
 |-------------|-------------|
-| **MDR Teacher's Resource Manual** | The manuals inherit the visual language, illustration style, and creative direction established in the MDR. Images can be pulled directly from the MDR or new ones created in the same style. |
+| **MDR Teacher's Resource Manual** | The manuals use the same images from the Teachers Training section on the site. See Section 3.5 for the complete image-to-manual mapping. |
 | **Brand Book** | The manuals must be consistent with the brand system documented in the Brand Book. |
 | **PDF Export System** | The manuals use the same branded PDF template as all other ROSES OS PDF exports. |
 | **Platform Resources Section** | The manuals are the primary content in the Resources section. |
@@ -267,7 +326,7 @@ All manuals follow the unified ROSES OS PDF template system:
 
 The designer has creative freedom in executing these manuals. The reimagined Greek-style / Yeva World / Caravana aesthetic should feel natural and beautiful -- but **accuracy of the teaching depiction is always the priority**. Every illustration must faithfully show the meditation position, energetic structure, or imagination technique being taught. Within that constraint, the designer should bring their full creative vision -- the clothing, the settings, the color treatment, the composition are all open to interpretation. Where something isn't specified, follow the brand's tone -- warm, sacred, grounded, quiet.
 
-Given the tight timeline, the designer should work efficiently -- reusing and adapting Teacher's Resource Manual imagery where possible, creating new only where needed. Speed matters, but the brand standard must hold.
+All images come from the Teachers Training section -- no new illustrations needed. The complete image-to-manual mapping is in Section 3.5.
 
 ---
 

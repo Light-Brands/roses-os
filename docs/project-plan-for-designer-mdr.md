@@ -2,7 +2,7 @@
 
 > Design brief for the Teacher Visual Aid Manual -- the facilitator's companion for teaching Rose Meditation.
 >
-> **Updated February 2026** -- Now includes complete image inventory (originals + reimagined), full teaching text for each slide, and integration plan for the website's `/teaching` section.
+> **Updated March 2026** -- Image inventory aligned with live site filenames (slides 1-36). All images match `src/lib/data/teaching-slides.ts`. Includes complete image inventory, full teaching text for each slide, and integration plan for the website's `/teaching` section.
 
 ---
 
@@ -93,96 +93,83 @@ All images live in `public/rose med images/`. The designer has **two versions** 
 
 ### Complete Image-to-Concept Mapping
 
-Below is the **complete inventory** of every image in the repository, organized by slide number and teaching concept. Each entry maps the original and reimagined files to the concept they illustrate.
+Below is the **complete inventory** of every image used on the site, organized by slide number and teaching concept. All filenames match the live site at `rosesos.com/teaching` (defined in `src/lib/data/teaching-slides.ts`). All image files live in `public/rose med images/`.
 
-#### Level 1 -- Foundational Practices
+#### Level 1 -- Foundational Practices (Slides 1-17)
 
-| Slide | Concept | Original Image | Reimagined Image |
-|-------|---------|---------------|-----------------|
-| 5 | **The Rose** -- Foundational symbol and energetic tool. Roots, stem, bloom. | `14-the rose original .PNG` | `5-the-rose.PNG` |
-| 6 | **Meditation Posture** -- Seated upright, feet flat, hands on knees, eyes closed. | `6-posture-original.PNG` | `6-posture.PNG` |
-| 7 | **Grounding Cord** -- Energy connection from base of spine into the center of the Earth. | *(see slide 10 original for accuracy -- it is more accurate than the reimagined)* | `7-Groundingcord.PNG` |
-| 8 | **Golden Sun** -- Radiant golden sun above the head, restoring personal life-force energy. | *(use reimagined as primary)* | `8-golden-sun.PNG` |
-| 9 | **Aura Exercise** -- Golden silhouette surrounded by concentric layers of glowing energy. | `9-auraexercise-original .PNG` | `9-aura-exercise .PNG` |
-| 10 | **Expansion of Grounding Cord** -- Grounding cord expands with the aura, anchoring the entire energy field into the Earth. | `10-grounding-cord-expansion-original .PNG` | `10-Grounding cord expand .PNG` |
-| 11a | **Golden Sun Fills You** -- Golden sun above the crown pours golden light down, filling the entire aura and body. | `11-expansion fill with golden sun - original .PNG` | `11aExpand auragoldensunexpanded.PNG` |
-| 12 | **Earth Circuit** -- Energy rising through feet and legs into the body. | *(use reimagined)* | `12a-earth energy .PNG`, `Circuitofthenergyofearth.PNG` |
-| 13 | **Cosmos Circuit** -- Cosmic energy descending through the crown into the body. | `13-cosmos-original.PNG` | `IMG_6954.jpeg` |
-| 13a | **Combined Earth + Cosmos Circuit** -- Both flows active simultaneously through the body. | *(no original exists -- this combined view is reimagined only)* | `13a-cosmos:earthcycle.PNG`, `13cosmosearth.PNG` |
-| 14 | **The Rose (as Energetic Tool)** -- Roots, stem, bloom in detail. Functions: place, move, open, close, release. | `14-the rose original .PNG` | `5-the-rose.PNG` |
-| 15 | **Roses of Protection, Observation, and Separation** -- Roses at the edges of the aura as energetic sentinels. | `15-four roses original .PNG` | `15-Four roses.PNG` |
-| 16 | **Cleansing Rose** -- Rose outside the aura absorbing and transmuting foreign energy. | `16-cleansingrose-original.PNG` | *(needs reimagined version)* |
-| 17 | **Energy Recovery** -- Rose gathering and returning life-force energy to each chakra. | `17-recovery-rose-original .PNG` | `17-recoveryrose.PNG` |
-| 18 | **Discharge Excess Energy** -- Leaning forward, energy flowing from hands into the earth. | `18-discharge energy original .PNG` | `18-discharge-excess .PNG` |
+| Slide | Concept | Reimagined Image | Original Image |
+|-------|---------|-----------------|---------------|
+| 1 | **The Rose** -- Foundational symbol and energetic tool. Roots, stem, bloom. | `1-the-rose.PNG` | -- |
+| 2 | **Meditation Posture** -- Seated upright, feet flat, hands on knees, eyes closed. | `2-meditation-posture.PNG` | -- |
+| 3 | **Grounding Cord** -- Energy connection from base of spine into the center of the Earth. | `3-grounding-cord.jpeg` | -- |
+| 4 | **Golden Sun** -- Radiant golden sun above the head, restoring personal life-force energy. | `4-golden-sun.png` | -- |
+| 5 | **Aura Exercise** -- Golden silhouette surrounded by concentric layers of glowing energy. | `5-aura-exercise.PNG` | `5-auraexercise-original.PNG` |
+| 6 | **Expansion of Grounding Cord** -- Grounding cord expands with the aura, anchoring the entire energy field into the Earth. | `6-expansion-grounding-cord.jpeg` | `6-grounding-cord-expansion-original.PNG` |
+| 7 | **Golden Sun Fills You** -- Golden sun above the crown pours golden light down, filling the entire aura and body. | `7-golden-sun-fills.png` | `7-expansion-fill-with-golden-sun-original.PNG` |
+| 8 | **Earth Circuit** -- Energy rising through feet and legs into the body. | `8-earth-energy.PNG` | -- |
+| 9 | **Cosmos Circuit** -- Cosmic energy descending through the crown into the body. | `9-cosmos-circuit.jpeg` | `9-cosmos-original.PNG` |
+| 10 | **Combined Earth + Cosmos Circuit** -- Both flows active simultaneously through the body. | `10-cosmos-earthcycle.PNG` | -- |
+| 11 | **The Rose (as Energetic Tool)** -- Roots, stem, bloom in detail. Functions: place, move, open, close, release. | `11-therosegold.PNG` | `11-therosegold.PNG` |
+| 12 | **Roses of Protection, Observation, and Separation** -- Roses at the edges of the aura as energetic sentinels. | `12-four-roses.PNG` | `12-four-roses-original.PNG` |
+| 13 | **Cleansing Rose** -- Rose outside the aura absorbing and transmuting foreign energy. | `13-cleansing-rose-reimagined.png` | `13-cleansing-rose.PNG` |
+| 14 | **Energy Recovery** -- Rose gathering and returning life-force energy to each chakra. | `14-energy-recovery-background.png` | `14-recovery-rose-original.PNG` |
+| 15 | **Sacred Space** -- Creating your own internal energetic environment for meditation. | `15-sacred-space.png` | -- |
+| 16 | **The 6th and 7th Chakras (Sacred Space)** -- Locations of the upper chakras for Level 2 work. | `16-sacred-space.PNG` | `16-sacredspace-original.jpg` |
+| 17 | **Discharge Excess Energy** -- Leaning forward, energy flowing from hands into the earth. | `17-discharge-excess.PNG` | `17-discharge-energy-original.PNG` |
 
-#### Level 2 -- Sacred Space & Chakra Activation
+#### Level 2 -- Sacred Space & Chakra Activation (Slides 16-35)
 
-| Slide | Concept | Original Image | Reimagined Image |
-|-------|---------|---------------|-----------------|
-| 19 | **Sacred Space** -- Creating your own internal energetic environment for meditation. | `19-sacredspace-original.jpg` | `19-sacred space.PNG` |
-| 20 | **Protection of the Space** -- Golden roses at corners connected by golden lines forming a sacred grid. | `20-protectthespace- original .jpg` | `20-protectionphysicalspace.PNG` |
-| 21 | **Cleansing of the Space** -- Large rose above the grid pouring golden light downward. | `21-cleansing space - original .PNG` | `21-cleansingphysicalspace.PNG` |
-| 22 | **Owning Your Space** -- Person radiating energy from within, filling the grid with their own light. | `22-protect the space- original .PNG` | `22-owningurspace.PNG` |
-| 23 | **The Seven Chakras (body map)** -- Figures with color-coded chakra points on the body. | `23-chakras-original .PNG` | `23-chakras.jpg` |
-| 23a | **Chakra Slide Example** -- Reference for how individual chakra pages could look. This is a **style reference** for the designer, not a final slide. | *(n/a)* | `23a-example of chakra slides .PNG` |
-| -- | **Root Chakra (individual slide)** -- Body illustration emphasizing root location, dominant red. | *(needs to be created)* | *(needs to be created)* |
-| -- | **Sacral Chakra (individual slide)** -- Body illustration emphasizing sacral location, dominant orange. | *(needs to be created)* | *(needs to be created)* |
-| -- | **Solar Plexus Chakra (individual slide)** -- Body illustration emphasizing solar plexus location, dominant yellow. | *(needs to be created)* | *(needs to be created)* |
-| -- | **Heart Chakra (individual slide)** -- Body illustration emphasizing heart location, dominant green/pink. | *(needs to be created)* | *(needs to be created)* |
-| -- | **Throat Chakra (individual slide)** -- Body illustration emphasizing throat location, dominant light blue. | *(needs to be created)* | *(needs to be created)* |
-| -- | **Third Eye Chakra (individual slide)** -- Body illustration emphasizing third eye location, dominant indigo. | *(needs to be created)* | *(needs to be created)* |
-| -- | **Crown Chakra (individual slide)** -- Body illustration emphasizing crown location, dominant violet/white. | *(needs to be created)* | *(needs to be created)* |
-| 24 | **Cleansing Each Chakra** -- Roses on either side for past and present dynamics. | `24-cleansingeachchakra-original .jpg` | `24-cleansing each chakra.PNG` |
-| 25 | **Cleansing Each Aura Layer** -- Seven distinct color-coded aura layers. | `25-cleansing layers- original .jpg` | `25-cleansineachlayer.PNG` |
-| 25a | **Chakra Cleansing (detail)** -- Close-up reference for chakra cleansing technique. | `25a-chakracleansing-original.jpg` | *(use original as reference)* |
-| 25b | **Energy Recovery (Level 2)** -- Rose gathering energy back to each chakra at a deeper level. | `25b-energyrecoveryeachchakra-original.jpg` | *(use original as reference)* |
-| 26 | **Golden Sticky Roses -- Phase 1** -- Roses placed on each of the seven chakra points. | `26-golden sticky 1- original .jpg` | `26-golden sticky 1.PNG` |
-| 27 | **Golden Sticky Roses -- Phase 2** -- Roses at all major joints and extremities. | `27-golden sticky 2 - original .PNG` | `27-golden sticky2 .PNG` |
-| 28 | **Golden Sticky Roses -- Phase 3** -- Full body coverage with golden roses. | `28-golden sticky 3 - original .PNG`, `28-golden sticky 3- original .PNG` | `28-golden sticky 3 .PNG` |
-| 29 | **Golden Sticky Roses -- Phase 4** -- Integration: large golden rose above, golden light cascading through body. | `29-golden sticky 4- original .PNG` | `29-golden sticky 4.PNG` |
+| Slide | Concept | Reimagined Image | Original Image |
+|-------|---------|-----------------|---------------|
+| 16 | **Prepare Your Physical Space** -- Physical environment preparation for meditation. | `16-physical-space.png` | -- |
+| 17 | **Protection of the Space** -- Golden roses at corners connected by golden lines forming a sacred grid. | `17-create-the-room.jpg` | `17-protectthespace-original.jpg` |
+| 18 | **Cleansing of the Space** -- Large rose above the grid pouring golden energy downward. | `18-cleanse-the-space.jpg` | `18-cleansing-space-original.PNG` |
+| 19 | **Owning Your Space** -- Person radiating energy from within, filling the grid with their own light. | `19-owning-space.jpg` | `19-protect-the-space-original.PNG` |
+| 20 | **Let's Talk About Chakras** -- Introduction to the chakra system. | `20-chakras-intro.jpeg` | -- |
+| 21 | **The Seven Chakras (body map)** -- Figures with color-coded chakra points on the body. | `21-chakras.jpg` | `21-chakras-original.PNG` |
+| 22 | **Root Chakra** -- Body illustration emphasizing root location, dominant red. | `22-root-chakra.png` | -- |
+| 23 | **Sacral Chakra** -- Body illustration emphasizing sacral location, dominant orange. | `23-sacral-chakra.png` | -- |
+| 24 | **Solar Plexus Chakra** -- Body illustration emphasizing solar plexus location, dominant yellow. | `24-solar-plexus-chakra.png` | -- |
+| 25 | **Heart Chakra** -- Body illustration emphasizing heart location, dominant green/pink. | `25-heart-chakra.png` | -- |
+| 26 | **Throat Chakra** -- Body illustration emphasizing throat location, dominant light blue. | `26-throat-chakra.png` | -- |
+| 27 | **Third Eye Chakra** -- Body illustration emphasizing third eye location, dominant indigo. | `27-third-eye-chakra.jpeg` | -- |
+| 28 | **Crown Chakra** -- Body illustration emphasizing crown location, dominant violet/white. | `28-crown-chakra.png` | -- |
+| 29 | **Cleansing Each Aura Layer** -- Seven distinct color-coded aura layers. | `29-cleansing-each-layer.PNG` | `29-cleansing-layers-original.jpg` |
+| 30 | **Cleansing Each Chakra** -- Roses on either side for past and present dynamics. | `30-cleansing-each-chakra.PNG` | `30-cleansingeachchakra-original.jpg` |
+| 31 | **Energy Recovery (Level 2)** -- Rose gathering energy back to each chakra at a deeper level. | `31-energy-recovery.jpeg` | `31-energyrecoveryeachchakra-original.jpg` |
+| 32 | **Golden Sticky Roses -- Phase 1** -- Roses placed on each of the seven chakra points. | `32-golden-sticky-1.jpg` | `32-golden-sticky-1-original.jpg` |
+| 33 | **Golden Sticky Roses -- Phase 2** -- Roses at all major joints and extremities. | `33-golden-sticky-2.jpg` | `33-golden-sticky-2-original.PNG` |
+| 34 | **Golden Sticky Roses -- Phase 3** -- Full body coverage with golden roses. | `34-golden-sticky-3.jpg` | `34-golden-sticky-3-original.PNG` |
+| 35 | **Golden Sticky Roses -- Phase 4** -- Integration: large golden rose above, golden light cascading through body. | `35-golden-sticky-4.jpg` | `35-golden-sticky-4-original.PNG` |
 
-#### Level 3 -- Advanced Perception
+#### Level 3 -- Advanced Perception (Slide 36)
 
-| Slide | Concept | Original Image | Reimagined Image |
-|-------|---------|---------------|-----------------|
-| 30 | **The Analyzer** -- Energetic point at the back of the head (occipital ridge) for deeper perception. | `30-analyzer- original reimagined.jpg` | `30-analyzer .PNG` |
+| Slide | Concept | Reimagined Image | Original Image |
+|-------|---------|-----------------|---------------|
+| 36 | **The Analyzer** -- Energetic point at the back of the head (occipital ridge) for deeper perception. | `36-analyzer.PNG` | `36-analyzer-original-reimagined.jpg` |
+
+#### Supplementary Reference Images
+
+These files exist in `public/rose med images/` and are referenced as supplementary notes in the site data but are not displayed as primary slide images:
+
+| File | Referenced In | Purpose |
+|---|---|---|
+| `8-circuitofenergycosmos.PNG` | Slide 9 note | Previous version of cosmos circuit |
+| `10-cosmosearth.PNG` | Slide 10 note | Alternate cosmos + earth view |
+| `21a-example-of-chakra-slides.PNG` | Slide 21 note | Style reference for chakra pages |
+| `29a-chakracleansing-original.jpg` | Slide 30 note | Detail reference for chakra cleansing |
+| `34-golden-sticky-3-original-alt.PNG` | Slide 34 note | Alternate original for golden sticky phase 3 |
 
 ### Coverage Summary
 
-| Category | Total Slides | Have Original | Have Reimagined | Fully Covered (both) | Need to Create |
-|----------|-------------|--------------|-----------------|---------------------|----------------|
-| Level 1: Foundations | 15 | 11 | 14 | 10 | 0 |
-| Level 2: Sacred Space & Chakras | 19 | 13 | 11 | 11 | 7 |
-| Level 3: The Analyzer | 1 | 1 | 1 | 1 | 0 |
-| **Total** | **35** | **25** | **26** | **22** | **7** |
+All 36 teaching slides have images on the site. Every image file is in `public/rose med images/`.
 
-**7 slides need images created from scratch:** The 7 individual chakra slides (Root through Crown). All have complete teaching text ready -- only the visuals are missing. The designer has one example image (`23a-example of chakra slides .PNG`) as a style reference.
-
-### Images Still Needing a Reimagined Version
-
-The following concepts have original images but no reimagined version yet. The designer should create modernized versions using the originals as the accuracy guide:
-
-| Slide | Concept | Original Available |
-|-------|---------|-------------------|
-| 16 | **Cleansing Rose** | `16-cleansingrose-original.PNG` |
-| 25a | **Chakra Cleansing (detail)** | `25a-chakracleansing-original.jpg` |
-| 25b | **Energy Recovery -- Level 2 (detail)** | `25b-energyrecoveryeachchakra-original.jpg` |
-
-### Images Not Yet Available (no original or reimagined -- designer must create)
-
-These are the slides that need to be created from scratch. The designer has full creative freedom for the individual chakra slides, guided by the example in `23a-example of chakra slides .PNG`.
-
-| Concept | Description | Manual Section | Notes |
-|---------|-------------|----------------|-------|
-| **Root Chakra** | Body illustration emphasizing root chakra location, dominant red color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference, or any design the designer thinks would be good for this section |
-| **Sacral Chakra** | Body illustration emphasizing sacral chakra location, dominant orange color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference, or any design the designer thinks would be good for this section |
-| **Solar Plexus Chakra** | Body illustration emphasizing solar plexus location, dominant yellow color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference, or any design the designer thinks would be good for this section |
-| **Heart Chakra** | Body illustration emphasizing heart chakra location, dominant green/pink color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference, or any design the designer thinks would be good for this section |
-| **Throat Chakra** | Body illustration emphasizing throat chakra location, dominant light blue color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference, or any design the designer thinks would be good for this section |
-| **Third Eye Chakra** | Body illustration emphasizing third eye location, dominant indigo color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference, or any design the designer thinks would be good for this section |
-| **Crown Chakra** | Body illustration emphasizing crown chakra location, dominant violet/white color. | Level 2: Chakras | Use `23a-example of chakra slides .PNG` as style reference, or any design the designer thinks would be good for this section |
-
-**Note on chakra slides:** We have one example image (`23a-example of chakra slides .PNG`) that shows an idea of what the individual chakra pages could look like. The designer should use this as a starting point but has full creative freedom -- or any design the designer thinks would be good for this section. The priority is helping viewers clearly understand where in the body each chakra is located and the nadis (energy channels) associated with it. Each slide should emphasize that chakra's color -- vibrant yet subtle. Use the reimagined images as inspiration for the overall feel, not as exact references to replicate.
+| Category | Total Slides | Have Reimagined | Have Original | Have Both |
+|----------|-------------|----------------|--------------|-----------|
+| Level 1: Foundations | 17 | 17 | 9 | 9 |
+| Level 2: Sacred Space & Chakras | 18 | 18 | 10 | 10 |
+| Level 3: The Analyzer | 1 | 1 | 1 | 1 |
+| **Total** | **36** | **36** | **20** | **20** |
 
 ---
 
@@ -235,22 +222,22 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 ---
 
-#### Slide: The Rose
-**Original:** `14-the rose original .PNG` | **Reimagined:** `5-the-rose.PNG`
+#### Slide 1: The Rose
+**Reimagined:** `1-the-rose.PNG`
 
 > The Rose is the foundational symbol and tool of this practice -- a living energetic instrument used throughout all levels of the work.
 
 ---
 
-#### Slide: Posture
-**Original:** `6-posture-original.PNG` | **Reimagined:** `6-posture.PNG`
+#### Slide 2: Posture
+**Reimagined:** `2-meditation-posture.PNG`
 
 > Proper meditation posture is seated upright in a chair. Feet are flat on the floor, hands resting gently on the thighs or knees, spine upright, eyes closed. The body is relaxed yet alert -- grounded and receptive.
 
 ---
 
-#### Slide: Grounding Cord
-**Reimagined:** `7-Groundingcord.PNG` | **Note:** The original grounding cord (see slide 10 original: `10-grounding-cord-expansion-original .PNG`) is more accurate than the reimagined version. New designs should reflect the original's depiction.
+#### Slide 3: Grounding Cord
+**Reimagined:** `3-grounding-cord.jpeg` | **Note:** The original grounding cord (see slide 6 original: `6-grounding-cord-expansion-original.PNG`) is more accurate than the reimagined version. New designs should reflect the original's depiction.
 
 > The grounding cord is an energetic connection that extends from the base of the spine (first chakra) downward into the center of the Earth. It anchors your energy body to the planet, providing stability, safety, and a channel for releasing unwanted energy.
 
@@ -261,78 +248,78 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 ---
 
-#### Slide: Golden Sun
-**Reimagined:** `8-golden-sun.PNG`
+#### Slide 4: Golden Sun
+**Reimagined:** `4-golden-sun.png`
 
 > The Golden Sun is a tool for replenishing and restoring your own energy. Visualize a radiant golden sun above your head. It calls back your own life-force energy from wherever you may have left it -- in people, places, situations, or time. It fills you with your own highest vibration.
 
 **Designer Notes:**
 - The grounding cord in this image should be **thick, transparent, and strong**
 - It should **start lower in the body, under the crotch** — the grounding cord comes from the base of the spine (1st chakra), not from higher up
-- Same visual direction as slides 7 and 10: less gold, more opaque/translucent, substantial
+- Same visual direction as slides 3 and 6: less gold, more opaque/translucent, substantial
 
 ---
 
-#### Slide: An Exercise to Feel Your Aura
-**Original:** `9-auraexercise-original .PNG` | **Reimagined:** `9-aura-exercise .PNG`
+#### Slide 5: An Exercise to Feel Your Aura
+**Original:** `5-auraexercise-original.PNG` | **Reimagined:** `5-aura-exercise.PNG`
 
 > The aura is the energetic field that surrounds your physical body. This exercise helps you become aware of its presence, its edges, and its quality. The aura consists of multiple layers radiating outward from the body.
 
 ---
 
-#### Slide: Expansion of Grounding Cord
-**Original:** `10-grounding-cord-expansion-original .PNG` | **Reimagined:** `10-Grounding cord expand .PNG`
+#### Slide 6: Expansion of Grounding Cord
+**Original:** `6-grounding-cord-expansion-original.PNG` | **Reimagined:** `6-expansion-grounding-cord.jpeg`
 
 > Once you are aware of your aura, the grounding cord practice deepens. You ground not only the physical body but also the aura itself -- allowing the entire energy field to anchor into the Earth.
 
 **Designer Notes:**
-- Same grounding cord visual direction as slide 7: **more opaque and transparent, thick and strong, less gold**
+- Same grounding cord visual direction as slide 3: **more opaque and transparent, thick and strong, less gold**
 - The expanded grounding cord should feel even more substantial as it now anchors the entire aura
 
 ---
 
-#### Slide: Golden Sun Fills You
-**Original:** `11-expansion fill with golden sun - original .PNG` | **Reimagined:** `11aExpand auragoldensunexpanded.PNG`
+#### Slide 7: Golden Sun Fills You
+**Original:** `7-expansion-fill-with-golden-sun-original.PNG` | **Reimagined:** `7-golden-sun-fills.png`
 
 > The Golden Sun above the crown pours golden light downward, filling the entire aura and body with your own highest vibration. This completes the full energetic architecture: posture, aura, grounding cord, and golden sun -- all active together.
 
 **Designer Notes:**
 - The **expanded grounding cord** should also be represented in this image -- it is part of the full energetic architecture (posture + aura + grounding cord + golden sun)
 - Same visual direction: **thick, transparent, strong, less gold**
-- **Image repetition issue:** The current reimagined image uses the same human figure as slide 11 -- please use a **different human man** for slide 11a so the two slides are visually distinct
+- **Image repetition issue:** The current reimagined image uses the same human figure as slide 7 -- please use a **different human man** for this slide so the two slides are visually distinct
 
 ---
 
-#### Slide: Circuit of the Energy of the Earth
-**Reimagined:** `12a-earth energy .PNG`, `Circuitofthenergyofearth.PNG`
+#### Slide 8: Circuit of the Energy of the Earth
+**Reimagined:** `8-earth-energy.PNG`
 
 > The Earth circuit is an energetic pathway that draws the energy of the Earth upward through the feet, rising through the legs and into the body. This circuit connects you to the grounding, nourishing, stabilizing force of the planet.
 
 ---
 
-#### Slide: Circuit of the Energy of the Cosmos
-**Original:** `13-cosmos-original.PNG` | **Reimagined:** `IMG_6954.jpeg` *(Updated: arrows more refined)*
+#### Slide 9: Circuit of the Energy of the Cosmos
+**Original:** `9-cosmos-original.PNG` | **Reimagined:** `9-cosmos-circuit.jpeg`
 
 > The Cosmic circuit is an energetic pathway that draws cosmic energy downward through the crown of the head (7th chakra) and into the body. This circuit connects you to the higher frequencies of universal consciousness, inspiration, and spiritual guidance.
 
 ---
 
-#### Slide: Circuit of Energy of Cosmos and Earth
-**Reimagined:** `13a-cosmos:earthcycle.PNG`, `13cosmosearth.PNG`
+#### Slide 10: Circuit of Energy of Cosmos and Earth
+**Reimagined:** `10-cosmos-earthcycle.PNG`
 
 > When both circuits are activated simultaneously, the energies of the Earth and Cosmos flow together through the body. Earth energy rises from below; Cosmic energy descends from above. They meet and blend within the body, creating a unified field of balanced, integrated energy.
 
 ---
 
-#### Slide: The Rose (as Energetic Tool)
-**Original:** `14-the rose original .PNG` | **Reimagined:** `5-the-rose.PNG`
+#### Slide 11: The Rose (as Energetic Tool)
+**Reimagined:** `11-therosegold.PNG`
 
 > The Rose is used as a living energetic instrument throughout the practice. It has roots (connection to source), a stem (channel of energy), and a bloom (the active, radiant tool). The Rose can be placed, moved, opened, closed, and released according to the needs of the meditation.
 
 ---
 
-#### Slide: Roses of Protection, Observation and Separation (Four Roses)
-**Original:** `15-four roses original .PNG` *(labeled "four roses" -- the four roses placed at the aura boundary)* | **Reimagined:** `15-Four roses.PNG`
+#### Slide 12: Roses of Protection, Observation and Separation (Four Roses)
+**Original:** `12-four-roses-original.PNG` | **Reimagined:** `12-four-roses.PNG`
 
 > Roses are placed at the edges of the aura to serve as energetic sentinels. They perform three functions:
 >
@@ -342,22 +329,22 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 ---
 
-#### Slide: Cleansing Rose
-**Original:** `16-cleansingrose-original.PNG` | **Reimagined:** *Needs to be created*
+#### Slide 13: Cleansing Rose
+**Original:** `13-cleansing-rose.PNG` | **Reimagined:** `13-cleansing-rose-reimagined.png`
 
 > The Cleansing Rose is placed outside of the aura. It is used to absorb and transmute foreign or stagnant energy from within your field. Energy that does not belong to you -- from other people, environments, or experiences -- is drawn out of the aura and into the Cleansing Rose, where it is neutralized.
 
 ---
 
-#### Slide: Energy Recovery of Each Chakra
-**Original:** `17-recovery-rose-original .PNG` | **Reimagined:** `17-recoveryrose.PNG`
+#### Slide 14: Energy Recovery of Each Chakra
+**Original:** `14-recovery-rose-original.PNG` | **Reimagined:** `14-energy-recovery-background.png`
 
 > After cleansing, the Rose is used to recover your own energy that has been left in or taken by others. The Rose is sent out as an instrument to gather and return your own life-force energy to each chakra, restoring fullness and sovereignty to each energy center.
 
 ---
 
-#### Slide: Discharge Excess Energy
-**Original:** `18-discharge energy original .PNG` | **Reimagined:** `18-discharge-excess .PNG`
+#### Slide 17: Discharge Excess Energy
+**Original:** `17-discharge-energy-original.PNG` | **Reimagined:** `17-discharge-excess.PNG`
 
 > After deep meditation or energy work, excess energy may accumulate in the body. To discharge it, lean forward from the seated position with hands reaching toward the ground. Allow the excess energy to flow out through the hands and into the earth, returning the body to a calm, balanced state.
 
@@ -367,15 +354,15 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 ---
 
-#### Slide: Let's Create Your Sacred Space
-**Original:** `19-sacredspace-original.jpg` | **Reimagined:** `19-sacred space.PNG`
+#### Slide 15: Let's Create Your Sacred Space
+**Reimagined:** `15-sacred-space.png`
 
 > Level 2 begins with creating your own sacred space -- an internal energetic environment that serves as your meditation home. This is the space from which all deeper work is conducted.
 
 ---
 
-#### Slide: The 6th and 7th Chakras (Sacred Space)
-**Original:** `19-sacredspace-original.jpg` | **Reimagined:** `19-sacred space.PNG` *(part of the sacred space slide sequence)*
+#### Slide 16: The 6th and 7th Chakras (Sacred Space)
+**Original:** `16-sacredspace-original.jpg` | **Reimagined:** `16-sacred-space.PNG`
 
 > Understanding the locations and roles of the upper chakras is essential for Level 2 work:
 >
@@ -384,15 +371,15 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 ---
 
-#### Slide: Let's Prepare Your Physical Space
-**Image:** *(Text-only slide, or subtle illustration)*
+#### Slide 16 (L2): Let's Prepare Your Physical Space
+**Reimagined:** `16-physical-space.png`
 
 > Before meditation, prepare your physical environment to support the energetic work. The external space should mirror the internal intention: clean, clear, quiet, and intentionally held.
 
 ---
 
-#### Slide: Protection of the Space
-**Original:** `20-protectthespace- original .jpg` | **Reimagined:** `20-protectionphysicalspace.PNG`
+#### Slide 17: Protection of the Space
+**Original:** `17-protectthespace-original.jpg` | **Reimagined:** `17-create-the-room.jpg`
 
 > The physical meditation space is protected by creating an energetic grid using roses. Golden roses are placed at the four corners (and above/below) of the space, connected by lines of golden energy forming a sacred geometric structure -- a container for the work.
 
@@ -400,43 +387,44 @@ Below is the complete teaching text that accompanies each image/slide in the man
 - The lines of the room/grid are all in **gold**
 - The room also has its own **grounding cord that expands within the space** -- this exists energetically but is **not depicted in the current image**
 - **This is a known visual challenge** -- the room grid is already complex with roses and connecting lines, so adding an expanded grounding cord is difficult to represent clearly. The designer has creative freedom here to find a solution that works without cluttering the composition. Possible approaches: a subtle translucent wash beneath the grid floor, a soft downward glow from the base of the room, or a separate companion detail image. If it cannot be shown clearly in the main image, a note or caption acknowledging the room's grounding cord may suffice
-- The grounding cord visual direction (when depicted): **opaque, transparent, thick and strong, less gold** -- same as slides 7 and 10
+- The grounding cord visual direction (when depicted): **opaque, transparent, thick and strong, less gold** -- same as slides 3 and 6
 - **Correction:** The golden energy shown under the figure in the current image is **not accurate** -- the figure does not radiate golden energy beneath it for protection. If anything is shown beneath the figure, it should only be a **grounding cord**, not a pool or field of golden energy
+- The grounding cord visual direction (when depicted): **opaque, transparent, thick and strong, less gold** -- same as slides 3 and 6
 
 ---
 
-#### Slide: Cleansing of the Space
-**Original:** `21-cleansing space - original .PNG` | **Reimagined:** `21-cleansingphysicalspace.PNG`
+#### Slide 18: Cleansing of the Space
+**Original:** `18-cleansing-space-original.PNG` | **Reimagined:** `18-cleanse-the-space.jpg`
 
 > Once the space is protected, it is cleansed. A large Cleansing Rose is placed above the grid, and golden energy pours downward through the entire structure, clearing all foreign, stagnant, or disruptive energies from the space.
 
 **Designer Notes:**
 - **Correction:** The rose itself does **not beam or emit golden light** -- the golden energy pours downward through the structure to cleanse, but the rose is not the source of a golden light beam. The rose directs the cleansing, but the visual should not show rays or beams of golden light radiating from the rose
-- The room should show its own **grounding cord expanding within the space** -- the grounding cord should be clear and transparent so people understand the cord also expands within the room (same visual direction as slide 20)
+- The room should show its own **grounding cord expanding within the space** -- the grounding cord should be clear and transparent so people understand the cord also expands within the room (same visual direction as slide 17)
 
 ---
 
-#### Slide: Owning Your Space
-**Original:** `22-protect the space- original .PNG` | **Reimagined:** `22-owningurspace.PNG`
+#### Slide 19: Owning Your Space
+**Original:** `19-protect-the-space-original.PNG` | **Reimagined:** `19-owning-space.jpg`
 
 > After protection and cleansing, you claim ownership of the space. This is an act of energetic sovereignty -- declaring the space as yours, filling it with your own energy and intention. The space becomes an extension of your aura and your practice.
 
 **Designer Notes:**
-- The room should show its own **grounding cord expanding within the space** -- the grounding cord should be clear and transparent so people understand the cord also expands within the room (same visual direction as slide 20)
+- The room should show its own **grounding cord expanding within the space** -- the grounding cord should be clear and transparent so people understand the cord also expands within the room (same visual direction as slide 17)
 - **Four golden lines go from the perineum to the four bottom corners of the room**, and **four golden lines from the crown to the top four corners of the room** -- this should be clearly depicted as this is what the slide demonstrates
-- Same grounding cord visual direction as slides 7 and 10: **opaque, transparent, thick and strong, less gold**
+- Same grounding cord visual direction as slides 3 and 6: **opaque, transparent, thick and strong, less gold**
 
 ---
 
-#### Slide: Let's Talk About Chakras
-**Image:** *(Text-only slide or simple illustration)*
+#### Slide 20: Let's Talk About Chakras
+**Reimagined:** `20-chakras-intro.jpeg`
 
 > The chakra system is the energetic anatomy of the human body. There are seven primary chakras, each governing specific aspects of physical, emotional, mental, and spiritual life.
 
 ---
 
-#### Slide: The Seven Chakras
-**Original:** `23-chakras-original .PNG` | **Reimagined:** `23-chakras.jpg`, `23a-example of chakra slides .PNG`
+#### Slide 21: The Seven Chakras
+**Original:** `21-chakras-original.PNG` | **Reimagined:** `21-chakras.jpg`
 
 > | # | Chakra | Location |
 > |---|--------|----------|
@@ -450,8 +438,8 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 ---
 
-#### Slide: Root Chakra
-**Image:** Body illustration emphasizing Root Chakra location, dominant red color
+#### Slide 22: Root Chakra
+**Reimagined:** `22-root-chakra.png`
 
 > **Muladhara -- Grounding & Safety**
 >
@@ -476,8 +464,8 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 ---
 
-#### Slide: Sacral Chakra
-**Image:** Body illustration emphasizing Sacral Chakra location, dominant orange color
+#### Slide 23: Sacral Chakra
+**Reimagined:** `23-sacral-chakra.png`
 
 > **Svadhisthana -- Emotion & Creativity**
 >
@@ -502,8 +490,8 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 ---
 
-#### Slide: Solar Plexus Chakra
-**Image:** Body illustration emphasizing Solar Plexus location, dominant yellow color
+#### Slide 24: Solar Plexus Chakra
+**Reimagined:** `24-solar-plexus-chakra.png`
 
 > **Manipura -- Willpower & Confidence**
 >
@@ -528,8 +516,8 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 ---
 
-#### Slide: Heart Chakra
-**Image:** Body illustration emphasizing Heart location, dominant green/pink color
+#### Slide 25: Heart Chakra
+**Reimagined:** `25-heart-chakra.png`
 
 > **Anahata -- Love & Integration**
 >
@@ -566,8 +554,8 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 ---
 
-#### Slide: Throat Chakra
-**Image:** Body illustration emphasizing Throat location, dominant light blue color
+#### Slide 26: Throat Chakra
+**Reimagined:** `26-throat-chakra.png`
 
 > **Vishuddha -- Communication & Expression**
 >
@@ -594,8 +582,8 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 ---
 
-#### Slide: Third Eye Chakra
-**Image:** Body illustration emphasizing Third Eye location, dominant indigo color
+#### Slide 27: Third Eye Chakra
+**Reimagined:** `27-third-eye-chakra.jpeg`
 
 > **Ajna -- Intuition & Insight**
 >
@@ -622,8 +610,8 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 ---
 
-#### Slide: Crown Chakra
-**Image:** Body illustration emphasizing Crown location, dominant violet/white color
+#### Slide 28: Crown Chakra
+**Reimagined:** `28-crown-chakra.png`
 
 > **Sahasrara -- Spirituality & Consciousness**
 >
@@ -650,8 +638,8 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 ---
 
-#### Slide: Cleansing of Each Aura Layer
-**Original:** `25-cleansing layers- original .jpg` | **Reimagined:** `25-cleansineachlayer.PNG`
+#### Slide 29: Cleansing of Each Aura Layer
+**Original:** `29-cleansing-layers-original.jpg` | **Reimagined:** `29-cleansing-each-layer.PNG`
 
 > The aura is composed of seven layers, each corresponding to a chakra. In Level 2, each layer is individually cleansed from the outermost to the innermost:
 >
@@ -667,8 +655,8 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 ---
 
-#### Slide: Cleansing of Each Chakra
-**Original:** `24-cleansingeachchakra-original .jpg`, `25a-chakracleansing-original.jpg` | **Reimagined:** `24-cleansing each chakra.PNG`
+#### Slide 30: Cleansing of Each Chakra
+**Original:** `30-cleansingeachchakra-original.jpg` | **Reimagined:** `30-cleansing-each-chakra.PNG`
 
 > Each individual chakra is cleansed using roses. The roses address two dimensions:
 >
@@ -677,15 +665,15 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 ---
 
-#### Slide: Energy Recovery of Each Chakra (Level 2)
-**Original:** `25b-energyrecoveryeachchakra-original.jpg` | **Reimagined:** *(use Level 1 reimagined `17-recoveryrose.PNG` as reference)*
+#### Slide 31: Energy Recovery of Each Chakra (Level 2)
+**Original:** `31-energyrecoveryeachchakra-original.jpg` | **Reimagined:** `31-energy-recovery.jpeg`
 
 > After cleansing, the energy recovery process is repeated at a deeper level. The Rose is sent out to gather and return your own energy to each individual chakra, restoring sovereignty, vitality, and wholeness to each energy center.
 
 ---
 
-#### Slide: Golden Sticky Roses -- Phase 1 (Chakra Placement)
-**Original:** `26-golden sticky 1- original .jpg` | **Reimagined:** `26-golden sticky 1.PNG`
+#### Slide 32: Golden Sticky Roses -- Phase 1 (Chakra Placement)
+**Original:** `32-golden-sticky-1-original.jpg` | **Reimagined:** `32-golden-sticky-1.jpg`
 
 > Golden sticky roses are placed on each of the seven chakras, drawing out foreign energy lodged in the energy centers.
 
@@ -694,8 +682,8 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 ---
 
-#### Slide: Golden Sticky Roses -- Phase 2 (Body Placement)
-**Original:** `27-golden sticky 2 - original .PNG` | **Reimagined:** `27-golden sticky2 .PNG`
+#### Slide 33: Golden Sticky Roses -- Phase 2 (Body Placement)
+**Original:** `33-golden-sticky-2-original.PNG` | **Reimagined:** `33-golden-sticky-2.jpg`
 
 > Golden sticky roses are placed at the joints and extremities of the body -- shoulders, elbows, wrists, hands, hips, knees, ankles, feet -- drawing out foreign energy stored in the physical body.
 
@@ -704,8 +692,8 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 ---
 
-#### Slide: Golden Sticky Roses -- Phase 3 (Full Body Coverage)
-**Original:** `28-golden sticky 3 - original .PNG`, `28-golden sticky 3- original .PNG` | **Reimagined:** `28-golden sticky 3 .PNG`
+#### Slide 34: Golden Sticky Roses -- Phase 3 (Full Body Coverage)
+**Original:** `34-golden-sticky-3-original.PNG` | **Reimagined:** `34-golden-sticky-3.jpg`
 
 > Golden sticky roses are placed throughout the entire body -- covering the torso, limbs, and all remaining areas -- for a thorough, complete energetic cleansing.
 
@@ -714,8 +702,8 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 ---
 
-#### Slide: Golden Sticky Roses -- Phase 4 (Integration)
-**Original:** `29-golden sticky 4- original .PNG` | **Reimagined:** `29-golden sticky 4.PNG`
+#### Slide 35: Golden Sticky Roses -- Phase 4 (Integration)
+**Original:** `35-golden-sticky-4-original.PNG` | **Reimagined:** `35-golden-sticky-4.jpg`
 
 > After the golden sticky roses have done their work, a large Golden Rose appears above the head. All foreign energy gathered by the sticky roses is released, and the entire body is bathed in golden light -- restoring, sealing, and integrating the energy body.
 
@@ -728,8 +716,8 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 ---
 
-#### Slide: The Analyzer
-**Original:** `30-analyzer- original reimagined.jpg` | **Reimagined:** `30-analyzer .PNG`
+#### Slide 36: The Analyzer
+**Original:** `36-analyzer-original-reimagined.jpg` | **Reimagined:** `36-analyzer.PNG`
 
 > The Analyzer is an advanced tool introduced in Level 3. It is an energetic point located at the back of the head, at the base of the skull (the occipital ridge / brainstem area). The Analyzer is used for deeper perception, reading, and discernment of energy -- a tool for precise energetic analysis.
 
@@ -980,7 +968,7 @@ The designer has creative freedom in executing this manual. These guidelines pro
 - [ ] Design the password-protected entry gate
 - [ ] Build Introduction pages (purpose, posture, safety)
 - [ ] Build Energetic Foundations pages -- each with image (original or reimagined) + teaching text
-- [ ] Create or refine illustrations for concepts without reimagined images (see "Images Still Needed" table)
+- [ ] Verify all images from Section 3 match the site (all 36 slides have images)
 - [ ] Build Chakra 1--7 pages (one per chakra, consistent layout, with teaching text)
 - [ ] Build Level-specific teaching flow pages (Level 1, 2, 3)
 - [ ] Build Teaching Agreements pages
