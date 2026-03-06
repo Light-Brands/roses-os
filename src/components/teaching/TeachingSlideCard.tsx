@@ -48,11 +48,11 @@ export default function TeachingSlideCard({ slide, index = 0, className }: Teach
     >
       {/* Image Area */}
       {imageSrc ? (
-        <div className="relative bg-[var(--color-background-subtle)]">
+        <div className="relative bg-[var(--color-background-subtle)] aspect-[4/3] max-h-[600px]">
           <img
             src={imageSrc}
             alt={concept}
-            className="w-full h-auto object-contain"
+            className="w-full h-full object-contain"
             loading="lazy"
           />
           <span className="absolute top-3 left-3 text-[10px] font-medium uppercase tracking-wider text-[#9E956B]/60 bg-[#9E956B]/10 backdrop-blur-sm px-2 py-0.5 rounded-full">
@@ -63,7 +63,7 @@ export default function TeachingSlideCard({ slide, index = 0, className }: Teach
         <div
           className={cn(
             'relative flex flex-col items-center justify-center gap-3',
-            'aspect-[16/10]',
+            'aspect-[4/3]',
             'bg-[var(--color-background-subtle)]',
             'border-b-2 border-dashed border-[#9C6F6E]/40',
           )}
