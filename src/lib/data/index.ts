@@ -31,6 +31,23 @@ export {
 } from './level1-techniques';
 
 export {
+  level2ManualImages,
+  level2FoundationalImages,
+  level3ManualImages,
+  supplementaryImages,
+  allManualImageMappings,
+} from './manual-image-mapping';
+
+export type { ManualImageEntry, ManualImageMapping } from './manual-image-mapping';
+
+export {
+  manualPdfConfigs,
+  getManualPdfConfig,
+} from './manual-pdf-paths';
+
+export type { ManualPdfConfig } from './manual-pdf-paths';
+
+export {
   navItems,
   guardians,
   programs,

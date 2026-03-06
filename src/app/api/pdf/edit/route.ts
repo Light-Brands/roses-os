@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerSupabaseClient, getServerUser } from '@/lib/supabase/server';
 import { PDFDocument, PDFName, PDFDict, PDFStream, rgb } from 'pdf-lib';
-import { readFile, writeFile } from 'fs/promises';
+import { readFile, writeFile, access } from 'fs/promises';
 import path from 'path';
 
 type Action = 'list' | 'replace' | 'add' | 'remove';
@@ -43,9 +43,21 @@ async function loadPdfBytes(formData: FormData): Promise<Uint8Array | null> {
 
   if (pdfPath) {
     const safePath = path.basename(pdfPath);
-    const fullPath = path.join(process.cwd(), 'public', 'manuals', safePath);
-    const buffer = await readFile(fullPath);
-    return new Uint8Array(buffer);
+    // Check both PDF directories — Level 1 lives in public/manuals/,
+    // Level 2/3 live in public/resources/manuals/
+    const candidates = [
+      path.join(process.cwd(), 'public', 'manuals', safePath),
+      path.join(process.cwd(), 'public', 'resources', 'manuals', safePath),
+    ];
+    for (const fullPath of candidates) {
+      try {
+        const buffer = await readFile(fullPath);
+        return new Uint8Array(buffer);
+      } catch {
+        // Try next candidate
+      }
+    }
+    return null;
   }
 
   return null;
@@ -104,9 +116,25 @@ async function savePdf(pdfDoc: PDFDocument, formData: FormData): Promise<NextRes
 
   if (pdfPath) {
     const safePath = path.basename(pdfPath);
-    const fullPath = path.join(process.cwd(), 'public', 'manuals', safePath);
+    // Save to whichever directory the PDF was loaded from
+    const candidates = [
+      path.join(process.cwd(), 'public', 'manuals', safePath),
+      path.join(process.cwd(), 'public', 'resources', 'manuals', safePath),
+    ];
+    let fullPath = candidates[0];
+    for (const candidate of candidates) {
+      try {
+        await access(candidate);
+        fullPath = candidate;
+        break;
+      } catch {
+        // Try next
+      }
+    }
     await writeFile(fullPath, modifiedBytes);
-    return NextResponse.json({ data: { saved: true, path: `/manuals/${safePath}` }, error: null });
+    const publicDir = path.join(process.cwd(), 'public');
+    const relativePath = fullPath.slice(publicDir.length);
+    return NextResponse.json({ data: { saved: true, path: relativePath }, error: null });
   }
 
   return new NextResponse(Buffer.from(modifiedBytes), {
