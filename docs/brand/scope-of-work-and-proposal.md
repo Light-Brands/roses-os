@@ -226,6 +226,10 @@ For the team to consider:
 - Reduced cash compensation offset by equity/ownership stake in ROSES OS
 - Details to be discussed based on the project's corporate structure
 
+**Option D — Land Allocation (Numa Project)**
+- Compensation structured as land allocation within the upcoming Numa project
+- Details to be defined based on Numa project structure, land valuation, and timeline
+
 *Open to discussing what works best for everyone. The goal is sustainability for the project and fairness for all contributors.*
 
 ---
