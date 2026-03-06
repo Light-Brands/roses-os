@@ -51,6 +51,7 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'The Rose is the foundational symbol and tool of this practice — a living energetic instrument used throughout all levels of the work.',
     reimaginedImage: '1-the-rose.PNG',
+    final: true,
     level: 1,
     section: 'foundations',
   },
@@ -61,6 +62,7 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'Proper meditation posture is seated upright in a chair. Feet are flat on the floor, hands resting gently on the thighs or knees, spine upright, eyes closed. The body is relaxed yet alert — grounded and receptive.',
     reimaginedImage: '2-posturefinal.PNG',
+    final: true,
     level: 1,
     section: 'foundations',
   },
@@ -71,6 +73,7 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'The grounding cord is an energetic connection that extends from the base of the spine (first chakra) downward into the center of the Earth. It anchors your energy body to the planet, providing stability, safety, and a channel for releasing unwanted energy.',
     reimaginedImage: '3-grounding-cord.jpeg',
+    final: true,
     imageNote:
       'The original grounding cord (see slide 6 original: 6-grounding-cord-expansion-original.PNG) is more accurate than the reimagined version. New designs should reflect the original\'s depiction. The grounding cord should be more opaque/transparent, thick and strong, and less gold.',
     level: 1,
@@ -83,6 +86,7 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'The Golden Sun is a tool for replenishing and restoring your own energy. Visualize a radiant golden sun above your head. It calls back your own life-force energy from wherever you may have left it — in people, places, situations, or time. It fills you with your own highest vibration.',
     reimaginedImage: '4-golden-sun-reimagined.jpeg',
+    final: true,
     imageNote:
       'The grounding cord in this image should be thick, transparent, and strong — and should start lower in the body, under the crotch, as it comes from the base of the spine (1st chakra). Currently it appears too high and too golden.',
     level: 1,
@@ -96,6 +100,7 @@ export const level1Slides: TeachingSlide[] = [
       'The aura is the energetic field that surrounds your physical body. This exercise helps you become aware of its presence, its edges, and its quality. The aura consists of multiple layers radiating outward from the body.',
     originalImage: '5-auraexercise-original.PNG',
     reimaginedImage: '5-aura-exercise.PNG',
+    final: true,
     level: 1,
     section: 'foundations',
   },
@@ -107,6 +112,7 @@ export const level1Slides: TeachingSlide[] = [
       'Once you are aware of your aura, the grounding cord practice deepens. You ground not only the physical body but also the aura itself — allowing the entire energy field to anchor into the Earth.',
     originalImage: '6-grounding-cord-expansion-original.PNG',
     reimaginedImage: '6-expansioncord.jpg',
+    final: true,
     imageNote:
       'The grounding cord should be more opaque/transparent, thick and strong, and less gold — same direction as slide 7.',
     level: 1,
@@ -120,6 +126,7 @@ export const level1Slides: TeachingSlide[] = [
       'The Golden Sun above the crown pours golden light downward, filling the entire aura and body with your own highest vibration. This completes the full energetic architecture: posture, aura, grounding cord, and golden sun — all active together.',
     originalImage: '7-expansion-fill-with-golden-sun-original.PNG',
     reimaginedImage: '7-fillingsun.jpg',
+    final: true,
     imageNote: 'The expanded grounding cord should also be represented in this image — it is part of the full energetic architecture. Same visual direction: thick, transparent, strong, less gold. NOTE: The current image repeats the same human figure used in slide 7 — please use a different human man for this slide to distinguish the two visuals.',
     level: 1,
     section: 'foundations',
@@ -131,6 +138,7 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'The Earth circuit is an energetic pathway that draws the energy of the Earth upward through the feet, rising through the legs and into the body. This circuit connects you to the grounding, nourishing, stabilizing force of the planet.',
     reimaginedImage: '8-earthenergy-new.PNG',
+    final: true,
     level: 1,
     section: 'foundations',
   },
@@ -142,6 +150,7 @@ export const level1Slides: TeachingSlide[] = [
       'The Cosmic circuit is an energetic pathway that draws cosmic energy downward through the crown of the head (7th chakra) and into the body. This circuit connects you to the higher frequencies of universal consciousness, inspiration, and spiritual guidance.',
     originalImage: '9-cosmos-original.PNG',
     reimaginedImage: '9-cosmos-circuit.jpeg',
+    final: true,
     imageNote:
       'Updated: New image with more refined arrows showing the cosmic energy circuit pathway. Previous version: 8-circuitofenergycosmos.PNG',
     level: 1,
@@ -154,6 +163,7 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'When both circuits are activated simultaneously, the energies of the Earth and Cosmos flow together through the body. Earth energy rises from below; Cosmic energy descends from above. They meet and blend within the body, creating a unified field of balanced, integrated energy.',
     reimaginedImage: '10-cosmos-earthcycle.PNG',
+    final: true,
     imageNote: 'Also see: 10-cosmosearth.PNG. No original exists — this combined view is reimagined only.',
     level: 1,
     section: 'foundations',
@@ -166,6 +176,7 @@ export const level1Slides: TeachingSlide[] = [
       'The Rose is used as a living energetic instrument throughout the practice. It has roots (connection to source), a stem (channel of energy), and a bloom (the active, radiant tool). The Rose can be placed, moved, opened, closed, and released according to the needs of the meditation.',
     originalImage: '11-therosegold.PNG',
     reimaginedImage: '11-therosegold.PNG',
+    final: true,
     level: 1,
     section: 'foundations',
   },
@@ -198,7 +209,7 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'After cleansing, the Rose is used to recover your own energy that has been left in or taken by others. The Rose is sent out as an instrument to gather and return your own life-force energy to each chakra, restoring fullness and sovereignty to each energy center.',
     originalImage: '14-recovery-rose-original.PNG',
-    reimaginedImage: '14-recoveryrose.PNG',
+    reimaginedImage: 'New background .png',
     level: 1,
     section: 'foundations',
   },
@@ -575,8 +586,8 @@ export const level2CleansingSlides: TeachingSlide[] = [
     teachingText:
       'After cleansing, the energy recovery process is repeated at a deeper level. The Rose is sent out to gather and return your own energy to each individual chakra, restoring sovereignty, vitality, and wholeness to each energy center.',
     originalImage: '31-energyrecoveryeachchakra-original.jpg',
-    reimaginedImage: '14-recoveryrose.PNG',
-    imageNote: 'Placeholder: using Level 1 recovery rose. Dedicated Level 2 version needs to be created.',
+    reimaginedImage: 'New background .png',
+    imageNote: 'Updated with new background image.',
     level: 2,
     section: 'cleansing',
   },
