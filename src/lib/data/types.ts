@@ -189,6 +189,8 @@ export interface TeachingSlide {
   originalImage?: string;
   reimaginedImage?: string;
   imageNote?: string;
+  /** Whether this image is finalized and actively used on the website */
+  final?: boolean;
   level: number;
   section?: string;
 }
