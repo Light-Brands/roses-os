@@ -70,7 +70,7 @@ export const level1Slides: TeachingSlide[] = [
     concept: 'Grounding Cord',
     teachingText:
       'The grounding cord is an energetic connection that extends from the base of the spine (first chakra) downward into the center of the Earth. It anchors your energy body to the planet, providing stability, safety, and a channel for releasing unwanted energy.',
-    reimaginedImage: '7-Groundingcord.PNG',
+    reimaginedImage: 'GroundingCordFinal.JPG',
     imageNote:
       'The original grounding cord (see slide 10 original: 10-grounding-cord-expansion-original .PNG) is more accurate than the reimagined version. New designs should reflect the original\'s depiction. The grounding cord should be more opaque/transparent, thick and strong, and less gold.',
     level: 1,
@@ -82,7 +82,7 @@ export const level1Slides: TeachingSlide[] = [
     concept: 'Golden Sun',
     teachingText:
       'The Golden Sun is a tool for replenishing and restoring your own energy. Visualize a radiant golden sun above your head. It calls back your own life-force energy from wherever you may have left it — in people, places, situations, or time. It fills you with your own highest vibration.',
-    reimaginedImage: '8-golden-sun.PNG',
+    reimaginedImage: 'Golden sun.jpg',
     imageNote:
       'The grounding cord in this image should be thick, transparent, and strong — and should start lower in the body, under the crotch, as it comes from the base of the spine (1st chakra). Currently it appears too high and too golden.',
     level: 1,
@@ -106,7 +106,7 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'Once you are aware of your aura, the grounding cord practice deepens. You ground not only the physical body but also the aura itself — allowing the entire energy field to anchor into the Earth.',
     originalImage: '10-grounding-cord-expansion-original .PNG',
-    reimaginedImage: '10-Grounding cord expand .PNG',
+    reimaginedImage: 'Expansioncord.jpg',
     imageNote:
       'The grounding cord should be more opaque/transparent, thick and strong, and less gold — same direction as slide 7.',
     level: 1,
@@ -119,7 +119,7 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'The Golden Sun above the crown pours golden light downward, filling the entire aura and body with your own highest vibration. This completes the full energetic architecture: posture, aura, grounding cord, and golden sun — all active together.',
     originalImage: '11-expansion fill with golden sun - original .PNG',
-    reimaginedImage: '11aExpand auragoldensunexpanded.PNG',
+    reimaginedImage: 'Fillingsun.jpg',
     imageNote: 'The expanded grounding cord should also be represented in this image — it is part of the full energetic architecture. Same visual direction: thick, transparent, strong, less gold. NOTE: The current image repeats the same human figure used in slide 11 — please use a different human man for this slide to distinguish the two visuals.',
     level: 1,
     section: 'foundations',
@@ -226,6 +226,7 @@ export const level2Slides: TeachingSlide[] = [
     concept: "Let's Create Your Sacred Space",
     teachingText:
       'Level 2 begins with creating your own sacred space — an internal energetic environment that serves as your meditation home. This is the space from which all deeper work is conducted.',
+    reimaginedImage: 'DCFB7B9E-79D0-4B99-9058-0EB2BC97BAED.png',
     imageNote: 'Illustration needed: A person seated in meditation posture, with a glowing point of awareness at the center of the head — the sacred space. Should convey inner stillness, spiritual authority, and the feeling of being safely centered within. Reference: PDF source "CENTER OF THE HEAD - SACRED SPACE" section.',
     level: 2,
     section: 'sacred-space',
@@ -260,7 +261,7 @@ export const level2Slides: TeachingSlide[] = [
     teachingText:
       'The physical meditation space is protected by creating an energetic grid using roses. Golden roses are placed at the four corners (and above/below) of the space, connected by lines of golden energy forming a sacred geometric structure — a container for the work.',
     originalImage: '20-protectthespace- original .jpg',
-    reimaginedImage: '20-protectionphysicalspace.PNG',
+    reimaginedImage: 'Create the room.jpg',
     imageNote:
       'Designer notes: The lines of the room/grid are all in gold. The room also has its own grounding cord that expands within the space — not depicted in the current image. The grounding cord should be clear and transparent so people understand the cord also expands within the room. This is a visual challenge given the complexity of the grid; the designer has creative freedom to find a solution.',
     level: 2,
@@ -273,7 +274,7 @@ export const level2Slides: TeachingSlide[] = [
     teachingText:
       'Once the space is protected, it is cleansed. A large Cleansing Rose is placed above the grid, and golden energy pours downward through the entire structure, clearing all foreign, stagnant, or disruptive energies from the space.',
     originalImage: '21-cleansing space - original .PNG',
-    reimaginedImage: '21-cleansingphysicalspace.PNG',
+    reimaginedImage: 'Cleanse the space.jpg',
     imageNote:
       'The room should show its own grounding cord expanding within the space. The grounding cord should be clear and transparent so people understand the cord also expands within the room — same visual direction as slide 20.',
     level: 2,
@@ -286,7 +287,7 @@ export const level2Slides: TeachingSlide[] = [
     teachingText:
       'After protection and cleansing, you claim ownership of the space. This is an act of energetic sovereignty — declaring the space as yours, filling it with your own energy and intention. The space becomes an extension of your aura and your practice.',
     originalImage: '22-protect the space- original .PNG',
-    reimaginedImage: '22-owningurspace.PNG',
+    reimaginedImage: 'IMG_1806.jpg',
     imageNote:
       'The room should show its own grounding cord expanding within the space. The grounding cord should be clear and transparent so people understand the cord also expands within the room — same visual direction as slide 20. Also: four golden lines go from the perineum to the four bottom corners of the room, and four golden lines from the crown to the top four corners of the room — this should be clear as this is what the slide demonstrates.',
     level: 2,
@@ -584,7 +585,7 @@ export const level2CleansingSlides: TeachingSlide[] = [
     teachingText:
       'Golden sticky roses are placed on each of the seven chakras, drawing out foreign energy lodged in the energy centers.',
     originalImage: '26-golden sticky 1- original .jpg',
-    reimaginedImage: '26-golden sticky 1.PNG',
+    reimaginedImage: 'Goldensticky1.jpg',
     imageNote: 'Add subtle arrows to indicate the direction of energy being drawn out by the golden sticky roses.',
     level: 2,
     section: 'golden-sticky',
@@ -596,7 +597,7 @@ export const level2CleansingSlides: TeachingSlide[] = [
     teachingText:
       'Golden sticky roses are placed at the joints and extremities of the body — shoulders, elbows, wrists, hands, hips, knees, ankles, feet — drawing out foreign energy stored in the physical body.',
     originalImage: '27-golden sticky 2 - original .PNG',
-    reimaginedImage: '27-golden sticky2 .PNG',
+    reimaginedImage: 'Goldensticky2arms.jpg',
     imageNote: 'Add subtle arrows to indicate the direction of energy being drawn out by the golden sticky roses.',
     level: 2,
     section: 'golden-sticky',
@@ -608,7 +609,7 @@ export const level2CleansingSlides: TeachingSlide[] = [
     teachingText:
       'Golden sticky roses are placed throughout the entire body — covering the torso, limbs, and all remaining areas — for a thorough, complete energetic cleansing.',
     originalImage: '28-golden sticky 3 - original .PNG',
-    reimaginedImage: '28-golden sticky 3 .PNG',
+    reimaginedImage: 'Goldensticky3legs.jpg',
     imageNote: 'Also see: 28-golden sticky 3- original .PNG. Add subtle arrows to indicate the direction of energy being drawn out by the golden sticky roses.',
     level: 2,
     section: 'golden-sticky',
@@ -620,7 +621,7 @@ export const level2CleansingSlides: TeachingSlide[] = [
     teachingText:
       'After the golden sticky roses have done their work, a large Golden Rose appears above the head. All foreign energy gathered by the sticky roses is released, and the entire body is bathed in golden light — restoring, sealing, and integrating the energy body.',
     originalImage: '29-golden sticky 4- original .PNG',
-    reimaginedImage: '29-golden sticky 4.PNG',
+    reimaginedImage: 'Goldenstickybig.jpg',
     imageNote: 'Add subtle arrows to indicate the direction of energy release and golden light cascading through the body.',
     level: 2,
     section: 'golden-sticky',
