@@ -85,7 +85,7 @@ export const level1Slides: TeachingSlide[] = [
     concept: 'Golden Sun',
     teachingText:
       'The Golden Sun is a tool for replenishing and restoring your own energy. Visualize a radiant golden sun above your head. It calls back your own life-force energy from wherever you may have left it — in people, places, situations, or time. It fills you with your own highest vibration.',
-    reimaginedImage: '4-golden-sun-reimagined.jpeg',
+    reimaginedImage: 'Golden_sun-removebg-preview.png',
     final: true,
     imageNote:
       'The grounding cord in this image should be thick, transparent, and strong — and should start lower in the body, under the crotch, as it comes from the base of the spine (1st chakra). Currently it appears too high and too golden.',
@@ -111,7 +111,7 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'Once you are aware of your aura, the grounding cord practice deepens. You ground not only the physical body but also the aura itself — allowing the entire energy field to anchor into the Earth.',
     originalImage: '6-grounding-cord-expansion-original.PNG',
-    reimaginedImage: '6-expansion-grounding-cord.jpg',
+    reimaginedImage: 'IMG_1822.jpeg',
     final: true,
     imageNote:
       'The grounding cord should be more opaque/transparent, thick and strong, and less gold — same direction as slide 7.',
@@ -125,7 +125,7 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'The Golden Sun above the crown pours golden light downward, filling the entire aura and body with your own highest vibration. This completes the full energetic architecture: posture, aura, grounding cord, and golden sun — all active together.',
     originalImage: '7-expansion-fill-with-golden-sun-original.PNG',
-    reimaginedImage: '7-fillingsun.jpg',
+    reimaginedImage: 'Summer.png',
     final: true,
     imageNote: 'The expanded grounding cord should also be represented in this image — it is part of the full energetic architecture. Same visual direction: thick, transparent, strong, less gold. NOTE: The current image repeats the same human figure used in slide 7 — please use a different human man for this slide to distinguish the two visuals.',
     level: 1,
@@ -198,7 +198,7 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'The Cleansing Rose is placed outside of the aura. It is used to absorb and transmute foreign or stagnant energy from within your field. Energy that does not belong to you — from other people, environments, or experiences — is drawn out of the aura and into the Cleansing Rose, where it is neutralized.',
     originalImage: '13-cleansing-rose.PNG',
-    imageNote: 'Reimagined version needs to be created.',
+    reimaginedImage: '16-cleansing_rose_-removebg-preview.png',
     level: 1,
     section: 'foundations',
   },
@@ -209,7 +209,8 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'After cleansing, the Rose is used to recover your own energy that has been left in or taken by others. The Rose is sent out as an instrument to gather and return your own life-force energy to each chakra, restoring fullness and sovereignty to each energy center.',
     originalImage: '14-recovery-rose-original.PNG',
-    reimaginedImage: 'New background .png',
+    reimaginedImage: '14-energy-recovery-background.png',
+    final: true,
     level: 1,
     section: 'foundations',
   },
@@ -586,7 +587,7 @@ export const level2CleansingSlides: TeachingSlide[] = [
     teachingText:
       'After cleansing, the energy recovery process is repeated at a deeper level. The Rose is sent out to gather and return your own energy to each individual chakra, restoring sovereignty, vitality, and wholeness to each energy center.',
     originalImage: '31-energyrecoveryeachchakra-original.jpg',
-    reimaginedImage: 'New background .png',
+    reimaginedImage: '14-energy-recovery-background.png',
     imageNote: 'Updated with new background image.',
     level: 2,
     section: 'cleansing',
