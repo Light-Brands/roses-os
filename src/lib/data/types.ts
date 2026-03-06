@@ -183,7 +183,7 @@ export interface TeachingLevel {
 /** Teaching slide -- pairs an image with teaching text */
 export interface TeachingSlide {
   id: string;
-  slideNumber: number | string;
+  slideNumber: number;
   concept: string;
   teachingText: string;
   originalImage?: string;

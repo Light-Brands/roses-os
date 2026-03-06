@@ -99,11 +99,6 @@ export default function ChakraSlideCard({ chakra, index = 0, className }: Chakra
             <p className="font-serif text-lg text-center px-6" style={{ color: `${chakra.chakraColor}90` }}>
               {concept}
             </p>
-            {chakra.imageNote && (
-              <p className="text-xs text-[var(--color-foreground-faint)] text-center px-6 max-w-md">
-                {chakra.imageNote}
-              </p>
-            )}
             <span
               className="absolute top-3 left-3 text-[10px] font-medium uppercase tracking-wider px-2 py-0.5 rounded-full"
               style={{
@@ -213,12 +208,6 @@ export default function ChakraSlideCard({ chakra, index = 0, className }: Chakra
           </div>
         )}
 
-        {/* Designer note — how the chakra image should look */}
-        {chakra.imageNote && (
-          <p className="text-xs text-[var(--color-foreground-faint)] italic border-t border-[var(--color-border-subtle)] pt-3 mt-3">
-            {t?.ui.designerNote ?? 'Designer note'}: {chakra.imageNote}
-          </p>
-        )}
       </div>
     </motion.div>
   );
