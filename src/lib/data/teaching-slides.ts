@@ -202,9 +202,35 @@ export const level1Slides: TeachingSlide[] = [
     level: 1,
     section: 'foundations',
   },
+  // -------------------------------------------------------------------------
+  // Sacred Space (moved from Level 2 to Level 1)
+  // -------------------------------------------------------------------------
+  {
+    id: 'l1-sacred-space',
+    slideNumber: 15,
+    concept: "Let's Create Your Sacred Space",
+    teachingText:
+      'Level 2 begins with creating your own sacred space — an internal energetic environment that serves as your meditation home. This is the space from which all deeper work is conducted.',
+    reimaginedImage: 'DCFB7B9E-79D0-4B99-9058-0EB2BC97BAED.png',
+    imageNote: 'Illustration needed: A person seated in meditation posture, with a glowing point of awareness at the center of the head — the sacred space. Should convey inner stillness, spiritual authority, and the feeling of being safely centered within. Reference: PDF source "CENTER OF THE HEAD - SACRED SPACE" section.',
+    level: 1,
+    section: 'sacred-space',
+  },
+  {
+    id: 'l1-6th-7th-chakras',
+    slideNumber: 16,
+    concept: 'The 6th and 7th Chakras (Sacred Space)',
+    teachingText:
+      'Understanding the locations and roles of the upper chakras is essential for Level 2 work:\n\n• 6th Chakra (Third Eye) — Located at the center of the forehead, between and slightly above the eyebrows\n• 7th Chakra (Crown) — Located at the top of the head',
+    originalImage: '19-sacredspace-original.jpg',
+    reimaginedImage: '19-sacred space.PNG',
+    imageNote: 'Part of the sacred space slide sequence.',
+    level: 1,
+    section: 'sacred-space',
+  },
   {
     id: 'l1-discharge',
-    slideNumber: 15,
+    slideNumber: 17,
     concept: 'Discharge Excess Energy',
     teachingText:
       'After deep meditation or energy work, excess energy may accumulate in the body. To discharge it, lean forward from the seated position with hands reaching toward the ground. Allow the excess energy to flow out through the hands and into the earth, returning the body to a calm, balanced state.',
@@ -216,36 +242,13 @@ export const level1Slides: TeachingSlide[] = [
 ];
 
 // =============================================================================
-// LEVEL 2 — Sacred Space & Chakra Activation
+// LEVEL 2 — Space Preparation & Chakra Activation
 // =============================================================================
 
 export const level2Slides: TeachingSlide[] = [
   {
-    id: 'l2-sacred-space',
-    slideNumber: 16,
-    concept: "Let's Create Your Sacred Space",
-    teachingText:
-      'Level 2 begins with creating your own sacred space — an internal energetic environment that serves as your meditation home. This is the space from which all deeper work is conducted.',
-    reimaginedImage: 'DCFB7B9E-79D0-4B99-9058-0EB2BC97BAED.png',
-    imageNote: 'Illustration needed: A person seated in meditation posture, with a glowing point of awareness at the center of the head — the sacred space. Should convey inner stillness, spiritual authority, and the feeling of being safely centered within. Reference: PDF source "CENTER OF THE HEAD - SACRED SPACE" section.',
-    level: 2,
-    section: 'sacred-space',
-  },
-  {
-    id: 'l2-6th-7th-chakras',
-    slideNumber: 17,
-    concept: 'The 6th and 7th Chakras (Sacred Space)',
-    teachingText:
-      'Understanding the locations and roles of the upper chakras is essential for Level 2 work:\n\n• 6th Chakra (Third Eye) — Located at the center of the forehead, between and slightly above the eyebrows\n• 7th Chakra (Crown) — Located at the top of the head',
-    originalImage: '19-sacredspace-original.jpg',
-    reimaginedImage: '19-sacred space.PNG',
-    imageNote: 'Part of the sacred space slide sequence.',
-    level: 2,
-    section: 'sacred-space',
-  },
-  {
     id: 'l2-physical-space',
-    slideNumber: 18,
+    slideNumber: 16,
     concept: "Let's Prepare Your Physical Space",
     teachingText:
       'Before meditation, prepare your physical environment to support the energetic work. The external space should mirror the internal intention: clean, clear, quiet, and intentionally held.',
@@ -256,7 +259,7 @@ export const level2Slides: TeachingSlide[] = [
   },
   {
     id: 'l2-protection-space',
-    slideNumber: 19,
+    slideNumber: 17,
     concept: 'Protection of the Space',
     teachingText:
       'The physical meditation space is protected by creating an energetic grid using roses. Golden roses are placed at the four corners (and above/below) of the space, connected by lines of golden energy forming a sacred geometric structure — a container for the work.',
@@ -269,7 +272,7 @@ export const level2Slides: TeachingSlide[] = [
   },
   {
     id: 'l2-cleansing-space',
-    slideNumber: 20,
+    slideNumber: 18,
     concept: 'Cleansing of the Space',
     teachingText:
       'Once the space is protected, it is cleansed. A large Cleansing Rose is placed above the grid, and golden energy pours downward through the entire structure, clearing all foreign, stagnant, or disruptive energies from the space.',
@@ -282,7 +285,7 @@ export const level2Slides: TeachingSlide[] = [
   },
   {
     id: 'l2-owning-space',
-    slideNumber: 21,
+    slideNumber: 19,
     concept: 'Owning Your Space',
     teachingText:
       'After protection and cleansing, you claim ownership of the space. This is an act of energetic sovereignty — declaring the space as yours, filling it with your own energy and intention. The space becomes an extension of your aura and your practice.',
@@ -295,7 +298,7 @@ export const level2Slides: TeachingSlide[] = [
   },
   {
     id: 'l2-chakras-intro',
-    slideNumber: 22,
+    slideNumber: 20,
     concept: "Let's Talk About Chakras",
     teachingText:
       'The chakra system is the energetic anatomy of the human body. There are seven primary chakras, each governing specific aspects of physical, emotional, mental, and spiritual life.',
@@ -306,7 +309,7 @@ export const level2Slides: TeachingSlide[] = [
   },
   {
     id: 'l2-seven-chakras',
-    slideNumber: 23,
+    slideNumber: 21,
     concept: 'The Seven Chakras',
     teachingText:
       'The seven primary chakras, from crown to root:\n\n7. Crown — Top of head\n6. Third Eye — Center of forehead\n5. Throat — Throat\n4. Heart — Center of chest\n3. Solar Plexus — Upper abdomen\n2. Sacral — Lower abdomen\n1. Root — Base of spine',
@@ -325,7 +328,7 @@ export const level2Slides: TeachingSlide[] = [
 export const chakraSlides: ChakraSlideData[] = [
   {
     id: 'l2-chakra-root',
-    slideNumber: 24,
+    slideNumber: 22,
     concept: 'Root Chakra',
     sanskritName: 'Muladhara',
     chakraColor: '#DC2626',
@@ -355,7 +358,7 @@ export const chakraSlides: ChakraSlideData[] = [
   },
   {
     id: 'l2-chakra-sacral',
-    slideNumber: 25,
+    slideNumber: 23,
     concept: 'Sacral Chakra',
     sanskritName: 'Svadhisthana',
     chakraColor: '#EA580C',
@@ -385,7 +388,7 @@ export const chakraSlides: ChakraSlideData[] = [
   },
   {
     id: 'l2-chakra-solar-plexus',
-    slideNumber: 26,
+    slideNumber: 24,
     concept: 'Solar Plexus Chakra',
     sanskritName: 'Manipura',
     chakraColor: '#CA8A04',
@@ -415,7 +418,7 @@ export const chakraSlides: ChakraSlideData[] = [
   },
   {
     id: 'l2-chakra-heart',
-    slideNumber: 27,
+    slideNumber: 25,
     concept: 'Heart Chakra',
     sanskritName: 'Anahata',
     chakraColor: '#16A34A',
@@ -447,7 +450,7 @@ export const chakraSlides: ChakraSlideData[] = [
   },
   {
     id: 'l2-chakra-throat',
-    slideNumber: 28,
+    slideNumber: 26,
     concept: 'Throat Chakra',
     sanskritName: 'Vishuddha',
     chakraColor: '#0EA5E9',
@@ -477,7 +480,7 @@ export const chakraSlides: ChakraSlideData[] = [
   },
   {
     id: 'l2-chakra-third-eye',
-    slideNumber: 29,
+    slideNumber: 27,
     concept: 'Third Eye Chakra',
     sanskritName: 'Ajna',
     chakraColor: '#4F46E5',
@@ -507,7 +510,7 @@ export const chakraSlides: ChakraSlideData[] = [
   },
   {
     id: 'l2-chakra-crown',
-    slideNumber: 30,
+    slideNumber: 28,
     concept: 'Crown Chakra',
     sanskritName: 'Sahasrara',
     chakraColor: '#7C3AED',
@@ -544,7 +547,7 @@ export const chakraSlides: ChakraSlideData[] = [
 export const level2CleansingSlides: TeachingSlide[] = [
   {
     id: 'l2-cleansing-aura-layers',
-    slideNumber: 31,
+    slideNumber: 29,
     concept: 'Cleansing of Each Aura Layer',
     teachingText:
       'The aura is composed of seven layers, each corresponding to a chakra. In Level 2, each layer is individually cleansed from the outermost to the innermost:\n\n7. 7th Aura layer\n6. 6th Aura layer\n5. 5th Aura layer\n4. 4th Aura layer\n3. 3rd Aura layer\n2. 2nd Aura layer\n1. 1st Aura layer',
@@ -555,7 +558,7 @@ export const level2CleansingSlides: TeachingSlide[] = [
   },
   {
     id: 'l2-cleansing-each-chakra',
-    slideNumber: 32,
+    slideNumber: 30,
     concept: 'Cleansing of Each Chakra',
     teachingText:
       'Each individual chakra is cleansed using roses. The roses address two dimensions:\n\n• Dynamics of the Past — Energetic patterns, imprints, and blockages carried from past experiences\n• Dynamics of the Present — Current energetic influences, relationships, and situations affecting the chakra',
@@ -567,7 +570,7 @@ export const level2CleansingSlides: TeachingSlide[] = [
   },
   {
     id: 'l2-energy-recovery',
-    slideNumber: 33,
+    slideNumber: 31,
     concept: 'Energy Recovery of Each Chakra (Level 2)',
     teachingText:
       'After cleansing, the energy recovery process is repeated at a deeper level. The Rose is sent out to gather and return your own energy to each individual chakra, restoring sovereignty, vitality, and wholeness to each energy center.',
@@ -579,7 +582,7 @@ export const level2CleansingSlides: TeachingSlide[] = [
   },
   {
     id: 'l2-golden-sticky-1',
-    slideNumber: 34,
+    slideNumber: 32,
     concept: 'Golden Sticky Roses — Phase 1 (Chakra Placement)',
     teachingText:
       'Golden sticky roses are placed on each of the seven chakras, drawing out foreign energy lodged in the energy centers.',
@@ -591,7 +594,7 @@ export const level2CleansingSlides: TeachingSlide[] = [
   },
   {
     id: 'l2-golden-sticky-2',
-    slideNumber: 35,
+    slideNumber: 33,
     concept: 'Golden Sticky Roses — Phase 2 (Body Placement)',
     teachingText:
       'Golden sticky roses are placed at the joints and extremities of the body — shoulders, elbows, wrists, hands, hips, knees, ankles, feet — drawing out foreign energy stored in the physical body.',
@@ -603,7 +606,7 @@ export const level2CleansingSlides: TeachingSlide[] = [
   },
   {
     id: 'l2-golden-sticky-3',
-    slideNumber: 36,
+    slideNumber: 34,
     concept: 'Golden Sticky Roses — Phase 3 (Full Body Coverage)',
     teachingText:
       'Golden sticky roses are placed throughout the entire body — covering the torso, limbs, and all remaining areas — for a thorough, complete energetic cleansing.',
@@ -615,7 +618,7 @@ export const level2CleansingSlides: TeachingSlide[] = [
   },
   {
     id: 'l2-golden-sticky-4',
-    slideNumber: 37,
+    slideNumber: 35,
     concept: 'Golden Sticky Roses — Phase 4 (Integration)',
     teachingText:
       'After the golden sticky roses have done their work, a large Golden Rose appears above the head. All foreign energy gathered by the sticky roses is released, and the entire body is bathed in golden light — restoring, sealing, and integrating the energy body.',
@@ -634,7 +637,7 @@ export const level2CleansingSlides: TeachingSlide[] = [
 export const level3Slides: TeachingSlide[] = [
   {
     id: 'l3-analyzer',
-    slideNumber: 38,
+    slideNumber: 36,
     concept: 'The Analyzer',
     teachingText:
       'The Analyzer is an advanced tool introduced in Level 3. It is an energetic point located at the back of the head, at the base of the skull (the occipital ridge / brainstem area). The Analyzer is used for deeper perception, reading, and discernment of energy — a tool for precise energetic analysis.',
