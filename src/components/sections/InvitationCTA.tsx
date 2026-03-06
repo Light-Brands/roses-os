@@ -7,9 +7,17 @@ import { cn } from '@/lib/utils';
 
 interface InvitationCTAProps {
   className?: string;
+  title?: React.ReactNode;
+  href?: string;
+  label?: string;
 }
 
-export default function InvitationCTA({ className }: InvitationCTAProps) {
+export default function InvitationCTA({
+  className,
+  title,
+  href = '/invitation',
+  label = 'Enter the Rose Field',
+}: InvitationCTAProps) {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
@@ -29,8 +37,7 @@ export default function InvitationCTA({ className }: InvitationCTAProps) {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="font-serif text-[clamp(2rem,5vw,3.5rem)] tracking-tight leading-tight"
           >
-            The way is open.<br />
-            Welcome home.
+            {title || <>The way is open.<br />Welcome home.</>}
           </motion.h2>
 
           <motion.div
@@ -40,7 +47,7 @@ export default function InvitationCTA({ className }: InvitationCTAProps) {
             className="mt-10"
           >
             <Link
-              href="/invitation"
+              href={href}
               className={cn(
                 'inline-flex items-center px-8 py-3.5 rounded-full',
                 'bg-warm-50 text-[var(--color-section-dark)]',
@@ -49,7 +56,7 @@ export default function InvitationCTA({ className }: InvitationCTAProps) {
                 'transition-colors duration-200'
               )}
             >
-              Enter the Rose Field
+              {label}
             </Link>
           </motion.div>
         </div>

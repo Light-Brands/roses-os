@@ -30,6 +30,7 @@ const defaultItems: NavItem[] = [
   { label: 'Offerings', href: '/offerings' },
   { label: 'Guardians', href: '/guardians' },
   { label: 'Community', href: '/community' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 // =============================================================================
@@ -246,6 +247,20 @@ export function Navigation({
                     strokeWidth={2.5}
                   />
                 </div>
+              </Link>
+
+              {/* Mobile CTA — visible on small screens next to hamburger */}
+              <Link
+                href={cta.href}
+                className={cn(
+                  'sm:hidden inline-flex items-center px-4 py-2 rounded-full',
+                  'bg-[#9C6F6E] text-white',
+                  'text-xs font-medium tracking-wide',
+                  'transition-colors duration-200',
+                  'hover:bg-[#8A5E5D]'
+                )}
+              >
+                {cta.label}
               </Link>
 
               {/* Mobile Hamburger */}

@@ -402,8 +402,12 @@ export default function CommunityClient() {
         </div>
       </section>
 
-      {/* 4. Invitation CTA */}
-      <InvitationCTA />
+      {/* 4. Go Deeper CTA — link to paid offerings */}
+      <InvitationCTA
+        title={<>Ready to go deeper?<br />Explore our offerings.</>}
+        href="/offerings"
+        label="View Offerings"
+      />
     </>
   );
 }

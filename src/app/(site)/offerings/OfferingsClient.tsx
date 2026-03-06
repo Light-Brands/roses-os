@@ -21,6 +21,7 @@ import PageHero from '@/components/sections/PageHero';
 import ProgramCard from '@/components/sections/ProgramCard';
 import ScheduleTable from '@/components/sections/ScheduleTable';
 import ContributionTiers from '@/components/sections/ContributionTiers';
+import InvitationCTA from '@/components/sections/InvitationCTA';
 import SubscribeCalendar from '@/components/ui/SubscribeCalendar';
 
 // =============================================================================
@@ -440,7 +441,7 @@ function OfferingsContent() {
         </div>
       </section>
 
-      {/* 3. Continued Programs */}
+      {/* 3. Continued Programs — Go Deeper */}
       <section ref={continuedRef} className="section-padding">
         <div className="container-premium max-w-3xl mx-auto">
           <motion.p
@@ -660,6 +661,9 @@ function OfferingsContent() {
           </div>
         </div>
       </section>
+
+      {/* 4. Bottom CTA */}
+      <InvitationCTA />
     </>
   );
 }
