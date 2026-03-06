@@ -19,7 +19,7 @@ export default function ManualPdfButton({
 }: ManualPdfButtonProps) {
   const { locale } = useLanguage();
   const href = paths[locale] ?? paths.en;
-  const label = labels[locale] ?? labels.en ?? 'Manual (PDF)';
+  const label = labels[locale] ?? labels.en ?? 'Student Manual';
 
   if (!href) return null;
 
@@ -54,7 +54,7 @@ export default function ManualPdfButton({
           'hover:bg-[var(--color-background-muted)]',
           'transition-all duration-200',
         )}
-        title="Download PDF"
+        title="Download the Student Manual"
       >
         <Download className="h-4 w-4" />
       </motion.a>
