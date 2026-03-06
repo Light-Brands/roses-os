@@ -2,7 +2,7 @@
 
 > Design brief for the Teacher Visual Aid Manual -- the facilitator's companion for teaching Rose Meditation.
 >
-> **Updated March 2026** -- Image inventory aligned with live site filenames (slides 1-36). All images match `src/lib/data/teaching-slides.ts`. Includes complete image inventory, full teaching text for each slide, and integration plan for the website's `/teaching` section.
+> **Updated March 2026** -- Image inventory aligned with live site filenames (slides 1-37). All images match `src/lib/data/teaching-slides.ts`. Includes complete image inventory, full teaching text for each slide, and integration plan for the website's `/teaching` section.
 
 ---
 
@@ -142,11 +142,12 @@ Below is the **complete inventory** of every image used on the site, organized b
 | 34 | **Golden Sticky Roses -- Phase 3** -- Full body coverage with golden roses. | `34-golden-sticky-3.jpg` | `34-golden-sticky-3-original.PNG` |
 | 35 | **Golden Sticky Roses -- Phase 4** -- Integration: large golden rose above, golden light cascading through body. | `35-golden-sticky-4.jpg` | `35-golden-sticky-4-original.PNG` |
 
-#### Level 3 -- Advanced Perception (Slide 36)
+#### Level 3 -- Advanced Perception (Slides 36--37)
 
 | Slide | Concept | Reimagined Image | Original Image |
 |-------|---------|-----------------|---------------|
 | 36 | **The Analyzer** -- Energetic point at the back of the head (occipital ridge) for deeper perception. | `36-analyzer.PNG` | `36-analyzer-original-reimagined.jpg` |
+| 37 | **The Analyzer & Sacred Space** -- Combined reference showing the Analyzer in relation to the sacred space. | `37-analyzer-and-sacred-space.png` | -- |
 
 #### Supplementary Reference Images
 
@@ -162,14 +163,14 @@ These files exist in `public/rose med images/` and are referenced as supplementa
 
 ### Coverage Summary
 
-All 36 teaching slides have images on the site. Every image file is in `public/rose med images/`.
+All 37 teaching slides have images on the site. Every image file is in `public/rose med images/`.
 
 | Category | Total Slides | Have Reimagined | Have Original | Have Both |
 |----------|-------------|----------------|--------------|-----------|
 | Level 1: Foundations | 17 | 17 | 9 | 9 |
 | Level 2: Sacred Space & Chakras | 18 | 18 | 10 | 10 |
-| Level 3: The Analyzer | 1 | 1 | 1 | 1 |
-| **Total** | **36** | **36** | **20** | **20** |
+| Level 3: The Analyzer | 2 | 2 | 1 | 1 |
+| **Total** | **37** | **37** | **20** | **20** |
 
 ---
 
@@ -723,6 +724,13 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 ---
 
+#### Slide 37: The Analyzer & Sacred Space
+**Reimagined:** `37-analyzer-and-sacred-space.png`
+
+> A combined reference showing the Analyzer in relation to the sacred space. This image illustrates how the Analyzer — the energetic point at the base of the skull — operates within the context of the protected, cleansed sacred space established in Level 2. The two work together: the sacred space provides the container, and the Analyzer provides the perceptive tool for deeper energetic reading and discernment.
+
+---
+
 ## 5. CONTENT STRUCTURE SUMMARY
 
 The manual has five sections, each a page or scroll section on the web:
@@ -777,7 +785,7 @@ One consistent layout per chakra, each containing:
 
 - **Level 1 (Foundations):** Posture, grounding, golden sun, aura awareness, circuits, roses of protection, cleansing, recovery, discharge
 - **Level 2 (Sacred Space + Chakra Activation):** Creating sacred space, protecting and cleansing the space, owning the space, chakra deep dive, aura layer cleansing, chakra cleansing (past and present dynamics), energy recovery, golden sticky roses (4 phases)
-- **Level 3 (Advanced Perception):** The Analyzer -- energetic point at the base of the skull for deeper perception, reading, and discernment
+- **Level 3 (Advanced Perception):** The Analyzer -- energetic point at the base of the skull for deeper perception, reading, and discernment; combined Analyzer & Sacred Space reference showing how the Analyzer operates within the protected sacred space
 
 ### Section 5 -- Teaching Agreements
 
