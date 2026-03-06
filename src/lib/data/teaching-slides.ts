@@ -70,7 +70,7 @@ export const level1Slides: TeachingSlide[] = [
     concept: 'Grounding Cord',
     teachingText:
       'The grounding cord is an energetic connection that extends from the base of the spine (first chakra) downward into the center of the Earth. It anchors your energy body to the planet, providing stability, safety, and a channel for releasing unwanted energy.',
-    reimaginedImage: 'GroundingCordFinal.JPG',
+    reimaginedImage: 'IMG_1817.jpeg',
     imageNote:
       'The original grounding cord (see slide 10 original: 10-grounding-cord-expansion-original .PNG) is more accurate than the reimagined version. New designs should reflect the original\'s depiction. The grounding cord should be more opaque/transparent, thick and strong, and less gold.',
     level: 1,
@@ -82,7 +82,7 @@ export const level1Slides: TeachingSlide[] = [
     concept: 'Golden Sun',
     teachingText:
       'The Golden Sun is a tool for replenishing and restoring your own energy. Visualize a radiant golden sun above your head. It calls back your own life-force energy from wherever you may have left it — in people, places, situations, or time. It fills you with your own highest vibration.',
-    reimaginedImage: 'Golden sun.jpg',
+    reimaginedImage: 'IMG_1818.jpeg',
     imageNote:
       'The grounding cord in this image should be thick, transparent, and strong — and should start lower in the body, under the crotch, as it comes from the base of the spine (1st chakra). Currently it appears too high and too golden.',
     level: 1,
