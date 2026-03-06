@@ -94,14 +94,6 @@ Once you are aware of your aura, the grounding cord practice deepens. You ground
 
 ---
 
-## Full Meditation Setup
-
-The complete foundational setup combines all three elements: the person is seated in proper posture, enclosed within their aura, with the grounding cord descending into the earth and the golden sun shining above the crown.
-
-*[Visual reference: Person seated within the aura egg, grounding cord below, golden sun above -- the full energetic architecture in place]*
-
----
-
 ## Circuit of the Energy of the Earth
 
 The Earth circuit is an energetic pathway that draws the energy of the Earth upward through the feet, rising through the legs and into the body. This circuit connects you to the grounding, nourishing, stabilizing force of the planet.

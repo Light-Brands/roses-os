@@ -536,25 +536,6 @@ The aura is the energetic field that surrounds your physical body. This exercise
 
 Once you are aware of your aura, the grounding cord practice deepens. You ground not only the physical body but also the aura itself -- allowing the entire energy field to anchor into the Earth.
 
-### Full Meditation Setup
-
-The complete foundational setup combines all three elements: the person is seated in proper posture, enclosed within their aura, with the grounding cord descending into the earth and the golden sun shining above the crown.
-
-```mermaid
-graph TD
-    GS["Golden Sun<br/>Above Crown"]
-    GS -->|"replenishes energy"| AURA
-    subgraph AURA["Aura Field"]
-        BODY["Practitioner<br/><i>Seated, spine upright</i><br/><i>Feet flat, eyes closed</i>"]
-    end
-    AURA -->|"grounding cord"| EARTH["Center of the Earth"]
-
-    style GS fill:#9E956B,color:#F7F5F2,stroke:#9E956B
-    style AURA fill:#EBD6C1,color:#3F3E3C,stroke:#9C6F6E
-    style BODY fill:#F7F5F2,color:#3F3E3C,stroke:#C7AE8C
-    style EARTH fill:#7A3A34,color:#F7F5F2,stroke:#7A3A34
-```
-
 ### Circuit of the Energy of the Earth
 
 The Earth circuit is an energetic pathway that draws the energy of the Earth upward through the feet, rising through the legs and into the body. This circuit connects you to the grounding, nourishing, stabilizing force of the planet.
