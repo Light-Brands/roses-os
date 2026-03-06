@@ -579,7 +579,7 @@ export const freePrograms: CommunityProgram[] = [
             month: 'April',
             sessions: [
               { date: 'Sun, Apr 5 — Jennifer', time: { sanJose: '9:00 AM', bogota: '10:00 AM', newYork: '11:00 AM', brasilia: '12:00 PM', london: '4:00 PM', madrid: '5:00 PM' } },
-              { date: 'Sat, Apr 18 — Silvia C', time: { sanJose: '7:00 AM', bogota: '8:00 AM', newYork: '9:00 AM', brasilia: '10:00 AM', london: '2:00 PM', madrid: '3:00 PM' } },
+              { date: 'Mon, Apr 13 — Júlia', time: { sanJose: '8:00 AM', bogota: '9:00 AM', newYork: '10:00 AM', brasilia: '11:00 AM', london: '3:00 PM', madrid: '4:00 PM' } },
               { date: 'Sun, Apr 19 — Jennifer', time: { sanJose: '9:00 AM', bogota: '10:00 AM', newYork: '11:00 AM', brasilia: '12:00 PM', london: '4:00 PM', madrid: '5:00 PM' } },
               { date: 'Mon, Apr 27 — Dara', time: { sanJose: '7:00 AM', bogota: '8:00 AM', newYork: '9:00 AM', brasilia: '10:00 AM', london: '2:00 PM', madrid: '3:00 PM' } },
             ],
