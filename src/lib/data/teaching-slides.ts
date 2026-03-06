@@ -111,7 +111,7 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'Once you are aware of your aura, the grounding cord practice deepens. You ground not only the physical body but also the aura itself — allowing the entire energy field to anchor into the Earth.',
     originalImage: '6-grounding-cord-expansion-original.PNG',
-    reimaginedImage: '6-expansioncord.jpg',
+    reimaginedImage: '6-expansion-grounding-cord.jpg',
     final: true,
     imageNote:
       'The grounding cord should be more opaque/transparent, thick and strong, and less gold — same direction as slide 7.',
