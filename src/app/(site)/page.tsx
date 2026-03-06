@@ -10,6 +10,7 @@ import dynamic from 'next/dynamic';
 import HeroSphere from '@/components/three/HeroSphere';
 import { cn } from '@/lib/utils';
 import { brandQuotes, messagingPillars } from '@/lib/data';
+import SummaryDownloadButton from '@/components/ui/SummaryDownloadButton';
 
 const ConsciousnessField = dynamic(
   () => import('@/components/three/ConsciousnessField'),
@@ -488,6 +489,14 @@ function InvitationCTA() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-5"
+          >
+            <SummaryDownloadButton variant="dark" />
           </motion.div>
         </div>
       </div>

@@ -23,6 +23,7 @@ import ScheduleTable from '@/components/sections/ScheduleTable';
 import ContributionTiers from '@/components/sections/ContributionTiers';
 import InvitationCTA from '@/components/sections/InvitationCTA';
 import SubscribeCalendar from '@/components/ui/SubscribeCalendar';
+import SummaryDownloadButton from '@/components/ui/SummaryDownloadButton';
 
 // =============================================================================
 // TIMEZONE SELECTOR (for continued programs)
@@ -287,6 +288,11 @@ function OfferingsContent() {
         description="Guided pathways into the Rose field. Each program is a living invitation to deepen your practice, remember your coherence, and step into a community devoted to inner freedom."
         image="/page-images/page-programs.png"
       />
+
+      {/* Download PDF Guide */}
+      <div className="flex justify-center py-6 print:hidden">
+        <SummaryDownloadButton variant="light" />
+      </div>
 
       {/* 2. Programs — progressive disclosure */}
       <section ref={gridRef} className="section-padding">
