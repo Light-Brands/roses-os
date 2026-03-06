@@ -205,7 +205,7 @@ The page numbers below refer to the **new** Level 2 manual page order (after rem
 |---|---|---|---|
 | 1 | **Cover page** | **CREATE** new cover | Designer creates -- match Level 1 & Level 3 cover style (rose in sacred geometry, title "Rose Meditation -- Level 2") |
 | 2 | **Table of Contents** | **CREATE** new TOC | Level 2 content only |
-| 3 | Center of the Head / Sacred Space | **REPLACE** existing illustration | `15-sacred-space.png` (slide 15) + `16-sacred-space.PNG` (slide 16) |
+| 3 | Center of the Head / Sacred Space | **REPLACE** existing illustration | `16-sacred-space.PNG` (slide 16) |
 | 4 | 10. Preparing the Room | **REPLACE** existing illustration | `17-create-the-room.jpg` (slide 17) |
 | 5 | Owning Your Space | **REPLACE** existing illustration | `19-owning-space.jpg` (slide 19) |
 | 6 | Chakra Cleansing | **REPLACE** existing illustration | `30-cleansing-each-chakra.PNG` (slide 30) |
