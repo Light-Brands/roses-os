@@ -105,7 +105,6 @@ Below is the **complete inventory** of every image in the repository, organized 
 | 8 | **Golden Sun** -- Radiant golden sun above the head, restoring personal life-force energy. | *(use reimagined as primary)* | `8-golden-sun.PNG` |
 | 9 | **Aura Exercise** -- Golden silhouette surrounded by concentric layers of glowing energy. | `9-auraexercise-original .PNG` | `9-aura-exercise .PNG` |
 | 10 | **Expansion of Grounding Cord** -- Grounding cord expands with the aura, anchoring the entire energy field into the Earth. | `10-grounding-cord-expansion-original .PNG` | `10-Grounding cord expand .PNG` |
-| 11 | **Full Meditation Setup** -- Posture + aura + expanded grounding cord. | *(see slide 10 original)* | `11-expansion-grounding-cord.PNG` |
 | 11a | **Golden Sun Fills You** -- Golden sun above the crown pours golden light down, filling the entire aura and body. | `11-expansion fill with golden sun - original .PNG` | `11aExpand auragoldensunexpanded.PNG` |
 | 12 | **Earth Circuit** -- Energy rising through feet and legs into the body. | *(use reimagined)* | `12a-earth energy .PNG`, `Circuitofthenergyofearth.PNG` |
 | 13 | **Cosmos Circuit** -- Cosmic energy descending through the crown into the body. | `13-cosmos-original.PNG` | `IMG_6954.jpeg` |
@@ -289,18 +288,6 @@ Below is the complete teaching text that accompanies each image/slide in the man
 **Designer Notes:**
 - Same grounding cord visual direction as slide 7: **more opaque and transparent, thick and strong, less gold**
 - The expanded grounding cord should feel even more substantial as it now anchors the entire aura
-
----
-
-#### Slide: Full Meditation Setup
-**Reimagined:** `11-expansion-grounding-cord.PNG`
-
-> The complete foundational setup combines posture, aura, and expanded grounding cord: the person is seated in proper posture, enclosed within their aura, with the grounding cord descending into the earth.
-
-**Designer Notes:**
-- The **grounding cord is missing** from the current reimagined image -- it needs to be added
-- This slide depicts the full setup which includes the expanded grounding cord; it must be clearly visible
-- Same visual direction as slides 7 and 10: **thick, transparent, strong, less gold**
 
 ---
 
