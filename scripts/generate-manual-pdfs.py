@@ -387,6 +387,271 @@ li::marker {
 """
 
 # =============================================================================
+# LEVEL 1 MANUAL HTML
+# =============================================================================
+
+LEVEL_1_HTML = """<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>ROSES OS — Level 1 Manual</title></head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <img src="public/rose med images/cover-levels-1-2-01.png" style="max-width: 60%; height: auto; margin-bottom: 1.5cm; border-radius: 8px;" />
+  <p class="cover-eyebrow">Student Manual</p>
+  <h1 class="cover-title">Level 1</h1>
+  <p class="cover-subtitle">Foundation Practices</p>
+  <div class="cover-divider"></div>
+  <p class="cover-brand">ROSES OS</p>
+  <p class="cover-note">Teachings by Angelina Ataíde</p>
+</div>
+
+<!-- GETTING READY -->
+<h2>Getting Ready to Start</h2>
+
+<div class="image-placeholder">
+  <div class="ph-icon">&#9702;</div>
+  <p class="ph-label">Illustration — Meditation Posture</p>
+  <p class="ph-desc">Person seated upright in a chair with feet flat on the floor, hands on knees with palms facing upwards, spine aligned, eyes closed — relaxed yet alert, grounded and receptive.</p>
+  <p class="ph-ref">Ref: Slide 2 — Meditation Posture</p>
+</div>
+
+<p>Prepare the body and mind for meditation through posture, presence, and breath.</p>
+
+<ul>
+  <li>Sit down and keep your spine aligned in an upright posture. Place both feet on the floor, with your hands on your knees and palms facing upwards.</li>
+  <li>Concentrate, close your eyes, bring your presence into the present moment and breathe deeply and slowly.</li>
+  <li>Use the power of your imagination (image in action) to visualize the techniques.</li>
+</ul>
+
+<div class="divider"></div>
+
+<!-- GROUNDING CORD -->
+<h2>Grounding Cord</h2>
+
+<div class="image-placeholder">
+  <div class="ph-icon">&#9702;</div>
+  <p class="ph-label">Illustration — Grounding Cord</p>
+  <p class="ph-desc">An energetic connection extending from the base of the spine (first chakra) downward into the center of the Earth — anchoring the energy body to the planet, providing stability, safety, and a channel for releasing unwanted energy.</p>
+  <p class="ph-ref">Ref: Slide 3 — Grounding Cord</p>
+</div>
+
+<p>Create a taut grounding cord that runs from your first chakra to the center of the Earth. The cord eliminates distractions, thoughts and blockages that prevent you from being in the present moment. It brings security, stability and helps to clear energies that are not of your essence. With time and practice, the cord naturally becomes transparent.</p>
+
+<div class="divider"></div>
+
+<!-- GOLDEN SUN -->
+<h2>Golden Sun</h2>
+
+<div class="image-placeholder">
+  <div class="ph-icon">&#9702;</div>
+  <p class="ph-label">Illustration — Golden Sun</p>
+  <p class="ph-desc">A radiant golden sun above the head. It calls back your own life-force energy from wherever you may have left it — in people, places, situations, or time. It fills you with your own highest vibration.</p>
+  <p class="ph-ref">Ref: Slide 4 — Golden Sun</p>
+</div>
+
+<p>Create a Golden Sun above your head and fill the entire space of your Aura and physical body with the golden light that comes from the Sun. This sun represents the Supreme Being, it raises your vibration and fills the empty energetic spaces with Divine energy after any subtle release of energy. Fill yourself with the light of the Golden Sun whenever you renew the Meditation, before you finish and at any time of the day when you want to raise your vibration.</p>
+
+<div class="divider"></div>
+
+<!-- LIMITS OF THE AURA -->
+<h2>Limits of the Aura</h2>
+
+<div class="image-placeholder">
+  <div class="ph-icon">&#9702;</div>
+  <p class="ph-label">Illustration — An Exercise to Feel Your Aura</p>
+  <p class="ph-desc">The aura as an energetic field surrounding the physical body. Multiple layers radiate outward from the body. The boundary is defined at approximately 50 cm (20 inches) around the entire body.</p>
+  <p class="ph-ref">Ref: Slide 5 — An Exercise to Feel Your Aura</p>
+</div>
+
+<p>The aura is an energy field that surrounds our physical body. It can expand and contract. For Rose Meditation, establish your Aura 20 inches (50 cm) around your entire body.</p>
+
+<div class="divider"></div>
+
+<!-- EXPANSION OF GROUNDING CORD -->
+<h2>Expansion of the Grounding Cord</h2>
+
+<div class="image-placeholder">
+  <div class="ph-icon">&#9702;</div>
+  <p class="ph-label">Illustration — Expansion of Grounding Cord</p>
+  <p class="ph-desc">The grounding cord widened to match the full width of the aura, grounding the entire energy field — not just the physical body but the aura itself anchors into the Earth.</p>
+  <p class="ph-ref">Ref: Slide 6 — Expansion of Grounding Cord</p>
+</div>
+
+<p>Expand the cord sideways to the width of the Aura, grounding the entire Aura.</p>
+
+<div class="divider"></div>
+
+<!-- RENEWAL OF GROUNDING CORD -->
+<h2>Renewal of the Grounding Cord</h2>
+
+<p>Using your imagination, and your cutting tool, cut the grounding cord whenever you need to. This tool will always be the same and will become more powerful every time you use it.</p>
+
+<ul>
+  <li>Cut the old cord.</li>
+  <li>Create a new cord.</li>
+  <li>Expand the cord sideways to the width of the Aura every time you create a new one.</li>
+</ul>
+
+<!-- FOUR ROSES -->
+<div class="page-break"></div>
+<h2>Four Roses of Protection, Separation and Observation</h2>
+
+<div class="image-placeholder">
+  <div class="ph-icon">&#9702;</div>
+  <p class="ph-label">Illustration — Four Roses</p>
+  <p class="ph-desc">Roses placed at the edges of the aura — in front, behind, to the left and to the right — serving as energetic sentinels. They define and guard the boundary of your aura.</p>
+  <p class="ph-ref">Ref: Slide 12 — Roses of Protection, Observation and Separation</p>
+</div>
+
+<p>Create four Roses of the color of your choice or the color that comes to you (as long as they are high-vibration, each one can have a color) grounded on the outside of your Aura (in front, behind, to the left and to the right). Each of the four Roses fulfills the same three functions: protection, separation and observation. At any time of the day, or whenever we meditate, we blow up the four Roses and create new ones. They help us maintain neutrality.</p>
+
+<h3>Protection</h3>
+<p>On a daily basis, we interact with energies that are not ours, such as the energies of other people or the spaces in which we live. By protecting ourselves from these energies, we increase our understanding of the dynamics we experience.</p>
+
+<h3>Separation</h3>
+<p>It helps our Aura to remain separate from other people's Aura, bringing a clearer perception of our individuality.</p>
+
+<h3>Observation</h3>
+<p>When we observe the other person from a neutral state, as a spectator, we develop compassion, not judgment.</p>
+
+<!-- ENERGY CIRCUITS -->
+<div class="page-break"></div>
+<h2>Circuit of the Energies of The Earth and The Cosmos</h2>
+
+<p>Both the energy of the Earth and of the Cosmos continue to circulate in a constant flow as they enter, pass through their paths and leave. This activation raises our vibration, promotes energetic unblocking, brings up issues to resolve and provides spiritual information.</p>
+
+<h3>Energy of the Earth</h3>
+
+<div class="image-placeholder">
+  <div class="ph-icon">&#9702;</div>
+  <p class="ph-label">Illustration — Energy of the Earth</p>
+  <p class="ph-desc">The Earth circuit: an energetic pathway drawing the energy of the Earth upward through the feet, rising through the legs and into the body — connecting you to the grounding, nourishing, stabilizing force of the planet.</p>
+  <p class="ph-ref">Ref: Slide 8 — Circuit of the Energy of the Earth</p>
+</div>
+
+<p>We call on the energy of the Earth to bring the force of transmutation and vitality to the energetic cleansing work we do in the Rose Meditation. It works like an engine that increases the power of everything we do during meditation.</p>
+
+<ul>
+  <li>See a copper-golden energy that comes from the center of the Earth and enters through the bottom of the feet, goes up through the legs, passes through the coccyx and descends through the grounding cord. As it passes through the coccyx, 10% of this energy rises to mix with the energy of the cosmos.</li>
+</ul>
+
+<h3>Energy of the Cosmos</h3>
+
+<div class="image-placeholder">
+  <div class="ph-icon">&#9702;</div>
+  <p class="ph-label">Illustration — Energy of the Cosmos</p>
+  <p class="ph-desc">The Cosmic circuit: an energetic pathway drawing cosmic energy downward through the crown of the head (7th chakra) and into the body — connecting you to the higher frequencies of universal consciousness, inspiration, and spiritual guidance.</p>
+  <p class="ph-ref">Ref: Slide 9 — Circuit of the Energy of the Cosmos</p>
+</div>
+
+<p>The energy of the Cosmos is pure consciousness and it helps us to understand what happens during the Rose Meditation and in our lives. With this active circuit, we can receive information to understand who we are, why we experience the challenges we do, what energies we carry in our Aura, how we absorb them and what adjustments we can make to create a different reality in the future.</p>
+
+<ul>
+  <li>See a luminous golden energy that comes from the center of the Universe, enters through the crown chakra, goes down the spine, passes through the coccyx and goes up the front of the body to the throat chakra, where it splits into three parts.</li>
+  <li>One part exits through the crown chakra and the other two parts pass through the upper arms and out through the hands, like a fountain. When it passes through the coccyx, 10% of this energy descends to mix with the Earth's energy.</li>
+</ul>
+
+<!-- CLEANSING AND RECOVERY -->
+<div class="page-break"></div>
+<h2>Roses to Cleanse and Recover Energy</h2>
+
+<p>You can create and explode as many roses as you feel like.</p>
+
+<h3>Cleansing Rose</h3>
+
+<div class="image-placeholder">
+  <div class="ph-icon">&#9702;</div>
+  <p class="ph-label">Illustration — Cleansing Rose</p>
+  <p class="ph-desc">A Cleansing Rose placed outside the aura, used to absorb and transmute foreign or stagnant energy from within your field. Energy that does not belong to you is drawn out of the aura and into the Rose, where it is neutralized.</p>
+  <p class="ph-ref">Ref: Slide 13 — Cleansing Rose</p>
+</div>
+
+<p>Create a Rose in a high-vibration color, grounded in front of you, outside your Aura and place any uncomfortable or undesirable situation on it (thoughts, people, events, conversations, fears, worries). Intend for the Rose to suck in energy, like a vacuum cleaner or a magnet. Explode the Rose out of your Aura to cleanse the energy and raise the vibration of the situation. If you need to, create new Roses, cleanse and explode them several times as required. If you wish, do the same in positive situations where you want to raise the vibration even more.</p>
+
+<h3>Recovery Rose</h3>
+
+<div class="image-placeholder">
+  <div class="ph-icon">&#9702;</div>
+  <p class="ph-label">Illustration — Energy Recovery</p>
+  <p class="ph-desc">The Rose used to recover your own energy that has been left in or taken by others. The Rose gathers and returns your own life-force energy, restoring fullness and sovereignty.</p>
+  <p class="ph-ref">Ref: Slide 14 — Energy Recovery</p>
+</div>
+
+<p>Create another Rose, grounded outside your Aura, and call your energy back to this Rose. The Rose attracts your energy that is scattered throughout the universe like a vacuum cleaner or magnet. Explode the Rose out of your Aura, and receive your high vibrational and purified energy back to you.</p>
+
+<!-- PINK ROSE -->
+<div class="divider"></div>
+<h2>Pink Rose</h2>
+
+<p>We can offer this rose as a gift, after cleansing another person's energy from our Aura, or mainly for ourselves.</p>
+
+<ul>
+  <li>Create an unrooted pink Rose.</li>
+  <li>Place the person or yourself in this Rose visualizing "Happy, Healthy, Whole, Body, Mind &amp; Soul".</li>
+  <li>Repeat in your head: "Happy, Healthy, Whole, Body, Mind &amp; Soul".</li>
+  <li>While repeating, make the Rose rise towards the center of the Universe, wishing you or the person in it all the best.</li>
+</ul>
+
+<!-- SACRED SPACE -->
+<div class="page-break"></div>
+<h2>Sacred Space — Center of the Head</h2>
+
+<div class="image-placeholder">
+  <div class="ph-icon">&#9702;</div>
+  <p class="ph-label">Illustration — Sacred Space</p>
+  <p class="ph-desc">Person seated in meditation posture with a glowing point of awareness at the center of the head — the sacred space where the Spirit resides and from which all energy work is conducted. Conveys inner stillness, spiritual authority, and the feeling of being safely centered within.</p>
+  <p class="ph-ref">Ref: Slide 15 — Sacred Space</p>
+</div>
+
+<p>Place yourself in the center of your head, in your sacred space, where you are safe and aware of your energetic authority. It is from there that you can do the Rose Meditation or any energy work safely, clearly, clairvoyantly and saving your energy.</p>
+
+<p>This space is dedicated to your Spirit, which is the purest part of you. It should always be tightly closed and protected. Go to this place whenever you do the Rose Meditation or whenever you need to make important decisions and want to be in alignment with your spiritual essence.</p>
+
+<!-- ELEMENTS SUMMARY -->
+<div class="page-break"></div>
+<div class="elements-box">
+  <h3>Elements of Rose Meditation — Level 1</h3>
+  <ul>
+    <li>Grounding cord</li>
+    <li>Golden Sun</li>
+    <li>Aura boundaries and cord expansion</li>
+    <li>Roses of protection, separation and observation</li>
+    <li>Energies of the Earth and Cosmos</li>
+    <li>Cleansing Rose</li>
+    <li>Energy Recovery Rose</li>
+    <li>Pink Rose</li>
+    <li>Sacred space</li>
+  </ul>
+</div>
+
+<h3>To End the Meditation</h3>
+<ul>
+  <li>Cut the grounding cord and create a new one.</li>
+  <li>Fill yourself with the Golden Sun.</li>
+  <li>If you feel, renew any technique you feel like (the 4 roses of separation and observation; the circuit of the cosmos and earth).</li>
+  <li>Place your hands on the floor to release excess energy.</li>
+</ul>
+
+<div class="highlight">
+  Yes! Now you are ready for a beautiful day!
+</div>
+
+<!-- CREDITS -->
+<div class="end-page">
+  <p><strong>Teachings by Angelina Ataíde</strong></p>
+  <p style="font-size: 9pt; margin-top: 0.5cm; color: #8C7E73; font-style: normal; font-family: Inter, sans-serif;">Illustrations: Saraswati Noemi, Cecilia Lynch, Drica Voivodic</p>
+  <p style="font-size: 9pt; color: #8C7E73; font-style: normal; font-family: Inter, sans-serif;">No part of this manual may be reproduced and/or shown to people who have not attended a Rose Meditation Course.</p>
+  <p style="font-size: 8pt; margin-top: 0.5cm; color: #B5A89D; font-style: normal; font-family: Inter, sans-serif;">2021 Review &bull; ROSES OS 2026 Edition</p>
+  <div class="cover-divider"></div>
+  <p>ROSES OS</p>
+  <p style="font-size: 10pt; margin-top: 0.5cm; color: #B5A89D; font-style: normal; font-family: Inter, sans-serif;">rosesos.com</p>
+</div>
+
+</body>
+</html>"""
+
+# =============================================================================
 # LEVEL 2 MANUAL HTML
 # =============================================================================
 
@@ -397,38 +662,14 @@ LEVEL_2_HTML = """<!DOCTYPE html>
 
 <!-- COVER -->
 <div class="cover">
+  <img src="public/rose med images/cover-levels-1-2-01.png" style="max-width: 60%; height: auto; margin-bottom: 1.5cm; border-radius: 8px;" />
   <p class="cover-eyebrow">Student Manual</p>
   <h1 class="cover-title">Level 2</h1>
-  <p class="cover-subtitle">Sacred Space, Chakra Cleansing &amp; Energy Recovery</p>
+  <p class="cover-subtitle">Chakra Cleansing &amp; Energy Recovery</p>
   <div class="cover-divider"></div>
   <p class="cover-brand">ROSES OS</p>
   <p class="cover-note">Teachings by Angelina Ataíde</p>
 </div>
-
-<!-- COPYRIGHT -->
-<div class="copyright">
-  <p><strong>Teachings by Angelina Ataíde</strong></p>
-  <p>No part of this manual may be reproduced and/or shown to people who have not attended a Rose Meditation Course.</p>
-  <p>Teaching the Rose Meditation and Aura Reading requires specific training, as well as a lot of experience with Aura Reading and energy work. Therefore, for your own protection, please do not share this information.</p>
-  <p>Illustrations: Saraswati Noemi, Cecilia Lynch, Drica Voivodic</p>
-  <p style="margin-top: 1cm; font-size: 8pt; color: #B5A89D;">2021 Review &bull; ROSES OS 2026 Edition</p>
-</div>
-
-<!-- SACRED SPACE -->
-<h2>Sacred Space — Center of the Head</h2>
-
-<div class="image-placeholder">
-  <div class="ph-icon">&#9702;</div>
-  <p class="ph-label">Illustration — Sacred Space</p>
-  <p class="ph-desc">Person seated in meditation posture with the center of the head illuminated — the sacred space where the Spirit resides and from which all energy work is conducted.</p>
-  <p class="ph-ref">Ref: Slide 19 — Sacred Space</p>
-</div>
-
-<p>Place yourself in the center of your head, in your sacred space, where you are safe and aware of your energetic authority. It is from there that you can do the Rose Meditation or any energy work safely, clearly, clairvoyantly and saving your energy.</p>
-
-<p>This space is dedicated to your Spirit, which is the purest part of you. It should always be tightly closed and protected. Go to this place whenever you do the Rose Meditation or whenever you need to make important decisions and want to be in alignment with your spiritual essence.</p>
-
-<div class="divider"></div>
 
 <!-- PREPARING THE SPACE -->
 <h2>Preparing the Space</h2>
@@ -579,16 +820,8 @@ LEVEL_2_HTML = """<!DOCTYPE html>
 <!-- ELEMENTS SUMMARY -->
 <div class="page-break"></div>
 <div class="elements-box">
-  <h3>Elements of Rose Meditation — Levels 1 &amp; 2</h3>
+  <h3>Elements of Rose Meditation — Level 2</h3>
   <ul>
-    <li>Grounding cord</li>
-    <li>Golden Sun</li>
-    <li>Aura boundaries and cord expansion</li>
-    <li>Roses of protection, separation and observation</li>
-    <li>Energies of the Earth and Cosmos</li>
-    <li>Cleansing Rose</li>
-    <li>Energy Recovery Rose</li>
-    <li>Sacred space</li>
     <li>Space protection</li>
     <li>Cleansing the Chakras and Aura Layers</li>
     <li>Golden Sticky Roses</li>
@@ -606,8 +839,12 @@ LEVEL_2_HTML = """<!DOCTYPE html>
   Yes! Now you are ready for a beautiful day!
 </div>
 
-<!-- END -->
+<!-- CREDITS -->
 <div class="end-page">
+  <p><strong>Teachings by Angelina Ataíde</strong></p>
+  <p style="font-size: 9pt; margin-top: 0.5cm; color: #8C7E73; font-style: normal; font-family: Inter, sans-serif;">Illustrations: Saraswati Noemi, Cecilia Lynch, Drica Voivodic</p>
+  <p style="font-size: 9pt; color: #8C7E73; font-style: normal; font-family: Inter, sans-serif;">No part of this manual may be reproduced and/or shown to people who have not attended a Rose Meditation Course.</p>
+  <p style="font-size: 8pt; margin-top: 0.5cm; color: #B5A89D; font-style: normal; font-family: Inter, sans-serif;">2021 Review &bull; ROSES OS 2026 Edition</p>
   <div class="cover-divider"></div>
   <p>ROSES OS</p>
   <p style="font-size: 10pt; margin-top: 0.5cm; color: #B5A89D; font-style: normal; font-family: Inter, sans-serif;">rosesos.com</p>
@@ -627,21 +864,13 @@ LEVEL_3_HTML = """<!DOCTYPE html>
 
 <!-- COVER -->
 <div class="cover">
+  <img src="public/rose med images/cover-level-3-01.png" style="max-width: 60%; height: auto; margin-bottom: 1.5cm; border-radius: 8px;" />
   <p class="cover-eyebrow">Student Manual</p>
   <h1 class="cover-title">Level 3</h1>
   <p class="cover-subtitle">Advanced Perception, The Analyzer &amp; Creating Reality</p>
   <div class="cover-divider"></div>
   <p class="cover-brand">ROSES OS</p>
   <p class="cover-note">Teachings by Angelina Ataíde</p>
-</div>
-
-<!-- COPYRIGHT -->
-<div class="copyright">
-  <p><strong>Teachings by Angelina Ataíde</strong></p>
-  <p>No part of this manual may be reproduced and/or shown to people who have not attended a Level 3 Rose Meditation Course.</p>
-  <p>Teaching the Rose Meditation and Aura Reading requires specific training, as well as a lot of experience with Aura Reading and energy work. Therefore, for your own protection, please do not share this information.</p>
-  <p>Illustrations: Saraswati Noemi, Cecilia Lynch, Drica Voivodic</p>
-  <p style="margin-top: 1cm; font-size: 8pt; color: #B5A89D;">2021 Review &bull; ROSES OS 2026 Edition</p>
 </div>
 
 <!-- INTRODUCTION -->
@@ -918,8 +1147,12 @@ LEVEL_3_HTML = """<!DOCTYPE html>
   <li>Cord + Golden Sun + discharge excess energy</li>
 </ul>
 
-<!-- END -->
+<!-- CREDITS -->
 <div class="end-page">
+  <p><strong>Teachings by Angelina Ataíde</strong></p>
+  <p style="font-size: 9pt; margin-top: 0.5cm; color: #8C7E73; font-style: normal; font-family: Inter, sans-serif;">Illustrations: Saraswati Noemi, Cecilia Lynch, Drica Voivodic</p>
+  <p style="font-size: 9pt; color: #8C7E73; font-style: normal; font-family: Inter, sans-serif;">No part of this manual may be reproduced and/or shown to people who have not attended a Level 3 Rose Meditation Course.</p>
+  <p style="font-size: 8pt; margin-top: 0.5cm; color: #B5A89D; font-style: normal; font-family: Inter, sans-serif;">2021 Review &bull; ROSES OS 2026 Edition</p>
   <div class="cover-divider"></div>
   <p>ROSES OS</p>
   <p style="font-size: 10pt; margin-top: 0.5cm; color: #B5A89D; font-style: normal; font-family: Inter, sans-serif;">rosesos.com</p>
@@ -930,13 +1163,17 @@ LEVEL_3_HTML = """<!DOCTYPE html>
 
 
 def generate_pdf(html_content: str, output_path: str) -> None:
-    html = weasyprint.HTML(string=html_content)
+    html = weasyprint.HTML(string=html_content, base_url="/home/user/roses-os")
     css = weasyprint.CSS(string=BRAND_CSS)
     html.write_pdf(output_path, stylesheets=[css])
     print(f"Generated: {output_path}")
 
 
 if __name__ == "__main__":
+    generate_pdf(
+        LEVEL_1_HTML,
+        "/home/user/roses-os/public/resources/manuals/ROSES-OS-Level-1-Manual-EN.pdf",
+    )
     generate_pdf(
         LEVEL_2_HTML,
         "/home/user/roses-os/public/resources/manuals/ROSES-OS-Level-2-Manual-EN.pdf",
@@ -945,4 +1182,4 @@ if __name__ == "__main__":
         LEVEL_3_HTML,
         "/home/user/roses-os/public/resources/manuals/ROSES-OS-Level-3-Manual-EN.pdf",
     )
-    print("Done — both manuals generated with ROSES OS brand aesthetic.")
+    print("Done — all three manuals generated with ROSES OS brand aesthetic.")
