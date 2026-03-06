@@ -72,11 +72,6 @@ export default function TeachingSlideCard({ slide, index = 0, className }: Teach
           <p className="font-serif text-lg text-[#9C6F6E]/70 text-center px-6">
             {concept}
           </p>
-          {slide.imageNote && (
-            <p className="text-xs text-[var(--color-foreground-faint)] text-center px-6 max-w-md">
-              {slide.imageNote}
-            </p>
-          )}
           <span className="absolute top-3 left-3 text-[10px] font-medium uppercase tracking-wider text-[#9E956B]/60 bg-[#9E956B]/10 px-2 py-0.5 rounded-full">
             {t?.ui.slide ?? 'Slide'} {slide.slideNumber}
           </span>
@@ -91,11 +86,6 @@ export default function TeachingSlideCard({ slide, index = 0, className }: Teach
         <div className="text-sm text-[var(--color-foreground-muted)] leading-relaxed whitespace-pre-line">
           {teachingText}
         </div>
-        {slide.imageNote && imageSrc && (
-          <p className="text-xs text-[var(--color-foreground-faint)] italic border-t border-[var(--color-border-subtle)] pt-3 mt-3">
-            {t?.ui.designerNote ?? 'Designer note'}: {slide.imageNote}
-          </p>
-        )}
       </div>
     </motion.div>
   );
