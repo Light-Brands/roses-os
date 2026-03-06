@@ -198,7 +198,7 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'After cleansing, the Rose is used to recover your own energy that has been left in or taken by others. The Rose is sent out as an instrument to gather and return your own life-force energy to each chakra, restoring fullness and sovereignty to each energy center.',
     originalImage: '14-recovery-rose-original.PNG',
-    reimaginedImage: '14-recoveryrose.PNG',
+    reimaginedImage: 'New background .png',
     level: 1,
     section: 'foundations',
   },
@@ -575,8 +575,8 @@ export const level2CleansingSlides: TeachingSlide[] = [
     teachingText:
       'After cleansing, the energy recovery process is repeated at a deeper level. The Rose is sent out to gather and return your own energy to each individual chakra, restoring sovereignty, vitality, and wholeness to each energy center.',
     originalImage: '31-energyrecoveryeachchakra-original.jpg',
-    reimaginedImage: '14-recoveryrose.PNG',
-    imageNote: 'Placeholder: using Level 1 recovery rose. Dedicated Level 2 version needs to be created.',
+    reimaginedImage: 'New background .png',
+    imageNote: 'Updated with new background image.',
     level: 2,
     section: 'cleansing',
   },
