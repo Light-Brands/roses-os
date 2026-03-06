@@ -287,7 +287,7 @@ export const level2Slides: TeachingSlide[] = [
     teachingText:
       'After protection and cleansing, you claim ownership of the space. This is an act of energetic sovereignty — declaring the space as yours, filling it with your own energy and intention. The space becomes an extension of your aura and your practice.',
     originalImage: '22-protect the space- original .PNG',
-    reimaginedImage: 'IMG_1806.jpg',
+    reimaginedImage: 'Protecttheroomnew.jpg',
     imageNote:
       'The room should show its own grounding cord expanding within the space. The grounding cord should be clear and transparent so people understand the cord also expands within the room — same visual direction as slide 20. Also: four golden lines go from the perineum to the four bottom corners of the room, and four golden lines from the crown to the top four corners of the room — this should be clear as this is what the slide demonstrates.',
     level: 2,
@@ -584,7 +584,7 @@ export const level2CleansingSlides: TeachingSlide[] = [
     teachingText:
       'Golden sticky roses are placed on each of the seven chakras, drawing out foreign energy lodged in the energy centers.',
     originalImage: '26-golden sticky 1- original .jpg',
-    reimaginedImage: 'Goldensticky1.jpg',
+    reimaginedImage: 'Newgoldensticky1.jpg',
     imageNote: 'Add subtle arrows to indicate the direction of energy being drawn out by the golden sticky roses.',
     level: 2,
     section: 'golden-sticky',
