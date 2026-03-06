@@ -167,6 +167,87 @@ These files exist in `public/rose med images/` and are referenced as supplementa
 | `29a-chakracleansing-original.jpg` | Slide 30 note | Detail reference for chakra cleansing |
 | `34-golden-sticky-3-original-alt.PNG` | Slide 34 note | Alternate original for golden sticky phase 3 |
 
+## 3.6. PDF IMAGE REPLACEMENT GUIDE -- PAGE-BY-PAGE
+
+The source PDFs already exist in `docs/source-materials/` with current text content. This section provides **page-by-page instructions** for which images to keep, replace, or add in each PDF. The replacement images are the same ones mapped in Section 3.5, all from `public/rose med images/`.
+
+The site has a built-in **PDF Image Editor tool** (accessible in the teaching section, component at `src/components/teaching/PdfImageEditor.tsx`) that can list, replace, add, and remove images in PDFs.
+
+### Level 1 Manual (13 pages) -- `Rose-Meditation-Level-1_compressed.pdf`
+
+| PDF Page | Manual Concept | Action | Image |
+|---|---|---|---|
+| 1 | Cover page | **KEEP** as-is | -- |
+| 2 | Table of contents | **KEEP** as-is | -- |
+| 3 | Getting Ready to Start | **ADD** image (currently text-only) | `2-meditation-posture.PNG` (slide 2) |
+| 4 | 1. Grounding Cord | **REPLACE** existing illustration | `3-grounding-cord.jpeg` (slide 3) |
+| 5 | 2. Golden Sun | **REPLACE** existing illustration | `4-golden-sun.png` (slide 4) |
+| 6 | 3-5. Aura Limits, Cord Expansion & Renewal | **ADD** images (currently text-only) | `5-aura-exercise.PNG` (slide 5) + `6-expansion-grounding-cord.jpeg` (slide 6) |
+| 7 | 6. Four Roses of Protection | **REPLACE** existing illustration | `12-four-roses.PNG` (slide 12) |
+| 8 | 7. Circuit of Earth & Cosmos | **REPLACE** existing illustration | `8-earth-energy.PNG` (slide 8) + `9-cosmos-circuit.jpeg` (slide 9) |
+| 9 | 8. Roses to Cleanse & Recover Energy | **REPLACE** existing illustration | `13-cleansing-rose-reimagined.png` (slide 13) + `14-energy-recovery-background.png` (slide 14) |
+| 10 | 9. Pink Rose | **KEEP** existing illustration | -- |
+| 11 | To End the Meditation | **ADD** image (currently text-only) | `17-discharge-excess.PNG` (slide 17) |
+| 12 | Elements of Rose Meditation Level 1 (summary) | **KEEP** existing mandala | -- |
+| 13 | Final page | **KEEP** as-is | -- |
+
+### Level 2 Manual -- `ROSES-Manual-Levels-1-and-2_compressed.pdf` (now Level 2 only)
+
+This PDF originally contained both Levels 1 & 2. **The Level 1 content (old pages 1-10) has been removed.** This is now a standalone Level 2 manual. The designer must:
+
+1. **CREATE a new cover page** matching the style of the Level 1 and Level 3 covers (rose in sacred geometry circle, "Rose Meditation -- Level 2 -- Deeper Practice", same credits/branding)
+2. **CREATE a new TOC** for Level 2 content only
+3. Update images on the remaining Level 2 pages as mapped below
+
+The page numbers below refer to the **new** Level 2 manual page order (after removing L1 content):
+
+| New Page | Manual Concept | Action | Image |
+|---|---|---|---|
+| 1 | **Cover page** | **CREATE** new cover | Designer creates -- match Level 1 & Level 3 cover style (rose in sacred geometry, title "Rose Meditation -- Level 2") |
+| 2 | **Table of Contents** | **CREATE** new TOC | Level 2 content only |
+| 3 | Center of the Head / Sacred Space | **REPLACE** existing illustration | `15-sacred-space.png` (slide 15) + `16-sacred-space.PNG` (slide 16) |
+| 4 | 10. Preparing the Room | **REPLACE** existing illustration | `17-create-the-room.jpg` (slide 17) |
+| 5 | Owning Your Space | **REPLACE** existing illustration | `19-owning-space.jpg` (slide 19) |
+| 6 | Chakra Cleansing | **REPLACE** existing illustration | `30-cleansing-each-chakra.PNG` (slide 30) |
+| 7 | The Seven Chakras | **KEEP** existing illustration | -- |
+| 8 | Golden Sticky Roses | **REPLACE** existing illustration | `32-golden-sticky-1.jpg` (slide 32) + `33-golden-sticky-2.jpg` (slide 33) + `34-golden-sticky-3.jpg` (slide 34) + `35-golden-sticky-4.jpg` (slide 35) |
+| 9 | Elements of Level 2 (summary) | **KEEP** existing mandala | -- |
+| 10 | Final page | **KEEP** as-is (update credits if needed) | -- |
+
+> **Cover page reference:** See Level 1 cover (page 1 of `Rose-Meditation-Level-1_compressed.pdf`) and Level 3 cover (page 1 of `ROSES-Manual-Level-3_compressed.pdf`) for the design style -- rose image centered in sacred geometry circle, manual title, "Teachings by Angelina Ataíde · Escola da Aura", illustration credits, "ROSES OS" branding at bottom.
+
+### Level 3 Manual (15 pages) -- `ROSES-Manual-Level-3_compressed.pdf`
+
+Most existing Level 3 illustrations are kept. Two pages get replacement images that need to be added to the repo first.
+
+| PDF Page | Manual Concept | Action | Image |
+|---|---|---|---|
+| 1 | Cover | **KEEP** as-is | -- |
+| 2 | TOC | **KEEP** as-is | -- |
+| 3 | The 5 Bodies & 5 Levels of Existence | **KEEP** existing illustration | -- |
+| 4 | 5 Bodies cont'd | **KEEP** as-is (text only) | -- |
+| 5 | Breaking Spiritual Agreements | **REPLACE** existing illustration | `EC85F924-BFF6-44E3-961E-76EE8089C045.png` (**must be added to repo**) |
+| 6 | Cutting Energetic Cords | **KEEP** existing illustration | -- |
+| 7 | Post-Intimacy Energy Cleansing | **KEEP** existing illustration | -- |
+| 8 | Classes & Consultations | **KEEP** existing illustration | -- |
+| 9 | Post-Session Cleansing Steps | **KEEP** as-is (text only) | -- |
+| 10 | The Analyzer | **KEEP** existing illustration | -- |
+| 11 | Transmedium Channels | **KEEP** existing illustration | -- |
+| 12 | Creating Reality & Impeccability | **KEEP** existing illustration | -- |
+| 13 | Mock-up / Manifestation Technique | **REPLACE** existing illustration | `A9D08A1B-7A2F-480E-AB91-525CF8EE741F.png` (**must be added to repo**) |
+| 14 | Elements of Level 3 (summary) | **KEEP** existing mandala | -- |
+| 15 | Final page | **KEEP** as-is | -- |
+
+> **Note:** The two replacement images for Level 3 pages 5 and 13 are not yet in the repository. They need to be uploaded to `public/rose med images/` before the designer can use them. Ideally rename them to match the naming convention (e.g., `L3-breaking-agreements.png` and `L3-mockup-manifestation.png`).
+
+### Designer Workflow Summary
+
+1. **Level 1 Manual** -- Open source PDF, replace/add images per table above, export
+2. **Level 2 Manual** -- Remove Level 1 content from combined PDF, create new cover + TOC, replace images per table above, export as standalone Level 2
+3. **Level 3 Manual** -- Upload two new images to repo, replace pages 5 and 13 only, export
+4. **Final PDFs** -- Copy updated manuals to `public/resources/manuals/` with correct naming
+5. **Multilingual** -- Repeat for Spanish, Portuguese, and Greek (same images, translated text)
+
 ---
 
 ## 4. CREATIVE DIRECTION -- THE REIMAGINED IMAGE STYLE
