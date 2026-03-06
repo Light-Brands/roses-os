@@ -402,7 +402,7 @@ LEVEL_2_HTML = """<!DOCTYPE html>
   <p class="cover-subtitle">Sacred Space, Chakra Cleansing &amp; Energy Recovery</p>
   <div class="cover-divider"></div>
   <p class="cover-brand">ROSES OS</p>
-  <p class="cover-note">Teachings by Angelina Ataíde. This manual is for initiated students only. Please do not share this information.</p>
+  <p class="cover-note">Teachings by Angelina Ataíde</p>
 </div>
 
 <!-- COPYRIGHT -->
@@ -632,7 +632,7 @@ LEVEL_3_HTML = """<!DOCTYPE html>
   <p class="cover-subtitle">Advanced Perception, The Analyzer &amp; Creating Reality</p>
   <div class="cover-divider"></div>
   <p class="cover-brand">ROSES OS</p>
-  <p class="cover-note">Teachings by Angelina Ataíde. This manual is for initiated students only. Please do not share this information.</p>
+  <p class="cover-note">Teachings by Angelina Ataíde</p>
 </div>
 
 <!-- COPYRIGHT -->
