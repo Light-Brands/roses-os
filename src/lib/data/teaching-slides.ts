@@ -112,18 +112,7 @@ export const level1Slides: TeachingSlide[] = [
     level: 1,
     section: 'foundations',
   },
-  {
-    id: 'l1-full-setup',
-    slideNumber: 11,
-    concept: 'Full Meditation Setup',
-    teachingText:
-      'The complete foundational setup combines posture, aura, and expanded grounding cord: the person is seated in proper posture, enclosed within their aura, with the grounding cord descending into the earth.',
-    reimaginedImage: '11-expansion-grounding-cord.PNG',
-    imageNote: 'See slide 10 original for accuracy reference. The grounding cord is missing from this image — it should be clearly visible, expanded, thick, transparent, and strong (same direction as slides 7 and 10).',
-    level: 1,
-    section: 'foundations',
-  },
-  {
+{
     id: 'l1-golden-sun-fills',
     slideNumber: '11a',
     concept: 'Golden Sun Fills You',

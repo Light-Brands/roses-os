@@ -79,7 +79,7 @@ export const level1Techniques: MeditationTechnique[] = [
       'Widen the grounding cord to match the width of the aura, grounding the entire energy field.',
     instruction:
       'Expand the cord sideways to the width of the Aura, grounding the entire Aura.',
-    linkedSlideIds: ['l1-grounding-expansion', 'l1-full-setup'],
+    linkedSlideIds: ['l1-grounding-expansion'],
   },
   {
     id: 'l1t-renewal-grounding-cord',
