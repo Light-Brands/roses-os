@@ -30,7 +30,7 @@ export function PdfExportButton({ className }: PdfExportButtonProps) {
       )}
     >
       <FileDown className="h-4 w-4" />
-      <span>Export PDF</span>
+      <span>Export Teachers Aid PDF</span>
     </motion.button>
   );
 }

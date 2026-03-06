@@ -36,7 +36,7 @@ export function ManualDownloadButton({
         ) : (
           <BookOpen className="h-4 w-4" />
         )}
-        <span>View {label}</span>
+        <span>Download the {label}</span>
       </a>
       <a
         href={href}
@@ -49,7 +49,7 @@ export function ManualDownloadButton({
           'transition-all duration-200',
           'text-sm',
         )}
-        title="Download PDF"
+        title="Download the Student Manual"
       >
         <Download className="h-4 w-4" />
       </a>

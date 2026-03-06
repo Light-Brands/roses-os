@@ -55,7 +55,7 @@ export default function Level1Page() {
                 <PdfExportButton />
                 <ManualDownloadButton
                   href="/resources/manuals/ROSES-OS-Level-1-Manual-EN.pdf"
-                  label="Manual (Level 1)"
+                  label="Student Manual"
                 />
                 <ImageDownloadButton slides={level1Slides} level={1} />
                 <LanguageSelector />

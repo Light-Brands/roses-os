@@ -58,7 +58,7 @@ export default function Level2Page() {
                 <PdfExportButton />
                 <ManualDownloadButton
                   href="/resources/manuals/ROSES-OS-Level-2-Manual-EN.pdf"
-                  label="Manual (Level 2)"
+                  label="Student Manual"
                 />
                 <ImageDownloadButton slides={[...level2Slides, ...chakraSlides, ...level2CleansingSlides]} level={2} />
                 <LanguageSelector />
