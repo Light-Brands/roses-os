@@ -48,7 +48,7 @@ export default function TeachingSlideCard({ slide, index = 0, className }: Teach
     >
       {/* Image Area */}
       {imageSrc ? (
-        <div className="relative bg-[var(--color-background-subtle)] aspect-[4/3] max-h-[600px]">
+        <div className="relative bg-[var(--color-background-subtle)] aspect-[16/10]">
           <img
             src={imageSrc}
             alt={concept}
@@ -63,7 +63,7 @@ export default function TeachingSlideCard({ slide, index = 0, className }: Teach
         <div
           className={cn(
             'relative flex flex-col items-center justify-center gap-3',
-            'aspect-[4/3]',
+            'aspect-[16/10]',
             'bg-[var(--color-background-subtle)]',
             'border-b-2 border-dashed border-[#9C6F6E]/40',
           )}
