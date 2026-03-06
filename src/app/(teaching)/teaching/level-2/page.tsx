@@ -57,8 +57,8 @@ export default function Level2Page() {
               <div className="flex items-center gap-3 mt-4 flex-wrap">
                 <PdfExportButton />
                 <ManualDownloadButton
-                  href="/resources/manuals/ROSES-Manual-Levels-1-and-2.pdf"
-                  label="Manual (Levels 1 & 2)"
+                  href="/resources/manuals/ROSES-OS-Level-2-Manual-EN.pdf"
+                  label="Manual (Level 2)"
                 />
                 <ImageDownloadButton slides={[...level2Slides, ...chakraSlides, ...level2CleansingSlides]} level={2} />
                 <LanguageSelector />
