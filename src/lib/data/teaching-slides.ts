@@ -60,8 +60,7 @@ export const level1Slides: TeachingSlide[] = [
     concept: 'Meditation Posture',
     teachingText:
       'Proper meditation posture is seated upright in a chair. Feet are flat on the floor, hands resting gently on the thighs or knees, spine upright, eyes closed. The body is relaxed yet alert — grounded and receptive.',
-    originalImage: '6-posture-original.PNG',
-    reimaginedImage: '6-posture.PNG',
+    reimaginedImage: 'Posturefinal.PNG',
     level: 1,
     section: 'foundations',
   },
