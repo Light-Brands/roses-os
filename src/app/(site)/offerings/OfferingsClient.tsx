@@ -24,6 +24,7 @@ import ContributionTiers from '@/components/sections/ContributionTiers';
 import InvitationCTA from '@/components/sections/InvitationCTA';
 import SubscribeCalendar from '@/components/ui/SubscribeCalendar';
 import SummaryDownloadButton from '@/components/ui/SummaryDownloadButton';
+import PaidProgramsDownloadButton from '@/components/ui/PaidProgramsDownloadButton';
 
 // =============================================================================
 // TIMEZONE SELECTOR (for continued programs)
@@ -664,6 +665,11 @@ function OfferingsContent() {
                 </div>
               );
             })}
+          </div>
+
+          {/* Download Additional Programs Guide */}
+          <div className="flex justify-center pt-8 print:hidden">
+            <PaidProgramsDownloadButton variant="light" />
           </div>
         </div>
       </section>
