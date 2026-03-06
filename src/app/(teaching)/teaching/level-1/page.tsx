@@ -51,8 +51,9 @@ export default function Level1Page() {
               <div className="flex items-center gap-3 mt-4 flex-wrap">
                 <PdfExportButton />
                 <ManualDownloadButton
-                  href="/manuals/rose-meditation-level-1-final.pdf"
+                  href="/resources/manuals/ROSES-OS-Level-1-Manual-EN.pdf"
                   label="Download Manual (Level 1)"
+                  coverImage="/images/FA9AE173-FA55-4C72-A917-EC084DFE531E.png"
                 />
                 <ImageDownloadButton slides={level1Slides} level={1} />
                 <LanguageSelector />

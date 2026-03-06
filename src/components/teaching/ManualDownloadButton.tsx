@@ -6,12 +6,14 @@ import { cn } from '@/lib/utils';
 interface ManualDownloadButtonProps {
   href: string;
   label?: string;
+  coverImage?: string;
   className?: string;
 }
 
 export function ManualDownloadButton({
   href,
   label = 'Student Manual',
+  coverImage,
   className,
 }: ManualDownloadButtonProps) {
   return (
@@ -29,7 +31,11 @@ export function ManualDownloadButton({
         className,
       )}
     >
-      <FileDown className="h-4 w-4" />
+      {coverImage ? (
+        <img src={coverImage} alt="" className="h-8 w-auto rounded-sm object-cover" />
+      ) : (
+        <FileDown className="h-4 w-4" />
+      )}
       <span>{label}</span>
     </a>
   );
