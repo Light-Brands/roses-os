@@ -7,10 +7,96 @@
  */
 
 import { readFileSync, writeFileSync, copyFileSync } from 'fs';
-import { PDFDocument } from 'pdf-lib';
+import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
 
 const RESOURCES_DIR = 'public/resources/manuals';
 const SOURCE_DIR = 'docs/source-materials';
+
+/**
+ * Build a replacement "Quick Reference" page for the Level 2 manual.
+ * The original page 8 lists all 11 techniques from Levels 1 & 2.
+ * This replacement shows only Level 2 techniques.
+ */
+async function buildLevel2QuickReferencePage(doc, insertIndex) {
+  const page = doc.insertPage(insertIndex, [612, 792]); // US Letter
+  const bold = await doc.embedFont(StandardFonts.HelveticaBold);
+  const regular = await doc.embedFont(StandardFonts.Helvetica);
+  const italic = await doc.embedFont(StandardFonts.HelveticaOblique);
+  const black = rgb(0, 0, 0);
+  const grey = rgb(0.4, 0.4, 0.4);
+
+  let y = 680;
+
+  // "QUICK REFERENCE" header
+  page.drawText('QUICK REFERENCE', {
+    x: 306 - bold.widthOfTextAtSize('QUICK REFERENCE', 22) / 2,
+    y,
+    size: 22,
+    font: bold,
+    color: black,
+  });
+  y -= 50;
+
+  // Subtitle
+  const subtitle = 'Elements of Rose Meditation — Level 2';
+  page.drawText(subtitle, {
+    x: 306 - bold.widthOfTextAtSize(subtitle, 16) / 2,
+    y,
+    size: 16,
+    font: bold,
+    color: black,
+  });
+  y -= 60;
+
+  // Technique list
+  const techniques = [
+    'Space protection',
+    'Cleansing the Chakras and Aura Layers',
+    'Golden Sticky Roses',
+  ];
+  for (const t of techniques) {
+    page.drawText(t, {
+      x: 120,
+      y,
+      size: 14,
+      font: regular,
+      color: black,
+    });
+    y -= 32;
+  }
+
+  // Finish line
+  y -= 20;
+  const finishLabel = 'Finish: ';
+  const finishDetail = 'cord + Golden Sun + discharge excess energy';
+  page.drawText(finishLabel, {
+    x: 120,
+    y,
+    size: 14,
+    font: bold,
+    color: black,
+  });
+  page.drawText(finishDetail, {
+    x: 120 + bold.widthOfTextAtSize(finishLabel, 14),
+    y,
+    size: 14,
+    font: regular,
+    color: black,
+  });
+
+  // Motivational text
+  y -= 60;
+  const motto = 'YES! NOW YOU ARE READY FOR A BEAUTIFUL DAY!';
+  page.drawText(motto, {
+    x: 306 - italic.widthOfTextAtSize(motto, 14) / 2,
+    y,
+    size: 14,
+    font: italic,
+    color: grey,
+  });
+
+  return page;
+}
 
 async function main() {
   // 1. Level 1 — copy the compressed Level 1 source PDF directly
@@ -30,6 +116,12 @@ async function main() {
   for (const page of level2Pages) {
     level2Doc.addPage(page);
   }
+
+  // Replace page 8 (0-indexed: 7) — the "Quick Reference" page.
+  // The original lists all 11 techniques from Levels 1 & 2;
+  // the replacement shows only Level 2 techniques.
+  level2Doc.removePage(7);
+  await buildLevel2QuickReferencePage(level2Doc, 7);
 
   const level2Bytes = await level2Doc.save();
   const level2Path = `${RESOURCES_DIR}/ROSES-OS-Level-2-Manual-EN.pdf`;
