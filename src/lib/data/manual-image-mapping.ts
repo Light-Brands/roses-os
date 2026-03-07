@@ -110,6 +110,12 @@ export const level3ManualImages: ManualImageMapping = {
         { concept: 'The Analyzer', slideNumber: 36, reimaginedImage: '36-analyzer.PNG', originalImage: '36-analyzer-original-reimagined.jpg' },
       ],
     },
+    {
+      title: 'Stick of Agreements',
+      images: [
+        { concept: 'Stick of Agreements', slideNumber: 38, reimaginedImage: 'level-3/stick-of-agreements.png' },
+      ],
+    },
   ],
 };
 
