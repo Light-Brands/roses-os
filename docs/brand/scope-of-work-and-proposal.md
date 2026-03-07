@@ -143,56 +143,136 @@ All strategic and brand documentation living in the repository:
 | 12 | **Platform UX Refinement** | Holistic UX review and flow optimization per Diego's suggestion |
 | 13 | **GEO / Content Architecture** | Semantic content structure for AI discoverability (Generative Engine Optimization) |
 | 14 | **Rose App Foundation** | Initial architecture for the Rose App (daily practice — spine of global expression) |
-| 15 | **Aura Levels Integration** | Aura Reading Levels 1–5 content and teaching structure |
+| 15 | **Aura Levels Integration** | Aura Reading Levels 1–5 content and teaching structure *(pending decision)* |
 
 ---
 
 ## 4. Value & Pricing
 
-The pricing below reflects two columns: **Market Value** (what this work would cost at standard industry rates from an agency or senior freelance professional) and **Contribution Rate** (a mission-aligned rate at 30% of market value — a 70% reduction that honors the shared purpose of the project).
+Pricing is structured around **milestone-based outcomes** — each milestone has a fixed price tied to the completion and acceptance of specific deliverables, not hours worked. Payment is triggered when a milestone is delivered and accepted by the team.
 
-The market values are based on current industry benchmarks for senior-level full-stack development ($150–200/hr), brand strategy ($125–175/hr), design production ($100–150/hr), and specialized work like 3D/WebGL ($175–250/hr).
+Each milestone reflects two columns: **Market Value** (what this outcome would cost at standard industry rates from an agency or senior professional) and **Contribution Rate** (a mission-aligned rate at 30% of market value — a 70% reduction that honors the shared purpose of the project).
 
 The difference between market value and contribution rate can be settled through any combination of: **equity/ownership stake** in ROSES OS, **free program enrollment** (Rose Meditation, Aura, and community programs), and/or **Numa land allocation discount**.
 
 ---
 
-### 4.1 Phase 1 — Completed Work
+### 4.1 Phase 1 — Completed Milestones
 
-| # | Deliverable | Scope | Market Value | Contribution Rate |
-|---|-------------|-------|--------------|-------------------|
-| 1 | **Web Platform MVP** | 23 pages, 65+ components, responsive, animations, page transitions | $55,000 | $16,500 |
-| 2 | **Teaching Platform** | 3 levels, visual slide cards, technique data layer, downloads, password protection | $22,000 | $6,600 |
-| 3 | **Design System** | Full color palette, typography, component library, dark mode, branded templates | $15,000 | $4,500 |
-| 4 | **Content Architecture** | Brand DNA (80KB), Codex (731 lines), training manual, 4 designer specs, program materials | $18,000 | $5,400 |
-| 5 | **Multilingual Infrastructure** | 4 languages (EN, ES, PT, EL) across teaching content and UI | $10,000 | $3,000 |
-| 6 | **Admin Dashboard (UI Scaffold)** | 8 admin pages designed and built with demo data — not yet connected to live backend | $5,000 | $1,500 |
-| 7 | **API Layer & Backend** | 3 functional endpoints (content, media, feedback) with Supabase; 3 stub endpoints (enrollment, contribution, agreements); auth (OAuth + SSR) | $8,000 | $2,400 |
-| 8 | **3D Brand Experience** | Custom Three.js rose, GLSL shaders, bloom/particles, 48 textures, responsive canvas | $18,000 | $5,400 |
-| | | | | |
-| | **Phase 1 Total** | | **$151,000** | **$45,300** |
+#### Milestone 1: Core Platform & Design System
 
-### 4.2 Phase 2 — In Progress
+| Deliverable | Scope |
+|-------------|-------|
+| **Web Platform MVP** | 23 pages, 65+ components, responsive, animations, page transitions |
+| **Design System** | Full color palette, typography, component library, dark mode, branded templates |
+| **3D Brand Experience** | Custom Three.js rose, GLSL shaders, bloom/particles, 48 textures, responsive canvas |
 
-| # | Deliverable | Scope | Market Value | Contribution Rate |
-|---|-------------|-------|--------------|-------------------|
-| 9 | **MDR Teacher's Visual Manual** | 46-page manual, custom illustrations, chakra diagrams, diverse representation, print-ready | $14,000 | $4,200 |
-| 10 | **Student Manuals Redesign** | Level 2 + Level 3 manuals, 4 languages each (8–12 PDFs), Yeva World aesthetic | $16,000 | $4,800 |
-| 11 | **Brand Book** | 110–130 page brand identity book, 13 sections, visual design, print-ready | $24,000 | $7,200 |
-| | | | | |
-| | **Phase 2 Total** | | **$54,000** | **$16,200** |
+**Acceptance Criteria:** Platform loads and renders all 23 pages with responsive design, design system applied consistently, 3D rose visualization functional across devices.
 
-### 4.3 Phase 3 — Proposed Ongoing
+| | Market Value | Contribution Rate |
+|--|--------------|-------------------|
+| **Milestone 1 Total** | **$88,000** | **$26,400** |
 
-| Deliverable | Scope | Market Value | Contribution Rate |
-|-------------|-------|--------------|-------------------|
-| **Platform Maintenance & Hosting** | Updates, security, bug fixes, hosting management | $3,000/mo | $900/mo |
-| **UX Refinement & New Features** | Flow optimization, GEO architecture, new sections | $5,000/mo | $1,500/mo |
-| **Content Updates & Expansion** | New levels, Aura integration, program materials | $3,000/mo | $900/mo |
-| | | | |
-| **Phase 3 Monthly Retainer** | | **$11,000/mo** | **$3,300/mo** |
+---
 
-*Phase 3 retainer can be structured as needed — monthly, quarterly, or per-project.*
+#### Milestone 2: Teaching & Content Platform
+
+| Deliverable | Scope |
+|-------------|-------|
+| **Teaching Platform** | 3 levels, visual slide cards, technique data layer, downloads, password protection |
+| **Content Architecture** | Brand DNA (80KB), Codex (731 lines), training manual, 4 designer specs, program materials |
+| **Multilingual Infrastructure** | 4 languages (EN, ES, PT, EL) across teaching content and UI |
+
+**Acceptance Criteria:** All 3 teaching levels accessible with password protection, slide cards and downloads functional, content available in all 4 languages, documentation complete and version-controlled.
+
+| | Market Value | Contribution Rate |
+|--|--------------|-------------------|
+| **Milestone 2 Total** | **$50,000** | **$15,000** |
+
+---
+
+#### Milestone 3: Backend & Admin
+
+| Deliverable | Scope |
+|-------------|-------|
+| **Admin Dashboard (UI Scaffold)** | 8 admin pages designed and built with demo data — not yet connected to live backend |
+| **API Layer & Backend** | 3 functional endpoints (content, media, feedback) with Supabase; 3 stub endpoints (enrollment, contribution, agreements); auth (OAuth + SSR) |
+
+**Acceptance Criteria:** Admin UI renders all 8 pages with demo data, API endpoints return expected responses, authentication flow (OAuth + SSR) functional.
+
+| | Market Value | Contribution Rate |
+|--|--------------|-------------------|
+| **Milestone 3 Total** | **$13,000** | **$3,900** |
+
+---
+
+| | Market Value | Contribution Rate |
+|--|--------------|-------------------|
+| **Phase 1 Total (All Milestones)** | **$151,000** | **$45,300** |
+
+### 4.2 Phase 2 — In-Progress Milestones
+
+#### Milestone 4: MDR Teacher's Visual Manual
+
+| Deliverable | Scope |
+|-------------|-------|
+| **MDR Teacher's Visual Manual** | 46-page manual, custom illustrations, chakra diagrams, diverse representation, print-ready |
+
+**Acceptance Criteria:** 46-page print-ready PDF delivered with all custom illustrations, chakra diagrams with accurate placement, diverse representation across figures.
+
+| | Market Value | Contribution Rate |
+|--|--------------|-------------------|
+| **Milestone 4 Total** | **$14,000** | **$4,200** |
+
+---
+
+#### Milestone 5: Student Manuals Redesign
+
+| Deliverable | Scope |
+|-------------|-------|
+| **Student Manuals Redesign** | Level 2 + Level 3 manuals, 4 languages each (8–12 PDFs), Yeva World aesthetic |
+
+**Acceptance Criteria:** Level 2 and Level 3 manuals delivered as print-ready PDFs in all 4 languages (8–12 total PDFs), Yeva World aesthetic applied consistently.
+
+| | Market Value | Contribution Rate |
+|--|--------------|-------------------|
+| **Milestone 5 Total** | **$16,000** | **$4,800** |
+
+---
+
+#### Milestone 6: Brand Book
+
+| Deliverable | Scope |
+|-------------|-------|
+| **Brand Book** | 110–130 page brand identity book, 13 sections, visual design, print-ready |
+
+**Acceptance Criteria:** 110–130 page print-ready brand book delivered with all 13 sections complete, visual design applied, ready for distribution.
+
+| | Market Value | Contribution Rate |
+|--|--------------|-------------------|
+| **Milestone 6 Total** | **$24,000** | **$7,200** |
+
+---
+
+| | Market Value | Contribution Rate |
+|--|--------------|-------------------|
+| **Phase 2 Total (All Milestones)** | **$54,000** | **$16,200** |
+
+### 4.3 Phase 3 — Proposed Project Milestones
+
+Phase 3 is structured as **individual project milestones** — each scoped as a standalone engagement with defined deliverables and acceptance criteria. Projects are proposed and agreed upon individually, with no ongoing retainer or support commitment.
+
+#### Project Milestone Options
+
+| Project | Deliverables | Market Value | Contribution Rate |
+|---------|-------------|--------------|-------------------|
+| **Platform UX Refinement** | Holistic UX review, flow optimization, implemented improvements — accepted by team | $15,000 | $4,500 |
+| **GEO / Content Architecture** | Semantic content structure for AI discoverability, implemented and validated | $12,000 | $3,600 |
+| **Rose App Foundation** | Initial architecture and prototype for the Rose App (daily practice) | $25,000 | $7,500 |
+| **Aura Levels Integration** | Aura Reading Levels 1–5 content and teaching structure *(pending decision)* | $18,000 | $5,400 |
+| **Platform Maintenance Sprint** | Security audit, bug fixes, dependency updates, hosting optimization — scoped per engagement | $9,000 | $2,700 |
+
+*Each project is scoped, priced, and accepted independently. No ongoing commitment — projects are engaged as needed.*
 
 ---
 
@@ -200,17 +280,24 @@ The difference between market value and contribution rate can be settled through
 
 | Phase | Market Value | Contribution Rate | Savings |
 |-------|--------------|-------------------|---------|
-| Phase 1 (Completed) | $151,000 | $45,300 | 70% |
-| Phase 2 (In Progress) | $54,000 | $16,200 | 70% |
-| Phase 3 (Ongoing) | $11,000/mo | $3,300/mo | 70% |
+| Phase 1 — 3 Milestones (Completed) | $151,000 | $45,300 | 70% |
+| Phase 2 — 3 Milestones (In Progress) | $54,000 | $16,200 | 70% |
+| Phase 3 — Per-Project Milestones | Scoped per project | Scoped per project | 70% |
 | | | | |
 | **Total (Phases 1 & 2)** | **$205,000** | **$61,500** | **$143,500 in value contributed to the mission** |
 
 The 70% difference between market value and contribution rate represents **$143,500 in value** being contributed directly to the mission — in the same spirit of conscious contribution that ROSES OS extends to its community. This balance can be settled through any combination of equity, program enrollment, and/or Numa land discount (see Payment Structure Options below).
 
+### 4.5 Milestone Payment Terms
+
+- **Outcome-based:** Payment is tied to deliverable completion and team acceptance — not hours tracked or time spent
+- **Acceptance process:** Each milestone is reviewed by the team upon delivery; payment is triggered once accepted
+- **Clear criteria:** Every milestone has defined acceptance criteria so both sides know exactly what "done" looks like
+- **No time-tracking:** This structure removes hourly billing entirely — what matters is the outcome, not the hours
+
 ---
 
-### 4.5 Payment Structure Options
+### 4.6 Payment Structure Options
 
 For the team to consider:
 
@@ -237,7 +324,7 @@ For the team to consider:
 
 ---
 
-### 4.6 Considerations for Discussion
+### 4.7 Considerations for Discussion
 
 - **Ownership & IP** — How do we define ownership of the platform code, brand assets, and content? What belongs to the project vs. individual contributors?
 - **Ongoing Maintenance** — The platform requires ongoing technical maintenance, hosting, updates, and security. How is this accounted for?
