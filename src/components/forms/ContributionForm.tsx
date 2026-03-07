@@ -20,10 +20,14 @@ const tierIcons: Record<string, LucideIcon> = {
 
 export function ContributionForm({ tiers, onSubmit, className }: ContributionFormProps) {
   const [selectedTier, setSelectedTier] = useState<string>('');
+  const [showValidation, setShowValidation] = useState(false);
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!selectedTier) return;
+    if (!selectedTier) {
+      setShowValidation(true);
+      return;
+    }
     onSubmit(selectedTier);
   }
 
@@ -147,10 +151,16 @@ export function ContributionForm({ tiers, onSubmit, className }: ContributionFor
         </div>
       </fieldset>
 
+      {/* Validation hint */}
+      {showValidation && !selectedTier && (
+        <p className="text-sm text-[var(--color-rose-600)]" role="alert">
+          Please select a contribution tier to continue.
+        </p>
+      )}
+
       {/* Submit */}
       <motion.button
         type="submit"
-        disabled={!selectedTier}
         whileHover={selectedTier ? { scale: 1.02 } : undefined}
         whileTap={selectedTier ? { scale: 0.98 } : undefined}
         className={cn(
@@ -158,7 +168,7 @@ export function ContributionForm({ tiers, onSubmit, className }: ContributionFor
           'bg-[var(--color-rose-clay)] text-[var(--color-foreground-on-rose)]',
           'transition-all duration-200',
           'hover:bg-[var(--color-rose-600)]',
-          'disabled:cursor-not-allowed disabled:opacity-50'
+          !selectedTier && 'opacity-50'
         )}
       >
         Continue

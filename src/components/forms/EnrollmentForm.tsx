@@ -30,13 +30,25 @@ export function EnrollmentForm({ onSubmit, selectedProgramId, className }: Enrol
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [programId, setProgramId] = useState(selectedProgramId || programs[0]?.id || '');
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
 
   const selectedProgram = programs.find((p) => p.id === programId);
   const isValid = name.trim() !== '' && email.trim() !== '' && !!selectedProgram;
 
+  const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const errors = {
+    name: touched.name && name.trim() === '' ? 'Please enter your full name.' : '',
+    email: touched.email && email.trim() === ''
+      ? 'Please enter your email address.'
+      : touched.email && !emailValid
+        ? 'Please enter a valid email address.'
+        : '',
+  };
+
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!isValid || !selectedProgram) return;
+    setTouched({ name: true, email: true });
+    if (!isValid || !selectedProgram || !emailValid) return;
     onSubmit({ name: name.trim(), email: email.trim(), program: selectedProgram.id });
   }
 
@@ -63,8 +75,16 @@ export function EnrollmentForm({ onSubmit, selectedProgramId, className }: Enrol
           placeholder="Your full name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className={inputStyles}
+          onBlur={() => setTouched((t) => ({ ...t, name: true }))}
+          aria-invalid={!!errors.name || undefined}
+          aria-describedby={errors.name ? 'enrollment-name-error' : undefined}
+          className={cn(inputStyles, errors.name && 'border-[var(--color-rose-600)]')}
         />
+        {errors.name && (
+          <p id="enrollment-name-error" className="text-xs text-[var(--color-rose-600)]" role="alert">
+            {errors.name}
+          </p>
+        )}
       </div>
 
       {/* Email */}
@@ -82,8 +102,16 @@ export function EnrollmentForm({ onSubmit, selectedProgramId, className }: Enrol
           placeholder="you@example.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className={inputStyles}
+          onBlur={() => setTouched((t) => ({ ...t, email: true }))}
+          aria-invalid={!!errors.email || undefined}
+          aria-describedby={errors.email ? 'enrollment-email-error' : undefined}
+          className={cn(inputStyles, errors.email && 'border-[var(--color-rose-600)]')}
         />
+        {errors.email && (
+          <p id="enrollment-email-error" className="text-xs text-[var(--color-rose-600)]" role="alert">
+            {errors.email}
+          </p>
+        )}
       </div>
 
       {/* Program selection */}
