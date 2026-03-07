@@ -42,6 +42,7 @@ export type { ManualImageEntry, ManualImageMapping } from './manual-image-mappin
 
 export {
   manualPdfConfigs,
+  teachersAidPdfConfig,
   getManualPdfConfig,
 } from './manual-pdf-paths';
 

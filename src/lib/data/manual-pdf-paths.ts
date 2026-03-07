@@ -62,6 +62,22 @@ export const manualPdfConfigs: ManualPdfConfig[] = [
   },
 ];
 
+/** Full Teachers Aid PDF — all levels combined, per locale */
+export const teachersAidPdfConfig: Omit<ManualPdfConfig, 'level'> = {
+  paths: {
+    en: '/resources/manuals/ROSES-OS-Teachers-Aid-EN.pdf',
+    es: '/resources/manuals/ROSES-OS-Teachers-Aid-ES.pdf',
+    pt: '/resources/manuals/ROSES-OS-Teachers-Aid-PT.pdf',
+    el: '/resources/manuals/ROSES-OS-Teachers-Aid-EL.pdf',
+  },
+  labels: {
+    en: 'Download Teachers Aid PDF',
+    es: 'Descargar PDF de Ayuda para Profesores',
+    pt: 'Baixar PDF de Auxílio ao Professor',
+    el: 'Λήψη PDF Βοηθήματος Δασκάλου',
+  },
+};
+
 /** Helper to get a config by level number */
 export function getManualPdfConfig(level: number): ManualPdfConfig | undefined {
   return manualPdfConfigs.find((c) => c.level === level);
