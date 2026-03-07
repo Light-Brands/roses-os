@@ -10,10 +10,10 @@ import { motion, useInView } from 'framer-motion';
 
 const navLinks = [
   { label: 'Home', href: '/' },
-  { label: 'The Rose', href: '/the-rose' },
   { label: 'Offerings', href: '/offerings' },
-  { label: 'Guardians', href: '/guardians' },
   { label: 'Community', href: '/community' },
+  { label: 'The Rose', href: '/the-rose' },
+  { label: 'Guardians', href: '/guardians' },
   { label: 'Contact', href: '/contact' },
   { label: 'For Teachers', href: '/teaching' },
 ];
@@ -45,7 +45,7 @@ export default function Footer() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-[11px] sm:text-xs text-warm-500 dark:text-warm-400 hover:text-warm-300 dark:hover:text-warm-700 transition-colors duration-200"
+                className="py-1.5 text-[11px] sm:text-xs text-warm-500 dark:text-warm-400 hover:text-warm-300 dark:hover:text-warm-700 transition-colors duration-200"
               >
                 {link.label}
               </Link>

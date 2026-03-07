@@ -174,7 +174,9 @@ export function AgreementsForm({ agreements, onSubmit, className }: AgreementsFo
             exit={{ opacity: 0, height: 0 }}
             className="text-xs text-[var(--color-foreground-faint)]"
           >
-            All {agreements.length} agreements must be accepted to continue.
+            {accepted.size === 0
+              ? `All ${agreements.length} agreements must be accepted to continue.`
+              : `${agreements.length - accepted.size} of ${agreements.length} agreements remaining.`}
           </motion.p>
         )}
       </AnimatePresence>

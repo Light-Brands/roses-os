@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -111,6 +112,9 @@ export function Navigation({
 }: NavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { isHidden, isScrolled } = useScrollDirection();
+  const pathname = usePathname();
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const hamburgerRef = useRef<HTMLButtonElement>(null);
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -121,6 +125,48 @@ export function Navigation({
     }
     return () => {
       document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
+
+  // Focus trap and focus management for mobile menu
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+
+    const panel = mobileMenuRef.current;
+    if (!panel) return;
+
+    // Focus first link after animation
+    const timer = setTimeout(() => {
+      const firstLink = panel.querySelector<HTMLElement>('a, button');
+      firstLink?.focus();
+    }, 100);
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key !== 'Tab') return;
+
+      const focusable = panel.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusable.length === 0) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      clearTimeout(timer);
+      document.removeEventListener('keydown', handleKeyDown);
+      // Restore focus to hamburger button
+      hamburgerRef.current?.focus();
     };
   }, [isMobileMenuOpen]);
 
@@ -158,20 +204,28 @@ export function Navigation({
           <div className="relative flex items-center h-16 lg:h-[72px] w-full">
             {/* Left: nav links — equal flex so logo stays centered */}
             <div className="hidden lg:flex items-center gap-1 flex-1 min-w-0 justify-start lg:pr-20">
-              {items.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className={cn(
-                    'group relative px-2 xl:px-4 py-2 text-sm font-medium rounded-lg',
-                    'text-[var(--color-foreground-muted)]',
-                    'hover:text-[var(--color-foreground)]',
-                    'transition-colors duration-200'
-                  )}
-                >
-                  <AnimatedNavText>{item.label}</AnimatedNavText>
-                </Link>
-              ))}
+              {items.map((item) => {
+                const isActive = pathname === item.href;
+                return (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    aria-current={isActive ? 'page' : undefined}
+                    className={cn(
+                      'group relative px-2 xl:px-4 py-2 text-sm font-medium rounded-lg',
+                      'transition-colors duration-200',
+                      isActive
+                        ? 'text-[var(--color-foreground)]'
+                        : 'text-[var(--color-foreground-muted)] hover:text-[var(--color-foreground)]'
+                    )}
+                  >
+                    <AnimatedNavText>{item.label}</AnimatedNavText>
+                    {isActive && (
+                      <span className="absolute bottom-0 left-2 right-2 xl:left-4 xl:right-4 h-[2px] bg-[var(--color-rose-500)] rounded-full" />
+                    )}
+                  </Link>
+                );
+              })}
             </div>
 
             {/* Logo — left-aligned on mobile/tablet, absolutely centered on desktop */}
@@ -191,13 +245,13 @@ export function Navigation({
                   className={cn(
                     'relative inline-flex items-center rounded-full overflow-hidden',
                     'px-5 py-2.5',
-                    'bg-[#9C6F6E]'
+                    'bg-[var(--color-rose-500)]'
                   )}
                 >
                   <div
                     className={cn(
                       'absolute inset-0',
-                      'bg-[#8A5E5D]',
+                      'bg-[var(--color-rose-600)]',
                       'origin-left scale-x-0 group-hover:scale-x-100',
                       'transition-transform duration-300 ease-out'
                     )}
@@ -217,13 +271,13 @@ export function Navigation({
                   className={cn(
                     'relative flex items-center justify-center',
                     'w-10 h-10 rounded-full overflow-hidden',
-                    'bg-[#9C6F6E]'
+                    'bg-[var(--color-rose-500)]'
                   )}
                 >
                   <div
                     className={cn(
                       'absolute inset-0',
-                      'bg-[#8A5E5D]',
+                      'bg-[var(--color-rose-600)]',
                       'origin-left scale-x-0 group-hover:scale-x-100',
                       'transition-transform duration-300 delay-100 ease-out'
                     )}
@@ -254,10 +308,10 @@ export function Navigation({
                 href={cta.href}
                 className={cn(
                   'sm:hidden inline-flex items-center px-4 py-2 rounded-full',
-                  'bg-[#9C6F6E] text-white',
+                  'bg-[var(--color-rose-500)] text-white',
                   'text-xs font-medium tracking-wide',
                   'transition-colors duration-200',
-                  'hover:bg-[#8A5E5D]'
+                  'hover:bg-[var(--color-rose-600)]'
                 )}
               >
                 {cta.label}
@@ -265,6 +319,7 @@ export function Navigation({
 
               {/* Mobile Hamburger */}
               <button
+                ref={hamburgerRef}
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className={cn(
                   'lg:hidden p-3 rounded-lg relative z-50 min-w-[44px] min-h-[44px] flex items-center justify-center',
@@ -272,6 +327,8 @@ export function Navigation({
                   'transition-colors duration-200'
                 )}
                 aria-label="Toggle menu"
+                aria-expanded={isMobileMenuOpen}
+                aria-controls="mobile-menu"
               >
                 <HamburgerIcon isOpen={isMobileMenuOpen} />
               </button>
@@ -298,6 +355,8 @@ export function Navigation({
 
             {/* Panel — slides in from right */}
             <motion.div
+              ref={mobileMenuRef}
+              id="mobile-menu"
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
@@ -315,32 +374,37 @@ export function Navigation({
               <div className="px-6 pt-4 pb-10">
                 {/* Nav Items */}
                 <nav className="space-y-1">
-                  {items.map((item, index) => (
-                    <motion.div
-                      key={item.label}
-                      initial={{ opacity: 0, x: 24 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{
-                        delay: 0.05 + index * 0.05,
-                        duration: 0.4,
-                        ease: [0.16, 1, 0.3, 1],
-                      }}
-                    >
-                      <Link
-                        href={item.href}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                        className={cn(
-                          'block py-4',
-                          'text-xl sm:text-2xl font-medium',
-                          'text-[var(--color-foreground)]',
-                          'hover:text-[var(--color-foreground-muted)]',
-                          'transition-colors duration-200'
-                        )}
+                  {items.map((item, index) => {
+                    const isActive = pathname === item.href;
+                    return (
+                      <motion.div
+                        key={item.label}
+                        initial={{ opacity: 0, x: 24 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{
+                          delay: 0.05 + index * 0.05,
+                          duration: 0.4,
+                          ease: [0.16, 1, 0.3, 1],
+                        }}
                       >
-                        {item.label}
-                      </Link>
-                    </motion.div>
-                  ))}
+                        <Link
+                          href={item.href}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          aria-current={isActive ? 'page' : undefined}
+                          className={cn(
+                            'block py-4',
+                            'text-xl sm:text-2xl font-medium',
+                            'transition-colors duration-200',
+                            isActive
+                              ? 'text-[var(--color-rose-500)]'
+                              : 'text-[var(--color-foreground)] hover:text-[var(--color-foreground-muted)]'
+                          )}
+                        >
+                          {item.label}
+                        </Link>
+                      </motion.div>
+                    );
+                  })}
                 </nav>
 
                 {/* Divider */}
@@ -363,7 +427,7 @@ export function Navigation({
                     className={cn(
                       'inline-flex items-center gap-2',
                       'px-6 py-3.5 rounded-full',
-                      'bg-[#9C6F6E]',
+                      'bg-[var(--color-rose-500)]',
                       'text-white',
                       'text-sm font-medium',
                       'transition-colors duration-200'

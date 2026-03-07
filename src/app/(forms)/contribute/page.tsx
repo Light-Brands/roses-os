@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { FormStepper } from '@/components/forms/FormStepper';
 import ContributionForm from '@/components/forms/ContributionForm';
@@ -8,6 +8,13 @@ import { contributionTiers } from '@/lib/data';
 
 export default function ContributePage() {
   const [submitted, setSubmitted] = useState(false);
+
+  // Scroll to top when submission completes so users see the confirmation
+  useEffect(() => {
+    if (submitted) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [submitted]);
 
   if (submitted) {
     return (
@@ -53,6 +60,15 @@ export default function ContributePage() {
         tiers={contributionTiers}
         onSubmit={() => setSubmitted(true)}
       />
+
+      <div className="text-center pt-2">
+        <Link
+          href="/enroll"
+          className="text-sm text-[var(--color-foreground-muted)] hover:text-[var(--color-foreground)] transition-colors"
+        >
+          &larr; Back to Enrollment
+        </Link>
+      </div>
     </div>
   );
 }
