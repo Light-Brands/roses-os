@@ -113,6 +113,8 @@ export function Navigation({
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { isHidden, isScrolled } = useScrollDirection();
   const pathname = usePathname();
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const hamburgerRef = useRef<HTMLButtonElement>(null);
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -123,6 +125,48 @@ export function Navigation({
     }
     return () => {
       document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
+
+  // Focus trap and focus management for mobile menu
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+
+    const panel = mobileMenuRef.current;
+    if (!panel) return;
+
+    // Focus first link after animation
+    const timer = setTimeout(() => {
+      const firstLink = panel.querySelector<HTMLElement>('a, button');
+      firstLink?.focus();
+    }, 100);
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key !== 'Tab') return;
+
+      const focusable = panel.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusable.length === 0) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      clearTimeout(timer);
+      document.removeEventListener('keydown', handleKeyDown);
+      // Restore focus to hamburger button
+      hamburgerRef.current?.focus();
     };
   }, [isMobileMenuOpen]);
 
@@ -275,6 +319,7 @@ export function Navigation({
 
               {/* Mobile Hamburger */}
               <button
+                ref={hamburgerRef}
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className={cn(
                   'lg:hidden p-3 rounded-lg relative z-50 min-w-[44px] min-h-[44px] flex items-center justify-center',
@@ -310,6 +355,7 @@ export function Navigation({
 
             {/* Panel — slides in from right */}
             <motion.div
+              ref={mobileMenuRef}
               id="mobile-menu"
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
