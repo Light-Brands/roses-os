@@ -214,34 +214,20 @@ The 70% difference between market value and contribution rate represents **$143,
 
 For the team to consider:
 
-**Option A — Milestone-Based (Cash)**
-- Phase 1 settled upon agreement signing at contribution rate
-- Phase 2 paid in milestones (e.g., 50% at start, 50% on delivery)
-- Phase 3 monthly retainer at contribution rate
-
-**Option B — Phased Over Time (Cash)**
-- Phase 1 settled over 3–6 months at contribution rate
-- Phase 2 paid on delivery
-- Phase 3 monthly retainer
-
-**Option C — Equity + Cash**
-- Contribution rate paid in cash
-- Balance ($143,500 for Phases 1 & 2) settled through equity/ownership stake in ROSES OS
+**Option A — Equity**
+- Full compensation settled through equity/ownership stake in ROSES OS
 - Equity percentage to be discussed based on the project's corporate structure and valuation
 
-**Option D — Land Allocation (Numa Project)**
-- Contribution rate paid in cash
-- Balance settled through discounted land allocation within the Numa project
+**Option B — Land Allocation (Numa Project)**
+- Compensation settled through discounted land allocation within the Numa project
 - Details to be defined based on Numa project structure, land valuation, and timeline
 
-**Option E — Program Enrollment**
-- Contribution rate paid in cash
-- Balance settled through free enrollment in ROSES OS programs (Rose Meditation, Aura, Teachers Training, community programs)
+**Option C — Program Enrollment**
+- Compensation settled through free enrollment in ROSES OS programs (Rose Meditation, Aura, Teachers Training, community programs)
 - Value of enrollment credited against the outstanding balance
 
-**Option F — Combined Settlement**
-- Contribution rate paid in cash
-- Balance settled through any combination of:
+**Option D — Combined Settlement**
+- Compensation settled through any combination of:
   - Equity/ownership stake in ROSES OS
   - Free program enrollment
   - Numa land allocation discount
