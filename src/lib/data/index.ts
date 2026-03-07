@@ -31,8 +31,8 @@ export {
 } from './level1-techniques';
 
 export {
+  level1ManualImages,
   level2ManualImages,
-  level2FoundationalImages,
   level3ManualImages,
   supplementaryImages,
   allManualImageMappings,
