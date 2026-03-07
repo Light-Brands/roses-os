@@ -126,7 +126,7 @@ Below is the **complete inventory** of every image used on the site, organized b
 | 18 | **Cleansing of the Space** -- Large rose above the grid pouring golden energy downward. | `18-cleanse-the-space.jpg` | `18-cleansing-space-original.PNG` |
 | 19 | **Owning Your Space** -- Person radiating energy from within, filling the grid with their own light. | `19-owning-space.jpg` | `19-protect-the-space-original.PNG` |
 | 20 | **Let's Talk About Chakras** -- Introduction to the chakra system. | `20-chakras-intro.jpeg` | -- |
-| 21 | **The Seven Chakras (body map)** -- Figures with color-coded chakra points on the body. | `21-chakras.jpg` | `21-chakras-original.PNG` |
+| 21 | **The Seven Chakras (body map)** -- Figures with color-coded chakra points on the body. | `21-chakras.png` | `21-chakras-original.PNG` |
 | 22 | **Root Chakra** -- Body illustration emphasizing root location, dominant red. | `22-root-chakra.png` | -- |
 | 23 | **Sacral Chakra** -- Body illustration emphasizing sacral location, dominant orange. | `23-sacral-chakra.png` | -- |
 | 24 | **Solar Plexus Chakra** -- Body illustration emphasizing solar plexus location, dominant yellow. | `24-solar-plexus-chakra.png` | -- |
@@ -147,7 +147,7 @@ Below is the **complete inventory** of every image used on the site, organized b
 | Slide | Concept | Reimagined Image | Original Image |
 |-------|---------|-----------------|---------------|
 | 36 | **The Analyzer** -- Energetic point at the back of the head (occipital ridge) for deeper perception. | `36-analyzer.PNG` | `36-analyzer-original-reimagined.jpg` |
-| 37 | **The Analyzer & Sacred Space** -- Combined reference showing the Analyzer in relation to the sacred space. | `37-analyzer-and-sacred-space.png` | -- |
+| 37 | **The Analyzer & Sacred Space** -- Combined reference showing the Analyzer in relation to the sacred space. | `level-3/37-analyzer-and-sacred-space.png` | -- |
 
 #### Supplementary Reference Images
 
@@ -425,7 +425,7 @@ Below is the complete teaching text that accompanies each image/slide in the man
 ---
 
 #### Slide 21: The Seven Chakras
-**Original:** `21-chakras-original.PNG` | **Reimagined:** `21-chakras.jpg`
+**Original:** `21-chakras-original.PNG` | **Reimagined:** `21-chakras.png`
 
 > | # | Chakra | Location |
 > |---|--------|----------|
@@ -725,7 +725,7 @@ Below is the complete teaching text that accompanies each image/slide in the man
 ---
 
 #### Slide 37: The Analyzer & Sacred Space
-**Reimagined:** `37-analyzer-and-sacred-space.png`
+**Reimagined:** `level-3/37-analyzer-and-sacred-space.png`
 
 > A combined reference showing the Analyzer in relation to the sacred space. This image illustrates how the Analyzer — the energetic point at the base of the skull — operates within the context of the protected, cleansed sacred space established in Level 2. The two work together: the sacred space provides the container, and the Analyzer provides the perceptive tool for deeper energetic reading and discernment.
 

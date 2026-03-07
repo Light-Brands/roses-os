@@ -326,7 +326,7 @@ export const level2Slides: TeachingSlide[] = [
     teachingText:
       'The seven primary chakras, from crown to root:\n\n7. Crown — Top of head\n6. Third Eye — Center of forehead\n5. Throat — Throat\n4. Heart — Center of chest\n3. Solar Plexus — Upper abdomen\n2. Sacral — Lower abdomen\n1. Root — Base of spine',
     originalImage: '21-chakras-original.PNG',
-    reimaginedImage: '21-chakras.jpg',
+    reimaginedImage: '21-chakras.png',
     imageNote: 'Also see style reference: 21a-example-of-chakra-slides.PNG',
     level: 2,
     section: 'chakras',
@@ -664,7 +664,7 @@ export const level3Slides: TeachingSlide[] = [
     concept: 'The Analyzer & Sacred Space',
     teachingText:
       'A combined reference showing the Analyzer in relation to the sacred space. This image illustrates how the Analyzer — the energetic point at the base of the skull — operates within the context of the protected, cleansed sacred space established in Level 2. The two work together: the sacred space provides the container, and the Analyzer provides the perceptive tool for deeper energetic reading and discernment.',
-    reimaginedImage: '37-analyzer-and-sacred-space.png',
+    reimaginedImage: 'level-3/37-analyzer-and-sacred-space.png',
     level: 3,
     section: 'advanced',
   },
