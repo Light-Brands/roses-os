@@ -664,7 +664,7 @@ export const level3Slides: TeachingSlide[] = [
     concept: 'The Analyzer & Sacred Space',
     teachingText:
       'A combined reference showing the Analyzer in relation to the sacred space. This image illustrates how the Analyzer — the energetic point at the base of the skull — operates within the context of the protected, cleansed sacred space established in Level 2. The two work together: the sacred space provides the container, and the Analyzer provides the perceptive tool for deeper energetic reading and discernment.',
-    reimaginedImage: '37-analyzer-and-sacred-space.png',
+    reimaginedImage: 'level-3/37-analyzer-and-sacred-space.png',
     level: 3,
     section: 'advanced',
   },

@@ -147,7 +147,7 @@ Below is the **complete inventory** of every image used on the site, organized b
 | Slide | Concept | Reimagined Image | Original Image |
 |-------|---------|-----------------|---------------|
 | 36 | **The Analyzer** -- Energetic point at the back of the head (occipital ridge) for deeper perception. | `36-analyzer.PNG` | `36-analyzer-original-reimagined.jpg` |
-| 37 | **The Analyzer & Sacred Space** -- Combined reference showing the Analyzer in relation to the sacred space. | `37-analyzer-and-sacred-space.png` | -- |
+| 37 | **The Analyzer & Sacred Space** -- Combined reference showing the Analyzer in relation to the sacred space. | `level-3/37-analyzer-and-sacred-space.png` | -- |
 
 #### Supplementary Reference Images
 
@@ -725,7 +725,7 @@ Below is the complete teaching text that accompanies each image/slide in the man
 ---
 
 #### Slide 37: The Analyzer & Sacred Space
-**Reimagined:** `37-analyzer-and-sacred-space.png`
+**Reimagined:** `level-3/37-analyzer-and-sacred-space.png`
 
 > A combined reference showing the Analyzer in relation to the sacred space. This image illustrates how the Analyzer — the energetic point at the base of the skull — operates within the context of the protected, cleansed sacred space established in Level 2. The two work together: the sacred space provides the container, and the Analyzer provides the perceptive tool for deeper energetic reading and discernment.
 
