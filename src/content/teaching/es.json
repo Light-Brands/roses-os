@@ -21,7 +21,10 @@
     "energy": "Energía",
     "focus": "Enfoque",
     "lineage": "Linaje",
-    "rosesOs": "ROSES OS"
+    "rosesOs": "ROSES OS",
+    "exportTeachersAidPdf": "Exportar PDF de Ayuda para Profesores",
+    "downloadImages": "Descargar Imágenes",
+    "preparingDownload": "Preparando descarga\u2026"
   },
   "opening": {
     "agreements": {
@@ -196,6 +199,10 @@
     "l3-analyzer": {
       "concept": "El Analizador",
       "teachingText": "El Analizador es una herramienta avanzada introducida en el Nivel 3. Es un punto energético ubicado en la parte posterior de la cabeza, en la base del cráneo (la cresta occipital / área del tronco encefálico). El Analizador se utiliza para una percepción más profunda, lectura y discernimiento de energía — una herramienta para el análisis energético preciso."
+    },
+    "l3-analyzer-sacred-space": {
+      "concept": "El Analizador y el Espacio Sagrado",
+      "teachingText": "Una referencia combinada que muestra el Analizador en relación con el espacio sagrado. Esta imagen ilustra cómo el Analizador — el punto energético en la base del cráneo — opera dentro del contexto del espacio sagrado protegido y limpiado establecido en el Nivel 2. Los dos trabajan juntos: el espacio sagrado proporciona el contenedor, y el Analizador proporciona la herramienta perceptiva para una lectura y discernimiento energético más profundos."
     }
   },
   "chakras": {

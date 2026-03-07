@@ -3,12 +3,15 @@
 import { motion } from 'framer-motion';
 import { FileDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useLanguage } from '@/lib/i18n';
 
 interface PdfExportButtonProps {
   className?: string;
 }
 
 export function PdfExportButton({ className }: PdfExportButtonProps) {
+  const { t } = useLanguage();
+
   function handleExport() {
     window.print();
   }
@@ -30,7 +33,7 @@ export function PdfExportButton({ className }: PdfExportButtonProps) {
       )}
     >
       <FileDown className="h-4 w-4" />
-      <span>Export Teachers Aid PDF</span>
+      <span>{t?.ui.exportTeachersAidPdf ?? 'Export Teachers Aid PDF'}</span>
     </motion.button>
   );
 }

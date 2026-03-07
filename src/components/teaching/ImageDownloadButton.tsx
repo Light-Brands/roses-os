@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { ImageDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useLanguage } from '@/lib/i18n';
 import type { TeachingSlide } from '@/lib/data/types';
 
 interface ImageDownloadButtonProps {
@@ -23,6 +24,7 @@ function getImageFilenames(slides: TeachingSlide[]): string[] {
 
 export function ImageDownloadButton({ slides, level, className }: ImageDownloadButtonProps) {
   const [downloading, setDownloading] = useState(false);
+  const { t } = useLanguage();
 
   const filenames = getImageFilenames(slides);
 
@@ -85,7 +87,7 @@ export function ImageDownloadButton({ slides, level, className }: ImageDownloadB
       )}
     >
       <ImageDown className="h-4 w-4" />
-      <span>{downloading ? 'Preparing download\u2026' : `Download Images (${filenames.length})`}</span>
+      <span>{downloading ? (t?.ui.preparingDownload ?? 'Preparing download\u2026') : `${t?.ui.downloadImages ?? 'Download Images'} (${filenames.length})`}</span>
     </button>
   );
 }
