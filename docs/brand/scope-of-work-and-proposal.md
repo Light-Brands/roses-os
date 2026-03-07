@@ -10,6 +10,8 @@
 
 This document outlines the scope, deliverables, and structure of the work being developed for the ROSES OS digital platform and brand system. It is intended to give the team full visibility into what has been built, what is in progress, and what remains — so we can define clear agreements, ownership, and next steps together.
 
+> *This document is intended as a starting point for conversation — not a final agreement. All scope, pricing, and terms are open for discussion and adjustment together.*
+
 ---
 
 ## 1. What Has Been Built (Completed Work)
@@ -153,7 +155,7 @@ All strategic and brand documentation living in the repository:
 
 Pricing is structured around **milestone-based outcomes** — each milestone has a fixed price tied to the completion and acceptance of specific deliverables, not hours worked. Payment is triggered when a milestone is delivered and accepted by the team.
 
-Each milestone reflects two columns: **Market Value** (what this outcome would cost at standard industry rates from an agency or senior professional) and **Contribution Rate** (a mission-aligned rate at 30% of market value — a 70% reduction that honors the shared purpose of the project).
+Each milestone reflects two columns: **Market Value** (what this outcome would cost at standard industry rates from an agency or senior professional) and **Contribution Rate** (a mission-aligned rate at 10% of market value — a 90% reduction that honors the shared purpose of the project).
 
 The difference between market value and contribution rate can be settled through any combination of: **equity/ownership stake** in ROSES OS, **free program enrollment** (Rose Meditation, Aura, and community programs), and/or **Numa land allocation discount**.
 
@@ -173,7 +175,7 @@ The difference between market value and contribution rate can be settled through
 
 | | Market Value | Contribution Rate |
 |--|--------------|-------------------|
-| **Milestone 1 Total** | **$88,000** | **$26,400** |
+| **Milestone 1 Total** | **$88,000** | **$8,800** |
 
 ---
 
@@ -189,7 +191,7 @@ The difference between market value and contribution rate can be settled through
 
 | | Market Value | Contribution Rate |
 |--|--------------|-------------------|
-| **Milestone 2 Total** | **$50,000** | **$15,000** |
+| **Milestone 2 Total** | **$50,000** | **$5,000** |
 
 ---
 
@@ -204,13 +206,13 @@ The difference between market value and contribution rate can be settled through
 
 | | Market Value | Contribution Rate |
 |--|--------------|-------------------|
-| **Milestone 3 Total** | **$13,000** | **$3,900** |
+| **Milestone 3 Total** | **$13,000** | **$1,300** |
 
 ---
 
 | | Market Value | Contribution Rate |
 |--|--------------|-------------------|
-| **Phase 1 Total (All Milestones)** | **$151,000** | **$45,300** |
+| **Phase 1 Total (All Milestones)** | **$151,000** | **$15,100** |
 
 ### 4.2 Phase 2 — In-Progress Milestones
 
@@ -224,7 +226,7 @@ The difference between market value and contribution rate can be settled through
 
 | | Market Value | Contribution Rate |
 |--|--------------|-------------------|
-| **Milestone 4 Total** | **$14,000** | **$4,200** |
+| **Milestone 4 Total** | **$14,000** | **$1,400** |
 
 ---
 
@@ -238,7 +240,7 @@ The difference between market value and contribution rate can be settled through
 
 | | Market Value | Contribution Rate |
 |--|--------------|-------------------|
-| **Milestone 5 Total** | **$16,000** | **$4,800** |
+| **Milestone 5 Total** | **$16,000** | **$1,600** |
 
 ---
 
@@ -252,13 +254,13 @@ The difference between market value and contribution rate can be settled through
 
 | | Market Value | Contribution Rate |
 |--|--------------|-------------------|
-| **Milestone 6 Total** | **$24,000** | **$7,200** |
+| **Milestone 6 Total** | **$24,000** | **$2,400** |
 
 ---
 
 | | Market Value | Contribution Rate |
 |--|--------------|-------------------|
-| **Phase 2 Total (All Milestones)** | **$54,000** | **$16,200** |
+| **Phase 2 Total (All Milestones)** | **$54,000** | **$5,400** |
 
 ### 4.3 Phase 3 — Proposed Project Milestones
 
@@ -268,13 +270,13 @@ Phase 3 is structured as **individual project milestones** — each scoped as a 
 
 | Project | Deliverables | Market Value | Contribution Rate |
 |---------|-------------|--------------|-------------------|
-| **Platform UX Refinement** | Holistic UX review, flow optimization, implemented improvements — accepted by team | $15,000 | $4,500 |
-| **GEO / Content Architecture** | Semantic content structure for AI discoverability, implemented and validated | $12,000 | $3,600 |
-| **Rose App Foundation** | Initial architecture and prototype for the Rose App (daily practice) | $25,000 | $7,500 |
-| **Aura Levels Integration** | Aura Reading Levels 1–5 content and teaching structure *(pending decision)* | $18,000 | $5,400 |
-| **Platform Maintenance Sprint** | Security audit, bug fixes, dependency updates, hosting optimization — scoped per engagement | $9,000 | $2,700 |
-| **Animated Visual Technique Demos** | Upload existing technique demonstration videos, build video player components, integrate into teaching platform organized by technique category | $12,000 | $3,600 |
-| **Guardian & Testimonial Videos** | Upload existing guardian and testimonial videos, build video sections on guardians page and community page | $8,000 | $2,400 |
+| **Platform UX Refinement** | Holistic UX review, flow optimization, implemented improvements — accepted by team | $15,000 | $1,500 |
+| **GEO / Content Architecture** | Semantic content structure for AI discoverability, implemented and validated | $12,000 | $1,200 |
+| **Rose App Foundation** | Initial architecture and prototype for the Rose App (daily practice) | $25,000 | $2,500 |
+| **Aura Levels Integration** | Aura Reading Levels 1–5 content and teaching structure *(pending decision)* | $18,000 | $1,800 |
+| **Platform Maintenance Sprint** | Security audit, bug fixes, dependency updates, hosting optimization — scoped per engagement | $9,000 | $900 |
+| **Animated Visual Technique Demos** | Upload existing technique demonstration videos, build video player components, integrate into teaching platform organized by technique category | $12,000 | $1,200 |
+| **Guardian & Testimonial Videos** | Upload existing guardian and testimonial videos, build video sections on guardians page and community page | $8,000 | $800 |
 
 *Each project is scoped, priced, and accepted independently. No ongoing commitment — projects are engaged as needed.*
 
@@ -284,13 +286,13 @@ Phase 3 is structured as **individual project milestones** — each scoped as a 
 
 | Phase | Market Value | Contribution Rate | Savings |
 |-------|--------------|-------------------|---------|
-| Phase 1 — 3 Milestones (Completed) | $151,000 | $45,300 | 70% |
-| Phase 2 — 3 Milestones (In Progress) | $54,000 | $16,200 | 70% |
-| Phase 3 — Per-Project Milestones | Scoped per project | Scoped per project | 70% |
+| Phase 1 — 3 Milestones (Completed) | $151,000 | $15,100 | 90% |
+| Phase 2 — 3 Milestones (In Progress) | $54,000 | $5,400 | 90% |
+| Phase 3 — Per-Project Milestones | Scoped per project | Scoped per project | 90% |
 | | | | |
-| **Total (Phases 1 & 2)** | **$205,000** | **$61,500** | **$143,500 in value contributed to the mission** |
+| **Total (Phases 1 & 2)** | **$205,000** | **$20,500** | **$184,500 in value contributed to the mission** |
 
-The 70% difference between market value and contribution rate represents **$143,500 in value** being contributed directly to the mission — in the same spirit of conscious contribution that ROSES OS extends to its community. This balance can be settled through any combination of equity, program enrollment, and/or Numa land discount (see Payment Structure Options below).
+The 90% difference between market value and contribution rate represents **$184,500 in value** being contributed directly to the mission — in the same spirit of conscious contribution that ROSES OS extends to its community. This balance can be settled through any combination of equity, program enrollment, and/or Numa land discount (see Payment Structure Options below).
 
 ### 4.5 Milestone Payment Terms
 
