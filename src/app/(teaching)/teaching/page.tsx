@@ -55,6 +55,16 @@ export default function TeachingPage() {
           </div>
         </div>
 
+        {/* Sacred Geometry Mandala */}
+        <div className="flex justify-center mb-12">
+          <img
+            src="/images/teaching-mandala.png"
+            alt="Sacred geometry mandala with roses, golden sun, and spirals"
+            className="w-48 h-48 md:w-64 md:h-64 object-contain opacity-90"
+            loading="eager"
+          />
+        </div>
+
         {/* Opening — Agreements & Virtues */}
         <section className="mb-10 rounded-xl border border-[var(--color-border-subtle)] bg-[var(--color-surface)] p-6 lg:p-8">
           <h2 className="font-serif text-xl text-[var(--color-foreground)] mb-3">
