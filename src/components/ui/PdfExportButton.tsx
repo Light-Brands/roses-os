@@ -4,22 +4,27 @@ import { motion } from 'framer-motion';
 import { FileDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useLanguage } from '@/lib/i18n';
+import { teachersAidPdfConfig } from '@/lib/data/manual-pdf-paths';
 
 interface PdfExportButtonProps {
   className?: string;
 }
 
 export function PdfExportButton({ className }: PdfExportButtonProps) {
-  const { t } = useLanguage();
+  const { locale, t } = useLanguage();
+  const href = teachersAidPdfConfig.paths[locale] ?? teachersAidPdfConfig.paths.en;
+  const label =
+    teachersAidPdfConfig.labels[locale] ??
+    t?.ui.exportTeachersAidPdf ??
+    'Download Teachers Aid PDF';
 
-  function handleExport() {
-    window.print();
-  }
+  if (!href) return null;
 
   return (
-    <motion.button
-      type="button"
-      onClick={handleExport}
+    <motion.a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       className={cn(
@@ -33,8 +38,8 @@ export function PdfExportButton({ className }: PdfExportButtonProps) {
       )}
     >
       <FileDown className="h-4 w-4" />
-      <span>{t?.ui.exportTeachersAidPdf ?? 'Export Teachers Aid PDF'}</span>
-    </motion.button>
+      <span>{label}</span>
+    </motion.a>
   );
 }
 
