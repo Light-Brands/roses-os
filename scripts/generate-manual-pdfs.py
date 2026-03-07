@@ -663,14 +663,49 @@ LEVEL_2_HTML = """<!DOCTYPE html>
 
 <!-- COVER -->
 <div class="cover">
-  <img src="public/rose med images/cover-levels-1-2-01.png" style="max-width: 60%; height: auto; margin-bottom: 1.5cm; border-radius: 8px;" />
+  <p class="cover-eyebrow">ROSES OS &mdash; A Living Consciousness Ecosystem</p>
+  <img src="public/images/backcover-rose-mandala.png" style="max-width: 45%; height: auto; margin-bottom: 1.5cm; border-radius: 50%;" />
   <p class="cover-eyebrow">Student Manual</p>
   <h1 class="cover-title">Level 2</h1>
   <p class="cover-subtitle">Chakra Cleansing &amp; Energy Recovery</p>
   <div class="cover-divider"></div>
   <p class="cover-brand">ROSES OS</p>
   <p class="cover-note">Teachings by Angelina Ataíde</p>
+  <p style="font-size: 8pt; margin-top: 0.6cm; color: #B5A89D; font-family: Inter, sans-serif;">Illustrations: Saraswati Noemi, Cecilia Lynch, Drica Voivodic</p>
+  <p style="font-size: 7.5pt; margin-top: 0.4cm; color: #B5A89D; font-family: Inter, sans-serif; max-width: 30em; line-height: 1.4;">No part of this manual may be reproduced and/or shown to people who have not attended a Rose Meditation Course.</p>
 </div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="page-break"></div>
+<h2>Contents</h2>
+
+<div style="margin-top: 0.8cm; line-height: 2.2;">
+  <p style="font-size: 11pt; color: #3F3E3C;"><strong>Preparing the Space</strong></p>
+  <ul style="list-style: none; margin-left: 0.5cm; margin-bottom: 0.6cm;">
+    <li style="font-size: 10pt; color: #8C7E73;">Preparing the Room</li>
+    <li style="font-size: 10pt; color: #8C7E73;">Owning Your Space</li>
+  </ul>
+
+  <p style="font-size: 11pt; color: #3F3E3C;"><strong>Chakra Cleansing</strong></p>
+  <ul style="list-style: none; margin-left: 0.5cm; margin-bottom: 0.6cm;">
+    <li style="font-size: 10pt; color: #8C7E73;">The Seven Chakras</li>
+    <li style="font-size: 10pt; color: #8C7E73;">Cleansing of Each Aura Layer</li>
+    <li style="font-size: 10pt; color: #8C7E73;">Cleansing of Each Chakra</li>
+    <li style="font-size: 10pt; color: #8C7E73;">Energy Recovery of Each Chakra</li>
+  </ul>
+
+  <p style="font-size: 11pt; color: #3F3E3C;"><strong>Golden Sticky Roses</strong></p>
+  <ul style="list-style: none; margin-left: 0.5cm; margin-bottom: 0.6cm;">
+    <li style="font-size: 10pt; color: #8C7E73;">Phase 1 &mdash; Chakra Placement</li>
+    <li style="font-size: 10pt; color: #8C7E73;">Phase 2 &mdash; Body Placement</li>
+    <li style="font-size: 10pt; color: #8C7E73;">Phase 3 &mdash; Full Body Coverage</li>
+    <li style="font-size: 10pt; color: #8C7E73;">Phase 4 &mdash; Integration</li>
+  </ul>
+
+  <p style="font-size: 11pt; color: #3F3E3C;"><strong>Daily Meditation Elements</strong></p>
+</div>
+
+<div class="divider"></div>
 
 <!-- PREPARING THE SPACE -->
 <h2>Preparing the Space</h2>
