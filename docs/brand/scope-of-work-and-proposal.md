@@ -149,9 +149,11 @@ All strategic and brand documentation living in the repository:
 
 ## 4. Value & Pricing
 
-The pricing below reflects two columns: **Market Value** (what this work would cost at standard industry rates from an agency or senior freelance professional) and **Contribution Rate** (a mission-aligned rate that honors the work while reflecting the shared purpose of the project).
+The pricing below reflects two columns: **Market Value** (what this work would cost at standard industry rates from an agency or senior freelance professional) and **Contribution Rate** (a mission-aligned rate at 30% of market value — a 70% reduction that honors the shared purpose of the project).
 
 The market values are based on current industry benchmarks for senior-level full-stack development ($150–200/hr), brand strategy ($125–175/hr), design production ($100–150/hr), and specialized work like 3D/WebGL ($175–250/hr).
+
+The difference between market value and contribution rate can be settled through any combination of: **equity/ownership stake** in ROSES OS, **free program enrollment** (Rose Meditation, Aura, and community programs), and/or **Numa land allocation discount**.
 
 ---
 
@@ -159,36 +161,36 @@ The market values are based on current industry benchmarks for senior-level full
 
 | # | Deliverable | Scope | Market Value | Contribution Rate |
 |---|-------------|-------|--------------|-------------------|
-| 1 | **Web Platform MVP** | 23 pages, 65+ components, responsive, animations, page transitions | $55,000 | $33,000 |
-| 2 | **Teaching Platform** | 3 levels, visual slide cards, technique data layer, downloads, password protection | $22,000 | $13,200 |
-| 3 | **Design System** | Full color palette, typography, component library, dark mode, branded templates | $15,000 | $9,000 |
-| 4 | **Content Architecture** | Brand DNA (80KB), Codex (731 lines), training manual, 4 designer specs, program materials | $18,000 | $10,800 |
-| 5 | **Multilingual Infrastructure** | 4 languages (EN, ES, PT, EL) across teaching content and UI | $10,000 | $6,000 |
-| 6 | **Admin Dashboard (UI Scaffold)** | 8 admin pages designed and built with demo data — not yet connected to live backend | $5,000 | $3,000 |
-| 7 | **API Layer & Backend** | 3 functional endpoints (content, media, feedback) with Supabase; 3 stub endpoints (enrollment, contribution, agreements); auth (OAuth + SSR) | $8,000 | $4,800 |
-| 8 | **3D Brand Experience** | Custom Three.js rose, GLSL shaders, bloom/particles, 48 textures, responsive canvas | $18,000 | $10,800 |
+| 1 | **Web Platform MVP** | 23 pages, 65+ components, responsive, animations, page transitions | $55,000 | $16,500 |
+| 2 | **Teaching Platform** | 3 levels, visual slide cards, technique data layer, downloads, password protection | $22,000 | $6,600 |
+| 3 | **Design System** | Full color palette, typography, component library, dark mode, branded templates | $15,000 | $4,500 |
+| 4 | **Content Architecture** | Brand DNA (80KB), Codex (731 lines), training manual, 4 designer specs, program materials | $18,000 | $5,400 |
+| 5 | **Multilingual Infrastructure** | 4 languages (EN, ES, PT, EL) across teaching content and UI | $10,000 | $3,000 |
+| 6 | **Admin Dashboard (UI Scaffold)** | 8 admin pages designed and built with demo data — not yet connected to live backend | $5,000 | $1,500 |
+| 7 | **API Layer & Backend** | 3 functional endpoints (content, media, feedback) with Supabase; 3 stub endpoints (enrollment, contribution, agreements); auth (OAuth + SSR) | $8,000 | $2,400 |
+| 8 | **3D Brand Experience** | Custom Three.js rose, GLSL shaders, bloom/particles, 48 textures, responsive canvas | $18,000 | $5,400 |
 | | | | | |
-| | **Phase 1 Total** | | **$151,000** | **$90,600** |
+| | **Phase 1 Total** | | **$151,000** | **$45,300** |
 
 ### 4.2 Phase 2 — In Progress
 
 | # | Deliverable | Scope | Market Value | Contribution Rate |
 |---|-------------|-------|--------------|-------------------|
-| 9 | **MDR Teacher's Visual Manual** | 46-page manual, custom illustrations, chakra diagrams, diverse representation, print-ready | $14,000 | $8,400 |
-| 10 | **Student Manuals Redesign** | Level 2 + Level 3 manuals, 4 languages each (8–12 PDFs), Yeva World aesthetic | $16,000 | $9,600 |
-| 11 | **Brand Book** | 110–130 page brand identity book, 13 sections, visual design, print-ready | $24,000 | $14,400 |
+| 9 | **MDR Teacher's Visual Manual** | 46-page manual, custom illustrations, chakra diagrams, diverse representation, print-ready | $14,000 | $4,200 |
+| 10 | **Student Manuals Redesign** | Level 2 + Level 3 manuals, 4 languages each (8–12 PDFs), Yeva World aesthetic | $16,000 | $4,800 |
+| 11 | **Brand Book** | 110–130 page brand identity book, 13 sections, visual design, print-ready | $24,000 | $7,200 |
 | | | | | |
-| | **Phase 2 Total** | | **$54,000** | **$32,400** |
+| | **Phase 2 Total** | | **$54,000** | **$16,200** |
 
 ### 4.3 Phase 3 — Proposed Ongoing
 
 | Deliverable | Scope | Market Value | Contribution Rate |
 |-------------|-------|--------------|-------------------|
-| **Platform Maintenance & Hosting** | Updates, security, bug fixes, hosting management | $3,000/mo | $1,800/mo |
-| **UX Refinement & New Features** | Flow optimization, GEO architecture, new sections | $5,000/mo | $3,000/mo |
-| **Content Updates & Expansion** | New levels, Aura integration, program materials | $3,000/mo | $1,800/mo |
+| **Platform Maintenance & Hosting** | Updates, security, bug fixes, hosting management | $3,000/mo | $900/mo |
+| **UX Refinement & New Features** | Flow optimization, GEO architecture, new sections | $5,000/mo | $1,500/mo |
+| **Content Updates & Expansion** | New levels, Aura integration, program materials | $3,000/mo | $900/mo |
 | | | | |
-| **Phase 3 Monthly Retainer** | | **$11,000/mo** | **$6,600/mo** |
+| **Phase 3 Monthly Retainer** | | **$11,000/mo** | **$3,300/mo** |
 
 *Phase 3 retainer can be structured as needed — monthly, quarterly, or per-project.*
 
@@ -198,13 +200,13 @@ The market values are based on current industry benchmarks for senior-level full
 
 | Phase | Market Value | Contribution Rate | Savings |
 |-------|--------------|-------------------|---------|
-| Phase 1 (Completed) | $151,000 | $90,600 | 40% |
-| Phase 2 (In Progress) | $54,000 | $32,400 | 40% |
-| Phase 3 (Ongoing) | $11,000/mo | $6,600/mo | 40% |
+| Phase 1 (Completed) | $151,000 | $45,300 | 70% |
+| Phase 2 (In Progress) | $54,000 | $16,200 | 70% |
+| Phase 3 (Ongoing) | $11,000/mo | $3,300/mo | 70% |
 | | | | |
-| **Total (Phases 1 & 2)** | **$205,000** | **$123,000** | **$82,000 in value contributed to the mission** |
+| **Total (Phases 1 & 2)** | **$205,000** | **$61,500** | **$143,500 in value contributed to the mission** |
 
-The 40% difference between market value and contribution rate represents **$82,000 in value** being contributed directly to the mission — in the same spirit of conscious contribution that ROSES OS extends to its community.
+The 70% difference between market value and contribution rate represents **$143,500 in value** being contributed directly to the mission — in the same spirit of conscious contribution that ROSES OS extends to its community. This balance can be settled through any combination of equity, program enrollment, and/or Numa land discount (see Payment Structure Options below).
 
 ---
 
@@ -212,23 +214,38 @@ The 40% difference between market value and contribution rate represents **$82,0
 
 For the team to consider:
 
-**Option A — Milestone-Based**
-- Phase 1 settled upon agreement signing
+**Option A — Milestone-Based (Cash)**
+- Phase 1 settled upon agreement signing at contribution rate
 - Phase 2 paid in milestones (e.g., 50% at start, 50% on delivery)
-- Phase 3 monthly retainer
+- Phase 3 monthly retainer at contribution rate
 
-**Option B — Phased Over Time**
-- Phase 1 settled over 3–6 months
+**Option B — Phased Over Time (Cash)**
+- Phase 1 settled over 3–6 months at contribution rate
 - Phase 2 paid on delivery
 - Phase 3 monthly retainer
 
-**Option C — Equity + Reduced Cash**
-- Reduced cash compensation offset by equity/ownership stake in ROSES OS
-- Details to be discussed based on the project's corporate structure
+**Option C — Equity + Cash**
+- Contribution rate paid in cash
+- Balance ($143,500 for Phases 1 & 2) settled through equity/ownership stake in ROSES OS
+- Equity percentage to be discussed based on the project's corporate structure and valuation
 
 **Option D — Land Allocation (Numa Project)**
-- Compensation structured as land allocation within the upcoming Numa project
+- Contribution rate paid in cash
+- Balance settled through discounted land allocation within the Numa project
 - Details to be defined based on Numa project structure, land valuation, and timeline
+
+**Option E — Program Enrollment**
+- Contribution rate paid in cash
+- Balance settled through free enrollment in ROSES OS programs (Rose Meditation, Aura, Teachers Training, community programs)
+- Value of enrollment credited against the outstanding balance
+
+**Option F — Combined Settlement**
+- Contribution rate paid in cash
+- Balance settled through any combination of:
+  - Equity/ownership stake in ROSES OS
+  - Free program enrollment
+  - Numa land allocation discount
+- Proportions to be agreed upon together
 
 *Open to discussing what works best for everyone. The goal is sustainability for the project and fairness for all contributors.*
 
