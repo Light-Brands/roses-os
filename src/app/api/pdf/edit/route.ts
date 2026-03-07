@@ -43,21 +43,13 @@ async function loadPdfBytes(formData: FormData): Promise<Uint8Array | null> {
 
   if (pdfPath) {
     const safePath = path.basename(pdfPath);
-    // Check both PDF directories — Level 1 lives in public/manuals/,
-    // Level 2/3 live in public/resources/manuals/
-    const candidates = [
-      path.join(process.cwd(), 'public', 'manuals', safePath),
-      path.join(process.cwd(), 'public', 'resources', 'manuals', safePath),
-    ];
-    for (const fullPath of candidates) {
-      try {
-        const buffer = await readFile(fullPath);
-        return new Uint8Array(buffer);
-      } catch {
-        // Try next candidate
-      }
+    const fullPath = path.join(process.cwd(), 'public', 'resources', 'manuals', safePath);
+    try {
+      const buffer = await readFile(fullPath);
+      return new Uint8Array(buffer);
+    } catch {
+      return null;
     }
-    return null;
   }
 
   return null;
@@ -155,7 +147,7 @@ async function savePdf(pdfDoc: PDFDocument, formData: FormData): Promise<NextRes
  * - remove: Cover image area with white rectangle
  *
  * FormData fields:
- * - pdf (File) or pdfPath (string, filename in /public/manuals/)
+ * - pdf (File) or pdfPath (string, filename in /public/resources/manuals/)
  * - action: "list" | "replace" | "add" | "remove"
  * - image (File): new image for add/replace
  * - page (number): 1-indexed page number
@@ -177,7 +169,7 @@ export async function POST(request: NextRequest) {
 
     const pdfBytes = await loadPdfBytes(formData);
     if (!pdfBytes) {
-      return apiResponse(null, 'No PDF provided. Use "pdf" (file) or "pdfPath" (filename in /public/manuals/)', 400);
+      return apiResponse(null, 'No PDF provided. Use "pdf" (file) or "pdfPath" (filename in /public/resources/manuals/)', 400);
     }
 
     const pdfDoc = await PDFDocument.load(pdfBytes);
