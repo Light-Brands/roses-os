@@ -74,7 +74,6 @@ All strategic and brand documentation living in the repository:
 |----------|------|--------|
 | Brand DNA Master Document | ~80KB / 2,000 lines | Complete |
 | Brand Book Content Plan | 575 lines, 13-section structure | ~75% content-ready |
-| The Codex (foundational reference) | 731 lines | Complete |
 | Founder Interview Questions | Prepared | Awaiting responses |
 | Founder Decision Sheet | 29 consolidated decisions | Awaiting review |
 | MDR Teachers Training Manual | Full curriculum | Complete |
@@ -124,7 +123,7 @@ All strategic and brand documentation living in the repository:
 | 1 | **Web Platform MVP** | Full-stack Next.js application with 23 pages, 65+ components, 3D visualization, authentication, admin panel |
 | 2 | **Teaching Platform** | 3-level password-protected teaching system with slides, manuals, multilingual support, downloads |
 | 3 | **Design System** | Complete brand-aligned design system implemented across all platform sections |
-| 4 | **Content Architecture** | Brand DNA, Codex, program materials, training manual, designer specs — all documented and version-controlled |
+| 4 | **Content Architecture** | Brand DNA, program materials, training manual, designer specs — all documented and version-controlled |
 | 5 | **Multilingual Infrastructure** | 4-language support (EN, ES, PT, EL) across teaching content and UI |
 | 6 | **Admin Dashboard (UI Scaffold)** | 8 admin pages designed and built with demo data — front-end ready, not yet connected to live backend |
 | 7 | **API Layer** | 3 functional Supabase endpoints (content, media, feedback), 3 stub endpoints, auth integration |
@@ -180,7 +179,7 @@ The difference between market value and contribution rate can be settled through
 | Deliverable | Scope |
 |-------------|-------|
 | **Teaching Platform** | 3 levels, visual slide cards, technique data layer, downloads, password protection |
-| **Content Architecture** | Brand DNA (80KB), Codex (731 lines), training manual, 4 designer specs, program materials |
+| **Content Architecture** | Brand DNA (80KB), training manual, 4 designer specs, program materials |
 | **Multilingual Infrastructure** | 4 languages (EN, ES, PT, EL) across teaching content and UI |
 
 **Acceptance Criteria:** All 3 teaching levels accessible with password protection, slide cards and downloads functional, content available in all 4 languages, documentation complete and version-controlled.
