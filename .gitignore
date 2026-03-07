@@ -35,9 +35,6 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
-# private documents (temporarily removed from tracking)
-docs/brand/scope-of-work-and-proposal.md
-
 # vercel
 .vercel
 
