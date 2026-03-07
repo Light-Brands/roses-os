@@ -21,7 +21,10 @@
     "energy": "Ενέργεια",
     "focus": "Εστίαση",
     "lineage": "Καταγωγή",
-    "rosesOs": "ROSES OS"
+    "rosesOs": "ROSES OS",
+    "exportTeachersAidPdf": "Εξαγωγή PDF Βοηθήματος Δασκάλου",
+    "downloadImages": "Λήψη Εικόνων",
+    "preparingDownload": "Προετοιμασία λήψης\u2026"
   },
   "opening": {
     "agreements": {

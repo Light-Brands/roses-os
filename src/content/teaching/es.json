@@ -21,7 +21,10 @@
     "energy": "Energía",
     "focus": "Enfoque",
     "lineage": "Linaje",
-    "rosesOs": "ROSES OS"
+    "rosesOs": "ROSES OS",
+    "exportTeachersAidPdf": "Exportar PDF de Ayuda para Profesores",
+    "downloadImages": "Descargar Imágenes",
+    "preparingDownload": "Preparando descarga\u2026"
   },
   "opening": {
     "agreements": {

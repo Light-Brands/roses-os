@@ -31,6 +31,9 @@ export interface TeachingTranslations {
     focus: string;
     lineage: string;
     rosesOs: string;
+    exportTeachersAidPdf: string;
+    downloadImages: string;
+    preparingDownload: string;
   };
   opening: {
     agreements: {

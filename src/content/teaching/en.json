@@ -21,7 +21,10 @@
     "energy": "Energy",
     "focus": "Focus",
     "lineage": "Lineage",
-    "rosesOs": "ROSES OS"
+    "rosesOs": "ROSES OS",
+    "exportTeachersAidPdf": "Export Teachers Aid PDF",
+    "downloadImages": "Download Images",
+    "preparingDownload": "Preparing download\u2026"
   },
   "opening": {
     "agreements": {
