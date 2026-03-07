@@ -233,7 +233,7 @@ export const level1Techniques: MeditationTechnique[] = [
       { order: 3, instruction: 'Repeat in your head: "Happy, Healthy, Whole, Body, Mind & Soul".' },
       { order: 4, instruction: 'While repeating, make the Rose rise towards the center of the Universe, wishing you or the person in it all the best.' },
     ],
-    linkedSlideIds: [],
+    linkedSlideIds: ['l1-pink-rose-closure'],
   },
 
   // -------------------------------------------------------------------------

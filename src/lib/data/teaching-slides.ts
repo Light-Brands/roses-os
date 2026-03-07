@@ -241,13 +241,23 @@ export const level1Slides: TeachingSlide[] = [
     section: 'sacred-space',
   },
   {
-    id: 'l1-discharge',
+    id: 'l1-pink-rose-closure',
     slideNumber: 17,
+    concept: 'Pink Rose Closure',
+    teachingText:
+      'The Pink Rose Closure is offered at the end of the meditation as a gift of well-being — for yourself or another person. Create an unrooted pink Rose and place yourself or the person inside it, visualizing "Happy, Healthy, Whole, Body, Mind & Soul." Repeat this intention silently while making the Rose rise towards the center of the Universe, wishing all the best for whoever is held within it.',
+    reimaginedImage: 'level-1/17-pink-rose-closure.png',
+    level: 1,
+    section: 'foundations',
+  },
+  {
+    id: 'l1-discharge',
+    slideNumber: 18,
     concept: 'Discharge Excess Energy',
     teachingText:
       'After deep meditation or energy work, excess energy may accumulate in the body. To discharge it, lean forward from the seated position with hands reaching toward the ground. Allow the excess energy to flow out through the hands and into the earth, returning the body to a calm, balanced state.',
     originalImage: 'level-1/17-discharge-energy-original.PNG',
-    reimaginedImage: 'level-1/17-discharge-excess.PNG',
+    reimaginedImage: 'level-1/18-discharge-excess.PNG',
     level: 1,
     section: 'foundations',
   },
