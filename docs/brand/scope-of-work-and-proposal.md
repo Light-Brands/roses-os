@@ -258,21 +258,21 @@ The difference between market value and contribution rate can be settled through
 |--|--------------|-------------------|
 | **Phase 2 Total (All Milestones)** | **$54,000** | **$16,200** |
 
-### 4.3 Phase 3 — Proposed Quarterly Milestones
+### 4.3 Phase 3 — Proposed Project Milestones
 
-Phase 3 is structured as quarterly outcome milestones, each with defined deliverables and acceptance criteria. Payment is triggered upon delivery and acceptance of each quarter's outcomes.
+Phase 3 is structured as **individual project milestones** — each scoped as a standalone engagement with defined deliverables and acceptance criteria. Projects are proposed and agreed upon individually, with no ongoing retainer or support commitment.
 
-#### Quarterly Milestone Structure
+#### Project Milestone Options
 
-| Outcome Area | Deliverables Per Quarter | Market Value | Contribution Rate |
-|--------------|--------------------------|--------------|-------------------|
-| **Platform Stability & Security** | Security audit passed, all critical bugs resolved, hosting operational, dependencies updated | $9,000/qtr | $2,700/qtr |
-| **UX & Feature Development** | Defined feature set delivered (e.g., GEO architecture, new sections, flow optimizations) | $15,000/qtr | $4,500/qtr |
-| **Content & Program Expansion** | New content levels or program materials delivered (e.g., Aura levels, updated curricula) | $9,000/qtr | $2,700/qtr |
-| | | | |
-| **Quarterly Milestone Total** | | **$33,000/qtr** | **$9,900/qtr** |
+| Project | Deliverables | Market Value | Contribution Rate |
+|---------|-------------|--------------|-------------------|
+| **Platform UX Refinement** | Holistic UX review, flow optimization, implemented improvements — accepted by team | $15,000 | $4,500 |
+| **GEO / Content Architecture** | Semantic content structure for AI discoverability, implemented and validated | $12,000 | $3,600 |
+| **Rose App Foundation** | Initial architecture and prototype for the Rose App (daily practice) | $25,000 | $7,500 |
+| **Aura Levels Integration** | Aura Reading Levels 1–5 content and teaching structure *(pending decision)* | $18,000 | $5,400 |
+| **Platform Maintenance Sprint** | Security audit, bug fixes, dependency updates, hosting optimization — scoped per engagement | $9,000 | $2,700 |
 
-*Specific deliverables for each quarter to be defined and agreed upon in advance. Payment triggered upon delivery and acceptance.*
+*Each project is scoped, priced, and accepted independently. No ongoing commitment — projects are engaged as needed.*
 
 ---
 
@@ -282,7 +282,7 @@ Phase 3 is structured as quarterly outcome milestones, each with defined deliver
 |-------|--------------|-------------------|---------|
 | Phase 1 — 3 Milestones (Completed) | $151,000 | $45,300 | 70% |
 | Phase 2 — 3 Milestones (In Progress) | $54,000 | $16,200 | 70% |
-| Phase 3 — Quarterly Milestones (Ongoing) | $33,000/qtr | $9,900/qtr | 70% |
+| Phase 3 — Per-Project Milestones | Scoped per project | Scoped per project | 70% |
 | | | | |
 | **Total (Phases 1 & 2)** | **$205,000** | **$61,500** | **$143,500 in value contributed to the mission** |
 
