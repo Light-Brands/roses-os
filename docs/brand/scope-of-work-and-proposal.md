@@ -143,7 +143,7 @@ All strategic and brand documentation living in the repository:
 | 12 | **Platform UX Refinement** | Holistic UX review and flow optimization per Diego's suggestion |
 | 13 | **GEO / Content Architecture** | Semantic content structure for AI discoverability (Generative Engine Optimization) |
 | 14 | **Rose App Foundation** | Initial architecture for the Rose App (daily practice — spine of global expression) |
-| 15 | **Aura Levels Integration** | Aura Reading Levels 1–5 content and teaching structure |
+| 15 | **Aura Levels Integration** | Aura Reading Levels 1–5 content and teaching structure *(pending decision)* |
 
 ---
 
