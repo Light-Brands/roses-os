@@ -50,11 +50,11 @@ Final manuals served on the website live in `public/resources/manuals/`:
 | 12 | `12-four-roses.PNG` | Four Roses |
 | 13 | `13-cleansing-rose-reimagined.png` | Cleansing Rose |
 | 14 | `14-energy-recovery-background.png` | Recovery Rose |
-| 15 | `15-sacred-space.png` | Sacred Space |
-| 16 | `16-sacred-space.PNG` | Sacred Space (alt) |
-| 17a | `17-pink-rose-closure.png` | Pink Rose |
-| 17b | `17-discharge-excess.PNG` | Discharge Excess |
-| 18 | `18-discharge-excess.PNG` | Discharge Excess (alt) |
+| 15a | `15-pink-rose-closure.png` | Pink Rose |
+| 15b | `15-discharge-excess.PNG` | Discharge Excess (alt) |
+| 16 | `16-discharge-excess.PNG` | Discharge Excess |
+| 17 | `17-sacred-space.png` | Sacred Space |
+| 18 | `18-sacred-space.PNG` | Sacred Space (alt) |
 
 ### Level 2 -- `public/rose med images/level-2/`
 
@@ -154,9 +154,9 @@ The combined Level 1&2 PDF is being split. This manual becomes **Level 2 only**.
 - [ ] **9. Replace Cleansing Rose and Recovery Rose images** -- Use:
   - Cleansing Rose: `level-1/13-cleansing-rose-reimagined.png`
   - Recovery Rose: `level-1/14-energy-recovery-background.png`
-- [ ] **10. Replace Pink Rose image** -- Use `level-1/17-pink-rose-closure.png`
-- [ ] **11. Add Sacred Space section** -- Sacred Space is moving from Level 2 to Level 1. It becomes the last technique (after the pink rose). Add the Sacred Space content and images (`level-1/15-sacred-space.png` / `level-1/16-sacred-space.PNG`).
-- [ ] **12. Add Discharge Excess image at end of meditation** -- Use `level-1/18-discharge-excess.PNG`
+- [ ] **10. Replace Pink Rose image** -- Use `level-1/15-pink-rose-closure.png`
+- [ ] **11. Add Sacred Space section** -- Sacred Space is moving from Level 2 to Level 1. It becomes the last technique (after the pink rose). Add the Sacred Space content and images (`level-1/17-sacred-space.png` / `level-1/18-sacred-space.PNG`).
+- [ ] **12. Add Discharge Excess image at end of meditation** -- Use `level-1/16-discharge-excess.PNG`
 
 ### Level 1 -- Website Only (not in manual)
 
@@ -165,10 +165,6 @@ The combined Level 1&2 PDF is being split. This manual becomes **Level 2 only**.
 ---
 
 ## WEBSITE & PDF FIXES
-
-### Teacher Visual Aid -- Remove White Backgrounds
-
-- [ ] **1. Remove white block backgrounds from images** -- On the Teacher Visual Aid Manual main page, some images have white rectangular backgrounds behind them. Remove these white blocks so images blend with the page background.
 
 ### Programs PDFs -- White Squares on Last Page
 
@@ -181,8 +177,8 @@ Both "Programs" PDFs are generated dynamically at runtime using `pdf-lib` (not s
 
 Both routes use `sharp` for image processing, which may strip transparency and replace it with white. The fix likely involves:
 
-- [ ] **2. Fix white squares in Programs PDF** -- In `src/app/api/pdf/summary/route.ts`, check image embedding logic. When converting images with `sharp`, ensure PNG transparency is preserved (or composite onto the brand background color `#F7F5F2` instead of white).
-- [ ] **3. Fix white squares in Additional Programs PDF** -- Same fix in `src/app/api/pdf/paid-programs/route.ts`.
+- [ ] **1. Fix white squares in Programs PDF** -- In `src/app/api/pdf/summary/route.ts`, check image embedding logic. When converting images with `sharp`, ensure PNG transparency is preserved (or composite onto the brand background color `#F7F5F2` instead of white).
+- [ ] **2. Fix white squares in Additional Programs PDF** -- Same fix in `src/app/api/pdf/paid-programs/route.ts`.
 
 ---
 

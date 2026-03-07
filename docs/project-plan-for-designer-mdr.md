@@ -113,9 +113,10 @@ Below is the **complete inventory** of every image used on the site, organized b
 | 12 | **Roses of Protection, Observation, and Separation** -- Roses at the edges of the aura as energetic sentinels. | `12-four-roses.PNG` | `12-four-roses-original.PNG` |
 | 13 | **Cleansing Rose** -- Rose outside the aura absorbing and transmuting foreign energy. | `13-cleansing-rose-reimagined.png` | `13-cleansing-rose.PNG` |
 | 14 | **Energy Recovery** -- Rose gathering and returning life-force energy to each chakra. | `14-energy-recovery-background.png` | `14-recovery-rose-original.PNG` |
-| 15 | **Sacred Space** -- Creating your own internal energetic environment for meditation. | `15-sacred-space.png` | -- |
-| 16 | **The 6th and 7th Chakras (Sacred Space)** -- Locations of the upper chakras for Level 2 work. | `16-sacred-space.PNG` | `16-sacredspace-original.jpg` |
-| 17 | **Discharge Excess Energy** -- Leaning forward, energy flowing from hands into the earth. | `17-discharge-excess.PNG` | `17-discharge-energy-original.PNG` |
+| 15 | **Pink Rose Closure** -- Gift of well-being at the end of meditation. | `15-pink-rose-closure.png` | -- |
+| 16 | **Discharge Excess Energy** -- Leaning forward, energy flowing from hands into the earth. | `16-discharge-excess.PNG` | `16-discharge-energy-original.PNG` |
+| 17 | **Sacred Space** -- Creating your own internal energetic environment for meditation. | `17-sacred-space.png` | -- |
+| 18 | **The 6th and 7th Chakras (Sacred Space)** -- Locations of the upper chakras for Level 2 work. | `18-sacred-space.PNG` | `18-sacredspace-original.jpg` |
 
 #### Level 2 -- Sacred Space & Chakra Activation (Slides 16-35)
 
@@ -344,8 +345,8 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 ---
 
-#### Slide 17: Discharge Excess Energy
-**Original:** `17-discharge-energy-original.PNG` | **Reimagined:** `17-discharge-excess.PNG`
+#### Slide 16: Discharge Excess Energy
+**Original:** `16-discharge-energy-original.PNG` | **Reimagined:** `16-discharge-excess.PNG`
 
 > After deep meditation or energy work, excess energy may accumulate in the body. To discharge it, lean forward from the seated position with hands reaching toward the ground. Allow the excess energy to flow out through the hands and into the earth, returning the body to a calm, balanced state.
 
@@ -355,15 +356,15 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 ---
 
-#### Slide 15: Let's Create Your Sacred Space
-**Reimagined:** `15-sacred-space.png`
+#### Slide 17: Let's Create Your Sacred Space
+**Reimagined:** `17-sacred-space.png`
 
 > Level 2 begins with creating your own sacred space -- an internal energetic environment that serves as your meditation home. This is the space from which all deeper work is conducted.
 
 ---
 
-#### Slide 16: The 6th and 7th Chakras (Sacred Space)
-**Original:** `16-sacredspace-original.jpg` | **Reimagined:** `16-sacred-space.PNG`
+#### Slide 18: The 6th and 7th Chakras (Sacred Space)
+**Original:** `18-sacredspace-original.jpg` | **Reimagined:** `18-sacred-space.PNG`
 
 > Understanding the locations and roles of the upper chakras is essential for Level 2 work:
 >

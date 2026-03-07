@@ -146,8 +146,8 @@ These Level 1 images may appear in the Level 2 manual as foundational context or
 | **Grounding Cord** | 3 | `3-grounding-cord.jpeg` | -- |
 | **Aura Exercise** | 5 | `5-aura-exercise.PNG` | `5-auraexercise-original.PNG` |
 | **Energy Recovery (Level 1)** | 14 | `14-energy-recovery-background.png` | `14-recovery-rose-original.PNG` |
-| **Sacred Space** | 15 | `15-sacred-space.png` | -- |
-| **6th and 7th Chakras** | 16 | `16-sacred-space.PNG` | `16-sacredspace-original.jpg` |
+| **Sacred Space** | 17 | `17-sacred-space.png` | -- |
+| **6th and 7th Chakras** | 18 | `18-sacred-space.PNG` | `18-sacredspace-original.jpg` |
 
 ### Level 3 Manual -- Images
 
