@@ -113,7 +113,7 @@ export const level3ManualImages: ManualImageMapping = {
     {
       title: 'Stick of Agreements',
       images: [
-        { concept: 'Stick of Agreements', slideNumber: 38, reimaginedImage: 'stick-of-agreements.png' },
+        { concept: 'Stick of Agreements', slideNumber: 38, reimaginedImage: 'level-3/stick-of-agreements.png' },
       ],
     },
   ],
