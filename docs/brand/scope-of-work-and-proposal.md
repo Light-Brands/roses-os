@@ -273,8 +273,8 @@ Phase 3 is structured as **individual project milestones** — each scoped as a 
 | **Rose App Foundation** | Initial architecture and prototype for the Rose App (daily practice) | $25,000 | $7,500 |
 | **Aura Levels Integration** | Aura Reading Levels 1–5 content and teaching structure *(pending decision)* | $18,000 | $5,400 |
 | **Platform Maintenance Sprint** | Security audit, bug fixes, dependency updates, hosting optimization — scoped per engagement | $9,000 | $2,700 |
-| **Animated Visual Technique Demos** | Upload existing technique demonstration videos, build video player components, integrate into teaching platform organized by technique category | TBD | TBD |
-| **Guardian & Testimonial Videos** | Upload existing guardian and testimonial videos, build video sections on guardians page and community page | TBD | TBD |
+| **Animated Visual Technique Demos** | Upload existing technique demonstration videos, build video player components, integrate into teaching platform organized by technique category | $12,000 | $3,600 |
+| **Guardian & Testimonial Videos** | Upload existing guardian and testimonial videos, build video sections on guardians page and community page | $8,000 | $2,400 |
 
 *Each project is scoped, priced, and accepted independently. No ongoing commitment — projects are engaged as needed.*
 
