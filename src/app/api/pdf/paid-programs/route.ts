@@ -431,10 +431,11 @@ export async function GET() {
     }
 
     // Load brand images
-    const [roseImage, communityImage, backcoverImage] = await Promise.all([
+    const [roseImage, communityImage, backcoverImage, teachersMandalaImage] = await Promise.all([
       loadAndResizeImage(doc, 'rose med images/1-the-rose.PNG', 400, 250),
       loadAndResizeImage(doc, 'page-images/page-community.png', 500, 280),
       loadAndResizeImage(doc, 'images/backcover-rose-mandala.png', 160, 160),
+      loadAndResizeImage(doc, 'images/teachers-training-mandala.png', 360, 240),
     ]);
 
     let pageNum = 0;
@@ -762,6 +763,21 @@ export async function GET() {
         y = drawWrappedText(page,
           'The training runs in two five-month cycles per year with the same content: Program 1 (March to July) and Program 2 (August to December). An introduction class is held in February. See the following pages for the complete 2026 schedule.',
           MARGIN, y, sansFont, 9, CONTENT_WIDTH, COLORS.warmGray);
+
+        // Decorative mandala image
+        if (teachersMandalaImage) {
+          const mandalaMaxW = 160;
+          const mandalaScale = Math.min(mandalaMaxW / teachersMandalaImage.width, mandalaMaxW / teachersMandalaImage.height);
+          const mandalaW = teachersMandalaImage.width * mandalaScale;
+          const mandalaH = teachersMandalaImage.height * mandalaScale;
+          page.drawImage(teachersMandalaImage, {
+            x: (PAGE_WIDTH - mandalaW) / 2,
+            y: Math.max(MARGIN + 30, y - mandalaH - 20),
+            width: mandalaW,
+            height: mandalaH,
+            opacity: 0.5,
+          });
+        }
       }
     }
 
