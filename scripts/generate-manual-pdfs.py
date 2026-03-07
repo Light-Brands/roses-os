@@ -639,6 +639,7 @@ LEVEL_1_HTML = """<!DOCTYPE html>
 
 <!-- CREDITS -->
 <div class="end-page">
+  <img src="public/images/backcover-rose-mandala.png" style="max-width: 160px; height: auto; margin-bottom: 1.5cm; border-radius: 50%;" />
   <p><strong>Teachings by Angelina Ataíde</strong></p>
   <p style="font-size: 9pt; margin-top: 0.5cm; color: #8C7E73; font-style: normal; font-family: Inter, sans-serif;">Illustrations: Saraswati Noemi, Cecilia Lynch, Drica Voivodic</p>
   <p style="font-size: 9pt; color: #8C7E73; font-style: normal; font-family: Inter, sans-serif;">No part of this manual may be reproduced and/or shown to people who have not attended a Rose Meditation Course.</p>
@@ -841,6 +842,7 @@ LEVEL_2_HTML = """<!DOCTYPE html>
 
 <!-- CREDITS -->
 <div class="end-page">
+  <img src="public/images/backcover-rose-mandala.png" style="max-width: 160px; height: auto; margin-bottom: 1.5cm; border-radius: 50%;" />
   <p><strong>Teachings by Angelina Ataíde</strong></p>
   <p style="font-size: 9pt; margin-top: 0.5cm; color: #8C7E73; font-style: normal; font-family: Inter, sans-serif;">Illustrations: Saraswati Noemi, Cecilia Lynch, Drica Voivodic</p>
   <p style="font-size: 9pt; color: #8C7E73; font-style: normal; font-family: Inter, sans-serif;">No part of this manual may be reproduced and/or shown to people who have not attended a Rose Meditation Course.</p>
@@ -1149,6 +1151,7 @@ LEVEL_3_HTML = """<!DOCTYPE html>
 
 <!-- CREDITS -->
 <div class="end-page">
+  <img src="public/images/backcover-rose-mandala.png" style="max-width: 160px; height: auto; margin-bottom: 1.5cm; border-radius: 50%;" />
   <p><strong>Teachings by Angelina Ataíde</strong></p>
   <p style="font-size: 9pt; margin-top: 0.5cm; color: #8C7E73; font-style: normal; font-family: Inter, sans-serif;">Illustrations: Saraswati Noemi, Cecilia Lynch, Drica Voivodic</p>
   <p style="font-size: 9pt; color: #8C7E73; font-style: normal; font-family: Inter, sans-serif;">No part of this manual may be reproduced and/or shown to people who have not attended a Level 3 Rose Meditation Course.</p>

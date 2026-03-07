@@ -344,11 +344,12 @@ export async function GET() {
     }
 
     // Load brand images (resized for reasonable PDF size)
-    const [homeImage, roseImage, theRoseImage, communityImage] = await Promise.all([
+    const [homeImage, roseImage, theRoseImage, communityImage, backcoverImage] = await Promise.all([
       loadAndResizeImage(doc, 'page-images/page-home.png', 500, 300),
       loadAndResizeImage(doc, 'rose med images/1-the-rose.PNG', 400, 250),
       loadAndResizeImage(doc, 'page-images/page-the-rose.png', 500, 280),
       loadAndResizeImage(doc, 'page-images/page-community.png', 500, 280),
+      loadAndResizeImage(doc, 'images/backcover-rose-mandala.png', 160, 160),
     ]);
 
     // =========================================================================
@@ -798,6 +799,20 @@ export async function GET() {
         color: COLORS.roseClay,
         opacity: 0.4,
       });
+
+      // Backcover logo
+      if (backcoverImage) {
+        const imgScale = Math.min(120 / backcoverImage.width, 120 / backcoverImage.height);
+        const imgW = backcoverImage.width * imgScale;
+        const imgH = backcoverImage.height * imgScale;
+        page.drawImage(backcoverImage, {
+          x: (PAGE_WIDTH - imgW) / 2,
+          y: y - imgH,
+          width: imgW,
+          height: imgH,
+        });
+        y -= imgH + 16;
+      }
 
       // Heading
       const heading = 'Begin Your Journey';
