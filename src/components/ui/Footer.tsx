@@ -2,7 +2,9 @@
 
 import { useRef } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { motion, useInView } from 'framer-motion';
+import { navItems } from '@/lib/data';
 
 // =============================================================================
 // DATA
@@ -10,11 +12,7 @@ import { motion, useInView } from 'framer-motion';
 
 const navLinks = [
   { label: 'Home', href: '/' },
-  { label: 'Offerings', href: '/offerings' },
-  { label: 'Community', href: '/community' },
-  { label: 'The Rose', href: '/the-rose' },
-  { label: 'Guardians', href: '/guardians' },
-  { label: 'Contact', href: '/contact' },
+  ...navItems,
   { label: 'For Teachers', href: '/teaching' },
 ];
 
@@ -24,6 +22,7 @@ const navLinks = [
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const pathname = usePathname();
   const footerRef = useRef<HTMLElement>(null);
   const isInView = useInView(footerRef, { once: true, margin: '-50px' });
 
@@ -45,6 +44,7 @@ export default function Footer() {
               <Link
                 key={link.label}
                 href={link.href}
+                aria-current={pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href)) ? 'page' : undefined}
                 className="py-1.5 text-[11px] sm:text-xs text-warm-500 dark:text-warm-400 hover:text-warm-300 dark:hover:text-warm-700 transition-colors duration-200"
               >
                 {link.label}

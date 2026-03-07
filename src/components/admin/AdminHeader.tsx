@@ -66,6 +66,26 @@ export function AdminHeader({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  // Close user menu on Escape
+  useEffect(() => {
+    if (!showUserMenu) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setShowUserMenu(false);
+    };
+    document.addEventListener('keydown', handleKey);
+    return () => document.removeEventListener('keydown', handleKey);
+  }, [showUserMenu]);
+
+  // Close search overlay on Escape
+  useEffect(() => {
+    if (!showSearch) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setShowSearch(false);
+    };
+    document.addEventListener('keydown', handleKey);
+    return () => document.removeEventListener('keydown', handleKey);
+  }, [showSearch]);
+
   // Focus search input when opened
   useEffect(() => {
     if (showSearch && searchInputRef.current) {

@@ -8,6 +8,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Logo } from './Logo';
 import { AnimatedNavText } from './AnimatedNavText';
+import { navItems as defaultNavItems } from '@/lib/data';
 
 // =============================================================================
 // TYPES
@@ -25,14 +26,6 @@ interface NavigationProps {
   cta?: { label: string; href: string };
   transparent?: boolean;
 }
-
-const defaultItems: NavItem[] = [
-  { label: 'Offerings', href: '/offerings' },
-  { label: 'Community', href: '/community' },
-  { label: 'The Rose', href: '/the-rose' },
-  { label: 'Guardians', href: '/guardians' },
-  { label: 'Contact', href: '/contact' },
-];
 
 // =============================================================================
 // SCROLL DIRECTION HOOK
@@ -106,7 +99,7 @@ function HamburgerIcon({ isOpen }: { isOpen: boolean }) {
 
 export function Navigation({
   logo,
-  items = defaultItems,
+  items = defaultNavItems,
   cta = { label: 'Begin', href: '/invitation' },
   transparent = false,
 }: NavigationProps) {
@@ -115,6 +108,15 @@ export function Navigation({
   const pathname = usePathname();
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const hamburgerRef = useRef<HTMLButtonElement>(null);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [pathname]);
+
+  // Helper: match active state for nested routes
+  const isNavActive = (href: string) =>
+    pathname === href || (href !== '/' && pathname.startsWith(href));
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -142,6 +144,10 @@ export function Navigation({
     }, 100);
 
     const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsMobileMenuOpen(false);
+        return;
+      }
       if (e.key !== 'Tab') return;
 
       const focusable = panel.querySelectorAll<HTMLElement>(
@@ -205,7 +211,7 @@ export function Navigation({
             {/* Left: nav links — equal flex so logo stays centered */}
             <div className="hidden lg:flex items-center gap-1 flex-1 min-w-0 justify-start lg:pr-20">
               {items.map((item) => {
-                const isActive = pathname === item.href;
+                const isActive = isNavActive(item.href);
                 return (
                   <Link
                     key={item.label}
@@ -221,7 +227,11 @@ export function Navigation({
                   >
                     <AnimatedNavText>{item.label}</AnimatedNavText>
                     {isActive && (
-                      <span className="absolute bottom-0 left-2 right-2 xl:left-4 xl:right-4 h-[2px] bg-[var(--color-rose-500)] rounded-full" />
+                      <motion.span
+                        layoutId="nav-active-underline"
+                        className="absolute bottom-0 left-2 right-2 xl:left-4 xl:right-4 h-[2px] bg-[var(--color-rose-500)] rounded-full"
+                        transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                      />
                     )}
                   </Link>
                 );
@@ -375,7 +385,7 @@ export function Navigation({
                 {/* Nav Items */}
                 <nav className="space-y-1">
                   {items.map((item, index) => {
-                    const isActive = pathname === item.href;
+                    const isActive = isNavActive(item.href);
                     return (
                       <motion.div
                         key={item.label}
