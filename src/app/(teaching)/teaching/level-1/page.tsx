@@ -10,6 +10,7 @@ import ManualPdfButton from '@/components/teaching/ManualPdfButton';
 import { manualPdfConfigs } from '@/lib/data/manual-pdf-paths';
 import { ImageDownloadButton } from '@/components/teaching/ImageDownloadButton';
 import LanguageSelector from '@/components/teaching/LanguageSelector';
+import LevelNavigation from '@/components/teaching/LevelNavigation';
 import { useLanguage } from '@/lib/i18n';
 
 export default function Level1Page() {
@@ -87,6 +88,8 @@ export default function Level1Page() {
                 />
               ))}
             </section>
+
+            <LevelNavigation currentLevel={1} />
           </div>
         </main>
       </div>
