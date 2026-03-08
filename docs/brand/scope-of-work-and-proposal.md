@@ -147,6 +147,8 @@ All strategic and brand documentation living in the repository:
 | 15 | **Aura Levels Integration** | Aura Reading Levels 1-5 content and teaching structure *(pending decision)* |
 | 16 | **Animated Visual Technique Demos** | Upload and integrate existing animated visual aids demonstrating Rose Meditation techniques (grounding cord, golden sun, four roses, energy circuits, cleansing) into the website teaching platform |
 | 17 | **Guardian & Testimonial Videos** | Upload and integrate existing guardian and testimonial videos on the guardians page and community page |
+| 18 | **Cohesive Payment Page** | Unified, branded online payment experience for contributions, enrollment fees, and program purchases -- integrated with Stripe or equivalent |
+| 19 | **Email Collection & List Management** | Branded email capture forms across key pages (homepage, invitation, community), automated welcome sequences, and integration with an email marketing platform (e.g., Mailchimp, ConvertKit, or Resend) for newsletters and program announcements |
 
 ---
 
@@ -276,6 +278,8 @@ Phase 3 is structured as **individual project milestones** -- each scoped as a s
 | **Platform Maintenance Sprint** | Security audit, bug fixes, dependency updates, hosting optimization -- scoped per engagement | $9,000 | $900 |
 | **Animated Visual Technique Demos** | Upload existing technique demonstration videos, build video player components, integrate into teaching platform organized by technique category | $12,000 | $1,200 |
 | **Guardian & Testimonial Videos** | Upload existing guardian and testimonial videos, build video sections on guardians page and community page | $8,000 | $800 |
+| **Cohesive Payment Page** | Unified branded payment experience -- single, elegant page handling contributions, enrollment fees, and program purchases. Stripe integration, income-based tier selection, branded receipts/confirmations, mobile-optimized checkout. Replaces the current form-only contribution flow with real payment processing. | $14,000 | $1,400 |
+| **Email Collection & List Management** | Branded email capture forms (homepage hero, invitation page, community interest, footer), integration with email marketing platform (Mailchimp, ConvertKit, or Resend), automated welcome sequence, segment-based lists (prospective students, initiated practitioners, general community), GDPR-compliant opt-in, and newsletter/announcement infrastructure. | $10,000 | $1,000 |
 
 *Each project is scoped, priced, and accepted independently. No ongoing commitment -- projects are engaged as needed.*
 
@@ -292,7 +296,8 @@ The following larger platform features are identified from the designer plan and
 | **Unified PDF Export Template System** | Consolidate all PDF generation (Programs, Teachers Aid, Manuals, Enrollment confirmations) into a single branded template system -- consistent wordmark, margins, typography, textures across every PDF the platform produces. | Can be built independently. Improves all existing PDF outputs. |
 | **Full Localization Pass** | Translate all platform web content (pages, forms, UI labels, navigation) into Spanish, Portuguese, and Greek. i18n infrastructure already exists (language selector in place). This covers web pages only -- manual translations are a separate deliverable. | Translation services needed. Infrastructure is ready. |
 | **Admin Dashboard Backend Integration** | Connect the existing admin UI scaffold (8 pages, all styled with demo data) to live Supabase backend -- real analytics, user management, content editing, media library, and feedback collection. | Supabase schema exists. Requires data migration and API wiring. |
-| **Payment Processing Integration** | Integrate Stripe or equivalent for the contribution flow -- currently form-only with no real payment processing. | Requires business/legal decisions on payment structure. |
+| **Cohesive Payment Page** | Build a single, unified branded payment page that handles all ROSES OS transactions -- contributions (income-based tiers), enrollment fees, program purchases, and future offerings. Integrates Stripe (or equivalent) with real payment processing, branded receipts, confirmation emails, and mobile-optimized checkout. Replaces the current form-only contribution flow. | Requires business/legal decisions on payment structure, Stripe account setup, and contribution tier finalization. |
+| **Email Collection & List Management** | Implement branded email capture forms across high-traffic pages (homepage, invitation, community interest, footer). Integrate with an email marketing platform (Mailchimp, ConvertKit, or Resend) for automated welcome sequences, program announcements, and newsletters. Segment-based lists for prospective students, initiated practitioners, and general community. GDPR-compliant opt-in with double confirmation. | Requires email platform selection and brand-approved copy for welcome sequences. Can begin independently. |
 
 ---
 
