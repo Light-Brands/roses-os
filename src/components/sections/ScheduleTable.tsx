@@ -160,6 +160,11 @@ export default function ScheduleTable({ stages, className }: ScheduleTableProps)
           </div>
         ))}
       </div>
+
+      {/* WhatsApp footnote */}
+      <p className="text-xs text-[var(--color-foreground-faint)] mt-4 italic">
+        * For the most up-to-date information on times and dates, please check the WhatsApp channel.
+      </p>
     </motion.div>
   );
 }
