@@ -22,7 +22,7 @@
 | **Format** | Web-viewable PDF and direct download -- each manual is a beautifully designed PDF document |
 | **Languages** | English, Spanish, Portuguese, Greek -- four language versions of each manual |
 | **Image direction** | All images are sourced from the Teachers Training section on the site -- the same images used in the Teacher's Resource Manual. No new images or modifications needed. Every illustration accurately depicts the teaching position or imagination technique. See Section 3.5 for the complete image-to-manual mapping. |
-| **Source materials** | `docs/source-materials/ROSES MANUAL 1 and 2 _2022_ English V1 .pdf` (legacy -- Level 2 content only), `docs/source-materials/ROSES 3 MANUAL _2022 English_ V1.pdf` (legacy Level 3) |
+| **Source materials** | `docs/source-materials/ROSES-Manual-Levels-1-and-2_compressed.pdf` (legacy -- Level 2 content only), `docs/source-materials/ROSES-Manual-Level-3_compressed.pdf` (legacy Level 3), `docs/source-materials/ Rose Meditation Level 3_2026.pdf` (**authoritative 2026 edition** -- use this for all Level 3 content) |
 | **Brand tone** | Sacred-tech minimalism -- earthy, grounded, warm, quiet. Never busy, never loud. |
 | **Priority** | **URGENT -- classes start March 15, 2026** |
 | **Deadline** | Before March 15, 2026 |
@@ -47,14 +47,14 @@ The student manuals are personal companions for participants -- reference docume
 
 ---
 
-## 2. THE TWO MANUALS
+## 2. THE MANUALS
 
 ### Manual A -- Level 2 Manual
 
 **What it is:** The standalone Level 2 student manual. This covers Level 2 content only -- Level 1 information is not included as it is already covered in the Level 1 manual.
 
 **Content scope:**
-- Sacred space and energy management
+- Energy management (preparing, protecting, cleansing, and owning the space)
 - Chakra system deep dive (Chakras 1-7)
 - Chakra activation and regulation techniques
 - Energy flow and balance
@@ -62,7 +62,7 @@ The student manuals are personal companions for participants -- reference docume
 
 **Image direction:** All images are sourced directly from the Teachers Training section on the site -- the same illustrations used in the Teacher's Resource Manual. No new images needed. See Section 3.5 for the complete image-to-manual mapping. **Critical:** every illustration accurately depicts the meditation position, energetic structure, or imagination technique being taught -- the beauty of the imagery never compromises the teaching accuracy.
 
-**Source reference:** `docs/source-materials/ROSES MANUAL 1 and 2 _2022_ English V1 .pdf` -- extract Level 2 content only from this legacy document.
+**Source reference:** `docs/source-materials/ROSES-Manual-Levels-1-and-2_compressed.pdf` -- extract Level 2 content only from this legacy document.
 
 ---
 
@@ -79,7 +79,7 @@ The student manuals are personal companions for participants -- reference docume
 
 **Image direction:** Same approach as Manual A -- all images sourced from the Teachers Training section on the site. No new images needed. See Section 3.5 for the complete image-to-manual mapping. **Critical:** accuracy of the teaching depiction always comes first.
 
-**Source reference:** `docs/source-materials/ROSES 3 MANUAL _2022 English_ V1.pdf` -- this is the legacy version being replaced and elevated.
+**Source reference:** `docs/source-materials/ Rose Meditation Level 3_2026.pdf` -- this is the **authoritative 2026 edition**. Use this for all Level 3 content (replaces the legacy 2022 version). The legacy version is available at `docs/source-materials/ROSES-Manual-Level-3_compressed.pdf` for reference only.
 
 **Resource label:** This manual is labeled "Level 3 2026" in the Resources section.
 
@@ -255,7 +255,7 @@ All manuals follow the unified ROSES OS PDF template system:
 - **Page elements:** Page numbers, section headers in footer, ROSES OS wordmark
 - **Illustrations:** Must render cleanly in PDF (SVG or high-resolution PNG)
 - **Access:** These are **not** password-protected (unlike the Teacher's Manual) -- they are student resources
-- **File naming convention:** `ROSES-OS-Level-2-Manual-EN.pdf`, `ROSES-OS-Level-2-Manual-ES.pdf`, `ROSES-OS-Level-3-2026-EN.pdf`, `ROSES-OS-Level-3-2026-EL.pdf`, etc.
+- **File naming convention:** `ROSES-OS-Level-2-Manual-EN.pdf`, `ROSES-OS-Level-2-Manual-ES.pdf`, `ROSES-OS-Level-3-Manual-EN.pdf`, `ROSES-OS-Level-3-Manual-EL.pdf`, etc.
 
 ---
 
@@ -264,7 +264,7 @@ All manuals follow the unified ROSES OS PDF template system:
 > **Timeline: Must be complete before March 15, 2026.**
 
 ### Phase A -- Content & Layout Planning (Days 1-2)
-- [ ] Review legacy manuals (`ROSES MANUAL 1 and 2 _2022_ English V1 .pdf` for Level 2 content only, and `ROSES 3 MANUAL _2022 English_ V1.pdf`)
+- [ ] Review legacy manuals (`ROSES-Manual-Levels-1-and-2_compressed.pdf` for Level 2 content only) and the authoritative Level 3 source (`Rose Meditation Level 3_2026.pdf`)
 - [ ] Inventory Level 2 content (separate from Level 1 -- Level 1 is excluded)
 - [ ] Inventory Level 3 content
 - [ ] Match manual concepts to teachers training images using the mapping in Section 3.5
@@ -335,11 +335,11 @@ All images come from the Teachers Training section -- no new illustrations neede
 
 ---
 
-## 10. PLANNED FUTURE CHANGE -- SACRED SPACE CONTENT MOVE
+## 10. SACRED SPACE CONTENT MOVE -- ACTIVE
 
-> **This change happens after all manuals are complete.** Not part of the March 15 deadline.
+> **This change is part of the March 15 deliverable.** Sacred Space moves now.
 
-The first known change is that **Sacred Space teaching and imagery will move from the Level 2 manual to the Level 1 manual**. More technique movements between levels may follow.
+**Sacred Space teaching and imagery is moving from the Level 2 manual to the Level 1 manual.** It becomes the last technique in Level 1, after the pink rose. The Action Steps document (`project-plan-for-designer-action-steps.md`) has the specific tasks: add Sacred Space to Level 1 (L1 step #11) and remove it from Level 2 (L2 step #4). The code (`manual-image-mapping.ts`) already reflects this change. More technique movements between levels may follow in the future.
 
 **This is why all content must be built modular** (see Section 11 below). Because the manuals are modular, relocating Sacred Space -- or any other technique -- is simply a matter of moving the module from one manual to another and regenerating the PDFs.
 

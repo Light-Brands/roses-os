@@ -55,7 +55,7 @@ export default function ChakraSlideCard({ chakra, index = 0, className }: Chakra
         if (imageSrc) {
           return (
             <div
-              className="relative aspect-[16/10]"
+              className="relative aspect-[16/10] bg-white"
               style={{
                 borderBottom: `2px solid ${chakra.chakraColor}40`,
               }}
