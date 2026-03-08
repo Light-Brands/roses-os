@@ -1,6 +1,6 @@
 # ROSES OS -- Designer Action Steps
 
-> Concrete task checklist for manual redesign and website image fixes. Reference this alongside the master plan ([`project-plan-for-designer.md`](project-plan-for-designer.md)) and the manuals brief ([`project-plan-for-designer-manuals.md`](project-plan-for-designer-manuals.md)).
+> Concrete task checklist for manual redesign and website image fixes.
 
 **Deadline:** Before March 15, 2026 (classes start)
 
@@ -27,7 +27,7 @@ Final manuals served on the website live in `public/resources/manuals/`:
 | `ROSES-OS-Level-2-Manual-EN.pdf` (567 KB) | Present |
 | `ROSES-OS-Level-3-Manual-EN.pdf` (768 KB) | Present |
 
-> **Note:** The combined `ROSES-Manual-Levels-1-and-2.pdf` (933 KB) is being retired. The final deliverables are three separate manuals (Level 1, Level 2, Level 3). The combined PDF's Level 2 content is being extracted into the standalone Level 2 manual above.
+> **Note:** The combined `ROSES-Manual-Levels-1-and-2.pdf` (933 KB) is being retired. The final deliverables are three separate manuals (Level 1, Level 2, Level 3). The combined PDF's Level 2 content is being extracted into the standalone Level 2 manual above. The Level 2 manual needs its **cover image page restored** (lost during the split) and its **Table of Contents rebuilt** with only Level 2 sections -- see Level 2 action steps 2 and 3.
 
 ---
 
@@ -149,9 +149,10 @@ The combined Level 1&2 PDF is being split. This manual becomes **Level 2 only**.
 - [ ] **5. Add Limits of Aura image** -- Use `level-1/5-aura-exercise.PNG` (new addition to the manual)
 - [ ] **6. Add Expansion of Grounding Cord image** -- Use `level-1/6-expansion-grounding-cord.jpeg` (new addition to the manual)
 - [ ] **7. Replace Four Roses image** -- Use `level-1/12-four-roses.PNG`
-- [ ] **8. Replace Earth, Cosmos, Earth+Cosmos images** -- Use TWO images:
+- [ ] **8. Replace Earth, Cosmos, Earth+Cosmos images** -- Use THREE images:
   - `level-1/8-earth-energy.PNG`
   - `level-1/9-cosmos-circuit.jpeg`
+  - `level-1/10-cosmosearth.PNG`
 - [ ] **9. Replace Cleansing Rose and Recovery Rose images** -- Use:
   - Cleansing Rose: `level-1/13-cleansing-rose-reimagined.png`
   - Recovery Rose: `level-1/14-energy-recovery-background.png`
@@ -178,8 +179,8 @@ Both "Programs" PDFs are generated dynamically at runtime using `pdf-lib` (not s
 
 Both routes use `sharp` for image processing, which may strip transparency and replace it with white. The fix likely involves:
 
-- [ ] **1. Fix white squares in Programs PDF** -- In `src/app/api/pdf/summary/route.ts`, check image embedding logic. When converting images with `sharp`, ensure PNG transparency is preserved (or composite onto the brand background color `#F7F5F2` instead of white).
-- [ ] **2. Fix white squares in Additional Programs PDF** -- Same fix in `src/app/api/pdf/paid-programs/route.ts`.
+- [x] **1. Fix white squares in Programs PDF** -- In `src/app/api/pdf/summary/route.ts`, added `sharp.flatten({ background: brandBg })` before PNG conversion to composite transparency onto brand background `#F7F5F2` instead of white.
+- [x] **2. Fix white squares in Additional Programs PDF** -- Same fix applied in `src/app/api/pdf/paid-programs/route.ts`.
 
 ### Teaching Visual Aid -- White Rectangles Behind Images
 

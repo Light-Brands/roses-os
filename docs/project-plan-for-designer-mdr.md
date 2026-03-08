@@ -118,60 +118,56 @@ Below is the **complete inventory** of every image used on the site, organized b
 | 17 | **Sacred Space** -- Creating your own internal energetic environment for meditation. | `17-sacred-space.png` | -- |
 | 18 | **The 6th and 7th Chakras (Sacred Space)** -- Locations of the upper chakras for Level 2 work. | `18-sacred-space.PNG` | `18-sacredspace-original.jpg` |
 
-#### Level 2 -- Sacred Space & Chakra Activation (Slides 16-35)
+#### Level 2 -- Sacred Space & Chakra Activation (Slides 19-38)
+
+All files in `public/rose med images/level-2/`.
 
 | Slide | Concept | Reimagined Image | Original Image |
 |-------|---------|-----------------|---------------|
-| 16 | **Prepare Your Physical Space** -- Physical environment preparation for meditation. | `16-physical-space.png` | -- |
-| 17 | **Protection of the Space** -- Golden roses at corners connected by golden lines forming a sacred grid. | `17-create-the-room.jpg` | `17-protectthespace-original.jpg` |
-| 18 | **Cleansing of the Space** -- Large rose above the grid pouring golden energy downward. | `18-cleanse-the-space.jpg` | `18-cleansing-space-original.PNG` |
-| 19 | **Owning Your Space** -- Person radiating energy from within, filling the grid with their own light. | `19-owning-space.jpg` | `19-protect-the-space-original.PNG` |
-| 20 | **Let's Talk About Chakras** -- Introduction to the chakra system. | `20-chakras-intro.jpeg` | -- |
-| 21 | **The Seven Chakras (body map)** -- Figures with color-coded chakra points on the body. | `21-chakras.png` | `21-chakras-original.PNG` |
-| 22 | **Root Chakra** -- Body illustration emphasizing root location, dominant red. | `22-root-chakra.png` | -- |
-| 23 | **Sacral Chakra** -- Body illustration emphasizing sacral location, dominant orange. | `23-sacral-chakra.png` | -- |
-| 24 | **Solar Plexus Chakra** -- Body illustration emphasizing solar plexus location, dominant yellow. | `24-solar-plexus-chakra.png` | -- |
-| 25 | **Heart Chakra** -- Body illustration emphasizing heart location, dominant green/pink. | `25-heart-chakra.png` | -- |
-| 26 | **Throat Chakra** -- Body illustration emphasizing throat location, dominant light blue. | `26-throat-chakra.png` | -- |
-| 27 | **Third Eye Chakra** -- Body illustration emphasizing third eye location, dominant indigo. | `27-third-eye-chakra.jpeg` | -- |
-| 28 | **Crown Chakra** -- Body illustration emphasizing crown location, dominant violet/white. | `28-crown-chakra.png` | -- |
-| 29 | **Cleansing Each Aura Layer** -- Seven distinct color-coded aura layers. | `29-cleansing-each-layer.PNG` | `29-cleansing-layers-original.jpg` |
-| 30 | **Cleansing Each Chakra** -- Roses on either side for past and present dynamics. | `30-cleansing-each-chakra.PNG` | `30-cleansingeachchakra-original.jpg` |
-| 31 | **Energy Recovery (Level 2)** -- Rose gathering energy back to each chakra at a deeper level. | `31-energy-recovery.jpeg` | `31-energyrecoveryeachchakra-original.jpg` |
-| 32 | **Golden Sticky Roses -- Phase 1** -- Roses placed on each of the seven chakra points. | `32-golden-sticky-1.jpg` | `32-golden-sticky-1-original.jpg` |
-| 33 | **Golden Sticky Roses -- Phase 2** -- Roses at all major joints and extremities. | `33-golden-sticky-2.jpg` | `33-golden-sticky-2-original.PNG` |
-| 34 | **Golden Sticky Roses -- Phase 3** -- Full body coverage with golden roses. | `34-golden-sticky-3.jpg` | `34-golden-sticky-3-original.PNG` |
-| 35 | **Golden Sticky Roses -- Phase 4** -- Integration: large golden rose above, golden light cascading through body. | `35-golden-sticky-4.jpg` | `35-golden-sticky-4-original.PNG` |
+| 19 | **Prepare Your Physical Space** -- Physical environment preparation for meditation. | `level-2/19-physical-space.png` | -- |
+| 20 | **Protection of the Space** -- Golden roses at corners connected by golden lines forming a sacred grid. | `level-2/20-create-the-room.jpg` | -- |
+| 21 | **Cleansing of the Space** -- Large rose above the grid pouring golden energy downward. | `level-2/21-cleanse-the-space.jpg` | -- |
+| 22 | **Owning Your Space** -- Person radiating energy from within, filling the grid with their own light. | `level-2/22-owning-space.jpg` | `level-2/22-protect-the-space-original.PNG` |
+| 23 | **Let's Talk About Chakras** -- Introduction to the chakra system. | `level-2/23-chakras-intro.jpeg` | -- |
+| 24 | **The Seven Chakras (body map)** -- Figures with color-coded chakra points on the body. | `level-2/24-chakras.png` | -- |
+| 25 | **Root Chakra** -- Body illustration emphasizing root location, dominant red. | `level-2/25-root-chakra.png` | -- |
+| 26 | **Sacral Chakra** -- Body illustration emphasizing sacral location, dominant orange. | `level-2/26-sacral-chakra.png` | -- |
+| 27 | **Solar Plexus Chakra** -- Body illustration emphasizing solar plexus location, dominant yellow. | `level-2/27-solar-plexus-chakra.png` | -- |
+| 28 | **Heart Chakra** -- Body illustration emphasizing heart location, dominant green/pink. | `level-2/28-heart-chakra.png` | -- |
+| 29 | **Throat Chakra** -- Body illustration emphasizing throat location, dominant light blue. | `level-2/29-throat-chakra.png` | -- |
+| 30 | **Third Eye Chakra** -- Body illustration emphasizing third eye location, dominant indigo. | `level-2/30-third-eye-chakra.jpeg` | -- |
+| 31 | **Crown Chakra** -- Body illustration emphasizing crown location, dominant violet/white. | `level-2/31-crown-chakra.png` | -- |
+| 32 | **Cleansing Each Aura Layer** -- Seven distinct color-coded aura layers. | `level-2/32-cleansing-each-layer.PNG` | -- |
+| 33 | **Cleansing Each Chakra** -- Roses on either side for past and present dynamics. | `level-2/33-cleansing-each-chakra.PNG` | -- |
+| 34 | **Energy Recovery (Level 2)** -- Rose gathering energy back to each chakra at a deeper level. | `level-2/34-energy-recovery.jpeg` | -- |
+| 35 | **Golden Sticky Roses -- Phase 1** -- Roses placed on each of the seven chakra points. | `level-2/35-golden-sticky-1.jpg` | -- |
+| 36 | **Golden Sticky Roses -- Phase 2** -- Roses at all major joints and extremities. | `level-2/36-golden-sticky-2.jpg` | -- |
+| 37 | **Golden Sticky Roses -- Phase 3** -- Full body coverage with golden roses. | `level-2/37-golden-sticky-3.jpg` | -- |
+| 38 | **Golden Sticky Roses -- Phase 4** -- Integration: large golden rose above, golden light cascading through body. | `level-2/38-golden-sticky-4.jpg` | -- |
 
-#### Level 3 -- Advanced Perception (Slides 36--37)
+#### Level 3 -- Advanced Perception (Slides 39-44)
+
+All files in `public/rose med images/level-3/`.
 
 | Slide | Concept | Reimagined Image | Original Image |
 |-------|---------|-----------------|---------------|
-| 36 | **The Analyzer** -- Energetic point at the back of the head (occipital ridge) for deeper perception. | `36-analyzer.PNG` | `36-analyzer-original-reimagined.jpg` |
-| 37 | **The Analyzer & Sacred Space** -- Combined reference showing the Analyzer in relation to the sacred space. | `level-3/37-analyzer-and-sacred-space.png` | -- |
-
-#### Supplementary Reference Images
-
-These files exist in `public/rose med images/` and are referenced as supplementary notes in the site data but are not displayed as primary slide images:
-
-| File | Referenced In | Purpose |
-|---|---|---|
-| `8-circuitofenergycosmos.PNG` | Slide 9 note | Previous version of cosmos circuit |
-| `10-cosmosearth.PNG` | Slide 10 note | Alternate cosmos + earth view |
-| `21a-example-of-chakra-slides.PNG` | Slide 21 note | Style reference for chakra pages |
-| `29a-chakracleansing-original.jpg` | Slide 30 note | Detail reference for chakra cleansing |
-| `34-golden-sticky-3-original-alt.PNG` | Slide 34 note | Alternate original for golden sticky phase 3 |
+| 39 | **The Analyzer** -- Energetic point at the back of the head (occipital ridge) for deeper perception. | `level-3/39-analyzer.PNG` | -- |
+| 40 | **The Analyzer & Sacred Space** -- Combined reference showing the Analyzer in relation to the sacred space. | `level-3/40-analyzer-and-sacred-space.png` | -- |
+| 41 | **Stick of Agreements** -- Spiritual agreements and energetic commitments. | `level-3/41-stick-of-agreements.png` | -- |
+| 42 | **Cutting Cords** -- Releasing energetic cords and attachments. | `level-3/42-cutting-cords.png` | -- |
+| 43 | **Post Intimacy / Sexual Recovery Rose** -- Rose tool for energetic recovery after intimacy. | `level-3/43-sexual-recovery-rose.png` | -- |
+| 44 | **Mock Up** -- Energetic visualization and creation tool. | `level-3/44-mock-up.png` | -- |
 
 ### Coverage Summary
 
-All 37 teaching slides have images on the site. Every image file is in `public/rose med images/`.
+All 44 teaching slides have images on the site. Every image file is in `public/rose med images/` organized by level.
 
-| Category | Total Slides | Have Reimagined | Have Original | Have Both |
-|----------|-------------|----------------|--------------|-----------|
-| Level 1: Foundations | 17 | 17 | 9 | 9 |
-| Level 2: Sacred Space & Chakras | 18 | 18 | 10 | 10 |
-| Level 3: The Analyzer | 2 | 2 | 1 | 1 |
-| **Total** | **37** | **37** | **20** | **20** |
+| Category | Total Slides | Have Reimagined |
+|----------|-------------|----------------|
+| Level 1: Foundations (slides 1-18) | 18 | 18 |
+| Level 2: Sacred Space & Chakras (slides 19-38) | 20 | 20 |
+| Level 3: Advanced Perception (slides 39-44) | 6 | 6 |
+| **Total** | **44** | **44** |
 
 ---
 
