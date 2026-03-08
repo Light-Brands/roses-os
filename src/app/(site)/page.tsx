@@ -11,6 +11,7 @@ import HeroSphere from '@/components/three/HeroSphere';
 import { cn } from '@/lib/utils';
 import { brandQuotes, messagingPillars } from '@/lib/data';
 import SummaryDownloadButton from '@/components/ui/SummaryDownloadButton';
+import MeditationPdfButton from '@/components/ui/MeditationPdfButton';
 
 const ConsciousnessField = dynamic(
   () => import('@/components/three/ConsciousnessField'),
@@ -666,6 +667,15 @@ export default function Home() {
             >
               Explore The Rose
             </Link>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={ready ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ delay: 1.8, duration: 0.6 }}
+            className="mt-4 flex justify-center"
+          >
+            <MeditationPdfButton variant="dark" />
           </motion.div>
         </div>
 
