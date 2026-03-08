@@ -99,10 +99,10 @@ export const level1ManualImages: ManualImageMapping = {
         { concept: 'Four Roses', slideNumber: 12, reimaginedImage: 'level-1/12-four-roses.PNG' },
         { concept: 'Cleansing Rose', slideNumber: 13, reimaginedImage: 'level-1/13-cleansing-rose-reimagined.png' },
         { concept: 'Recovery Rose', slideNumber: 14, reimaginedImage: 'level-1/14-energy-recovery-background.png' },
-        { concept: 'Sacred Space', slideNumber: 15, reimaginedImage: 'level-1/15-sacred-space.png' },
-        { concept: 'Sacred Space (6th & 7th Chakras)', slideNumber: 16, reimaginedImage: 'level-1/16-sacred-space.PNG' },
-        { concept: 'Pink Rose', slideNumber: 17, reimaginedImage: 'level-1/17-pink-rose-closure.png' },
-        { concept: 'Discharge Excess', slideNumber: 18, reimaginedImage: 'level-1/18-discharge-excess.PNG' },
+        { concept: 'Pink Rose', slideNumber: 15, reimaginedImage: 'level-1/15-pink-rose-closure.png' },
+        { concept: 'Discharge Excess', slideNumber: 16, reimaginedImage: 'level-1/16-discharge-excess.PNG' },
+        { concept: 'Sacred Space', slideNumber: 17, reimaginedImage: 'level-1/17-sacred-space.png' },
+        { concept: 'Sacred Space (6th & 7th Chakras)', slideNumber: 18, reimaginedImage: 'level-1/18-sacred-space.PNG' },
       ],
     },
   ],
@@ -151,7 +151,7 @@ export const supplementaryImages: {
 }[] = [
   { file: 'level-1/Cosmos.jpg', referencedIn: 'Level 1 reference', purpose: 'Alternate cosmos view' },
   { file: 'level-1/Fullcosmosearth.jpg', referencedIn: 'Level 1 reference', purpose: 'Full cosmos + earth view' },
-  { file: 'level-1/17-discharge-excess.PNG', referencedIn: 'Slide 17 alt', purpose: 'Discharge excess (alternate)' },
+  { file: 'level-1/15-discharge-excess.PNG', referencedIn: 'Slide 15 alt', purpose: 'Discharge excess (alternate)' },
 ];
 
 // ---------------------------------------------------------------------------

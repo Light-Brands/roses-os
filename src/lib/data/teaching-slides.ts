@@ -214,52 +214,52 @@ export const level1Slides: TeachingSlide[] = [
     level: 1,
     section: 'foundations',
   },
+  {
+    id: 'l1-pink-rose-closure',
+    slideNumber: 15,
+    concept: 'Pink Rose Closure',
+    teachingText:
+      'The Pink Rose Closure is offered at the end of the meditation as a gift of well-being — for yourself or another person. Create an unrooted pink Rose and place yourself or the person inside it, visualizing "Happy, Healthy, Whole, Body, Mind & Soul." Repeat this intention silently while making the Rose rise towards the center of the Universe, wishing all the best for whoever is held within it.',
+    reimaginedImage: 'level-1/15-pink-rose-closure.png',
+    level: 1,
+    section: 'foundations',
+  },
+  {
+    id: 'l1-discharge',
+    slideNumber: 16,
+    concept: 'Discharge Excess Energy',
+    teachingText:
+      'After deep meditation or energy work, excess energy may accumulate in the body. To discharge it, lean forward from the seated position with hands reaching toward the ground. Allow the excess energy to flow out through the hands and into the earth, returning the body to a calm, balanced state.',
+    originalImage: 'level-1/16-discharge-energy-original.PNG',
+    reimaginedImage: 'level-1/16-discharge-excess.PNG',
+    level: 1,
+    section: 'foundations',
+  },
   // -------------------------------------------------------------------------
   // Sacred Space (moved from Level 2 to Level 1)
   // -------------------------------------------------------------------------
   {
     id: 'l1-sacred-space',
-    slideNumber: 15,
+    slideNumber: 17,
     concept: "Let's Create Your Sacred Space",
     teachingText:
       'Level 2 begins with creating your own sacred space — an internal energetic environment that serves as your meditation home. This is the space from which all deeper work is conducted.',
-    reimaginedImage: 'level-1/15-sacred-space.png',
+    reimaginedImage: 'level-1/17-sacred-space.png',
     imageNote: 'Illustration needed: A person seated in meditation posture, with a glowing point of awareness at the center of the head — the sacred space. Should convey inner stillness, spiritual authority, and the feeling of being safely centered within. Reference: PDF source "CENTER OF THE HEAD - SACRED SPACE" section.',
     level: 1,
     section: 'sacred-space',
   },
   {
     id: 'l1-6th-7th-chakras',
-    slideNumber: 16,
+    slideNumber: 18,
     concept: 'The 6th and 7th Chakras (Sacred Space)',
     teachingText:
       'Understanding the locations and roles of the upper chakras is essential for Level 2 work:\n\n• 6th Chakra (Third Eye) — Located at the center of the forehead, between and slightly above the eyebrows\n• 7th Chakra (Crown) — Located at the top of the head',
-    originalImage: 'level-1/16-sacredspace-original.jpg',
-    reimaginedImage: 'level-1/16-sacred-space.PNG',
+    originalImage: 'level-1/18-sacredspace-original.jpg',
+    reimaginedImage: 'level-1/18-sacred-space.PNG',
     imageNote: 'Part of the sacred space slide sequence.',
     level: 1,
     section: 'sacred-space',
-  },
-  {
-    id: 'l1-pink-rose-closure',
-    slideNumber: 17,
-    concept: 'Pink Rose Closure',
-    teachingText:
-      'The Pink Rose Closure is offered at the end of the meditation as a gift of well-being — for yourself or another person. Create an unrooted pink Rose and place yourself or the person inside it, visualizing "Happy, Healthy, Whole, Body, Mind & Soul." Repeat this intention silently while making the Rose rise towards the center of the Universe, wishing all the best for whoever is held within it.',
-    reimaginedImage: 'level-1/17-pink-rose-closure.png',
-    level: 1,
-    section: 'foundations',
-  },
-  {
-    id: 'l1-discharge',
-    slideNumber: 18,
-    concept: 'Discharge Excess Energy',
-    teachingText:
-      'After deep meditation or energy work, excess energy may accumulate in the body. To discharge it, lean forward from the seated position with hands reaching toward the ground. Allow the excess energy to flow out through the hands and into the earth, returning the body to a calm, balanced state.',
-    originalImage: 'level-1/17-discharge-energy-original.PNG',
-    reimaginedImage: 'level-1/18-discharge-excess.PNG',
-    level: 1,
-    section: 'foundations',
   },
 ];
 

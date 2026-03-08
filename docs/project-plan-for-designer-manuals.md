@@ -115,26 +115,26 @@ These images map to the Level 2 manual concepts (sacred space preparation, chakr
 
 | Manual Concept | Site Slide | Reimagined Image | Original Image |
 |---|---|---|---|
-| **Prepare Physical Space** | 16 | `16-physical-space.png` | -- |
-| **Protection of the Space** | 17 | `17-create-the-room.jpg` | `17-protectthespace-original.jpg` |
-| **Cleansing of the Space** | 18 | `18-cleanse-the-space.jpg` | `18-cleansing-space-original.PNG` |
-| **Owning Your Space** | 19 | `19-owning-space.jpg` | `19-protect-the-space-original.PNG` |
-| **Chakras Intro** | 20 | `20-chakras-intro.jpeg` | -- |
-| **The Seven Chakras** | 21 | `21-chakras.jpg` | `21-chakras-original.PNG` |
-| **Root Chakra** | 22 | `22-root-chakra.png` | -- |
-| **Sacral Chakra** | 23 | `23-sacral-chakra.png` | -- |
-| **Solar Plexus Chakra** | 24 | `24-solar-plexus-chakra.png` | -- |
-| **Heart Chakra** | 25 | `25-heart-chakra.png` | -- |
-| **Throat Chakra** | 26 | `26-throat-chakra.png` | -- |
-| **Third Eye Chakra** | 27 | `27-third-eye-chakra.jpeg` | -- |
-| **Crown Chakra** | 28 | `28-crown-chakra.png` | -- |
-| **Cleansing Each Aura Layer** | 29 | `29-cleansing-each-layer.PNG` | `29-cleansing-layers-original.jpg` |
-| **Cleansing Each Chakra** | 30 | `30-cleansing-each-chakra.PNG` | `30-cleansingeachchakra-original.jpg` |
-| **Energy Recovery (Level 2)** | 31 | `31-energy-recovery.jpeg` | `31-energyrecoveryeachchakra-original.jpg` |
-| **Golden Sticky Roses -- Phase 1** | 32 | `32-golden-sticky-1.jpg` | `32-golden-sticky-1-original.jpg` |
-| **Golden Sticky Roses -- Phase 2** | 33 | `33-golden-sticky-2.jpg` | `33-golden-sticky-2-original.PNG` |
-| **Golden Sticky Roses -- Phase 3** | 34 | `34-golden-sticky-3.jpg` | `34-golden-sticky-3-original.PNG` |
-| **Golden Sticky Roses -- Phase 4** | 35 | `35-golden-sticky-4.jpg` | `35-golden-sticky-4-original.PNG` |
+| **Prepare Physical Space** | 19 | `19-physical-space.png` | -- |
+| **Protection of the Space** | 20 | `20-create-the-room.jpg` | `20-protectthespace-original.jpg` |
+| **Cleansing of the Space** | 21 | `21-cleanse-the-space.jpg` | `21-cleansing-space-original.PNG` |
+| **Owning Your Space** | 22 | `22-owning-space.jpg` | `22-protect-the-space-original.PNG` |
+| **Chakras Intro** | 23 | `23-chakras-intro.jpeg` | -- |
+| **The Seven Chakras** | 24 | `24-chakras.png` | `24-chakras-original.PNG` |
+| **Root Chakra** | 25 | `25-root-chakra.png` | -- |
+| **Sacral Chakra** | 26 | `26-sacral-chakra.png` | -- |
+| **Solar Plexus Chakra** | 27 | `27-solar-plexus-chakra.png` | -- |
+| **Heart Chakra** | 28 | `28-heart-chakra.png` | -- |
+| **Throat Chakra** | 29 | `29-throat-chakra.png` | -- |
+| **Third Eye Chakra** | 30 | `30-third-eye-chakra.jpeg` | -- |
+| **Crown Chakra** | 31 | `31-crown-chakra.png` | -- |
+| **Cleansing Each Aura Layer** | 32 | `32-cleansing-each-layer.PNG` | `32-cleansing-layers-original.jpg` |
+| **Cleansing Each Chakra** | 33 | `33-cleansing-each-chakra.PNG` | `33-cleansingeachchakra-original.jpg` |
+| **Energy Recovery (Level 2)** | 34 | `34-energy-recovery.jpeg` | `34-energyrecoveryeachchakra-original.jpg` |
+| **Golden Sticky Roses -- Phase 1** | 35 | `35-golden-sticky-1.jpg` | `35-golden-sticky-1-original.jpg` |
+| **Golden Sticky Roses -- Phase 2** | 36 | `36-golden-sticky-2.jpg` | `36-golden-sticky-2-original.PNG` |
+| **Golden Sticky Roses -- Phase 3** | 37 | `37-golden-sticky-3.jpg` | `37-golden-sticky-3-original.PNG` |
+| **Golden Sticky Roses -- Phase 4** | 38 | `38-golden-sticky-4.jpg` | `38-golden-sticky-4-original.PNG` |
 
 ### Level 2 Manual -- Foundational Reference Images (from Level 1 Teachers Training)
 
@@ -146,14 +146,19 @@ These Level 1 images may appear in the Level 2 manual as foundational context or
 | **Grounding Cord** | 3 | `3-grounding-cord.jpeg` | -- |
 | **Aura Exercise** | 5 | `5-aura-exercise.PNG` | `5-auraexercise-original.PNG` |
 | **Energy Recovery (Level 1)** | 14 | `14-energy-recovery-background.png` | `14-recovery-rose-original.PNG` |
-| **Sacred Space** | 15 | `15-sacred-space.png` | -- |
-| **6th and 7th Chakras** | 16 | `16-sacred-space.PNG` | `16-sacredspace-original.jpg` |
+| **Sacred Space** | 17 | `17-sacred-space.png` | -- |
+| **6th and 7th Chakras** | 18 | `18-sacred-space.PNG` | `18-sacredspace-original.jpg` |
 
 ### Level 3 Manual -- Images
 
 | Manual Concept | Site Slide | Reimagined Image | Original Image |
 |---|---|---|---|
-| **The Analyzer** | 36 | `36-analyzer.PNG` | `36-analyzer-original-reimagined.jpg` |
+| **The Analyzer** | 39 | `39-analyzer.PNG` | `39-analyzer-original-reimagined.jpg` |
+| **Analyzer + Sacred Space** | 40 | `40-analyzer-and-sacred-space.png` | -- |
+| **Stick of Agreements** | 41 | `41-stick-of-agreements.png` | -- |
+| **Cutting Cords** | 42 | `42-cutting-cords.png` | -- |
+| **Post Intimacy / Sexual Recovery Rose** | 43 | `43-sexual-recovery-rose.png` | -- |
+| **Mock Up** | 44 | `44-mock-up.png` | -- |
 
 ### Supplementary Reference Images
 
@@ -163,9 +168,9 @@ These files exist in `public/rose med images/` and are referenced as supplementa
 |---|---|---|
 | `8-circuitofenergycosmos.PNG` | Slide 9 note | Previous version of cosmos circuit |
 | `10-cosmosearth.PNG` | Slide 10 note | Alternate cosmos + earth view |
-| `21a-example-of-chakra-slides.PNG` | Slide 21 note | Style reference for chakra pages |
-| `29a-chakracleansing-original.jpg` | Slide 30 note | Detail reference for chakra cleansing |
-| `34-golden-sticky-3-original-alt.PNG` | Slide 34 note | Alternate original for golden sticky phase 3 |
+| `21a-example-of-chakra-slides.PNG` | Slide 24 note | Style reference for chakra pages |
+| `29a-chakracleansing-original.jpg` | Slide 33 note | Detail reference for chakra cleansing |
+| `34-golden-sticky-3-original-alt.PNG` | Slide 37 note | Alternate original for golden sticky phase 3 |
 
 ---
 
@@ -304,7 +309,7 @@ All manuals follow the unified ROSES OS PDF template system:
 - [ ] Final delivery -- **must be live before March 15**
 
 ### Phase G -- Level 1 Manual Reimagine (Stretch Goal -- If Time Permits)
-- [ ] Apply Level 1 images from Teachers Training section (slides 1-17) to the Level 1 manual layout
+- [ ] Apply Level 1 images from Teachers Training section (slides 1-18) to the Level 1 manual layout
 - [ ] Translate into Spanish, Portuguese, and Greek (4 total PDFs)
 - [ ] Upload reimagined Level 1 versions to Resources, replacing the existing uploads
 - [ ] Review for visual consistency with Level 2 and Level 3 manuals
