@@ -26,7 +26,8 @@ Final manuals served on the website live in `public/resources/manuals/`:
 | `ROSES-OS-Level-1-Manual-EN.pdf` (12.5 MB) | Present |
 | `ROSES-OS-Level-2-Manual-EN.pdf` (567 KB) | Present |
 | `ROSES-OS-Level-3-Manual-EN.pdf` (768 KB) | Present |
-| `ROSES-Manual-Levels-1-and-2.pdf` (933 KB) | Present (combined -- being split) |
+
+> **Note:** The combined `ROSES-Manual-Levels-1-and-2.pdf` (933 KB) is being retired. The final deliverables are three separate manuals (Level 1, Level 2, Level 3). The combined PDF's Level 2 content is being extracted into the standalone Level 2 manual above.
 
 ---
 
@@ -221,7 +222,9 @@ Both routes use `sharp` for image processing, which may strip transparency and r
 | `level-3/36-analyzer.PNG` | `level-3/39-analyzer.PNG` |
 | `level-3/38-stick-of-agreements.png` | `level-3/41-stick-of-agreements.png` |
 
-**Level 3 images to add to mapping** (not currently tracked):
+**Level 3 images added to mapping** -- DONE
+
+All Level 3 images are now tracked in the mapping:
 
 | File | Concept |
 |------|---------|
