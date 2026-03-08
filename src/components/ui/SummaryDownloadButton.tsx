@@ -59,7 +59,7 @@ export default function SummaryDownloadButton({ className, variant = 'dark' }: S
       ) : (
         <Download className="w-4 h-4" />
       )}
-      <span>{loading ? 'Generating PDF...' : 'Download Program Guide'}</span>
+      <span>{loading ? 'Generating PDF...' : 'Aura 1 & 2 Program Guide'}</span>
     </motion.button>
   );
 }
