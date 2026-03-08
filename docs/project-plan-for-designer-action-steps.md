@@ -201,6 +201,25 @@ The "Export Teachers Aid PDF" button on the `/teaching` page links to `ROSES-OS-
 
 ---
 
+## PDF AESTHETIC IMPROVEMENTS (Secondary Priority -- After Manuals)
+
+> **Priority:** Complete all manual redesign tasks (Level 1, 2, 3) before starting these improvements.
+
+The dynamically generated Programs and Additional Programs PDFs should be redesigned to look more aesthetic and polished, using `docs/source-materials/Aura 1 and RM  Mar 2026.pdf` as a visual reference for the target style. The Guardians page (recently added to the Programs PDF) should also receive the same aesthetic treatment.
+
+| PDF | Route | Component |
+|-----|-------|-----------|
+| Programs (Summary) | `src/app/api/pdf/summary/route.ts` | `src/components/ui/SummaryDownloadButton.tsx` |
+| Additional Programs | `src/app/api/pdf/paid-programs/route.ts` | `src/components/ui/PaidProgramsDownloadButton.tsx` |
+
+**Reference:** `docs/source-materials/Aura 1 and RM  Mar 2026.pdf`
+
+- [ ] **1. Redesign Programs PDF layout** -- Update `src/app/api/pdf/summary/route.ts` to match the visual quality and layout style of the Aura 1 & RM reference PDF. Focus on typography, spacing, decorative elements, and overall visual hierarchy.
+- [ ] **2. Redesign Additional Programs PDF layout** -- Apply the same aesthetic improvements to `src/app/api/pdf/paid-programs/route.ts`.
+- [ ] **3. Polish Guardians page in Programs PDF** -- Ensure the Guardians page (page 8 of Programs PDF) matches the updated aesthetic.
+
+---
+
 ## CODE UPDATES REQUIRED
 
 ### Update `src/lib/data/manual-image-mapping.ts` -- DONE

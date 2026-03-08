@@ -8,6 +8,7 @@ import type { ScheduleSession } from '@/lib/data/types';
 
 import {
   programs,
+  guardians,
   scheduleStages,
   roseMeditationScheduleStages,
   aura2ScheduleStages,
@@ -778,7 +779,49 @@ export async function GET() {
     }
 
     // =========================================================================
-    // PAGE 8 — CONTACT & NEXT STEPS
+    // PAGE 8 — GUARDIANS
+    // =========================================================================
+    {
+      const page = doc.addPage([PAGE_WIDTH, PAGE_HEIGHT]);
+      drawPageBg(page);
+      drawDecorativeBar(page, PAGE_HEIGHT, 6, COLORS.roseClay, 0.25);
+      drawPageFooter(page, sansFont, 8);
+      let y = PAGE_HEIGHT - MARGIN;
+
+      y = drawSectionLabel(page, 'Guardians', y, sansBold);
+      y = drawHeading(page, 'The Keepers of the Rose Field', y, serifFont, 22);
+      y -= 4;
+
+      y = drawWrappedText(page,
+        'The Guardians are devoted practitioners and stewards of the Rose technology. Each one brings a unique gift to the field, holding space, guiding practice, and nurturing the community with presence and care.',
+        MARGIN, y, sansFont, 9.5, CONTENT_WIDTH);
+      y -= 16;
+
+      y = drawHRule(page, y);
+
+      for (const guardian of guardians) {
+        // Name
+        page.drawText(guardian.name, {
+          x: MARGIN, y, size: 13, font: serifBold, color: COLORS.deepBrown,
+        });
+        y -= 16;
+
+        // Role
+        page.drawText(guardian.role, {
+          x: MARGIN, y, size: 9, font: sansBold, color: COLORS.roseClay,
+        });
+        y -= 14;
+
+        // Bio
+        y = drawWrappedText(page, guardian.bio, MARGIN, y, sansFont, 8.5, CONTENT_WIDTH, COLORS.softCharcoal, 1.45);
+        y -= 16;
+
+        if (y < MARGIN + 40) break;
+      }
+    }
+
+    // =========================================================================
+    // PAGE 9 — CONTACT & NEXT STEPS
     // =========================================================================
     {
       const page = doc.addPage([PAGE_WIDTH, PAGE_HEIGHT]);

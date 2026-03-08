@@ -25,6 +25,7 @@ import InvitationCTA from '@/components/sections/InvitationCTA';
 import SubscribeCalendar from '@/components/ui/SubscribeCalendar';
 import SummaryDownloadButton from '@/components/ui/SummaryDownloadButton';
 import PaidProgramsDownloadButton from '@/components/ui/PaidProgramsDownloadButton';
+import MeditationPdfButton from '@/components/ui/MeditationPdfButton';
 
 // =============================================================================
 // TIMEZONE SELECTOR (for continued programs)
@@ -290,9 +291,10 @@ function OfferingsContent() {
         image="/page-images/page-programs.png"
       />
 
-      {/* Download PDF Guide */}
-      <div className="flex justify-center py-6 print:hidden">
+      {/* Download PDF Guides */}
+      <div className="flex flex-wrap justify-center gap-3 py-6 print:hidden">
         <SummaryDownloadButton variant="light" />
+        <MeditationPdfButton variant="light" />
       </div>
 
       {/* 2. Programs — progressive disclosure */}
@@ -356,6 +358,13 @@ function OfferingsContent() {
                         transition={{ duration: 0.5, ease }}
                         className="overflow-hidden"
                       >
+                        {/* Aura 1 & Rose Meditation PDF */}
+                        {(program.id === '1' || program.id === '3') && (
+                          <div className="flex justify-center pt-6 pb-2 print:hidden">
+                            <MeditationPdfButton variant="light" />
+                          </div>
+                        )}
+
                         {/* Schedule section */}
                         <div className="mt-8 mb-8">
                           <p className="label-sacred mb-3">Schedule</p>
