@@ -314,7 +314,49 @@ export default function CommunityClient() {
         image="/page-images/page-community.png"
       />
 
-      {/* 2. Community Vision */}
+      {/* 2. Free Activities */}
+      <section ref={freeRef} className="section-padding">
+        <div className="container-premium max-w-3xl mx-auto">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={freeInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, ease }}
+            className="label-sacred mb-6"
+          >
+            Free Activities
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 24 }}
+            animate={freeInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.1, ease }}
+            className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-4"
+          >
+            Open to All
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 24 }}
+            animate={freeInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.15, ease }}
+            className="text-base text-[var(--color-foreground-muted)] leading-relaxed mb-8"
+          >
+            These gatherings are offered freely as a gift to the community.
+            Whether you are new to the Rose field or a long-time practitioner,
+            there is a place for you here.
+          </motion.p>
+          <div className="space-y-4">
+            {freePrograms.map((program, i) => (
+              <ActivityCard
+                key={program.id}
+                program={program}
+                index={i}
+                inView={freeInView}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Community Vision */}
       <section ref={visionRef} className="section-padding">
         <div className="container-premium max-w-3xl mx-auto">
           <motion.p
@@ -357,48 +399,6 @@ export default function CommunityClient() {
               the field and touches everyone around them.
             </p>
           </motion.div>
-        </div>
-      </section>
-
-      {/* 3. Free Activities */}
-      <section ref={freeRef} className="section-padding">
-        <div className="container-premium max-w-3xl mx-auto">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={freeInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, ease }}
-            className="label-sacred mb-6"
-          >
-            Free Activities
-          </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 24 }}
-            animate={freeInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.1, ease }}
-            className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-4"
-          >
-            Open to All
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 24 }}
-            animate={freeInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.15, ease }}
-            className="text-base text-[var(--color-foreground-muted)] leading-relaxed mb-8"
-          >
-            These gatherings are offered freely as a gift to the community.
-            Whether you are new to the Rose field or a long-time practitioner,
-            there is a place for you here.
-          </motion.p>
-          <div className="space-y-4">
-            {freePrograms.map((program, i) => (
-              <ActivityCard
-                key={program.id}
-                program={program}
-                index={i}
-                inView={freeInView}
-              />
-            ))}
-          </div>
         </div>
       </section>
 
