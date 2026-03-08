@@ -34,6 +34,8 @@ export interface TeachingTranslations {
     exportTeachersAidPdf: string;
     downloadImages: string;
     preparingDownload: string;
+    nextLevel: string;
+    previousLevel: string;
   };
   opening: {
     agreements: {

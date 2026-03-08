@@ -179,6 +179,10 @@ async function loadAndResizeImage(
     const raw = await readFile(fullPath);
     const ext = imagePath.toLowerCase();
 
+    // Flatten transparency onto brand background (#F7F5F2 = auraWhite) to
+    // prevent white squares in the generated PDF.
+    const brandBg = { r: 247, g: 245, b: 242 };
+
     if (ext.endsWith('.jpg') || ext.endsWith('.jpeg')) {
       const jpg = await sharp(raw)
         .resize(Math.round(maxWidth * 2), Math.round(maxHeight * 2), { fit: 'inside', withoutEnlargement: true })
@@ -188,6 +192,7 @@ async function loadAndResizeImage(
     }
 
     const resized = await sharp(raw)
+      .flatten({ background: brandBg })
       .resize(Math.round(maxWidth * 2), Math.round(maxHeight * 2), { fit: 'inside', withoutEnlargement: true })
       .png({ quality: 80, compressionLevel: 9 })
       .toBuffer();

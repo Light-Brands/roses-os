@@ -24,7 +24,9 @@
     "rosesOs": "ROSES OS",
     "exportTeachersAidPdf": "Exportar PDF de Ayuda para Profesores",
     "downloadImages": "Descargar Imágenes",
-    "preparingDownload": "Preparando descarga\u2026"
+    "preparingDownload": "Preparando descarga\u2026",
+    "nextLevel": "Siguiente",
+    "previousLevel": "Anterior"
   },
   "opening": {
     "agreements": {

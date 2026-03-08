@@ -279,6 +279,38 @@ export interface ProgramDetailSection {
   bullets?: string[];
 }
 
+// =============================================================================
+// GEO CONTENT
+// =============================================================================
+
+/** Target location for geo landing pages */
+export interface GeoLocation {
+  id: string;
+  /** URL slug: "new-york", "online", etc. */
+  slug: string;
+  /** Display name: "New York", "Online", etc. */
+  city: string;
+  /** Region/state (empty for online) */
+  region: string;
+  country: string;
+  /** Which timezone column from TimeZoneEntry this location maps to (null for online) */
+  timezoneKey: keyof TimeZoneEntry | null;
+  /** Timezone display label: "Eastern Time (ET)", etc. */
+  timezoneLabel: string;
+  /** Localized intro paragraph for the geo page */
+  intro: string;
+  /** Location-specific keywords for metadata */
+  keywords: string[];
+}
+
+/** FAQ item for geo pages and general use */
+export interface FAQItem {
+  id: string;
+  question: string;
+  answer: string;
+  category: 'about' | 'practice' | 'logistics' | 'pricing';
+}
+
 /** Ongoing community program or activity */
 export interface CommunityProgram {
   id: string;

@@ -48,6 +48,17 @@ export {
 
 export type { ManualPdfConfig } from './manual-pdf-paths';
 
+export type { GeoLocation, FAQItem } from './types';
+
+export {
+  geoLocations,
+  geoFAQs,
+  getLocationBySlug,
+  getAllLocationSlugs,
+  getScheduleForLocation,
+  getRoseMeditationScheduleForLocation,
+} from './geo-data';
+
 export {
   navItems,
   guardians,

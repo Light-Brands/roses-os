@@ -24,7 +24,9 @@
     "rosesOs": "ROSES OS",
     "exportTeachersAidPdf": "Εξαγωγή PDF Βοηθήματος Δασκάλου",
     "downloadImages": "Λήψη Εικόνων",
-    "preparingDownload": "Προετοιμασία λήψης\u2026"
+    "preparingDownload": "Προετοιμασία λήψης\u2026",
+    "nextLevel": "Επόμενο",
+    "previousLevel": "Προηγούμενο"
   },
   "opening": {
     "agreements": {

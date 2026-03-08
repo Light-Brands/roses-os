@@ -142,7 +142,7 @@ All strategic and brand documentation living in the repository:
 | # | Deliverable | Description |
 |---|-------------|-------------|
 | 12 | **Platform UX Refinement** | Holistic UX review and flow optimization per Diego's suggestion |
-| 13 | **GEO / Content Architecture** | Semantic content structure for AI discoverability (Generative Engine Optimization) |
+| 13 | **GEO / Content Architecture** | 20 geo landing pages, FAQ with schema markup, Course structured data, sitemap/robots — programmatic SEO (Generative Engine Optimization). **Status: In Progress.** [Detailed plan →](../geo-content/implementation-plan.md) |
 | 14 | **Rose App Foundation** | Initial architecture for the Rose App (daily practice -- spine of global expression) |
 | 15 | **Aura Levels Integration** | Aura Reading Levels 1-5 content and teaching structure *(pending decision)* |
 | 16 | **Animated Visual Technique Demos** | Upload and integrate existing animated visual aids demonstrating Rose Meditation techniques (grounding cord, golden sun, four roses, energy circuits, cleansing) into the website teaching platform |
@@ -270,7 +270,7 @@ Phase 3 is structured as **individual project milestones** -- each scoped as a s
 | Project | Deliverables | Market Value | Contribution Rate |
 |---------|-------------|--------------|-------------------|
 | **Platform UX Refinement** | Holistic UX review, flow optimization, implemented improvements -- accepted by team | $15,000 | $1,500 |
-| **GEO / Content Architecture** | Semantic content structure for AI discoverability, implemented and validated | $12,000 | $1,200 |
+| **GEO / Content Architecture** | 20 geo landing pages (`/meditation/[city]`), FAQ content with schema markup (15 questions), Course structured data, sitemap, robots.txt — programmatic SEO for organic traffic. [Detailed plan →](../geo-content/implementation-plan.md) | $12,000 | $1,200 |
 | **Rose App Foundation** | Initial architecture and prototype for the Rose App (daily practice) | $25,000 | $2,500 |
 | **Aura Levels Integration** | Aura Reading Levels 1-5 content and teaching structure *(pending decision)* | $18,000 | $1,800 |
 | **Platform Maintenance Sprint** | Security audit, bug fixes, dependency updates, hosting optimization -- scoped per engagement | $9,000 | $900 |
@@ -278,6 +278,21 @@ Phase 3 is structured as **individual project milestones** -- each scoped as a s
 | **Guardian & Testimonial Videos** | Upload existing guardian and testimonial videos, build video sections on guardians page and community page | $8,000 | $800 |
 
 *Each project is scoped, priced, and accepted independently. No ongoing commitment -- projects are engaged as needed.*
+
+#### Future Platform Builds
+
+The following larger platform features are identified from the designer plan and site architecture review. They are documented here for future scoping and prioritization -- each would be engaged as a standalone project milestone when the team is ready.
+
+| Project | Description | Dependencies |
+|---------|-------------|--------------|
+| **The Invitation -- Two-Screen Architecture** | Rebuild the invitation flow as a 14-section scrolling presentation (Screen 1) with a dedicated Learn More page covering full schedule across 4 time zones and the contribution model (Screen 2). Content exists in `docs/program/presentation.md` and `docs/program/schedule-details.md`. Includes branded PDF exports of both screens. | Content is ready. Can be built independently. |
+| **Enrollment & Forms System** | Build the full 5-step enrollment form (who you are, path selection, contribution tier, agreements, "Welcome home" confirmation), a Contact/Inquiry form with nature-of-inquiry dropdown, and a Community Interest/Waitlist form for future programs and regional expansion. Includes post-submission branded PDF confirmations. | Requires backend integration (Supabase) for real form submissions. |
+| **The Aura Page** | Standalone page for the Aura perception and relationship work -- currently not built as a dedicated route. Part of the original sitemap vision. | Content direction needed from Guardians. |
+| **The Journey Page** | Dedicated page showing what participants experience across all levels -- a narrative walkthrough of the Rose path. Part of the original sitemap vision. | Content direction needed from Guardians. |
+| **Unified PDF Export Template System** | Consolidate all PDF generation (Programs, Teachers Aid, Manuals, Enrollment confirmations) into a single branded template system -- consistent wordmark, margins, typography, textures across every PDF the platform produces. | Can be built independently. Improves all existing PDF outputs. |
+| **Full Localization Pass** | Translate all platform web content (pages, forms, UI labels, navigation) into Spanish, Portuguese, and Greek. i18n infrastructure already exists (language selector in place). This covers web pages only -- manual translations are a separate deliverable. | Translation services needed. Infrastructure is ready. |
+| **Admin Dashboard Backend Integration** | Connect the existing admin UI scaffold (8 pages, all styled with demo data) to live Supabase backend -- real analytics, user management, content editing, media library, and feedback collection. | Supabase schema exists. Requires data migration and API wiring. |
+| **Payment Processing Integration** | Integrate Stripe or equivalent for the contribution flow -- currently form-only with no real payment processing. | Requires business/legal decisions on payment structure. |
 
 ---
 

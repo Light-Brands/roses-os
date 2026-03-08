@@ -214,6 +214,56 @@ export function generateBreadcrumbSchema(
 }
 
 /**
+ * Generate JSON-LD structured data for a course
+ */
+export function generateCourseSchema({
+  name,
+  description,
+  startDate,
+  endDate,
+  price,
+  priceCurrency = 'USD',
+  url,
+}: {
+  name: string;
+  description: string;
+  startDate: string;
+  endDate: string;
+  price: string;
+  priceCurrency?: string;
+  url: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name,
+    description,
+    provider: {
+      '@type': 'Organization',
+      name: siteConfig.name,
+      sameAs: siteConfig.url,
+    },
+    hasCourseInstance: {
+      '@type': 'CourseInstance',
+      courseMode: 'Online',
+      startDate,
+      endDate,
+      location: {
+        '@type': 'VirtualLocation',
+        name: 'Live Online',
+      },
+    },
+    offers: {
+      '@type': 'Offer',
+      price,
+      priceCurrency,
+      availability: 'https://schema.org/InStock',
+      url,
+    },
+  };
+}
+
+/**
  * JSON-LD Script component helper
  * Use this to render structured data in your pages
  */
