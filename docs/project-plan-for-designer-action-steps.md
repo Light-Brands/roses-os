@@ -160,7 +160,7 @@ The combined Level 1&2 PDF is being split. This manual becomes **Level 2 only**.
 
 ### Level 1 -- Website Only (not in manual)
 
-- [ ] **13. Replace Sacred Space slide on website** -- Slide 15 sacred space image is boring. Needs an abstract replacement -- cannot use real imagery.
+- [ ] **13. Replace Sacred Space slide on website** -- Slide 17 sacred space image is boring. Needs an abstract replacement -- cannot use real imagery.
 
 ---
 
@@ -184,9 +184,9 @@ Both routes use `sharp` for image processing, which may strip transparency and r
 
 ## CODE UPDATES REQUIRED
 
-### Update `src/lib/data/manual-image-mapping.ts`
+### Update `src/lib/data/manual-image-mapping.ts` -- DONE
 
-The current mapping uses **old numbering** (Level 2 starting at slide 16, Level 3 starting at slide 36). The actual files on disk use **new numbering** (Level 2 starting at 19, Level 3 starting at 39). Update all references:
+~~The current mapping uses **old numbering** (Level 2 starting at slide 16, Level 3 starting at slide 36).~~ The mapping now uses **correct numbering** (Level 2 starting at 19, Level 3 starting at 39). The following corrections have been applied:
 
 **Level 2 mapping corrections:**
 
