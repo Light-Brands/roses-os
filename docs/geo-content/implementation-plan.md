@@ -1,7 +1,8 @@
 # GEO Content Structure — Implementation Plan
 
-**Status:** In Progress
+**Status:** Phase 1 Complete | Phase 2 In Progress
 **Date:** March 8, 2026
+**Document:** Also available as [ROSES-OS-GEO-Content-Plan.docx](./ROSES-OS-GEO-Content-Plan.docx)
 
 ---
 
@@ -140,13 +141,52 @@ The page at `/meditation/seattle` is automatically generated with all content, s
 
 ---
 
+## Phase 2: Homepage Metadata & Documentation
+
+**Status:** In Progress
+
+### What Was Missing
+
+The homepage (`src/app/(site)/page.tsx`) — the most important page for SEO — had no `metadata` export. Every other page in the site (offerings, the-rose, community, contact, guardians) already followed the server-wrapper pattern with metadata, but the homepage was a single `'use client'` file with no SEO metadata at all.
+
+### What We Did
+
+1. **Renamed** `src/app/(site)/page.tsx` → `src/app/(site)/HomeClient.tsx` (preserving the existing client component)
+2. **Created** new `src/app/(site)/page.tsx` as a server wrapper with full metadata:
+   - Title: "ROSES OS — Remember Who You Are"
+   - Description targeting core search queries (rose meditation, aura reading, consciousness)
+   - 12 SEO keywords
+   - OpenGraph metadata for social sharing
+3. **Updated** scope of work to reflect GEO Phase 1 completion
+4. **Generated** this implementation plan as a `.docx` document
+
+### Files Modified (Phase 2)
+
+| Action | File | Purpose |
+|--------|------|---------|
+| Rename | `src/app/(site)/page.tsx` → `HomeClient.tsx` | Move client component |
+| Create | `src/app/(site)/page.tsx` | Server wrapper with homepage metadata |
+| Edit | `docs/brand/scope-of-work-and-proposal.md` | Update GEO milestone status |
+| Edit | `docs/geo-content/implementation-plan.md` | Add Phase 2 section |
+| Create | `docs/geo-content/generate-geo-plan-docx.py` | Python script to generate .docx |
+| Create | `docs/geo-content/ROSES-OS-GEO-Content-Plan.docx` | Generated .docx deliverable |
+
+---
+
 ## Verification Checklist
 
-- [ ] `pnpm build` — All geo pages generate without errors
-- [ ] `/sitemap.xml` includes all static + geo routes
-- [ ] `/robots.txt` returns correct crawl directives
-- [ ] JSON-LD validates on geo pages (Course, FAQ, Breadcrumb schemas)
-- [ ] Geo pages show correct timezone in schedule
-- [ ] Each geo page has unique title, description, and intro content
-- [ ] FAQ accordion opens/closes correctly
-- [ ] CTA links work (enrollment, offerings)
+### Phase 1
+- [x] `pnpm build` — All geo pages generate without errors
+- [x] `/sitemap.xml` includes all static + geo routes
+- [x] `/robots.txt` returns correct crawl directives
+- [x] JSON-LD validates on geo pages (Course, FAQ, Breadcrumb schemas)
+- [x] Geo pages show correct timezone in schedule
+- [x] Each geo page has unique title, description, and intro content
+- [x] FAQ accordion opens/closes correctly
+- [x] CTA links work (enrollment, offerings)
+
+### Phase 2
+- [ ] Homepage exports metadata (title, description, keywords, openGraph)
+- [ ] HomeClient.tsx renders correctly when imported by new page.tsx
+- [ ] `.docx` document generated and matches brand styling
+- [ ] Scope of work updated with GEO progress

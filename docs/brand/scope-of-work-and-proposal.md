@@ -270,7 +270,7 @@ Phase 3 is structured as **individual project milestones** -- each scoped as a s
 | Project | Deliverables | Market Value | Contribution Rate |
 |---------|-------------|--------------|-------------------|
 | **Platform UX Refinement** | Holistic UX review, flow optimization, implemented improvements -- accepted by team | $15,000 | $1,500 |
-| **GEO / Content Architecture** | 20 geo landing pages (`/meditation/[city]`), FAQ content with schema markup (15 questions), Course structured data, sitemap, robots.txt — programmatic SEO for organic traffic. [Detailed plan →](../geo-content/implementation-plan.md) | $12,000 | $1,200 |
+| **GEO / Content Architecture** | 20 geo landing pages (`/meditation/[city]`), FAQ content with schema markup (15 questions), Course structured data, sitemap, robots.txt, homepage SEO metadata — programmatic SEO for organic traffic. **Phase 1 complete (geo pages, FAQ, sitemap, robots, Course schema shipped). Phase 2 in progress (homepage metadata, docs).** [Detailed plan →](../geo-content/implementation-plan.md) | $12,000 | $1,200 |
 | **Rose App Foundation** | Initial architecture and prototype for the Rose App (daily practice) | $25,000 | $2,500 |
 | **Aura Levels Integration** | Aura Reading Levels 1-5 content and teaching structure *(pending decision)* | $18,000 | $1,800 |
 | **Platform Maintenance Sprint** | Security audit, bug fixes, dependency updates, hosting optimization -- scoped per engagement | $9,000 | $900 |
