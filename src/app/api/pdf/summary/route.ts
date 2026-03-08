@@ -17,6 +17,7 @@ import {
   brandQuotes,
   freePrograms,
   lineageEntries,
+  guardians,
 } from '@/lib/data';
 
 import {
@@ -778,7 +779,49 @@ export async function GET() {
     }
 
     // =========================================================================
-    // PAGE 8 — CONTACT & NEXT STEPS
+    // PAGE 8 — GUARDIANS
+    // =========================================================================
+    {
+      const page = doc.addPage([PAGE_WIDTH, PAGE_HEIGHT]);
+      drawPageBg(page);
+      drawDecorativeBar(page, PAGE_HEIGHT, 6, COLORS.oliveBrass, 0.2);
+      drawPageFooter(page, sansFont, 8);
+      let y = PAGE_HEIGHT - MARGIN;
+
+      y = drawSectionLabel(page, 'Our Guardians', y, sansBold);
+      y = drawHeading(page, 'The Keepers of This Work', y, serifFont, 24);
+      y -= 4;
+
+      y = drawWrappedText(page,
+        'ROSES OS is held by a circle of guardians \u2014 each carrying a unique facet of the work with devotion, clarity, and decades of lived practice.',
+        MARGIN, y, sansFont, 9.5, CONTENT_WIDTH);
+      y -= 16;
+
+      y = drawHRule(page, y);
+
+      for (const guardian of guardians) {
+        // Name
+        page.drawText(guardian.name, {
+          x: MARGIN, y, size: 14, font: serifBold, color: COLORS.deepBrown,
+        });
+        y -= 16;
+
+        // Role
+        page.drawText(guardian.role, {
+          x: MARGIN, y, size: 10, font: sansFont, color: COLORS.roseClay,
+        });
+        y -= 14;
+
+        // Bio
+        y = drawWrappedText(page, guardian.bio, MARGIN, y, sansFont, 8.5, CONTENT_WIDTH, COLORS.softCharcoal, 1.5);
+        y -= 16;
+
+        if (y < MARGIN + 60) break;
+      }
+    }
+
+    // =========================================================================
+    // PAGE 9 — CONTACT & NEXT STEPS
     // =========================================================================
     {
       const page = doc.addPage([PAGE_WIDTH, PAGE_HEIGHT]);

@@ -272,6 +272,25 @@ All Level 3 images are now tracked in the mapping:
 
 ---
 
+## PDF AESTHETIC IMPROVEMENTS
+
+> **Priority:** Secondary — after manuals are finalized.
+
+The two dynamically generated PDFs should be redesigned to match the visual style of the Aura 1 & Rose Meditation reference PDF (`docs/source-materials/Aura 1 and RM  Mar 2026.pdf`):
+
+| PDF | Route | Notes |
+|-----|-------|-------|
+| Programs Guide | [`/api/pdf/summary`](../src/app/api/pdf/summary/route.ts) | Main program overview (9 pages including new Guardians page) |
+| Additional Programs Guide | [`/api/pdf/paid-programs`](../src/app/api/pdf/paid-programs/route.ts) | Continued programs (Teachers Training, etc.) |
+
+**Target style elements from the reference PDF:**
+- Refined typography and spacing
+- Brand-consistent color palette and decorative elements
+- Professional layout with balanced whitespace
+- Image integration where appropriate
+
+---
+
 ## RELATED DOCUMENTS
 
 | Document | Path |
