@@ -1,5 +1,11 @@
 import type { Metadata } from 'next';
 import CommunityClient from './CommunityClient';
+import {
+  generateWebPageSchema,
+  generateBreadcrumbSchema,
+  JsonLd,
+  siteConfig,
+} from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Community',
@@ -21,5 +27,23 @@ export const metadata: Metadata = {
 };
 
 export default function CommunityPage() {
-  return <CommunityClient />;
+  const webPageSchema = generateWebPageSchema({
+    title: 'Community',
+    description:
+      'Free weekly gatherings, Rose Meditation guidances, practitioner meetings, and continued programs.',
+    pathname: '/community',
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: siteConfig.url },
+    { name: 'Community', url: `${siteConfig.url}/community` },
+  ]);
+
+  return (
+    <>
+      <JsonLd data={webPageSchema} />
+      <JsonLd data={breadcrumbSchema} />
+      <CommunityClient />
+    </>
+  );
 }
