@@ -142,7 +142,7 @@ All strategic and brand documentation living in the repository:
 | # | Deliverable | Description |
 |---|-------------|-------------|
 | 12 | **Platform UX Refinement** | Holistic UX review and flow optimization per Diego's suggestion |
-| 13 | **GEO / Content Architecture** | Semantic content structure for AI discoverability (Generative Engine Optimization) |
+| 13 | **GEO / Content Architecture** | 20 geo landing pages, FAQ with schema markup, Course structured data, sitemap/robots — programmatic SEO (Generative Engine Optimization). **Status: In Progress.** [Detailed plan →](../geo-content/implementation-plan.md) |
 | 14 | **Rose App Foundation** | Initial architecture for the Rose App (daily practice -- spine of global expression) |
 | 15 | **Aura Levels Integration** | Aura Reading Levels 1-5 content and teaching structure *(pending decision)* |
 | 16 | **Animated Visual Technique Demos** | Upload and integrate existing animated visual aids demonstrating Rose Meditation techniques (grounding cord, golden sun, four roses, energy circuits, cleansing) into the website teaching platform |
@@ -270,7 +270,7 @@ Phase 3 is structured as **individual project milestones** -- each scoped as a s
 | Project | Deliverables | Market Value | Contribution Rate |
 |---------|-------------|--------------|-------------------|
 | **Platform UX Refinement** | Holistic UX review, flow optimization, implemented improvements -- accepted by team | $15,000 | $1,500 |
-| **GEO / Content Architecture** | Semantic content structure for AI discoverability, implemented and validated | $12,000 | $1,200 |
+| **GEO / Content Architecture** | 20 geo landing pages (`/meditation/[city]`), FAQ content with schema markup (15 questions), Course structured data, sitemap, robots.txt — programmatic SEO for organic traffic. [Detailed plan →](../geo-content/implementation-plan.md) | $12,000 | $1,200 |
 | **Rose App Foundation** | Initial architecture and prototype for the Rose App (daily practice) | $25,000 | $2,500 |
 | **Aura Levels Integration** | Aura Reading Levels 1-5 content and teaching structure *(pending decision)* | $18,000 | $1,800 |
 | **Platform Maintenance Sprint** | Security audit, bug fixes, dependency updates, hosting optimization -- scoped per engagement | $9,000 | $900 |
