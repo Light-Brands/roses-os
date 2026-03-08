@@ -279,6 +279,21 @@ Phase 3 is structured as **individual project milestones** -- each scoped as a s
 
 *Each project is scoped, priced, and accepted independently. No ongoing commitment -- projects are engaged as needed.*
 
+#### Future Platform Builds
+
+The following larger platform features are identified from the designer plan and site architecture review. They are documented here for future scoping and prioritization -- each would be engaged as a standalone project milestone when the team is ready.
+
+| Project | Description | Dependencies |
+|---------|-------------|--------------|
+| **The Invitation -- Two-Screen Architecture** | Rebuild the invitation flow as a 14-section scrolling presentation (Screen 1) with a dedicated Learn More page covering full schedule across 4 time zones and the contribution model (Screen 2). Content exists in `docs/program/presentation.md` and `docs/program/schedule-details.md`. Includes branded PDF exports of both screens. | Content is ready. Can be built independently. |
+| **Enrollment & Forms System** | Build the full 5-step enrollment form (who you are, path selection, contribution tier, agreements, "Welcome home" confirmation), a Contact/Inquiry form with nature-of-inquiry dropdown, and a Community Interest/Waitlist form for future programs and regional expansion. Includes post-submission branded PDF confirmations. | Requires backend integration (Supabase) for real form submissions. |
+| **The Aura Page** | Standalone page for the Aura perception and relationship work -- currently not built as a dedicated route. Part of the original sitemap vision. | Content direction needed from Guardians. |
+| **The Journey Page** | Dedicated page showing what participants experience across all levels -- a narrative walkthrough of the Rose path. Part of the original sitemap vision. | Content direction needed from Guardians. |
+| **Unified PDF Export Template System** | Consolidate all PDF generation (Programs, Teachers Aid, Manuals, Enrollment confirmations) into a single branded template system -- consistent wordmark, margins, typography, textures across every PDF the platform produces. | Can be built independently. Improves all existing PDF outputs. |
+| **Full Localization Pass** | Translate all platform web content (pages, forms, UI labels, navigation) into Spanish, Portuguese, and Greek. i18n infrastructure already exists (language selector in place). This covers web pages only -- manual translations are a separate deliverable. | Translation services needed. Infrastructure is ready. |
+| **Admin Dashboard Backend Integration** | Connect the existing admin UI scaffold (8 pages, all styled with demo data) to live Supabase backend -- real analytics, user management, content editing, media library, and feedback collection. | Supabase schema exists. Requires data migration and API wiring. |
+| **Payment Processing Integration** | Integrate Stripe or equivalent for the contribution flow -- currently form-only with no real payment processing. | Requires business/legal decisions on payment structure. |
+
 ---
 
 ### 4.4 Summary

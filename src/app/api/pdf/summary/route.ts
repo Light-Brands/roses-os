@@ -181,11 +181,9 @@ async function loadAndResizeImage(
     const raw = await readFile(fullPath);
     const ext = imagePath.toLowerCase();
 
-    // Resize with sharp to keep PDF size reasonable
-    const resized = await sharp(raw)
-      .resize(Math.round(maxWidth * 2), Math.round(maxHeight * 2), { fit: 'inside', withoutEnlargement: true })
-      .png({ quality: 80, compressionLevel: 9 })
-      .toBuffer();
+    // Flatten transparency onto brand background (#F7F5F2 = auraWhite) to
+    // prevent white squares in the generated PDF.
+    const brandBg = { r: 247, g: 245, b: 242 };
 
     if (ext.endsWith('.jpg') || ext.endsWith('.jpeg')) {
       const jpg = await sharp(raw)
@@ -194,6 +192,12 @@ async function loadAndResizeImage(
         .toBuffer();
       return await doc.embedJpg(jpg);
     }
+
+    const resized = await sharp(raw)
+      .flatten({ background: brandBg })
+      .resize(Math.round(maxWidth * 2), Math.round(maxHeight * 2), { fit: 'inside', withoutEnlargement: true })
+      .png({ quality: 80, compressionLevel: 9 })
+      .toBuffer();
     return await doc.embedPng(resized);
   } catch {
     return null;
