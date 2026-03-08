@@ -181,6 +181,23 @@ Both routes use `sharp` for image processing, which may strip transparency and r
 - [ ] **1. Fix white squares in Programs PDF** -- In `src/app/api/pdf/summary/route.ts`, check image embedding logic. When converting images with `sharp`, ensure PNG transparency is preserved (or composite onto the brand background color `#F7F5F2` instead of white).
 - [ ] **2. Fix white squares in Additional Programs PDF** -- Same fix in `src/app/api/pdf/paid-programs/route.ts`.
 
+### Teaching Visual Aid -- White Rectangles Behind Images
+
+The `/teaching` page shows visible background rectangles behind slide images. The image containers use `bg-[var(--color-background-subtle)]` (`#F5F0EB`) with a fixed `aspect-[16/10]` ratio and `object-contain`, so wherever images don't fill the box, a cream-colored rectangle is visible.
+
+| Component | File |
+|-----------|------|
+| Teaching Slide Card | `src/components/teaching/TeachingSlideCard.tsx` |
+| Chakra Slide Card | `src/components/teaching/ChakraSlideCard.tsx` |
+
+- [x] **3. Fix white rectangles on teaching slides** -- Remove the background color on the image container in both `TeachingSlideCard.tsx` and `ChakraSlideCard.tsx`. Removed `bg-[var(--color-background-subtle)]` from image containers.
+
+### Teachers Aid PDF -- 404 Not Found
+
+The "Export Teachers Aid PDF" button on the `/teaching` page links to `ROSES-OS-Teachers-Aid-EN.pdf` (and ES/PT/EL variants) in `public/resources/manuals/`, but these files do not exist. The button is wired up in `src/components/ui/PdfExportButton.tsx` using paths from `src/lib/data/manual-pdf-paths.ts`.
+
+- [ ] **4. Create or generate Teachers Aid PDFs** -- The Teachers Aid PDFs (EN, ES, PT, EL) need to be created and placed in `public/resources/manuals/`. These should contain the same slide images and teaching text used on the `/teaching` web page.
+
 ---
 
 ## CODE UPDATES REQUIRED
