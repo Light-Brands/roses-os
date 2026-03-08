@@ -51,8 +51,7 @@ Final manuals served on the website live in `public/resources/manuals/`:
 | 12 | `12-four-roses.PNG` | Four Roses |
 | 13 | `13-cleansing-rose-reimagined.png` | Cleansing Rose |
 | 14 | `14-energy-recovery-background.png` | Recovery Rose |
-| 15a | `15-pink-rose-closure.png` | Pink Rose |
-| 15b | `15-discharge-excess.PNG` | Discharge Excess (alt) |
+| 15 | `15-pink-rose-closure.png` | Pink Rose |
 | 16 | `16-discharge-excess.PNG` | Discharge Excess |
 | 17 | `17-sacred-space.png` | Sacred Space |
 | 18 | `18-sacred-space.PNG` | Sacred Space (alt) |
