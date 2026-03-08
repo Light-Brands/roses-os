@@ -40,7 +40,7 @@
 
 ### 1st Week Classes -- 19th and 20th (Thursday and Friday)
 
-**Rose Meditation Guidance (30 min)**
+**Rose Meditation Guidance* (30 min)**
 
 | Time Zone | Hours |
 |---|---|
@@ -71,7 +71,7 @@
 
 ### Weekend -- 21st and 22nd of March (Saturday and Sunday)
 
-**Rose Meditation Guidance (30 min)**
+**Rose Meditation Guidance* (30 min)**
 
 | Time Zone | Hours |
 |---|---|
@@ -104,7 +104,7 @@
 
 *The classes are mandatory, but the practices can be chosen between the first or second period -- of course if you come to both, you are more than welcome, but one is enough!*
 
-**Rose Meditation Guidance (30 min)**
+**Rose Meditation Guidance* (30 min)**
 
 | Time Zone | Hours |
 |---|---|
@@ -153,7 +153,7 @@
 
 ### Special Practice Day -- 27th of March (Friday)
 
-**Rose Meditation Guidance (30 min)**
+**Rose Meditation Guidance* (30 min)**
 
 | Time Zone | Hours |
 |---|---|
@@ -184,6 +184,10 @@ This work is offered in devotion. You are invited to choose a contribution that 
 | Above $70,000 USD | Higher tier -- supports accessibility for others and the expansion of this work |
 
 Your support allows these technologies to reach more people worldwide.
+
+---
+
+*\* For the most up-to-date information on times and dates, please check the WhatsApp channel.*
 
 ---
 
