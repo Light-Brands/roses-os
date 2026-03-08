@@ -27,7 +27,7 @@ Final manuals served on the website live in `public/resources/manuals/`:
 | `ROSES-OS-Level-2-Manual-EN.pdf` (567 KB) | Present |
 | `ROSES-OS-Level-3-Manual-EN.pdf` (768 KB) | Present |
 
-> **Note:** The combined `ROSES-Manual-Levels-1-and-2.pdf` (933 KB) is being retired. The final deliverables are three separate manuals (Level 1, Level 2, Level 3). The combined PDF's Level 2 content is being extracted into the standalone Level 2 manual above. The Level 2 manual needs its **cover image page restored** (lost during the split) and its **Table of Contents rebuilt** with only Level 2 sections -- see Level 2 action steps 2 and 3.
+> **Note:** The combined `ROSES-Manual-Levels-1-and-2.pdf` (933 KB) is being retired. The final deliverables are three separate manuals (Level 1, Level 2, Level 3). The combined PDF's Level 2 content is being extracted into the standalone Level 2 manual above.
 
 ---
 
