@@ -37,15 +37,15 @@ Final manuals served on the website live in `public/resources/manuals/`:
 
 | # | File | Concept |
 |---|------|---------|
-| 1 | `1-the-rose.PNG` | The Rose |
-| 2 | `2-meditation-posture.PNG` | Meditation Posture |
-| 3 | `3-grounding-cord.jpeg` | Grounding Cord |
-| 4 | `4-golden-sun.png` | Golden Sun |
-| 5 | `5-aura-exercise.PNG` | Limits of Aura |
-| 6 | `6-expansion-grounding-cord.jpeg` | Expansion of Grounding Cord |
-| 7 | `7-golden-sun-fills.png` | Golden Sun Fills |
-| 8 | `8-earth-energy.PNG` | Earth Energy |
-| 9 | `9-cosmos-circuit.jpeg` | Cosmos Circuit |
+| 1 | `01-the-rose.PNG` | The Rose |
+| 2 | `02-meditation-posture.PNG` | Meditation Posture |
+| 3 | `03-grounding-cord.jpeg` | Grounding Cord |
+| 4 | `04-golden-sun.png` | Golden Sun |
+| 5 | `05-aura-exercise.PNG` | Limits of Aura |
+| 6 | `06-expansion-grounding-cord.jpeg` | Expansion of Grounding Cord |
+| 7 | `07-golden-sun-fills.png` | Golden Sun Fills |
+| 8 | `08-earth-energy.PNG` | Earth Energy |
+| 9 | `09-cosmos-circuit.jpeg` | Cosmos Circuit |
 | 10 | `10-cosmosearth.PNG` | Cosmos + Earth |
 | 11 | `11-therosegold.PNG` | The Rose (Gold) |
 | 12 | `12-four-roses.PNG` | Four Roses |
@@ -144,14 +144,14 @@ The combined Level 1&2 PDF is being split. This manual becomes **Level 2 only**.
 
 - [ ] **1. Restore cover image** -- The cover image has disappeared. Put it back.
 - [ ] **2. Update Table of Contents** -- Add "10. Sacred Space" to the contents table. Add a small sacred rose icon on the contents page.
-- [ ] **3. Replace Grounding Cord image** -- Use `level-1/3-grounding-cord.jpeg`
-- [ ] **4. Replace Golden Sun image** -- Use `level-1/4-golden-sun.png`
-- [ ] **5. Add Limits of Aura image** -- Use `level-1/5-aura-exercise.PNG` (new addition to the manual)
-- [ ] **6. Add Expansion of Grounding Cord image** -- Use `level-1/6-expansion-grounding-cord.jpeg` (new addition to the manual)
+- [ ] **3. Replace Grounding Cord image** -- Use `level-1/03-grounding-cord.jpeg`
+- [ ] **4. Replace Golden Sun image** -- Use `level-1/04-golden-sun.png`
+- [ ] **5. Add Limits of Aura image** -- Use `level-1/05-aura-exercise.PNG` (new addition to the manual)
+- [ ] **6. Add Expansion of Grounding Cord image** -- Use `level-1/06-expansion-grounding-cord.jpeg` (new addition to the manual)
 - [ ] **7. Replace Four Roses image** -- Use `level-1/12-four-roses.PNG`
 - [ ] **8. Replace Earth, Cosmos, Earth+Cosmos images** -- Use THREE images:
-  - `level-1/8-earth-energy.PNG`
-  - `level-1/9-cosmos-circuit.jpeg`
+  - `level-1/08-earth-energy.PNG`
+  - `level-1/09-cosmos-circuit.jpeg`
   - `level-1/10-cosmosearth.PNG`
 - [ ] **9. Replace Cleansing Rose and Recovery Rose images** -- Use:
   - Cleansing Rose: `level-1/13-cleansing-rose-reimagined.png`
