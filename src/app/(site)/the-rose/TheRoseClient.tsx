@@ -317,14 +317,12 @@ export default function TheRoseClient() {
         title="The Rose in Spiritual Tradition"
       >
         <p>
-          Known as one of the most recognized spiritual symbols in the universe, the
-          rose appears across every tradition and culture. Its unfolding petals have
-          always represented the same truth: the awakening of consciousness, from
-          potential to full realization.
-        </p>
-        <p className="text-[var(--color-foreground)] font-medium">
-          ROSES OS carries this lineage forward. The rose is not a metaphor — it is the living
-          instrument at the center of the practice.
+          Why is the rose spiritually significant? Known as one of the most recognized
+          spiritual symbols in the universe, the rose appears across every tradition
+          and culture — its unfolding petals representing the awakening of consciousness,
+          from potential to full realization. ROSES OS carries this lineage forward,
+          using the rose not as a metaphor but as a living instrument at the center
+          of the practice.
         </p>
       </RevealSection>
 
