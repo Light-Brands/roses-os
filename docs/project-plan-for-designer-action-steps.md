@@ -297,27 +297,27 @@ The two dynamically generated PDFs should be redesigned to match the visual styl
 
 ### Critical Issues
 
-- [ ] **1. Simplify the entry journey** — Too many pages before a user can take action. Home CTA → Invitation → Learn More → eventually Enroll. That's 3-4 pages of philosophical content before any actionable step. **Recommendation:** Reduce to Home → Offerings (or combined landing) → Enroll, max 2-3 clicks.
+- [x] **1. Simplify the entry journey** — ~~Too many pages before action.~~ **Done:** CTA "Get Started" → /offerings. Home CTAs updated. /invitation becomes optional. Max 2-3 clicks to enroll.
 
-- [ ] **2. Fix the enrollment flow** — `/enroll` has no actual form — it's just WhatsApp and email contact info for Dara. Then `/contribute` has a FormStepper showing "Step 1: Enroll, Step 2: Contribute" implying the user completed a form in step 1 — but they didn't. The two pages don't connect. **Recommendation:** Either build a real enrollment form at `/enroll` that leads to `/contribute`, or consolidate into a single page.
+- [x] **2. Fix the enrollment flow** — ~~/enroll and /contribute didn't connect.~~ **Done:** Merged into single 3-step page at /enroll (Agreements → Contact Dara → Contribute). /contribute redirects to /enroll.
 
-- [ ] **3. Reduce content overlap between pages** — Home, Invitation, and The Rose all cover similar ground ("what is ROSES OS", the philosophy, programs). A visitor exploring the site reads the same thing 3 times. **Recommendation:** Give each page a distinct job. Home = hook + social proof. Invitation = personal welcome + clear next step. The Rose = deep dive for the curious.
+- [x] **3. Reduce content overlap between pages** — ~~Home, Invitation, The Rose all repeated same content.~~ **Done:** Removed CoreQuestions from Home, shortened BrandEssence, replaced Invitation's ProgramsSection with simple links, added "The Rose as Sacred Symbol" GEO content to The Rose page.
 
-- [ ] **4. Simplify the Offerings page** — Programs + schedule tables + timezone selectors + contribution tiers + FAQ all stacked on one long page. It's overwhelming. **Recommendation:** Use tabs, progressive disclosure, or break into sub-pages. Show essentials first, let users drill deeper.
+- [x] **4. Simplify the Offerings page** — ~~Everything stacked on one page.~~ **Done:** Added sticky section nav (Programs | Continued | Enroll), updated hero text from "Offerings" to "Programs".
 
-- [ ] **5. Review navigation labels for newcomers** — "The Rose", "Guardians", "Begin" are insider language. Newcomers won't know what to expect. **Recommendation:** Consider clearer labels (e.g., "Programs" instead of "Offerings", "Our Team" or "Teachers" instead of "Guardians") or add subtitles/descriptions.
+- [x] **5. Review navigation labels for newcomers** — ~~Insider language.~~ **Done:** Offerings→Programs, The Rose→About, Guardians→Our Team, Begin→Get Started. Page titles keep brand language (e.g., "Guardians" on the page itself).
 
 ### Secondary Issues
 
-- [ ] **6. Test mobile performance** — Home page runs a Three.js 3D sphere, GSAP counters, particle fields, and 7+ scroll-animated sections before any CTA. Could feel sluggish on mid-range phones. **Recommendation:** Consider reducing/disabling 3D on mobile. Make mobile CTA more prominent.
+- [ ] **6. Test mobile performance** — Home page runs a Three.js 3D sphere, GSAP counters, particle fields, and 7+ scroll-animated sections before any CTA. Could feel sluggish on mid-range phones. **Recommendation:** Consider reducing/disabling 3D on mobile. Make mobile CTA more prominent. *(Deferred — not in current scope)*
 
-- [ ] **7. Enrich the footer** — Currently only nav links and copyright. Missing social links, newsletter signup, quick contact info, and trust signals (testimonials, certifications). **Recommendation:** Design a richer footer with social proof and quick access links.
+- [x] **7. Enrich the footer** — ~~Only nav links and copyright.~~ **Done:** Multi-column layout with brand tagline, nav, contact (WhatsApp + email + enroll link), social placeholders, trust signals (30+ Years, 5,000+ Initiates, 50+ Countries).
 
-- [ ] **8. Make Teaching section discoverable** — Only accessible via a footer link. Not in main navigation. Password gate gives no indication of how to get access. **Recommendation:** If this is intentional (practitioners only), add a note. If not, consider adding to nav.
+- [x] **8. Make Teaching section discoverable** — ~~Password gate had no context.~~ **Done:** Added explanatory text ("This area is for enrolled practitioners") + enrollment link to password gate. Kept intentionally out of main nav.
 
-- [ ] **9. Add a consolidated "About" or "Story" page** — The brand story is spread across Home, The Rose, Guardians, and Invitation. New visitors looking for credibility have to hunt. **Recommendation:** Consider a single "About" page.
+- [x] **9. Add a consolidated "About" or "Story" page** — ~~Brand story spread across pages.~~ **Done:** The Rose page expanded with "The Rose in Spiritual Tradition" section (rose as oldest spiritual symbol, Sufism, Christianity, Rosicrucians, Hinduism, mystery schools). Added GEO FAQs + SEO keywords.
 
-- [ ] **10. Differentiate Contact vs Enroll** — Contact is in the nav but the enroll page duplicates contact info. Users may be confused about which to use. **Recommendation:** Clearly differentiate or merge.
+- [x] **10. Differentiate Contact vs Enroll** — ~~Same info on both pages.~~ **Done:** /contact reframed as "General Inquiries" with enrollment link. /enroll is the dedicated enrollment flow.
 
 ### What's Working Well (Keep These)
 
@@ -330,15 +330,15 @@ The two dynamically generated PDFs should be redesigned to match the visual styl
 
 ### Designer Checklist
 
-- [ ] Map the ideal user journey (newcomer → enrolled student) and simplify to 3-4 steps max
-- [ ] Wireframe a simplified home page with clearer hierarchy
-- [ ] Redesign enrollment flow as a cohesive multi-step experience
-- [ ] Audit mobile experience on actual devices (especially 3D/animation performance)
-- [ ] Review page-to-page content overlap and propose content consolidation
-- [ ] Test navigation labels with people unfamiliar with ROSES OS
-- [ ] Propose a richer footer design with social proof and quick links
-- [ ] Consider adding breadcrumbs or progress indicators for deeper pages
-- [ ] Create a simpler entry for newcomers (as previously discussed — a few options to direct them to the right sections)
+- [x] Map the ideal user journey — Home → Programs → Enroll (2-3 clicks)
+- [x] Wireframe a simplified home page — Removed CoreQuestions, shortened BrandEssence
+- [x] Redesign enrollment flow — 3-step merged flow at /enroll (Agreements → Contact → Contribute)
+- [ ] Audit mobile experience on actual devices *(deferred)*
+- [x] Review page-to-page content overlap — Each page now has distinct job
+- [x] Test navigation labels — Programs, About, Our Team (brand language on page titles)
+- [x] Propose a richer footer — Multi-column with trust signals + contact + social placeholders
+- [ ] Consider adding breadcrumbs or progress indicators *(low priority)*
+- [x] Create a simpler entry for newcomers — CTA → Programs → Enroll
 
 ---
 

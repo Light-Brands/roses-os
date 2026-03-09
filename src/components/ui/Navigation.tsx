@@ -100,7 +100,7 @@ function HamburgerIcon({ isOpen }: { isOpen: boolean }) {
 export function Navigation({
   logo,
   items = defaultNavItems,
-  cta = { label: 'Begin', href: '/invitation' },
+  cta = { label: 'Get Started', href: '/offerings' },
   transparent = false,
 }: NavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

@@ -17,7 +17,7 @@ This document outlines the scope, deliverables, and structure of the work being 
 ## 1. What Has Been Built (Completed Work)
 
 ### 1.1 Full-Stack Web Platform
-A complete Next.js 16 application with 44+ pages (including 20 geo landing pages + meditation hub), 65+ custom components, and a modular architecture designed for long-term scalability.
+A complete Next.js 16 application with 44+ pages (including 20 geo landing pages + meditation hub), 62+ custom components, 26,000+ lines of TypeScript/React code across 144 source files, and a modular architecture designed for long-term scalability.
 
 | Area | Details |
 |------|---------|
@@ -116,6 +116,15 @@ All strategic and brand documentation living in the repository:
 
 **Status:** Ready to move to visual design as soon as founder inputs are received.
 
+### 2.4 Platform UX Refinement
+- 9 usability issues identified via comprehensive UX audit
+- 6-phase implementation plan with concrete file-level tasks
+- Navigation clarity (Programs, About, Our Team), enrollment flow consolidation, content deduplication, Offerings page progressive disclosure, footer enrichment, teaching gate context
+- Sacred symbol GEO content added (rose as oldest spiritual symbol + FAQ schema)
+- Detailed plan: `docs/website-usability-action-plan.md`
+
+**Status:** Implementation complete. 12 files modified across 6 phases.
+
 ---
 
 ## 3. Deliverables Summary
@@ -142,7 +151,7 @@ All strategic and brand documentation living in the repository:
 ### Phase 3 -- Proposed Next
 | # | Deliverable | Description |
 |---|-------------|-------------|
-| 12 | **Platform UX Refinement** | Holistic UX review and flow optimization per Diego's suggestion |
+| 12 | **Platform UX Refinement** | 6-phase website usability overhaul: enrollment flow consolidation (/enroll + /contribute merged), clearer nav labels (Programs, About, Our Team), content deduplication across Home/Invitation/About, Offerings page section nav + progressive disclosure, multi-column footer with trust signals, teaching gate context. Sacred symbol GEO content and FAQ schema added. 12 files modified, 9 usability issues resolved. **Status: Complete.** |
 | 13 | **GEO / Content Architecture** | 20 geo landing pages, FAQ with schema markup, Course structured data, sitemap/robots, AI bot directives, meditation hub page — programmatic SEO & Generative Engine Optimization. **Status: Complete.** [Detailed plan →](../geo-content/implementation-plan.md) |
 | 14 | **Rose App Foundation** | Initial architecture for the Rose App (daily practice -- spine of global expression) |
 | 15 | **Aura Levels Integration** | Aura Reading Levels 1-5 content and teaching structure *(pending decision)* |
@@ -270,7 +279,7 @@ Phase 3 is structured as **individual project milestones** -- each scoped as a s
 
 | Project | Deliverables | Market Value | Contribution Rate |
 |---------|-------------|--------------|-------------------|
-| **Platform UX Refinement** | Holistic UX review, flow optimization, implemented improvements -- accepted by team | $15,000 | $1,500 |
+| **Platform UX Refinement** | 6-phase usability overhaul: (1) Enrollment flow consolidation (2) Clearer nav labels + CTA → /offerings (3) Content deduplication + sacred symbol GEO content (4) Offerings section nav + progressive disclosure (5) Multi-column footer with trust signals (6) Teaching gate context — 12 files modified, 9 issues resolved. **Complete.** | $15,000 | $1,500 |
 | **GEO / Content Architecture** | 20 geo landing pages (`/meditation/[city]`), meditation hub page (`/meditation`), FAQ content with schema markup (15 geo + 8 page-specific questions), Course structured data, WebPage + Breadcrumb JSON-LD on all content pages, EducationalOrganization + WebSite schemas, AI bot directives (GPTBot, PerplexityBot, ClaudeBot, etc.), sitemap, robots.txt — programmatic SEO & Generative Engine Optimization. **Complete.** [Detailed plan →](../geo-content/implementation-plan.md) | $12,000 | $1,200 |
 | **Rose App Foundation** | Initial architecture and prototype for the Rose App (daily practice) | $25,000 | $2,500 |
 | **Aura Levels Integration** | Aura Reading Levels 1-5 content and teaching structure *(pending decision)* | $18,000 | $1,800 |
@@ -401,7 +410,7 @@ For context on the technical foundation that supports everything above:
 
 | Infrastructure | Details |
 |----------------|---------|
-| **Repository** | GitHub (Light-Brands/roses-os) -- version-controlled, 127+ commits, 29+ merged PRs |
+| **Repository** | GitHub (Light-Brands/roses-os) -- version-controlled, 133+ commits, 29+ merged PRs |
 | **Hosting** | Production-ready Next.js deployment |
 | **Database** | Supabase (PostgreSQL) with SSR auth |
 | **AI Services** | Google GenAI integration |
@@ -416,8 +425,9 @@ For context on the technical foundation that supports everything above:
 1. **Team reviews this document** -- Ensure everyone has visibility into the full scope
 2. **Founder inputs delivered** -- Stories, long bios, and decision sheet reviewed (unlocks Brand Book)
 3. **Meeting scheduled** -- Dedicated session to discuss agreements, financials, and Phase 3 priorities
-4. **UX review session** -- As Diego suggested, walk through the platform flow holistically with Dan's technical input
+4. **UX review session** -- ~~As Diego suggested, walk through the platform flow holistically with Dan's technical input~~ **Complete.** 6-phase UX overhaul implemented (see `docs/website-usability-action-plan.md`)
 5. **Agreements finalized** -- Clear ownership, deliverables, and compensation structure documented
+6. **UX verification** -- Test the updated user journeys: Home → Programs → Enroll, About page with sacred symbol content, enriched footer, consolidated enrollment flow
 
 ---
 

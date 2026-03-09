@@ -16,10 +16,10 @@ import type {
 // =============================================================================
 
 export const navItems: NavItem[] = [
-  { label: 'Offerings', href: '/offerings' },
+  { label: 'Programs', href: '/offerings' },
   { label: 'Community', href: '/community' },
-  { label: 'The Rose', href: '/the-rose' },
-  { label: 'Guardians', href: '/guardians' },
+  { label: 'About', href: '/the-rose' },
+  { label: 'Our Team', href: '/guardians' },
   { label: 'Contact', href: '/contact' },
 ];
 

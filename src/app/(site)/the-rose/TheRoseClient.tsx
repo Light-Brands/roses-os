@@ -311,7 +311,31 @@ export default function TheRoseClient() {
         </div>
       </section>
 
-      {/* 8. The Frequency */}
+      {/* 8. The Rose as Sacred Symbol */}
+      <RevealSection
+        label="The Oldest Symbol"
+        title="The Rose in Spiritual Tradition"
+      >
+        <p>
+          The rose is the oldest spiritual symbol in the known universe. Across every major
+          tradition — from Rumi&apos;s Sufi poetry, where the rose embodies divine love and the
+          beloved, to Christianity&apos;s Mystic Rose and Dante&apos;s celestial rose in Paradiso,
+          to the Rosicrucian tradition where the unfolding petals represent the awakening of
+          consciousness — the rose has always pointed to the same truth.
+        </p>
+        <p>
+          In Hinduism, the rose is sacred to Lakshmi and used in devotional offerings. In ancient
+          mystery schools from Egypt to Greece, it was the flower of Isis and Aphrodite — a symbol
+          of initiation into sacred knowledge. Its unfolding petals mirror the stages of spiritual
+          development: from bud to full bloom, from potential to realization.
+        </p>
+        <p className="text-[var(--color-foreground)] font-medium">
+          ROSES OS carries this lineage forward. The rose is not a metaphor — it is the living
+          instrument at the center of the practice.
+        </p>
+      </RevealSection>
+
+      {/* 9. The Frequency */}
       <RevealSection
         label="The Frequency"
         title="A Frequency You Cultivate"
