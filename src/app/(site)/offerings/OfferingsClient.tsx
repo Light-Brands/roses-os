@@ -25,6 +25,7 @@ import InvitationCTA from '@/components/sections/InvitationCTA';
 import SubscribeCalendar from '@/components/ui/SubscribeCalendar';
 import SummaryDownloadButton from '@/components/ui/SummaryDownloadButton';
 import PaidProgramsDownloadButton from '@/components/ui/PaidProgramsDownloadButton';
+import MeditationPdfButton from '@/components/ui/MeditationPdfButton';
 
 // =============================================================================
 // TIMEZONE SELECTOR (for continued programs)
@@ -284,19 +285,67 @@ function OfferingsContent() {
     <>
       {/* 1. Hero */}
       <PageHero
-        eyebrow="Offerings"
-        title="Current Offerings"
+        eyebrow="Programs"
+        title="Current Programs"
         description="Guided pathways into the Rose field. Each program is a living invitation to deepen your practice, remember your coherence, and step into a community devoted to inner freedom."
         image="/page-images/page-programs.png"
       />
 
-      {/* Download PDF Guide */}
-      <div className="flex justify-center py-6 print:hidden">
-        <SummaryDownloadButton variant="light" />
+      {/* Section Navigation */}
+      <nav className="sticky top-16 lg:top-[72px] z-30 bg-[var(--color-background)]/90 backdrop-blur-lg border-b border-[var(--color-border-subtle)] print:hidden">
+        <div className="container-premium flex items-center justify-center gap-1 sm:gap-2 py-3 overflow-x-auto">
+          {[
+            { label: 'Foundations', id: 'programs-section' },
+            { label: 'Ongoing', id: 'continued-section' },
+          ].map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => {
+                const el = document.getElementById(tab.id);
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+              className={cn(
+                'px-4 py-2 rounded-full text-sm font-medium',
+                'text-[var(--color-foreground-muted)]',
+                'hover:text-[var(--color-foreground)] hover:bg-[var(--color-background-subtle)]',
+                'transition-all duration-200'
+              )}
+            >
+              {tab.label}
+            </button>
+          ))}
+          <Link
+            href="/enroll"
+            className={cn(
+              'px-4 py-2 rounded-full text-sm font-medium',
+              'bg-[var(--color-rose-500)] text-white',
+              'hover:bg-[var(--color-rose-600)]',
+              'transition-colors duration-200'
+            )}
+          >
+            Enroll
+          </Link>
+        </div>
+      </nav>
+
+      {/* Download PDF Guides */}
+      <div className="flex flex-wrap justify-center gap-3 py-6 print:hidden">
+        <MeditationPdfButton variant="light" />
+        <Link
+          href="/community"
+          className={cn(
+            'inline-flex items-center gap-2 px-6 py-2.5 rounded-full',
+            'text-sm font-medium',
+            'transition-all duration-300',
+            'border border-[var(--color-rose-clay)]/30 text-[var(--color-foreground)]/70 hover:bg-[var(--color-rose-clay)]/5 hover:text-[var(--color-foreground)]',
+          )}
+        >
+          See Our Free Activities in Community
+        </Link>
       </div>
 
       {/* 2. Programs — progressive disclosure */}
-      <section ref={gridRef} className="section-padding">
+      <section id="programs-section" ref={gridRef} className="section-padding scroll-mt-32">
         <div className="container-premium max-w-3xl mx-auto">
           {/* Prompt */}
           <AnimatePresence>
@@ -356,6 +405,20 @@ function OfferingsContent() {
                         transition={{ duration: 0.5, ease }}
                         className="overflow-hidden"
                       >
+                        {/* Meditation PDF download — Aura 1 & Rose Meditation */}
+                        {(program.id === '1' || program.id === '3') && (
+                          <div className="mt-6 flex justify-center print:hidden">
+                            <MeditationPdfButton variant="light" />
+                          </div>
+                        )}
+
+                        {/* Program Guide download — Aura 2 */}
+                        {program.id === '2' && (
+                          <div className="mt-6 flex justify-center print:hidden">
+                            <SummaryDownloadButton variant="light" />
+                          </div>
+                        )}
+
                         {/* Schedule section */}
                         <div className="mt-8 mb-8">
                           <p className="label-sacred mb-3">Schedule</p>
@@ -449,7 +512,7 @@ function OfferingsContent() {
       </section>
 
       {/* 3. Continued Programs — Go Deeper */}
-      <section ref={continuedRef} className="section-padding">
+      <section id="continued-section" ref={continuedRef} className="section-padding scroll-mt-32">
         <div className="container-premium max-w-3xl mx-auto">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -457,7 +520,7 @@ function OfferingsContent() {
             transition={{ duration: 0.6, ease }}
             className="label-sacred mb-6"
           >
-            Continued Programs
+            Ongoing Programs
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 24 }}

@@ -163,11 +163,11 @@ No belief required. Only presence and willingness to return to your essence. The
 *We have different schedules during the week and weekend.*
 
 - **1st Week:** March 19th -- 20th (Thursday and Friday)
-  - Rose Meditation Guidance (30 min), First Class (2 hours), Second Class (2 hours)
+  - Rose Meditation Guidance* (30 min), First Class (2 hours), Second Class (2 hours)
 - **Weekend:** March 21st -- 22nd (Saturday and Sunday)
-  - Rose Meditation Guidance (30 min), First Class (3 hours), Second Class (3 hours)
+  - Rose Meditation Guidance* (30 min), First Class (3 hours), Second Class (3 hours)
 - **2nd Week:** March 23rd -- 27th (Monday to Friday)
-  - Rose Meditation Guidance (30 min), Class (3 hours), Practices (1.5 hours each -- choose at least one)
+  - Rose Meditation Guidance* (30 min), Class (3 hours), Practices (1.5 hours each -- choose at least one)
 
 *For detailed times across all time zones, see the full schedule on the Learn More page.*
 
@@ -198,5 +198,7 @@ She practices the pedagogical methods and integration, ensuring the teachings re
 ## Begin
 
 **Start your journey.**
+
+*\* For the most up-to-date information on times and dates, please check the WhatsApp channel.*
 
 *Welcome home.*

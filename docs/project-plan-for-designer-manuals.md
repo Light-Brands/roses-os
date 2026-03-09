@@ -142,9 +142,9 @@ These Level 1 images may appear in the Level 2 manual as foundational context or
 
 | Manual Concept | Site Slide | Reimagined Image | Original Image |
 |---|---|---|---|
-| **The Rose** | 1 | `1-the-rose.PNG` | -- |
-| **Grounding Cord** | 3 | `3-grounding-cord.jpeg` | -- |
-| **Aura Exercise** | 5 | `5-aura-exercise.PNG` | `5-auraexercise-original.PNG` |
+| **The Rose** | 1 | `01-the-rose.PNG` | -- |
+| **Grounding Cord** | 3 | `03-grounding-cord.jpeg` | -- |
+| **Aura Exercise** | 5 | `05-aura-exercise.PNG` | `05-auraexercise-original.PNG` |
 | **Energy Recovery (Level 1)** | 14 | `14-energy-recovery-background.png` | `14-recovery-rose-original.PNG` |
 | **Sacred Space** | 17 | `17-sacred-space.png` | -- |
 | **6th and 7th Chakras** | 18 | `18-sacred-space.PNG` | `18-sacredspace-original.jpg` |
@@ -166,7 +166,7 @@ These files exist in `public/rose med images/` and are referenced as supplementa
 
 | File | Referenced In | Purpose |
 |---|---|---|
-| `8-circuitofenergycosmos.PNG` | Slide 9 note | Previous version of cosmos circuit |
+| `08-circuitofenergycosmos.PNG` | Slide 9 note | Previous version of cosmos circuit |
 | `10-cosmosearth.PNG` | Slide 10 note | Alternate cosmos + earth view |
 | `21a-example-of-chakra-slides.PNG` | Slide 24 note | Style reference for chakra pages |
 | `29a-chakracleansing-original.jpg` | Slide 33 note | Detail reference for chakra cleansing |

@@ -13,7 +13,7 @@
 | NEW Level 1 | `docs/source-materials/Rose-Meditation-Level-1_compressed.pdf` | Standalone Level 1 manual |
 | NEW Level 1&2 (combined) | `docs/source-materials/ROSES-Manual-Levels-1-and-2_compressed.pdf` | Being split -- Level 2 content only going forward |
 | NEW Level 3 | `docs/source-materials/ROSES-Manual-Level-3_compressed.pdf` | Compressed version for output |
-| Level 3 2026 Original | `docs/source-materials/ Rose Meditation Level 3_2026.pdf` | **Authoritative text reference** -- use this for all Level 3 content |
+| Level 3 2026 Original | `docs/source-materials/Rose Meditation Level 3_2026.pdf` | **Authoritative text reference** -- use this for all Level 3 content |
 
 ---
 
@@ -37,15 +37,15 @@ Final manuals served on the website live in `public/resources/manuals/`:
 
 | # | File | Concept |
 |---|------|---------|
-| 1 | `1-the-rose.PNG` | The Rose |
-| 2 | `2-meditation-posture.PNG` | Meditation Posture |
-| 3 | `3-grounding-cord.jpeg` | Grounding Cord |
-| 4 | `4-golden-sun.png` | Golden Sun |
-| 5 | `5-aura-exercise.PNG` | Limits of Aura |
-| 6 | `6-expansion-grounding-cord.jpeg` | Expansion of Grounding Cord |
-| 7 | `7-golden-sun-fills.png` | Golden Sun Fills |
-| 8 | `8-earth-energy.PNG` | Earth Energy |
-| 9 | `9-cosmos-circuit.jpeg` | Cosmos Circuit |
+| 1 | `01-the-rose.PNG` | The Rose |
+| 2 | `02-meditation-posture.PNG` | Meditation Posture |
+| 3 | `03-grounding-cord.jpeg` | Grounding Cord |
+| 4 | `04-golden-sun.png` | Golden Sun |
+| 5 | `05-aura-exercise.PNG` | Limits of Aura |
+| 6 | `06-expansion-grounding-cord.jpeg` | Expansion of Grounding Cord |
+| 7 | `07-golden-sun-fills.png` | Golden Sun Fills |
+| 8 | `08-earth-energy.PNG` | Earth Energy |
+| 9 | `09-cosmos-circuit.jpeg` | Cosmos Circuit |
 | 10 | `10-cosmosearth.PNG` | Cosmos + Earth |
 | 11 | `11-therosegold.PNG` | The Rose (Gold) |
 | 12 | `12-four-roses.PNG` | Four Roses |
@@ -64,7 +64,6 @@ Final manuals served on the website live in `public/resources/manuals/`:
 | 20 | `20-create-the-room.jpg` | Protection of the Space |
 | 21 | `21-cleanse-the-space.jpg` | Cleansing of the Space |
 | 22 | `22-owning-space.jpg` | Owning Your Space |
-| 22-orig | `22-protect-the-space-original.PNG` | Owning Space (original) |
 | 23 | `23-chakras-intro.jpeg` | Chakras Intro |
 | 24 | `24-chakras.png` | The Seven Chakras |
 | 25 | `25-root-chakra.png` | Root Chakra |
@@ -97,10 +96,10 @@ Final manuals served on the website live in `public/resources/manuals/`:
 
 ## LEVEL 3 MANUAL -- ACTION STEPS
 
-**Source text:** `docs/source-materials/ Rose Meditation Level 3_2026.pdf` (authoritative 2026 edition)
+**Source text:** `docs/source-materials/Rose Meditation Level 3_2026.pdf` (authoritative 2026 edition)
 **Output:** `public/resources/manuals/ROSES-OS-Level-3-Manual-EN.pdf`
 
-- [ ] **1. Verify all text matches 2026 original** -- The current Level 3 manual used a 2022 version instead of the 2026 edition. Compare every section of the generated manual against `docs/source-materials/ Rose Meditation Level 3_2026.pdf` and correct all text to match the 2026 original exactly.
+- [ ] **1. Verify all text matches 2026 original** -- The current Level 3 manual used a 2022 version instead of the 2026 edition. Compare every section of the generated manual against `docs/source-materials/Rose Meditation Level 3_2026.pdf` and correct all text to match the 2026 original exactly.
 - [ ] **2. Add small rose icon to Table of Contents** -- Place a small sacred rose icon on the Table of Contents page.
 - [ ] **3. Replace Analyzer image** -- Replace the single analyzer image with TWO images:
   - `level-3/39-analyzer.PNG`
@@ -143,14 +142,14 @@ The combined Level 1&2 PDF is being split. This manual becomes **Level 2 only**.
 
 - [ ] **1. Restore cover image** -- The cover image has disappeared. Put it back.
 - [ ] **2. Update Table of Contents** -- Add "10. Sacred Space" to the contents table. Add a small sacred rose icon on the contents page.
-- [ ] **3. Replace Grounding Cord image** -- Use `level-1/3-grounding-cord.jpeg`
-- [ ] **4. Replace Golden Sun image** -- Use `level-1/4-golden-sun.png`
-- [ ] **5. Add Limits of Aura image** -- Use `level-1/5-aura-exercise.PNG` (new addition to the manual)
-- [ ] **6. Add Expansion of Grounding Cord image** -- Use `level-1/6-expansion-grounding-cord.jpeg` (new addition to the manual)
+- [ ] **3. Replace Grounding Cord image** -- Use `level-1/03-grounding-cord.jpeg`
+- [ ] **4. Replace Golden Sun image** -- Use `level-1/04-golden-sun.png`
+- [ ] **5. Add Limits of Aura image** -- Use `level-1/05-aura-exercise.PNG` (new addition to the manual)
+- [ ] **6. Add Expansion of Grounding Cord image** -- Use `level-1/06-expansion-grounding-cord.jpeg` (new addition to the manual)
 - [ ] **7. Replace Four Roses image** -- Use `level-1/12-four-roses.PNG`
 - [ ] **8. Replace Earth, Cosmos, Earth+Cosmos images** -- Use THREE images:
-  - `level-1/8-earth-energy.PNG`
-  - `level-1/9-cosmos-circuit.jpeg`
+  - `level-1/08-earth-energy.PNG`
+  - `level-1/09-cosmos-circuit.jpeg`
   - `level-1/10-cosmosearth.PNG`
 - [ ] **9. Replace Cleansing Rose and Recovery Rose images** -- Use:
   - Cleansing Rose: `level-1/13-cleansing-rose-reimagined.png`
@@ -167,88 +166,17 @@ The combined Level 1&2 PDF is being split. This manual becomes **Level 2 only**.
 
 ## WEBSITE & PDF FIXES
 
-### Programs PDFs -- White Squares on Last Page
-
-Both "Programs" PDFs are generated dynamically at runtime using `pdf-lib` (not static files). The last page of each PDF has white squares behind images.
-
-| PDF | Route | Component |
-|-----|-------|-----------|
-| Programs (Summary) | `src/app/api/pdf/summary/route.ts` | `src/components/ui/SummaryDownloadButton.tsx` |
-| Additional Programs | `src/app/api/pdf/paid-programs/route.ts` | `src/components/ui/PaidProgramsDownloadButton.tsx` |
-
-Both routes use `sharp` for image processing, which may strip transparency and replace it with white. The fix likely involves:
-
-- [x] **1. Fix white squares in Programs PDF** -- In `src/app/api/pdf/summary/route.ts`, added `sharp.flatten({ background: brandBg })` before PNG conversion to composite transparency onto brand background `#F7F5F2` instead of white.
-- [x] **2. Fix white squares in Additional Programs PDF** -- Same fix applied in `src/app/api/pdf/paid-programs/route.ts`.
-
-### Teaching Visual Aid -- White Rectangles Behind Images
-
-The `/teaching` page shows visible background rectangles behind slide images. The image containers use `bg-[var(--color-background-subtle)]` (`#F5F0EB`) with a fixed `aspect-[16/10]` ratio and `object-contain`, so wherever images don't fill the box, a cream-colored rectangle is visible.
-
-| Component | File |
-|-----------|------|
-| Teaching Slide Card | `src/components/teaching/TeachingSlideCard.tsx` |
-| Chakra Slide Card | `src/components/teaching/ChakraSlideCard.tsx` |
-
-- [x] **3. Fix white rectangles on teaching slides** -- Remove the background color on the image container in both `TeachingSlideCard.tsx` and `ChakraSlideCard.tsx`. Removed `bg-[var(--color-background-subtle)]` from image containers.
-
 ### Teachers Aid PDF -- 404 Not Found
 
 The "Export Teachers Aid PDF" button on the `/teaching` page links to `ROSES-OS-Teachers-Aid-EN.pdf` (and ES/PT/EL variants) in `public/resources/manuals/`, but these files do not exist. The button is wired up in `src/components/ui/PdfExportButton.tsx` using paths from `src/lib/data/manual-pdf-paths.ts`.
 
-- [ ] **4. Create or generate Teachers Aid PDFs** -- The Teachers Aid PDFs (EN, ES, PT, EL) need to be created and placed in `public/resources/manuals/`. These should contain the same slide images and teaching text used on the `/teaching` web page.
+- [ ] **Create or generate Teachers Aid PDFs** -- The Teachers Aid PDFs (EN, ES, PT, EL) need to be created and placed in `public/resources/manuals/`. These should contain the same slide images and teaching text used on the `/teaching` web page.
 
 ---
 
-## CODE UPDATES REQUIRED
+## CODE UPDATES REQUIRED (Developer)
 
-### Update `src/lib/data/manual-image-mapping.ts` -- DONE
-
-~~The current mapping uses **old numbering** (Level 2 starting at slide 16, Level 3 starting at slide 36).~~ The mapping now uses **correct numbering** (Level 2 starting at 19, Level 3 starting at 39). The following corrections have been applied:
-
-**Level 2 mapping corrections:**
-
-| Old Reference | Correct File |
-|---------------|-------------|
-| `level-2/16-physical-space.png` | `level-2/19-physical-space.png` |
-| `level-2/17-create-the-room.jpg` | `level-2/20-create-the-room.jpg` |
-| `level-2/18-cleanse-the-space.jpg` | `level-2/21-cleanse-the-space.jpg` |
-| `level-2/19-owning-space.jpg` | `level-2/22-owning-space.jpg` |
-| `level-2/19-protect-the-space-original.PNG` | `level-2/22-protect-the-space-original.PNG` |
-| `level-2/20-chakras-intro.jpeg` | `level-2/23-chakras-intro.jpeg` |
-| `level-2/21-chakras.jpg` | `level-2/24-chakras.png` |
-| `level-2/22-root-chakra.png` | `level-2/25-root-chakra.png` |
-| `level-2/23-sacral-chakra.png` | `level-2/26-sacral-chakra.png` |
-| `level-2/24-solar-plexus-chakra.png` | `level-2/27-solar-plexus-chakra.png` |
-| `level-2/25-heart-chakra.png` | `level-2/28-heart-chakra.png` |
-| `level-2/26-throat-chakra.png` | `level-2/29-throat-chakra.png` |
-| `level-2/27-third-eye-chakra.jpeg` | `level-2/30-third-eye-chakra.jpeg` |
-| `level-2/28-crown-chakra.png` | `level-2/31-crown-chakra.png` |
-| `level-2/29-cleansing-each-layer.PNG` | `level-2/32-cleansing-each-layer.PNG` |
-| `level-2/30-cleansing-each-chakra.PNG` | `level-2/33-cleansing-each-chakra.PNG` |
-| `level-2/31-energy-recovery.jpeg` | `level-2/34-energy-recovery.jpeg` |
-| `level-2/32-golden-sticky-1.jpg` | `level-2/35-golden-sticky-1.jpg` |
-| `level-2/33-golden-sticky-2.jpg` | `level-2/36-golden-sticky-2.jpg` |
-| `level-2/34-golden-sticky-3.jpg` | `level-2/37-golden-sticky-3.jpg` |
-| `level-2/35-golden-sticky-4.jpg` | `level-2/38-golden-sticky-4.jpg` |
-
-**Level 3 mapping corrections:**
-
-| Old Reference | Correct File |
-|---------------|-------------|
-| `level-3/36-analyzer.PNG` | `level-3/39-analyzer.PNG` |
-| `level-3/38-stick-of-agreements.png` | `level-3/41-stick-of-agreements.png` |
-
-**Level 3 images added to mapping** -- DONE
-
-All Level 3 images are now tracked in the mapping:
-
-| File | Concept |
-|------|---------|
-| `level-3/40-analyzer-and-sacred-space.png` | Analyzer + Sacred Space |
-| `level-3/42-cutting-cords.png` | Cutting Cords |
-| `level-3/43-sexual-recovery-rose.png` | Post Intimacy / Sexual Recovery Rose |
-| `level-3/44-mock-up.png` | Mock Up |
+> These are developer tasks, not designer tasks. Included for reference.
 
 ### Update `scripts/split-manuals.mjs`
 
@@ -268,6 +196,58 @@ All Level 3 images are now tracked in the mapping:
 | Sacred Space section | Level 2 Manual | Level 1 Manual (last technique, after pink rose) |
 | Level 1&2 combined PDF | Combined manual | Split into separate Level 1 and Level 2 |
 | Level 3 text source | 2022 edition | 2026 edition (`Rose Meditation Level 3_2026.pdf`) |
+
+---
+
+## PDF AESTHETIC IMPROVEMENTS
+
+> **Priority:** Secondary — after manuals are finalized.
+
+The two dynamically generated PDFs should be redesigned to match the visual style of the Aura 1 & Rose Meditation reference PDF (`docs/source-materials/Aura 1 and RM  Mar 2026.pdf`):
+
+| PDF | Route | Notes |
+|-----|-------|-------|
+| Programs Guide | [`/api/pdf/summary`](../src/app/api/pdf/summary/route.ts) | Main program overview (9 pages including new Guardians page) |
+| Additional Programs Guide | [`/api/pdf/paid-programs`](../src/app/api/pdf/paid-programs/route.ts) | Continued programs (Teachers Training, etc.) |
+
+**Target style elements from the reference PDF:**
+- Refined typography and spacing
+- Brand-consistent color palette and decorative elements
+- Professional layout with balanced whitespace
+- Image integration where appropriate
+
+---
+
+## WEBSITE USABILITY & FLOW REVIEW
+
+> **Priority:** High — needs a designer eye on overall user-friendliness and flow.
+
+### Open Issues
+
+- [ ] **Test mobile performance** — Home page runs a Three.js 3D sphere, GSAP counters, particle fields, and 7+ scroll-animated sections before any CTA. Could feel sluggish on mid-range phones. **Recommendation:** Consider reducing/disabling 3D on mobile. Make mobile CTA more prominent.
+- [ ] **Audit mobile experience on actual devices**
+- [ ] **Consider adding breadcrumbs or progress indicators** *(low priority)*
+
+### What's Working Well (Keep These)
+
+- Beautiful visual design and color palette (rose clay, warm neutrals)
+- Typography choices are elegant (Cormorant Garamond + Inter)
+- Individual animations are smooth and polished
+- Mobile menu implementation is solid (focus trap, escape key, body scroll lock)
+- Accessibility basics in place (skip-to-content, ARIA labels, semantic HTML)
+- Brand voice is consistent and inviting throughout
+
+### Already Completed (for reference)
+
+- Entry journey simplified: CTA "Get Started" → /offerings → /enroll (2-3 clicks)
+- Enrollment flow merged into single 3-step page at /enroll (Agreements → Contact Dara → Contribute)
+- Content overlap reduced: each page now has a distinct job
+- Offerings page reorganized with sticky section nav (Programs | Continued | Enroll)
+- Navigation labels updated: Programs, About, Our Team, Get Started
+- Footer enriched with brand tagline, contact, social placeholders, trust signals
+- Teaching section gate improved with explanatory text + enrollment link
+- The Rose page expanded as consolidated "About/Story" page
+- Contact vs Enroll differentiated
 
 ---
 

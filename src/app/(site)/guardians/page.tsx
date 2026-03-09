@@ -1,5 +1,11 @@
 import type { Metadata } from 'next';
 import GuardiansClient from './GuardiansClient';
+import {
+  generateWebPageSchema,
+  generateBreadcrumbSchema,
+  JsonLd,
+  siteConfig,
+} from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Guardians',
@@ -21,5 +27,23 @@ export const metadata: Metadata = {
 };
 
 export default function GuardiansPage() {
-  return <GuardiansClient />;
+  const webPageSchema = generateWebPageSchema({
+    title: 'Guardians',
+    description:
+      'Meet the guardians who carry and transmit the Rose Meditation and Aura Reading lineage.',
+    pathname: '/guardians',
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: siteConfig.url },
+    { name: 'Guardians', url: `${siteConfig.url}/guardians` },
+  ]);
+
+  return (
+    <>
+      <JsonLd data={webPageSchema} />
+      <JsonLd data={breadcrumbSchema} />
+      <GuardiansClient />
+    </>
+  );
 }

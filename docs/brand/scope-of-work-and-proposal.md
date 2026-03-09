@@ -2,7 +2,7 @@
 
 **Prepared by:** Jennifer Brooke Lawless
 **Date:** March 5, 2026
-**Version:** 1.0 -- For Team Review
+**Version:** 1.1 -- Updated March 8, 2026
 
 ---
 
@@ -12,23 +12,30 @@ This document outlines the scope, deliverables, and structure of the work being 
 
 > *This document is intended as a starting point for conversation -- not a final agreement. All scope, pricing, and terms are open for discussion and adjustment together.*
 
+### A Note on This Work
+
+This development was created from the heart, with no compensation model in mind. The scope and pricing documented here were assembled after the work was already built -- not before. As such, no compensation is required.
+
+This document is intended to serve as a record of the value that has been created and a reference for what future development could look like on the platform -- including new build-out models that may emerge as the project evolves (e.g., a customer section, new teaching integrations, or community features). It is offered in the spirit of transparency and shared stewardship.
+
 ---
 
 ## 1. What Has Been Built (Completed Work)
 
 ### 1.1 Full-Stack Web Platform
-A complete Next.js 16 application with 23 pages, 65+ custom components, and a modular architecture designed for long-term scalability.
+A complete Next.js 16 application with 44+ pages (including 20 geo landing pages + meditation hub), 62+ custom components, 26,000+ lines of TypeScript/React code across 144 source files, and a modular architecture designed for long-term scalability.
 
 | Area | Details |
 |------|---------|
 | **Framework** | Next.js 16, React 19, TypeScript |
-| **Pages** | 23 primary routes across 5 sections (public site, teaching, forms, admin UI scaffold, API) |
+| **Pages** | 44+ primary routes across 5 sections (public site, teaching, forms, admin UI scaffold, API) — including 20 geo landing pages and meditation hub |
 | **Components** | 65+ reusable components built from scratch |
 | **Styling** | Tailwind CSS 4 with full custom design system |
 | **Animation** | Framer Motion + GSAP for page transitions, scroll effects, micro-interactions |
 | **3D Graphics** | Three.js / React Three Fiber -- custom 3D rose with shader effects, bloom, particles |
 | **Backend** | Supabase integration (auth, database), 3 functional + 3 stub API endpoints |
 | **AI Integration** | Google GenAI SDK for personalization features |
+| **SEO & GEO** | Structured data (JSON-LD) on all pages, FAQPage schema, Course schema, sitemap, robots.txt with AI bot directives, programmatic geo pages for 20 cities |
 
 ### 1.2 Teaching Platform (Password-Protected)
 A dedicated teaching section with 3 levels of Rose Meditation content:
@@ -115,6 +122,15 @@ All strategic and brand documentation living in the repository:
 
 **Status:** Ready to move to visual design as soon as founder inputs are received.
 
+### 2.4 Platform UX Refinement
+- 9 usability issues identified via comprehensive UX audit
+- 6-phase implementation plan with concrete file-level tasks
+- Navigation clarity (Programs, About, Our Team), enrollment flow consolidation, content deduplication, Offerings page progressive disclosure, footer enrichment, teaching gate context
+- Sacred symbol GEO content added (rose as oldest spiritual symbol + FAQ schema)
+- Detailed plan: `docs/website-usability-action-plan.md`
+
+**Status:** Implementation complete. 12 files modified across 6 phases.
+
 ---
 
 ## 3. Deliverables Summary
@@ -141,8 +157,8 @@ All strategic and brand documentation living in the repository:
 ### Phase 3 -- Proposed Next
 | # | Deliverable | Description |
 |---|-------------|-------------|
-| 12 | **Platform UX Refinement** | Holistic UX review and flow optimization per Diego's suggestion |
-| 13 | **GEO / Content Architecture** | 20 geo landing pages, FAQ with schema markup, Course structured data, sitemap/robots — programmatic SEO (Generative Engine Optimization). **Status: In Progress.** [Detailed plan →](../geo-content/implementation-plan.md) |
+| 12 | **Platform UX Refinement** | 6-phase website usability overhaul: enrollment flow consolidation (/enroll + /contribute merged), clearer nav labels (Programs, About, Our Team), content deduplication across Home/Invitation/About, Offerings page section nav + progressive disclosure, multi-column footer with trust signals, teaching gate context. Sacred symbol GEO content and FAQ schema added. 12 files modified, 9 usability issues resolved. **Status: Complete.** |
+| 13 | **GEO / Content Architecture** | 20 geo landing pages, FAQ with schema markup, Course structured data, sitemap/robots, AI bot directives, meditation hub page — programmatic SEO & Generative Engine Optimization. **Status: Complete.** [Detailed plan →](../geo-content/implementation-plan.md) |
 | 14 | **Rose App Foundation** | Initial architecture for the Rose App (daily practice -- spine of global expression) |
 | 15 | **Aura Levels Integration** | Aura Reading Levels 1-5 content and teaching structure *(pending decision)* |
 | 16 | **Animated Visual Technique Demos** | Upload and integrate existing animated visual aids demonstrating Rose Meditation techniques (grounding cord, golden sun, four roses, energy circuits, cleansing) into the website teaching platform |
@@ -152,11 +168,9 @@ All strategic and brand documentation living in the repository:
 
 ## 4. Value & Pricing
 
-Pricing is structured around **milestone-based outcomes** -- each milestone has a fixed price tied to the completion and acceptance of specific deliverables, not hours worked. Payment is triggered when a milestone is delivered and accepted by the team.
+Each milestone below reflects its **Market Value** -- what this outcome would cost at standard industry rates from an agency or senior professional. This is documented to give the team a clear understanding of the value that has been created.
 
-Each milestone reflects two columns: **Market Value** (what this outcome would cost at standard industry rates from an agency or senior professional) and **Contribution Rate** (a mission-aligned rate at 10% of market value -- a 90% reduction that honors the shared purpose of the project).
-
-The difference between market value and contribution rate can be settled through any combination of: **equity/ownership stake** in ROSES OS, **free program enrollment** (Rose Meditation, Aura, and community programs), and/or **Numa land allocation discount**.
+All work has been contributed at **100% off market value** -- no payment is required. Any compensation offered by the team is considered a **gift in kind or in exchange**, not an obligation. The market value is recorded here for reference and transparency only.
 
 ---
 
@@ -172,9 +186,9 @@ The difference between market value and contribution rate can be settled through
 
 **Acceptance Criteria:** Platform loads and renders all 23 pages with responsive design, design system applied consistently, 3D rose visualization functional across devices.
 
-| | Market Value | Contribution Rate |
-|--|--------------|-------------------|
-| **Milestone 1 Total** | **$88,000** | **$8,800** |
+| | Market Value |
+|--|--------------|
+| **Milestone 1 Total** | **$88,000** |
 
 ---
 
@@ -188,9 +202,9 @@ The difference between market value and contribution rate can be settled through
 
 **Acceptance Criteria:** All 3 teaching levels accessible with password protection, slide cards and downloads functional, content available in all 4 languages, documentation complete and version-controlled.
 
-| | Market Value | Contribution Rate |
-|--|--------------|-------------------|
-| **Milestone 2 Total** | **$50,000** | **$5,000** |
+| | Market Value |
+|--|--------------|
+| **Milestone 2 Total** | **$50,000** |
 
 ---
 
@@ -203,15 +217,15 @@ The difference between market value and contribution rate can be settled through
 
 **Acceptance Criteria:** Admin UI renders all 8 pages with demo data, API endpoints return expected responses, authentication flow (OAuth + SSR) functional.
 
-| | Market Value | Contribution Rate |
-|--|--------------|-------------------|
-| **Milestone 3 Total** | **$13,000** | **$1,300** |
+| | Market Value |
+|--|--------------|
+| **Milestone 3 Total** | **$13,000** |
 
 ---
 
-| | Market Value | Contribution Rate |
-|--|--------------|-------------------|
-| **Phase 1 Total (All Milestones)** | **$151,000** | **$15,100** |
+| | Market Value |
+|--|--------------|
+| **Phase 1 Total (All Milestones)** | **$151,000** |
 
 ### 4.2 Phase 2 -- In-Progress Milestones
 
@@ -223,9 +237,9 @@ The difference between market value and contribution rate can be settled through
 
 **Acceptance Criteria:** 46-page print-ready PDF delivered with all custom illustrations, chakra diagrams with accurate placement, diverse representation across figures.
 
-| | Market Value | Contribution Rate |
-|--|--------------|-------------------|
-| **Milestone 4 Total** | **$14,000** | **$1,400** |
+| | Market Value |
+|--|--------------|
+| **Milestone 4 Total** | **$14,000** |
 
 ---
 
@@ -237,9 +251,9 @@ The difference between market value and contribution rate can be settled through
 
 **Acceptance Criteria:** Level 2 and Level 3 manuals delivered as print-ready PDFs in all 4 languages (8-12 total PDFs), Yeva World aesthetic applied consistently.
 
-| | Market Value | Contribution Rate |
-|--|--------------|-------------------|
-| **Milestone 5 Total** | **$16,000** | **$1,600** |
+| | Market Value |
+|--|--------------|
+| **Milestone 5 Total** | **$16,000** |
 
 ---
 
@@ -251,15 +265,15 @@ The difference between market value and contribution rate can be settled through
 
 **Acceptance Criteria:** 110-130 page print-ready brand book delivered with all 13 sections complete, visual design applied, ready for distribution.
 
-| | Market Value | Contribution Rate |
-|--|--------------|-------------------|
-| **Milestone 6 Total** | **$24,000** | **$2,400** |
+| | Market Value |
+|--|--------------|
+| **Milestone 6 Total** | **$24,000** |
 
 ---
 
-| | Market Value | Contribution Rate |
-|--|--------------|-------------------|
-| **Phase 2 Total (All Milestones)** | **$54,000** | **$5,400** |
+| | Market Value |
+|--|--------------|
+| **Phase 2 Total (All Milestones)** | **$54,000** |
 
 ### 4.3 Phase 3 -- Proposed Project Milestones
 
@@ -267,15 +281,15 @@ Phase 3 is structured as **individual project milestones** -- each scoped as a s
 
 #### Project Milestone Options
 
-| Project | Deliverables | Market Value | Contribution Rate |
-|---------|-------------|--------------|-------------------|
-| **Platform UX Refinement** | Holistic UX review, flow optimization, implemented improvements -- accepted by team | $15,000 | $1,500 |
-| **GEO / Content Architecture** | 20 geo landing pages (`/meditation/[city]`), FAQ content with schema markup (15 questions), Course structured data, sitemap, robots.txt — programmatic SEO for organic traffic. [Detailed plan →](../geo-content/implementation-plan.md) | $12,000 | $1,200 |
-| **Rose App Foundation** | Initial architecture and prototype for the Rose App (daily practice) | $25,000 | $2,500 |
-| **Aura Levels Integration** | Aura Reading Levels 1-5 content and teaching structure *(pending decision)* | $18,000 | $1,800 |
-| **Platform Maintenance Sprint** | Security audit, bug fixes, dependency updates, hosting optimization -- scoped per engagement | $9,000 | $900 |
-| **Animated Visual Technique Demos** | Upload existing technique demonstration videos, build video player components, integrate into teaching platform organized by technique category | $12,000 | $1,200 |
-| **Guardian & Testimonial Videos** | Upload existing guardian and testimonial videos, build video sections on guardians page and community page | $8,000 | $800 |
+| Project | Deliverables | Market Value |
+|---------|-------------|--------------|
+| **Platform UX Refinement** | 6-phase usability overhaul: (1) Enrollment flow consolidation (2) Clearer nav labels + CTA → /offerings (3) Content deduplication + sacred symbol GEO content (4) Offerings section nav + progressive disclosure (5) Multi-column footer with trust signals (6) Teaching gate context — 12 files modified, 9 issues resolved. **Complete.** | $15,000 |
+| **GEO / Content Architecture** | 20 geo landing pages (`/meditation/[city]`), meditation hub page (`/meditation`), FAQ content with schema markup (15 geo + 8 page-specific questions), Course structured data, WebPage + Breadcrumb JSON-LD on all content pages, EducationalOrganization + WebSite schemas, AI bot directives (GPTBot, PerplexityBot, ClaudeBot, etc.), sitemap, robots.txt — programmatic SEO & Generative Engine Optimization. **Complete.** [Detailed plan →](../geo-content/implementation-plan.md) | $12,000 |
+| **Rose App Foundation** | Initial architecture and prototype for the Rose App (daily practice) | $25,000 |
+| **Aura Levels Integration** | Aura Reading Levels 1-5 content and teaching structure *(pending decision)* | $18,000 |
+| **Platform Maintenance Sprint** | Security audit, bug fixes, dependency updates, hosting optimization -- scoped per engagement | $9,000 |
+| **Animated Visual Technique Demos** | Upload existing technique demonstration videos, build video player components, integrate into teaching platform organized by technique category | $12,000 |
+| **Guardian & Testimonial Videos** | Upload existing guardian and testimonial videos, build video sections on guardians page and community page | $8,000 |
 
 *Each project is scoped, priced, and accepted independently. No ongoing commitment -- projects are engaged as needed.*
 
@@ -292,55 +306,41 @@ The following larger platform features are identified from the designer plan and
 | **Unified PDF Export Template System** | Consolidate all PDF generation (Programs, Teachers Aid, Manuals, Enrollment confirmations) into a single branded template system -- consistent wordmark, margins, typography, textures across every PDF the platform produces. | Can be built independently. Improves all existing PDF outputs. |
 | **Full Localization Pass** | Translate all platform web content (pages, forms, UI labels, navigation) into Spanish, Portuguese, and Greek. i18n infrastructure already exists (language selector in place). This covers web pages only -- manual translations are a separate deliverable. | Translation services needed. Infrastructure is ready. |
 | **Admin Dashboard Backend Integration** | Connect the existing admin UI scaffold (8 pages, all styled with demo data) to live Supabase backend -- real analytics, user management, content editing, media library, and feedback collection. | Supabase schema exists. Requires data migration and API wiring. |
-| **Payment Processing Integration** | Integrate Stripe or equivalent for the contribution flow -- currently form-only with no real payment processing. | Requires business/legal decisions on payment structure. |
+| **Cohesive Payment Page** | Build a single, unified branded payment page that handles all ROSES OS transactions -- contributions (income-based tiers), enrollment fees, program purchases, and future offerings. Integrates Stripe (or equivalent) with real payment processing, branded receipts, confirmation emails, and mobile-optimized checkout. Replaces the current form-only contribution flow. | Requires business/legal decisions on payment structure, Stripe account setup, and contribution tier finalization. |
+| **Email Collection & List Management** | Implement branded email capture forms across high-traffic pages (homepage, invitation, community interest, footer). Integrate with an email marketing platform (Mailchimp, ConvertKit, or Resend) for three communication pillars: (1) automated sequences (welcome series, onboarding, milestone-triggered), (2) periodic newsletters (teachings, community updates, stories), and (3) targeted announcements (program openings, events, new offerings to relevant segments). Segment-based lists for prospective students, initiated practitioners, and general community. GDPR-compliant opt-in with double confirmation. | Requires email platform selection and brand-approved copy for welcome sequences. Can begin independently. |
+| **Blog / Written Content Platform** | Blog section for teachings, reflections, guardian writings, and community stories. CMS integration for easy publishing without developer involvement. Supports SEO, community engagement, and ongoing content marketing. | Content strategy and publishing workflow needed. Can be built independently. |
+| **YouTube Content Integration** | Embed and organize YouTube video content on the platform. Dedicated video sections, playlists organized by topic (teachings, testimonials, events), and a searchable teaching video library. | Requires YouTube channel and content to be ready. Can be built independently. |
+| **Customer Testimonials Section** | Dedicated testimonials page and embedded testimonial components across key pages (homepage, invitation, community). Collect, curate, and display community stories, experiences, and transformation journeys. | Requires testimonial content (written and/or video) to be gathered from community. |
 
 ---
 
 ### 4.4 Summary
 
-| Phase | Market Value | Contribution Rate | Savings |
-|-------|--------------|-------------------|---------|
-| Phase 1 -- 3 Milestones (Completed) | $151,000 | $15,100 | 90% |
-| Phase 2 -- 3 Milestones (In Progress) | $54,000 | $5,400 | 90% |
-| Phase 3 -- Per-Project Milestones | Scoped per project | Scoped per project | 90% |
-| | | | |
-| **Total (Phases 1 & 2)** | **$205,000** | **$20,500** | **$184,500 in value contributed to the mission** |
+| Phase | Market Value | Contribution |
+|-------|--------------|--------------|
+| Phase 1 -- 3 Milestones (Completed) | $151,000 | Gifted (100% off) |
+| Phase 2 -- 3 Milestones (In Progress) | $54,000 | Gifted (100% off) |
+| Phase 3 -- Per-Project Milestones | Scoped per project | For discussion |
+| | | |
+| **Total (Phases 1 & 2)** | **$205,000** | **$0 required** |
 
-The 90% difference between market value and contribution rate represents **$184,500 in value** being contributed directly to the mission -- in the same spirit of conscious contribution that ROSES OS extends to its community. This balance can be settled through any combination of equity, program enrollment, and/or Numa land discount (see Payment Structure Options below).
+The market value represents **$205,000 in value** contributed to the ROSES OS mission. No compensation is required -- any gifts in kind or in exchange are welcome but entirely at the team's discretion.
 
-### 4.5 Milestone Payment Terms
+### 4.5 Gifts in Kind
 
-- **Outcome-based:** Payment is tied to deliverable completion and team acceptance -- not hours tracked or time spent
-- **Acceptance process:** Each milestone is reviewed by the team upon delivery; payment is triggered once accepted
-- **Clear criteria:** Every milestone has defined acceptance criteria so both sides know exactly what "done" looks like
-- **No time-tracking:** This structure removes hourly billing entirely -- what matters is the outcome, not the hours
+Any compensation the team chooses to offer is considered a **gift in kind or in exchange** -- not a payment obligation. This could take any form the team feels is appropriate, including but not limited to program enrollment, land allocation, or other expressions of reciprocity.
 
 ---
 
-### 4.6 Payment Structure Options
+### 4.6 Future Work
 
-For the team to consider:
+Ongoing contributions are expected to focus on:
 
-**Option A -- Equity**
-- Full compensation settled through equity/ownership stake in ROSES OS
-- Equity percentage to be discussed based on the project's corporate structure and valuation
+- **Manual updates** -- Updating and maintaining teaching manuals as content evolves
+- **Image updates & creation** -- Refreshing existing imagery and creating new visual assets as needed
+- **Language expansion on Teachers Portal** -- Adding new language support and translations to the teaching platform
 
-**Option B -- Land Allocation (Numa Project)**
-- Compensation settled through discounted land allocation within the Numa project
-- Details to be defined based on Numa project structure, land valuation, and timeline
-
-**Option C -- Program Enrollment**
-- Compensation settled through free enrollment in ROSES OS programs (Rose Meditation, Aura, Teachers Training, community programs)
-- Value of enrollment credited against the outstanding balance
-
-**Option D -- Combined Settlement**
-- Compensation settled through any combination of:
-  - Equity/ownership stake in ROSES OS
-  - Free program enrollment
-  - Numa land allocation discount
-- Proportions to be agreed upon together
-
-*Open to discussing what works best for everyone. The goal is sustainability for the project and fairness for all contributors.*
+Larger platform features (Payment Page, Email Collection, Blog, YouTube integration, customer testimonials, and other build-outs) are documented in this proposal for reference under Future Platform Builds.
 
 ---
 
@@ -349,7 +349,6 @@ For the team to consider:
 - **Ownership & IP** -- How do we define ownership of the platform code, brand assets, and content? What belongs to the project vs. individual contributors?
 - **Ongoing Maintenance** -- The platform requires ongoing technical maintenance, hosting, updates, and security. How is this accounted for?
 - **Licensing** -- Are there licensing considerations for the teaching content, brand assets, or platform code?
-- **Future Development** -- As the platform grows (Rose App, Aura levels, community features), how do we structure agreements for ongoing development?
 
 ---
 
@@ -400,13 +399,46 @@ For context on the technical foundation that supports everything above:
 
 | Infrastructure | Details |
 |----------------|---------|
-| **Repository** | GitHub (Light-Brands/roses-os) -- version-controlled, 127+ commits, 29+ merged PRs |
+| **Repository** | GitHub (Light-Brands/roses-os) -- version-controlled, 133+ commits, 29+ merged PRs |
 | **Hosting** | Production-ready Next.js deployment |
 | **Database** | Supabase (PostgreSQL) with SSR auth |
 | **AI Services** | Google GenAI integration |
 | **Image Processing** | Sharp for optimization, jszip for batch downloads |
 | **CI/CD** | GitHub-based workflow with pull request reviews |
 | **Security** | Role-based access, password-protected teaching content, Supabase auth with OAuth |
+
+### Codebase & Asset Scale
+
+The ROSES OS platform comprises over **57,500 lines of authored source code, configuration, and documentation** across 200+ files -- plus **127 visual and media assets** (160MB) including custom 3D models, brand photography, and multilingual PDF manuals.
+
+#### Authored Lines Breakdown
+
+| Category | Lines | Description |
+|----------|------:|-------------|
+| TypeScript / TSX | 27,507 | Core application code -- pages, components, data layers, API routes |
+| CSS / JS / HTML | 1,636 | Styles, scripts, templates |
+| YAML / JSON | 17,497 | Configuration, structured data, content schemas |
+| Brand & Project Documentation | 6,149 | Brand DNA, scope of work, designer plans, content plans |
+| AI Workflows & Design Docs | ~4,750 | Development processes, prompt library, design system principles |
+| **Total** | **~57,500** | |
+
+#### Visual & Media Assets
+
+| Category | Files | Size | Description |
+|----------|------:|-----:|-------------|
+| Brand Images | 23 | 59MB | Photography, mandalas, illustrations |
+| Page Design Screenshots | 10 | 22MB | Full-page design references |
+| 3D Rose Model + Textures | 27 | 2.6MB | Custom .glb model with 26 leaf/petal textures |
+| PDF Manuals (4 languages) | 9 | 25MB | Student manuals in EN, ES, PT, EL |
+| **Total** | **127** | **160MB** | |
+
+#### Industry Benchmark
+
+At industry-standard developer productivity rates of **5,000--10,000 lines per month** (IEEE/COCOMO benchmarks for production-quality, tested, deployed code), the authored codebase alone represents approximately **12 months of full-time senior developer effort**.
+
+The visual and media assets -- custom 3D models with hand-tuned shader effects, multilingual PDF generation, and brand imagery -- represent significant additional creative and production work not captured in line counts.
+
+*Line counts exclude external reference materials, node_modules, build artifacts, and .git history. Only authored project work is included.*
 
 ---
 
@@ -415,8 +447,9 @@ For context on the technical foundation that supports everything above:
 1. **Team reviews this document** -- Ensure everyone has visibility into the full scope
 2. **Founder inputs delivered** -- Stories, long bios, and decision sheet reviewed (unlocks Brand Book)
 3. **Meeting scheduled** -- Dedicated session to discuss agreements, financials, and Phase 3 priorities
-4. **UX review session** -- As Diego suggested, walk through the platform flow holistically with Dan's technical input
+4. **UX review session** -- ~~As Diego suggested, walk through the platform flow holistically with Dan's technical input~~ **Complete.** 6-phase UX overhaul implemented (see `docs/website-usability-action-plan.md`)
 5. **Agreements finalized** -- Clear ownership, deliverables, and compensation structure documented
+6. **UX verification** -- Test the updated user journeys: Home → Programs → Enroll, About page with sacred symbol content, enriched footer, consolidated enrollment flow
 
 ---
 
