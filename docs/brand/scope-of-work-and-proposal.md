@@ -153,8 +153,6 @@ All strategic and brand documentation living in the repository:
 | 15 | **Aura Levels Integration** | Aura Reading Levels 1-5 content and teaching structure *(pending decision)* |
 | 16 | **Animated Visual Technique Demos** | Upload and integrate existing animated visual aids demonstrating Rose Meditation techniques (grounding cord, golden sun, four roses, energy circuits, cleansing) into the website teaching platform |
 | 17 | **Guardian & Testimonial Videos** | Upload and integrate existing guardian and testimonial videos on the guardians page and community page |
-| 18 | **Cohesive Payment Page** | Unified, branded online payment experience for contributions, enrollment fees, and program purchases -- integrated with Stripe or equivalent |
-| 19 | **Email Collection & List Management** | Branded email capture forms across key pages (homepage, invitation, community), integration with an email marketing platform (e.g., Mailchimp, ConvertKit, or Resend) for automated welcome sequences, periodic newsletters, and targeted program announcements |
 
 ---
 
@@ -273,21 +271,17 @@ Phase 3 is structured as **individual project milestones** -- each scoped as a s
 
 #### Project Milestone Options
 
-| Project | Deliverables | Market Value | Contribution Rate |
-|---------|-------------|--------------|-------------------|
-| **Platform UX Refinement** | Holistic UX review, flow optimization, implemented improvements -- accepted by team | $15,000 | $1,500 |
-| **GEO / Content Architecture** | 20 geo landing pages (`/meditation/[city]`), FAQ content with schema markup (15 questions), Course structured data, sitemap, robots.txt — programmatic SEO for organic traffic. [Detailed plan →](../geo-content/implementation-plan.md) | $12,000 | $1,200 |
-| **Rose App Foundation** | Initial architecture and prototype for the Rose App (daily practice) | $25,000 | $2,500 |
-| **Aura Levels Integration** | Aura Reading Levels 1-5 content and teaching structure *(pending decision)* | $18,000 | $1,800 |
-| **Platform Maintenance Sprint** | Security audit, bug fixes, dependency updates, hosting optimization -- scoped per engagement | $9,000 | $900 |
-| **Animated Visual Technique Demos** | Upload existing technique demonstration videos, build video player components, integrate into teaching platform organized by technique category | $12,000 | $1,200 |
-| **Guardian & Testimonial Videos** | Upload existing guardian and testimonial videos, build video sections on guardians page and community page | $8,000 | $800 |
-| **Cohesive Payment Page** | Unified branded payment experience -- single, elegant page handling contributions, enrollment fees, and program purchases. Stripe integration, income-based tier selection, branded receipts/confirmations, mobile-optimized checkout. Replaces the current form-only contribution flow with real payment processing. | $14,000 | $1,400 |
-| **Email Collection & List Management** | Branded email capture forms (homepage hero, invitation page, community interest, footer), integration with email marketing platform (Mailchimp, ConvertKit, or Resend). Three communication pillars: (1) **Automated sequences** -- welcome series on sign-up, onboarding flows for enrolled students, milestone-triggered emails; (2) **Periodic newsletters** -- regular branded newsletter with teachings, community updates, and stories; (3) **Targeted announcements** -- program openings, event invitations, and new offerings sent to relevant segments. Segment-based lists (prospective students, initiated practitioners, general community), GDPR-compliant opt-in. | $10,000 | $1,000 |
+| Project | Deliverables | Market Value |
+|---------|-------------|--------------|
+| **Platform UX Refinement** | Holistic UX review, flow optimization, implemented improvements -- accepted by team | $15,000 |
+| **GEO / Content Architecture** | 20 geo landing pages (`/meditation/[city]`), FAQ content with schema markup (15 questions), Course structured data, sitemap, robots.txt — programmatic SEO for organic traffic. [Detailed plan →](../geo-content/implementation-plan.md) | $12,000 |
+| **Rose App Foundation** | Initial architecture and prototype for the Rose App (daily practice) | $25,000 |
+| **Aura Levels Integration** | Aura Reading Levels 1-5 content and teaching structure *(pending decision)* | $18,000 |
+| **Platform Maintenance Sprint** | Security audit, bug fixes, dependency updates, hosting optimization -- scoped per engagement | $9,000 |
+| **Animated Visual Technique Demos** | Upload existing technique demonstration videos, build video player components, integrate into teaching platform organized by technique category | $12,000 |
+| **Guardian & Testimonial Videos** | Upload existing guardian and testimonial videos, build video sections on guardians page and community page | $8,000 |
 
 *Each project is scoped, priced, and accepted independently. No ongoing commitment -- projects are engaged as needed.*
-
-*Note: The Cohesive Payment Page and Email Collection & List Management projects are documented here as identified platform needs with estimated scope and pricing for reference. These items may be engaged with a future development partner as the project evolves.*
 
 #### Future Platform Builds
 
@@ -304,6 +298,9 @@ The following larger platform features are identified from the designer plan and
 | **Admin Dashboard Backend Integration** | Connect the existing admin UI scaffold (8 pages, all styled with demo data) to live Supabase backend -- real analytics, user management, content editing, media library, and feedback collection. | Supabase schema exists. Requires data migration and API wiring. |
 | **Cohesive Payment Page** | Build a single, unified branded payment page that handles all ROSES OS transactions -- contributions (income-based tiers), enrollment fees, program purchases, and future offerings. Integrates Stripe (or equivalent) with real payment processing, branded receipts, confirmation emails, and mobile-optimized checkout. Replaces the current form-only contribution flow. | Requires business/legal decisions on payment structure, Stripe account setup, and contribution tier finalization. |
 | **Email Collection & List Management** | Implement branded email capture forms across high-traffic pages (homepage, invitation, community interest, footer). Integrate with an email marketing platform (Mailchimp, ConvertKit, or Resend) for three communication pillars: (1) automated sequences (welcome series, onboarding, milestone-triggered), (2) periodic newsletters (teachings, community updates, stories), and (3) targeted announcements (program openings, events, new offerings to relevant segments). Segment-based lists for prospective students, initiated practitioners, and general community. GDPR-compliant opt-in with double confirmation. | Requires email platform selection and brand-approved copy for welcome sequences. Can begin independently. |
+| **Blog / Written Content Platform** | Blog section for teachings, reflections, guardian writings, and community stories. CMS integration for easy publishing without developer involvement. Supports SEO, community engagement, and ongoing content marketing. | Content strategy and publishing workflow needed. Can be built independently. |
+| **YouTube Content Integration** | Embed and organize YouTube video content on the platform. Dedicated video sections, playlists organized by topic (teachings, testimonials, events), and a searchable teaching video library. | Requires YouTube channel and content to be ready. Can be built independently. |
+| **Customer Testimonials Section** | Dedicated testimonials page and embedded testimonial components across key pages (homepage, invitation, community). Collect, curate, and display community stories, experiences, and transformation journeys. | Requires testimonial content (written and/or video) to be gathered from community. |
 
 ---
 
@@ -327,13 +324,13 @@ Any compensation the team chooses to offer is considered a **gift in kind or in 
 
 ### 4.6 Future Work
 
-Ongoing contributions from the current development partner are expected to focus on:
+Ongoing contributions are expected to focus on:
 
 - **Manual updates** -- Updating and maintaining teaching manuals as content evolves
 - **Image updates & creation** -- Refreshing existing imagery and creating new visual assets as needed
 - **Language expansion on Teachers Portal** -- Adding new language support and translations to the teaching platform
 
-Larger platform features (Payment Page, Email Collection, customer sections, and other build-outs) are documented in this proposal for reference and may be engaged with a future development partner as the project evolves.
+Larger platform features (Payment Page, Email Collection, Blog, YouTube integration, customer testimonials, and other build-outs) are documented in this proposal for reference under Future Platform Builds.
 
 ---
 
