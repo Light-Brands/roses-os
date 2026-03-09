@@ -13,7 +13,7 @@
 | NEW Level 1 | `docs/source-materials/Rose-Meditation-Level-1_compressed.pdf` | Standalone Level 1 manual |
 | NEW Level 1&2 (combined) | `docs/source-materials/ROSES-Manual-Levels-1-and-2_compressed.pdf` | Being split -- Level 2 content only going forward |
 | NEW Level 3 | `docs/source-materials/ROSES-Manual-Level-3_compressed.pdf` | Compressed version for output |
-| Level 3 2026 Original | `docs/source-materials/ Rose Meditation Level 3_2026.pdf` | **Authoritative text reference** -- use this for all Level 3 content |
+| Level 3 2026 Original | `docs/source-materials/Rose Meditation Level 3_2026.pdf` | **Authoritative text reference** -- use this for all Level 3 content |
 
 ---
 
@@ -51,8 +51,7 @@ Final manuals served on the website live in `public/resources/manuals/`:
 | 12 | `12-four-roses.PNG` | Four Roses |
 | 13 | `13-cleansing-rose-reimagined.png` | Cleansing Rose |
 | 14 | `14-energy-recovery-background.png` | Recovery Rose |
-| 15a | `15-pink-rose-closure.png` | Pink Rose |
-| 15b | `15-discharge-excess.PNG` | Discharge Excess (alt) |
+| 15 | `15-pink-rose-closure.png` | Pink Rose |
 | 16 | `16-discharge-excess.PNG` | Discharge Excess |
 | 17 | `17-sacred-space.png` | Sacred Space |
 | 18 | `18-sacred-space.PNG` | Sacred Space (alt) |
@@ -65,7 +64,6 @@ Final manuals served on the website live in `public/resources/manuals/`:
 | 20 | `20-create-the-room.jpg` | Protection of the Space |
 | 21 | `21-cleanse-the-space.jpg` | Cleansing of the Space |
 | 22 | `22-owning-space.jpg` | Owning Your Space |
-| 22-orig | `22-protect-the-space-original.PNG` | Owning Space (original) |
 | 23 | `23-chakras-intro.jpeg` | Chakras Intro |
 | 24 | `24-chakras.png` | The Seven Chakras |
 | 25 | `25-root-chakra.png` | Root Chakra |
@@ -98,10 +96,10 @@ Final manuals served on the website live in `public/resources/manuals/`:
 
 ## LEVEL 3 MANUAL -- ACTION STEPS
 
-**Source text:** `docs/source-materials/ Rose Meditation Level 3_2026.pdf` (authoritative 2026 edition)
+**Source text:** `docs/source-materials/Rose Meditation Level 3_2026.pdf` (authoritative 2026 edition)
 **Output:** `public/resources/manuals/ROSES-OS-Level-3-Manual-EN.pdf`
 
-- [ ] **1. Verify all text matches 2026 original** -- The current Level 3 manual used a 2022 version instead of the 2026 edition. Compare every section of the generated manual against `docs/source-materials/ Rose Meditation Level 3_2026.pdf` and correct all text to match the 2026 original exactly.
+- [ ] **1. Verify all text matches 2026 original** -- The current Level 3 manual used a 2022 version instead of the 2026 edition. Compare every section of the generated manual against `docs/source-materials/Rose Meditation Level 3_2026.pdf` and correct all text to match the 2026 original exactly.
 - [ ] **2. Add small rose icon to Table of Contents** -- Place a small sacred rose icon on the Table of Contents page.
 - [ ] **3. Replace Analyzer image** -- Replace the single analyzer image with TWO images:
   - `level-3/39-analyzer.PNG`
@@ -168,88 +166,17 @@ The combined Level 1&2 PDF is being split. This manual becomes **Level 2 only**.
 
 ## WEBSITE & PDF FIXES
 
-### Programs PDFs -- White Squares on Last Page
-
-Both "Programs" PDFs are generated dynamically at runtime using `pdf-lib` (not static files). The last page of each PDF has white squares behind images.
-
-| PDF | Route | Component |
-|-----|-------|-----------|
-| Programs (Summary) | `src/app/api/pdf/summary/route.ts` | `src/components/ui/SummaryDownloadButton.tsx` |
-| Additional Programs | `src/app/api/pdf/paid-programs/route.ts` | `src/components/ui/PaidProgramsDownloadButton.tsx` |
-
-Both routes use `sharp` for image processing, which may strip transparency and replace it with white. The fix likely involves:
-
-- [x] **1. Fix white squares in Programs PDF** -- In `src/app/api/pdf/summary/route.ts`, added `sharp.flatten({ background: brandBg })` before PNG conversion to composite transparency onto brand background `#F7F5F2` instead of white.
-- [x] **2. Fix white squares in Additional Programs PDF** -- Same fix applied in `src/app/api/pdf/paid-programs/route.ts`.
-
-### Teaching Visual Aid -- White Rectangles Behind Images
-
-The `/teaching` page shows visible background rectangles behind slide images. The image containers use `bg-[var(--color-background-subtle)]` (`#F5F0EB`) with a fixed `aspect-[16/10]` ratio and `object-contain`, so wherever images don't fill the box, a cream-colored rectangle is visible.
-
-| Component | File |
-|-----------|------|
-| Teaching Slide Card | `src/components/teaching/TeachingSlideCard.tsx` |
-| Chakra Slide Card | `src/components/teaching/ChakraSlideCard.tsx` |
-
-- [x] **3. Fix white rectangles on teaching slides** -- Changed image container backgrounds in both `TeachingSlideCard.tsx` and `ChakraSlideCard.tsx` from `bg-white` to `bg-[var(--color-warm-50)]` (`#F7F5F2` — the site background color) so the containers blend with the page instead of showing a visible white rectangle.
-
 ### Teachers Aid PDF -- 404 Not Found
 
 The "Export Teachers Aid PDF" button on the `/teaching` page links to `ROSES-OS-Teachers-Aid-EN.pdf` (and ES/PT/EL variants) in `public/resources/manuals/`, but these files do not exist. The button is wired up in `src/components/ui/PdfExportButton.tsx` using paths from `src/lib/data/manual-pdf-paths.ts`.
 
-- [ ] **4. Create or generate Teachers Aid PDFs** -- The Teachers Aid PDFs (EN, ES, PT, EL) need to be created and placed in `public/resources/manuals/`. These should contain the same slide images and teaching text used on the `/teaching` web page.
+- [ ] **Create or generate Teachers Aid PDFs** -- The Teachers Aid PDFs (EN, ES, PT, EL) need to be created and placed in `public/resources/manuals/`. These should contain the same slide images and teaching text used on the `/teaching` web page.
 
 ---
 
-## CODE UPDATES REQUIRED
+## CODE UPDATES REQUIRED (Developer)
 
-### Update `src/lib/data/manual-image-mapping.ts` -- DONE
-
-~~The current mapping uses **old numbering** (Level 2 starting at slide 16, Level 3 starting at slide 36).~~ The mapping now uses **correct numbering** (Level 2 starting at 19, Level 3 starting at 39). The following corrections have been applied:
-
-**Level 2 mapping corrections:**
-
-| Old Reference | Correct File |
-|---------------|-------------|
-| `level-2/16-physical-space.png` | `level-2/19-physical-space.png` |
-| `level-2/17-create-the-room.jpg` | `level-2/20-create-the-room.jpg` |
-| `level-2/18-cleanse-the-space.jpg` | `level-2/21-cleanse-the-space.jpg` |
-| `level-2/19-owning-space.jpg` | `level-2/22-owning-space.jpg` |
-| `level-2/19-protect-the-space-original.PNG` | `level-2/22-protect-the-space-original.PNG` |
-| `level-2/20-chakras-intro.jpeg` | `level-2/23-chakras-intro.jpeg` |
-| `level-2/21-chakras.jpg` | `level-2/24-chakras.png` |
-| `level-2/22-root-chakra.png` | `level-2/25-root-chakra.png` |
-| `level-2/23-sacral-chakra.png` | `level-2/26-sacral-chakra.png` |
-| `level-2/24-solar-plexus-chakra.png` | `level-2/27-solar-plexus-chakra.png` |
-| `level-2/25-heart-chakra.png` | `level-2/28-heart-chakra.png` |
-| `level-2/26-throat-chakra.png` | `level-2/29-throat-chakra.png` |
-| `level-2/27-third-eye-chakra.jpeg` | `level-2/30-third-eye-chakra.jpeg` |
-| `level-2/28-crown-chakra.png` | `level-2/31-crown-chakra.png` |
-| `level-2/29-cleansing-each-layer.PNG` | `level-2/32-cleansing-each-layer.PNG` |
-| `level-2/30-cleansing-each-chakra.PNG` | `level-2/33-cleansing-each-chakra.PNG` |
-| `level-2/31-energy-recovery.jpeg` | `level-2/34-energy-recovery.jpeg` |
-| `level-2/32-golden-sticky-1.jpg` | `level-2/35-golden-sticky-1.jpg` |
-| `level-2/33-golden-sticky-2.jpg` | `level-2/36-golden-sticky-2.jpg` |
-| `level-2/34-golden-sticky-3.jpg` | `level-2/37-golden-sticky-3.jpg` |
-| `level-2/35-golden-sticky-4.jpg` | `level-2/38-golden-sticky-4.jpg` |
-
-**Level 3 mapping corrections:**
-
-| Old Reference | Correct File |
-|---------------|-------------|
-| `level-3/36-analyzer.PNG` | `level-3/39-analyzer.PNG` |
-| `level-3/38-stick-of-agreements.png` | `level-3/41-stick-of-agreements.png` |
-
-**Level 3 images added to mapping** -- DONE
-
-All Level 3 images are now tracked in the mapping:
-
-| File | Concept |
-|------|---------|
-| `level-3/40-analyzer-and-sacred-space.png` | Analyzer + Sacred Space |
-| `level-3/42-cutting-cords.png` | Cutting Cords |
-| `level-3/43-sexual-recovery-rose.png` | Post Intimacy / Sexual Recovery Rose |
-| `level-3/44-mock-up.png` | Mock Up |
+> These are developer tasks, not designer tasks. Included for reference.
 
 ### Update `scripts/split-manuals.mjs`
 
@@ -293,31 +220,13 @@ The two dynamically generated PDFs should be redesigned to match the visual styl
 
 ## WEBSITE USABILITY & FLOW REVIEW
 
-> **Priority:** High — the site feels clunky in several areas. Needs a designer eye on overall user-friendliness and flow.
+> **Priority:** High — needs a designer eye on overall user-friendliness and flow.
 
-### Critical Issues
+### Open Issues
 
-- [x] **1. Simplify the entry journey** — ~~Too many pages before action.~~ **Done:** CTA "Get Started" → /offerings. Home CTAs updated. /invitation becomes optional. Max 2-3 clicks to enroll.
-
-- [x] **2. Fix the enrollment flow** — ~~/enroll and /contribute didn't connect.~~ **Done:** Merged into single 3-step page at /enroll (Agreements → Contact Dara → Contribute). /contribute redirects to /enroll.
-
-- [x] **3. Reduce content overlap between pages** — ~~Home, Invitation, The Rose all repeated same content.~~ **Done:** Removed CoreQuestions from Home, shortened BrandEssence, replaced Invitation's ProgramsSection with simple links, added "The Rose as Sacred Symbol" GEO content to The Rose page.
-
-- [x] **4. Simplify the Offerings page** — ~~Everything stacked on one page.~~ **Done:** Added sticky section nav (Programs | Continued | Enroll), updated hero text from "Offerings" to "Programs".
-
-- [x] **5. Review navigation labels for newcomers** — ~~Insider language.~~ **Done:** Offerings→Programs, The Rose→About, Guardians→Our Team, Begin→Get Started. Page titles keep brand language (e.g., "Guardians" on the page itself).
-
-### Secondary Issues
-
-- [ ] **6. Test mobile performance** — Home page runs a Three.js 3D sphere, GSAP counters, particle fields, and 7+ scroll-animated sections before any CTA. Could feel sluggish on mid-range phones. **Recommendation:** Consider reducing/disabling 3D on mobile. Make mobile CTA more prominent. *(Deferred — not in current scope)*
-
-- [x] **7. Enrich the footer** — ~~Only nav links and copyright.~~ **Done:** Multi-column layout with brand tagline, nav, contact (WhatsApp + email + enroll link), social placeholders, trust signals (30+ Years, 5,000+ Initiates, 50+ Countries).
-
-- [x] **8. Make Teaching section discoverable** — ~~Password gate had no context.~~ **Done:** Added explanatory text ("This area is for enrolled practitioners") + enrollment link to password gate. Kept intentionally out of main nav.
-
-- [x] **9. Add a consolidated "About" or "Story" page** — ~~Brand story spread across pages.~~ **Done:** The Rose page expanded with "The Rose in Spiritual Tradition" section (rose as oldest spiritual symbol, Sufism, Christianity, Rosicrucians, Hinduism, mystery schools). Added GEO FAQs + SEO keywords.
-
-- [x] **10. Differentiate Contact vs Enroll** — ~~Same info on both pages.~~ **Done:** /contact reframed as "General Inquiries" with enrollment link. /enroll is the dedicated enrollment flow.
+- [ ] **Test mobile performance** — Home page runs a Three.js 3D sphere, GSAP counters, particle fields, and 7+ scroll-animated sections before any CTA. Could feel sluggish on mid-range phones. **Recommendation:** Consider reducing/disabling 3D on mobile. Make mobile CTA more prominent.
+- [ ] **Audit mobile experience on actual devices**
+- [ ] **Consider adding breadcrumbs or progress indicators** *(low priority)*
 
 ### What's Working Well (Keep These)
 
@@ -328,17 +237,17 @@ The two dynamically generated PDFs should be redesigned to match the visual styl
 - Accessibility basics in place (skip-to-content, ARIA labels, semantic HTML)
 - Brand voice is consistent and inviting throughout
 
-### Designer Checklist
+### Already Completed (for reference)
 
-- [x] Map the ideal user journey — Home → Programs → Enroll (2-3 clicks)
-- [x] Wireframe a simplified home page — Removed CoreQuestions, shortened BrandEssence
-- [x] Redesign enrollment flow — 3-step merged flow at /enroll (Agreements → Contact → Contribute)
-- [ ] Audit mobile experience on actual devices *(deferred)*
-- [x] Review page-to-page content overlap — Each page now has distinct job
-- [x] Test navigation labels — Programs, About, Our Team (brand language on page titles)
-- [x] Propose a richer footer — Multi-column with trust signals + contact + social placeholders
-- [ ] Consider adding breadcrumbs or progress indicators *(low priority)*
-- [x] Create a simpler entry for newcomers — CTA → Programs → Enroll
+- Entry journey simplified: CTA "Get Started" → /offerings → /enroll (2-3 clicks)
+- Enrollment flow merged into single 3-step page at /enroll (Agreements → Contact Dara → Contribute)
+- Content overlap reduced: each page now has a distinct job
+- Offerings page reorganized with sticky section nav (Programs | Continued | Enroll)
+- Navigation labels updated: Programs, About, Our Team, Get Started
+- Footer enriched with brand tagline, contact, social placeholders, trust signals
+- Teaching section gate improved with explanatory text + enrollment link
+- The Rose page expanded as consolidated "About/Story" page
+- Contact vs Enroll differentiated
 
 ---
 
