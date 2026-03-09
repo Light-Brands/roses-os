@@ -12,6 +12,12 @@ This document outlines the scope, deliverables, and structure of the work being 
 
 > *This document is intended as a starting point for conversation -- not a final agreement. All scope, pricing, and terms are open for discussion and adjustment together.*
 
+### A Note on This Work
+
+This development was created from the heart, with no compensation model in mind. The scope and pricing documented here were assembled after the work was already built -- not before. As such, no compensation is required.
+
+This document is intended to serve as a record of the value that has been created and a reference for what future development could look like on the platform -- including new build-out models that may emerge as the project evolves (e.g., a customer section, new teaching integrations, or community features). It is offered in the spirit of transparency and shared stewardship.
+
 ---
 
 ## 1. What Has Been Built (Completed Work)
@@ -148,17 +154,15 @@ All strategic and brand documentation living in the repository:
 | 16 | **Animated Visual Technique Demos** | Upload and integrate existing animated visual aids demonstrating Rose Meditation techniques (grounding cord, golden sun, four roses, energy circuits, cleansing) into the website teaching platform |
 | 17 | **Guardian & Testimonial Videos** | Upload and integrate existing guardian and testimonial videos on the guardians page and community page |
 | 18 | **Cohesive Payment Page** | Unified, branded online payment experience for contributions, enrollment fees, and program purchases -- integrated with Stripe or equivalent |
-| 19 | **Email Collection & List Management** | Branded email capture forms across key pages (homepage, invitation, community), automated welcome sequences, and integration with an email marketing platform (e.g., Mailchimp, ConvertKit, or Resend) for newsletters and program announcements |
+| 19 | **Email Collection & List Management** | Branded email capture forms across key pages (homepage, invitation, community), integration with an email marketing platform (e.g., Mailchimp, ConvertKit, or Resend) for automated welcome sequences, periodic newsletters, and targeted program announcements |
 
 ---
 
 ## 4. Value & Pricing
 
-Pricing is structured around **milestone-based outcomes** -- each milestone has a fixed price tied to the completion and acceptance of specific deliverables, not hours worked. Payment is triggered when a milestone is delivered and accepted by the team.
+Each milestone below reflects its **Market Value** -- what this outcome would cost at standard industry rates from an agency or senior professional. This is documented to give the team a clear understanding of the value that has been created.
 
-Each milestone reflects two columns: **Market Value** (what this outcome would cost at standard industry rates from an agency or senior professional) and **Contribution Rate** (a mission-aligned rate at 10% of market value -- a 90% reduction that honors the shared purpose of the project).
-
-The difference between market value and contribution rate can be settled through any combination of: **equity/ownership stake** in ROSES OS, **free program enrollment** (Rose Meditation, Aura, and community programs), and/or **Numa land allocation discount**.
+All work has been contributed at **100% off market value** -- no payment is required. Any compensation offered by the team is considered a **gift in kind or in exchange**, not an obligation. The market value is recorded here for reference and transparency only.
 
 ---
 
@@ -174,9 +178,9 @@ The difference between market value and contribution rate can be settled through
 
 **Acceptance Criteria:** Platform loads and renders all 23 pages with responsive design, design system applied consistently, 3D rose visualization functional across devices.
 
-| | Market Value | Contribution Rate |
-|--|--------------|-------------------|
-| **Milestone 1 Total** | **$88,000** | **$8,800** |
+| | Market Value |
+|--|--------------|
+| **Milestone 1 Total** | **$88,000** |
 
 ---
 
@@ -190,9 +194,9 @@ The difference between market value and contribution rate can be settled through
 
 **Acceptance Criteria:** All 3 teaching levels accessible with password protection, slide cards and downloads functional, content available in all 4 languages, documentation complete and version-controlled.
 
-| | Market Value | Contribution Rate |
-|--|--------------|-------------------|
-| **Milestone 2 Total** | **$50,000** | **$5,000** |
+| | Market Value |
+|--|--------------|
+| **Milestone 2 Total** | **$50,000** |
 
 ---
 
@@ -205,15 +209,15 @@ The difference between market value and contribution rate can be settled through
 
 **Acceptance Criteria:** Admin UI renders all 8 pages with demo data, API endpoints return expected responses, authentication flow (OAuth + SSR) functional.
 
-| | Market Value | Contribution Rate |
-|--|--------------|-------------------|
-| **Milestone 3 Total** | **$13,000** | **$1,300** |
+| | Market Value |
+|--|--------------|
+| **Milestone 3 Total** | **$13,000** |
 
 ---
 
-| | Market Value | Contribution Rate |
-|--|--------------|-------------------|
-| **Phase 1 Total (All Milestones)** | **$151,000** | **$15,100** |
+| | Market Value |
+|--|--------------|
+| **Phase 1 Total (All Milestones)** | **$151,000** |
 
 ### 4.2 Phase 2 -- In-Progress Milestones
 
@@ -225,9 +229,9 @@ The difference between market value and contribution rate can be settled through
 
 **Acceptance Criteria:** 46-page print-ready PDF delivered with all custom illustrations, chakra diagrams with accurate placement, diverse representation across figures.
 
-| | Market Value | Contribution Rate |
-|--|--------------|-------------------|
-| **Milestone 4 Total** | **$14,000** | **$1,400** |
+| | Market Value |
+|--|--------------|
+| **Milestone 4 Total** | **$14,000** |
 
 ---
 
@@ -239,9 +243,9 @@ The difference between market value and contribution rate can be settled through
 
 **Acceptance Criteria:** Level 2 and Level 3 manuals delivered as print-ready PDFs in all 4 languages (8-12 total PDFs), Yeva World aesthetic applied consistently.
 
-| | Market Value | Contribution Rate |
-|--|--------------|-------------------|
-| **Milestone 5 Total** | **$16,000** | **$1,600** |
+| | Market Value |
+|--|--------------|
+| **Milestone 5 Total** | **$16,000** |
 
 ---
 
@@ -253,15 +257,15 @@ The difference between market value and contribution rate can be settled through
 
 **Acceptance Criteria:** 110-130 page print-ready brand book delivered with all 13 sections complete, visual design applied, ready for distribution.
 
-| | Market Value | Contribution Rate |
-|--|--------------|-------------------|
-| **Milestone 6 Total** | **$24,000** | **$2,400** |
+| | Market Value |
+|--|--------------|
+| **Milestone 6 Total** | **$24,000** |
 
 ---
 
-| | Market Value | Contribution Rate |
-|--|--------------|-------------------|
-| **Phase 2 Total (All Milestones)** | **$54,000** | **$5,400** |
+| | Market Value |
+|--|--------------|
+| **Phase 2 Total (All Milestones)** | **$54,000** |
 
 ### 4.3 Phase 3 -- Proposed Project Milestones
 
@@ -279,9 +283,11 @@ Phase 3 is structured as **individual project milestones** -- each scoped as a s
 | **Animated Visual Technique Demos** | Upload existing technique demonstration videos, build video player components, integrate into teaching platform organized by technique category | $12,000 | $1,200 |
 | **Guardian & Testimonial Videos** | Upload existing guardian and testimonial videos, build video sections on guardians page and community page | $8,000 | $800 |
 | **Cohesive Payment Page** | Unified branded payment experience -- single, elegant page handling contributions, enrollment fees, and program purchases. Stripe integration, income-based tier selection, branded receipts/confirmations, mobile-optimized checkout. Replaces the current form-only contribution flow with real payment processing. | $14,000 | $1,400 |
-| **Email Collection & List Management** | Branded email capture forms (homepage hero, invitation page, community interest, footer), integration with email marketing platform (Mailchimp, ConvertKit, or Resend), automated welcome sequence, segment-based lists (prospective students, initiated practitioners, general community), GDPR-compliant opt-in, and newsletter/announcement infrastructure. | $10,000 | $1,000 |
+| **Email Collection & List Management** | Branded email capture forms (homepage hero, invitation page, community interest, footer), integration with email marketing platform (Mailchimp, ConvertKit, or Resend). Three communication pillars: (1) **Automated sequences** -- welcome series on sign-up, onboarding flows for enrolled students, milestone-triggered emails; (2) **Periodic newsletters** -- regular branded newsletter with teachings, community updates, and stories; (3) **Targeted announcements** -- program openings, event invitations, and new offerings sent to relevant segments. Segment-based lists (prospective students, initiated practitioners, general community), GDPR-compliant opt-in. | $10,000 | $1,000 |
 
 *Each project is scoped, priced, and accepted independently. No ongoing commitment -- projects are engaged as needed.*
+
+*Note: The Cohesive Payment Page and Email Collection & List Management projects are documented here as identified platform needs with estimated scope and pricing for reference. These items may be engaged with a future development partner as the project evolves.*
 
 #### Future Platform Builds
 
@@ -297,55 +303,37 @@ The following larger platform features are identified from the designer plan and
 | **Full Localization Pass** | Translate all platform web content (pages, forms, UI labels, navigation) into Spanish, Portuguese, and Greek. i18n infrastructure already exists (language selector in place). This covers web pages only -- manual translations are a separate deliverable. | Translation services needed. Infrastructure is ready. |
 | **Admin Dashboard Backend Integration** | Connect the existing admin UI scaffold (8 pages, all styled with demo data) to live Supabase backend -- real analytics, user management, content editing, media library, and feedback collection. | Supabase schema exists. Requires data migration and API wiring. |
 | **Cohesive Payment Page** | Build a single, unified branded payment page that handles all ROSES OS transactions -- contributions (income-based tiers), enrollment fees, program purchases, and future offerings. Integrates Stripe (or equivalent) with real payment processing, branded receipts, confirmation emails, and mobile-optimized checkout. Replaces the current form-only contribution flow. | Requires business/legal decisions on payment structure, Stripe account setup, and contribution tier finalization. |
-| **Email Collection & List Management** | Implement branded email capture forms across high-traffic pages (homepage, invitation, community interest, footer). Integrate with an email marketing platform (Mailchimp, ConvertKit, or Resend) for automated welcome sequences, program announcements, and newsletters. Segment-based lists for prospective students, initiated practitioners, and general community. GDPR-compliant opt-in with double confirmation. | Requires email platform selection and brand-approved copy for welcome sequences. Can begin independently. |
+| **Email Collection & List Management** | Implement branded email capture forms across high-traffic pages (homepage, invitation, community interest, footer). Integrate with an email marketing platform (Mailchimp, ConvertKit, or Resend) for three communication pillars: (1) automated sequences (welcome series, onboarding, milestone-triggered), (2) periodic newsletters (teachings, community updates, stories), and (3) targeted announcements (program openings, events, new offerings to relevant segments). Segment-based lists for prospective students, initiated practitioners, and general community. GDPR-compliant opt-in with double confirmation. | Requires email platform selection and brand-approved copy for welcome sequences. Can begin independently. |
 
 ---
 
 ### 4.4 Summary
 
-| Phase | Market Value | Contribution Rate | Savings |
-|-------|--------------|-------------------|---------|
-| Phase 1 -- 3 Milestones (Completed) | $151,000 | $15,100 | 90% |
-| Phase 2 -- 3 Milestones (In Progress) | $54,000 | $5,400 | 90% |
-| Phase 3 -- Per-Project Milestones | Scoped per project | Scoped per project | 90% |
-| | | | |
-| **Total (Phases 1 & 2)** | **$205,000** | **$20,500** | **$184,500 in value contributed to the mission** |
+| Phase | Market Value | Contribution |
+|-------|--------------|--------------|
+| Phase 1 -- 3 Milestones (Completed) | $151,000 | Gifted (100% off) |
+| Phase 2 -- 3 Milestones (In Progress) | $54,000 | Gifted (100% off) |
+| Phase 3 -- Per-Project Milestones | Scoped per project | For discussion |
+| | | |
+| **Total (Phases 1 & 2)** | **$205,000** | **$0 required** |
 
-The 90% difference between market value and contribution rate represents **$184,500 in value** being contributed directly to the mission -- in the same spirit of conscious contribution that ROSES OS extends to its community. This balance can be settled through any combination of equity, program enrollment, and/or Numa land discount (see Payment Structure Options below).
+The market value represents **$205,000 in value** contributed to the ROSES OS mission. No compensation is required -- any gifts in kind or in exchange are welcome but entirely at the team's discretion.
 
-### 4.5 Milestone Payment Terms
+### 4.5 Gifts in Kind
 
-- **Outcome-based:** Payment is tied to deliverable completion and team acceptance -- not hours tracked or time spent
-- **Acceptance process:** Each milestone is reviewed by the team upon delivery; payment is triggered once accepted
-- **Clear criteria:** Every milestone has defined acceptance criteria so both sides know exactly what "done" looks like
-- **No time-tracking:** This structure removes hourly billing entirely -- what matters is the outcome, not the hours
+Any compensation the team chooses to offer is considered a **gift in kind or in exchange** -- not a payment obligation. This could take any form the team feels is appropriate, including but not limited to program enrollment, land allocation, or other expressions of reciprocity.
 
 ---
 
-### 4.6 Payment Structure Options
+### 4.6 Future Work
 
-For the team to consider:
+Ongoing contributions from the current development partner are expected to focus on:
 
-**Option A -- Equity**
-- Full compensation settled through equity/ownership stake in ROSES OS
-- Equity percentage to be discussed based on the project's corporate structure and valuation
+- **Manual updates** -- Updating and maintaining teaching manuals as content evolves
+- **Image updates & creation** -- Refreshing existing imagery and creating new visual assets as needed
+- **Language expansion on Teachers Portal** -- Adding new language support and translations to the teaching platform
 
-**Option B -- Land Allocation (Numa Project)**
-- Compensation settled through discounted land allocation within the Numa project
-- Details to be defined based on Numa project structure, land valuation, and timeline
-
-**Option C -- Program Enrollment**
-- Compensation settled through free enrollment in ROSES OS programs (Rose Meditation, Aura, Teachers Training, community programs)
-- Value of enrollment credited against the outstanding balance
-
-**Option D -- Combined Settlement**
-- Compensation settled through any combination of:
-  - Equity/ownership stake in ROSES OS
-  - Free program enrollment
-  - Numa land allocation discount
-- Proportions to be agreed upon together
-
-*Open to discussing what works best for everyone. The goal is sustainability for the project and fairness for all contributors.*
+Larger platform features (Payment Page, Email Collection, customer sections, and other build-outs) are documented in this proposal for reference and may be engaged with a future development partner as the project evolves.
 
 ---
 
@@ -354,7 +342,6 @@ For the team to consider:
 - **Ownership & IP** -- How do we define ownership of the platform code, brand assets, and content? What belongs to the project vs. individual contributors?
 - **Ongoing Maintenance** -- The platform requires ongoing technical maintenance, hosting, updates, and security. How is this accounted for?
 - **Licensing** -- Are there licensing considerations for the teaching content, brand assets, or platform code?
-- **Future Development** -- As the platform grows (Rose App, Aura levels, community features), how do we structure agreements for ongoing development?
 
 ---
 
