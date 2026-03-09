@@ -88,7 +88,7 @@ function RevealCard({
       <h3 className="font-serif text-xl md:text-2xl tracking-tight mb-3">
         {title}
       </h3>
-      <div className="text-[var(--color-foreground-muted)] leading-relaxed space-y-3">
+      <div className="text-lg text-[var(--color-foreground-muted)] leading-relaxed space-y-3">
         {children}
       </div>
     </motion.div>
