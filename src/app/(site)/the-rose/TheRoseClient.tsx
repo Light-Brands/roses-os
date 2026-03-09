@@ -317,9 +317,10 @@ export default function TheRoseClient() {
         title="The Rose in Spiritual Tradition"
       >
         <p>
-          The rose is the oldest spiritual symbol in the known universe. Across every
-          tradition and culture, its unfolding petals have represented the same truth:
-          the awakening of consciousness, from potential to full realization.
+          Known as one of the most recognized spiritual symbols in the universe, the
+          rose appears across every tradition and culture. Its unfolding petals have
+          always represented the same truth: the awakening of consciousness, from
+          potential to full realization.
         </p>
         <p className="text-[var(--color-foreground)] font-medium">
           ROSES OS carries this lineage forward. The rose is not a metaphor — it is the living
