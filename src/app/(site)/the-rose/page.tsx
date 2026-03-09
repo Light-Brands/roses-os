@@ -19,6 +19,11 @@ export const metadata: Metadata = {
     'coherence domains',
     'spiritual lineage',
     'inner freedom path',
+    'spiritual significance of the rose',
+    'rose symbolism',
+    'oldest spiritual symbol',
+    'mystic rose',
+    'rose in spirituality',
   ],
   openGraph: {
     title: 'The Rose | ROSES OS',
@@ -48,6 +53,16 @@ const theRoseFAQs = [
     question: 'What are the 13 domains of coherence?',
     answer:
       'The 13 domains of coherence are the foundational areas of life that Rose Meditation addresses — from physical vitality and emotional clarity to spiritual connection and creative expression. Together, they form a holistic map of human flourishing that guides the practice.',
+  },
+  {
+    question: 'What is the spiritual significance of the rose?',
+    answer:
+      'The rose is the oldest spiritual symbol in the known universe. Across every major tradition — from Rumi\'s Sufi poetry where it represents divine love, to Christianity\'s Mystic Rose, to the Rosicrucian tradition where its unfolding petals symbolize awakening consciousness — the rose has pointed to the same truth: the opening of the soul. In ROSES OS, the rose is the living instrument at the center of the meditation practice.',
+  },
+  {
+    question: 'Why is the rose used in meditation?',
+    answer:
+      'The rose is used in meditation because its unfolding petals mirror the stages of spiritual development — from potential to realization. Sacred across Sufism, Christianity, Hinduism, and the ancient mystery schools, the rose serves as a universal tool for cleansing the energy field, restoring coherence, and accessing deeper states of awareness. In Rose Meditation, it becomes the central instrument for reading and transforming consciousness.',
   },
 ];
 

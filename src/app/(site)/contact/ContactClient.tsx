@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
+import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
@@ -18,9 +19,9 @@ export default function ContactClient() {
     <>
       {/* 1. Hero */}
       <PageHero
-        eyebrow="Contact"
-        title="Reach Out"
-        description="We welcome your questions and inquiries. Whether you are exploring the programs, seeking clarity on the path, or simply feel called to connect, we are here."
+        eyebrow="General Inquiries"
+        title="Get in Touch"
+        description="Have questions about our programs, partnerships, or anything else? We are here to help. For enrollment, visit our enrollment page."
         image="/page-images/page-contact.png"
       />
 
@@ -95,6 +96,34 @@ export default function ContactClient() {
                     </svg>
                   </a>
                 </div>
+              </div>
+
+              {/* Enrollment link */}
+              <div className="mt-12 pt-8 border-t border-[var(--color-border-subtle)] text-center">
+                <p className="text-sm text-[var(--color-foreground-muted)] mb-3">
+                  Looking to enroll in a program?
+                </p>
+                <Link
+                  href="/enroll"
+                  className={cn(
+                    'inline-flex items-center gap-2 px-6 py-3 rounded-full',
+                    'bg-[var(--color-rose-500)] text-white',
+                    'text-sm font-medium',
+                    'hover:bg-[var(--color-rose-600)]',
+                    'transition-colors duration-200'
+                  )}
+                >
+                  Start Enrollment
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
               </div>
             </motion.div>
           </div>

@@ -285,11 +285,48 @@ function OfferingsContent() {
     <>
       {/* 1. Hero */}
       <PageHero
-        eyebrow="Offerings"
-        title="Current Offerings"
+        eyebrow="Programs"
+        title="Current Programs"
         description="Guided pathways into the Rose field. Each program is a living invitation to deepen your practice, remember your coherence, and step into a community devoted to inner freedom."
         image="/page-images/page-programs.png"
       />
+
+      {/* Section Navigation */}
+      <nav className="sticky top-16 lg:top-[72px] z-30 bg-[var(--color-background)]/90 backdrop-blur-lg border-b border-[var(--color-border-subtle)] print:hidden">
+        <div className="container-premium flex items-center justify-center gap-1 sm:gap-2 py-3 overflow-x-auto">
+          {[
+            { label: 'Programs', id: 'programs-section' },
+            { label: 'Continued', id: 'continued-section' },
+          ].map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => {
+                const el = document.getElementById(tab.id);
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+              className={cn(
+                'px-4 py-2 rounded-full text-sm font-medium',
+                'text-[var(--color-foreground-muted)]',
+                'hover:text-[var(--color-foreground)] hover:bg-[var(--color-background-subtle)]',
+                'transition-all duration-200'
+              )}
+            >
+              {tab.label}
+            </button>
+          ))}
+          <Link
+            href="/enroll"
+            className={cn(
+              'px-4 py-2 rounded-full text-sm font-medium',
+              'bg-[var(--color-rose-500)] text-white',
+              'hover:bg-[var(--color-rose-600)]',
+              'transition-colors duration-200'
+            )}
+          >
+            Enroll
+          </Link>
+        </div>
+      </nav>
 
       {/* Download PDF Guides */}
       <div className="flex flex-wrap justify-center gap-3 py-6 print:hidden">
@@ -308,7 +345,7 @@ function OfferingsContent() {
       </div>
 
       {/* 2. Programs — progressive disclosure */}
-      <section ref={gridRef} className="section-padding">
+      <section id="programs-section" ref={gridRef} className="section-padding scroll-mt-32">
         <div className="container-premium max-w-3xl mx-auto">
           {/* Prompt */}
           <AnimatePresence>
@@ -475,7 +512,7 @@ function OfferingsContent() {
       </section>
 
       {/* 3. Continued Programs — Go Deeper */}
-      <section ref={continuedRef} className="section-padding">
+      <section id="continued-section" ref={continuedRef} className="section-padding scroll-mt-32">
         <div className="container-premium max-w-3xl mx-auto">
           <motion.p
             initial={{ opacity: 0, y: 20 }}

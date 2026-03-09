@@ -162,9 +162,11 @@ function BrandEssence() {
           transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="text-lg text-white/60 leading-relaxed max-w-2xl mx-auto"
         >
-          ROSES OS is a living consciousness ecosystem of practices, teachings,
-          and community, designed to help you remember what you already know and
-          live from that place. A living path. A way home.
+          A living path of practices, teachings, and community — designed to help you
+          remember what you already know.{' '}
+          <Link href="/the-rose" className="text-rose-400 underline underline-offset-4 hover:text-rose-300 transition-colors">
+            Learn more about our path
+          </Link>
         </motion.p>
 
         {/* Stats row */}
@@ -467,7 +469,7 @@ function InvitationCTA() {
             className="mt-10"
           >
             <Link
-              href="/invitation"
+              href="/offerings"
               className={cn(
                 'group px-8 py-3.5 rounded-full',
                 'bg-rose-500 text-white',
@@ -626,7 +628,7 @@ export default function HomeClient() {
             className="mt-8 lg:mt-10 flex flex-col sm:flex-row items-center gap-4"
           >
             <Link
-              href="/invitation"
+              href="/offerings"
               className={cn(
                 'group px-8 py-3.5 rounded-full',
                 'bg-rose-500 text-white',
@@ -681,7 +683,6 @@ export default function HomeClient() {
       </motion.section>
 
       {/* CONTENT SECTIONS */}
-      <CoreQuestions />
       <BrandEssence />
       <SixPillars />
       <QuoteSection />

@@ -291,6 +291,57 @@ The two dynamically generated PDFs should be redesigned to match the visual styl
 
 ---
 
+## WEBSITE USABILITY & FLOW REVIEW
+
+> **Priority:** High — the site feels clunky in several areas. Needs a designer eye on overall user-friendliness and flow.
+
+### Critical Issues
+
+- [x] **1. Simplify the entry journey** — ~~Too many pages before action.~~ **Done:** CTA "Get Started" → /offerings. Home CTAs updated. /invitation becomes optional. Max 2-3 clicks to enroll.
+
+- [x] **2. Fix the enrollment flow** — ~~/enroll and /contribute didn't connect.~~ **Done:** Merged into single 3-step page at /enroll (Agreements → Contact Dara → Contribute). /contribute redirects to /enroll.
+
+- [x] **3. Reduce content overlap between pages** — ~~Home, Invitation, The Rose all repeated same content.~~ **Done:** Removed CoreQuestions from Home, shortened BrandEssence, replaced Invitation's ProgramsSection with simple links, added "The Rose as Sacred Symbol" GEO content to The Rose page.
+
+- [x] **4. Simplify the Offerings page** — ~~Everything stacked on one page.~~ **Done:** Added sticky section nav (Programs | Continued | Enroll), updated hero text from "Offerings" to "Programs".
+
+- [x] **5. Review navigation labels for newcomers** — ~~Insider language.~~ **Done:** Offerings→Programs, The Rose→About, Guardians→Our Team, Begin→Get Started. Page titles keep brand language (e.g., "Guardians" on the page itself).
+
+### Secondary Issues
+
+- [ ] **6. Test mobile performance** — Home page runs a Three.js 3D sphere, GSAP counters, particle fields, and 7+ scroll-animated sections before any CTA. Could feel sluggish on mid-range phones. **Recommendation:** Consider reducing/disabling 3D on mobile. Make mobile CTA more prominent. *(Deferred — not in current scope)*
+
+- [x] **7. Enrich the footer** — ~~Only nav links and copyright.~~ **Done:** Multi-column layout with brand tagline, nav, contact (WhatsApp + email + enroll link), social placeholders, trust signals (30+ Years, 5,000+ Initiates, 50+ Countries).
+
+- [x] **8. Make Teaching section discoverable** — ~~Password gate had no context.~~ **Done:** Added explanatory text ("This area is for enrolled practitioners") + enrollment link to password gate. Kept intentionally out of main nav.
+
+- [x] **9. Add a consolidated "About" or "Story" page** — ~~Brand story spread across pages.~~ **Done:** The Rose page expanded with "The Rose in Spiritual Tradition" section (rose as oldest spiritual symbol, Sufism, Christianity, Rosicrucians, Hinduism, mystery schools). Added GEO FAQs + SEO keywords.
+
+- [x] **10. Differentiate Contact vs Enroll** — ~~Same info on both pages.~~ **Done:** /contact reframed as "General Inquiries" with enrollment link. /enroll is the dedicated enrollment flow.
+
+### What's Working Well (Keep These)
+
+- Beautiful visual design and color palette (rose clay, warm neutrals)
+- Typography choices are elegant (Cormorant Garamond + Inter)
+- Individual animations are smooth and polished
+- Mobile menu implementation is solid (focus trap, escape key, body scroll lock)
+- Accessibility basics in place (skip-to-content, ARIA labels, semantic HTML)
+- Brand voice is consistent and inviting throughout
+
+### Designer Checklist
+
+- [x] Map the ideal user journey — Home → Programs → Enroll (2-3 clicks)
+- [x] Wireframe a simplified home page — Removed CoreQuestions, shortened BrandEssence
+- [x] Redesign enrollment flow — 3-step merged flow at /enroll (Agreements → Contact → Contribute)
+- [ ] Audit mobile experience on actual devices *(deferred)*
+- [x] Review page-to-page content overlap — Each page now has distinct job
+- [x] Test navigation labels — Programs, About, Our Team (brand language on page titles)
+- [x] Propose a richer footer — Multi-column with trust signals + contact + social placeholders
+- [ ] Consider adding breadcrumbs or progress indicators *(low priority)*
+- [x] Create a simpler entry for newcomers — CTA → Programs → Enroll
+
+---
+
 ## RELATED DOCUMENTS
 
 | Document | Path |

@@ -1,12 +1,9 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import { programs } from '@/lib/data';
-
-import ProgramCard from '@/components/sections/ProgramCard';
 
 // =============================================================================
 // SHARED EASE
@@ -68,7 +65,7 @@ function InvitationHero() {
           className="mt-10"
         >
           <Link
-            href="/invitation/learn-more"
+            href="/offerings"
             className={cn(
               'inline-flex items-center gap-2 px-8 py-3.5 rounded-full',
               'bg-warm-100 text-[var(--color-section-dark)]',
@@ -77,7 +74,7 @@ function InvitationHero() {
               'transition-colors duration-200'
             )}
           >
-            Learn More
+            See Programs
             <svg
               className="w-4 h-4"
               fill="none"
@@ -142,111 +139,56 @@ function WhatIsRosesOS() {
 }
 
 // =============================================================================
-// SECTION: Guardians Link
+// SECTION: Explore Further (replaces ProgramsSection + GuardiansLink)
 // =============================================================================
 
-function GuardiansLink() {
+function ExploreFurther() {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
     <section ref={ref} className="section-padding bg-[var(--color-background-subtle)]">
       <div className="container-premium max-w-3xl mx-auto text-center">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, ease }}
-          className="label-sacred mb-4"
-        >
-          The Guardians
-        </motion.p>
-        <motion.h2
-          initial={{ opacity: 0, y: 24 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.1, ease }}
-          className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight mb-6"
-        >
-          Held by those who walk the path
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 24 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2, ease }}
-          className="text-lg text-[var(--color-foreground-muted)] leading-relaxed mb-8"
-        >
-          Four guardians steward the Rose field, each bringing decades of
-          practice, devotion, and lived experience to support your journey.
-        </motion.p>
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.3, ease }}
-        >
-          <Link
-            href="/guardians"
-            className={cn(
-              'inline-flex items-center gap-2',
-              'text-sm font-medium',
-              'text-[var(--color-foreground)]',
-              'underline underline-offset-4 decoration-[var(--color-rose-clay)]',
-              'hover:text-[var(--color-foreground-muted)]',
-              'transition-colors duration-200'
-            )}
-          >
-            Meet the Guardians
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </Link>
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
-// =============================================================================
-// SECTION: Programs
-// =============================================================================
-
-function ProgramsSection() {
-  const ref = useRef<HTMLElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-  const [expandedId, setExpandedId] = useState<string | null>(null);
-
-  return (
-    <section ref={ref} className="section-padding">
-      <div className="container-premium">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, ease }}
-          className="label-sacred text-center mb-4"
-        >
-          Main Technologies and Practices
-        </motion.p>
-        <motion.h2
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.1, ease }}
-          className="font-serif text-[clamp(1.5rem,3.5vw,2.5rem)] leading-tight tracking-tight text-center mb-4"
+          transition={{ duration: 0.6, ease }}
+          className="space-y-6"
         >
-          Begin your path
-        </motion.h2>
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {programs.map((program) => (
-            <ProgramCard
-              key={program.id}
-              program={program}
-              compact={expandedId !== program.id}
-              selected={expandedId === program.id}
-              progressiveDetails
-              scheduleHref={`/offerings?program=${program.id}`}
-              onClick={() =>
-                setExpandedId(expandedId === program.id ? null : program.id)
-              }
-            />
-          ))}
-        </div>
+          <p className="text-lg text-[var(--color-foreground-muted)] leading-relaxed">
+            Four guardians steward the Rose field, each bringing decades of
+            practice and devotion to support your journey.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href="/offerings"
+              className={cn(
+                'inline-flex items-center gap-2',
+                'text-sm font-medium',
+                'text-[var(--color-foreground)]',
+                'underline underline-offset-4 decoration-[var(--color-rose-clay)]',
+                'hover:text-[var(--color-foreground-muted)]',
+                'transition-colors duration-200'
+              )}
+            >
+              Explore Programs
+            </Link>
+            <span className="hidden sm:inline text-[var(--color-foreground-faint)]">·</span>
+            <Link
+              href="/guardians"
+              className={cn(
+                'inline-flex items-center gap-2',
+                'text-sm font-medium',
+                'text-[var(--color-foreground)]',
+                'underline underline-offset-4 decoration-[var(--color-rose-clay)]',
+                'hover:text-[var(--color-foreground-muted)]',
+                'transition-colors duration-200'
+              )}
+            >
+              Meet the Guardians
+            </Link>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -280,7 +222,7 @@ function FinalCTA() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Link
-              href="/invitation/learn-more"
+              href="/offerings"
               className={cn(
                 'px-8 py-3.5 rounded-full',
                 'bg-warm-100 text-[var(--color-section-dark)]',
@@ -289,7 +231,7 @@ function FinalCTA() {
                 'transition-colors duration-200'
               )}
             >
-              Learn More
+              See Programs
             </Link>
             <Link
               href="/enroll"
@@ -319,8 +261,7 @@ export default function InvitationPage() {
     <>
       <InvitationHero />
       <WhatIsRosesOS />
-      <ProgramsSection />
-      <GuardiansLink />
+      <ExploreFurther />
       <FinalCTA />
     </>
   );

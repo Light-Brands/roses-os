@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
 // =============================================================================
@@ -142,8 +143,14 @@ export default function PasswordGate({ children }: PasswordGateProps) {
           <h2 className="font-serif text-2xl font-semibold text-[var(--color-foreground)] mb-2">
             Sacred Teachings
           </h2>
-          <p className="text-sm text-[var(--color-foreground-muted)] mb-8 leading-relaxed">
-            Enter your 4-digit access code to continue.
+          <p className="text-sm text-[var(--color-foreground-muted)] mb-4 leading-relaxed">
+            This area is for enrolled practitioners. Enter your 4-digit access code to continue.
+          </p>
+          <p className="text-xs text-[var(--color-foreground-faint)] mb-8">
+            Not enrolled yet?{' '}
+            <Link href="/enroll" className="text-[var(--color-rose-clay)] underline underline-offset-2 hover:text-[var(--color-rose-500)] transition-colors">
+              Start your enrollment here
+            </Link>
           </p>
 
           {/* PIN input */}
