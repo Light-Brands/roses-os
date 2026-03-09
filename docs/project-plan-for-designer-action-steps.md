@@ -191,7 +191,7 @@ The `/teaching` page shows visible background rectangles behind slide images. Th
 | Teaching Slide Card | `src/components/teaching/TeachingSlideCard.tsx` |
 | Chakra Slide Card | `src/components/teaching/ChakraSlideCard.tsx` |
 
-- [x] **3. Fix white rectangles on teaching slides** -- Remove the background color on the image container in both `TeachingSlideCard.tsx` and `ChakraSlideCard.tsx`. Removed `bg-[var(--color-background-subtle)]` from image containers.
+- [x] **3. Fix white rectangles on teaching slides** -- Changed image container backgrounds in both `TeachingSlideCard.tsx` and `ChakraSlideCard.tsx` from `bg-white` to `bg-[var(--color-warm-50)]` (`#F7F5F2` — the site background color) so the containers blend with the page instead of showing a visible white rectangle.
 
 ### Teachers Aid PDF -- 404 Not Found
 
