@@ -295,8 +295,8 @@ function OfferingsContent() {
       <nav className="sticky top-16 lg:top-[72px] z-30 bg-[var(--color-background)]/90 backdrop-blur-lg border-b border-[var(--color-border-subtle)] print:hidden">
         <div className="container-premium flex items-center justify-center gap-1 sm:gap-2 py-3 overflow-x-auto">
           {[
-            { label: 'Programs', id: 'programs-section' },
-            { label: 'Continued', id: 'continued-section' },
+            { label: 'Foundations', id: 'programs-section' },
+            { label: 'Ongoing', id: 'continued-section' },
           ].map((tab) => (
             <button
               key={tab.id}
@@ -520,7 +520,7 @@ function OfferingsContent() {
             transition={{ duration: 0.6, ease }}
             className="label-sacred mb-6"
           >
-            Continued Programs
+            Ongoing Programs
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 24 }}
