@@ -329,6 +329,13 @@ export default function TheRoseClient() {
           of initiation into sacred knowledge. Its unfolding petals mirror the stages of spiritual
           development: from bud to full bloom, from potential to realization.
         </p>
+        <p>
+          This symbolism endures in modern art. Salvador Dalí&apos;s{' '}
+          <em>The Meditative Rose</em> (1958) depicts a luminous rose suspended in the sky
+          above a barren landscape — a surrealist vision of beauty and consciousness
+          transcending the material world. Even in the 20th century, the rose remained the
+          chosen symbol for spiritual contemplation and the mystery of inner awakening.
+        </p>
         <p className="text-[var(--color-foreground)] font-medium">
           ROSES OS carries this lineage forward. The rose is not a metaphor — it is the living
           instrument at the center of the practice.
