@@ -5,9 +5,8 @@ import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
-import { agreements, contributionTiers } from '@/lib/data';
+import { agreements } from '@/lib/data';
 import { FormStepper } from '@/components/forms/FormStepper';
-import ContributionForm from '@/components/forms/ContributionForm';
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -49,7 +48,7 @@ export default function EnrollPage() {
   return (
     <div className="space-y-8">
       <FormStepper
-        steps={['Agreements', 'Contact Dara', 'Contribute']}
+        steps={['Agreements', 'Contact Dara']}
         currentStep={currentStep}
       />
 
@@ -241,7 +240,7 @@ export default function EnrollPage() {
               &larr; Back to Agreements
             </button>
             <button
-              onClick={() => setCurrentStep(3)}
+              onClick={() => setSubmitted(true)}
               className={cn(
                 'px-8 py-3.5 rounded-full',
                 'bg-[var(--color-rose-500)] text-white',
@@ -250,46 +249,7 @@ export default function EnrollPage() {
                 'transition-colors duration-200'
               )}
             >
-              Continue to Contribution
-            </button>
-          </div>
-        </div>
-      )}
-
-      {/* ================================================================
-          STEP 3: Contribution
-          ================================================================ */}
-      {currentStep === 3 && (
-        <div className="space-y-8">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease }}
-            className="text-center space-y-3"
-          >
-            <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-[var(--color-foreground-faint)]">
-              Step 3
-            </p>
-            <h1 className="font-serif text-3xl md:text-4xl text-[var(--color-foreground)]">
-              Choose Your Contribution
-            </h1>
-            <p className="text-[var(--color-foreground-muted)] max-w-md mx-auto">
-              We trust you to choose what feels right for where you are
-              in life. There is no judgment, only gratitude.
-            </p>
-          </motion.div>
-
-          <ContributionForm
-            tiers={contributionTiers}
-            onSubmit={() => setSubmitted(true)}
-          />
-
-          <div className="text-center pt-2">
-            <button
-              onClick={() => setCurrentStep(2)}
-              className="text-sm text-[var(--color-foreground-muted)] hover:text-[var(--color-foreground)] transition-colors"
-            >
-              &larr; Back to Contact
+              Complete Enrollment
             </button>
           </div>
         </div>
