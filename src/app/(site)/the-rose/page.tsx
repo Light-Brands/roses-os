@@ -57,12 +57,12 @@ const theRoseFAQs = [
   {
     question: 'What is the spiritual significance of the rose?',
     answer:
-      'The rose is the oldest spiritual symbol in the known universe. Across every major tradition — from Rumi\'s Sufi poetry where it represents divine love, to Christianity\'s Mystic Rose, to the Rosicrucian tradition where its unfolding petals symbolize awakening consciousness — the rose has pointed to the same truth: the opening of the soul. In ROSES OS, the rose is the living instrument at the center of the meditation practice.',
+      'The rose is the oldest spiritual symbol in the known universe. Across every culture and era, its unfolding petals have represented the same truth — the opening of the soul, from potential to realization. In ROSES OS, the rose is the living instrument at the center of the meditation practice.',
   },
   {
     question: 'Why is the rose used in meditation?',
     answer:
-      'The rose is used in meditation because its unfolding petals mirror the stages of spiritual development — from potential to realization. Sacred across Sufism, Christianity, Hinduism, and the ancient mystery schools, the rose serves as a universal tool for cleansing the energy field, restoring coherence, and accessing deeper states of awareness. In Rose Meditation, it becomes the central instrument for reading and transforming consciousness.',
+      'The rose is used in meditation because its unfolding petals mirror the stages of spiritual development — from potential to realization. As the oldest spiritual symbol in the known universe, the rose serves as a universal tool for cleansing the energy field, restoring coherence, and accessing deeper states of awareness. In Rose Meditation, it becomes the central instrument for reading and transforming consciousness.',
   },
 ];
 
