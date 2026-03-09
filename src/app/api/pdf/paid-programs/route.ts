@@ -641,7 +641,7 @@ export async function GET() {
 
       const aflProg = paidPrograms.find(p => p.id === 'aura-for-life');
       if (aflProg) {
-        y = drawSectionLabel(page, 'Continued Practice', y, sansBold);
+        y = drawSectionLabel(page, 'Ongoing Practice', y, sansBold);
         y = drawHeading(page, 'Aura for Life', y, serifFont, 26);
         y -= 4;
 

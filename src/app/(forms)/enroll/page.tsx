@@ -27,12 +27,11 @@ export default function EnrollPage() {
       <div className="space-y-8 text-center py-12">
         <div className="space-y-3">
           <h1 className="font-serif text-3xl md:text-4xl text-[var(--color-foreground)]">
-            Thank You
+            Thank You for Reaching Out
           </h1>
           <p className="text-[var(--color-foreground-muted)] max-w-md mx-auto">
-            Your enrollment is complete. We are honored to welcome you into
-            the ROSES OS community. You will receive a confirmation email
-            with next steps shortly.
+            Thank you for reaching out. We are honored by your interest in
+            the ROSES OS community. We will be in touch with you shortly.
           </p>
         </div>
         <Link
