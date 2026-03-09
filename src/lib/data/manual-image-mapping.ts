@@ -151,7 +151,6 @@ export const supplementaryImages: {
 }[] = [
   { file: 'level-1/Cosmos.jpg', referencedIn: 'Level 1 reference', purpose: 'Alternate cosmos view' },
   { file: 'level-1/Fullcosmosearth.jpg', referencedIn: 'Level 1 reference', purpose: 'Full cosmos + earth view' },
-  { file: 'level-1/15-discharge-excess.PNG', referencedIn: 'Slide 15 alt', purpose: 'Discharge excess (alternate - uses original naming)' },
 ];
 
 // ---------------------------------------------------------------------------
