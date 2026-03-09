@@ -48,7 +48,7 @@ export default function TeachingSlideCard({ slide, index = 0, className }: Teach
     >
       {/* Image Area */}
       {imageSrc ? (
-        <div className="relative aspect-[16/10] bg-[var(--color-warm-50)]">
+        <div className="relative aspect-[16/10] bg-white">
           <img
             src={imageSrc}
             alt={concept}
