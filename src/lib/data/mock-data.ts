@@ -545,9 +545,11 @@ export const freePrograms: CommunityProgram[] = [
     id: 'hummingbirds',
     title: 'Hummingbirds',
     description: 'A free weekly gathering open to everyone. A space to connect, practice, and nourish your inner world together with the community. No prior experience needed. Just come as you are.',
-    schedule: 'Every Saturday, 10:30 AM – 11:30 AM (Costa Rica time)',
+    schedule: 'Every Saturday, 8:30 AM – 9:30 AM (Costa Rica time)',
     free: true,
     whatsappLink: 'https://chat.whatsapp.com/C2C0DgvSVtW3fOB231vpRc?mode=gi_t',
+    calendarLink: 'https://calendar.google.com/calendar/ical/f1e7e75c76e2a9d7f4f838fada59614be672a8e780a25a39a518fe29f243d389%40group.calendar.google.com/public/basic.ics',
+    googleCalendarUrl: 'https://calendar.google.com/calendar/u/1?cid=ZjFlN2U3NWM3NmUyYTlkN2Y0ZjgzOGZhZGE1OTYxNGJlNjcyYThlNzgwYTI1YTM5YTUxOGZlMjlmMjQzZDM4OUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
   },
   {
     id: 'free-live-guidances',
@@ -557,6 +559,8 @@ export const freePrograms: CommunityProgram[] = [
     audience: 'Rose Meditation Practitioner',
     free: true,
     whatsappLink: 'https://chat.whatsapp.com/Lh6bJlDmliMIryvKz63tzi?mode=gi_t',
+    calendarLink: 'https://calendar.google.com/calendar/ical/08e5422245d1b02dabc429630bfe6086229c73da3d4d6aa6c4024429256467f9%40group.calendar.google.com/public/basic.ics',
+    googleCalendarUrl: 'https://calendar.google.com/calendar/u/1?cid=MDhlNTQyMjI0NWQxYjAyZGFiYzQyOTYzMGJmZTYwODYyMjljNzNkYTNkNGQ2YWE2YzQwMjQ0MjkyNTY0NjdmOUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
     scheduleCycles: [
       {
         id: 'guidances-feb-jun',

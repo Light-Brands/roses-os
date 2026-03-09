@@ -1,13 +1,14 @@
 # GEO Content Structure — Implementation Plan
 
-**Status:** In Progress
+**Status:** Complete
 **Date:** March 8, 2026
+**Updated:** March 8, 2026 — All items implemented including extended SEO/GEO coverage
 
 ---
 
 ## Context
 
-ROSES OS currently has zero geo-targeted or question-answering content. All pages are static brand/marketing pages. People searching "meditation classes New York", "aura reading course online", or "what is rose meditation" will never find the site. This plan adds programmatic SEO infrastructure: geo-targeted landing pages per city, FAQ content with schema markup, a sitemap, robots file, and Course structured data — all designed to capture organic search traffic and funnel it into the enrollment flow.
+This plan documents the complete programmatic SEO and GEO (Generative Engine Optimization) infrastructure built for ROSES OS. The work captures organic search traffic through geo-targeted landing pages, FAQ content with schema markup, structured data across all pages, AI bot directives, and a meditation hub page — funneling search traffic into the enrollment flow and making content citable by AI-powered search engines (Google AI Overviews, Perplexity, ChatGPT search).
 
 ---
 
@@ -142,11 +143,51 @@ The page at `/meditation/seattle` is automatically generated with all content, s
 
 ## Verification Checklist
 
-- [ ] `pnpm build` — All geo pages generate without errors
-- [ ] `/sitemap.xml` includes all static + geo routes
-- [ ] `/robots.txt` returns correct crawl directives
-- [ ] JSON-LD validates on geo pages (Course, FAQ, Breadcrumb schemas)
-- [ ] Geo pages show correct timezone in schedule
-- [ ] Each geo page has unique title, description, and intro content
-- [ ] FAQ accordion opens/closes correctly
-- [ ] CTA links work (enrollment, offerings)
+- [x] `pnpm build` — All geo pages generate without errors
+- [x] `/sitemap.xml` includes all static + geo routes (including `/meditation` hub)
+- [x] `/robots.txt` returns correct crawl directives + AI bot allow rules
+- [x] JSON-LD validates on geo pages (Course, FAQ, Breadcrumb schemas)
+- [x] Geo pages show correct timezone in schedule
+- [x] Each geo page has unique title, description, and intro content
+- [x] FAQ accordion opens/closes correctly
+- [x] CTA links work (enrollment, offerings)
+
+---
+
+## Extended SEO & GEO Coverage (March 8, 2026)
+
+Beyond the original geo-content plan, the following site-wide SEO and GEO improvements were implemented:
+
+### Homepage SEO Fix
+- Extracted homepage to server/client pattern (`HomeClient.tsx` + `page.tsx`)
+- Added homepage-specific metadata (title, description, keywords, OG)
+- Added WebSite + WebPage + Breadcrumb JSON-LD schemas
+
+### Meditation Hub Page (`/meditation`)
+- Created server-rendered hub page with location grid grouped by timezone region
+- Added GEO-citable definitional paragraph about Rose Meditation
+- Added ItemList schema linking all 20 city pages
+- Added WebPage + Breadcrumb JSON-LD
+- Added to sitemap
+
+### FAQ Schemas on Content Pages
+- **The Rose page** — 4 FAQs: What is Rose Meditation?, What is aura reading?, How does Rose Meditation work?, What are the 13 domains of coherence?
+- **Offerings page** — 4 FAQs: How much do courses cost?, What timezones?, Do I need experience?, How are courses delivered?
+
+### Structured Data Expansion
+- **Offerings page** — Course schemas (Rose Meditation + Aura Reading) + WebPage + Breadcrumb JSON-LD
+- **The Rose page** — WebPage + Breadcrumb + FAQPage JSON-LD
+- **Community page** — WebPage + Breadcrumb JSON-LD
+- **Guardians page** — WebPage + Breadcrumb JSON-LD
+
+### Organization Schema Upgrade
+- Changed `@type` from `Organization` to `['Organization', 'EducationalOrganization']`
+- Added `description` field
+
+### AI Bot Directives (GEO)
+- Explicitly allowed GPTBot, ChatGPT-User, Google-Extended, PerplexityBot, Anthropic, ClaudeBot, Applebot-Extended in `robots.ts`
+
+### Remaining TODOs
+- [ ] Create `og-image.jpg` (1200x630) and place in `/public` — design task
+- [ ] Add social media URLs to Organization `sameAs` when ready
+- [ ] Expand meditation hub to rich page with hero, FAQ section, CTA (future iteration)
