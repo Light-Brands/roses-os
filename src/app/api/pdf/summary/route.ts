@@ -351,7 +351,7 @@ export async function GET() {
     // Load brand images (resized for reasonable PDF size)
     const [homeImage, roseImage, theRoseImage, communityImage, backcoverImage] = await Promise.all([
       loadAndResizeImage(doc, 'page-images/page-home.png', 500, 300),
-      loadAndResizeImage(doc, 'rose med images/level-1/1-the-rose.PNG', 400, 250),
+      loadAndResizeImage(doc, 'rose med images/level-1/01-the-rose.PNG', 400, 250),
       loadAndResizeImage(doc, 'page-images/page-the-rose.png', 500, 280),
       loadAndResizeImage(doc, 'page-images/page-community.png', 500, 280),
       loadAndResizeImage(doc, 'images/backcover-rose-mandala.png', 160, 160),

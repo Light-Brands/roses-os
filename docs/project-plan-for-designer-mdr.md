@@ -99,15 +99,15 @@ Below is the **complete inventory** of every image used on the site, organized b
 
 | Slide | Concept | Reimagined Image | Original Image |
 |-------|---------|-----------------|---------------|
-| 1 | **The Rose** -- Foundational symbol and energetic tool. Roots, stem, bloom. | `level-1/1-the-rose.PNG` | -- |
-| 2 | **Meditation Posture** -- Seated upright, feet flat, hands on knees, eyes closed. | `level-1/2-meditation-posture.PNG` | -- |
-| 3 | **Grounding Cord** -- Energy connection from base of spine into the center of the Earth. | `level-1/3-grounding-cord.jpeg` | -- |
-| 4 | **Golden Sun** -- Radiant golden sun above the head, restoring personal life-force energy. | `level-1/4-golden-sun.png` | -- |
-| 5 | **Aura Exercise** -- Golden silhouette surrounded by concentric layers of glowing energy. | `level-1/5-aura-exercise.PNG` | `level-1/5-auraexercise-original.PNG` |
-| 6 | **Expansion of Grounding Cord** -- Grounding cord expands with the aura, anchoring the entire energy field into the Earth. | `level-1/6-expansion-grounding-cord.jpeg` | `level-1/6-grounding-cord-expansion-original.PNG` |
-| 7 | **Golden Sun Fills You** -- Golden sun above the crown pours golden light down, filling the entire aura and body. | `level-1/7-golden-sun-fills.png` | `level-1/7-expansion-fill-with-golden-sun-original.PNG` |
-| 8 | **Earth Circuit** -- Energy rising through feet and legs into the body. | `level-1/8-earth-energy.PNG` | -- |
-| 9 | **Cosmos Circuit** -- Cosmic energy descending through the crown into the body. | `level-1/9-cosmos-circuit.jpeg` | `level-1/9-cosmos-original.PNG` |
+| 1 | **The Rose** -- Foundational symbol and energetic tool. Roots, stem, bloom. | `level-1/01-the-rose.PNG` | -- |
+| 2 | **Meditation Posture** -- Seated upright, feet flat, hands on knees, eyes closed. | `level-1/02-meditation-posture.PNG` | -- |
+| 3 | **Grounding Cord** -- Energy connection from base of spine into the center of the Earth. | `level-1/03-grounding-cord.jpeg` | -- |
+| 4 | **Golden Sun** -- Radiant golden sun above the head, restoring personal life-force energy. | `level-1/04-golden-sun.png` | -- |
+| 5 | **Aura Exercise** -- Golden silhouette surrounded by concentric layers of glowing energy. | `level-1/05-aura-exercise.PNG` | `level-1/05-auraexercise-original.PNG` |
+| 6 | **Expansion of Grounding Cord** -- Grounding cord expands with the aura, anchoring the entire energy field into the Earth. | `level-1/06-expansion-grounding-cord.jpeg` | `level-1/06-grounding-cord-expansion-original.PNG` |
+| 7 | **Golden Sun Fills You** -- Golden sun above the crown pours golden light down, filling the entire aura and body. | `level-1/07-golden-sun-fills.png` | `level-1/07-expansion-fill-with-golden-sun-original.PNG` |
+| 8 | **Earth Circuit** -- Energy rising through feet and legs into the body. | `level-1/08-earth-energy.PNG` | -- |
+| 9 | **Cosmos Circuit** -- Cosmic energy descending through the crown into the body. | `level-1/09-cosmos-circuit.jpeg` | `level-1/09-cosmos-original.PNG` |
 | 10 | **Combined Earth + Cosmos Circuit** -- Both flows active simultaneously through the body. | `level-1/10-cosmosearth.PNG` | -- |
 | 11 | **The Rose (as Energetic Tool)** -- Roots, stem, bloom in detail. Functions: place, move, open, close, release. | `level-1/11-therosegold.PNG` | `level-1/11-therosegold.PNG` |
 | 12 | **Roses of Protection, Observation, and Separation** -- Roses at the edges of the aura as energetic sentinels. | `level-1/12-four-roses.PNG` | `level-1/12-four-roses-original.PNG` |
@@ -221,21 +221,21 @@ Below is the complete teaching text that accompanies each image/slide in the man
 ---
 
 #### Slide 1: The Rose
-**Reimagined:** `level-1/1-the-rose.PNG`
+**Reimagined:** `level-1/01-the-rose.PNG`
 
 > The Rose is the foundational symbol and tool of this practice -- a living energetic instrument used throughout all levels of the work.
 
 ---
 
 #### Slide 2: Posture
-**Reimagined:** `level-1/2-meditation-posture.PNG`
+**Reimagined:** `level-1/02-meditation-posture.PNG`
 
 > Proper meditation posture is seated upright in a chair. Feet are flat on the floor, hands resting gently on the thighs or knees, spine upright, eyes closed. The body is relaxed yet alert -- grounded and receptive.
 
 ---
 
 #### Slide 3: Grounding Cord
-**Reimagined:** `level-1/3-grounding-cord.jpeg` | **Note:** The original grounding cord (see slide 6 original: `level-1/6-grounding-cord-expansion-original.PNG`) is more accurate than the reimagined version. New designs should reflect the original's depiction.
+**Reimagined:** `level-1/03-grounding-cord.jpeg` | **Note:** The original grounding cord (see slide 6 original: `level-1/06-grounding-cord-expansion-original.PNG`) is more accurate than the reimagined version. New designs should reflect the original's depiction.
 
 > The grounding cord is an energetic connection that extends from the base of the spine (first chakra) downward into the center of the Earth. It anchors your energy body to the planet, providing stability, safety, and a channel for releasing unwanted energy.
 
@@ -247,7 +247,7 @@ Below is the complete teaching text that accompanies each image/slide in the man
 ---
 
 #### Slide 4: Golden Sun
-**Reimagined:** `level-1/4-golden-sun.png`
+**Reimagined:** `level-1/04-golden-sun.png`
 
 > The Golden Sun is a tool for replenishing and restoring your own energy. Visualize a radiant golden sun above your head. It calls back your own life-force energy from wherever you may have left it -- in people, places, situations, or time. It fills you with your own highest vibration.
 
@@ -259,14 +259,14 @@ Below is the complete teaching text that accompanies each image/slide in the man
 ---
 
 #### Slide 5: An Exercise to Feel Your Aura
-**Original:** `level-1/5-auraexercise-original.PNG` | **Reimagined:** `level-1/5-aura-exercise.PNG`
+**Original:** `level-1/05-auraexercise-original.PNG` | **Reimagined:** `level-1/05-aura-exercise.PNG`
 
 > The aura is the energetic field that surrounds your physical body. This exercise helps you become aware of its presence, its edges, and its quality. The aura consists of multiple layers radiating outward from the body.
 
 ---
 
 #### Slide 6: Expansion of Grounding Cord
-**Original:** `level-1/6-grounding-cord-expansion-original.PNG` | **Reimagined:** `level-1/6-expansion-grounding-cord.jpeg`
+**Original:** `level-1/06-grounding-cord-expansion-original.PNG` | **Reimagined:** `level-1/06-expansion-grounding-cord.jpeg`
 
 > Once you are aware of your aura, the grounding cord practice deepens. You ground not only the physical body but also the aura itself -- allowing the entire energy field to anchor into the Earth.
 
@@ -277,7 +277,7 @@ Below is the complete teaching text that accompanies each image/slide in the man
 ---
 
 #### Slide 7: Golden Sun Fills You
-**Original:** `level-1/7-expansion-fill-with-golden-sun-original.PNG` | **Reimagined:** `level-1/7-golden-sun-fills.png`
+**Original:** `level-1/07-expansion-fill-with-golden-sun-original.PNG` | **Reimagined:** `level-1/07-golden-sun-fills.png`
 
 > The Golden Sun above the crown pours golden light downward, filling the entire aura and body with your own highest vibration. This completes the full energetic architecture: posture, aura, grounding cord, and golden sun -- all active together.
 
@@ -289,14 +289,14 @@ Below is the complete teaching text that accompanies each image/slide in the man
 ---
 
 #### Slide 8: Circuit of the Energy of the Earth
-**Reimagined:** `level-1/8-earth-energy.PNG`
+**Reimagined:** `level-1/08-earth-energy.PNG`
 
 > The Earth circuit is an energetic pathway that draws the energy of the Earth upward through the feet, rising through the legs and into the body. This circuit connects you to the grounding, nourishing, stabilizing force of the planet.
 
 ---
 
 #### Slide 9: Circuit of the Energy of the Cosmos
-**Original:** `level-1/9-cosmos-original.PNG` | **Reimagined:** `level-1/9-cosmos-circuit.jpeg`
+**Original:** `level-1/09-cosmos-original.PNG` | **Reimagined:** `level-1/09-cosmos-circuit.jpeg`
 
 > The Cosmic circuit is an energetic pathway that draws cosmic energy downward through the crown of the head (7th chakra) and into the body. This circuit connects you to the higher frequencies of universal consciousness, inspiration, and spiritual guidance.
 

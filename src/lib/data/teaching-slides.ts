@@ -50,7 +50,7 @@ export const level1Slides: TeachingSlide[] = [
     concept: 'The Rose',
     teachingText:
       'The Rose is the foundational symbol and tool of this practice — a living energetic instrument used throughout all levels of the work.',
-    reimaginedImage: 'level-1/1-the-rose.PNG',
+    reimaginedImage: 'level-1/01-the-rose.PNG',
     final: true,
     level: 1,
     section: 'foundations',
@@ -61,7 +61,7 @@ export const level1Slides: TeachingSlide[] = [
     concept: 'Meditation Posture',
     teachingText:
       'Proper meditation posture is seated upright in a chair. Feet are flat on the floor, hands resting gently on the thighs or knees, spine upright, eyes closed. The body is relaxed yet alert — grounded and receptive.',
-    reimaginedImage: 'level-1/2-meditation-posture.PNG',
+    reimaginedImage: 'level-1/02-meditation-posture.PNG',
     final: true,
     level: 1,
     section: 'foundations',
@@ -72,7 +72,7 @@ export const level1Slides: TeachingSlide[] = [
     concept: 'Grounding Cord',
     teachingText:
       'The grounding cord is an energetic connection that extends from the base of the spine (first chakra) downward into the center of the Earth. It anchors your energy body to the planet, providing stability, safety, and a channel for releasing unwanted energy.',
-    reimaginedImage: 'level-1/3-grounding-cord.jpeg',
+    reimaginedImage: 'level-1/03-grounding-cord.jpeg',
     final: true,
     imageNote:
       'The original grounding cord (see slide 6 original: 6-grounding-cord-expansion-original.PNG) is more accurate than the reimagined version. New designs should reflect the original\'s depiction. The grounding cord should be more opaque/transparent, thick and strong, and less gold.',
@@ -85,7 +85,7 @@ export const level1Slides: TeachingSlide[] = [
     concept: 'Golden Sun',
     teachingText:
       'The Golden Sun is a tool for replenishing and restoring your own energy. Visualize a radiant golden sun above your head. It calls back your own life-force energy from wherever you may have left it — in people, places, situations, or time. It fills you with your own highest vibration.',
-    reimaginedImage: 'level-1/4-golden-sun.png',
+    reimaginedImage: 'level-1/04-golden-sun.png',
     final: true,
     imageNote:
       'The grounding cord in this image should be thick, transparent, and strong — and should start lower in the body, under the crotch, as it comes from the base of the spine (1st chakra). Currently it appears too high and too golden.',
@@ -98,8 +98,8 @@ export const level1Slides: TeachingSlide[] = [
     concept: 'An Exercise to Feel Your Aura',
     teachingText:
       'The aura is the energetic field that surrounds your physical body. This exercise helps you become aware of its presence, its edges, and its quality. The aura consists of multiple layers radiating outward from the body.',
-    originalImage: 'level-1/5-auraexercise-original.PNG',
-    reimaginedImage: 'level-1/5-aura-exercise.PNG',
+    originalImage: 'level-1/05-auraexercise-original.PNG',
+    reimaginedImage: 'level-1/05-aura-exercise.PNG',
     final: true,
     level: 1,
     section: 'foundations',
@@ -110,8 +110,8 @@ export const level1Slides: TeachingSlide[] = [
     concept: 'Expansion of Grounding Cord',
     teachingText:
       'Once you are aware of your aura, the grounding cord practice deepens. You ground not only the physical body but also the aura itself — allowing the entire energy field to anchor into the Earth.',
-    originalImage: 'level-1/6-grounding-cord-expansion-original.PNG',
-    reimaginedImage: 'level-1/6-expansion-grounding-cord.jpeg',
+    originalImage: 'level-1/06-grounding-cord-expansion-original.PNG',
+    reimaginedImage: 'level-1/06-expansion-grounding-cord.jpeg',
     final: true,
     imageNote:
       'The grounding cord should be more opaque/transparent, thick and strong, and less gold — same direction as slide 7.',
@@ -124,8 +124,8 @@ export const level1Slides: TeachingSlide[] = [
     concept: 'Golden Sun Fills You',
     teachingText:
       'The Golden Sun above the crown pours golden light downward, filling the entire aura and body with your own highest vibration. This completes the full energetic architecture: posture, aura, grounding cord, and golden sun — all active together.',
-    originalImage: 'level-1/7-expansion-fill-with-golden-sun-original.PNG',
-    reimaginedImage: 'level-1/7-golden-sun-fills.png',
+    originalImage: 'level-1/07-expansion-fill-with-golden-sun-original.PNG',
+    reimaginedImage: 'level-1/07-golden-sun-fills.png',
     final: true,
     imageNote: 'The expanded grounding cord should also be represented in this image — it is part of the full energetic architecture. Same visual direction: thick, transparent, strong, less gold. NOTE: The current image repeats the same human figure used in slide 7 — please use a different human man for this slide to distinguish the two visuals.',
     level: 1,
@@ -137,7 +137,7 @@ export const level1Slides: TeachingSlide[] = [
     concept: 'Circuit of the Energy of the Earth',
     teachingText:
       'The Earth circuit is an energetic pathway that draws the energy of the Earth upward through the feet, rising through the legs and into the body. This circuit connects you to the grounding, nourishing, stabilizing force of the planet.',
-    reimaginedImage: 'level-1/8-earth-energy.PNG',
+    reimaginedImage: 'level-1/08-earth-energy.PNG',
     final: true,
     level: 1,
     section: 'foundations',
@@ -148,8 +148,8 @@ export const level1Slides: TeachingSlide[] = [
     concept: 'Circuit of the Energy of the Cosmos',
     teachingText:
       'The Cosmic circuit is an energetic pathway that draws cosmic energy downward through the crown of the head (7th chakra) and into the body. This circuit connects you to the higher frequencies of universal consciousness, inspiration, and spiritual guidance.',
-    originalImage: 'level-1/9-cosmos-original.PNG',
-    reimaginedImage: 'level-1/9-cosmos-circuit.jpeg',
+    originalImage: 'level-1/09-cosmos-original.PNG',
+    reimaginedImage: 'level-1/09-cosmos-circuit.jpeg',
     final: true,
     imageNote:
       'Updated: New image with more refined arrows showing the cosmic energy circuit pathway. Previous version: 8-circuitofenergycosmos.PNG',
