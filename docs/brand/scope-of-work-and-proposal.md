@@ -2,7 +2,7 @@
 
 **Prepared by:** Jennifer Brooke Lawless
 **Date:** March 5, 2026
-**Version:** 1.3 -- Updated March 10, 2026
+**Version:** 1.4 -- Updated March 10, 2026
 
 ---
 
@@ -35,7 +35,7 @@ The stewardship includes:
 ## 1. What Has Been Built (Completed Work)
 
 ### 1.1 Full-Stack Web Platform
-A complete Next.js 16 application with 53+ pages (including 30 geo landing pages + meditation hub), 69+ custom components, 27,800+ lines of TypeScript/React code across 158 source files, and a modular architecture designed for long-term scalability.
+A complete Next.js 16 application with 53+ pages (including 30 geo landing pages + meditation hub), 69+ custom components, 29,600+ lines of TypeScript/React code across 157 source files, and a modular architecture designed for long-term scalability.
 
 | Area | Details |
 |------|---------|
@@ -468,7 +468,7 @@ For context on the technical foundation that supports everything above:
 
 | Infrastructure | Details |
 |----------------|---------|
-| **Repository** | GitHub (Light-Brands/roses-os) -- version-controlled, 150+ commits, 52+ merged PRs |
+| **Repository** | GitHub (Light-Brands/roses-os) -- version-controlled, 160+ commits, 58+ merged PRs |
 | **Hosting** | Production-ready Next.js deployment |
 | **Database** | Supabase (PostgreSQL) with SSR auth |
 | **AI Services** | Google GenAI integration |
@@ -478,31 +478,32 @@ For context on the technical foundation that supports everything above:
 
 ### Codebase & Asset Scale
 
-The ROSES OS platform comprises over **62,100 lines of authored source code, configuration, and documentation** across 220+ files -- plus **124 visual and media assets** (155MB) including custom 3D models, brand photography, and multilingual PDF manuals.
+The ROSES OS platform comprises over **64,800 lines of authored source code, configuration, and documentation** across 225+ files -- plus **135 visual and media assets** (195MB) including custom 3D models, brand photography, teaching slide images, and multilingual PDF manuals.
 
 #### Authored Lines Breakdown
 
 | Category | Lines | Description |
 |----------|------:|-------------|
-| TypeScript / TSX | 27,882 | Core application code -- pages, components, data layers, API routes |
+| TypeScript / TSX | 29,682 | Core application code -- pages, components, data layers, API routes |
 | CSS / JS / MJS | 2,243 | Styles, scripts, build tools |
-| YAML / JSON | 17,497 | Configuration, structured data, content schemas |
-| Brand & Project Documentation | 14,487 | Brand DNA, scope of work, designer plans, content plans, geo content, UX plans |
-| **Total** | **~62,100** | |
+| YAML / JSON | 18,373 | Configuration, structured data, content schemas |
+| Brand & Project Documentation | 14,503 | Brand DNA, scope of work, designer plans, content plans, geo content, UX plans |
+| **Total** | **~64,800** | |
 
 #### Visual & Media Assets
 
 | Category | Files | Size | Description |
 |----------|------:|-----:|-------------|
-| Brand Images | 23 | 59MB | Photography, mandalas, illustrations |
+| Brand Photography & Illustrations | 34 | 100MB | Photography, mandalas, illustrations, teaching imagery |
+| Rose Meditation Teaching Images | 46 | 48MB | Level 1-3 technique slide images |
 | Page Design Screenshots | 10 | 22MB | Full-page design references |
 | 3D Rose Model + Textures | 27 | 2.6MB | Custom .glb model with 26 leaf/petal textures |
 | PDF Manuals (4 languages) | 9 | 25MB | Student manuals in EN, ES, PT, EL |
-| **Total** | **124** | **155MB** | |
+| **Total** | **135** | **~195MB** | |
 
 #### Industry Benchmark
 
-At industry-standard developer productivity rates of **5,000--10,000 lines per month** (IEEE/COCOMO benchmarks for production-quality, tested, deployed code), the authored codebase alone represents approximately **12-13 months of full-time senior developer effort**. This does not account for the ongoing community stewardship work as Guardian of the Hummingbird.
+At industry-standard developer productivity rates of **5,000--10,000 lines per month** (IEEE/COCOMO benchmarks for production-quality, tested, deployed code), the authored codebase alone represents approximately **13+ months of full-time senior developer effort**. This does not account for the ongoing community stewardship work as Guardian of the Hummingbird.
 
 The visual and media assets -- custom 3D models with hand-tuned shader effects, multilingual PDF generation, and brand imagery -- represent significant additional creative and production work not captured in line counts.
 
