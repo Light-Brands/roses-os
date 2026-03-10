@@ -53,6 +53,7 @@ export default function TeachingSlideCard({ slide, index = 0, className }: Teach
             src={imageSrc}
             alt={concept}
             className="w-full h-full object-contain"
+            style={slide.imageScale ? { transform: `scale(${slide.imageScale})` } : undefined}
             loading="lazy"
           />
           <span className="absolute top-3 left-3 text-[10px] font-medium uppercase tracking-wider text-[#9E956B]/60 bg-[#9E956B]/10 backdrop-blur-sm px-2 py-0.5 rounded-full">
