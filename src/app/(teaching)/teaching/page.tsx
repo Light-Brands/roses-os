@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { teachingLevels } from '@/lib/data';
-import { openingAgreements, openingSacredCompanion, openingHistory } from '@/lib/data/teaching-slides';
+import { openingAgreements, openingImportantToKnow, openingHistory } from '@/lib/data/teaching-slides';
 import { PdfExportButton } from '@/components/ui/PdfExportButton';
 import LanguageSelector from '@/components/teaching/LanguageSelector';
 import { useLanguage } from '@/lib/i18n';
@@ -12,12 +12,12 @@ export default function TeachingPage() {
 
   const agreements = t?.opening.agreements ?? openingAgreements;
   const history = t?.opening.history ?? openingHistory;
-  const scT = t?.opening.sacredCompanion;
-  const guidelinesTitle = scT?.guidelinesTitle ?? openingSacredCompanion.guidelines.title;
-  const guidelinesItems = scT?.guidelinesItems ?? openingSacredCompanion.guidelines.items;
-  const scTitle = scT?.title ?? openingSacredCompanion.title;
-  const scParagraphs = scT?.paragraphs ?? openingSacredCompanion.paragraphs;
-  const scClosing = scT?.closing ?? openingSacredCompanion.closing;
+  const itkT = t?.opening.importantToKnow;
+  const guidelinesTitle = itkT?.guidelinesTitle ?? openingImportantToKnow.guidelines.title;
+  const guidelinesItems = itkT?.guidelinesItems ?? openingImportantToKnow.guidelines.items;
+  const itkTitle = itkT?.title ?? openingImportantToKnow.title;
+  const itkParagraphs = itkT?.paragraphs ?? openingImportantToKnow.paragraphs;
+  const itkClosing = itkT?.closing ?? openingImportantToKnow.closing;
 
   return (
     <div className="min-h-screen bg-[var(--color-background)]">
@@ -86,12 +86,12 @@ export default function TeachingPage() {
           </ul>
         </section>
 
-        {/* Opening — Sacred Companion */}
+        {/* Opening — It's Important to Know */}
         <section className="mb-10 rounded-xl border border-[var(--color-border-subtle)] bg-[var(--color-surface)] p-6 lg:p-8">
           <h2 className="font-serif text-xl text-[var(--color-foreground)] mb-4">
-            {scTitle}
+            {itkTitle}
           </h2>
-          {scParagraphs.map((p: string, i: number) => (
+          {itkParagraphs.map((p: string, i: number) => (
             <p
               key={i}
               className="text-sm text-[var(--color-foreground-muted)] leading-relaxed mb-3"
@@ -115,9 +115,11 @@ export default function TeachingPage() {
               ))}
             </ul>
           </div>
+          {itkClosing && (
           <p className="text-sm text-[var(--color-foreground-muted)] italic mt-4">
-            {scClosing}
+            {itkClosing}
           </p>
+          )}
         </section>
 
         {/* Opening — History & Lineage */}

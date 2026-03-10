@@ -43,7 +43,7 @@ export interface TeachingTranslations {
       text: string;
       items: string[];
     };
-    sacredCompanion: {
+    importantToKnow: {
       title: string;
       paragraphs: string[];
       guidelinesTitle: string;

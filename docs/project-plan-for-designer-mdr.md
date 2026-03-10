@@ -193,18 +193,14 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 ---
 
-### Opening -- Sacred Companion
+### Opening -- It's Important to Know
 
-> This manual is a sacred companion for those who have been initiated into the path of Rose Meditation.
+> You will receive the manual in PDF. These teachings are part of a living energetic lineage revealed through direct practice and transmission.
 >
-> These teachings are part of a living energetic lineage. They invite inner stillness, gentle discipline, and deep self-responsibility. ROSES OS is not a system to be imposed or taught casually -- it is an energetic operating system revealed through direct practice and transmission.
->
-> **To honor the integrity of this work:**
-> - Please do not share this material with others who have not received the transmission.
-> - This manual is for personal use only and cannot be used to teach or guide others.
-> - You are welcome to support children under your care with these tools.
->
-> *Let each page be a reminder of the sacred space within you.*
+> **Please keep in mind:**
+> - You should not attempt to teach the Rose Meditation (only to your children under 14 years old).
+> - If you would like to become a Rose Meditation Facilitator, it is necessary to follow a training path through Aura Reading.
+> - The Rose Meditation cannot be applied to other people.
 
 ---
 
