@@ -2,13 +2,13 @@
 
 **Prepared by:** Jennifer Brooke Lawless
 **Date:** March 5, 2026
-**Version:** 1.2 -- Updated March 10, 2026
+**Version:** 1.3 -- Updated March 10, 2026
 
 ---
 
 ## Overview
 
-This document outlines the scope, deliverables, and structure of the work being developed for the ROSES OS digital platform and brand system. It is intended to give the team full visibility into what has been built, what is in progress, and what remains -- so we can define clear agreements, ownership, and next steps together.
+This document outlines the scope, deliverables, and structure of the work being developed for the ROSES OS digital platform and brand system -- including community stewardship of the Hummingbird program and Rose Meditation support. It is intended to give the team full visibility into what has been built, what is in progress, and what remains -- so we can define clear agreements, ownership, and next steps together.
 
 > *This document is intended as a starting point for conversation -- not a final agreement. All scope, pricing, and terms are open for discussion and adjustment together.*
 
@@ -18,18 +18,28 @@ This development was created from the heart, with no compensation model in mind.
 
 This document is intended to serve as a record of the value that has been created and a reference for what future development could look like on the platform -- including new build-out models that may emerge as the project evolves (e.g., a customer section, new teaching integrations, or community features). It is offered in the spirit of transparency and shared stewardship.
 
+In addition to the platform and brand development work, this scope encompasses community stewardship:
+
+> **Decision needed:** The title for this guardianship role -- options include **Guardian of the Hummingbird** (covering all community stewardship under one title, as it makes sense within the school) or **Guardian of the Hummingbird and Rose Meditation** (explicitly naming both areas of responsibility). To be decided with the team.
+
+The stewardship includes:
+
+1. **Hummingbird Program** -- Facilitating the Hummingbird community program, a free weekly gathering open to everyone. Holding space for the community, leading sessions, and nurturing the living field that the Hummingbird program represents within the ROSES OS ecosystem.
+
+2. **Rose Meditation Support** -- Attending and helping facilitate the monthly Rose Q&A sessions, and leading Rose Meditations when no other facilitator is available that week. Ensuring continuity of practice and unbroken support for the community's meditation rhythm.
+
 ---
 
 ## 1. What Has Been Built (Completed Work)
 
 ### 1.1 Full-Stack Web Platform
-A complete Next.js 16 application with 53+ pages (including 30 geo landing pages + meditation hub), 65+ custom components, 27,500+ lines of TypeScript/React code across 158 source files, and a modular architecture designed for long-term scalability.
+A complete Next.js 16 application with 53+ pages (including 30 geo landing pages + meditation hub), 69+ custom components, 27,800+ lines of TypeScript/React code across 158 source files, and a modular architecture designed for long-term scalability.
 
 | Area | Details |
 |------|---------|
 | **Framework** | Next.js 16, React 19, TypeScript |
 | **Pages** | 53+ primary routes across 6 sections (public site, invitation, teaching, forms, admin UI scaffold, API) — including 30 geo landing pages and meditation hub |
-| **Components** | 65+ reusable components built from scratch |
+| **Components** | 69+ reusable components built from scratch |
 | **Styling** | Tailwind CSS 4 with full custom design system |
 | **Animation** | Framer Motion + GSAP for page transitions, scroll effects, micro-interactions |
 | **3D Graphics** | Three.js / React Three Fiber -- custom 3D rose with shader effects, bloom, particles |
@@ -138,7 +148,7 @@ All strategic and brand documentation living in the repository:
 ### Phase 1 -- Completed
 | # | Deliverable | Description |
 |---|-------------|-------------|
-| 1 | **Web Platform MVP** | Full-stack Next.js application with 43+ pages, 65+ components, 3D visualization, authentication, admin panel |
+| 1 | **Web Platform MVP** | Full-stack Next.js application with 43+ pages, 69+ components, 3D visualization, authentication, admin panel |
 | 2 | **Teaching Platform** | 3-level password-protected teaching system with slides, manuals, multilingual support, downloads |
 | 3 | **Design System** | Complete brand-aligned design system implemented across all platform sections |
 | 4 | **Content Architecture** | Brand DNA, program materials, training manual, designer specs -- all documented and version-controlled |
@@ -187,7 +197,7 @@ All work has been contributed at **100% off market value** -- no payment is requ
 
 | Deliverable | Scope |
 |-------------|-------|
-| **Web Platform MVP** | 43+ pages, 65+ components, responsive, animations, page transitions |
+| **Web Platform MVP** | 43+ pages, 69+ components, responsive, animations, page transitions |
 | **Design System** | Full color palette, typography, component library, dark mode, branded templates |
 | **3D Brand Experience** | Custom Three.js rose, GLSL shaders, bloom/particles, 48 textures, responsive canvas |
 
@@ -377,6 +387,7 @@ Any compensation the team chooses to offer is considered a **gift in kind or in 
 
 Ongoing contributions are expected to focus on:
 
+- **Community Stewardship (Guardian of the Hummingbird / Rose Meditation)** -- Facilitating the weekly Hummingbird gathering, attending and helping facilitate monthly Rose Q&A sessions, and leading Rose Meditations when no other facilitator is available *(title pending decision -- see Overview note)*
 - **Manual updates** -- Updating and maintaining teaching manuals as content evolves
 - **Image updates & creation** -- Refreshing existing imagery and creating new visual assets as needed
 - **Language expansion on Teachers Portal** -- Adding new language support and translations to the teaching platform
@@ -452,7 +463,7 @@ For context on the technical foundation that supports everything above:
 
 | Infrastructure | Details |
 |----------------|---------|
-| **Repository** | GitHub (Light-Brands/roses-os) -- version-controlled, 143+ commits, 43+ merged PRs |
+| **Repository** | GitHub (Light-Brands/roses-os) -- version-controlled, 150+ commits, 52+ merged PRs |
 | **Hosting** | Production-ready Next.js deployment |
 | **Database** | Supabase (PostgreSQL) with SSR auth |
 | **AI Services** | Google GenAI integration |
@@ -462,17 +473,17 @@ For context on the technical foundation that supports everything above:
 
 ### Codebase & Asset Scale
 
-The ROSES OS platform comprises over **61,800 lines of authored source code, configuration, and documentation** across 216+ files -- plus **124 visual and media assets** (155MB) including custom 3D models, brand photography, and multilingual PDF manuals.
+The ROSES OS platform comprises over **62,100 lines of authored source code, configuration, and documentation** across 220+ files -- plus **124 visual and media assets** (155MB) including custom 3D models, brand photography, and multilingual PDF manuals.
 
 #### Authored Lines Breakdown
 
 | Category | Lines | Description |
 |----------|------:|-------------|
-| TypeScript / TSX | 27,688 | Core application code -- pages, components, data layers, API routes |
-| CSS / JS / MJS | 2,282 | Styles, scripts, build tools |
+| TypeScript / TSX | 27,882 | Core application code -- pages, components, data layers, API routes |
+| CSS / JS / MJS | 2,243 | Styles, scripts, build tools |
 | YAML / JSON | 17,497 | Configuration, structured data, content schemas |
-| Brand & Project Documentation | 14,429 | Brand DNA, scope of work, designer plans, content plans, geo content, UX plans |
-| **Total** | **~61,800** | |
+| Brand & Project Documentation | 14,487 | Brand DNA, scope of work, designer plans, content plans, geo content, UX plans |
+| **Total** | **~62,100** | |
 
 #### Visual & Media Assets
 
@@ -486,7 +497,7 @@ The ROSES OS platform comprises over **61,800 lines of authored source code, con
 
 #### Industry Benchmark
 
-At industry-standard developer productivity rates of **5,000--10,000 lines per month** (IEEE/COCOMO benchmarks for production-quality, tested, deployed code), the authored codebase alone represents approximately **12-13 months of full-time senior developer effort**.
+At industry-standard developer productivity rates of **5,000--10,000 lines per month** (IEEE/COCOMO benchmarks for production-quality, tested, deployed code), the authored codebase alone represents approximately **12-13 months of full-time senior developer effort**. This does not account for the ongoing community stewardship work as Guardian of the Hummingbird and supporting the Guardian of Rose Meditation.
 
 The visual and media assets -- custom 3D models with hand-tuned shader effects, multilingual PDF generation, and brand imagery -- represent significant additional creative and production work not captured in line counts.
 
