@@ -67,6 +67,46 @@ export const geoLocations: GeoLocation[] = [
     ],
   },
 
+  {
+    id: 'mount-shasta',
+    slug: 'mount-shasta',
+    city: 'Mount Shasta',
+    region: 'California',
+    country: 'United States',
+    timezoneKey: 'sanJose',
+    timezoneLabel: 'Pacific Time (PT)',
+    intro:
+      'Join Rose Meditation and Aura Reading courses from Mount Shasta, California. Live online classes at Pacific Time hours — morning sessions that align with the sacred energy of the mountain. Connect with a global community of 5,000+ initiates from one of the world\'s most revered spiritual power centers.',
+    keywords: [
+      'meditation classes mount shasta',
+      'spiritual retreat mount shasta',
+      'aura reading course mount shasta',
+      'energy healing mount shasta california',
+      'meditation mount shasta ca',
+      'spiritual community shasta',
+    ],
+  },
+
+  {
+    id: 'sedona',
+    slug: 'sedona',
+    city: 'Sedona',
+    region: 'Arizona',
+    country: 'United States',
+    timezoneKey: 'sanJose',
+    timezoneLabel: 'Mountain Standard Time (MST)',
+    intro:
+      'Join Rose Meditation and Aura Reading courses from Sedona, Arizona — one of the world\'s most recognized energy vortex sites. Live online classes at Mountain Standard Time hours — morning sessions that align with the red rock energy. Connect with a global community of 5,000+ initiates from the heart of the desert.',
+    keywords: [
+      'meditation classes sedona',
+      'spiritual retreat sedona arizona',
+      'aura reading course sedona',
+      'energy healing sedona',
+      'vortex meditation sedona',
+      'spiritual community sedona az',
+    ],
+  },
+
   // ─── Colombia / Central America Time ──────────────────────────────────────
   {
     id: 'bogota',
@@ -101,6 +141,100 @@ export const geoLocations: GeoLocation[] = [
       'clases meditacion ciudad de mexico',
       'aura reading course mexico',
       'curso lectura de aura mexico',
+    ],
+  },
+
+  {
+    id: 'oaxaca',
+    slug: 'oaxaca',
+    city: 'Oaxaca',
+    region: 'Oaxaca',
+    country: 'Mexico',
+    timezoneKey: 'bogota',
+    timezoneLabel: 'Central Time (CST)',
+    intro:
+      'Join Rose Meditation and Aura Reading courses from Oaxaca, Mexico. Live online classes at Central Time hours — morning and midday sessions that complement the ancestral energy of this sacred land. Conecta con una comunidad global de más de 5,000 iniciados desde uno de los centros espirituales más profundos de México.',
+    keywords: [
+      'meditation classes oaxaca',
+      'retiro espiritual oaxaca',
+      'aura reading course oaxaca mexico',
+      'meditacion oaxaca',
+      'energy healing oaxaca',
+      'curso meditacion oaxaca',
+    ],
+  },
+  {
+    id: 'tulum',
+    slug: 'tulum',
+    city: 'Tulum',
+    region: 'Quintana Roo',
+    country: 'Mexico',
+    timezoneKey: 'bogota',
+    timezoneLabel: 'Central Time (CST)',
+    intro:
+      'Join Rose Meditation and Aura Reading courses from Tulum. Live online classes at Central Time hours — perfect for your rhythm in the Riviera Maya. Conecta con una comunidad global de más de 5,000 iniciados sin salir de tu santuario en el Caribe.',
+    keywords: [
+      'meditation classes tulum',
+      'meditation tulum mexico',
+      'aura reading course tulum',
+      'retiro espiritual tulum',
+      'energy healing tulum',
+      'curso meditacion tulum',
+    ],
+  },
+  {
+    id: 'austin',
+    slug: 'austin',
+    city: 'Austin',
+    region: 'Texas',
+    country: 'United States',
+    timezoneKey: 'bogota',
+    timezoneLabel: 'Central Time (CT)',
+    intro:
+      'Join Rose Meditation and Aura Reading courses from Austin, Texas. Live online classes run at convenient Central Time hours — morning and midday sessions that fit your schedule. Connect with a global community of 5,000+ initiates from the comfort of your home.',
+    keywords: [
+      'meditation classes austin',
+      'aura reading course austin texas',
+      'energy healing austin',
+      'spiritual development austin',
+      'meditation course texas',
+    ],
+  },
+  {
+    id: 'san-jose-costa-rica',
+    slug: 'san-jose-costa-rica',
+    city: 'San José',
+    region: '',
+    country: 'Costa Rica',
+    timezoneKey: 'bogota',
+    timezoneLabel: 'Central Standard Time (CST)',
+    intro:
+      'Join Rose Meditation and Aura Reading courses from San José, Costa Rica. Live online classes at Central Time hours — morning and midday sessions that complement the pura vida rhythm. Conecta con una comunidad global de más de 5,000 iniciados desde la comodidad de tu hogar.',
+    keywords: [
+      'meditation classes costa rica',
+      'aura reading course costa rica',
+      'meditacion san jose costa rica',
+      'curso lectura de aura costa rica',
+      'retiro espiritual costa rica',
+    ],
+  },
+
+  {
+    id: 'denver',
+    slug: 'denver',
+    city: 'Denver',
+    region: 'Colorado',
+    country: 'United States',
+    timezoneKey: 'bogota',
+    timezoneLabel: 'Mountain Time (MT)',
+    intro:
+      'Join Rose Meditation and Aura Reading courses from Denver, Colorado. Live online classes at Mountain Time hours — morning sessions that align with the mile-high rhythm. Connect with a global community of 5,000+ initiates from the comfort of your home.',
+    keywords: [
+      'meditation classes denver',
+      'aura reading course denver',
+      'energy healing denver colorado',
+      'spiritual development denver',
+      'meditation course colorado',
     ],
   },
 
@@ -155,6 +289,25 @@ export const geoLocations: GeoLocation[] = [
       'aura reading course toronto',
       'energy healing toronto',
       'meditation course canada',
+    ],
+  },
+
+  {
+    id: 'asheville',
+    slug: 'asheville',
+    city: 'Asheville',
+    region: 'North Carolina',
+    country: 'United States',
+    timezoneKey: 'newYork',
+    timezoneLabel: 'Eastern Time (ET)',
+    intro:
+      'Join Rose Meditation and Aura Reading courses from Asheville, North Carolina. Live online classes at Eastern Time hours — morning and midday sessions that complement the mountain energy of the Blue Ridge. Connect with a global community of 5,000+ initiates.',
+    keywords: [
+      'meditation classes asheville',
+      'aura reading course asheville nc',
+      'energy healing asheville',
+      'spiritual community asheville',
+      'meditation course north carolina',
     ],
   },
 
@@ -319,6 +472,25 @@ export const geoLocations: GeoLocation[] = [
     ],
   },
   {
+    id: 'ibiza',
+    slug: 'ibiza',
+    city: 'Ibiza',
+    region: 'Balearic Islands',
+    country: 'Spain',
+    timezoneKey: 'madrid',
+    timezoneLabel: 'Central European Time (CET)',
+    intro:
+      'Join Rose Meditation and Aura Reading courses from Ibiza. Live online classes at CET afternoon and evening hours — deepen your practice from the island of transformation. Conecta con una comunidad global de más de 5,000 iniciados sin salir de la isla.',
+    keywords: [
+      'meditation classes ibiza',
+      'spiritual retreat ibiza',
+      'aura reading course ibiza',
+      'energy healing ibiza',
+      'retiro espiritual ibiza',
+      'meditation ibiza spain',
+    ],
+  },
+  {
     id: 'paphos',
     slug: 'paphos',
     city: 'Paphos',
@@ -334,6 +506,26 @@ export const geoLocations: GeoLocation[] = [
       'aura reading course cyprus',
       'energy healing paphos',
       'spiritual development cyprus',
+    ],
+  },
+  // ─── AEST / Australia ──────────────────────────────────────────────────────
+  {
+    id: 'byron-bay',
+    slug: 'byron-bay',
+    city: 'Byron Bay',
+    region: 'New South Wales',
+    country: 'Australia',
+    timezoneKey: null,
+    timezoneLabel: 'Australian Eastern Time (AEST)',
+    intro:
+      'Join Rose Meditation and Aura Reading courses from Byron Bay, Australia. Live online classes are scheduled across multiple timezone bands — evening sessions available for Australian Eastern Time. Connect with a global community of 5,000+ initiates from one of the world\'s most beloved spiritual and wellness destinations.',
+    keywords: [
+      'meditation classes byron bay',
+      'spiritual retreat byron bay',
+      'aura reading course byron bay',
+      'energy healing byron bay australia',
+      'meditation course australia',
+      'spiritual community byron bay',
     ],
   },
 ];
