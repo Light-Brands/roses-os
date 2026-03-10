@@ -52,6 +52,8 @@ export const level1Slides: TeachingSlide[] = [
       'The Rose is the foundational symbol and tool of this practice — a living energetic instrument used throughout all levels of the work.',
     reimaginedImage: 'level-1/01-the-rose.PNG',
     final: true,
+    imageNote:
+      'Rose illustration guideline: Roses should be shown with stems or without stems — never with thorns, and typically without prominent leaves.',
     level: 1,
     section: 'foundations',
   },
@@ -177,6 +179,8 @@ export const level1Slides: TeachingSlide[] = [
     originalImage: 'level-1/11-therosegold.PNG',
     reimaginedImage: 'level-1/11-therosegold.PNG',
     final: true,
+    imageNote:
+      'Rose illustration guideline: Roses are typically depicted with a bloom and stem (or no stem). Leaves should be minimal or absent. Thorns must never be shown — the rose in this practice is a pure energetic instrument without thorns.',
     level: 1,
     section: 'foundations',
   },

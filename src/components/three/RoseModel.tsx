@@ -38,12 +38,6 @@ export default function RoseModel({ mouseRef, reducedMotion, isDark }: RoseModel
       metalness: 0.05,
       side: THREE.DoubleSide,
     });
-    const leafMaterial = new THREE.MeshStandardMaterial({
-      color: '#3A7D44',
-      roughness: 0.5,
-      metalness: 0.0,
-      side: THREE.DoubleSide,
-    });
     const stemMaterial = new THREE.MeshStandardMaterial({
       color: '#2D5E34',
       roughness: 0.6,
@@ -56,11 +50,23 @@ export default function RoseModel({ mouseRef, reducedMotion, isDark }: RoseModel
         child.castShadow = true;
         child.receiveShadow = true;
         const name = (child.name || '').toLowerCase();
+
+        // Thorns are never shown on roses in this practice
+        if (name.includes('thorn')) {
+          child.visible = false;
+          return;
+        }
+
+        // Leaves are de-emphasized — roses are typically shown with
+        // stems (or no stems) rather than with prominent leaves
+        if (name.includes('leaf')) {
+          child.visible = false;
+          return;
+        }
+
         if (name.includes('petal') || name.includes('rose')) {
           child.material = petalMaterial;
-        } else if (name.includes('leaf')) {
-          child.material = leafMaterial;
-        } else if (name.includes('stem') || name.includes('thorn')) {
+        } else if (name.includes('stem')) {
           child.material = stemMaterial;
         } else {
           child.material = petalMaterial;
