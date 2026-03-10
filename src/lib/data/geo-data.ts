@@ -67,6 +67,26 @@ export const geoLocations: GeoLocation[] = [
     ],
   },
 
+  {
+    id: 'mount-shasta',
+    slug: 'mount-shasta',
+    city: 'Mount Shasta',
+    region: 'California',
+    country: 'United States',
+    timezoneKey: 'sanJose',
+    timezoneLabel: 'Pacific Time (PT)',
+    intro:
+      'Join Rose Meditation and Aura Reading courses from Mount Shasta, California. Live online classes at Pacific Time hours — morning sessions that align with the sacred energy of the mountain. Connect with a global community of 5,000+ initiates from one of the world\'s most revered spiritual power centers.',
+    keywords: [
+      'meditation classes mount shasta',
+      'spiritual retreat mount shasta',
+      'aura reading course mount shasta',
+      'energy healing mount shasta california',
+      'meditation mount shasta ca',
+      'spiritual community shasta',
+    ],
+  },
+
   // ─── Colombia / Central America Time ──────────────────────────────────────
   {
     id: 'bogota',
