@@ -106,11 +106,28 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Col 4: Social (placeholders) */}
+            {/* Col 4: Resources */}
             <div>
-              <p className="text-[11px] font-medium uppercase tracking-[0.15em] text-warm-500 dark:text-warm-400 mb-4">Follow</p>
-              <div className="flex flex-col gap-3">
-                <span className="text-sm text-warm-600 dark:text-warm-300 italic">Coming soon</span>
+              <p className="text-[11px] font-medium uppercase tracking-[0.15em] text-warm-500 dark:text-warm-400 mb-4">Resources</p>
+              <div className="flex flex-col gap-2">
+                <Link
+                  href="/meditation"
+                  className="text-sm text-warm-400 dark:text-warm-500 hover:text-warm-200 dark:hover:text-warm-700 transition-colors duration-200"
+                >
+                  Meditation Schedule
+                </Link>
+                <Link
+                  href="/invitation"
+                  className="text-sm text-warm-400 dark:text-warm-500 hover:text-warm-200 dark:hover:text-warm-700 transition-colors duration-200"
+                >
+                  Get Invited
+                </Link>
+                <Link
+                  href="/the-rose"
+                  className="text-sm text-warm-400 dark:text-warm-500 hover:text-warm-200 dark:hover:text-warm-700 transition-colors duration-200"
+                >
+                  About the Rose
+                </Link>
               </div>
             </div>
           </div>

@@ -67,12 +67,15 @@ const theRoseFAQs = [
 ];
 
 export default function TheRosePage() {
-  const webPageSchema = generateWebPageSchema({
-    title: 'The Rose',
-    description:
-      'A living path of remembrance through Rose Meditation, Aura Reading, and the 13 domains of coherence.',
-    pathname: '/the-rose',
-  });
+  const webPageSchema = {
+    ...generateWebPageSchema({
+      title: 'The Rose',
+      description:
+        'A living path of remembrance through Rose Meditation, Aura Reading, and the 13 domains of coherence.',
+      pathname: '/the-rose',
+    }),
+    '@type': 'AboutPage',
+  };
 
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: siteConfig.url },

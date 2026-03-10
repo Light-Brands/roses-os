@@ -1,5 +1,6 @@
 import { Navigation } from '@/components/ui/Navigation';
 import Footer from '@/components/ui/Footer';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { navItems } from '@/lib/data';
 
 export default function SiteLayout({
@@ -20,6 +21,7 @@ export default function SiteLayout({
         items={navItems}
         cta={{ label: 'Begin', href: '/invitation' }}
       />
+      <Breadcrumbs />
       <main id="main-content">{children}</main>
       <Footer />
     </>

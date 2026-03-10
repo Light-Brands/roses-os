@@ -17,6 +17,7 @@ import type {
 
 export const navItems: NavItem[] = [
   { label: 'Programs', href: '/offerings' },
+  { label: 'Meditation', href: '/meditation' },
   { label: 'Community', href: '/community' },
   { label: 'About', href: '/the-rose' },
   { label: 'Our Team', href: '/guardians' },
