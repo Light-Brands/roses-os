@@ -104,6 +104,62 @@ export const geoLocations: GeoLocation[] = [
     ],
   },
 
+  {
+    id: 'tulum',
+    slug: 'tulum',
+    city: 'Tulum',
+    region: 'Quintana Roo',
+    country: 'Mexico',
+    timezoneKey: 'bogota',
+    timezoneLabel: 'Central Time (CST)',
+    intro:
+      'Join Rose Meditation and Aura Reading courses from Tulum. Live online classes at Central Time hours — perfect for your rhythm in the Riviera Maya. Conecta con una comunidad global de más de 5,000 iniciados sin salir de tu santuario en el Caribe.',
+    keywords: [
+      'meditation classes tulum',
+      'meditation tulum mexico',
+      'aura reading course tulum',
+      'retiro espiritual tulum',
+      'energy healing tulum',
+      'curso meditacion tulum',
+    ],
+  },
+  {
+    id: 'austin',
+    slug: 'austin',
+    city: 'Austin',
+    region: 'Texas',
+    country: 'United States',
+    timezoneKey: 'bogota',
+    timezoneLabel: 'Central Time (CT)',
+    intro:
+      'Join Rose Meditation and Aura Reading courses from Austin, Texas. Live online classes run at convenient Central Time hours — morning and midday sessions that fit your schedule. Connect with a global community of 5,000+ initiates from the comfort of your home.',
+    keywords: [
+      'meditation classes austin',
+      'aura reading course austin texas',
+      'energy healing austin',
+      'spiritual development austin',
+      'meditation course texas',
+    ],
+  },
+  {
+    id: 'san-jose-costa-rica',
+    slug: 'san-jose-costa-rica',
+    city: 'San José',
+    region: '',
+    country: 'Costa Rica',
+    timezoneKey: 'bogota',
+    timezoneLabel: 'Central Standard Time (CST)',
+    intro:
+      'Join Rose Meditation and Aura Reading courses from San José, Costa Rica. Live online classes at Central Time hours — morning and midday sessions that complement the pura vida rhythm. Conecta con una comunidad global de más de 5,000 iniciados desde la comodidad de tu hogar.',
+    keywords: [
+      'meditation classes costa rica',
+      'aura reading course costa rica',
+      'meditacion san jose costa rica',
+      'curso lectura de aura costa rica',
+      'retiro espiritual costa rica',
+    ],
+  },
+
   // ─── Eastern Time ─────────────────────────────────────────────────────────
   {
     id: 'new-york',
