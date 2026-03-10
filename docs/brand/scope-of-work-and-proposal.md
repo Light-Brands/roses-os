@@ -391,6 +391,7 @@ Ongoing contributions are expected to focus on:
 - **Manual updates** -- Updating and maintaining teaching manuals as content evolves
 - **Image updates & creation** -- Refreshing existing imagery and creating new visual assets as needed
 - **Language expansion on Teachers Portal** -- Adding new language support and translations to the teaching platform
+- **Content management training for Silvia Coelho** -- Should she choose, training Silvia to manage and update site content independently, enabling content autonomy without developer involvement
 
 #### Near-Term Flagged Items
 
@@ -413,6 +414,7 @@ Larger platform features (Full Payment Page, Blog, YouTube integration, customer
 - **Ownership & IP** -- How do we define ownership of the platform code, brand assets, and content? What belongs to the project vs. individual contributors?
 - **Ongoing Maintenance** -- The platform requires ongoing technical maintenance, hosting, updates, and security. How is this accounted for?
 - **Licensing** -- Are there licensing considerations for the teaching content, brand assets, or platform code?
+- **Repository Visibility** -- The ROSES OS codebase is currently hosted as a public repository at [github.com/Light-Brands/roses-os](https://github.com/Light-Brands/roses-os). Should it remain public or be made private? If made private, each team member who needs access will need a GitHub account (free tier). To get access: (1) Sign up at [github.com](https://github.com) (2) Share your GitHub username so you can be invited as a collaborator to the repository.
 
 ---
 
@@ -510,7 +512,7 @@ The visual and media assets -- custom 3D models with hand-tuned shader effects, 
 1. **Team reviews this document** -- Ensure everyone has visibility into the full scope
 2. **Founder inputs delivered** -- Stories, long bios, and decision sheet reviewed (unlocks Brand Book)
 3. **Meeting scheduled** -- Dedicated session to discuss agreements, financials, and Phase 3 priorities
-4. **UX review session** -- ~~As Diego suggested, walk through the platform flow holistically with Dan's technical input~~ **Complete.** 6-phase UX overhaul implemented (see `docs/website-usability-action-plan.md`)
+4. **Platform flow evaluation** -- ~~Walk through the platform flow holistically~~ **Complete.** 6-phase UX overhaul implemented (see `docs/website-usability-action-plan.md`)
 5. **Agreements finalized** -- Clear ownership, deliverables, and compensation structure documented
 6. **UX verification** -- Test the updated user journeys: Home → Programs → Enroll, About page with sacred symbol content, enriched footer, consolidated enrollment flow
 7. **Near-term integrations** -- Implement flagged items: Payment Link, Mail Service, Newsletter, Social Media Linking
