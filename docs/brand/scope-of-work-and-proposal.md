@@ -16,6 +16,8 @@ This document outlines the scope, deliverables, and structure of the work being 
 
 This development was created from the heart, with no compensation model in mind. The scope and pricing documented here were assembled after the work was already built -- not before. As such, no compensation is required.
 
+What the International Aura and Dream School -- now ROSES OS -- has given me is exponential in terms of my spiritual growth, and I am very grateful for the opportunity to be part of this community.
+
 This document is intended to serve as a record of the value that has been created and a reference for what future development could look like on the platform -- including new build-out models that may emerge as the project evolves (e.g., a customer section, new teaching integrations, or community features). It is offered in the spirit of transparency and shared stewardship.
 
 In addition to the platform and brand development work, this scope encompasses community stewardship:
@@ -391,7 +393,6 @@ Ongoing contributions are expected to focus on:
 - **Manual updates** -- Updating and maintaining teaching manuals as content evolves
 - **Image updates & creation** -- Refreshing existing imagery and creating new visual assets as needed
 - **Language expansion on Teachers Portal** -- Adding new language support and translations to the teaching platform
-- **Content management training** -- Willing to train team members on making text and content edits directly on the existing body of work, enabling content autonomy without developer involvement
 
 #### Near-Term Flagged Items
 
