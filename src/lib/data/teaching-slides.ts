@@ -16,21 +16,21 @@ export const openingAgreements = {
   ],
 };
 
-export const openingSacredCompanion = {
-  title: 'Sacred Companion',
+export const openingImportantToKnow = {
+  title: "It's Important to Know",
   paragraphs: [
-    'This manual is a sacred companion for those who have been initiated into the path of Rose Meditation.',
-    'These teachings are part of a living energetic lineage. They invite inner stillness, gentle discipline, and deep self-responsibility. ROSES OS is not a system to be imposed or taught casually — it is an energetic operating system revealed through direct practice and transmission.',
+    'You will receive the manual in PDF.',
+    'These teachings are part of a living energetic lineage revealed through direct practice and transmission.',
   ],
   guidelines: {
-    title: 'To honor the integrity of this work:',
+    title: 'Please keep in mind:',
     items: [
-      'Please do not share this material with others who have not received the transmission.',
-      'This manual is for personal use only and cannot be used to teach or guide others.',
-      'You are welcome to support children under your care with these tools.',
+      'You should not attempt to teach the Rose Meditation (only to your children under 14 years old).',
+      'If you would like to become a Rose Meditation Facilitator, it is necessary to follow a training path through Aura Reading.',
+      'The Rose Meditation cannot be applied to other people.',
     ],
   },
-  closing: 'Let each page be a reminder of the sacred space within you.',
+  closing: '',
 };
 
 export const openingHistory = {

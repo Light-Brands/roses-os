@@ -171,7 +171,7 @@ The combined Level 1&2 PDF is being split. This manual becomes **Level 2 only**.
 The `/teaching` main page has three content sections (teaching slides) that are currently plain text cards with no visual anchors:
 
 1. **Agreements & Virtues** -- core agreements participants honor
-2. **Sacred Companion** -- guidelines for the sacredness of the work
+2. **It's Important to Know** -- guidelines and practical information for participants
 3. **History & Lineage** -- context about the teaching tradition
 
 - [ ] **Add small icons, illustrations, or visual elements above each section title** -- These are teaching slides and would benefit from a visual element above each heading to set the tone and help distinguish the sections. Designer has creative freedom on what works best — small icons, line illustrations, or other subtle visual touches. Should feel consistent with the rest of the teaching section and use brand accent colors (Antique Olive Brass `#9E956B` or Rose Clay Mauve `#9C6F6E`). Keep it minimal and aligned with the sacred-tech aesthetic.

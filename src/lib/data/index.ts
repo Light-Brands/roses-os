@@ -14,7 +14,7 @@ export type {
 
 export {
   openingAgreements,
-  openingSacredCompanion,
+  openingImportantToKnow,
   openingHistory,
   level1Slides,
   level2Slides,
