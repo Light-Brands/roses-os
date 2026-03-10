@@ -84,3 +84,12 @@ export {
   freePrograms,
   paidPrograms,
 } from './mock-data';
+
+export type { ImageEntry, ImageScope } from './image-registry';
+export {
+  imageRegistry,
+  getSharedImages,
+  getManualImages,
+  getTeachingImages,
+  getImageById,
+} from './image-registry';

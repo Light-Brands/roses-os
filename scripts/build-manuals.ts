@@ -1,0 +1,250 @@
+/**
+ * Build All Manual PDFs
+ *
+ * This script ensures teaching images (the canonical source) are synced
+ * into the manual build directory, then generates all manual PDFs via
+ * Puppeteer. The result: update a teaching image once, run this script,
+ * and every manual PDF picks up the change.
+ *
+ * Usage:
+ *   npx tsx scripts/build-manuals.ts            # build all manuals
+ *   npx tsx scripts/build-manuals.ts --level 1   # build only Level 1
+ *   npx tsx scripts/build-manuals.ts --level 12  # build only Levels 1&2
+ *   npx tsx scripts/build-manuals.ts --level 3   # build only Level 3
+ *   npx tsx scripts/build-manuals.ts --skip-sync  # skip image sync step
+ */
+
+import puppeteer from 'puppeteer-core';
+import * as path from 'path';
+import * as fs from 'fs';
+
+// ---------------------------------------------------------------------------
+// Configuration
+// ---------------------------------------------------------------------------
+
+const ROOT = path.resolve(__dirname, '..');
+const MANUAL_DIR = path.join(ROOT, 'scripts', 'pdf-manuals');
+const MANUAL_IMAGES_DIR = path.join(MANUAL_DIR, 'images');
+const TEACHING_IMAGES_DIR = path.join(ROOT, 'public', 'images', 'teaching');
+const OUTPUT_DIR = path.join(ROOT, 'public', 'resources', 'manuals');
+
+interface ManualConfig {
+  id: string;
+  label: string;
+  htmlFile: string;
+  outputFile: string;
+}
+
+const MANUALS: ManualConfig[] = [
+  {
+    id: '1',
+    label: 'Rose Meditation — Level 1',
+    htmlFile: 'rose-meditation-level-1.html',
+    outputFile: 'ROSES-OS-Level-1-Manual-EN.pdf',
+  },
+  {
+    id: '12',
+    label: 'Rose Meditation — Levels 1 & 2',
+    htmlFile: 'roses-manual-1-and-2.html',
+    outputFile: 'ROSES-OS-Level-2-Manual-EN.pdf',
+  },
+  {
+    id: '3',
+    label: 'Rose Meditation — Level 3',
+    htmlFile: 'roses-manual-3.html',
+    outputFile: 'ROSES-OS-Level-3-Manual-EN.pdf',
+  },
+];
+
+// ---------------------------------------------------------------------------
+// Step 1: Sync teaching images into the manual build directory
+// ---------------------------------------------------------------------------
+
+function syncTeachingImages(): { copied: number; skipped: number } {
+  let copied = 0;
+  let skipped = 0;
+
+  if (!fs.existsSync(TEACHING_IMAGES_DIR)) {
+    console.error(`  Teaching images directory not found: ${TEACHING_IMAGES_DIR}`);
+    process.exit(1);
+  }
+
+  if (!fs.existsSync(MANUAL_IMAGES_DIR)) {
+    fs.mkdirSync(MANUAL_IMAGES_DIR, { recursive: true });
+  }
+
+  const teachingFiles = fs.readdirSync(TEACHING_IMAGES_DIR).filter(
+    (f) => f.startsWith('teaching-') && /\.(png|jpg|jpeg|webp|svg)$/i.test(f),
+  );
+
+  for (const file of teachingFiles) {
+    const src = path.join(TEACHING_IMAGES_DIR, file);
+    const dest = path.join(MANUAL_IMAGES_DIR, file);
+
+    const srcStat = fs.statSync(src);
+    const destExists = fs.existsSync(dest);
+
+    if (destExists) {
+      const destStat = fs.statSync(dest);
+      if (srcStat.size === destStat.size && srcStat.mtimeMs <= destStat.mtimeMs) {
+        skipped++;
+        continue;
+      }
+    }
+
+    fs.copyFileSync(src, dest);
+    copied++;
+  }
+
+  return { copied, skipped };
+}
+
+// ---------------------------------------------------------------------------
+// Step 2: Build a single manual PDF
+// ---------------------------------------------------------------------------
+
+async function buildManualPdf(config: ManualConfig): Promise<string> {
+  const htmlPath = path.join(MANUAL_DIR, config.htmlFile);
+  const outputPath = path.join(OUTPUT_DIR, config.outputFile);
+
+  if (!fs.existsSync(htmlPath)) {
+    throw new Error(`HTML file not found: ${htmlPath}`);
+  }
+
+  if (!fs.existsSync(OUTPUT_DIR)) {
+    fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+  }
+
+  const browser = await puppeteer.launch({
+    executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+    headless: true,
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  });
+
+  try {
+    const page = await browser.newPage();
+
+    await page.goto(`file://${htmlPath}`, {
+      waitUntil: 'networkidle0',
+      timeout: 30000,
+    });
+
+    await page.evaluateHandle('document.fonts.ready');
+    await new Promise((r) => setTimeout(r, 2000));
+
+    await page.pdf({
+      path: outputPath,
+      width: '8.5in',
+      height: '11in',
+      printBackground: true,
+      margin: { top: '0', right: '0', bottom: '0', left: '0' },
+      preferCSSPageSize: true,
+    });
+  } finally {
+    await browser.close();
+  }
+
+  const stats = fs.statSync(outputPath);
+  return (stats.size / (1024 * 1024)).toFixed(2);
+}
+
+// ---------------------------------------------------------------------------
+// Step 3: Validate that all images referenced in HTML files exist
+// ---------------------------------------------------------------------------
+
+function validateImages(config: ManualConfig): string[] {
+  const htmlPath = path.join(MANUAL_DIR, config.htmlFile);
+  const html = fs.readFileSync(htmlPath, 'utf-8');
+  const missing: string[] = [];
+
+  const imgRegex = /<img[^>]+src="([^"]+)"/g;
+  let match;
+  while ((match = imgRegex.exec(html)) !== null) {
+    const imgSrc = match[1];
+    if (imgSrc.startsWith('http://') || imgSrc.startsWith('https://')) continue;
+    const imgPath = path.resolve(MANUAL_DIR, imgSrc);
+    if (!fs.existsSync(imgPath)) {
+      missing.push(imgSrc);
+    }
+  }
+
+  return missing;
+}
+
+// ---------------------------------------------------------------------------
+// Main
+// ---------------------------------------------------------------------------
+
+async function main() {
+  const args = process.argv.slice(2);
+  const levelArg = args.includes('--level') ? args[args.indexOf('--level') + 1] : null;
+  const skipSync = args.includes('--skip-sync');
+
+  console.log('=========================================================');
+  console.log('  ROSES OS — Manual PDF Builder');
+  console.log('=========================================================\n');
+
+  // Determine which manuals to build
+  const manualsToBuild = levelArg
+    ? MANUALS.filter((m) => m.id === levelArg)
+    : MANUALS;
+
+  if (manualsToBuild.length === 0) {
+    console.error(`  No manual found for level "${levelArg}".`);
+    console.error(`  Available: ${MANUALS.map((m) => m.id).join(', ')}`);
+    process.exit(1);
+  }
+
+  // Step 1: Sync teaching images
+  if (!skipSync) {
+    console.log('  [1/3] Syncing teaching images...');
+    const { copied, skipped } = syncTeachingImages();
+    console.log(`         ${copied} copied, ${skipped} already up-to-date\n`);
+  } else {
+    console.log('  [1/3] Skipping image sync (--skip-sync)\n');
+  }
+
+  // Step 2: Validate images
+  console.log('  [2/3] Validating image references...');
+  let hasWarnings = false;
+  for (const manual of manualsToBuild) {
+    const missing = validateImages(manual);
+    if (missing.length > 0) {
+      hasWarnings = true;
+      console.warn(`\n    ${manual.label}:`);
+      for (const m of missing) {
+        console.warn(`      WARNING: missing image — ${m}`);
+      }
+    }
+  }
+  if (hasWarnings) {
+    console.warn('\n         Some images are missing (will appear blank in PDF).');
+    console.warn('         Run image generation scripts to create them.\n');
+  } else {
+    console.log('         All images found.\n');
+  }
+
+  // Step 3: Build PDFs
+  console.log('  [3/3] Building PDFs...\n');
+  for (const manual of manualsToBuild) {
+    process.stdout.write(`    ${manual.label} ... `);
+    try {
+      const sizeMB = await buildManualPdf(manual);
+      console.log(`${sizeMB} MB → ${manual.outputFile}`);
+    } catch (err) {
+      console.error(`FAILED`);
+      console.error(`    ${err}`);
+      process.exit(1);
+    }
+  }
+
+  console.log('\n=========================================================');
+  console.log(`  Done. ${manualsToBuild.length} manual(s) built.`);
+  console.log(`  Output: ${OUTPUT_DIR}`);
+  console.log('=========================================================\n');
+}
+
+main().catch((err) => {
+  console.error('Fatal error:', err);
+  process.exit(1);
+});

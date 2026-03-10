@@ -10,7 +10,11 @@
     "type-check": "tsc --noEmit",
     "setup": "node setup/wizard.mjs",
     "test": "echo \"No tests yet\" && exit 0",
-    "icons": "node scripts/generate-favicons.mjs"
+    "icons": "node scripts/generate-favicons.mjs",
+    "build:manuals": "npx tsx scripts/build-manuals.ts",
+    "build:manuals:l1": "npx tsx scripts/build-manuals.ts --level 1",
+    "build:manuals:l12": "npx tsx scripts/build-manuals.ts --level 12",
+    "build:manuals:l3": "npx tsx scripts/build-manuals.ts --level 3"
   },
   "dependencies": {
     "@google/genai": "^1.41.0",
@@ -40,6 +44,7 @@
     "@types/three": "^0.182.0",
     "eslint": "^9",
     "eslint-config-next": "16.1.4",
+    "puppeteer-core": "^24.38.0",
     "tailwindcss": "^4",
     "to-ico": "^1.1.5",
     "typescript": "^5.9.3"
