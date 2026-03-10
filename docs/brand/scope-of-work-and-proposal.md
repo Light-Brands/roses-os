@@ -2,7 +2,7 @@
 
 **Prepared by:** Jennifer Brooke Lawless
 **Date:** March 5, 2026
-**Version:** 1.1 -- Updated March 8, 2026
+**Version:** 1.2 -- Updated March 10, 2026
 
 ---
 
@@ -23,19 +23,19 @@ This document is intended to serve as a record of the value that has been create
 ## 1. What Has Been Built (Completed Work)
 
 ### 1.1 Full-Stack Web Platform
-A complete Next.js 16 application with 44+ pages (including 20 geo landing pages + meditation hub), 62+ custom components, 26,000+ lines of TypeScript/React code across 144 source files, and a modular architecture designed for long-term scalability.
+A complete Next.js 16 application with 43+ pages (including 20 geo landing pages + meditation hub), 65+ custom components, 27,500+ lines of TypeScript/React code across 158 source files, and a modular architecture designed for long-term scalability.
 
 | Area | Details |
 |------|---------|
 | **Framework** | Next.js 16, React 19, TypeScript |
-| **Pages** | 44+ primary routes across 5 sections (public site, teaching, forms, admin UI scaffold, API) — including 20 geo landing pages and meditation hub |
+| **Pages** | 43+ primary routes across 6 sections (public site, invitation, teaching, forms, admin UI scaffold, API) — including 20 geo landing pages and meditation hub |
 | **Components** | 65+ reusable components built from scratch |
 | **Styling** | Tailwind CSS 4 with full custom design system |
 | **Animation** | Framer Motion + GSAP for page transitions, scroll effects, micro-interactions |
 | **3D Graphics** | Three.js / React Three Fiber -- custom 3D rose with shader effects, bloom, particles |
-| **Backend** | Supabase integration (auth, database), 3 functional + 3 stub API endpoints |
+| **Backend** | Supabase integration (auth, database), 7 functional + 3 stub API endpoints (10 total) |
 | **AI Integration** | Google GenAI SDK for personalization features |
-| **SEO & GEO** | Structured data (JSON-LD) on all pages, FAQPage schema, Course schema, sitemap, robots.txt with AI bot directives, programmatic geo pages for 20 cities |
+| **SEO & GEO** | Structured data (JSON-LD) on all pages, FAQPage schema, Course schema, EducationalOrganization + WebSite + WebPage + Breadcrumb schemas, sitemap, robots.txt with AI bot directives (GPTBot, PerplexityBot, ClaudeBot, etc.), programmatic geo pages for 20 cities, meditation hub — **Complete** |
 
 ### 1.2 Teaching Platform (Password-Protected)
 A dedicated teaching section with 3 levels of Rose Meditation content:
@@ -122,14 +122,14 @@ All strategic and brand documentation living in the repository:
 
 **Status:** Ready to move to visual design as soon as founder inputs are received.
 
-### 2.4 Platform UX Refinement
+### 2.4 Platform UX Refinement -- COMPLETE
 - 9 usability issues identified via comprehensive UX audit
 - 6-phase implementation plan with concrete file-level tasks
 - Navigation clarity (Programs, About, Our Team), enrollment flow consolidation, content deduplication, Offerings page progressive disclosure, footer enrichment, teaching gate context
 - Sacred symbol GEO content added (rose as oldest spiritual symbol + FAQ schema)
 - Detailed plan: `docs/website-usability-action-plan.md`
 
-**Status:** Implementation complete. 12 files modified across 6 phases.
+**Status:** Complete. 12 files modified across 6 phases. *(Moved to Phase 1 completed milestones.)*
 
 ---
 
@@ -138,31 +138,37 @@ All strategic and brand documentation living in the repository:
 ### Phase 1 -- Completed
 | # | Deliverable | Description |
 |---|-------------|-------------|
-| 1 | **Web Platform MVP** | Full-stack Next.js application with 23 pages, 65+ components, 3D visualization, authentication, admin panel |
+| 1 | **Web Platform MVP** | Full-stack Next.js application with 43+ pages, 65+ components, 3D visualization, authentication, admin panel |
 | 2 | **Teaching Platform** | 3-level password-protected teaching system with slides, manuals, multilingual support, downloads |
 | 3 | **Design System** | Complete brand-aligned design system implemented across all platform sections |
 | 4 | **Content Architecture** | Brand DNA, program materials, training manual, designer specs -- all documented and version-controlled |
 | 5 | **Multilingual Infrastructure** | 4-language support (EN, ES, PT, EL) across teaching content and UI |
 | 6 | **Admin Dashboard (UI Scaffold)** | 8 admin pages designed and built with demo data -- front-end ready, not yet connected to live backend |
-| 7 | **API Layer** | 3 functional Supabase endpoints (content, media, feedback), 3 stub endpoints, auth integration |
+| 7 | **API Layer** | 7 functional endpoints (content, media, feedback, AI personalize, 3 PDF generators), 3 stub endpoints, auth integration |
 | 8 | **3D Brand Experience** | Custom Three.js rose with shaders, particles, bloom -- unique brand differentiator |
+| 9 | **Platform UX Refinement** | 6-phase usability overhaul: enrollment flow consolidation, clearer nav labels, content deduplication, Offerings section nav, multi-column footer with trust signals, teaching gate context -- 12 files modified, 9 issues resolved |
+| 10 | **SEO & GEO / Content Architecture** | 20 geo landing pages, meditation hub, FAQ schema (15 geo + 8 page-specific questions), Course + EducationalOrganization + WebSite + WebPage + Breadcrumb JSON-LD schemas, AI bot directives, sitemap, robots.txt -- programmatic SEO & Generative Engine Optimization |
 
 ### Phase 2 -- In Progress
 | # | Deliverable | Description |
 |---|-------------|-------------|
-| 9 | **MDR Visual Manual** | 46-page teacher's resource manual with custom illustrations |
-| 10 | **Student Manuals** | Redesigned Level 2 & Level 3 manuals in 4 languages (8-12 PDFs) |
-| 11 | **Brand Book** | 110-130 page brand identity book with visual design |
+| 11 | **MDR Visual Manual** | 46-page teacher's resource manual with custom illustrations |
+| 12 | **Student Manuals** | Redesigned Level 2 & Level 3 manuals in 4 languages (8-12 PDFs) |
+| 13 | **Brand Book** | 110-130 page brand identity book with visual design |
 
 ### Phase 3 -- Proposed Next
 | # | Deliverable | Description |
 |---|-------------|-------------|
-| 12 | **Platform UX Refinement** | 6-phase website usability overhaul: enrollment flow consolidation (/enroll + /contribute merged), clearer nav labels (Programs, About, Our Team), content deduplication across Home/Invitation/About, Offerings page section nav + progressive disclosure, multi-column footer with trust signals, teaching gate context. Sacred symbol GEO content and FAQ schema added. 12 files modified, 9 usability issues resolved. **Status: Complete.** |
-| 13 | **GEO / Content Architecture** | 20 geo landing pages, FAQ with schema markup, Course structured data, sitemap/robots, AI bot directives, meditation hub page — programmatic SEO & Generative Engine Optimization. **Status: Complete.** [Detailed plan →](../geo-content/implementation-plan.md) |
-| 14 | **Rose App Foundation** | Initial architecture for the Rose App (daily practice -- spine of global expression) |
-| 15 | **Aura Levels Integration** | Aura Reading Levels 1-5 content and teaching structure *(pending decision)* |
-| 16 | **Animated Visual Technique Demos** | Upload and integrate existing animated visual aids demonstrating Rose Meditation techniques (grounding cord, golden sun, four roses, energy circuits, cleansing) into the website teaching platform |
-| 17 | **Guardian & Testimonial Videos** | Upload and integrate existing guardian and testimonial videos on the guardians page and community page |
+| ~~--~~ | ~~**Platform UX Refinement**~~ | **Moved to Phase 1 (Deliverable 9). Complete.** |
+| ~~--~~ | ~~**GEO / Content Architecture**~~ | **Moved to Phase 1 (Deliverable 10). Complete.** |
+| 14 | **Payment Link Integration** | Stripe Payment Links or equivalent embedded on contribution, enrollment, and dedicated payment page. Branded checkout, mobile-optimized. *(Flagged -- near-term.)* |
+| 15 | **Mail Service Integration** | Transactional email service (Resend) for enrollment confirmations, contribution receipts, contact form notifications, welcome emails. Branded React Email templates. *(Flagged -- near-term.)* |
+| 16 | **Newsletter Integration** | Email capture forms, subscriber management in Supabase, periodic newsletters via Resend/ConvertKit, segment-based lists, GDPR-compliant double opt-in. *(Flagged -- near-term.)* |
+| 17 | **Social Media Linking** | Add social media profile links (footer, guardians, community, contact), Open Graph + Twitter Card meta tags for rich social sharing previews on all public pages. *(Flagged -- near-term.)* |
+| 18 | **Rose App Foundation** | Initial architecture for the Rose App (daily practice -- spine of global expression) |
+| 19 | **Aura Levels Integration** | Aura Reading Levels 1-5 content and teaching structure *(pending decision)* |
+| 20 | **Animated Visual Technique Demos** | Upload and integrate existing animated visual aids demonstrating Rose Meditation techniques (grounding cord, golden sun, four roses, energy circuits, cleansing) into the website teaching platform |
+| 21 | **Guardian & Testimonial Videos** | Upload and integrate existing guardian and testimonial videos on the guardians page and community page |
 
 ---
 
@@ -180,11 +186,11 @@ All work has been contributed at **100% off market value** -- no payment is requ
 
 | Deliverable | Scope |
 |-------------|-------|
-| **Web Platform MVP** | 23 pages, 65+ components, responsive, animations, page transitions |
+| **Web Platform MVP** | 43+ pages, 65+ components, responsive, animations, page transitions |
 | **Design System** | Full color palette, typography, component library, dark mode, branded templates |
 | **3D Brand Experience** | Custom Three.js rose, GLSL shaders, bloom/particles, 48 textures, responsive canvas |
 
-**Acceptance Criteria:** Platform loads and renders all 23 pages with responsive design, design system applied consistently, 3D rose visualization functional across devices.
+**Acceptance Criteria:** Platform loads and renders all 43+ pages with responsive design, design system applied consistently, 3D rose visualization functional across devices.
 
 | | Market Value |
 |--|--------------|
@@ -213,9 +219,9 @@ All work has been contributed at **100% off market value** -- no payment is requ
 | Deliverable | Scope |
 |-------------|-------|
 | **Admin Dashboard (UI Scaffold)** | 8 admin pages designed and built with demo data -- not yet connected to live backend |
-| **API Layer & Backend** | 3 functional endpoints (content, media, feedback) with Supabase; 3 stub endpoints (enrollment, contribution, agreements); auth (OAuth + SSR) |
+| **API Layer & Backend** | 7 functional endpoints (content, media, feedback, AI personalize, 3 PDF generators) with Supabase; 3 stub endpoints (enrollment, contribution, agreements); auth (OAuth + SSR) |
 
-**Acceptance Criteria:** Admin UI renders all 8 pages with demo data, API endpoints return expected responses, authentication flow (OAuth + SSR) functional.
+**Acceptance Criteria:** Admin UI renders all 8 pages with demo data, all 10 API endpoints return expected responses, authentication flow (OAuth + SSR) functional.
 
 | | Market Value |
 |--|--------------|
@@ -223,13 +229,41 @@ All work has been contributed at **100% off market value** -- no payment is requ
 
 ---
 
+#### Milestone 4: Platform UX Refinement
+
+| Deliverable | Scope |
+|-------------|-------|
+| **Platform UX Refinement** | 6-phase usability overhaul: (1) Enrollment flow consolidation (/enroll + /contribute merged) (2) Clearer nav labels + CTA → /offerings (3) Content deduplication + sacred symbol GEO content (4) Offerings section nav + progressive disclosure (5) Multi-column footer with trust signals (6) Teaching gate context -- 12 files modified, 9 issues resolved |
+
+**Acceptance Criteria:** All 9 usability issues resolved across 6 phases, updated navigation flows functional, footer enriched with trust signals, enrollment flow consolidated.
+
 | | Market Value |
 |--|--------------|
-| **Phase 1 Total (All Milestones)** | **$151,000** |
+| **Milestone 4 Total** | **$15,000** |
+
+---
+
+#### Milestone 5: SEO & GEO / Content Architecture
+
+| Deliverable | Scope |
+|-------------|-------|
+| **GEO / Content Architecture** | 20 geo landing pages (`/meditation/[city]`), meditation hub page (`/meditation`), FAQ content with schema markup (15 geo + 8 page-specific questions), Course structured data, WebPage + Breadcrumb JSON-LD on all content pages, EducationalOrganization + WebSite schemas, AI bot directives (GPTBot, PerplexityBot, ClaudeBot, etc.), sitemap, robots.txt -- programmatic SEO & Generative Engine Optimization |
+
+**Acceptance Criteria:** All 20 geo landing pages render with city-specific content and FAQ schema, structured data validates on all pages, sitemap includes all routes, robots.txt properly configured for search engines and AI bots.
+
+| | Market Value |
+|--|--------------|
+| **Milestone 5 Total** | **$12,000** |
+
+---
+
+| | Market Value |
+|--|--------------|
+| **Phase 1 Total (All Milestones)** | **$178,000** |
 
 ### 4.2 Phase 2 -- In-Progress Milestones
 
-#### Milestone 4: MDR Teacher's Visual Manual
+#### Milestone 6: MDR Teacher's Visual Manual
 
 | Deliverable | Scope |
 |-------------|-------|
@@ -239,11 +273,11 @@ All work has been contributed at **100% off market value** -- no payment is requ
 
 | | Market Value |
 |--|--------------|
-| **Milestone 4 Total** | **$14,000** |
+| **Milestone 6 Total** | **$14,000** |
 
 ---
 
-#### Milestone 5: Student Manuals Redesign
+#### Milestone 7: Student Manuals Redesign
 
 | Deliverable | Scope |
 |-------------|-------|
@@ -253,11 +287,11 @@ All work has been contributed at **100% off market value** -- no payment is requ
 
 | | Market Value |
 |--|--------------|
-| **Milestone 5 Total** | **$16,000** |
+| **Milestone 7 Total** | **$16,000** |
 
 ---
 
-#### Milestone 6: Brand Book
+#### Milestone 8: Brand Book
 
 | Deliverable | Scope |
 |-------------|-------|
@@ -267,7 +301,7 @@ All work has been contributed at **100% off market value** -- no payment is requ
 
 | | Market Value |
 |--|--------------|
-| **Milestone 6 Total** | **$24,000** |
+| **Milestone 8 Total** | **$24,000** |
 
 ---
 
@@ -283,12 +317,16 @@ Phase 3 is structured as **individual project milestones** -- each scoped as a s
 
 | Project | Deliverables | Market Value |
 |---------|-------------|--------------|
-| **Platform UX Refinement** | 6-phase usability overhaul: (1) Enrollment flow consolidation (2) Clearer nav labels + CTA → /offerings (3) Content deduplication + sacred symbol GEO content (4) Offerings section nav + progressive disclosure (5) Multi-column footer with trust signals (6) Teaching gate context — 12 files modified, 9 issues resolved. **Complete.** | $15,000 |
-| **GEO / Content Architecture** | 20 geo landing pages (`/meditation/[city]`), meditation hub page (`/meditation`), FAQ content with schema markup (15 geo + 8 page-specific questions), Course structured data, WebPage + Breadcrumb JSON-LD on all content pages, EducationalOrganization + WebSite schemas, AI bot directives (GPTBot, PerplexityBot, ClaudeBot, etc.), sitemap, robots.txt — programmatic SEO & Generative Engine Optimization. **Complete.** [Detailed plan →](../geo-content/implementation-plan.md) | $12,000 |
+| ~~**Platform UX Refinement**~~ | ~~6-phase usability overhaul — 12 files modified, 9 issues resolved.~~ **Moved to Phase 1, Milestone 4. Complete.** | ~~$15,000~~ |
+| ~~**GEO / Content Architecture**~~ | ~~20 geo landing pages, meditation hub, FAQ schema, structured data, AI bot directives.~~ **Moved to Phase 1, Milestone 5. Complete.** [Detailed plan →](../geo-content/implementation-plan.md) | ~~$12,000~~ |
+| **Payment Link Integration** | Integrate a hosted payment link (Stripe Payment Links or equivalent) into the platform -- embed on contribution page, enrollment flow, and a dedicated payment page. Branded checkout experience, mobile-optimized, with confirmation redirects back to the platform. Lightweight integration that doesn't require a full custom checkout build. *(Flagged for near-term implementation.)* | $5,000 |
+| **Mail Service Integration** | Connect a transactional email service (Resend recommended for Next.js) to power platform emails: enrollment confirmations, contribution receipts, contact form notifications, welcome emails, and password reset flows. Branded email templates using React Email. API route integration with Supabase triggers. *(Flagged for near-term implementation.)* | $6,000 |
+| **Newsletter Integration** | Email capture forms on high-traffic pages (homepage, invitation, footer), subscriber storage in Supabase, integration with email platform (Resend or ConvertKit) for periodic newsletters (teachings, community updates, program announcements). Double opt-in, GDPR-compliant, segment-based lists (prospective students, practitioners, general community). **Difficulty: Low-Medium** -- can be built in 2-3 days using existing infrastructure. *(Flagged for near-term implementation.)* | $5,000 |
 | **Rose App Foundation** | Initial architecture and prototype for the Rose App (daily practice) | $25,000 |
 | **Aura Levels Integration** | Aura Reading Levels 1-5 content and teaching structure *(pending decision)* | $18,000 |
 | **Platform Maintenance Sprint** | Security audit, bug fixes, dependency updates, hosting optimization -- scoped per engagement | $9,000 |
 | **Animated Visual Technique Demos** | Upload existing technique demonstration videos, build video player components, integrate into teaching platform organized by technique category | $12,000 |
+| **Social Media Linking** | Add social media profile links across the platform (footer, guardians, community, contact pages). Open Graph and Twitter Card meta tags for rich social sharing previews. Optional social feed embeds (Instagram grid, YouTube latest). *(Flagged for near-term implementation.)* | $3,000 |
 | **Guardian & Testimonial Videos** | Upload existing guardian and testimonial videos, build video sections on guardians page and community page | $8,000 |
 
 *Each project is scoped, priced, and accepted independently. No ongoing commitment -- projects are engaged as needed.*
@@ -311,6 +349,7 @@ The following larger platform features are identified from the designer plan and
 | **Blog / Written Content Platform** | Blog section for teachings, reflections, guardian writings, and community stories. CMS integration for easy publishing without developer involvement. Supports SEO, community engagement, and ongoing content marketing. | Content strategy and publishing workflow needed. Can be built independently. |
 | **YouTube Content Integration** | Embed and organize YouTube video content on the platform. Dedicated video sections, playlists organized by topic (teachings, testimonials, events), and a searchable teaching video library. | Requires YouTube channel and content to be ready. Can be built independently. |
 | **Customer Testimonials Section** | Dedicated testimonials page and embedded testimonial components across key pages (homepage, invitation, community). Collect, curate, and display community stories, experiences, and transformation journeys. | Requires testimonial content (written and/or video) to be gathered from community. |
+| **Social Media Linking & Integration** | Add social media profile links across the platform -- footer icons, guardians page, community page, and contact page. Link to Instagram, YouTube, Facebook, and any other active profiles. Add Open Graph and Twitter Card meta tags for rich social sharing previews on all public pages. Optionally embed social feeds (Instagram grid, YouTube latest). | Requires active social media profile URLs. Can be built independently. |
 
 ---
 
@@ -318,13 +357,13 @@ The following larger platform features are identified from the designer plan and
 
 | Phase | Market Value | Contribution |
 |-------|--------------|--------------|
-| Phase 1 -- 3 Milestones (Completed) | $151,000 | Gifted (100% off) |
+| Phase 1 -- 5 Milestones (Completed) | $178,000 | Gifted (100% off) |
 | Phase 2 -- 3 Milestones (In Progress) | $54,000 | Gifted (100% off) |
 | Phase 3 -- Per-Project Milestones | Scoped per project | For discussion |
 | | | |
-| **Total (Phases 1 & 2)** | **$205,000** | **$0 required** |
+| **Total (Phases 1 & 2)** | **$232,000** | **$0 required** |
 
-The market value represents **$205,000 in value** contributed to the ROSES OS mission. No compensation is required -- any gifts in kind or in exchange are welcome but entirely at the team's discretion.
+The market value represents **$232,000 in value** contributed to the ROSES OS mission. No compensation is required -- any gifts in kind or in exchange are welcome but entirely at the team's discretion.
 
 ### 4.5 Gifts in Kind
 
@@ -340,7 +379,18 @@ Ongoing contributions are expected to focus on:
 - **Image updates & creation** -- Refreshing existing imagery and creating new visual assets as needed
 - **Language expansion on Teachers Portal** -- Adding new language support and translations to the teaching platform
 
-Larger platform features (Payment Page, Email Collection, Blog, YouTube integration, customer testimonials, and other build-outs) are documented in this proposal for reference under Future Platform Builds.
+#### Near-Term Flagged Items
+
+The following integrations have been flagged for near-term implementation:
+
+1. **Payment Link Integration** ($5,000) -- Stripe Payment Links embedded on contribution and enrollment pages
+2. **Mail Service Integration** ($6,000) -- Transactional emails for confirmations, receipts, notifications via Resend + React Email
+3. **Newsletter Integration** ($5,000) -- Email capture, subscriber management, periodic newsletters
+4. **Social Media Linking** ($3,000) -- Social profile links across platform, Open Graph meta tags for sharing
+
+**Total near-term flagged items: $19,000 market value**
+
+Larger platform features (Full Payment Page, Blog, YouTube integration, customer testimonials, localization, and other build-outs) are documented in this proposal for reference under Future Platform Builds.
 
 ---
 
@@ -399,7 +449,7 @@ For context on the technical foundation that supports everything above:
 
 | Infrastructure | Details |
 |----------------|---------|
-| **Repository** | GitHub (Light-Brands/roses-os) -- version-controlled, 133+ commits, 29+ merged PRs |
+| **Repository** | GitHub (Light-Brands/roses-os) -- version-controlled, 143+ commits, 43+ merged PRs |
 | **Hosting** | Production-ready Next.js deployment |
 | **Database** | Supabase (PostgreSQL) with SSR auth |
 | **AI Services** | Google GenAI integration |
@@ -409,18 +459,17 @@ For context on the technical foundation that supports everything above:
 
 ### Codebase & Asset Scale
 
-The ROSES OS platform comprises over **57,500 lines of authored source code, configuration, and documentation** across 200+ files -- plus **127 visual and media assets** (160MB) including custom 3D models, brand photography, and multilingual PDF manuals.
+The ROSES OS platform comprises over **61,800 lines of authored source code, configuration, and documentation** across 216+ files -- plus **124 visual and media assets** (155MB) including custom 3D models, brand photography, and multilingual PDF manuals.
 
 #### Authored Lines Breakdown
 
 | Category | Lines | Description |
 |----------|------:|-------------|
-| TypeScript / TSX | 27,507 | Core application code -- pages, components, data layers, API routes |
-| CSS / JS / HTML | 1,636 | Styles, scripts, templates |
+| TypeScript / TSX | 27,688 | Core application code -- pages, components, data layers, API routes |
+| CSS / JS / MJS | 2,282 | Styles, scripts, build tools |
 | YAML / JSON | 17,497 | Configuration, structured data, content schemas |
-| Brand & Project Documentation | 6,149 | Brand DNA, scope of work, designer plans, content plans |
-| AI Workflows & Design Docs | ~4,750 | Development processes, prompt library, design system principles |
-| **Total** | **~57,500** | |
+| Brand & Project Documentation | 14,429 | Brand DNA, scope of work, designer plans, content plans, geo content, UX plans |
+| **Total** | **~61,800** | |
 
 #### Visual & Media Assets
 
@@ -430,11 +479,11 @@ The ROSES OS platform comprises over **57,500 lines of authored source code, con
 | Page Design Screenshots | 10 | 22MB | Full-page design references |
 | 3D Rose Model + Textures | 27 | 2.6MB | Custom .glb model with 26 leaf/petal textures |
 | PDF Manuals (4 languages) | 9 | 25MB | Student manuals in EN, ES, PT, EL |
-| **Total** | **127** | **160MB** | |
+| **Total** | **124** | **155MB** | |
 
 #### Industry Benchmark
 
-At industry-standard developer productivity rates of **5,000--10,000 lines per month** (IEEE/COCOMO benchmarks for production-quality, tested, deployed code), the authored codebase alone represents approximately **12 months of full-time senior developer effort**.
+At industry-standard developer productivity rates of **5,000--10,000 lines per month** (IEEE/COCOMO benchmarks for production-quality, tested, deployed code), the authored codebase alone represents approximately **12-13 months of full-time senior developer effort**.
 
 The visual and media assets -- custom 3D models with hand-tuned shader effects, multilingual PDF generation, and brand imagery -- represent significant additional creative and production work not captured in line counts.
 
@@ -450,6 +499,8 @@ The visual and media assets -- custom 3D models with hand-tuned shader effects, 
 4. **UX review session** -- ~~As Diego suggested, walk through the platform flow holistically with Dan's technical input~~ **Complete.** 6-phase UX overhaul implemented (see `docs/website-usability-action-plan.md`)
 5. **Agreements finalized** -- Clear ownership, deliverables, and compensation structure documented
 6. **UX verification** -- Test the updated user journeys: Home → Programs → Enroll, About page with sacred symbol content, enriched footer, consolidated enrollment flow
+7. **Near-term integrations** -- Implement flagged items: Payment Link, Mail Service, Newsletter, Social Media Linking
+8. **Art Director role** -- Suggestion: transition developer role toward Art Director capacity for future deliverables -- guiding visual direction, brand consistency, and creative oversight across manuals, brand book, platform imagery, and future builds. This allows more of the visual/design deliverables in Phase 2 and Phase 3 to move forward with creative leadership alongside the existing technical infrastructure
 
 ---
 
