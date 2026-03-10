@@ -514,7 +514,7 @@ The visual and media assets -- custom 3D models with hand-tuned shader effects, 
 5. **Agreements finalized** -- Clear ownership, deliverables, and compensation structure documented
 6. **UX verification** -- Test the updated user journeys: Home → Programs → Enroll, About page with sacred symbol content, enriched footer, consolidated enrollment flow
 7. **Near-term integrations** -- Implement flagged items: Payment Link, Mail Service, Newsletter, Social Media Linking
-8. **Art Director role** -- Suggestion: transition developer role toward Art Director capacity for future deliverables -- guiding visual direction, brand consistency, and creative oversight across manuals, brand book, platform imagery, and future builds. This allows more of the visual/design deliverables in Phase 2 and Phase 3 to move forward with creative leadership alongside the existing technical infrastructure
+8. **Creative / Art Director role** -- Suggestion: transition developer role toward Creative / Art Director capacity for future deliverables -- guiding visual direction, brand consistency, and creative oversight across manuals, brand book, platform imagery, and future builds. This allows more of the visual/design deliverables in Phase 2 and Phase 3 to move forward with creative leadership alongside the existing technical infrastructure
 
 ---
 
