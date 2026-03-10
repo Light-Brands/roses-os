@@ -22,7 +22,7 @@ This document is intended to serve as a record of the value that has been create
 
 In addition to the platform and brand development work, this scope encompasses community stewardship:
 
-> **Decision needed:** The title for this guardianship role -- options include **Guardian of the Hummingbird** (covering all community stewardship under one title, as it makes sense within the school) or **Guardian of the Hummingbird and Rose Meditation** (explicitly naming both areas of responsibility). To be decided with the team.
+> **Decided:** The title for this guardianship role is **Guardian of the Hummingbird** -- covering all community stewardship under one title.
 
 The stewardship includes:
 
@@ -389,7 +389,7 @@ Any compensation the team chooses to offer is considered a **gift in kind or in 
 
 Ongoing contributions are expected to focus on:
 
-- **Community Stewardship (Guardian of the Hummingbird / Rose Meditation)** -- Facilitating the weekly Hummingbird gathering (including posting Zoom meeting details to the community and coordinating backup facilitator coverage when unable to attend), attending and helping facilitate monthly Rose Q&A sessions, and leading Rose Meditations when no other facilitator is available *(title pending decision -- see Overview note)*
+- **Community Stewardship (Guardian of the Hummingbird)** -- Facilitating the weekly Hummingbird gathering (including posting Zoom meeting details to the community and coordinating backup facilitator coverage when unable to attend), attending and helping facilitate monthly Rose Q&A sessions, and leading Rose Meditations when no other facilitator is available
 - **Manual updates** -- Updating and maintaining teaching manuals as content evolves
 - **Image updates & creation** -- Refreshing existing imagery and creating new visual assets as needed
 - **Language expansion on Teachers Portal** -- Adding new language support and translations to the teaching platform
@@ -500,7 +500,7 @@ The ROSES OS platform comprises over **62,100 lines of authored source code, con
 
 #### Industry Benchmark
 
-At industry-standard developer productivity rates of **5,000--10,000 lines per month** (IEEE/COCOMO benchmarks for production-quality, tested, deployed code), the authored codebase alone represents approximately **12-13 months of full-time senior developer effort**. This does not account for the ongoing community stewardship work as Guardian of the Hummingbird and supporting the Guardian of Rose Meditation.
+At industry-standard developer productivity rates of **5,000--10,000 lines per month** (IEEE/COCOMO benchmarks for production-quality, tested, deployed code), the authored codebase alone represents approximately **12-13 months of full-time senior developer effort**. This does not account for the ongoing community stewardship work as Guardian of the Hummingbird.
 
 The visual and media assets -- custom 3D models with hand-tuned shader effects, multilingual PDF generation, and brand imagery -- represent significant additional creative and production work not captured in line counts.
 
