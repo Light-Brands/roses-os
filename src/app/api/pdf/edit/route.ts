@@ -62,6 +62,27 @@ async function embedImage(pdfDoc: PDFDocument, imageBytes: Uint8Array, mimeType:
   return pdfDoc.embedJpg(imageBytes);
 }
 
+/**
+ * Scale image dimensions to fit within a target rectangle while preserving
+ * aspect ratio, then center the result inside the rectangle.
+ */
+function fitImageToRect(
+  imgWidth: number,
+  imgHeight: number,
+  rectWidth: number,
+  rectHeight: number,
+  rectX: number,
+  rectY: number,
+) {
+  const scale = Math.min(rectWidth / imgWidth, rectHeight / imgHeight);
+  const drawWidth = imgWidth * scale;
+  const drawHeight = imgHeight * scale;
+  // Center the scaled image within the target rectangle
+  const drawX = rectX + (rectWidth - drawWidth) / 2;
+  const drawY = rectY + (rectHeight - drawHeight) / 2;
+  return { drawX, drawY, drawWidth, drawHeight };
+}
+
 function listImages(pdfDoc: PDFDocument): PdfImageInfo[] {
   const pages = pdfDoc.getPages();
   const images: PdfImageInfo[] = [];
@@ -212,7 +233,23 @@ export async function POST(request: NextRequest) {
       page.drawRectangle({ x, y, width, height, color: rgb(1, 1, 1) });
     }
 
-    page.drawImage(embeddedImage, { x, y, width, height });
+    // Scale the image to fit within the target rectangle while preserving
+    // its aspect ratio, then center it inside the rectangle.
+    const { drawX, drawY, drawWidth, drawHeight } = fitImageToRect(
+      embeddedImage.width,
+      embeddedImage.height,
+      width,
+      height,
+      x,
+      y,
+    );
+
+    page.drawImage(embeddedImage, {
+      x: drawX,
+      y: drawY,
+      width: drawWidth,
+      height: drawHeight,
+    });
     return savePdf(pdfDoc, formData);
   } catch (error) {
     console.error('POST /api/pdf/edit error:', error);
