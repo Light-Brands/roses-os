@@ -87,6 +87,26 @@ export const geoLocations: GeoLocation[] = [
     ],
   },
 
+  {
+    id: 'sedona',
+    slug: 'sedona',
+    city: 'Sedona',
+    region: 'Arizona',
+    country: 'United States',
+    timezoneKey: 'sanJose',
+    timezoneLabel: 'Mountain Standard Time (MST)',
+    intro:
+      'Join Rose Meditation and Aura Reading courses from Sedona, Arizona — one of the world\'s most recognized energy vortex sites. Live online classes at Mountain Standard Time hours — morning sessions that align with the red rock energy. Connect with a global community of 5,000+ initiates from the heart of the desert.',
+    keywords: [
+      'meditation classes sedona',
+      'spiritual retreat sedona arizona',
+      'aura reading course sedona',
+      'energy healing sedona',
+      'vortex meditation sedona',
+      'spiritual community sedona az',
+    ],
+  },
+
   // ─── Colombia / Central America Time ──────────────────────────────────────
   {
     id: 'bogota',
@@ -124,6 +144,25 @@ export const geoLocations: GeoLocation[] = [
     ],
   },
 
+  {
+    id: 'oaxaca',
+    slug: 'oaxaca',
+    city: 'Oaxaca',
+    region: 'Oaxaca',
+    country: 'Mexico',
+    timezoneKey: 'bogota',
+    timezoneLabel: 'Central Time (CST)',
+    intro:
+      'Join Rose Meditation and Aura Reading courses from Oaxaca, Mexico. Live online classes at Central Time hours — morning and midday sessions that complement the ancestral energy of this sacred land. Conecta con una comunidad global de más de 5,000 iniciados desde uno de los centros espirituales más profundos de México.',
+    keywords: [
+      'meditation classes oaxaca',
+      'retiro espiritual oaxaca',
+      'aura reading course oaxaca mexico',
+      'meditacion oaxaca',
+      'energy healing oaxaca',
+      'curso meditacion oaxaca',
+    ],
+  },
   {
     id: 'tulum',
     slug: 'tulum',
@@ -467,6 +506,26 @@ export const geoLocations: GeoLocation[] = [
       'aura reading course cyprus',
       'energy healing paphos',
       'spiritual development cyprus',
+    ],
+  },
+  // ─── AEST / Australia ──────────────────────────────────────────────────────
+  {
+    id: 'byron-bay',
+    slug: 'byron-bay',
+    city: 'Byron Bay',
+    region: 'New South Wales',
+    country: 'Australia',
+    timezoneKey: null,
+    timezoneLabel: 'Australian Eastern Time (AEST)',
+    intro:
+      'Join Rose Meditation and Aura Reading courses from Byron Bay, Australia. Live online classes are scheduled across multiple timezone bands — evening sessions available for Australian Eastern Time. Connect with a global community of 5,000+ initiates from one of the world\'s most beloved spiritual and wellness destinations.',
+    keywords: [
+      'meditation classes byron bay',
+      'spiritual retreat byron bay',
+      'aura reading course byron bay',
+      'energy healing byron bay australia',
+      'meditation course australia',
+      'spiritual community byron bay',
     ],
   },
 ];

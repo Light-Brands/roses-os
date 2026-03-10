@@ -23,19 +23,19 @@ This document is intended to serve as a record of the value that has been create
 ## 1. What Has Been Built (Completed Work)
 
 ### 1.1 Full-Stack Web Platform
-A complete Next.js 16 application with 43+ pages (including 20 geo landing pages + meditation hub), 65+ custom components, 27,500+ lines of TypeScript/React code across 158 source files, and a modular architecture designed for long-term scalability.
+A complete Next.js 16 application with 53+ pages (including 30 geo landing pages + meditation hub), 65+ custom components, 27,500+ lines of TypeScript/React code across 158 source files, and a modular architecture designed for long-term scalability.
 
 | Area | Details |
 |------|---------|
 | **Framework** | Next.js 16, React 19, TypeScript |
-| **Pages** | 43+ primary routes across 6 sections (public site, invitation, teaching, forms, admin UI scaffold, API) — including 20 geo landing pages and meditation hub |
+| **Pages** | 53+ primary routes across 6 sections (public site, invitation, teaching, forms, admin UI scaffold, API) — including 30 geo landing pages and meditation hub |
 | **Components** | 65+ reusable components built from scratch |
 | **Styling** | Tailwind CSS 4 with full custom design system |
 | **Animation** | Framer Motion + GSAP for page transitions, scroll effects, micro-interactions |
 | **3D Graphics** | Three.js / React Three Fiber -- custom 3D rose with shader effects, bloom, particles |
 | **Backend** | Supabase integration (auth, database), 7 functional + 3 stub API endpoints (10 total) |
 | **AI Integration** | Google GenAI SDK for personalization features |
-| **SEO & GEO** | Structured data (JSON-LD) on all pages, FAQPage schema, Course schema, EducationalOrganization + WebSite + WebPage + Breadcrumb schemas, sitemap, robots.txt with AI bot directives (GPTBot, PerplexityBot, ClaudeBot, etc.), programmatic geo pages for 20 cities, meditation hub — **Complete** |
+| **SEO & GEO** | Structured data (JSON-LD) on all pages, FAQPage schema, Course schema, EducationalOrganization + WebSite + WebPage + Breadcrumb schemas, sitemap, robots.txt with AI bot directives (GPTBot, PerplexityBot, ClaudeBot, etc.), programmatic geo pages for 27 cities across 6 timezone bands, meditation hub — **Complete** |
 
 ### 1.2 Teaching Platform (Password-Protected)
 A dedicated teaching section with 3 levels of Rose Meditation content:
@@ -147,7 +147,7 @@ All strategic and brand documentation living in the repository:
 | 7 | **API Layer** | 7 functional endpoints (content, media, feedback, AI personalize, 3 PDF generators), 3 stub endpoints, auth integration |
 | 8 | **3D Brand Experience** | Custom Three.js rose with shaders, particles, bloom -- unique brand differentiator |
 | 9 | **Platform UX Refinement** | 6-phase usability overhaul: enrollment flow consolidation, clearer nav labels, content deduplication, Offerings section nav, multi-column footer with trust signals, teaching gate context -- 12 files modified, 9 issues resolved |
-| 10 | **SEO & GEO / Content Architecture** | 20 geo landing pages, meditation hub, FAQ schema (15 geo + 8 page-specific questions), Course + EducationalOrganization + WebSite + WebPage + Breadcrumb JSON-LD schemas, AI bot directives, sitemap, robots.txt -- programmatic SEO & Generative Engine Optimization |
+| 10 | **SEO & GEO / Content Architecture** | 30 geo landing pages across 6 timezone bands (targeting spiritual community hubs worldwide), meditation hub, FAQ schema (15 geo + 8 page-specific questions), Course + EducationalOrganization + WebSite + WebPage + Breadcrumb JSON-LD schemas, AI bot directives, sitemap, robots.txt -- programmatic SEO & Generative Engine Optimization |
 
 ### Phase 2 -- In Progress
 | # | Deliverable | Description |
@@ -248,9 +248,9 @@ All work has been contributed at **100% off market value** -- no payment is requ
 
 | Deliverable | Scope |
 |-------------|-------|
-| **GEO / Content Architecture** | 20 geo landing pages (`/meditation/[city]`), meditation hub page (`/meditation`), FAQ content with schema markup (15 geo + 8 page-specific questions), Course structured data, WebPage + Breadcrumb JSON-LD on all content pages, EducationalOrganization + WebSite schemas, AI bot directives (GPTBot, PerplexityBot, ClaudeBot, etc.), sitemap, robots.txt -- programmatic SEO & Generative Engine Optimization |
+| **GEO / Content Architecture** | 30 geo landing pages (`/meditation/[city]`) targeting spiritual community hubs across 6 timezone bands, meditation hub page (`/meditation`), FAQ content with schema markup (15 geo + 8 page-specific questions), Course structured data, WebPage + Breadcrumb JSON-LD on all content pages, EducationalOrganization + WebSite schemas, AI bot directives (GPTBot, PerplexityBot, ClaudeBot, etc.), sitemap, robots.txt -- programmatic SEO & Generative Engine Optimization. **Cities (30):** San Francisco, Los Angeles, Mount Shasta, Sedona, Bogotá, Mexico City, Oaxaca, Tulum, Austin, San José CR, Denver, New York, Miami, Toronto, Asheville, São Paulo, Rio de Janeiro, Buenos Aires, London, Lisbon, Madrid, Barcelona, Paris, Berlin, Ibiza, Paphos, Byron Bay, Online. |
 
-**Acceptance Criteria:** All 20 geo landing pages render with city-specific content and FAQ schema, structured data validates on all pages, sitemap includes all routes, robots.txt properly configured for search engines and AI bots.
+**Acceptance Criteria:** All 30 geo landing pages render with city-specific content and FAQ schema, structured data validates on all pages, sitemap includes all routes, robots.txt properly configured for search engines and AI bots.
 
 | | Market Value |
 |--|--------------|
@@ -319,7 +319,7 @@ Phase 3 is structured as **individual project milestones** -- each scoped as a s
 | Project | Deliverables | Market Value |
 |---------|-------------|--------------|
 | ~~**Platform UX Refinement**~~ | ~~6-phase usability overhaul — 12 files modified, 9 issues resolved.~~ **Moved to Phase 1, Milestone 4. Complete.** | ~~$15,000~~ |
-| ~~**GEO / Content Architecture**~~ | ~~20 geo landing pages, meditation hub, FAQ schema, structured data, AI bot directives.~~ **Moved to Phase 1, Milestone 5. Complete.** [Detailed plan →](../geo-content/implementation-plan.md) | ~~$12,000~~ |
+| ~~**GEO / Content Architecture**~~ | ~~30 geo landing pages, meditation hub, FAQ schema, structured data, AI bot directives.~~ **Moved to Phase 1, Milestone 5. Complete.** [Detailed plan →](../geo-content/implementation-plan.md) | ~~$12,000~~ |
 | **Payment Link Integration** | Integrate a hosted payment link (Stripe Payment Links or equivalent) into the platform -- embed on contribution page, enrollment flow, and a dedicated payment page. Branded checkout experience, mobile-optimized, with confirmation redirects back to the platform. Lightweight integration that doesn't require a full custom checkout build. *(Flagged for near-term implementation.)* | $5,000 |
 | **Mail Service Integration** | Connect a transactional email service (Resend recommended for Next.js) to power platform emails: enrollment confirmations, contribution receipts, contact form notifications, welcome emails, and password reset flows. Branded email templates using React Email. API route integration with Supabase triggers. *(Flagged for near-term implementation.)* | $6,000 |
 | **Newsletter Integration** | Email capture forms on high-traffic pages (homepage, invitation, footer), subscriber storage in Supabase, integration with email platform (Resend or ConvertKit) for periodic newsletters (teachings, community updates, program announcements). Double opt-in, GDPR-compliant, segment-based lists (prospective students, practitioners, general community). **Difficulty: Low-Medium** -- can be built in 2-3 days using existing infrastructure. *(Flagged for near-term implementation.)* | $5,000 |
