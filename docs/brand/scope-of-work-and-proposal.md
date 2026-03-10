@@ -24,7 +24,7 @@ In addition to the platform and brand development work, this scope encompasses c
 
 The stewardship includes:
 
-1. **Hummingbird Program** -- Facilitating the Hummingbird community program, a free weekly gathering open to everyone. Holding space for the community, leading sessions, and nurturing the living field that the Hummingbird program represents within the ROSES OS ecosystem.
+1. **Hummingbird Program** -- Facilitating the Hummingbird community program, a free weekly gathering open to everyone. Holding space for the community, leading sessions, and nurturing the living field that the Hummingbird program represents within the ROSES OS ecosystem. This includes posting the Zoom meeting information to the community ahead of each session so that everyone knows when and how to join, and ensuring that a backup facilitator is available to hold space if the primary guardian is unable to attend.
 
 2. **Rose Meditation Support** -- Attending and helping facilitate the monthly Rose Q&A sessions, and leading Rose Meditations when no other facilitator is available that week. Ensuring continuity of practice and unbroken support for the community's meditation rhythm.
 
@@ -387,7 +387,7 @@ Any compensation the team chooses to offer is considered a **gift in kind or in 
 
 Ongoing contributions are expected to focus on:
 
-- **Community Stewardship (Guardian of the Hummingbird / Rose Meditation)** -- Facilitating the weekly Hummingbird gathering, attending and helping facilitate monthly Rose Q&A sessions, and leading Rose Meditations when no other facilitator is available *(title pending decision -- see Overview note)*
+- **Community Stewardship (Guardian of the Hummingbird / Rose Meditation)** -- Facilitating the weekly Hummingbird gathering (including posting Zoom meeting details to the community and coordinating backup facilitator coverage when unable to attend), attending and helping facilitate monthly Rose Q&A sessions, and leading Rose Meditations when no other facilitator is available *(title pending decision -- see Overview note)*
 - **Manual updates** -- Updating and maintaining teaching manuals as content evolves
 - **Image updates & creation** -- Refreshing existing imagery and creating new visual assets as needed
 - **Language expansion on Teachers Portal** -- Adding new language support and translations to the teaching platform
@@ -514,7 +514,7 @@ The visual and media assets -- custom 3D models with hand-tuned shader effects, 
 5. **Agreements finalized** -- Clear ownership, deliverables, and compensation structure documented
 6. **UX verification** -- Test the updated user journeys: Home → Programs → Enroll, About page with sacred symbol content, enriched footer, consolidated enrollment flow
 7. **Near-term integrations** -- Implement flagged items: Payment Link, Mail Service, Newsletter, Social Media Linking
-8. **Art Director role** -- Suggestion: transition developer role toward Art Director capacity for future deliverables -- guiding visual direction, brand consistency, and creative oversight across manuals, brand book, platform imagery, and future builds. This allows more of the visual/design deliverables in Phase 2 and Phase 3 to move forward with creative leadership alongside the existing technical infrastructure
+8. **Creative / Art Director role** -- Suggestion: transition developer role toward Creative / Art Director capacity for future deliverables -- guiding visual direction, brand consistency, and creative oversight across manuals, brand book, platform imagery, and future builds. This allows more of the visual/design deliverables in Phase 2 and Phase 3 to move forward with creative leadership alongside the existing technical infrastructure
 
 ---
 
