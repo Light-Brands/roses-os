@@ -62,6 +62,7 @@ Each level includes:
 - Downloadable student manuals (PDF, all 4 languages)
 - Teacher image download packs (ZIP)
 - Technique reference data layer
+- **Shared image pipeline** -- Core technique images (grounding cord, golden sun, cosmos circuit, energy recovery rose) are shared between teaching slides and student manuals. Teaching slides update the Teachers Aid PDF automatically (the PDF is a print of the live page). Manuals now pull from the same teaching images -- after updating an image, a single rebuild command regenerates all three manual PDFs (Level 1, Level 2, Level 3). Note: covers, summary pages, and some level-specific illustrations remain separate assets.
 
 ### 1.3 Admin Dashboard (UI Scaffold)
 Admin panel UI designed and built (8 pages, 4 components), currently using demo/mock data:
@@ -120,6 +121,7 @@ All strategic and brand documentation living in the repository:
 - Level 1 Manual -- reimagine if timeline permits
 - Greek-style / Yeva World aesthetic
 - 4 languages each (12 PDF deliverables)
+- **Image pipeline now connected to teaching slides** -- Core technique images are shared with the teaching platform. Updating an image on the teaching slides and running one rebuild command regenerates all three manual PDFs. Covers, summary pages, and level-specific illustrations are maintained separately.
 
 **Status:** Content ready. Visual design pending MDR completion. Deadline: March 15, 2026.
 
