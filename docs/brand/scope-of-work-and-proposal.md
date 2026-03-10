@@ -393,7 +393,6 @@ Ongoing contributions are expected to focus on:
 - **Manual updates** -- Updating and maintaining teaching manuals as content evolves
 - **Image updates & creation** -- Refreshing existing imagery and creating new visual assets as needed
 - **Language expansion on Teachers Portal** -- Adding new language support and translations to the teaching platform
-- **Text & framework edits** -- Available for text edits and modifications to the existing framework as needed
 
 #### Near-Term Flagged Items
 
