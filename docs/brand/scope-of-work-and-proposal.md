@@ -8,7 +8,7 @@
 
 ## Overview
 
-This document outlines the scope, deliverables, and structure of the work being developed for the ROSES OS digital platform and brand system -- including stewardship of the Hummingbird community program. It is intended to give the team full visibility into what has been built, what is in progress, and what remains -- so we can define clear agreements, ownership, and next steps together.
+This document outlines the scope, deliverables, and structure of the work being developed for the ROSES OS digital platform and brand system -- including community stewardship of the Hummingbird program and Rose Meditation support. It is intended to give the team full visibility into what has been built, what is in progress, and what remains -- so we can define clear agreements, ownership, and next steps together.
 
 > *This document is intended as a starting point for conversation -- not a final agreement. All scope, pricing, and terms are open for discussion and adjustment together.*
 
@@ -18,7 +18,11 @@ This development was created from the heart, with no compensation model in mind.
 
 This document is intended to serve as a record of the value that has been created and a reference for what future development could look like on the platform -- including new build-out models that may emerge as the project evolves (e.g., a customer section, new teaching integrations, or community features). It is offered in the spirit of transparency and shared stewardship.
 
-In addition to the platform and brand development work, this scope encompasses the role of **Guardian of the Hummingbird** -- the stewardship and facilitation of the Hummingbird community program, a free weekly gathering open to everyone. This guardianship includes holding space for the community, facilitating sessions, and nurturing the living field that the Hummingbird program represents within the ROSES OS ecosystem.
+In addition to the platform and brand development work, this scope encompasses two community stewardship roles:
+
+1. **Guardian of the Hummingbird** -- The stewardship and facilitation of the Hummingbird community program, a free weekly gathering open to everyone. This guardianship includes holding space for the community, facilitating sessions, and nurturing the living field that the Hummingbird program represents within the ROSES OS ecosystem.
+
+2. **Supporting the Guardian of Rose Meditation** -- Attending and helping facilitate the monthly Rose Q&A sessions, and leading Rose Meditations when no other facilitator is available that week. This ensures continuity of practice and unbroken support for the community's meditation rhythm.
 
 ---
 
@@ -380,6 +384,7 @@ Any compensation the team chooses to offer is considered a **gift in kind or in 
 Ongoing contributions are expected to focus on:
 
 - **Guardian of the Hummingbird** -- Stewarding and facilitating the Hummingbird community program (free weekly Saturday gathering), holding space for the community, and nurturing the living field of practitioners and seekers
+- **Supporting the Guardian of Rose Meditation** -- Attending and helping facilitate monthly Rose Q&A sessions, and leading Rose Meditations when no other facilitator is available
 - **Manual updates** -- Updating and maintaining teaching manuals as content evolves
 - **Image updates & creation** -- Refreshing existing imagery and creating new visual assets as needed
 - **Language expansion on Teachers Portal** -- Adding new language support and translations to the teaching platform
@@ -489,7 +494,7 @@ The ROSES OS platform comprises over **62,100 lines of authored source code, con
 
 #### Industry Benchmark
 
-At industry-standard developer productivity rates of **5,000--10,000 lines per month** (IEEE/COCOMO benchmarks for production-quality, tested, deployed code), the authored codebase alone represents approximately **12-13 months of full-time senior developer effort**. This does not account for the ongoing community stewardship work as Guardian of the Hummingbird.
+At industry-standard developer productivity rates of **5,000--10,000 lines per month** (IEEE/COCOMO benchmarks for production-quality, tested, deployed code), the authored codebase alone represents approximately **12-13 months of full-time senior developer effort**. This does not account for the ongoing community stewardship work as Guardian of the Hummingbird and supporting the Guardian of Rose Meditation.
 
 The visual and media assets -- custom 3D models with hand-tuned shader effects, multilingual PDF generation, and brand imagery -- represent significant additional creative and production work not captured in line counts.
 
