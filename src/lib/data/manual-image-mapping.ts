@@ -132,7 +132,7 @@ export const level3ManualImages: ManualImageMapping = {
     {
       title: 'Advanced Techniques',
       images: [
-        { concept: 'Cutting Cords', slideNumber: 42, reimaginedImage: 'level-3/42-cutting-cords.jpeg' },
+        { concept: 'Cutting Cords', slideNumber: 42, reimaginedImage: 'level-3/IMG_1852.jpeg' },
         { concept: 'Post Intimacy / Sexual Recovery Rose', slideNumber: 43, reimaginedImage: 'level-3/43-sexual-recovery-rose.png' },
         { concept: 'Mock Up', slideNumber: 44, reimaginedImage: 'level-3/44-mock-up.png' },
       ],
