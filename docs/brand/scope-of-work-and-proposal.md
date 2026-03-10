@@ -391,7 +391,7 @@ Ongoing contributions are expected to focus on:
 - **Manual updates** -- Updating and maintaining teaching manuals as content evolves
 - **Image updates & creation** -- Refreshing existing imagery and creating new visual assets as needed
 - **Language expansion on Teachers Portal** -- Adding new language support and translations to the teaching platform
-- **Content management training for Silvia Coelho** -- Should she choose, training Silvia to manage and update site content independently, enabling content autonomy without developer involvement
+- **Content management training** -- Willing to train team members on making text and content edits directly on the existing body of work, enabling content autonomy without developer involvement
 
 #### Near-Term Flagged Items
 
