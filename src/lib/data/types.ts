@@ -189,6 +189,8 @@ export interface TeachingSlide {
   originalImage?: string;
   reimaginedImage?: string;
   imageNote?: string;
+  /** Optional CSS scale factor to adjust image size within the card (e.g. 1.2 for 20% larger) */
+  imageScale?: number;
   /** Whether this image is finalized and actively used on the website */
   final?: boolean;
   level: number;
