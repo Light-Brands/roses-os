@@ -166,6 +166,20 @@ The combined Level 1&2 PDF is being split. This manual becomes **Level 2 only**.
 
 ## WEBSITE & PDF FIXES
 
+### Teachers Aid Main Page -- Add Visual Elements to Content Sections
+
+The `/teaching` main page has three content sections (teaching slides) that are currently plain text cards with no visual anchors:
+
+1. **Agreements & Virtues** -- core agreements participants honor
+2. **Sacred Companion** -- guidelines for the sacredness of the work
+3. **History & Lineage** -- context about the teaching tradition
+
+- [ ] **Add small icons, illustrations, or visual elements above each section title** -- These are teaching slides and would benefit from a visual element above each heading to set the tone and help distinguish the sections. Designer has creative freedom on what works best — small icons, line illustrations, or other subtle visual touches. Should feel consistent with the rest of the teaching section and use brand accent colors (Antique Olive Brass `#9E956B` or Rose Clay Mauve `#9C6F6E`). Keep it minimal and aligned with the sacred-tech aesthetic.
+
+**File:** `src/app/(teaching)/teaching/page.tsx`
+
+---
+
 ### Teachers Aid PDF -- 404 Not Found
 
 The "Export Teachers Aid PDF" button on the `/teaching` page links to `ROSES-OS-Teachers-Aid-EN.pdf` (and ES/PT/EL variants) in `public/resources/manuals/`, but these files do not exist. The button is wired up in `src/components/ui/PdfExportButton.tsx` using paths from `src/lib/data/manual-pdf-paths.ts`.
