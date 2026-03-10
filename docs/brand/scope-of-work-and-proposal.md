@@ -165,10 +165,11 @@ All strategic and brand documentation living in the repository:
 | 15 | **Mail Service Integration** | Transactional email service (Resend) for enrollment confirmations, contribution receipts, contact form notifications, welcome emails. Branded React Email templates. *(Flagged -- near-term.)* |
 | 16 | **Newsletter Integration** | Email capture forms, subscriber management in Supabase, periodic newsletters via Resend/ConvertKit, segment-based lists, GDPR-compliant double opt-in. *(Flagged -- near-term.)* |
 | 17 | **Social Media Linking** | Add social media profile links (footer, guardians, community, contact), Open Graph + Twitter Card meta tags for rich social sharing previews on all public pages. *(Flagged -- near-term.)* |
-| 18 | **Rose App Foundation** | Initial architecture for the Rose App (daily practice -- spine of global expression) |
-| 19 | **Aura Levels Integration** | Aura Reading Levels 1-5 content and teaching structure *(pending decision)* |
-| 20 | **Animated Visual Technique Demos** | Upload and integrate existing animated visual aids demonstrating Rose Meditation techniques (grounding cord, golden sun, four roses, energy circuits, cleansing) into the website teaching platform |
-| 21 | **Guardian & Testimonial Videos** | Upload and integrate existing guardian and testimonial videos on the guardians page and community page |
+| 18 | **SEO & GEO Refinement Sprint** | Outstanding items from SEO/GEO/UX assessment: (1) Create branded OG image 1200x630 (2) Add `/meditation` to main nav or Programs dropdown (3) Build visible breadcrumb UI component (4) Add JSON-LD to contact page (5) Create standalone `/faq` page for GEO citation (6) Add `Person` schemas for guardians as course instructors (7) Fix sitemap `lastModified` to use real dates (8) Add `AboutPage` schema to the-rose page (9) Custom 404 page (10) Image alt text audit. [Full assessment → `SEO-GEO-UX-ASSESSMENT.md`] |
+| 19 | **Rose App Foundation** | Initial architecture for the Rose App (daily practice -- spine of global expression) |
+| 20 | **Aura Levels Integration** | Aura Reading Levels 1-5 content and teaching structure *(pending decision)* |
+| 21 | **Animated Visual Technique Demos** | Upload and integrate existing animated visual aids demonstrating Rose Meditation techniques (grounding cord, golden sun, four roses, energy circuits, cleansing) into the website teaching platform |
+| 22 | **Guardian & Testimonial Videos** | Upload and integrate existing guardian and testimonial videos on the guardians page and community page |
 
 ---
 
@@ -327,6 +328,7 @@ Phase 3 is structured as **individual project milestones** -- each scoped as a s
 | **Platform Maintenance Sprint** | Security audit, bug fixes, dependency updates, hosting optimization -- scoped per engagement | $9,000 |
 | **Animated Visual Technique Demos** | Upload existing technique demonstration videos, build video player components, integrate into teaching platform organized by technique category | $12,000 |
 | **Social Media Linking** | Add social media profile links across the platform (footer, guardians, community, contact pages). Open Graph and Twitter Card meta tags for rich social sharing previews. Optional social feed embeds (Instagram grid, YouTube latest). *(Flagged for near-term implementation.)* | $3,000 |
+| **SEO & GEO Refinement Sprint** | 10 outstanding items from comprehensive assessment: OG image, breadcrumb UI, contact page schema, standalone FAQ page, Person schemas for guardians, sitemap date fix, AboutPage schema, Programs nav dropdown, custom 404 page, image alt text audit. [Full assessment → `SEO-GEO-UX-ASSESSMENT.md`] | $8,000 |
 | **Guardian & Testimonial Videos** | Upload existing guardian and testimonial videos, build video sections on guardians page and community page | $8,000 |
 
 *Each project is scoped, priced, and accepted independently. No ongoing commitment -- projects are engaged as needed.*
@@ -387,8 +389,9 @@ The following integrations have been flagged for near-term implementation:
 2. **Mail Service Integration** ($6,000) -- Transactional emails for confirmations, receipts, notifications via Resend + React Email
 3. **Newsletter Integration** ($5,000) -- Email capture, subscriber management, periodic newsletters
 4. **Social Media Linking** ($3,000) -- Social profile links across platform, Open Graph meta tags for sharing
+5. **SEO & GEO Refinement Sprint** ($8,000) -- 10 outstanding items from assessment: OG image, breadcrumb UI, FAQ page, contact schema, Person schemas, sitemap fix, 404 page, alt text audit
 
-**Total near-term flagged items: $19,000 market value**
+**Total near-term flagged items: $27,000 market value**
 
 Larger platform features (Full Payment Page, Blog, YouTube integration, customer testimonials, localization, and other build-outs) are documented in this proposal for reference under Future Platform Builds.
 
