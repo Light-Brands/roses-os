@@ -16,6 +16,8 @@ This document outlines the scope, deliverables, and structure of the work being 
 
 This development was created from the heart, with no compensation model in mind. The scope and pricing documented here were assembled after the work was already built -- not before. As such, no compensation is required.
 
+What the International Aura and Dream School -- now ROSES OS -- has given me is exponential in terms of my spiritual growth, and I am very grateful for the opportunity to be part of this community. I am honored to help in the creation and execution of this platform.
+
 This document is intended to serve as a record of the value that has been created and a reference for what future development could look like on the platform -- including new build-out models that may emerge as the project evolves (e.g., a customer section, new teaching integrations, or community features). It is offered in the spirit of transparency and shared stewardship.
 
 In addition to the platform and brand development work, this scope encompasses community stewardship:
@@ -413,6 +415,7 @@ Larger platform features (Full Payment Page, Blog, YouTube integration, customer
 - **Ownership & IP** -- How do we define ownership of the platform code, brand assets, and content? What belongs to the project vs. individual contributors?
 - **Ongoing Maintenance** -- The platform requires ongoing technical maintenance, hosting, updates, and security. How is this accounted for?
 - **Licensing** -- Are there licensing considerations for the teaching content, brand assets, or platform code?
+- **Repository Visibility** -- The ROSES OS codebase is currently hosted as a public repository at [github.com/Light-Brands/roses-os](https://github.com/Light-Brands/roses-os). Should it remain public or be made private? If made private, each team member who needs access will need a GitHub account (free tier). To get access: (1) Sign up at [github.com](https://github.com) (2) Share your GitHub username so you can be invited as a collaborator to the repository.
 
 ---
 
@@ -510,7 +513,7 @@ The visual and media assets -- custom 3D models with hand-tuned shader effects, 
 1. **Team reviews this document** -- Ensure everyone has visibility into the full scope
 2. **Founder inputs delivered** -- Stories, long bios, and decision sheet reviewed (unlocks Brand Book)
 3. **Meeting scheduled** -- Dedicated session to discuss agreements, financials, and Phase 3 priorities
-4. **UX review session** -- ~~As Diego suggested, walk through the platform flow holistically with Dan's technical input~~ **Complete.** 6-phase UX overhaul implemented (see `docs/website-usability-action-plan.md`)
+4. **Platform flow evaluation** -- ~~Walk through the platform flow holistically~~ **Complete.** 6-phase UX overhaul implemented (see `docs/website-usability-action-plan.md`)
 5. **Agreements finalized** -- Clear ownership, deliverables, and compensation structure documented
 6. **UX verification** -- Test the updated user journeys: Home → Programs → Enroll, About page with sacred symbol content, enriched footer, consolidated enrollment flow
 7. **Near-term integrations** -- Implement flagged items: Payment Link, Mail Service, Newsletter, Social Media Linking
