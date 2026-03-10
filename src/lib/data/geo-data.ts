@@ -160,6 +160,25 @@ export const geoLocations: GeoLocation[] = [
     ],
   },
 
+  {
+    id: 'denver',
+    slug: 'denver',
+    city: 'Denver',
+    region: 'Colorado',
+    country: 'United States',
+    timezoneKey: 'bogota',
+    timezoneLabel: 'Mountain Time (MT)',
+    intro:
+      'Join Rose Meditation and Aura Reading courses from Denver, Colorado. Live online classes at Mountain Time hours — morning sessions that align with the mile-high rhythm. Connect with a global community of 5,000+ initiates from the comfort of your home.',
+    keywords: [
+      'meditation classes denver',
+      'aura reading course denver',
+      'energy healing denver colorado',
+      'spiritual development denver',
+      'meditation course colorado',
+    ],
+  },
+
   // ─── Eastern Time ─────────────────────────────────────────────────────────
   {
     id: 'new-york',
@@ -211,6 +230,25 @@ export const geoLocations: GeoLocation[] = [
       'aura reading course toronto',
       'energy healing toronto',
       'meditation course canada',
+    ],
+  },
+
+  {
+    id: 'asheville',
+    slug: 'asheville',
+    city: 'Asheville',
+    region: 'North Carolina',
+    country: 'United States',
+    timezoneKey: 'newYork',
+    timezoneLabel: 'Eastern Time (ET)',
+    intro:
+      'Join Rose Meditation and Aura Reading courses from Asheville, North Carolina. Live online classes at Eastern Time hours — morning and midday sessions that complement the mountain energy of the Blue Ridge. Connect with a global community of 5,000+ initiates.',
+    keywords: [
+      'meditation classes asheville',
+      'aura reading course asheville nc',
+      'energy healing asheville',
+      'spiritual community asheville',
+      'meditation course north carolina',
     ],
   },
 
@@ -372,6 +410,25 @@ export const geoLocations: GeoLocation[] = [
       'aura reading course berlin',
       'energy healing berlin',
       'meditation kurs berlin',
+    ],
+  },
+  {
+    id: 'ibiza',
+    slug: 'ibiza',
+    city: 'Ibiza',
+    region: 'Balearic Islands',
+    country: 'Spain',
+    timezoneKey: 'madrid',
+    timezoneLabel: 'Central European Time (CET)',
+    intro:
+      'Join Rose Meditation and Aura Reading courses from Ibiza. Live online classes at CET afternoon and evening hours — deepen your practice from the island of transformation. Conecta con una comunidad global de más de 5,000 iniciados sin salir de la isla.',
+    keywords: [
+      'meditation classes ibiza',
+      'spiritual retreat ibiza',
+      'aura reading course ibiza',
+      'energy healing ibiza',
+      'retiro espiritual ibiza',
+      'meditation ibiza spain',
     ],
   },
   {
