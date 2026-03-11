@@ -414,7 +414,7 @@ Larger platform features (Full Payment Page, Blog, YouTube integration, customer
 
 ### 4.7 Considerations for Discussion
 
-- **Ownership & IP** -- How do we define ownership of the platform code, brand assets, and content? What belongs to the project vs. individual contributors?
+- **Ownership & IP** -- All assets -- platform code, brand assets, and content -- are owned by ROSES OS.
 - **Ongoing Maintenance** -- The platform requires ongoing technical maintenance, hosting, updates, and security. How is this accounted for?
 - **Licensing** -- Are there licensing considerations for the teaching content, brand assets, or platform code?
 - **Repository Visibility** -- The ROSES OS codebase is currently hosted as a public repository at [github.com/Light-Brands/roses-os](https://github.com/Light-Brands/roses-os). Should it remain public or be made private? If made private, each team member who needs access will need a GitHub account (free tier). To get access: (1) Sign up at [github.com](https://github.com) (2) Share your GitHub username so you can be invited as a collaborator to the repository.
@@ -450,7 +450,7 @@ The following conditions apply to the use of ROSES OS content:
 
 ### Platform & Infrastructure
 
-The digital platform, codebase, design system, and technical infrastructure of ROSES OS remain proprietary to **ROSES OS** and its development partner, **LIGHT BRANDS**. These assets are not included in the teaching-use provisions above.
+The digital platform, codebase, design system, and technical infrastructure of ROSES OS are owned by **ROSES OS**. These assets are not included in the teaching-use provisions above.
 
 ### A Living Agreement
 
