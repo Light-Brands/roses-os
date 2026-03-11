@@ -26,6 +26,7 @@ const ROOT = path.resolve(__dirname, '..');
 const MANUAL_DIR = path.join(ROOT, 'scripts', 'pdf-manuals');
 const MANUAL_IMAGES_DIR = path.join(MANUAL_DIR, 'images');
 const TEACHING_IMAGES_DIR = path.join(ROOT, 'public', 'images', 'teaching');
+const ROSE_MED_IMAGES_DIR = path.join(ROOT, 'public', 'rose med images');
 const OUTPUT_DIR = path.join(ROOT, 'public', 'resources', 'manuals');
 
 interface ManualConfig {
@@ -60,43 +61,62 @@ const MANUALS: ManualConfig[] = [
 // Step 1: Sync teaching images into the manual build directory
 // ---------------------------------------------------------------------------
 
-function syncTeachingImages(): { copied: number; skipped: number } {
+function syncImages(): { copied: number; skipped: number } {
   let copied = 0;
   let skipped = 0;
-
-  if (!fs.existsSync(TEACHING_IMAGES_DIR)) {
-    console.error(`  Teaching images directory not found: ${TEACHING_IMAGES_DIR}`);
-    process.exit(1);
-  }
 
   if (!fs.existsSync(MANUAL_IMAGES_DIR)) {
     fs.mkdirSync(MANUAL_IMAGES_DIR, { recursive: true });
   }
 
-  const teachingFiles = fs.readdirSync(TEACHING_IMAGES_DIR).filter(
-    (f) => f.startsWith('teaching-') && /\.(png|jpg|jpeg|webp|svg)$/i.test(f),
-  );
+  // Sync teaching images (teaching-* prefix)
+  if (fs.existsSync(TEACHING_IMAGES_DIR)) {
+    const teachingFiles = fs.readdirSync(TEACHING_IMAGES_DIR).filter(
+      (f) => f.startsWith('teaching-') && /\.(png|jpg|jpeg|webp|svg)$/i.test(f),
+    );
+    for (const file of teachingFiles) {
+      const result = syncFile(path.join(TEACHING_IMAGES_DIR, file), path.join(MANUAL_IMAGES_DIR, file));
+      if (result === 'copied') copied++;
+      else skipped++;
+    }
+  }
 
-  for (const file of teachingFiles) {
-    const src = path.join(TEACHING_IMAGES_DIR, file);
-    const dest = path.join(MANUAL_IMAGES_DIR, file);
+  // Sync reimagined images from public/rose med images/{level-1,level-2,level-3}/
+  // These are the canonical images referenced in the HTML manual templates.
+  if (fs.existsSync(ROSE_MED_IMAGES_DIR)) {
+    for (const levelDir of ['level-1', 'level-2', 'level-3']) {
+      const srcDir = path.join(ROSE_MED_IMAGES_DIR, levelDir);
+      const destDir = path.join(MANUAL_IMAGES_DIR, levelDir);
+      if (!fs.existsSync(srcDir)) continue;
 
-    const srcStat = fs.statSync(src);
-    const destExists = fs.existsSync(dest);
+      if (!fs.existsSync(destDir)) {
+        fs.mkdirSync(destDir, { recursive: true });
+      }
 
-    if (destExists) {
-      const destStat = fs.statSync(dest);
-      if (srcStat.size === destStat.size && srcStat.mtimeMs <= destStat.mtimeMs) {
-        skipped++;
-        continue;
+      const files = fs.readdirSync(srcDir).filter(
+        (f) => /\.(png|jpg|jpeg|webp|svg)$/i.test(f),
+      );
+      for (const file of files) {
+        const result = syncFile(path.join(srcDir, file), path.join(destDir, file));
+        if (result === 'copied') copied++;
+        else skipped++;
       }
     }
-
-    fs.copyFileSync(src, dest);
-    copied++;
   }
 
   return { copied, skipped };
+}
+
+function syncFile(src: string, dest: string): 'copied' | 'skipped' {
+  const srcStat = fs.statSync(src);
+  if (fs.existsSync(dest)) {
+    const destStat = fs.statSync(dest);
+    if (srcStat.size === destStat.size && srcStat.mtimeMs <= destStat.mtimeMs) {
+      return 'skipped';
+    }
+  }
+  fs.copyFileSync(src, dest);
+  return 'copied';
 }
 
 // ---------------------------------------------------------------------------
@@ -198,7 +218,7 @@ async function main() {
   // Step 1: Sync teaching images
   if (!skipSync) {
     console.log('  [1/3] Syncing teaching images...');
-    const { copied, skipped } = syncTeachingImages();
+    const { copied, skipped } = syncImages();
     console.log(`         ${copied} copied, ${skipped} already up-to-date\n`);
   } else {
     console.log('  [1/3] Skipping image sync (--skip-sync)\n');
