@@ -2,7 +2,7 @@
 
 **Prepared by:** Jennifer Brooke Lawless
 **Date:** March 5, 2026
-**Version:** 1.4 -- Updated March 10, 2026
+**Version:** 1.5 -- Updated March 11, 2026
 
 ---
 
@@ -326,7 +326,7 @@ All work has been contributed at **100% off market value** -- no payment is requ
 
 ### 4.3 Phase 3 -- Proposed Project Milestones
 
-Phase 3 is structured as **individual project milestones** -- each scoped as a standalone engagement with defined deliverables and acceptance criteria. Projects are proposed and agreed upon individually, with no ongoing retainer or support commitment.
+Phase 3 is structured as **individual project milestones** -- each with defined deliverables and acceptance criteria. Projects are proposed and discussed individually, with scope and timing determined together as the platform evolves.
 
 #### Project Milestone Options
 
@@ -345,7 +345,7 @@ Phase 3 is structured as **individual project milestones** -- each scoped as a s
 | **SEO & GEO Refinement Sprint** | 10 outstanding items from comprehensive assessment: OG image, breadcrumb UI, contact page schema, standalone FAQ page, Person schemas for guardians, sitemap date fix, AboutPage schema, Programs nav dropdown, custom 404 page, image alt text audit. [Full assessment → `SEO-GEO-UX-ASSESSMENT.md`] | $8,000 |
 | **Guardian & Testimonial Videos** | Upload existing guardian and testimonial videos, build video sections on guardians page and community page | $8,000 |
 
-*Each project is scoped, priced, and accepted independently. No ongoing commitment -- projects are engaged as needed.*
+*Each project is scoped and discussed individually. Timing, approach, and engagement structure are open for conversation as priorities emerge.*
 
 #### Future Platform Builds
 
@@ -353,19 +353,19 @@ The following larger platform features are identified from the designer plan and
 
 | Project | Description | Dependencies |
 |---------|-------------|--------------|
-| **The Invitation -- Two-Screen Architecture** | Rebuild the invitation flow as a 14-section scrolling presentation (Screen 1) with a dedicated Learn More page covering full schedule across 4 time zones and the contribution model (Screen 2). Content exists in `docs/program/presentation.md` and `docs/program/schedule-details.md`. Includes branded PDF exports of both screens. | Content is ready. Can be built independently. |
+| **The Invitation -- Two-Screen Architecture** | Rebuild the invitation flow as a 14-section scrolling presentation (Screen 1) with a dedicated Learn More page covering full schedule across 4 time zones and the contribution model (Screen 2). Content exists in `docs/program/presentation.md` and `docs/program/schedule-details.md`. Includes branded PDF exports of both screens. | Content is ready. |
 | **Enrollment & Forms System** | Build the full 5-step enrollment form (who you are, path selection, contribution tier, agreements, "Welcome home" confirmation), a Contact/Inquiry form with nature-of-inquiry dropdown, and a Community Interest/Waitlist form for future programs and regional expansion. Includes post-submission branded PDF confirmations. | Requires backend integration (Supabase) for real form submissions. |
 | **The Aura Page** | Standalone page for the Aura perception and relationship work -- currently not built as a dedicated route. Part of the original sitemap vision. | Content direction needed from Guardians. |
 | **The Journey Page** | Dedicated page showing what participants experience across all levels -- a narrative walkthrough of the Rose path. Part of the original sitemap vision. | Content direction needed from Guardians. |
-| **Unified PDF Export Template System** | Consolidate all PDF generation (Programs, Teachers Aid, Manuals, Enrollment confirmations) into a single branded template system -- consistent wordmark, margins, typography, textures across every PDF the platform produces. | Can be built independently. Improves all existing PDF outputs. |
-| **Full Localization Pass** | Translate all platform web content (pages, forms, UI labels, navigation) into Spanish, Portuguese, and Greek. i18n infrastructure already exists (language selector in place). This covers web pages only -- manual translations are a separate deliverable. | Translation services needed. Infrastructure is ready. |
+| **Unified PDF Export Template System** | Consolidate all PDF generation (Programs, Teachers Aid, Manuals, Enrollment confirmations) into a single branded template system -- consistent wordmark, margins, typography, textures across every PDF the platform produces. | Improves all existing PDF outputs. |
+| **Full Localization Pass** | Translate all platform web content (pages, forms, UI labels, navigation) into Spanish, Portuguese, and Greek. i18n infrastructure already exists (language selector in place). This covers web pages only -- manual translations are a separate deliverable. | Translation services needed. i18n infrastructure is ready. |
 | **Admin Dashboard Backend Integration** | Connect the existing admin UI scaffold (8 pages, all styled with demo data) to live Supabase backend -- real analytics, user management, content editing, media library, and feedback collection. | Supabase schema exists. Requires data migration and API wiring. |
 | **Cohesive Payment Page** | Build a single, unified branded payment page that handles all ROSES OS transactions -- contributions (income-based tiers), enrollment fees, program purchases, and future offerings. Integrates Stripe (or equivalent) with real payment processing, branded receipts, confirmation emails, and mobile-optimized checkout. Replaces the current form-only contribution flow. | Requires business/legal decisions on payment structure, Stripe account setup, and contribution tier finalization. |
-| **Email Collection & List Management** | Implement branded email capture forms across high-traffic pages (homepage, invitation, community interest, footer). Integrate with an email marketing platform (Mailchimp, ConvertKit, or Resend) for three communication pillars: (1) automated sequences (welcome series, onboarding, milestone-triggered), (2) periodic newsletters (teachings, community updates, stories), and (3) targeted announcements (program openings, events, new offerings to relevant segments). Segment-based lists for prospective students, initiated practitioners, and general community. GDPR-compliant opt-in with double confirmation. | Requires email platform selection and brand-approved copy for welcome sequences. Can begin independently. |
-| **Blog / Written Content Platform** | Blog section for teachings, reflections, guardian writings, and community stories. CMS integration for easy publishing without developer involvement. Supports SEO, community engagement, and ongoing content marketing. | Content strategy and publishing workflow needed. Can be built independently. |
-| **YouTube Content Integration** | Embed and organize YouTube video content on the platform. Dedicated video sections, playlists organized by topic (teachings, testimonials, events), and a searchable teaching video library. | Requires YouTube channel and content to be ready. Can be built independently. |
+| **Email Collection & List Management** | Implement branded email capture forms across high-traffic pages (homepage, invitation, community interest, footer). Integrate with an email marketing platform (Mailchimp, ConvertKit, or Resend) for three communication pillars: (1) automated sequences (welcome series, onboarding, milestone-triggered), (2) periodic newsletters (teachings, community updates, stories), and (3) targeted announcements (program openings, events, new offerings to relevant segments). Segment-based lists for prospective students, initiated practitioners, and general community. GDPR-compliant opt-in with double confirmation. | Requires email platform selection and brand-approved copy for welcome sequences. |
+| **Blog / Written Content Platform** | Blog section for teachings, reflections, guardian writings, and community stories. CMS integration for easy publishing. Supports SEO, community engagement, and ongoing content marketing. | Content strategy and publishing workflow needed. |
+| **YouTube Content Integration** | Embed and organize YouTube video content on the platform. Dedicated video sections, playlists organized by topic (teachings, testimonials, events), and a searchable teaching video library. | Requires YouTube channel and content to be ready. |
 | **Customer Testimonials Section** | Dedicated testimonials page and embedded testimonial components across key pages (homepage, invitation, community). Collect, curate, and display community stories, experiences, and transformation journeys. | Requires testimonial content (written and/or video) to be gathered from community. |
-| **Social Media Linking & Integration** | Add social media profile links across the platform -- footer icons, guardians page, community page, and contact page. Link to Instagram, YouTube, Facebook, and any other active profiles. Add Open Graph and Twitter Card meta tags for rich social sharing previews on all public pages. Optionally embed social feeds (Instagram grid, YouTube latest). | Requires active social media profile URLs. Can be built independently. |
+| **Social Media Linking & Integration** | Add social media profile links across the platform -- footer icons, guardians page, community page, and contact page. Link to Instagram, YouTube, Facebook, and any other active profiles. Add Open Graph and Twitter Card meta tags for rich social sharing previews on all public pages. Optionally embed social feeds (Instagram grid, YouTube latest). | Requires active social media profile URLs. |
 
 ---
 
@@ -414,10 +414,10 @@ Larger platform features (Full Payment Page, Blog, YouTube integration, customer
 
 ### 4.7 Considerations for Discussion
 
-- **Ownership & IP** -- How do we define ownership of the platform code, brand assets, and content? What belongs to the project vs. individual contributors?
+- **Ownership & IP** -- All assets -- platform code, brand assets, and content -- are owned by ROSES OS.
 - **Ongoing Maintenance** -- The platform requires ongoing technical maintenance, hosting, updates, and security. How is this accounted for?
 - **Licensing** -- Are there licensing considerations for the teaching content, brand assets, or platform code?
-- **Repository Visibility** -- The ROSES OS codebase is currently hosted as a public repository at [github.com/Light-Brands/roses-os](https://github.com/Light-Brands/roses-os). Should it remain public or be made private? If made private, each team member who needs access will need a GitHub account (free tier). To get access: (1) Sign up at [github.com](https://github.com) (2) Share your GitHub username so you can be invited as a collaborator to the repository.
+- **Repository Visibility** -- The ROSES OS codebase is currently hosted as a public repository at [github.com/Light-Brands-AI/roses-os](https://github.com/Light-Brands-AI/roses-os). Should it remain public or be made private? If made private, each team member who needs access will need a GitHub account (free tier). To get access: (1) Sign up at [github.com](https://github.com) (2) Share your GitHub username so you can be invited as a collaborator to the repository.
 
 ---
 
@@ -450,7 +450,7 @@ The following conditions apply to the use of ROSES OS content:
 
 ### Platform & Infrastructure
 
-The digital platform, codebase, design system, and technical infrastructure of ROSES OS remain proprietary to **ROSES OS** and its development partner, **LIGHT BRANDS**. These assets are not included in the teaching-use provisions above.
+All assets created and delivered -- including the digital platform, codebase, design system, content, brand assets, and technical infrastructure -- are owned by **ROSES OS**. The techniques, processes, and technical methodologies used to create the platform are proprietary to **LIGHT BRANDS AI**. Platform and infrastructure assets are not included in the teaching-use provisions above.
 
 ### A Living Agreement
 
@@ -468,7 +468,7 @@ For context on the technical foundation that supports everything above:
 
 | Infrastructure | Details |
 |----------------|---------|
-| **Repository** | GitHub (Light-Brands/roses-os) -- version-controlled, 160+ commits, 58+ merged PRs |
+| **Repository** | GitHub (Light-Brands-AI/roses-os) -- version-controlled, 160+ commits, 58+ merged PRs |
 | **Hosting** | Production-ready Next.js deployment |
 | **Database** | Supabase (PostgreSQL) with SSR auth |
 | **AI Services** | Google GenAI integration |
@@ -520,7 +520,7 @@ The visual and media assets -- custom 3D models with hand-tuned shader effects, 
 5. **Agreements finalized** -- Clear ownership, deliverables, and compensation structure documented
 6. **UX verification** -- Test the updated user journeys: Home → Programs → Enroll, About page with sacred symbol content, enriched footer, consolidated enrollment flow
 7. **Near-term integrations** -- Implement flagged items: Payment Link, Mail Service, Newsletter, Social Media Linking
-8. **Creative / Art Director role** -- Suggestion: transition developer role toward Creative / Art Director capacity for future deliverables -- guiding visual direction, brand consistency, and creative oversight across manuals, brand book, platform imagery, and future builds. This allows more of the visual/design deliverables in Phase 2 and Phase 3 to move forward with creative leadership alongside the existing technical infrastructure
+8. **Creative / Art Director role** -- Open for discussion: exploring a Creative / Art Director capacity for future deliverables -- guiding visual direction, brand consistency, and creative oversight across manuals, brand book, platform imagery, and future builds
 
 ---
 
