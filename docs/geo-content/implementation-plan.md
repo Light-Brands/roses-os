@@ -188,6 +188,6 @@ Beyond the original geo-content plan, the following site-wide SEO and GEO improv
 - Explicitly allowed GPTBot, ChatGPT-User, Google-Extended, PerplexityBot, Anthropic, ClaudeBot, Applebot-Extended in `robots.ts`
 
 ### Remaining TODOs
-- [ ] Create `og-image.jpg` (1200x630) and place in `/public` — design task
+- [x] Create `og-image.jpg` (1200x630) and place in `/public` — uses backcover rose mandala
 - [ ] Add social media URLs to Organization `sameAs` when ready
 - [ ] Expand meditation hub to rich page with hero, FAQ section, CTA (future iteration)
