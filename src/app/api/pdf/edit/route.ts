@@ -43,12 +43,24 @@ async function loadPdfBytes(formData: FormData): Promise<Uint8Array | null> {
 
   if (pdfPath) {
     const safePath = path.basename(pdfPath);
-    const fullPath = path.join(process.cwd(), 'public', 'resources', 'manuals', safePath);
+    // Try local filesystem first, fall back to HTTP fetch (for Vercel where
+    // public/ files are served via CDN and excluded from function bundles).
     try {
+      const fullPath = path.join(process.cwd(), 'public', 'resources', 'manuals', safePath);
       const buffer = await readFile(fullPath);
       return new Uint8Array(buffer);
     } catch {
-      return null;
+      try {
+        const baseUrl = process.env.VERCEL_URL
+          ? `https://${process.env.VERCEL_URL}`
+          : process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+        const url = `${baseUrl}/resources/manuals/${encodeURIComponent(safePath)}`;
+        const res = await fetch(url);
+        if (!res.ok) return null;
+        return new Uint8Array(await res.arrayBuffer());
+      } catch {
+        return null;
+      }
     }
   }
 

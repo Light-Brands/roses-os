@@ -389,6 +389,23 @@ function drawPageFooter(page: PDFPage, font: PDFFont, pageNum: number) {
 // IMAGE HELPERS
 // =============================================================================
 
+async function loadImageBytes(imagePath: string): Promise<Buffer> {
+  // Try local filesystem first (works in dev and when file is traced)
+  try {
+    const fullPath = path.join(process.cwd(), 'public', imagePath);
+    return await readFile(fullPath);
+  } catch {
+    // Fallback: fetch from public URL (Vercel serves public/ as static CDN assets)
+    const baseUrl = process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+    const url = `${baseUrl}/${encodeURI(imagePath)}`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.status}`);
+    return Buffer.from(await res.arrayBuffer());
+  }
+}
+
 async function loadAndResizeImage(
   doc: PDFDocument,
   imagePath: string,
@@ -396,8 +413,7 @@ async function loadAndResizeImage(
   maxHeight: number,
 ): Promise<PDFImage | null> {
   try {
-    const fullPath = path.join(process.cwd(), 'public', imagePath);
-    const raw = await readFile(fullPath);
+    const raw = await loadImageBytes(imagePath);
     const ext = imagePath.toLowerCase();
     const brandBg = { r: 247, g: 245, b: 242 };
 
@@ -562,8 +578,7 @@ export async function GET() {
     // Load logo
     let logoImage: PDFImage | undefined;
     try {
-      const logoPath = path.join(process.cwd(), 'public', 'rose.png');
-      const logoBytes = await readFile(logoPath);
+      const logoBytes = await loadImageBytes('rose.png');
       logoImage = await doc.embedPng(logoBytes);
     } catch {
       // Logo optional
