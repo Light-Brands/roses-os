@@ -16,7 +16,8 @@ function R(min: number, max: number) {
 // Constants
 // ---------------------------------------------------------------------------
 
-const TOTAL = 20;
+const TOTAL_DESKTOP = 20;
+const TOTAL_MOBILE = 8;
 
 // ---------------------------------------------------------------------------
 // Component
@@ -25,9 +26,13 @@ const TOTAL = 20;
 export default function ConsciousnessField() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [reduced, setReduced] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     setReduced(prefersReducedMotion());
+    const touch = window.matchMedia('(pointer: coarse)').matches;
+    const narrow = window.innerWidth < 768;
+    setIsMobile(touch && narrow);
   }, []);
 
   useEffect(() => {
@@ -37,11 +42,12 @@ export default function ConsciousnessField() {
     const w = container.clientWidth;
     const h = container.clientHeight;
 
-    gsap.set(container, { perspective: 600 });
+    const total = isMobile ? TOTAL_MOBILE : TOTAL_DESKTOP;
+    gsap.set(container, { perspective: isMobile ? 0 : 600 });
 
     const petals: HTMLDivElement[] = [];
 
-    for (let i = 0; i < TOTAL; i++) {
+    for (let i = 0; i < total; i++) {
       const petal = document.createElement('div');
       petal.style.cssText = `
         position: absolute;
@@ -83,16 +89,18 @@ export default function ConsciousnessField() {
         duration: R(4, 8),
       });
 
-      // 3D tumble
-      gsap.to(petal, {
-        rotationX: R(0, 360),
-        rotationY: R(0, 360),
-        repeat: -1,
-        yoyo: true,
-        ease: 'sine.inOut',
-        duration: R(2, 8),
-        delay: -5,
-      });
+      // 3D tumble — skip on mobile (expensive 3D transforms)
+      if (!isMobile) {
+        gsap.to(petal, {
+          rotationX: R(0, 360),
+          rotationY: R(0, 360),
+          repeat: -1,
+          yoyo: true,
+          ease: 'sine.inOut',
+          duration: R(2, 8),
+          delay: -5,
+        });
+      }
     }
 
     return () => {
@@ -101,7 +109,7 @@ export default function ConsciousnessField() {
         petal.remove();
       }
     };
-  }, [reduced]);
+  }, [reduced, isMobile]);
 
   return (
     <div

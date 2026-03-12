@@ -67,6 +67,15 @@ export default function TeachingPage() {
 
         {/* Opening — Agreements & Virtues */}
         <section className="mb-10 rounded-xl border border-[var(--color-border-subtle)] bg-[var(--color-surface)] p-6 lg:p-8">
+          <div className="flex justify-center mb-4">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-70">
+              <circle cx="18" cy="18" r="16" stroke="#9E956B" strokeWidth="1" />
+              <path d="M12 18.5C12 18.5 14.5 14 18 14C21.5 14 24 18.5 24 18.5" stroke="#9E956B" strokeWidth="1.2" strokeLinecap="round" />
+              <path d="M18 14V9M18 9L15.5 11M18 9L20.5 11" stroke="#9E956B" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M13 22H23" stroke="#9E956B" strokeWidth="1" strokeLinecap="round" />
+              <path d="M14.5 24.5H21.5" stroke="#9E956B" strokeWidth="1" strokeLinecap="round" />
+            </svg>
+          </div>
           <h2 className="font-serif text-xl text-[var(--color-foreground)] mb-3">
             {agreements.title}
           </h2>
@@ -88,6 +97,12 @@ export default function TeachingPage() {
 
         {/* Opening — It's Important to Know */}
         <section className="mb-10 rounded-xl border border-[var(--color-border-subtle)] bg-[var(--color-surface)] p-6 lg:p-8">
+          <div className="flex justify-center mb-4">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-70">
+              <circle cx="18" cy="18" r="16" stroke="#9C6F6E" strokeWidth="1" />
+              <path d="M18 10L20 16H26L21 20L23 26L18 22L13 26L15 20L10 16H16L18 10Z" stroke="#9C6F6E" strokeWidth="1.2" strokeLinejoin="round" fill="none" />
+            </svg>
+          </div>
           <h2 className="font-serif text-xl text-[var(--color-foreground)] mb-4">
             {itkTitle}
           </h2>
@@ -124,6 +139,20 @@ export default function TeachingPage() {
 
         {/* Opening — History & Lineage */}
         <section className="mb-12 rounded-xl border border-[var(--color-border-subtle)] bg-[var(--color-surface)] p-6 lg:p-8">
+          <div className="flex justify-center mb-4">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-70">
+              <circle cx="18" cy="18" r="16" stroke="#9E956B" strokeWidth="1" />
+              <path d="M18 8V18" stroke="#9E956B" strokeWidth="1.2" strokeLinecap="round" />
+              <path d="M18 18L13 13" stroke="#9E956B" strokeWidth="1.2" strokeLinecap="round" />
+              <path d="M18 18L23 13" stroke="#9E956B" strokeWidth="1.2" strokeLinecap="round" />
+              <path d="M13 13L10 10" stroke="#9E956B" strokeWidth="1" strokeLinecap="round" />
+              <path d="M13 13L11 15" stroke="#9E956B" strokeWidth="1" strokeLinecap="round" />
+              <path d="M23 13L26 10" stroke="#9E956B" strokeWidth="1" strokeLinecap="round" />
+              <path d="M23 13L25 15" stroke="#9E956B" strokeWidth="1" strokeLinecap="round" />
+              <circle cx="18" cy="24" r="3" stroke="#9E956B" strokeWidth="1" />
+              <path d="M18 21V18" stroke="#9E956B" strokeWidth="1.2" strokeLinecap="round" />
+            </svg>
+          </div>
           <h2 className="font-serif text-xl text-[var(--color-foreground)] mb-3">
             {history.title}
           </h2>

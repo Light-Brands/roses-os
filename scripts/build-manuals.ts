@@ -55,6 +55,30 @@ const MANUALS: ManualConfig[] = [
     htmlFile: 'roses-manual-3.html',
     outputFile: 'ROSES-OS-Level-3-Manual-EN.pdf',
   },
+  {
+    id: 'ta',
+    label: 'Rose Meditation — Teachers Aid',
+    htmlFile: 'roses-teachers-aid.html',
+    outputFile: 'ROSES-OS-Teachers-Aid-EN.pdf',
+  },
+  {
+    id: 'ta-es',
+    label: 'Rose Meditation — Teachers Aid (ES)',
+    htmlFile: 'roses-teachers-aid-es.html',
+    outputFile: 'ROSES-OS-Teachers-Aid-ES.pdf',
+  },
+  {
+    id: 'ta-pt',
+    label: 'Rose Meditation — Teachers Aid (PT)',
+    htmlFile: 'roses-teachers-aid-pt.html',
+    outputFile: 'ROSES-OS-Teachers-Aid-PT.pdf',
+  },
+  {
+    id: 'ta-el',
+    label: 'Rose Meditation — Teachers Aid (EL)',
+    htmlFile: 'roses-teachers-aid-el.html',
+    outputFile: 'ROSES-OS-Teachers-Aid-EL.pdf',
+  },
 ];
 
 // ---------------------------------------------------------------------------

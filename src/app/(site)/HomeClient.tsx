@@ -546,13 +546,15 @@ export default function HomeClient() {
       if (!title) return;
 
       const words = title.querySelectorAll('.hero-word');
-      gsap.set(words, { opacity: 0, y: 60, filter: 'blur(6px)' });
+      const isMobileDevice = window.matchMedia('(pointer: coarse)').matches && window.innerWidth < 768;
+      // Skip expensive blur filter on mobile — use opacity + Y only
+      gsap.set(words, { opacity: 0, y: isMobileDevice ? 30 : 60, filter: isMobileDevice ? 'none' : 'blur(6px)' });
       gsap.to(words, {
         y: 0,
         opacity: 1,
-        filter: 'blur(0px)',
-        duration: 0.9,
-        stagger: 0.1,
+        filter: isMobileDevice ? 'none' : 'blur(0px)',
+        duration: isMobileDevice ? 0.6 : 0.9,
+        stagger: isMobileDevice ? 0.06 : 0.1,
         ease: 'power3.out',
         delay: fromPreloader.current ? 0.2 : 0.5,
       });

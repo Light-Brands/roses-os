@@ -248,8 +248,8 @@ export const level1Slides: TeachingSlide[] = [
     concept: "Let's Create Your Sacred Space",
     teachingText:
       'Level 2 begins with creating your own sacred space — an internal energetic environment that serves as your meditation home. This is the space from which all deeper work is conducted.',
-    reimaginedImage: 'level-1/17-sacred-space.png',
-    imageNote: 'Illustration needed: A person seated in meditation posture, with a glowing point of awareness at the center of the head — the sacred space. Should convey inner stillness, spiritual authority, and the feeling of being safely centered within. Reference: PDF source "CENTER OF THE HEAD - SACRED SPACE" section.',
+    reimaginedImage: 'level-1/17-sacred-space-abstract.png',
+    imageNote: 'Abstract sacred space — inner stillness, spiritual authority, sacred geometry radiating from center of head.',
     level: 1,
     section: 'sacred-space',
   },
@@ -278,8 +278,8 @@ export const level2Slides: TeachingSlide[] = [
     concept: "Let's Prepare Your Physical Space",
     teachingText:
       'Before meditation, prepare your physical environment to support the energetic work. The external space should mirror the internal intention: clean, clear, quiet, and intentionally held.',
-    reimaginedImage: 'level-2/19-physical-space.png',
-    imageNote: 'Illustration needed: A clean, serene meditation room — tidy and intentionally arranged. Could show a chair in a quiet room with soft light, conveying readiness and sacred intention. This bridges the inner sacred space with the physical environment. Reference: PDF source "PHASE B - PREPARING THE SPACE" introduction.',
+    reimaginedImage: 'level-2/19-physical-space-abstract.png',
+    imageNote: 'Abstract space preparation — protective boundary, golden light, cleansing energy waves.',
     level: 2,
     section: 'sacred-space',
   },

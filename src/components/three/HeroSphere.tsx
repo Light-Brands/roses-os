@@ -18,6 +18,7 @@ export default function HeroSphere() {
   const isDark = resolvedTheme === 'dark';
 
   const [reducedMotion, setReducedMotion] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const [containerReady, setContainerReady] = useState(false);
   const [glReady, setGlReady] = useState(false);
 
@@ -65,8 +66,22 @@ export default function HeroSphere() {
     };
   }, [glReady]);
 
-  // Track mouse globally (sphere has pointer-events-none)
+  // Detect mobile devices (touch-primary with small viewport)
   useEffect(() => {
+    const checkMobile = () => {
+      const touch = window.matchMedia('(pointer: coarse)').matches;
+      const narrow = window.innerWidth < 768;
+      setIsMobile(touch && narrow);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Track mouse globally — skip on mobile (no mouse, saves battery)
+  useEffect(() => {
+    if (isMobile) return;
+
     const handleMouseMove = (e: MouseEvent) => {
       // Normalize to [-1, 1]
       mouseRef.current.x = (e.clientX / window.innerWidth) * 2 - 1;
@@ -75,7 +90,7 @@ export default function HeroSphere() {
 
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+  }, [isMobile]);
 
   // Reduced motion preference
   useEffect(() => {
