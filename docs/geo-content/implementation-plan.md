@@ -2,7 +2,7 @@
 
 **Status:** Complete
 **Date:** March 8, 2026
-**Updated:** March 8, 2026 — All items implemented including extended SEO/GEO coverage
+**Updated:** March 12, 2026 — OG image created; all core items complete
 
 ---
 
@@ -110,6 +110,8 @@ schema.org/Course structured data for each program offering:
 | Create | `src/app/sitemap.ts` | Auto-generated sitemap |
 | Create | `src/app/robots.ts` | Crawl directives |
 | Create | `docs/geo-content/city-targeting-questions.md` | Founder review doc for city list |
+| Create | `public/og-image.jpg` | 1200x630 Open Graph image for social sharing previews |
+| Create | `scripts/generate-og-image.mjs` | Node script to regenerate OG image from rose mandala |
 
 ### Architecture Decisions
 
@@ -186,6 +188,13 @@ Beyond the original geo-content plan, the following site-wide SEO and GEO improv
 
 ### AI Bot Directives (GEO)
 - Explicitly allowed GPTBot, ChatGPT-User, Google-Extended, PerplexityBot, Anthropic, ClaudeBot, Applebot-Extended in `robots.ts`
+
+### Open Graph Image (March 12, 2026)
+- Generated `public/og-image.jpg` (1200×630) using the backcover rose mandala artwork
+- Layout: mandala on the left, "ROSES" brand name + "MEDITATION & AURA READING" tagline on the right, on Aura White (`#F7F5F2`) background
+- Referenced site-wide via `siteConfig.ogImage` in `src/lib/seo.tsx` — all pages now show a branded preview card when shared on social media, Slack, Discord, etc.
+- Added `scripts/generate-og-image.mjs` for easy regeneration if branding changes
+- Removed TODO comment from `seo.tsx`
 
 ### Remaining TODOs
 - [x] Create `og-image.jpg` (1200x630) and place in `/public` — uses backcover rose mandala
