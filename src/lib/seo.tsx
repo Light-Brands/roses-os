@@ -9,7 +9,6 @@ export const siteConfig = {
   name: 'ROSES OS',
   description: 'A seamless path to inner freedom. ROSES OS offers Rose Meditation and Aura Reading courses online — a living ecosystem of practices, teachings, and community to help you remember who you truly are.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://rosesos.com',
-  // TODO: Create og-image.jpg (1200x630) and place in /public — design task
   ogImage: '/og-image.jpg',
   creator: '@rosesos',
   keywords: [
