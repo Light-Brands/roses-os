@@ -50,7 +50,7 @@ Final manuals served on the website live in `public/resources/manuals/`:
 | 11 | `11-therosegold.PNG` | The Rose (Gold) |
 | 12 | `12-four-roses.PNG` | Four Roses |
 | 13 | `13-cleansing-rose-reimagined.png` | Cleansing Rose |
-| 14 | `14-energy-recovery-background.png` | Recovery Rose |
+| 14 | `14-energy-recovery-background.jpeg` | Recovery Rose |
 | 15 | `15-pink-rose-closure.png` | Pink Rose |
 | 16 | `16-discharge-excess.PNG` | Discharge Excess |
 | 17 | `17-sacred-space.png` | Sacred Space |
@@ -153,7 +153,7 @@ The combined Level 1&2 PDF is being split. This manual becomes **Level 2 only**.
   - `level-1/10-cosmosearth.PNG`
 - [ ] **9. Replace Cleansing Rose and Recovery Rose images** -- Use:
   - Cleansing Rose: `level-1/13-cleansing-rose-reimagined.png`
-  - Recovery Rose: `level-1/14-energy-recovery-background.png`
+  - Recovery Rose: `level-1/14-energy-recovery-background.jpeg`
 - [ ] **10. Replace Pink Rose image** -- Use `level-1/15-pink-rose-closure.png`
 - [ ] **11. Add Sacred Space section** -- Sacred Space is moving from Level 2 to Level 1. It becomes the last technique (after the pink rose). Add the Sacred Space content and images (`level-1/17-sacred-space.png` / `level-1/18-sacred-space.PNG`).
 - [ ] **12. Add Discharge Excess image at end of meditation** -- Use `level-1/16-discharge-excess.PNG`

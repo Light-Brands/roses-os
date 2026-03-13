@@ -112,7 +112,7 @@ Below is the **complete inventory** of every image used on the site, organized b
 | 11 | **The Rose (as Energetic Tool)** -- Roots, stem, bloom in detail. Functions: place, move, open, close, release. | `level-1/11-therosegold.PNG` | `level-1/11-therosegold.PNG` |
 | 12 | **Roses of Protection, Observation, and Separation** -- Roses at the edges of the aura as energetic sentinels. | `level-1/12-four-roses.PNG` | `level-1/12-four-roses-original.PNG` |
 | 13 | **Cleansing Rose** -- Rose outside the aura absorbing and transmuting foreign energy. | `level-1/13-cleansing-rose-reimagined.png` | `level-1/13-cleansing-rose.PNG` |
-| 14 | **Energy Recovery** -- Rose gathering and returning life-force energy to each chakra. | `level-1/14-energy-recovery-background.png` | `level-1/14-recovery-rose-original.PNG` |
+| 14 | **Energy Recovery** -- Rose gathering and returning life-force energy to each chakra. | `level-1/14-energy-recovery-background.jpeg` | `level-1/14-recovery-rose-original.PNG` |
 | 15 | **Pink Rose Closure** -- Gift of well-being at the end of meditation. | `level-1/15-pink-rose-closure.png` | -- |
 | 16 | **Discharge Excess Energy** -- Leaning forward, energy flowing from hands into the earth. | `level-1/16-discharge-excess.PNG` | `level-1/16-discharge-energy-original.PNG` |
 | 17 | **Sacred Space** -- Creating your own internal energetic environment for meditation. | `level-1/17-sacred-space.png` | -- |
@@ -331,7 +331,7 @@ Below is the complete teaching text that accompanies each image/slide in the man
 ---
 
 #### Slide 14: Energy Recovery of Each Chakra
-**Original:** `level-1/14-recovery-rose-original.PNG` | **Reimagined:** `level-1/14-energy-recovery-background.png`
+**Original:** `level-1/14-recovery-rose-original.PNG` | **Reimagined:** `level-1/14-energy-recovery-background.jpeg`
 
 > After cleansing, the Rose is used to recover your own energy that has been left in or taken by others. The Rose is sent out as an instrument to gather and return your own life-force energy to each chakra, restoring fullness and sovereignty to each energy center.
 
