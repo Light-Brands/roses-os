@@ -34,9 +34,6 @@ export const manualPdfConfigs: ManualPdfConfig[] = [
     level: 2,
     paths: {
       en: '/resources/manuals/ROSES-OS-Level-2-Manual-EN.pdf',
-      es: '/resources/manuals/ROSES-OS-Level-2-Manual-ES.pdf',
-      pt: '/resources/manuals/ROSES-OS-Level-2-Manual-PT.pdf',
-      el: '/resources/manuals/ROSES-OS-Level-2-Manual-EL.pdf',
     },
     labels: {
       en: 'Download Student Manual',
@@ -49,9 +46,6 @@ export const manualPdfConfigs: ManualPdfConfig[] = [
     level: 3,
     paths: {
       en: '/resources/manuals/ROSES-OS-Level-3-Manual-EN.pdf',
-      es: '/resources/manuals/ROSES-OS-Level-3-Manual-ES.pdf',
-      pt: '/resources/manuals/ROSES-OS-Level-3-Manual-PT.pdf',
-      el: '/resources/manuals/ROSES-OS-Level-3-Manual-EL.pdf',
     },
     labels: {
       en: 'Download Student Manual',
