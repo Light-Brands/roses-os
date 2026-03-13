@@ -13,6 +13,7 @@
     "icons": "node scripts/generate-favicons.mjs",
     "build:manuals": "npx tsx scripts/build-manuals.ts",
     "build:manuals:l1": "npx tsx scripts/build-manuals.ts --level 1",
+    "build:manuals:l2": "npx tsx scripts/build-manuals.ts --level 2",
     "build:manuals:l12": "npx tsx scripts/build-manuals.ts --level 12",
     "build:manuals:l3": "npx tsx scripts/build-manuals.ts --level 3"
   },
