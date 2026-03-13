@@ -22,7 +22,7 @@ export default function SummaryDownloadButton({ className, variant = 'dark' }: S
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = 'roses-os-aura1-guide.pdf';
+      a.download = 'roses-os-guide.pdf';
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -59,7 +59,7 @@ export default function SummaryDownloadButton({ className, variant = 'dark' }: S
       ) : (
         <Download className="w-4 h-4" />
       )}
-      <span>{loading ? 'Generating PDF...' : 'Aura 1 Program Guide'}</span>
+      <span>{loading ? 'Generating PDF...' : 'Aura 1 & 2 Program Guide'}</span>
     </motion.button>
   );
 }
