@@ -5,6 +5,7 @@ import { teachingLevels } from '@/lib/data';
 import { openingAgreements, openingImportantToKnow, openingHistory } from '@/lib/data/teaching-slides';
 import { PdfExportButton } from '@/components/ui/PdfExportButton';
 import LanguageSelector from '@/components/teaching/LanguageSelector';
+import { Printer } from 'lucide-react';
 import { useLanguage } from '@/lib/i18n';
 
 export default function TeachingPage() {
@@ -49,8 +50,15 @@ export default function TeachingPage() {
           <p className="text-[var(--color-foreground-muted)] text-center max-w-lg">
             {t?.ui.facilitatorCompanion ?? 'A facilitator\u2019s visual companion for teaching Rose Meditation.'}
           </p>
-          <div className="flex items-center justify-center gap-3 pt-4">
+          <div className="flex items-center justify-center gap-3 pt-4 flex-wrap">
             <PdfExportButton />
+            <Link
+              href="/teaching/teachers-aid"
+              className="inline-flex items-center gap-2 rounded-xl px-6 py-3 font-medium bg-[var(--color-background-subtle)] text-[var(--color-foreground)] border border-[var(--color-border)] hover:bg-[var(--color-background-muted)] transition-all duration-200 print:hidden"
+            >
+              <Printer className="h-4 w-4" />
+              <span>Print Pages</span>
+            </Link>
             <LanguageSelector />
           </div>
         </div>
