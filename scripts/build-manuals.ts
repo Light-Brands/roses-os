@@ -144,6 +144,43 @@ function syncFile(src: string, dest: string): 'copied' | 'skipped' {
 }
 
 // ---------------------------------------------------------------------------
+// Helper: find Chrome / Chromium executable
+// ---------------------------------------------------------------------------
+
+function findChrome(): string {
+  const candidates = [
+    // macOS
+    '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+    // Linux common locations
+    '/usr/bin/google-chrome',
+    '/usr/bin/google-chrome-stable',
+    '/usr/bin/chromium',
+    '/usr/bin/chromium-browser',
+  ];
+
+  // Also check Playwright headless shell
+  const playwrightGlob = '/root/.cache/ms-playwright/chromium_headless_shell-*/chrome-linux/headless_shell';
+  try {
+    const { execSync } = require('child_process');
+    const result = execSync(`ls ${playwrightGlob} 2>/dev/null`, { encoding: 'utf-8' }).trim();
+    if (result) candidates.push(result.split('\n')[0]);
+  } catch {}
+
+  // Allow override via env
+  if (process.env.CHROME_PATH && fs.existsSync(process.env.CHROME_PATH)) {
+    return process.env.CHROME_PATH;
+  }
+
+  for (const p of candidates) {
+    if (fs.existsSync(p)) return p;
+  }
+
+  throw new Error(
+    'Chrome/Chromium not found. Install Chrome or set CHROME_PATH env variable.',
+  );
+}
+
+// ---------------------------------------------------------------------------
 // Step 2: Build a single manual PDF
 // ---------------------------------------------------------------------------
 
@@ -159,8 +196,9 @@ async function buildManualPdf(config: ManualConfig): Promise<string> {
     fs.mkdirSync(OUTPUT_DIR, { recursive: true });
   }
 
+  const chromePath = findChrome();
   const browser = await puppeteer.launch({
-    executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+    executablePath: chromePath,
     headless: true,
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
@@ -170,7 +208,7 @@ async function buildManualPdf(config: ManualConfig): Promise<string> {
 
     await page.goto(`file://${htmlPath}`, {
       waitUntil: 'networkidle0',
-      timeout: 30000,
+      timeout: 60000,
     });
 
     await page.evaluateHandle('document.fonts.ready');
