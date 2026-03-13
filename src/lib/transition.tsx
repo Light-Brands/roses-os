@@ -56,18 +56,28 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
         // Navigate (content swaps behind curtain)
         router.push(href);
 
-        // Phase 2: curtain continues up to reveal new page
-        // Double rAF ensures browser has painted new content
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            setPhase('revealing');
+        // Verify navigation succeeded after a short delay.
+        // If router.push silently failed (e.g. chunk load error),
+        // fall back to a full page navigation.
+        addTimer(() => {
+          if (window.location.pathname !== href) {
+            window.location.href = href;
+            return;
+          }
 
-            addTimer(() => {
-              setPhase('idle');
-              transitioning.current = false;
-            }, REVEAL_MS);
+          // Phase 2: curtain continues up to reveal new page
+          // Double rAF ensures browser has painted new content
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              setPhase('revealing');
+
+              addTimer(() => {
+                setPhase('idle');
+                transitioning.current = false;
+              }, REVEAL_MS);
+            });
           });
-        });
+        }, 150);
       }, COVER_MS);
     },
     [router, addTimer]
