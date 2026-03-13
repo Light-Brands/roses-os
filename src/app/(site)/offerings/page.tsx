@@ -82,7 +82,7 @@ export default function OfferingsPage() {
     description:
       'A multi-week live online course in aura reading, energy healing, and clairvoyant perception. Learn to read and cleanse the human energy field.',
     startDate: '2026-03-17',
-    endDate: '2026-03-27',
+    endDate: '2026-06-29',
     price: '888',
     url: `${siteConfig.url}/offerings`,
   });
