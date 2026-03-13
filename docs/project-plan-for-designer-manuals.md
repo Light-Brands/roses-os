@@ -145,7 +145,7 @@ These Level 1 images may appear in the Level 2 manual as foundational context or
 | **The Rose** | 1 | `01-the-rose.PNG` | -- |
 | **Grounding Cord** | 3 | `03-grounding-cord.jpeg` | -- |
 | **Aura Exercise** | 5 | `05-aura-exercise.PNG` | `05-auraexercise-original.PNG` |
-| **Energy Recovery (Level 1)** | 14 | `14-energy-recovery-background.png` | `14-recovery-rose-original.PNG` |
+| **Energy Recovery (Level 1)** | 14 | `14-energy-recovery-background.jpeg` | `14-recovery-rose-original.PNG` |
 | **Sacred Space** | 17 | `17-sacred-space.png` | -- |
 | **6th and 7th Chakras** | 18 | `18-sacred-space.PNG` | `18-sacredspace-original.jpg` |
 
