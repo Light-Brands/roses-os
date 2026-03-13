@@ -34,21 +34,17 @@ import MeditationPdfButton from '@/components/ui/MeditationPdfButton';
 type TimezoneKey = keyof TimeZoneEntry;
 
 const timezoneLabels: Record<TimezoneKey, string> = {
-  sanJose: 'San Jose',
-  bogota: 'Bogota',
+  mexicoCity: 'Mexico City',
   newYork: 'New York',
   brasilia: 'Brasilia',
   london: 'London',
-  madrid: 'Madrid',
 };
 
 const timezoneAbbreviations: Record<TimezoneKey, string> = {
-  sanJose: 'CST',
-  bogota: 'COT',
+  mexicoCity: 'CST',
   newYork: 'EST',
   brasilia: 'BRT',
   london: 'GMT',
-  madrid: 'CET',
 };
 
 // =============================================================================

@@ -38,7 +38,7 @@ export const geoLocations: GeoLocation[] = [
     city: 'San Francisco',
     region: 'California',
     country: 'United States',
-    timezoneKey: 'sanJose',
+    timezoneKey: 'mexicoCity',
     timezoneLabel: 'Pacific Time (PT)',
     intro:
       'Join Rose Meditation and Aura Reading courses from San Francisco. Live online classes run at convenient Pacific Time hours — morning sessions fit naturally into your Bay Area routine. Connect with a global community of practitioners without leaving home.',
@@ -55,7 +55,7 @@ export const geoLocations: GeoLocation[] = [
     city: 'Los Angeles',
     region: 'California',
     country: 'United States',
-    timezoneKey: 'sanJose',
+    timezoneKey: 'mexicoCity',
     timezoneLabel: 'Pacific Time (PT)',
     intro:
       'Join Rose Meditation and Aura Reading courses from Los Angeles. Live online classes are scheduled for Pacific Time — attend from anywhere in LA with morning and midday sessions. No commute, no traffic, just presence.',
@@ -73,7 +73,7 @@ export const geoLocations: GeoLocation[] = [
     city: 'Mount Shasta',
     region: 'California',
     country: 'United States',
-    timezoneKey: 'sanJose',
+    timezoneKey: 'mexicoCity',
     timezoneLabel: 'Pacific Time (PT)',
     intro:
       'Join Rose Meditation and Aura Reading courses from Mount Shasta, California. Live online classes at Pacific Time hours — morning sessions that align with the sacred energy of the mountain. Connect with a global community of 5,000+ initiates from one of the world\'s most revered spiritual power centers.',
@@ -93,7 +93,7 @@ export const geoLocations: GeoLocation[] = [
     city: 'Sedona',
     region: 'Arizona',
     country: 'United States',
-    timezoneKey: 'sanJose',
+    timezoneKey: 'mexicoCity',
     timezoneLabel: 'Mountain Standard Time (MST)',
     intro:
       'Join Rose Meditation and Aura Reading courses from Sedona, Arizona — one of the world\'s most recognized energy vortex sites. Live online classes at Mountain Standard Time hours — morning sessions that align with the red rock energy. Connect with a global community of 5,000+ initiates from the heart of the desert.',
@@ -114,7 +114,7 @@ export const geoLocations: GeoLocation[] = [
     city: 'Bogotá',
     region: '',
     country: 'Colombia',
-    timezoneKey: 'bogota',
+    timezoneKey: 'mexicoCity',
     timezoneLabel: 'Colombia Time (COT)',
     intro:
       'Únete a los cursos de Meditación con Rosas y Lectura de Aura desde Bogotá. Todas las clases en vivo están programadas en horario de Colombia — sesiones matutinas y de mediodía que se integran a tu día. Join Rose Meditation and Aura Reading courses from Bogotá with classes at convenient Colombia Time hours.',
@@ -132,7 +132,7 @@ export const geoLocations: GeoLocation[] = [
     city: 'Mexico City',
     region: '',
     country: 'Mexico',
-    timezoneKey: 'bogota',
+    timezoneKey: 'mexicoCity',
     timezoneLabel: 'Central Time (CST)',
     intro:
       'Join Rose Meditation and Aura Reading courses from Mexico City. Live online classes are scheduled at hours that work for Central Time — no need to travel. Conecta con una comunidad global de más de 5,000 iniciados desde la comodidad de tu hogar.',
@@ -150,7 +150,7 @@ export const geoLocations: GeoLocation[] = [
     city: 'Oaxaca',
     region: 'Oaxaca',
     country: 'Mexico',
-    timezoneKey: 'bogota',
+    timezoneKey: 'mexicoCity',
     timezoneLabel: 'Central Time (CST)',
     intro:
       'Join Rose Meditation and Aura Reading courses from Oaxaca, Mexico. Live online classes at Central Time hours — morning and midday sessions that complement the ancestral energy of this sacred land. Conecta con una comunidad global de más de 5,000 iniciados desde uno de los centros espirituales más profundos de México.',
@@ -169,7 +169,7 @@ export const geoLocations: GeoLocation[] = [
     city: 'Tulum',
     region: 'Quintana Roo',
     country: 'Mexico',
-    timezoneKey: 'bogota',
+    timezoneKey: 'mexicoCity',
     timezoneLabel: 'Central Time (CST)',
     intro:
       'Join Rose Meditation and Aura Reading courses from Tulum. Live online classes at Central Time hours — perfect for your rhythm in the Riviera Maya. Conecta con una comunidad global de más de 5,000 iniciados sin salir de tu santuario en el Caribe.',
@@ -188,7 +188,7 @@ export const geoLocations: GeoLocation[] = [
     city: 'Austin',
     region: 'Texas',
     country: 'United States',
-    timezoneKey: 'bogota',
+    timezoneKey: 'mexicoCity',
     timezoneLabel: 'Central Time (CT)',
     intro:
       'Join Rose Meditation and Aura Reading courses from Austin, Texas. Live online classes run at convenient Central Time hours — morning and midday sessions that fit your schedule. Connect with a global community of 5,000+ initiates from the comfort of your home.',
@@ -206,7 +206,7 @@ export const geoLocations: GeoLocation[] = [
     city: 'San José',
     region: '',
     country: 'Costa Rica',
-    timezoneKey: 'bogota',
+    timezoneKey: 'mexicoCity',
     timezoneLabel: 'Central Standard Time (CST)',
     intro:
       'Join Rose Meditation and Aura Reading courses from San José, Costa Rica. Live online classes at Central Time hours — morning and midday sessions that complement the pura vida rhythm. Conecta con una comunidad global de más de 5,000 iniciados desde la comodidad de tu hogar.',
@@ -225,7 +225,7 @@ export const geoLocations: GeoLocation[] = [
     city: 'Denver',
     region: 'Colorado',
     country: 'United States',
-    timezoneKey: 'bogota',
+    timezoneKey: 'mexicoCity',
     timezoneLabel: 'Mountain Time (MT)',
     intro:
       'Join Rose Meditation and Aura Reading courses from Denver, Colorado. Live online classes at Mountain Time hours — morning sessions that align with the mile-high rhythm. Connect with a global community of 5,000+ initiates from the comfort of your home.',
@@ -409,7 +409,7 @@ export const geoLocations: GeoLocation[] = [
     city: 'Madrid',
     region: '',
     country: 'Spain',
-    timezoneKey: 'madrid',
+    timezoneKey: 'london',
     timezoneLabel: 'Central European Time (CET)',
     intro:
       'Únete a los cursos de Meditación con Rosas y Lectura de Aura desde Madrid. Clases en vivo por la tarde y noche en horario CET. Join Rose Meditation and Aura Reading courses from Madrid with afternoon and evening class times.',
@@ -426,7 +426,7 @@ export const geoLocations: GeoLocation[] = [
     city: 'Barcelona',
     region: '',
     country: 'Spain',
-    timezoneKey: 'madrid',
+    timezoneKey: 'london',
     timezoneLabel: 'Central European Time (CET)',
     intro:
       'Join Rose Meditation and Aura Reading courses from Barcelona. Live online classes at CET afternoon and evening hours — no travel required. Conecta con una comunidad global de practicantes desde la comodidad de tu hogar.',
@@ -443,7 +443,7 @@ export const geoLocations: GeoLocation[] = [
     city: 'Paris',
     region: '',
     country: 'France',
-    timezoneKey: 'madrid',
+    timezoneKey: 'london',
     timezoneLabel: 'Central European Time (CET)',
     intro:
       'Rejoignez les cours de Méditation de la Rose et de Lecture d\'Aura depuis Paris. Les cours en direct se déroulent l\'après-midi et le soir, heure CET. Join Rose Meditation and Aura Reading courses from Paris with afternoon and evening class times.',
@@ -460,7 +460,7 @@ export const geoLocations: GeoLocation[] = [
     city: 'Berlin',
     region: '',
     country: 'Germany',
-    timezoneKey: 'madrid',
+    timezoneKey: 'london',
     timezoneLabel: 'Central European Time (CET)',
     intro:
       'Join Rose Meditation and Aura Reading courses from Berlin. Live online classes at CET afternoon and evening hours — connect with a global community of 5,000+ initiates from the comfort of your home.',
@@ -477,7 +477,7 @@ export const geoLocations: GeoLocation[] = [
     city: 'Ibiza',
     region: 'Balearic Islands',
     country: 'Spain',
-    timezoneKey: 'madrid',
+    timezoneKey: 'london',
     timezoneLabel: 'Central European Time (CET)',
     intro:
       'Join Rose Meditation and Aura Reading courses from Ibiza. Live online classes at CET afternoon and evening hours — deepen your practice from the island of transformation. Conecta con una comunidad global de más de 5,000 iniciados sin salir de la isla.',
@@ -496,7 +496,7 @@ export const geoLocations: GeoLocation[] = [
     city: 'Paphos',
     region: '',
     country: 'Cyprus',
-    timezoneKey: 'madrid',
+    timezoneKey: 'london',
     timezoneLabel: 'Eastern European Time (EET)',
     intro:
       'Join Rose Meditation and Aura Reading courses from Paphos, Cyprus — home to the ROSES OS guardians and Digital Cultures. Live online classes with afternoon and evening session times. Experience the birthplace of this living ecosystem.',
@@ -588,7 +588,7 @@ export const geoFAQs: FAQItem[] = [
     id: 'what-timezones',
     question: 'What timezones do you support?',
     answer:
-      'Classes are scheduled across 6 major timezone bands to accommodate students worldwide: Pacific Time (US West Coast), Colombia/Central Time, Eastern Time (US East Coast / Canada), Brasília Time (Brazil / Argentina), GMT (UK / Portugal), and CET (Spain / France / Germany / Central Europe). Practice sessions are offered in multiple time slots so you can choose what fits your schedule.',
+      'Classes are scheduled across 4 major timezone bands to accommodate students worldwide: Mexico City (Central Time), New York (Eastern Time), Brasília (Brazil / Argentina), and London (UK / Portugal / Europe). Practice sessions are offered in multiple time slots so you can choose what fits your schedule.',
     category: 'logistics',
   },
   {
@@ -602,7 +602,7 @@ export const geoFAQs: FAQItem[] = [
     id: 'how-long-aura-reading',
     question: 'How long is the Aura Reading course?',
     answer:
-      'Aura Reading Level 1 is an 11-day intensive that includes the 2-day Rose Meditation foundation plus 9 days of aura reading training. The course combines weekend intensive classes with weekday practice sessions. Daily Rose Meditation guidance is included throughout. You can choose from multiple practice time slots each day to fit your schedule.',
+      'Aura Reading Level 1 is a multi-month program running from March through June 2026. It begins with the 2-day Rose Meditation foundation, followed by Aura Reading classes spread across select dates and weekly practice sessions. Daily Rose Meditation guidance is included throughout. You can choose from practice time slots that fit your schedule.',
     category: 'logistics',
   },
   {

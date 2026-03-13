@@ -440,14 +440,14 @@ async function loadAndResizeImage(
 // SCHEDULE TABLE — STYLED
 // =============================================================================
 
-type TZ = 'newYork' | 'brasilia' | 'london' | 'madrid';
+type TZ = 'mexicoCity' | 'newYork' | 'brasilia' | 'london';
 const TZ_LABELS: Record<TZ, string> = {
+  mexicoCity: 'MX - Mexico City',
   newYork: 'US - New York',
   brasilia: 'BR - Brasilia',
   london: 'UK - London',
-  madrid: 'ES - Madrid',
 };
-const TZ_KEYS: TZ[] = ['newYork', 'brasilia', 'london', 'madrid'];
+const TZ_KEYS: TZ[] = ['mexicoCity', 'newYork', 'brasilia', 'london'];
 
 function drawScheduleTableStyled(
   page: PDFPage,
