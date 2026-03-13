@@ -40,7 +40,7 @@ const MANUALS: ManualConfig[] = [
   {
     id: '1',
     label: 'Rose Meditation — Level 1',
-    htmlFile: 'rose-meditation-level-1.html',
+    htmlFile: 'roses-manual-1.html',
     outputFile: 'ROSES-OS-Level-1-Manual-EN.pdf',
   },
   {
