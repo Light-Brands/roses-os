@@ -113,6 +113,8 @@ All strategic and brand documentation living in the repository:
 - Diverse representation across all figure illustrations
 - Designer notes and specifications documented
 
+*All teaching content for this manual was authored by the school. Our scope covers the visual design, custom illustrations, layout, and print-ready production.*
+
 **Status:** Design specifications complete. Visual production active. ETA: ASAP.
 
 ### 2.2 Student Manual Redesign
@@ -122,6 +124,8 @@ All strategic and brand documentation living in the repository:
 - Greek-style / Yeva World aesthetic
 - 4 languages each (12 PDF deliverables)
 - **Image pipeline now connected to teaching slides** -- Core technique images are shared with the teaching platform. Updating an image on the teaching slides and running one rebuild command regenerates all three manual PDFs. Covers, summary pages, and level-specific illustrations are maintained separately.
+
+*All manual content was authored by the school. Our scope covers the visual redesign, image creation and integration, layout, and multilingual PDF production.*
 
 **Status:** Content ready. Visual design pending MDR completion. Deadline: March 15, 2026.
 
@@ -166,8 +170,8 @@ All strategic and brand documentation living in the repository:
 ### Phase 2 -- In Progress
 | # | Deliverable | Description |
 |---|-------------|-------------|
-| 11 | **MDR Visual Manual** | 46-page teacher's resource manual with custom illustrations |
-| 12 | **Student Manuals** | Redesigned Level 2 & Level 3 manuals in 4 languages (8-12 PDFs) |
+| 11 | **MDR Visual Manual** | 46-page teacher's resource manual -- visual design, custom illustrations, and layout (teaching content authored by the school) |
+| 12 | **Student Manuals** | Visual redesign of Level 2 & Level 3 manuals in 4 languages (8-12 PDFs) -- design, layout, and image integration (manual content authored by the school) |
 | 13 | **Brand Book** | 110-130 page brand identity book with visual design |
 
 ### Phase 3 -- Proposed Next
@@ -282,7 +286,9 @@ All work has been contributed at **100% off market value** -- no payment is requ
 
 | Deliverable | Scope |
 |-------------|-------|
-| **MDR Teacher's Visual Manual** | 46-page manual, custom illustrations, chakra diagrams, diverse representation, print-ready |
+| **MDR Teacher's Visual Manual** | 46-page manual -- visual design, custom illustrations, chakra diagrams, layout, diverse representation, print-ready production |
+
+*All teaching content was authored by the school. The scope and market value of this milestone covers visual design, custom illustrations, layout, and print-ready production -- not content creation.*
 
 **Acceptance Criteria:** 46-page print-ready PDF delivered with all custom illustrations, chakra diagrams with accurate placement, diverse representation across figures.
 
@@ -296,7 +302,9 @@ All work has been contributed at **100% off market value** -- no payment is requ
 
 | Deliverable | Scope |
 |-------------|-------|
-| **Student Manuals Redesign** | Level 2 + Level 3 manuals, 4 languages each (8-12 PDFs), Yeva World aesthetic |
+| **Student Manuals Redesign** | Level 2 + Level 3 manuals -- visual redesign, image creation and integration, layout, 4 languages each (8-12 PDFs), Yeva World aesthetic |
+
+*All manual content was authored by the school. The scope and market value of this milestone covers the visual redesign, image creation and integration, layout, and multilingual PDF production -- not content creation or translation.*
 
 **Acceptance Criteria:** Level 2 and Level 3 manuals delivered as print-ready PDFs in all 4 languages (8-12 total PDFs), Yeva World aesthetic applied consistently.
 
