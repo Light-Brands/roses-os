@@ -19,9 +19,9 @@ export const manualPdfConfigs: ManualPdfConfig[] = [
     level: 1,
     paths: {
       en: '/resources/manuals/ROSES-OS-Level-1-Manual-EN.pdf',
-      es: '/resources/manuals/roses-level-1-manual-es.pdf',
-      pt: '/resources/manuals/roses-level-1-manual-pt.pdf',
-      el: '/resources/manuals/roses-level-1-manual-el.pdf',
+      es: '/resources/manuals/ROSES-OS-Level-1-Manual-ES.pdf',
+      pt: '/resources/manuals/ROSES-OS-Level-1-Manual-PT.pdf',
+      el: '/resources/manuals/ROSES-OS-Level-1-Manual-EL.pdf',
     },
     labels: {
       en: 'Download Student Manual',
