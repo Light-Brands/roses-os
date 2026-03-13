@@ -26,7 +26,7 @@ async function htmlToPdf(htmlPath: string, outputPath: string) {
   console.log(`  Output: ${absoluteOutput}\n`);
 
   const browser = await puppeteer.launch({
-    executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+    executablePath: process.env.CHROME_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
     headless: true,
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
