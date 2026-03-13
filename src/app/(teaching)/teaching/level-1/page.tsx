@@ -5,7 +5,7 @@ import { teachingLevels } from '@/lib/data';
 import { level1Slides } from '@/lib/data/teaching-slides';
 import LevelNav from '@/components/teaching/LevelNav';
 import TeachingSlideCard from '@/components/teaching/TeachingSlideCard';
-import { PdfExportButton } from '@/components/ui/PdfExportButton';
+import PrintPageButton from '@/components/teaching/PrintPageButton';
 import ManualPdfButton from '@/components/teaching/ManualPdfButton';
 import { manualPdfConfigs } from '@/lib/data/manual-pdf-paths';
 import { ImageDownloadButton } from '@/components/teaching/ImageDownloadButton';
@@ -54,7 +54,7 @@ export default function Level1Page() {
                 {levelT?.description ?? level.description}
               </p>
               <div className="flex items-center gap-3 mt-4 flex-wrap">
-                <PdfExportButton />
+                <PrintPageButton />
                 <ManualPdfButton
                   paths={manualPdfConfigs[0].paths}
                   labels={manualPdfConfigs[0].labels}

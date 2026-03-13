@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { teachingLevels } from '@/lib/data';
 import { openingAgreements, openingImportantToKnow, openingHistory } from '@/lib/data/teaching-slides';
-import { PdfExportButton } from '@/components/ui/PdfExportButton';
+import PrintPageButton from '@/components/teaching/PrintPageButton';
 import LanguageSelector from '@/components/teaching/LanguageSelector';
 import { useLanguage } from '@/lib/i18n';
 
@@ -49,8 +49,8 @@ export default function TeachingPage() {
           <p className="text-[var(--color-foreground-muted)] text-center max-w-lg">
             {t?.ui.facilitatorCompanion ?? 'A facilitator\u2019s visual companion for teaching Rose Meditation.'}
           </p>
-          <div className="flex items-center justify-center gap-3 pt-4">
-            <PdfExportButton />
+          <div className="flex items-center justify-center gap-3 pt-4 flex-wrap">
+            <PrintPageButton />
             <LanguageSelector />
           </div>
         </div>
