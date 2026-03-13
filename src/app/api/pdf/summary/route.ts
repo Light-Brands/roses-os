@@ -564,9 +564,9 @@ function drawTierCards(
 export async function GET() {
   try {
     const doc = await PDFDocument.create();
-    doc.setTitle('ROSES OS - Programs Guide');
+    doc.setTitle('ROSES OS - Aura 1 Program Guide');
     doc.setAuthor('ROSES OS');
-    doc.setSubject('Programs, Schedule, and Community');
+    doc.setSubject('Aura 1 Program, Schedule, and Community');
 
     const serifFont  = await doc.embedFont(StandardFonts.TimesRoman);
     const serifBold  = await doc.embedFont(StandardFonts.TimesRomanBold);
@@ -1050,7 +1050,6 @@ export async function GET() {
       let y = PAGE_HEIGHT - MARGIN - 8;
 
       const auraProg = programs.find(p => p.id === '1');
-      const aura2Prog = programs.find(p => p.id === '2');
 
       // Aura 1
       if (auraProg) {
@@ -1079,18 +1078,6 @@ export async function GET() {
         y = drawTierCards(page, contributionTiers, y, fonts);
       }
 
-      y -= 4;
-      y = drawHRule(page, y);
-
-      // Aura 2 teaser
-      if (aura2Prog) {
-        y = drawSectionLabel(page, 'Aura Reading Level 2', y, sansBold);
-        page.drawText(`${aura2Prog.title}: ${aura2Prog.subtitle}`, { x: MARGIN, y, size: 12, font: serifBold, color: COLORS.deepBrown });
-        y -= 16;
-        page.drawText(`${aura2Prog.duration}  |  ${aura2Prog.dates}  |  ${aura2Prog.format}`, { x: MARGIN, y, size: 8, font: sansFont, color: COLORS.warmGray });
-        y -= 14;
-        y = drawWrappedText(page, aura2Prog.description, MARGIN, y, sansFont, 8, CONTENT_WIDTH, COLORS.softCharcoal, 1.4);
-      }
     }
 
     // =========================================================================
