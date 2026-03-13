@@ -34,7 +34,7 @@ export const level2ManualImages: ManualImageMapping = {
     {
       title: 'Sacred Space & Energy Management',
       images: [
-        { concept: 'Prepare Physical Space', slideNumber: 19, reimaginedImage: 'level-2/19-physical-space.png' },
+        { concept: 'Prepare Physical Space', slideNumber: 19, reimaginedImage: 'level-2/19-physical-space-abstract.png' },
         { concept: 'Protection of the Space', slideNumber: 20, reimaginedImage: 'level-2/20-create-the-room.jpg' },
         { concept: 'Cleansing of the Space', slideNumber: 21, reimaginedImage: 'level-2/21-cleanse-the-space.jpg' },
         { concept: 'Owning Your Space', slideNumber: 22, reimaginedImage: 'level-2/22-owning-space.jpg', originalImage: 'level-2/22-protect-the-space-original.PNG' },
@@ -101,7 +101,7 @@ export const level1ManualImages: ManualImageMapping = {
         { concept: 'Recovery Rose', slideNumber: 14, reimaginedImage: 'level-1/14-energy-recovery-background.png' },
         { concept: 'Pink Rose', slideNumber: 15, reimaginedImage: 'level-1/15-pink-rose-closure.png' },
         { concept: 'Discharge Excess', slideNumber: 16, reimaginedImage: 'level-1/16-discharge-excess.PNG' },
-        { concept: 'Sacred Space', slideNumber: 17, reimaginedImage: 'level-1/17-sacred-space.png' },
+        { concept: 'Sacred Space', slideNumber: 17, reimaginedImage: 'level-1/17-sacred-space-abstract.png' },
         { concept: 'Sacred Space (6th & 7th Chakras)', slideNumber: 18, reimaginedImage: 'level-1/18-sacred-space.PNG' },
       ],
     },
