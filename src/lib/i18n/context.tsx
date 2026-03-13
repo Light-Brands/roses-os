@@ -47,10 +47,19 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   // Load translations when locale changes
   useEffect(() => {
+    let cancelled = false;
     setIsLoading(true);
     loadTranslations(locale)
-      .then(setT)
-      .finally(() => setIsLoading(false));
+      .then((data) => {
+        if (!cancelled) setT(data);
+      })
+      .catch((err) => {
+        console.error(`Failed to load translations for "${locale}":`, err);
+      })
+      .finally(() => {
+        if (!cancelled) setIsLoading(false);
+      });
+    return () => { cancelled = true; };
   }, [locale]);
 
   return (
