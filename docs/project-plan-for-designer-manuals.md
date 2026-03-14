@@ -130,7 +130,7 @@ These images map to the Level 2 manual concepts (sacred space preparation, chakr
 | **Crown Chakra** | 31 | `31-crown-chakra.png` | -- |
 | **Cleansing Each Aura Layer** | 32 | `32-cleansing-each-layer.PNG` | `32-cleansing-layers-original.jpg` |
 | **Cleansing Each Chakra** | 33 | `33-cleansing-each-chakra.PNG` | `33-cleansingeachchakra-original.jpg` |
-| **Energy Recovery (Level 2)** | 34 | `34-energy-recovery.jpeg` | `34-energyrecoveryeachchakra-original.jpg` |
+| **Energy Recovery (Level 2)** | 34 | `34-energy-recovery.png` | `34-energyrecoveryeachchakra-original.jpg` |
 | **Golden Sticky Roses -- Phase 1** | 35 | `35-golden-sticky-1.jpg` | `35-golden-sticky-1-original.jpg` |
 | **Golden Sticky Roses -- Phase 2** | 36 | `36-golden-sticky-2.jpg` | `36-golden-sticky-2-original.PNG` |
 | **Golden Sticky Roses -- Phase 3** | 37 | `37-golden-sticky-3.jpg` | `37-golden-sticky-3-original.PNG` |

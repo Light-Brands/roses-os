@@ -139,7 +139,7 @@ All files in `public/rose med images/level-2/`.
 | 31 | **Crown Chakra** -- Body illustration emphasizing crown location, dominant violet/white. | `level-2/31-crown-chakra.png` | -- |
 | 32 | **Cleansing Each Aura Layer** -- Seven distinct color-coded aura layers. | `level-2/32-cleansing-each-layer.PNG` | -- |
 | 33 | **Cleansing Each Chakra** -- Roses on either side for past and present dynamics. | `level-2/33-cleansing-each-chakra.PNG` | -- |
-| 34 | **Energy Recovery (Level 2)** -- Rose gathering energy back to each chakra at a deeper level. | `level-2/34-energy-recovery.jpeg` | -- |
+| 34 | **Energy Recovery (Level 2)** -- Rose gathering energy back to each chakra at a deeper level. | `level-2/34-energy-recovery.png` | -- |
 | 35 | **Golden Sticky Roses -- Phase 1** -- Roses placed on each of the seven chakra points. | `level-2/35-golden-sticky-1.jpg` | -- |
 | 36 | **Golden Sticky Roses -- Phase 2** -- Roses at all major joints and extremities. | `level-2/36-golden-sticky-2.jpg` | -- |
 | 37 | **Golden Sticky Roses -- Phase 3** -- Full body coverage with golden roses. | `level-2/37-golden-sticky-3.jpg` | -- |
@@ -667,7 +667,7 @@ Below is the complete teaching text that accompanies each image/slide in the man
 ---
 
 #### Slide 34: Energy Recovery of Each Chakra (Level 2)
-**Original:** `level-2/34-energyrecoveryeachchakra-original.jpg` | **Reimagined:** `level-2/34-energy-recovery.jpeg`
+**Original:** `level-2/34-energyrecoveryeachchakra-original.jpg` | **Reimagined:** `level-2/34-energy-recovery.png`
 
 > After cleansing, the energy recovery process is repeated at a deeper level. The Rose is sent out to gather and return your own energy to each individual chakra, restoring sovereignty, vitality, and wholeness to each energy center.
 

@@ -75,7 +75,7 @@ Final manuals served on the website live in `public/resources/manuals/`:
 | 31 | `31-crown-chakra.png` | Crown Chakra |
 | 32 | `32-cleansing-each-layer.PNG` | Cleansing Each Aura Layer |
 | 33 | `33-cleansing-each-chakra.PNG` | Cleansing Each Chakra |
-| 34 | `34-energy-recovery.jpeg` | Energy Recovery (Level 2) |
+| 34 | `34-energy-recovery.png` | Energy Recovery (Level 2) |
 | 35 | `35-golden-sticky-1.jpg` | Golden Sticky Roses Phase 1 |
 | 36 | `36-golden-sticky-2.jpg` | Golden Sticky Roses Phase 2 |
 | 37 | `37-golden-sticky-3.jpg` | Golden Sticky Roses Phase 3 |
