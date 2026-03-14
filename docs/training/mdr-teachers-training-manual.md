@@ -134,17 +134,19 @@ Roses are placed at the edges of the aura to serve as energetic sentinels. They 
 
 ---
 
-## Cleansing Rose
+## Roses to Cleanse and Recover Energy
 
-The Cleansing Rose is placed outside of the aura. It is used to absorb and transmute foreign or stagnant energy from within your field. Energy that does not belong to you -- from other people, environments, or experiences -- is drawn out of the aura and into the Cleansing Rose, where it is neutralized.
+You can create and explode as many roses as you feel like.
+
+### Cleansing Rose
+
+Create a Rose in a high-vibration color, grounded in front of you, outside your Aura and place any uncomfortable or undesirable situation on it (thoughts, people, events, conversations, fears, worries). Intend for the Rose to suck in energy, like a vacuum cleaner or a magnet. Explode the Rose out of your Aura to cleanse the energy and raise the vibration of the situation. If you need to, create new Roses, cleanse and explode them several times as required. If you wish, do the same in positive situations where you want to raise the vibration even more.
 
 *[Visual reference: Person seated within aura with grounding cord, a golden rose positioned outside the aura boundary absorbing energy]*
 
----
+### Recovery Rose
 
-## Energy Recovery of Each Chakra
-
-After cleansing, the Rose is used to recover your own energy that has been left in or taken by others. The Rose is sent out as an instrument to gather and return your own life-force energy to each chakra, restoring fullness and sovereignty to each energy center.
+Create another Rose, grounded outside your Aura, and call your energy back to this Rose. The Rose attracts your energy that is scattered throughout the universe like a vacuum cleaner or magnet. Explode the Rose out of your Aura, and receive your high vibrational and purified energy back to you.
 
 *[Visual reference: Person seated within aura, with a glowing rose on a cord extending outward -- gathering energy and bringing it back to the chakra system]*
 
