@@ -50,7 +50,7 @@ export const level2ManualImages: ManualImageMapping = {
         { concept: 'Solar Plexus Chakra', slideNumber: 27, reimaginedImage: 'level-2/27-solar-plexus-chakra.png' },
         { concept: 'Heart Chakra', slideNumber: 28, reimaginedImage: 'level-2/28-heart-chakra.png' },
         { concept: 'Throat Chakra', slideNumber: 29, reimaginedImage: 'level-2/29-throat-chakra.png' },
-        { concept: 'Third Eye Chakra', slideNumber: 30, reimaginedImage: 'level-2/30-third-eye-chakra.jpeg' },
+        { concept: 'Third Eye Chakra', slideNumber: 30, reimaginedImage: 'level-2/30-third-eye-chakra.png' },
         { concept: 'Crown Chakra', slideNumber: 31, reimaginedImage: 'level-2/31-crown-chakra.png' },
       ],
     },
