@@ -527,10 +527,10 @@ export const chakraSlides: ChakraSlideData[] = [
       'Disconnection with inner guidance',
       'Escaping reality or spiritual bypassing',
     ],
-    blockages: 'Suppressed Truth — Fear of Expression — Miscommunication',
+    blockages: 'Illusion — Fear of Seeing — Mental Rigidity',
     teachingText:
       'Ajna — Intuition & Insight',
-    reimaginedImage: 'level-2/30-third-eye-chakra.jpeg',
+    reimaginedImage: 'level-2/30-third-eye-chakra.png',
     level: 2,
     section: 'chakras',
   },
