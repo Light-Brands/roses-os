@@ -32,15 +32,15 @@ const OUTPUT_DIR = path.join(ROOT, 'public', 'resources', 'manuals');
 // Images that should NOT be synced from public/rose med images/ to the PDF
 // build directory. These have PDF-specific versions (e.g. close-crop chakra
 // images without text labels) that differ from the slide versions.
-const SYNC_EXCLUDE: Record<string, string[]> = {
+const SYNC_EXCLUDE: Record<string, RegExp[]> = {
   'level-2': [
-    '25-root-chakra.jpeg',
-    '26-sacral-chakra.jpeg',
-    '27-solar-plexus-chakra.jpeg',
-    '28-heart-chakra.jpeg',
-    '29-throat-chakra.png',
-    '30-third-eye-chakra.jpeg',
-    '31-crown-chakra.png',
+    /^25-root-chakra\./,
+    /^26-sacral-chakra\./,
+    /^27-solar-plexus-chakra\./,
+    /^28-heart-chakra\./,
+    /^29-throat-chakra\./,
+    /^30-third-eye-chakra\./,
+    /^31-crown-chakra\./,
   ],
 };
 
@@ -132,9 +132,9 @@ function syncImages(): { copied: number; skipped: number } {
         fs.mkdirSync(destDir, { recursive: true });
       }
 
-      const excluded = SYNC_EXCLUDE[levelDir] ?? [];
+      const excludePatterns = SYNC_EXCLUDE[levelDir] ?? [];
       const files = fs.readdirSync(srcDir).filter(
-        (f) => /\.(png|jpg|jpeg|webp|svg)$/i.test(f) && !excluded.includes(f),
+        (f) => /\.(png|jpg|jpeg|webp|svg)$/i.test(f) && !excludePatterns.some((p) => p.test(f)),
       );
       for (const file of files) {
         const result = syncFile(path.join(srcDir, file), path.join(destDir, file));
