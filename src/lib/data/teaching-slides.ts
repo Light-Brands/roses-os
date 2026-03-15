@@ -378,7 +378,7 @@ export const chakraSlides: ChakraSlideData[] = [
     blockages: 'Fear — Insecurity — Survival Trauma',
     teachingText:
       'Muladhara — Grounding & Safety',
-    reimaginedImage: 'level-2/25-root-chakra.png',
+    reimaginedImage: 'level-2/25-root-chakra.jpeg',
     level: 2,
     section: 'chakras',
   },
@@ -408,7 +408,7 @@ export const chakraSlides: ChakraSlideData[] = [
     blockages: 'Shame — Emotional Repression — Guilt',
     teachingText:
       'Svadhisthana — Emotion & Creativity',
-    reimaginedImage: 'level-2/26-sacral-chakra.png',
+    reimaginedImage: 'level-2/26-sacral-chakra.jpeg',
     level: 2,
     section: 'chakras',
   },
@@ -438,7 +438,7 @@ export const chakraSlides: ChakraSlideData[] = [
     blockages: 'Self-Doubt — Insecurity — Fear of Rejection',
     teachingText:
       'Manipura — Willpower & Confidence',
-    reimaginedImage: 'level-2/27-solar-plexus-chakra.png',
+    reimaginedImage: 'level-2/27-solar-plexus-chakra.jpeg',
     level: 2,
     section: 'chakras',
   },
@@ -468,7 +468,7 @@ export const chakraSlides: ChakraSlideData[] = [
     blockages: 'Grief — Betrayal — Heartbreak',
     teachingText:
       'Anahata — Love & Integration',
-    reimaginedImage: 'level-2/28-heart-chakra.png',
+    reimaginedImage: 'level-2/28-heart-chakra.jpeg',
     extraContent:
       'Human Love & Spiritual Love:\n\nHuman Love — Statement: I LOVE — Empathy, compassion, forgiveness, healthy relationships, romantic and familial love.\n\nSpiritual Love — Statement: I AM LOVE — Unconditional compassion, interconnectedness, divine and universal love, oneness.',
     level: 2,
@@ -530,7 +530,7 @@ export const chakraSlides: ChakraSlideData[] = [
     blockages: 'Illusion — Fear of Seeing — Mental Rigidity',
     teachingText:
       'Ajna — Intuition & Insight',
-    reimaginedImage: 'level-2/30-third-eye-chakra.png',
+    reimaginedImage: 'level-2/30-third-eye-chakra.jpeg',
     level: 2,
     section: 'chakras',
   },
