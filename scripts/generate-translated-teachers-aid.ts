@@ -183,7 +183,7 @@ function translateHtml(html: string, t: Translation, locale: string): string {
     escapeHtml(t.opening.history.text)
   );
   result = result.replace(
-    'Lineage: Berkeley Psychic Institute &rarr; Anastasia Plunk &rarr; Angelina Ataide &rarr; ROSES OS',
+    'Lineage: Berkeley Psychic Institute &rarr; Anastasia Plunk &rarr; Angelina Ataide &rarr; Escola da Aura &rarr; ROSES OS',
     `${escapeHtml(t.ui.lineage)}: ${escapeHtml(t.opening.history.lineage).replace(/→/g, '&rarr;')}`
   );
 
