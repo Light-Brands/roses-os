@@ -350,7 +350,9 @@ export default function CommunityClient() {
             there is a place for you here.
           </motion.p>
           <div className="space-y-4">
-            {freePrograms.map((program, i) => (
+            {freePrograms
+              .filter((program) => program.id !== 'free-live-guidances')
+              .map((program, i) => (
               <ActivityCard
                 key={program.id}
                 program={program}
