@@ -41,3 +41,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# build-synced images (copied by build-manuals.ts, not manually curated)
+scripts/pdf-manuals/images/level-2/19-physical-space.png
+scripts/pdf-manuals/images/level-2/24-chakras.png
