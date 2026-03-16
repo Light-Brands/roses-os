@@ -5,6 +5,7 @@ import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import type { Guardian } from '@/lib/data/types';
+import { GUARDIAN_SIZES } from '@/lib/image-sizes';
 
 interface GuardianCardProps {
   guardian: Guardian;
@@ -37,7 +38,7 @@ export default function GuardianCard({ guardian, className }: GuardianCardProps)
               src={guardian.image}
               alt={guardian.name}
               fill
-              sizes="(min-width: 768px) 160px, 128px"
+              sizes={GUARDIAN_SIZES}
               className="object-cover"
               style={{
                 objectPosition: guardian.imagePosition ?? 'center 20%',

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
+import { SLIDE_SIZES, SLIDE_THUMB_SIZES } from '@/lib/image-sizes';
 
 interface Slide {
   src: string;
@@ -39,7 +40,7 @@ export default function TeachingSlides({ slides }: TeachingSlidesProps) {
               alt={slides[current].title}
               fill
               className="object-contain p-6"
-              sizes="(max-width: 768px) 100vw, 720px"
+              sizes={SLIDE_SIZES}
               priority={current === 0}
             />
           </motion.div>
@@ -100,7 +101,7 @@ export default function TeachingSlides({ slides }: TeachingSlidesProps) {
                 alt={slide.title}
                 fill
                 className="object-contain bg-white p-1"
-                sizes="80px"
+                sizes={SLIDE_THUMB_SIZES}
               />
             </button>
           ))}

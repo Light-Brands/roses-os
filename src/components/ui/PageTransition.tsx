@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { usePageTransition } from '@/lib/transition';
+import { LOGO_SM } from '@/lib/image-sizes';
 
 // =============================================================================
 // PAGE TRANSITION — Single panel wipe + Rose logo
@@ -85,8 +86,8 @@ export function PageTransition() {
         <img
           src="/rose.png"
           alt=""
-          width={40}
-          height={40}
+          width={LOGO_SM}
+          height={LOGO_SM}
           className="object-contain"
         />
       </div>

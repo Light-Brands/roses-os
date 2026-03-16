@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
+import { PAGE_HERO_IMAGE, PAGE_HERO_SIZES } from '@/lib/image-sizes';
 
 interface PageHeroProps {
   eyebrow?: string;
@@ -79,8 +80,9 @@ export default function PageHero({ eyebrow, title, description, compact, image }
             <Image
               src={image}
               alt=""
-              width={448}
-              height={448}
+              width={PAGE_HERO_IMAGE}
+              height={PAGE_HERO_IMAGE}
+              sizes={PAGE_HERO_SIZES}
               className="max-w-sm md:max-w-md w-full h-auto"
               priority={false}
             />

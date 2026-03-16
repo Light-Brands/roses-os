@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { ArrowUpRight, Check, LucideIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { AVATAR_LG } from '@/lib/image-sizes';
 
 type CardVariant = 'default' | 'elevated' | 'bordered' | 'glass' | 'gradient';
 
@@ -435,8 +436,8 @@ export function TestimonialCard({ quote, author, rating }: TestimonialCardProps)
             <Image
               src={author.avatar}
               alt={author.name}
-              width={44}
-              height={44}
+              width={AVATAR_LG}
+              height={AVATAR_LG}
               className="rounded-full ring-2 ring-white/80 dark:ring-neutral-800/80"
             />
           ) : (

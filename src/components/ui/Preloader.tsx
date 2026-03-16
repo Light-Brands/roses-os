@@ -10,6 +10,8 @@ import { useState, useEffect, useRef } from 'react';
 // Total: ~1.6s (vs old geometric preloader at ~2.9s)
 // =============================================================================
 
+import { LOGO_MD } from '@/lib/image-sizes';
+
 const REVEAL_EASE = 'cubic-bezier(0.16, 1, 0.3, 1)';
 
 export function Preloader() {
@@ -87,8 +89,8 @@ export function Preloader() {
         <img
           src="/rose.png"
           alt=""
-          width={48}
-          height={48}
+          width={LOGO_MD}
+          height={LOGO_MD}
           className="object-contain"
         />
       </div>

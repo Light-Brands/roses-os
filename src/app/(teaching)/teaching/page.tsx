@@ -6,6 +6,7 @@ import { openingAgreements, openingImportantToKnow, openingHistory } from '@/lib
 import PrintPageButton from '@/components/teaching/PrintPageButton';
 import LanguageSelector from '@/components/teaching/LanguageSelector';
 import { useLanguage } from '@/lib/i18n';
+import { LOGO_LG } from '@/lib/image-sizes';
 
 export default function TeachingPage() {
   const { t } = useLanguage();
@@ -36,8 +37,8 @@ export default function TeachingPage() {
           <img
             src="/rose.png"
             alt="ROSES OS"
-            width={72}
-            height={72}
+            width={LOGO_LG}
+            height={LOGO_LG}
             className="object-contain mb-4"
           />
           <h1 className="font-serif text-4xl md:text-5xl tracking-wide text-[var(--color-foreground)] mb-2">
