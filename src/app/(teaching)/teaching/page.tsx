@@ -21,12 +21,21 @@ export default function TeachingPage() {
 
   return (
     <div className="min-h-screen bg-[var(--color-background)]">
-      <header className="px-6 py-4 border-b border-[var(--color-border)]">
+      <header className="px-6 py-4 border-b border-[var(--color-border)] flex items-center justify-between print:hidden">
         <Link
           href="/"
           className="font-sans text-sm font-medium tracking-wide uppercase text-[var(--color-foreground)]"
         >
           {t?.ui.rosesOs ?? 'ROSES OS'}
+        </Link>
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium text-[var(--color-foreground-muted)] hover:text-[var(--color-foreground)] hover:bg-[var(--color-background-subtle)] transition-all duration-200"
+        >
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Back to Home
         </Link>
       </header>
 

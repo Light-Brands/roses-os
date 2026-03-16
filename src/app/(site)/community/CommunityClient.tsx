@@ -126,7 +126,8 @@ function ActivityCard({
           </span>
         )}
       </div>
-      {(program.whatsappLink || program.calendarLink) && (
+      {/* WhatsApp + Calendar (calendar only if no expandable schedule) */}
+      {(program.whatsappLink || (program.calendarLink && !hasSchedule)) && (
         <div className="flex flex-wrap gap-3 mt-5">
           {program.whatsappLink && (
             <a
@@ -148,7 +149,7 @@ function ActivityCard({
               Join WhatsApp Group
             </a>
           )}
-          {program.calendarLink && program.googleCalendarUrl && (
+          {program.calendarLink && program.googleCalendarUrl && !hasSchedule && (
             <SubscribeCalendar
               googleCalendarUrl={program.googleCalendarUrl}
               icsUrl={program.calendarLink}
@@ -281,6 +282,15 @@ function ActivityCard({
                   </div>
                 ))}
               </div>
+              {/* Subscribe to Calendar — after schedule for natural flow */}
+              {program.calendarLink && program.googleCalendarUrl && (
+                <div className="mt-6 flex justify-center print:hidden">
+                  <SubscribeCalendar
+                    googleCalendarUrl={program.googleCalendarUrl}
+                    icsUrl={program.calendarLink}
+                  />
+                </div>
+              )}
             </div>
           </motion.div>
         )}
@@ -343,7 +353,11 @@ export default function CommunityClient() {
             {freePrograms.map((program, i) => (
               <ActivityCard
                 key={program.id}
-                program={program}
+                program={
+                  program.id === 'free-live-guidances'
+                    ? { ...program, scheduleCycles: undefined }
+                    : program
+                }
                 index={i}
                 inView={freeInView}
               />

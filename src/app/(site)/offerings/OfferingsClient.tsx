@@ -327,17 +327,6 @@ function OfferingsContent() {
       {/* Download PDF Guides */}
       <div className="flex flex-wrap justify-center gap-3 py-6 print:hidden">
         <MeditationPdfButton variant="light" />
-        <Link
-          href="/community"
-          className={cn(
-            'inline-flex items-center gap-2 px-6 py-2.5 rounded-full',
-            'text-sm font-medium',
-            'transition-all duration-300',
-            'border border-[var(--color-rose-clay)]/30 text-[var(--color-foreground)]/70 hover:bg-[var(--color-rose-clay)]/5 hover:text-[var(--color-foreground)]',
-          )}
-        >
-          See Our Free Activities in Community
-        </Link>
       </div>
 
       {/* 2. Programs — progressive disclosure */}
@@ -427,6 +416,15 @@ function OfferingsContent() {
                           <ScheduleTable
                             stages={programSchedules[program.id] || []}
                           />
+                          {/* Subscribe to Calendar — after schedule for natural flow */}
+                          {program.calendarLink && program.googleCalendarUrl && (
+                            <div className="mt-6 flex justify-center print:hidden">
+                              <SubscribeCalendar
+                                googleCalendarUrl={program.googleCalendarUrl}
+                                icsUrl={program.calendarLink}
+                              />
+                            </div>
+                          )}
                         </div>
 
                         {/* Contribution section */}
