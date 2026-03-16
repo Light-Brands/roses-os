@@ -75,6 +75,8 @@ export const programs: Program[] = [
     dates: 'March 17–18, 2026',
     format: 'Live online + recorded content',
     priceRange: '$222 – $777',
+    calendarLink: 'https://calendar.google.com/calendar/ical/15e0c8c4a95dd4a2225e93cf29bcbc1dda066b45fc6f3f2e98185910e92046cb%40group.calendar.google.com/public/basic.ics',
+    googleCalendarUrl: 'https://calendar.google.com/calendar/u/1?cid=MTVlMGM4YzRhOTVkZDRhMjIyNWU5M2NmMjliY2JjMWRkYTA2NmI0NWZjNmYzZjJlOTgxODU5MTBlOTIwNDZjYkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
     description: 'An initiatic path to remember who you are. Through the simple yet powerful technology of the roses, you will learn how to cleanse and protect your Aura, so that you no longer live like a sponge, absorbing energies that don\u2019t belong to you.\n\nEveryday, we are surrounded by energies: from people, memories, situations, environments, even our own thoughts. When we are unaware, these energies stick to us, creating confusion, heaviness, and programs that cloud who we truly are. By cleansing and protecting your energy field, you begin to live in the presence of your own essence. You recover your vitality, raise your vibration, and create space for your soul to manifest with clarity and power.',
     includes: [
       '2 immersive days of live instruction',
@@ -93,6 +95,8 @@ export const programs: Program[] = [
     dates: 'March – June 2026',
     format: 'Live online + recorded content',
     priceRange: '$888 – $2,111',
+    calendarLink: 'https://calendar.google.com/calendar/ical/15e0c8c4a95dd4a2225e93cf29bcbc1dda066b45fc6f3f2e98185910e92046cb%40group.calendar.google.com/public/basic.ics',
+    googleCalendarUrl: 'https://calendar.google.com/calendar/u/1?cid=MTVlMGM4YzRhOTVkZDRhMjIyNWU5M2NmMjliY2JjMWRkYTA2NmI0NWZjNmYzZjJlOTgxODU5MTBlOTIwNDZjYkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
     description: 'Aura Reading course teaches you to see, feel, and listen to the energy that moves within you and surrounds you, revealing that everything in life begins as energy and that awareness gives you the power to transform it.\n\nIt is as well a conscious conversation between essences. By reading another person\u2019s aura, you support their journey of growth and healing while receiving mirrors and insights that illuminate your own path. Each reading becomes a conscious exchange where both the reader and the person being read are touched and transformed. This transformation becomes possible by awakening your clairvoyance, clairsentience, clairaudience, and other subtle senses. These abilities allow you to connect directly with what is real and receive guidance that leads to freedom, clarity, and growth.',
     includes: [
       'Rose Meditation (2 days)',

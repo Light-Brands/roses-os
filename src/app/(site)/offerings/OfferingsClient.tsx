@@ -415,6 +415,16 @@ function OfferingsContent() {
                           </div>
                         )}
 
+                        {/* Subscribe to Calendar */}
+                        {program.calendarLink && program.googleCalendarUrl && (
+                          <div className="mt-6 flex justify-center print:hidden">
+                            <SubscribeCalendar
+                              googleCalendarUrl={program.googleCalendarUrl}
+                              icsUrl={program.calendarLink}
+                            />
+                          </div>
+                        )}
+
                         {/* Schedule section */}
                         <div className="mt-8 mb-8">
                           <p className="label-sacred mb-3">Schedule</p>

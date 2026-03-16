@@ -33,6 +33,10 @@ export interface Program {
   includes: string[];
   /** Price range summary shown on collapsed cards (e.g. "$222 – $777") */
   priceRange?: string;
+  /** ICS calendar feed URL */
+  calendarLink?: string;
+  /** Google Calendar subscribe URL */
+  googleCalendarUrl?: string;
 }
 
 /** Contribution tier (pay what feels right) */
