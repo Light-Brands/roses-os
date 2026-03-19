@@ -65,7 +65,7 @@ export const guardians: Guardian[] = [
     name: 'Silvia Coelho',
     role: 'Guardian of Community Programs',
     bio: 'Rooted in years of dedication as a social worker, Silvia brings a rare depth of care and human understanding to the practice of The Rose Meditation. Her commitment to precision is unwavering — she holds each technique, each step, and each energetic movement with the exactness it was designed to carry, honoring the integrity of the lineage. It is this diligence, paired with a genuine passion for the transformative power of the rose, that makes her guardianship both rigorous and deeply heartfelt.',
-    image: '/images/placeholder-silvia.jpg',
+    image: '/images/SilviaC.png',
   },
   {
     id: '6',
