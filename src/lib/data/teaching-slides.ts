@@ -572,19 +572,8 @@ export const chakraSlides: ChakraSlideData[] = [
 
 export const level2CleansingSlides: TeachingSlide[] = [
   {
-    id: 'l2-cleansing-aura-layers',
-    slideNumber: 32,
-    concept: 'Cleansing of Each Aura Layer',
-    teachingText:
-      'The aura is composed of seven layers, each corresponding to a chakra. In Level 2, each layer is individually cleansed from the outermost to the innermost:\n\n7. 7th Aura layer\n6. 6th Aura layer\n5. 5th Aura layer\n4. 4th Aura layer\n3. 3rd Aura layer\n2. 2nd Aura layer\n1. 1st Aura layer',
-    originalImage: 'level-2/32-cleansing-layers-original.jpg',
-    reimaginedImage: 'level-2/32-cleansing-each-layer.PNG',
-    level: 2,
-    section: 'cleansing',
-  },
-  {
     id: 'l2-cleansing-each-chakra',
-    slideNumber: 33,
+    slideNumber: 32,
     concept: 'Cleansing of Each Chakra',
     teachingText:
       'Each individual chakra is cleansed using roses. The roses address two dimensions:\n\n• Dynamics of the Past — Energetic patterns, imprints, and blockages carried from past experiences\n• Dynamics of the Present — Current energetic influences, relationships, and situations affecting the chakra',
@@ -595,11 +584,22 @@ export const level2CleansingSlides: TeachingSlide[] = [
     section: 'cleansing',
   },
   {
+    id: 'l2-cleansing-aura-layers',
+    slideNumber: 33,
+    concept: 'Cleansing of Each Aura Layer',
+    teachingText:
+      'The aura is composed of seven layers, each corresponding to a chakra. In Level 2, each layer is individually cleansed from the 1st to the 7th layer:\n\n1. 1st Aura layer\n2. 2nd Aura layer\n3. 3rd Aura layer\n4. 4th Aura layer\n5. 5th Aura layer\n6. 6th Aura layer\n7. 7th Aura layer',
+    originalImage: 'level-2/32-cleansing-layers-original.jpg',
+    reimaginedImage: 'level-2/32-cleansing-each-layer.PNG',
+    level: 2,
+    section: 'cleansing',
+  },
+  {
     id: 'l2-energy-recovery',
     slideNumber: 34,
-    concept: 'Energy Recovery of Each Chakra (Level 2)',
+    concept: 'Energy Recovery Rose in Depth',
     teachingText:
-      'After cleansing, the energy recovery process is repeated at a deeper level. The Rose is sent out to gather and return your own energy to each individual chakra, restoring sovereignty, vitality, and wholeness to each energy center.',
+      'Once the cleansing of the chakra and its corresponding aura layer is complete, the energy recovery process can unfold at their vibration, if you feel called to do so. A recovery Rose may be created attuned to that specific frequency, drawing your energy back and restoring it at that very level. You can do it from the 1st to the 7th chakra.',
     originalImage: 'level-2/34-energyrecoveryeachchakra-original.jpg',
     reimaginedImage: 'level-2/34-energy-recovery.png',
     imageNote: 'Updated with new background image.',
@@ -609,9 +609,9 @@ export const level2CleansingSlides: TeachingSlide[] = [
   {
     id: 'l2-golden-sticky-1',
     slideNumber: 35,
-    concept: 'Golden Sticky Roses — Phase 1 (Chakra Placement)',
+    concept: 'Golden Sticky Roses — First Rose (Crown to Root)',
     teachingText:
-      'Golden sticky roses are placed on each of the seven chakras, drawing out foreign energy lodged in the energy centers.',
+      'Four Golden Sticky Roses are used for deep energetic cleansing of the Aura, drawing out any foreign energies that still remain after the previous clearing. The first enters through the crown chakra, cleansing each chakra in succession down to the root.',
     originalImage: 'level-2/35-golden-sticky-1-original.jpg',
     reimaginedImage: 'level-2/35-golden-sticky-1.jpg',
     imageNote: 'Add subtle arrows to indicate the direction of energy being drawn out by the golden sticky roses.',
@@ -621,9 +621,9 @@ export const level2CleansingSlides: TeachingSlide[] = [
   {
     id: 'l2-golden-sticky-2',
     slideNumber: 36,
-    concept: 'Golden Sticky Roses — Phase 2 (Body Placement)',
+    concept: 'Golden Sticky Roses — Second Rose (Arms)',
     teachingText:
-      'Golden sticky roses are placed at the joints and extremities of the body — shoulders, elbows, wrists, hands, hips, knees, ankles, feet — drawing out foreign energy stored in the physical body.',
+      'The second descends to the throat chakra, where it splits into two Roses that travel the channels of the arms, exiting through the hand chakras.',
     originalImage: 'level-2/36-golden-sticky-2-original.PNG',
     reimaginedImage: 'level-2/36-golden-sticky-2.jpg',
     imageNote: 'Add subtle arrows to indicate the direction of energy being drawn out by the golden sticky roses.',
@@ -633,9 +633,9 @@ export const level2CleansingSlides: TeachingSlide[] = [
   {
     id: 'l2-golden-sticky-3',
     slideNumber: 37,
-    concept: 'Golden Sticky Roses — Phase 3 (Full Body Coverage)',
+    concept: 'Golden Sticky Roses — Third Rose (Legs)',
     teachingText:
-      'Golden sticky roses are placed throughout the entire body — covering the torso, limbs, and all remaining areas — for a thorough, complete energetic cleansing.',
+      'The third descends to the root chakra, where it becomes two Roses that follow the channels of the legs, exiting through the foot chakras.',
     originalImage: 'level-2/37-golden-sticky-3-original.PNG',
     reimaginedImage: 'level-2/37-golden-sticky-3.jpg',
     imageNote: 'Also see: 34-golden-sticky-3-original-alt.PNG. Add subtle arrows to indicate the direction of energy being drawn out by the golden sticky roses.',
@@ -645,9 +645,9 @@ export const level2CleansingSlides: TeachingSlide[] = [
   {
     id: 'l2-golden-sticky-4',
     slideNumber: 38,
-    concept: 'Golden Sticky Roses — Phase 4 (Integration)',
+    concept: 'Golden Sticky Roses — Fourth Rose (Full Aura)',
     teachingText:
-      'After the golden sticky roses have done their work, a large Golden Rose appears above the head. All foreign energy gathered by the sticky roses is released, and the entire body is bathed in golden light — restoring, sealing, and integrating the energy body.',
+      'The fourth spans the full width of the Aura, descending through the entire energetic field. Upon completion, all four either explode outside the Aura or exit through the grounding cord, transmuting the collected energies away with them.',
     originalImage: 'level-2/38-golden-sticky-4-original.PNG',
     reimaginedImage: 'level-2/38-golden-sticky-4.jpg',
     imageNote: 'Add subtle arrows to indicate the direction of energy release and golden light cascading through the body.',
