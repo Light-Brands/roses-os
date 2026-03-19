@@ -428,24 +428,6 @@ The Heart Chakra holds two dimensions:
 
 ---
 
-## Cleansing of Each Aura Layer
-
-The aura is composed of seven layers, each corresponding to a chakra. In Level 2, each layer is individually cleansed from the outermost to the innermost:
-
-| Layer | Aura Layer |
-|-------|-----------|
-| 7 | 7th Aura layer |
-| 6 | 6th Aura layer |
-| 5 | 5th Aura layer |
-| 4 | 4th Aura layer |
-| 3 | 3rd Aura layer |
-| 2 | 2nd Aura layer |
-| 1 | 1st Aura layer |
-
-*[Visual reference: Person seated in meditation with seven distinct color-coded aura layers visible, golden sun above, grounding cord below -- each layer corresponding to a chakra color]*
-
----
-
 ## Cleansing of Each Chakra
 
 Each individual chakra is cleansed using roses. The roses address two dimensions:
@@ -457,9 +439,27 @@ Each individual chakra is cleansed using roses. The roses address two dimensions
 
 ---
 
-## Energy Recovery of Each Chakra (Level 2)
+## Cleansing of Each Aura Layer
 
-After cleansing, the energy recovery process is repeated at a deeper level. The Rose is sent out to gather and return your own energy to each individual chakra, restoring sovereignty, vitality, and wholeness to each energy center.
+The aura is composed of seven layers, each corresponding to a chakra. In Level 2, each layer is individually cleansed from the 1st to the 7th layer:
+
+| Layer | Aura Layer |
+|-------|-----------|
+| 1 | 1st Aura layer |
+| 2 | 2nd Aura layer |
+| 3 | 3rd Aura layer |
+| 4 | 4th Aura layer |
+| 5 | 5th Aura layer |
+| 6 | 6th Aura layer |
+| 7 | 7th Aura layer |
+
+*[Visual reference: Person seated in meditation with seven distinct color-coded aura layers visible, golden sun above, grounding cord below -- each layer corresponding to a chakra color]*
+
+---
+
+## Energy Recovery Rose in Depth
+
+Once the cleansing of the chakra and its corresponding aura layer is complete, the energy recovery process can unfold at their vibration, if you feel called to do so. A recovery Rose may be created attuned to that specific frequency, drawing your energy back and restoring it at that very level. You can do it from the 1st to the 7th chakra.
 
 *[Visual reference: Person seated within golden aura, with a rose on a cord extending outward to collect and return energy]*
 
@@ -467,31 +467,31 @@ After cleansing, the energy recovery process is repeated at a deeper level. The 
 
 ## Golden Sticky Roses
 
-Golden Sticky Roses are a powerful cleansing and recovery technique. Small golden roses are placed directly on and within the body at specific locations to draw out deeply embedded foreign energy and restore your own.
+Four Golden Sticky Roses are used for deep energetic cleansing of the Aura, drawing out any foreign energies that still remain after the previous clearing.
 
-### Phase 1 -- Chakra Placement
+### First Rose -- Crown to Root
 
-Golden sticky roses are placed on each of the seven chakras, drawing out foreign energy lodged in the energy centers.
+The first enters through the crown chakra, cleansing each chakra in succession down to the root.
 
 *[Visual reference: Person seated with golden roses placed on each chakra point -- crown, third eye, throat, heart, solar plexus, sacral, root -- with grounding cord and golden rings above]*
 
-### Phase 2 -- Body Placement
+### Second Rose -- Arms
 
-Golden sticky roses are placed at the joints and extremities of the body -- shoulders, elbows, wrists, hands, hips, knees, ankles, feet -- drawing out foreign energy stored in the physical body.
+The second descends to the throat chakra, where it splits into two Roses that travel the channels of the arms, exiting through the hand chakras.
 
-*[Visual reference: Person seated with golden roses placed at every major joint and extremity of the body]*
+*[Visual reference: Person seated with golden roses traveling down the arms and exiting through the hand chakras]*
 
-### Phase 3 -- Full Body Coverage
+### Third Rose -- Legs
 
-Golden sticky roses are placed throughout the entire body -- covering the torso, limbs, and all remaining areas -- for a thorough, complete energetic cleansing.
+The third descends to the root chakra, where it becomes two Roses that follow the channels of the legs, exiting through the foot chakras.
 
-*[Visual reference: Person seated covered in golden roses from head to toe, with grounding cord and golden rings above]*
+*[Visual reference: Person seated with golden roses traveling down the legs and exiting through the foot chakras]*
 
-### Phase 4 -- Integration
+### Fourth Rose -- Full Aura
 
-After the golden sticky roses have done their work, a large Golden Rose appears above the head. All foreign energy gathered by the sticky roses is released, and the entire body is bathed in golden light -- restoring, sealing, and integrating the energy body.
+The fourth spans the full width of the Aura, descending through the entire energetic field. Upon completion, all four either explode outside the Aura or exit through the grounding cord, transmuting the collected energies away with them.
 
-*[Visual reference: Person seated with a large golden rose blooming above the head, golden light cascading down through the entire body, all sticky roses dissolved into light]*
+*[Visual reference: Person seated with a large golden rose spanning the full width of the aura, descending through the entire energetic field]*
 
 ---
 

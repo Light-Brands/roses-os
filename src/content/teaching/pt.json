@@ -172,31 +172,31 @@
     },
     "l2-cleansing-aura-layers": {
       "concept": "Limpeza de Cada Camada da Aura",
-      "teachingText": "A aura é composta por sete camadas, cada uma correspondendo a um chakra. No Nível 2, cada camada é individualmente limpa da mais externa para a mais interna:\n\n7. 7ª camada da Aura\n6. 6ª camada da Aura\n5. 5ª camada da Aura\n4. 4ª camada da Aura\n3. 3ª camada da Aura\n2. 2ª camada da Aura\n1. 1ª camada da Aura"
+      "teachingText": "A aura é composta por sete camadas, cada uma correspondendo a um chakra. No Nível 2, cada camada é individualmente limpa da 1ª à 7ª camada:\n\n1. 1ª camada da Aura\n2. 2ª camada da Aura\n3. 3ª camada da Aura\n4. 4ª camada da Aura\n5. 5ª camada da Aura\n6. 6ª camada da Aura\n7. 7ª camada da Aura"
     },
     "l2-cleansing-each-chakra": {
       "concept": "Limpeza de Cada Chakra",
       "teachingText": "Cada chakra individual é limpo usando rosas. As rosas abordam duas dimensões:\n\n• Dinâmicas do Passado — Padrões energéticos, impressões e bloqueios carregados de experiências passadas\n• Dinâmicas do Presente — Influências energéticas atuais, relacionamentos e situações que afetam o chakra"
     },
     "l2-energy-recovery": {
-      "concept": "Recuperação Energética de Cada Chakra (Nível 2)",
-      "teachingText": "Após a limpeza, o processo de recuperação energética é repetido em um nível mais profundo. A Rosa é enviada para reunir e devolver sua própria energia a cada chakra individual, restaurando soberania, vitalidade e integridade a cada centro energético."
+      "concept": "Rosa de Recuperação Energética em Profundidade",
+      "teachingText": "Uma vez completada a limpeza do chakra e sua camada de aura correspondente, o processo de recuperação energética pode se desdobrar em sua vibração, se você sentir o chamado para fazê-lo. Uma Rosa de recuperação pode ser criada sintonizada com essa frequência específica, atraindo sua energia de volta e restaurando-a nesse mesmo nível. Você pode fazê-lo do 1º ao 7º chakra."
     },
     "l2-golden-sticky-1": {
-      "concept": "Rosas Douradas Adesivas — Fase 1 (Colocação nos Chakras)",
-      "teachingText": "Rosas douradas adesivas são colocadas em cada um dos sete chakras, extraindo energia estranha alojada nos centros energéticos."
+      "concept": "Rosas Douradas Adesivas — Primeira Rosa (Coroa à Raiz)",
+      "teachingText": "Quatro Rosas Douradas Adesivas são usadas para uma limpeza energética profunda da Aura, extraindo quaisquer energias estranhas que ainda permaneçam após a limpeza anterior. A primeira entra pelo chakra coroa, limpando cada chakra em sucessão até a raiz."
     },
     "l2-golden-sticky-2": {
-      "concept": "Rosas Douradas Adesivas — Fase 2 (Colocação no Corpo)",
-      "teachingText": "Rosas douradas adesivas são colocadas nas articulações e extremidades do corpo — ombros, cotovelos, pulsos, mãos, quadris, joelhos, tornozelos, pés — extraindo energia estranha armazenada no corpo físico."
+      "concept": "Rosas Douradas Adesivas — Segunda Rosa (Braços)",
+      "teachingText": "A segunda desce até o chakra da garganta, onde se divide em duas Rosas que viajam pelos canais dos braços, saindo pelos chakras das mãos."
     },
     "l2-golden-sticky-3": {
-      "concept": "Rosas Douradas Adesivas — Fase 3 (Cobertura Total do Corpo)",
-      "teachingText": "Rosas douradas adesivas são colocadas por todo o corpo — cobrindo o tronco, membros e todas as áreas restantes — para uma limpeza energética completa e profunda."
+      "concept": "Rosas Douradas Adesivas — Terceira Rosa (Pernas)",
+      "teachingText": "A terceira desce até o chakra raiz, onde se torna duas Rosas que seguem os canais das pernas, saindo pelos chakras dos pés."
     },
     "l2-golden-sticky-4": {
-      "concept": "Rosas Douradas Adesivas — Fase 4 (Integração)",
-      "teachingText": "Depois que as rosas douradas adesivas realizaram seu trabalho, uma grande Rosa Dourada aparece acima da cabeça. Toda a energia estranha reunida pelas rosas adesivas é liberada, e todo o corpo é banhado em luz dourada — restaurando, selando e integrando o corpo energético."
+      "concept": "Rosas Douradas Adesivas — Quarta Rosa (Aura Completa)",
+      "teachingText": "A quarta abrange toda a largura da Aura, descendo por todo o campo energético. Ao completar, as quatro explodem fora da Aura ou saem pelo cordão de enraizamento, transmutando as energias coletadas com elas."
     },
     "l3-analyzer": {
       "concept": "O Analisador",

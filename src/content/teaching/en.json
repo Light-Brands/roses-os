@@ -172,31 +172,31 @@
     },
     "l2-cleansing-aura-layers": {
       "concept": "Cleansing of Each Aura Layer",
-      "teachingText": "The aura is composed of seven layers, each corresponding to a chakra. In Level 2, each layer is individually cleansed from the outermost to the innermost:\n\n7. 7th Aura layer\n6. 6th Aura layer\n5. 5th Aura layer\n4. 4th Aura layer\n3. 3rd Aura layer\n2. 2nd Aura layer\n1. 1st Aura layer"
+      "teachingText": "The aura is composed of seven layers, each corresponding to a chakra. In Level 2, each layer is individually cleansed from the 1st to the 7th layer:\n\n1. 1st Aura layer\n2. 2nd Aura layer\n3. 3rd Aura layer\n4. 4th Aura layer\n5. 5th Aura layer\n6. 6th Aura layer\n7. 7th Aura layer"
     },
     "l2-cleansing-each-chakra": {
       "concept": "Cleansing of Each Chakra",
       "teachingText": "Each individual chakra is cleansed using roses. The roses address two dimensions:\n\n\u2022 Dynamics of the Past \u2014 Energetic patterns, imprints, and blockages carried from past experiences\n\u2022 Dynamics of the Present \u2014 Current energetic influences, relationships, and situations affecting the chakra"
     },
     "l2-energy-recovery": {
-      "concept": "Energy Recovery of Each Chakra (Level 2)",
-      "teachingText": "After cleansing, the energy recovery process is repeated at a deeper level. The Rose is sent out to gather and return your own energy to each individual chakra, restoring sovereignty, vitality, and wholeness to each energy center."
+      "concept": "Energy Recovery Rose in Depth",
+      "teachingText": "Once the cleansing of the chakra and its corresponding aura layer is complete, the energy recovery process can unfold at their vibration, if you feel called to do so. A recovery Rose may be created attuned to that specific frequency, drawing your energy back and restoring it at that very level. You can do it from the 1st to the 7th chakra."
     },
     "l2-golden-sticky-1": {
-      "concept": "Golden Sticky Roses \u2014 Phase 1 (Chakra Placement)",
-      "teachingText": "Golden sticky roses are placed on each of the seven chakras, drawing out foreign energy lodged in the energy centers."
+      "concept": "Golden Sticky Roses \u2014 First Rose (Crown to Root)",
+      "teachingText": "Four Golden Sticky Roses are used for deep energetic cleansing of the Aura, drawing out any foreign energies that still remain after the previous clearing. The first enters through the crown chakra, cleansing each chakra in succession down to the root."
     },
     "l2-golden-sticky-2": {
-      "concept": "Golden Sticky Roses \u2014 Phase 2 (Body Placement)",
-      "teachingText": "Golden sticky roses are placed at the joints and extremities of the body \u2014 shoulders, elbows, wrists, hands, hips, knees, ankles, feet \u2014 drawing out foreign energy stored in the physical body."
+      "concept": "Golden Sticky Roses \u2014 Second Rose (Arms)",
+      "teachingText": "The second descends to the throat chakra, where it splits into two Roses that travel the channels of the arms, exiting through the hand chakras."
     },
     "l2-golden-sticky-3": {
-      "concept": "Golden Sticky Roses \u2014 Phase 3 (Full Body Coverage)",
-      "teachingText": "Golden sticky roses are placed throughout the entire body \u2014 covering the torso, limbs, and all remaining areas \u2014 for a thorough, complete energetic cleansing."
+      "concept": "Golden Sticky Roses \u2014 Third Rose (Legs)",
+      "teachingText": "The third descends to the root chakra, where it becomes two Roses that follow the channels of the legs, exiting through the foot chakras."
     },
     "l2-golden-sticky-4": {
-      "concept": "Golden Sticky Roses \u2014 Phase 4 (Integration)",
-      "teachingText": "After the golden sticky roses have done their work, a large Golden Rose appears above the head. All foreign energy gathered by the sticky roses is released, and the entire body is bathed in golden light \u2014 restoring, sealing, and integrating the energy body."
+      "concept": "Golden Sticky Roses \u2014 Fourth Rose (Full Aura)",
+      "teachingText": "The fourth spans the full width of the Aura, descending through the entire energetic field. Upon completion, all four either explode outside the Aura or exit through the grounding cord, transmuting the collected energies away with them."
     },
     "l3-analyzer": {
       "concept": "The Analyzer",
