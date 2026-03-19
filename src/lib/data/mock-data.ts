@@ -63,14 +63,14 @@ export const guardians: Guardian[] = [
   {
     id: '5',
     name: 'Silvia Coelho',
-    role: 'Guardian of Community Programs',
+    role: 'Guardian of The Rose Meditation',
     bio: 'Rooted in years of dedication as a social worker, Silvia brings a rare depth of care and human understanding to the practice of The Rose Meditation. Her commitment to precision is unwavering — she holds each technique, each step, and each energetic movement with the exactness it was designed to carry, honoring the integrity of the lineage. It is this diligence, paired with a genuine passion for the transformative power of the rose, that makes her guardianship both rigorous and deeply heartfelt.',
     image: '/images/SilviaC.png',
   },
   {
     id: '6',
     name: 'Jennifer Brooke Lawless',
-    role: 'Guardian of Community Programs',
+    role: 'Guardian of The Hummingbird',
     bio: 'With a foundation in therapeutic healing, Jennifer carries a natural gift for holding space where restoration and spiritual growth intertwine. Her passion for aura work is matched only by her consistency — she shows up for the practice with the same devotion and presence each time, cultivating a steady, luminous frequency that others can feel and trust. As Guardian of The Hummingbird, she brings warmth, persistence, and an unwavering commitment to the subtlety and beauty of reading and nurturing the aura.',
     image: '/images/placeholder-jennifer.jpg',
   },
