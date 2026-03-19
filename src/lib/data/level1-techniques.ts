@@ -54,7 +54,7 @@ export const level1Techniques: MeditationTechnique[] = [
     description:
       'A radiant sun above the head that fills the aura and body with Divine energy, raising vibration.',
     instruction:
-      'Create a Golden Sun above your head and fill the entire space of your Aura and physical body with the golden light that comes from the Sun. This sun represents the Supreme Being, it raises your vibration and fills the empty energetic spaces with Divine energy after any subtle release of energy. Fill yourself with the light of the Golden Sun whenever you renew the Meditation, before you finish and at any time of the day when you want to raise your vibration.',
+      'Create a Golden Sun above your head and fill the entire space of your Aura and physical body with the golden light that comes from the Sun. This sun represents the Supreme Being, it raises your vibration and fills the empty energetic spaces with Divine energy after any subtle release of energy. Fill yourself with the light of the Golden Sun whenever you renew the Grounding Cord, to finish your meditation and/or at any time of the day when you want to raise your vibration.',
     linkedSlideIds: ['l1-golden-sun', 'l1-golden-sun-fills'],
   },
   {
