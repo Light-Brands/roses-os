@@ -397,7 +397,7 @@ Below is the complete teaching text that accompanies each image/slide in the man
 #### Slide 21: Cleansing of the Space
 **Original:** `level-2/21-cleansing-space-original.PNG` | **Reimagined:** `level-2/21-cleanse-the-space.jpg`
 
-> Once the space is protected, it is cleansed. A large Cleansing Rose is placed above the grid, and golden energy pours downward through the entire structure, clearing all foreign, stagnant, or disruptive energies from the space.
+> With protection established, the cleansing follows. A Golden Rose is set above the grid and passed downward through its entire structure, removing any foreign, stagnant, or disruptive energies inside the room. This Rose comes down to be transmuted in the center of the earth through the Grounding Cord of the room.
 
 **Designer Notes:**
 - **Correction:** The rose itself does **not beam or emit golden light** -- the golden energy pours downward through the structure to cleanse, but the rose is not the source of a golden light beam. The rose directs the cleansing, but the visual should not show rays or beams of golden light radiating from the rose
