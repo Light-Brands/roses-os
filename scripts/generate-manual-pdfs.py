@@ -450,7 +450,7 @@ LEVEL_1_HTML = """<!DOCTYPE html>
   <p class="ph-ref">Ref: Slide 4 — Golden Sun</p>
 </div>
 
-<p>Create a Golden Sun above your head and fill the entire space of your Aura and physical body with the golden light that comes from the Sun. This sun represents the Supreme Being, it raises your vibration and fills the empty energetic spaces with Divine energy after any subtle release of energy. Fill yourself with the light of the Golden Sun whenever you renew the Meditation, before you finish and at any time of the day when you want to raise your vibration.</p>
+<p>Create a Golden Sun above your head and fill the entire space of your Aura and physical body with the golden light that comes from the Sun. This sun represents the Supreme Being, it raises your vibration and fills the empty energetic spaces with Divine energy after any subtle release of energy. Fill yourself with the light of the Golden Sun whenever you renew the Grounding Cord, to finish your meditation and/or at any time of the day when you want to raise your vibration.</p>
 
 <div class="divider"></div>
 
