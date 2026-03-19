@@ -195,7 +195,7 @@ The physical meditation space is protected by creating an energetic grid using r
 
 ## Cleansing of the Space
 
-Once the space is protected, it is cleansed. A large Cleansing Rose is placed above the grid, and golden energy pours downward through the entire structure, clearing all foreign, stagnant, or disruptive energies from the space.
+With protection established, the cleansing follows. A Golden Rose is set above the grid and passed downward through its entire structure, removing any foreign, stagnant, or disruptive energies inside the room. This Rose comes down to be transmuted in the center of the earth through the Grounding Cord of the room.
 
 *[Visual reference: Person seated within the rose grid, with a large open rose above the structure pouring golden light downward through the grid, cleansing the entire space]*
 
