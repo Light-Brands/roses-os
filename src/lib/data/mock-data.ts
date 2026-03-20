@@ -46,21 +46,6 @@ export const guardians: Guardian[] = [
     imageScale: 1.0,
   },
   {
-    id: '2',
-    name: 'Diego Dosal',
-    role: 'Guardian of Architecture & Structure',
-    bio: 'Diego is the bridge between spirit and structure. With over a decade of deep roots in multiple paths of spiritual practice, energy work, and community building, he carries the horizontal axis of ROSES OS by developing platforms, systems, and frameworks that harmonize intuition with strategy and build lasting foundations for this work.',
-    image: '/images/61C5142D-1CB2-414A-BAED-1C2E2E30217E.png',
-  },
-  {
-    id: '4',
-    name: 'Peggy Mars',
-    role: 'Guardian of Methodology',
-    bio: 'Peggy creates bridges between cultures, communities, and inner worlds. With over two decades walking the Aura Reading path, she integrates emotional, ancestral, and spiritual layers with clarity and compassion while sustaining authentic connection between teachers and students.',
-    image: '/images/peggy.JPG',
-    imagePosition: 'center 20%',
-  },
-  {
     id: '5',
     name: 'Silvia Coelho',
     role: 'Guardian of The Hummingbird & Rose',
@@ -73,6 +58,21 @@ export const guardians: Guardian[] = [
     role: 'Guardian of The Hummingbird & Rose',
     bio: 'With a foundation in therapeutic healing, Jennifer carries a natural gift for holding space where restoration and spiritual growth intertwine. Her passion for aura work is matched only by her consistency — she shows up for the practice with the same devotion and presence each time, cultivating a steady, luminous frequency that others can feel and trust. As Guardian of The Hummingbird, she brings warmth, persistence, and an unwavering commitment to the subtlety and beauty of reading and nurturing the aura.',
     image: '/images/JenniferBL.png',
+  },
+  {
+    id: '4',
+    name: 'Peggy Mars',
+    role: 'Guardian of Methodology',
+    bio: 'Peggy creates bridges between cultures, communities, and inner worlds. With over two decades walking the Aura Reading path, she integrates emotional, ancestral, and spiritual layers with clarity and compassion while sustaining authentic connection between teachers and students.',
+    image: '/images/peggy.JPG',
+    imagePosition: 'center 20%',
+  },
+  {
+    id: '2',
+    name: 'Diego Dosal',
+    role: 'Guardian of Architecture & Structure',
+    bio: 'Diego is the bridge between spirit and structure. With over a decade of deep roots in multiple paths of spiritual practice, energy work, and community building, he carries the horizontal axis of ROSES OS by developing platforms, systems, and frameworks that harmonize intuition with strategy and build lasting foundations for this work.',
+    image: '/images/61C5142D-1CB2-414A-BAED-1C2E2E30217E.png',
   },
 ];
 
