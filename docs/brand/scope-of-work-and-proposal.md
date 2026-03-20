@@ -149,6 +149,13 @@ All strategic and brand documentation living in the repository:
 
 **Status:** Complete. 12 files modified across 6 phases. *(Moved to Phase 1 completed milestones.)*
 
+### 2.5 Additional Guardian Bios
+- Silvia Coelho — Guardian of The Hummingbird & Rose
+- Jennifer Brooke Lawless — Guardian of The Hummingbird & Rose
+- Biographical profiles written and added to guardians data and page
+
+**Status:** Complete. Both bios and photos added.
+
 ---
 
 ## 3. Deliverables Summary
