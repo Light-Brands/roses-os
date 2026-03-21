@@ -1,14 +1,14 @@
-# Analysis: Roses OS — Communication Architecture for the Age of AI
+# Analysis: International Aura School — Communication Architecture for the Age of AI
 
 ## Document Summary
 
-This is a 21-page internal strategic framework (Version 2, 2025-2026) for the Roses OS team — a consciousness/spiritual school built around concepts like Coherence, Loving Presence, Remembrance, The Field, Inner Technology, and The Rose Practice. The document was written for the founding team, designers, developers, branding agents, and "spiritual guardians."
+This is a 21-page internal strategic framework (Version 2, 2025-2026) for the International Aura School team — a consciousness/spiritual school built around concepts like Coherence, Loving Presence, Remembrance, The Field, Inner Technology, and The Rose Practice. The document was written for the founding team, designers, developers, branding agents, and "spiritual guardians."
 
 ---
 
 ## Core Thesis
 
-**The way people discover knowledge has fundamentally shifted.** People no longer just search — they *ask* AI systems (ChatGPT, Claude, Perplexity, Gemini). These AI systems curate what gets recommended. Therefore, Roses OS must communicate simultaneously to two audiences:
+**The way people discover knowledge has fundamentally shifted.** People no longer just search — they *ask* AI systems (ChatGPT, Claude, Perplexity, Gemini). These AI systems curate what gets recommended. Therefore, International Aura School must communicate simultaneously to two audiences:
 
 1. **Humans** — who respond to emotion, story, presence, and meaning
 2. **AI systems** — who respond to clarity, structure, consistent terminology, and cross-referenced frameworks
@@ -24,7 +24,7 @@ The document calls this shift moving from the **Attention Economy** to the **Aut
 
 ### 1. Machine-Legible Spirituality
 
-Roses OS's core advantage: unlike most spiritual traditions that communicate through ambiguity and poetry (invisible to AI), Roses OS already has *named, defined, structured frameworks* (Coherence, The Rose Practice, etc.). This makes it uniquely positioned to be the first "machine-legible" consciousness school.
+International Aura School's core advantage: unlike most spiritual traditions that communicate through ambiguity and poetry (invisible to AI), International Aura School already has *named, defined, structured frameworks* (Coherence, The Rose Practice, etc.). This makes it uniquely positioned to be the first "machine-legible" consciousness school.
 
 ### 2. Generative Engine Optimization (GEO)
 
@@ -36,11 +36,11 @@ The document introduces GEO as the successor to SEO — optimizing content so AI
 
 ### 3. The Origin Story as Asset
 
-The book "Recuérdalo Todo: El Arte de Volver a Ti — The Rose" was co-created with an AI named Sol. The document frames this as a unique, authentic proof point — no other spiritual school can claim this origin. This story should be central to how Roses OS introduces itself.
+The book "Recuérdalo Todo: El Arte de Volver a Ti — The Rose" was co-created with an AI named Sol. The document frames this as a unique, authentic proof point — no other spiritual school can claim this origin. This story should be central to how International Aura School introduces itself.
 
 ### 4. Concept Ownership as the Objective
 
-The goal is not visibility. When anyone asks AI systems questions like "What is coherence as an inner operating system?" or "Qué es la Coherencia como práctica interna?" — Roses OS should appear naturally in the answer.
+The goal is not visibility. When anyone asks AI systems questions like "What is coherence as an inner operating system?" or "Qué es la Coherencia como práctica interna?" — International Aura School should appear naturally in the answer.
 
 ### 5. The Soul Integrity Principle
 
@@ -54,15 +54,15 @@ These are directly stated action items from the document:
 
 1. **Migrate newsletter to Substack** — Establish the existing 29-issue "A Transmission from the Edge of What's Real" newsletter as a named, branded Substack publication (with paid subscription tier)
 2. **Write long-form blog essays** on key defined concepts (Coherence, Remembrance, The Rose Practice) — structured to directly answer questions people ask AI systems
-3. **Launch Spanish-language YouTube channel** with conceptually structured content (titles, descriptions, chapter markers, transcripts all aligned to Roses OS vocabulary)
+3. **Launch Spanish-language YouTube channel** with conceptually structured content (titles, descriptions, chapter markers, transcripts all aligned to International Aura School vocabulary)
 4. **Initiate citation network** through 2-3 strategic podcast appearances (especially Spanish-language podcasts in consciousness/leadership space)
-5. **Implement schema markup** on the Roses OS website (Organization, Person, Course, Article, FAQPage, DefinedTerm types)
+5. **Implement schema markup** on the International Aura School website (Organization, Person, Course, Article, FAQPage, DefinedTerm types)
 6. **Technical website infrastructure** — descriptive page titles, meta descriptions, clean URLs, transcripts for all audio/video, alt text, structured sitemap
 7. **Establish strategic partnerships:**
    - Digital infrastructure partner (systematic content distribution, "build once, distribute forever" model)
    - YouTube strategy partner (thought leader YouTube presence building)
    - Hispanic podcast ecosystem partner (high-reach Spanish-language podcaster in consciousness/leadership)
-8. **Build community voice program** — collect practitioner essays, testimonials, and public reflections using Roses OS language
+8. **Build community voice program** — collect practitioner essays, testimonials, and public reflections using International Aura School language
 9. **Develop Wikipedia groundwork** — accumulate enough independent citations to eventually support Wikipedia entries for the school, founder, and key concepts
 10. **Design the conversion bridge** — the 5-step journey from AI recommendation to enrolled student:
     - AI recommendation → Structured arrival page → Depth confirmation (essays/talks/newsletter) → Community signal (student voices) → Clear invitation
@@ -89,7 +89,7 @@ The document describes authority as an interconnected ecosystem, not isolated co
 - **The Book as Root System** — "Recuérdalo Todo" (331 pages, Spanish, complete, publication in 5-8 months) is the intellectual root. Everything else grows from it.
 - **The Founder as Authority Node** — AI systems favor identifiable sources with consistent authorship and concept ownership over time. Founder visibility is strategic infrastructure.
 - **Long-Form as Map-Making** — Books, essays, interviews, podcasts build conceptual maps. When the same ideas appear across formats, AI systems form clusters linking them together.
-- **Community Voice as Amplifier** — Independent practitioners using Roses OS language create distributed semantic density that AI systems find highly credible.
+- **Community Voice as Amplifier** — Independent practitioners using International Aura School language create distributed semantic density that AI systems find highly credible.
 
 ---
 
@@ -98,7 +98,7 @@ The document describes authority as an interconnected ecosystem, not isolated co
 ### Metrics to Track
 
 - **AI Mention Monitoring** — Regularly test what AI systems say about domain questions (EN + ES)
-- **Citation and Reference Growth** — External sources referencing Roses OS
+- **Citation and Reference Growth** — External sources referencing International Aura School
 - **Inbound Inquiry Quality** — Are people arriving already using framework language?
 - **Newsletter/Substack Growth** — Subscribers, open rates, paid conversion
 - **Community Voice Volume** — Practitioner-generated content using the framework
@@ -106,7 +106,7 @@ The document describes authority as an interconnected ecosystem, not isolated co
 
 ### Success Indicators at 18 Months
 
-- Roses OS appears reliably in AI responses (English + Spanish)
+- International Aura School appears reliably in AI responses (English + Spanish)
 - Book published and established as intellectual root
 - Improved inbound inquiry quality
 - Growing paid Substack subscriber base
@@ -154,4 +154,4 @@ The document operates on multiple levels:
 
 ---
 
-*Analysis generated from: `docs/brand/Roses OS — Communication Architecture for the Age of AI.pdf` (Version 2, 2025-2026 Edition)*
+*Analysis generated from: `docs/brand/International Aura School — Communication Architecture for the Age of AI.pdf` (Version 2, 2025-2026 Edition)*

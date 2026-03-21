@@ -1,4 +1,4 @@
-# Roses OS Codex -- Summary
+# International Aura School Codex -- Summary
 
 > A concise reference summarizing the full ecosystem: philosophy, lineage, platform, design system, and documentation.
 
@@ -114,4 +114,4 @@ The `docs/` directory contains over 10,000 lines of content across these key doc
 
 ---
 
-*Roses OS -- Remembrance Ecosystem*
+*International Aura School -- Remembrance Ecosystem*

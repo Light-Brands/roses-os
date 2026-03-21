@@ -87,7 +87,7 @@
 - Brief lineage paragraph in brand-dna.md: Bostwick -> Plunk -> Angelina Ataíde -> International Aura School
 - **FOUND: Full name origin in `docs/foundation/the-codex.md` (Section III: Etymology and Numerology)** -- this is rich, brand-book-ready content:
   - **ROSES** = from *rosa* and *rhodon* -- "essence expressed outwardly, the invisible made perceivable, Spirit unfolding into form." Plural is essential: "not a single center, but a field. Not one authority, but many points of coherence." "It is not a flower. It is the archetype of conscious unfolding."
-  - **OS** = Operating System -- "the invisible structure that governs function: the logic beneath action, the architecture that sustains coherence within complexity." "Roses OS is not a meditation. It is the architecture through which remembrance becomes embodied."
+  - **OS** = Operating System -- "the invisible structure that governs function: the logic beneath action, the architecture that sustains coherence within complexity." "International Aura School is not a meditation. It is the architecture through which remembrance becomes embodied."
   - **Numerology**: R(9) O(6) S(1) E(5) S(1) O(6) S(1) = 29 -> 11 -> 2. The 11/2 signature = "the bridge archetype: heightened perception, illumination" resolving into "relationship, coherence through polarity."
   - **Destiny**: "To function as a living bridge between inner coherence and collective culture. To restore symmetry not through authority, but through resonance."
 

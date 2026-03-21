@@ -1,4 +1,4 @@
-# Roses OS -- The Codex
+# International Aura School -- The Codex
 
 > Foundational Reference -- A Seamless Path to Inner Freedom
 
@@ -15,7 +15,7 @@
 7. [V. The Path of the Rose](#v-the-path-of-the-rose)
 8. [VI. The Rose as the Sovereign Path](#vi-the-rose-as-the-sovereign-path)
 9. [VII. The Living Geometry of the Rose](#vii-the-living-geometry-of-the-rose)
-10. [VIII. Roses OS](#viii-roses-os)
+10. [VIII. International Aura School](#viii-roses-os)
 11. [IX. The Embodied Genius](#ix-the-embodied-genius)
 12. [X. The Symmetry of the Remembering Human](#x-the-symmetry-of-the-remembering-human)
 13. [XI. An Integrated System of Remembrance -- Manifesto](#xi-an-integrated-system-of-remembrance----manifesto)
@@ -68,13 +68,13 @@ Though it cannot be owned, it can be protected. Though it cannot be patented, it
 
 This Codex is not a spiritual manuscript in the traditional sense. It is a **living document**.
 
-It integrates direct mystical insight with grounded application. It exists as a foundational reference for those called to co-steward the Roses OS ecosystem: visionary allies, guardians of lineage, methodology builders, and aligned partners and investors.
+It integrates direct mystical insight with grounded application. It exists as a foundational reference for those called to co-steward the International Aura School ecosystem: visionary allies, guardians of lineage, methodology builders, and aligned partners and investors.
 
 **This Codex holds three essential intentions.**
 
 First, to protect the purity of the Rose as a living technology, ensuring it remains decentralized, non-extractive, and coherent at its core.
 
-Second, to articulate the architecture of Roses OS as an ecosystem of remembrance, a space where this frequency can be lived, transmitted, and scaled without losing soul, integrity, or depth.
+Second, to articulate the architecture of International Aura School as an ecosystem of remembrance, a space where this frequency can be lived, transmitted, and scaled without losing soul, integrity, or depth.
 
 Third, to activate a field of shared stewardship that is spiritually grounded, energetically sovereign, and pragmatically aligned with the emergence of a new planetary culture.
 
@@ -140,7 +140,7 @@ At the heart of her work lives a simple truth:
 
 > Every human being can awaken the capacity to perceive, to feel, and to clear their own inner field.
 
-Through a rare convergence of trust and shared responsibility, CELARIS has now extended its lineage internationally through the vision of Roses OS. CELARIS continues as the Brazilian home of this work; Roses OS carries the same lineage to the world.
+Through a rare convergence of trust and shared responsibility, CELARIS has now extended its lineage internationally through the vision of International Aura School. CELARIS continues as the Brazilian home of this work; International Aura School carries the same lineage to the world.
 
 This alliance is not an innovation. It is a remembering.
 
@@ -170,15 +170,15 @@ It is not a flower. It is the archetype of conscious unfolding, remembrance bloo
 
 **OS**, or Operating System, names the invisible structure that governs function: the logic beneath action, the architecture that sustains coherence within complexity.
 
-Applied to the human being, Roses OS names the inner architecture that harmonizes perception, body, mind, heart, and Spirit.
+Applied to the human being, International Aura School names the inner architecture that harmonizes perception, body, mind, heart, and Spirit.
 
 An operating system is not a practice. It is what allows all practices to function coherently.
 
-Roses OS is not a meditation. It is the architecture through which remembrance becomes embodied.
+International Aura School is not a meditation. It is the architecture through which remembrance becomes embodied.
 
 It is the operating system of the remembering human, and the shared field that allows many humans to remember together without losing sovereignty.
 
-### The Numerology of Roses OS
+### The Numerology of International Aura School
 
 Using Pythagorean numerology:
 
@@ -186,7 +186,7 @@ R = 9, O = 6, S = 1, E = 5, S = 1, O = 6, S = 1
 
 **Total: 29 --> 11 --> 2**
 
-The numerical signature of Roses OS is **11 / 2**.
+The numerical signature of International Aura School is **11 / 2**.
 
 **11** is the archetype of the bridge: heightened perception, illumination, the capacity to translate the invisible into form without distortion.
 
@@ -196,17 +196,17 @@ Together, 11 / 2 signifies a relational architecture where many humans can hold 
 
 This is why the plural matters.
 
-**Roses OS is not about The One. It is about the many aligned through coherence.**
+**International Aura School is not about The One. It is about the many aligned through coherence.**
 
 ### The Destiny Encoded in the Name
 
-The destiny of Roses OS is to function as a living bridge between inner coherence and collective culture.
+The destiny of International Aura School is to function as a living bridge between inner coherence and collective culture.
 
 To restore symmetry not through authority, but through resonance.
 
 To allow many humans to remember together and build together without fragmentation.
 
-Roses OS is the name of the living architecture that restores coherence, awakens genius, and returns humanity to the shared symmetry from which all true creation emerges.
+International Aura School is the name of the living architecture that restores coherence, awakens genius, and returns humanity to the shared symmetry from which all true creation emerges.
 
 ---
 
@@ -290,7 +290,7 @@ This is where remembrance becomes practical. Where clarity enters daily life.
 
 Rose Two is designed for scale without dilution. It is where tens of thousands will live the Rose each day, not as an idea, but as a rhythm.
 
-**It is the spine of the global expression of Roses OS.**
+**It is the spine of the global expression of International Aura School.**
 
 ### Rose Three / The Advanced Activation
 
@@ -308,7 +308,7 @@ Higher coherence requires grounding, maturity, shared responsibility, and ethica
 
 ### The Rose Game / Learning Through Play
 
-To ensure the Rose is not only understood but lived, Roses OS includes a gamified learning ecosystem for children, youth, and adults.
+To ensure the Rose is not only understood but lived, International Aura School includes a gamified learning ecosystem for children, youth, and adults.
 
 This is not a game of distraction. It is a game of remembrance.
 
@@ -328,7 +328,7 @@ Through these three levels, supported by the learning ecosystem, the Rose become
 - An embodied skillset
 - A shared spiritual literacy
 
-It is the gateway into the full architecture of Roses OS, preparing the human being for deeper coherence, mature sovereignty, and creation rooted in love.
+It is the gateway into the full architecture of International Aura School, preparing the human being for deeper coherence, mature sovereignty, and creation rooted in love.
 
 ---
 
@@ -463,7 +463,7 @@ This is how an OS becomes a movement. How a movement becomes culture. How cultur
 
 ---
 
-## VIII. Roses OS
+## VIII. International Aura School
 
 > A Seamless Path of Inner Freedom
 
@@ -471,7 +471,7 @@ Humanity has entered a velocity that no previous spiritual, psychological, or ph
 
 Today, the crisis is not a lack of wisdom. It is the absence of inner technologies capable of matching the complexity, speed, and cognitive load of contemporary life.
 
-**Roses OS emerges precisely here.**
+**International Aura School emerges precisely here.**
 
 It is not an update of the past. It is not a synthesis of traditions. It is the next evolution of remembrance, designed for a world that moves at accelerating speed.
 
@@ -479,7 +479,7 @@ A path simple enough for any human being, and precise enough to support a civili
 
 ### Origin of the Operating System
 
-Roses OS did not arise from ideology. It emerged from the structure.
+International Aura School did not arise from ideology. It emerged from the structure.
 
 From the Vertical Axis, which protects essence. From the Horizontal Axis, which builds the world that can carry it.
 
@@ -496,7 +496,7 @@ Together, they form an architecture that allows the Rose to scale without diluti
 
 ### The Pathway
 
-Roses OS unfolds through eleven gateways, each one a movement from fragmentation into coherence, each one a step toward inner freedom.
+International Aura School unfolds through eleven gateways, each one a movement from fragmentation into coherence, each one a step toward inner freedom.
 
 The Rose establishes the foundation. The Aura awakens perception. The Dreams train navigation through the unseen. Love completes embodiment.
 
@@ -531,7 +531,7 @@ Sanctuaries in Alto Paraiso, Costa Rica, and future locations anchor the field i
 
 Daily Rose Circles. Weekly Aura Readings. Hummingbird Readings. Guardian transmissions. Dream Circles. Here, presence becomes perception. Support becomes instinctive. Co-creation emerges naturally from coherence. This is where people learn together, build together, invest together, grow together, and carry one another across thresholds that cannot be crossed alone.
 
-**Heartware is the culture of Roses OS.** Its relational intelligence. Its living nervous system.
+**Heartware is the culture of International Aura School.** Its relational intelligence. Its living nervous system.
 
 **Soulware -- Living Truth**
 
@@ -548,7 +548,7 @@ When hardware, software, heartware, and soulware align, a living operating syste
 
 This is the architecture that democratizes remembrance, meets people exactly where they are, protects the guardians, and allows the Rose to reach millions without ever losing its soul.
 
-**This is Roses OS.**
+**This is International Aura School.**
 
 A path that begins in simplicity and matures into sovereignty.
 
@@ -558,11 +558,11 @@ A path that begins in simplicity and matures into sovereignty.
 
 ## IX. The Embodied Genius
 
-Roses OS does not prepare followers. **It prepares creators.**
+International Aura School does not prepare followers. **It prepares creators.**
 
 Human beings capable of meeting the world with clarity, coherence, and embodied leadership.
 
-The eleven capacities cultivated through Roses OS do not culminate in contemplation. They culminate in activation.
+The eleven capacities cultivated through International Aura School do not culminate in contemplation. They culminate in activation.
 
 Not activation as performance, but as embodiment.
 
@@ -586,9 +586,9 @@ This is not a new ideology. It is a new condition.
 
 Leadership emerging from coherence rather than compensation. Action guided by clarity rather than urgency.
 
-### The Culture Roses OS Cultivates
+### The Culture International Aura School Cultivates
 
-Roses OS cultivates this through practice. Through presence. Through simplicity. Through the disciplined return to center, again and again.
+International Aura School cultivates this through practice. Through presence. Through simplicity. Through the disciplined return to center, again and again.
 
 - Every guardian becomes an anchor of coherence
 - Every teacher becomes a mirror of presence
@@ -605,13 +605,13 @@ The awakened genius is not a gift. It is a choice.
 
 A choice to live without distortion. A choice to create without fear. A choice to embody freedom rather than seek it.
 
-This is what Roses OS prepares. Not spiritual followers. **Cultural architects.**
+This is what International Aura School prepares. Not spiritual followers. **Cultural architects.**
 
 Humans whose lives become the transmission.
 
 ### From Individual Coherence to Collective Renewal
 
-As these humans embody clarity, Roses OS becomes a seed.
+As these humans embody clarity, International Aura School becomes a seed.
 
 A living catalyst that activates, roots, and harmonizes communities. A pulse that gathers people into fields of abundance, joy, peace, serenity, harmony, clarity, and freedom.
 
@@ -619,9 +619,9 @@ Not as ideals. As lived conditions.
 
 Here, prosperity is not an achievement. It is the natural consequence of coherence. It is the fragrance of a community living in alignment with its essence. The bloom that appears when the root is healed and the reach is free.
 
-### The Purpose of Roses OS
+### The Purpose of International Aura School
 
-This is the purpose of Roses OS.
+This is the purpose of International Aura School.
 
 An architecture for a new humanity. An ignition point for cultures that remember how to thrive. A seed from which a more beautiful, coherent world can grow.
 
@@ -635,7 +635,7 @@ Not imposed. Not forced. But remembered.
 
 ### The Eleven Capacities of the Remembered Harmonic Being
 
-The purpose of Roses OS is not to create new abilities, elevate identity, or grant extraordinary powers. Its purpose is to restore the natural capacities of a human being whose perception is clear, whose nervous system is regulated, and whose inner field is coherent.
+The purpose of International Aura School is not to create new abilities, elevate identity, or grant extraordinary powers. Its purpose is to restore the natural capacities of a human being whose perception is clear, whose nervous system is regulated, and whose inner field is coherent.
 
 These capacities are not learned. They are remembered.
 
@@ -677,7 +677,7 @@ Not from becoming something more, but from remembering what was never lost.
 
 Stillness in motion. Perception moving freely while the center remains unmoved.
 
-This is the mastery Roses OS protects. Not power over reality, but trust in perception. Not control of life, but the ability to navigate it with precision, dignity, and care.
+This is the mastery International Aura School protects. Not power over reality, but trust in perception. Not control of life, but the ability to navigate it with precision, dignity, and care.
 
 This is the imprint of the Codex. The remembrance of the inner architecture that belongs to every human being. The return of our natural intelligence. The quiet mastery of the remembering human.
 
@@ -685,19 +685,19 @@ This is the imprint of the Codex. The remembrance of the inner architecture that
 
 ## XI. An Integrated System of Remembrance -- Manifesto
 
-We want to name, in simple and grounded terms, what we are building with Roses OS.
+We want to name, in simple and grounded terms, what we are building with International Aura School.
 
 What we are observing in the world is no longer subtle. Human intelligence, leverage, and technological power are accelerating at an unprecedented pace. What is not accelerating at the same rate is the human capacity to remain clear, centered, and internally coherent while holding that power.
 
 **When clarity collapses, choice collapses.** And when choice collapses, even well-intentioned people become reactive, fragmented, and harmful, often without realizing it.
 
-Roses OS does not emerge as a belief system, a spiritual path, a therapy, or an ideology. It emerges as something more fundamental: an attempt to restore the inner conditions that make conscious choice possible in the first place.
+International Aura School does not emerge as a belief system, a spiritual path, a therapy, or an ideology. It emerges as something more fundamental: an attempt to restore the inner conditions that make conscious choice possible in the first place.
 
 We are not telling people what to believe, how to think, or how to live. We are working upstream, at the level of conditions, not conclusions.
 
-At its core, Roses OS is a lightweight, experiential infrastructure designed to restore awareness, coherence, and agency in the human being before power, intelligence, or complexity amplify what is unresolved. It does not fight dysfunction. It removes the conditions that allow dysfunction to emerge.
+At its core, International Aura School is a lightweight, experiential infrastructure designed to restore awareness, coherence, and agency in the human being before power, intelligence, or complexity amplify what is unresolved. It does not fight dysfunction. It removes the conditions that allow dysfunction to emerge.
 
-This is what distinguishes Roses OS from most prior attempts to change humanity. Nearly all traditions, movements, and systems operate at the level of belief, values, or identity. That inevitably produces division. **Roses OS refuses that layer entirely.**
+This is what distinguishes International Aura School from most prior attempts to change humanity. Nearly all traditions, movements, and systems operate at the level of belief, values, or identity. That inevitably produces division. **International Aura School refuses that layer entirely.**
 
 It asks only two questions:
 
@@ -706,11 +706,11 @@ It asks only two questions:
 
 These questions require no belief. They are experiential and self-verifying. From them, everything else becomes downstream.
 
-Because Roses OS operates at the level of infrastructure rather than ideology, it can be received by anyone: spiritual or secular, religious or agnostic, skeptical or curious. It is not here to replace other paths, but to provide the internal stability that allows any path to function without collapsing under pressure.
+Because International Aura School operates at the level of infrastructure rather than ideology, it can be received by anyone: spiritual or secular, religious or agnostic, skeptical or curious. It is not here to replace other paths, but to provide the internal stability that allows any path to function without collapsing under pressure.
 
 This framing also matters for us as a collective.
 
-If what we build becomes heavy, moralizing, performative, or dependent on people believing the right things, we have already drifted. Roses OS only works if it remains simple, optional, experiential, and decentralized.
+If what we build becomes heavy, moralizing, performative, or dependent on people believing the right things, we have already drifted. International Aura School only works if it remains simple, optional, experiential, and decentralized.
 
 **Everything we create should pass three tests:**
 
@@ -722,10 +722,10 @@ If it does, it belongs. If it does not, we let it go.
 
 Our role is not to persuade or to position ourselves as authorities. Our role is to embody and build something so clear, grounded, and useful that it speaks for itself.
 
-If we do this well, Roses OS will not need to be pushed. It will become evident. And what becomes evident can move quietly, touch many lives, and scale without losing its soul.
+If we do this well, International Aura School will not need to be pushed. It will become evident. And what becomes evident can move quietly, touch many lives, and scale without losing its soul.
 
 **Remembrance is not taught. It is the natural consequence of coherence.**
 
 ---
 
-*With love, Roses OS*
+*With love, International Aura School*

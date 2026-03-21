@@ -18,7 +18,7 @@
 | Brand Identity | `docs/source-materials/brand-identity.md` | 188 |
 | The Codex | `docs/foundation/the-codex.md` | full |
 | Codex Summary | `docs/foundation/codex-summary.md` | 118 |
-| Roses OS Overview | `docs/foundation/roses-os-overview.md` | 145 |
+| International Aura School Overview | `docs/foundation/roses-os-overview.md` | 145 |
 | Expert Brand Review | `docs/source-materials/review-wellness-brand-prompt.md` | 113 |
 
 ---
