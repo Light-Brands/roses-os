@@ -113,7 +113,7 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'Once you are aware of your aura, the grounding cord practice deepens. You ground not only the physical body but also the aura itself — allowing the entire energy field to anchor into the Earth.',
     originalImage: 'level-1/06-grounding-cord-expansion-original.PNG',
-    reimaginedImage: 'level-1/06-expansion-grounding-cord.png',
+    reimaginedImage: 'level-1/06-expansion-grounding-cord.jpeg',
     final: true,
     imageNote:
       'The grounding cord should be more opaque/transparent, thick and strong, and less gold — same direction as slide 7.',
@@ -202,7 +202,7 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'The Cleansing Rose is placed outside of the aura. It is used to absorb and transmute foreign or stagnant energy from within your field. Energy that does not belong to you — from other people, environments, or experiences — is drawn out of the aura and into the Cleansing Rose, where it is neutralized.',
     originalImage: 'level-1/13-cleansing-rose.PNG',
-    reimaginedImage: 'level-1/13-cleansing-rose.png',
+    reimaginedImage: 'level-1/13-cleansing-rose.jpeg',
     level: 1,
     section: 'foundations',
   },
@@ -213,7 +213,7 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'After cleansing, the Rose is used to recover your own energy that has been left in or taken by others. The Rose is sent out as an instrument to gather and return your own life-force energy to each chakra, restoring fullness and sovereignty to each energy center.',
     originalImage: 'level-1/14-recovery-rose-original.PNG',
-    reimaginedImage: 'level-1/14-energy-recovery.png',
+    reimaginedImage: 'level-1/14-energy-recovery.jpeg',
     final: true,
     level: 1,
     section: 'foundations',
