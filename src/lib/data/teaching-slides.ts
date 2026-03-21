@@ -36,7 +36,7 @@ export const openingImportantToKnow = {
 export const openingHistory = {
   title: 'History & Lineage',
   text: 'Aura Reading emerged in the 1960s, in California, channeled by a North American called Lewis S. Bostwick. Founder of the Berkeley Psychic Institute and the Church of the Divine Man, he channeled and systematized the techniques and tools sent by the angels, to assist in the process of evolution of humanity.',
-  lineage: 'Berkeley Psychic Institute → Anastasia Plunk → Angelina Ataide → Escola da Aura → ROSES OS',
+  lineage: 'Berkeley Psychic Institute → Anastasia Plunk → Angelina Ataide → Escola da Aura → International Aura School',
 };
 
 // =============================================================================

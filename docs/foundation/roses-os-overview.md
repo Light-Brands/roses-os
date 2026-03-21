@@ -1,10 +1,10 @@
-# Roses OS -- Overview
+# International Aura School -- Overview
 
 > Ecosystem Overview & Document Index
 >
 > The Technologies of Remembrance -- A Seamless Path to Inner Freedom
 
-This document provides a unified overview of the Roses OS ecosystem, combining the program presentation, the philosophical foundation, and the full Codex.
+This document provides a unified overview of the International Aura School ecosystem, combining the program presentation, the philosophical foundation, and the full Codex.
 
 ---
 
@@ -14,7 +14,7 @@ This overview consolidates three core documents:
 
 1. **[The Presentation](../program/presentation.md)** -- The Rose and Aura program invitation, structure, schedule, and guardians
 2. **[The Technologies of Remembrance](../technology/technologies-of-remembrance.md)** -- The philosophical foundation: why new inner technologies are needed now
-3. **[The Codex](the-codex.md)** -- The complete foundational reference for the Roses OS ecosystem
+3. **[The Codex](the-codex.md)** -- The complete foundational reference for the International Aura School ecosystem
 
 ---
 
@@ -124,12 +124,12 @@ The Technologies of Remembrance presents the philosophical case for why new inne
 
 > See the full document: **[The Codex](the-codex.md)**
 
-The Codex is the foundational reference document for the Roses OS ecosystem. It contains:
+The Codex is the foundational reference document for the International Aura School ecosystem. It contains:
 
 - **Coherence** -- The definition of coherence as inner agreement and wholeness in motion
 - **Sacred Purpose** -- The Rose as a living technology of remembrance, not a metaphor
 - **Origin, Lineage, and Expansion** -- From Lewis S. Bostwick to Angelina Ataide and CELARIS
-- **Etymology and Numerology** -- The meaning encoded in the name Roses OS (11/2)
+- **Etymology and Numerology** -- The meaning encoded in the name International Aura School (11/2)
 - **The Coherence Architecture** -- 13 core domains of coherence restoration
 - **The Path of the Rose** -- Three progressive levels (Rose One, Two, Three) and the Rose Game
 - **The Sovereign Path** -- Decentralized, horizontal, and accessible by design
@@ -141,4 +141,4 @@ The Codex is the foundational reference document for the Roses OS ecosystem. It 
 
 ---
 
-*Roses OS -- Remembrance Ecosystem*
+*International Aura School -- Remembrance Ecosystem*

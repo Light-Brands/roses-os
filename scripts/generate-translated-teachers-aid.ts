@@ -76,14 +76,14 @@ function translateHtml(html: string, t: Translation, locale: string): string {
 
   // 2. Update <title>
   result = result.replace(
-    '<title>ROSES OS — Teacher Visual Aid Manual</title>',
-    `<title>ROSES OS — ${t.ui.teacherVisualAidManual}</title>`
+    '<title>International Aura School — Teacher Visual Aid Manual</title>',
+    `<title>International Aura School — ${t.ui.teacherVisualAidManual}</title>`
   );
 
   // 3. Cover page
   result = result.replace(
-    'ROSES OS &middot; Teacher Visual Aid Manual',
-    `ROSES OS &middot; ${escapeHtml(t.ui.teacherVisualAidManual)}`
+    'International Aura School &middot; Teacher Visual Aid Manual',
+    `International Aura School &middot; ${escapeHtml(t.ui.teacherVisualAidManual)}`
   );
   result = result.replace(
     'Rose Meditation &mdash; All Levels</p>\n      <div class="s32"></div>\n\n      <div class="line-c">',
@@ -183,7 +183,7 @@ function translateHtml(html: string, t: Translation, locale: string): string {
     escapeHtml(t.opening.history.text)
   );
   result = result.replace(
-    'Lineage: Berkeley Psychic Institute &rarr; Anastasia Plunk &rarr; Angelina Ataide &rarr; Escola da Aura &rarr; ROSES OS',
+    'Lineage: Berkeley Psychic Institute &rarr; Anastasia Plunk &rarr; Angelina Ataide &rarr; Escola da Aura &rarr; International Aura School',
     `${escapeHtml(t.ui.lineage)}: ${escapeHtml(t.opening.history.lineage).replace(/→/g, '&rarr;')}`
   );
 

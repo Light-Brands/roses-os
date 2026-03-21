@@ -1,4 +1,4 @@
-# SEO, GEO & UX Navigation Assessment — ROSES OS
+# SEO, GEO & UX Navigation Assessment — International Aura School
 
 **Date:** March 10, 2026
 **Site:** rosesos.com
@@ -12,7 +12,7 @@
 
 | Area | Details |
 |------|---------|
-| **Metadata per page** | Every public page exports static or dynamic `metadata` with unique title, description, and keywords. The root layout sets a global `title.template` (`%s \| ROSES OS`). |
+| **Metadata per page** | Every public page exports static or dynamic `metadata` with unique title, description, and keywords. The root layout sets a global `title.template` (`%s \| International Aura School`). |
 | **Canonical URLs** | `metadataBase` is set globally; the `generateMetadata()` helper produces `alternates.canonical` for each page. |
 | **Structured data (JSON-LD)** | Rich schema on most pages — `WebPage`, `BreadcrumbList`, `FAQPage`, `Course`, `WebSite`, and `Organization` (root layout). The offerings page includes two `Course` schemas with real pricing. |
 | **Sitemap** | Dynamic `sitemap.ts` covers all static routes + dynamically generated `/meditation/[location]` geo pages, with appropriate `changeFrequency` and `priority` values. |
@@ -46,7 +46,7 @@
 | **AI crawler access** | `robots.ts` explicitly allows GPTBot, ChatGPT-User, Google-Extended, PerplexityBot, Anthropic, ClaudeBot, and Applebot-Extended. This is ahead of most competitors. |
 | **Geo-targeted landing pages** | `/meditation/[location]` with city-specific intro copy, localized keywords, and timezone-aware schedules. Each page generates dynamic metadata, FAQ schema, breadcrumbs, and course schemas. |
 | **Rich FAQ content** | Offerings page includes 4 structured FAQs with natural-language Q&A — ideal for AI citation and featured snippets. |
-| **Clear entity identity** | Organization schema with `EducationalOrganization` type, consistent brand name ("ROSES OS"), and descriptive copy throughout. AI models can easily identify what the organization does. |
+| **Clear entity identity** | Organization schema with `EducationalOrganization` type, consistent brand name ("International Aura School"), and descriptive copy throughout. AI models can easily identify what the organization does. |
 | **Descriptive, natural-language content** | Page descriptions read like answers to user questions (e.g., "A living consciousness ecosystem offering Rose Meditation and Aura Reading courses online"). |
 
 ### Issues & Gaps
@@ -123,4 +123,4 @@
 
 ---
 
-*Assessment generated from codebase analysis of the ROSES OS repository.*
+*Assessment generated from codebase analysis of the International Aura School repository.*

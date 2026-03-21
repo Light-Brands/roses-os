@@ -8,7 +8,7 @@
 
 ## Context
 
-This plan documents the complete programmatic SEO and GEO (Generative Engine Optimization) infrastructure built for ROSES OS. The work captures organic search traffic through geo-targeted landing pages, FAQ content with schema markup, structured data across all pages, AI bot directives, and a meditation hub page — funneling search traffic into the enrollment flow and making content citable by AI-powered search engines (Google AI Overviews, Perplexity, ChatGPT search).
+This plan documents the complete programmatic SEO and GEO (Generative Engine Optimization) infrastructure built for International Aura School. The work captures organic search traffic through geo-targeted landing pages, FAQ content with schema markup, structured data across all pages, AI bot directives, and a meditation hub page — funneling search traffic into the enrollment flow and making content citable by AI-powered search engines (Google AI Overviews, Perplexity, ChatGPT search).
 
 ---
 

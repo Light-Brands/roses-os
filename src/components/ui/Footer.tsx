@@ -41,7 +41,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-10 border-b border-warm-800 dark:border-warm-200">
             {/* Col 1: Brand */}
             <div className="sm:col-span-2 lg:col-span-1">
-              <p className="font-serif text-xl text-white dark:text-warm-900 mb-3">ROSES OS</p>
+              <p className="font-serif text-xl text-white dark:text-warm-900 mb-3">International Aura School</p>
               <p className="text-sm text-warm-500 dark:text-warm-400 leading-relaxed max-w-xs">
                 A living operating system for spiritual development. Rose Meditation, Aura Reading, and the journey to coherent living.
               </p>
@@ -118,7 +118,7 @@ export default function Footer() {
           {/* Bottom bar */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-6">
             <p className="text-[10px] sm:text-[11px] text-warm-500 dark:text-warm-400 tracking-wide">
-              &copy; {currentYear} ROSES OS
+              &copy; {currentYear} International Aura School
             </p>
             <p className="text-[10px] sm:text-[11px] text-warm-600 dark:text-warm-300 tracking-wide">
               Designed &amp; developed by LIGHT BRANDS
@@ -135,7 +135,7 @@ export function FooterMinimal() {
     <footer className="py-8 border-t border-[var(--color-border-subtle)]">
       <div className="container-premium flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-sm text-[var(--color-foreground-muted)]">
-          &copy; {new Date().getFullYear()} ROSES OS
+          &copy; {new Date().getFullYear()} International Aura School
         </p>
       </div>
     </footer>

@@ -31,7 +31,7 @@ export default function Level2Page() {
           href="/"
           className="font-sans text-sm font-medium tracking-wide uppercase text-[var(--color-foreground)]"
         >
-          {t?.ui.rosesOs ?? 'ROSES OS'}
+          {t?.ui.rosesOs ?? 'International Aura School'}
         </Link>
         <Link
           href="/teaching"

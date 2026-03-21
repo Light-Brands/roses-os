@@ -1,12 +1,12 @@
-# Roses OS Codex -- Summary
+# International Aura School Codex -- Summary
 
 > A concise reference summarizing the full ecosystem: philosophy, lineage, platform, design system, and documentation.
 
 ---
 
-## What ROSES OS Is
+## What International Aura School Is
 
-ROSES OS is a full-stack spiritual technology platform -- part web application, part philosophical knowledge base, part educational ecosystem. It combines a modern Next.js web platform with a deep body of teachings around consciousness, coherence, and what it calls "Technologies of Remembrance."
+International Aura School is a full-stack spiritual technology platform -- part web application, part philosophical knowledge base, part educational ecosystem. It combines a modern Next.js web platform with a deep body of teachings around consciousness, coherence, and what it calls "Technologies of Remembrance."
 
 ---
 
@@ -35,8 +35,8 @@ ROSES OS is a full-stack spiritual technology platform -- part web application, 
 |--------|--------|-------------|
 | 1960s, California | **Lewis S. Bostwick** | Founded Berkeley Psychic Institute, channeled "Aura Reading" |
 | -- | **Anastasia Plunk** | Transmitted the lineage forward |
-| 1990s | **Angelina Ataide** | Founded CELARIS (formerly Escola da Aura & Suenos) |
-| 2026 | **ROSES OS** | Modern ecosystem iteration |
+| 1990s | **Angelina Ataide** | Founded CELARIS (formerly International Aura School) |
+| 2026 | **International Aura School** | Modern ecosystem iteration |
 
 ---
 
@@ -114,4 +114,4 @@ The `docs/` directory contains over 10,000 lines of content across these key doc
 
 ---
 
-*Roses OS -- Remembrance Ecosystem*
+*International Aura School -- Remembrance Ecosystem*

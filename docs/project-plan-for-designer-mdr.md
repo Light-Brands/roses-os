@@ -56,7 +56,7 @@ This manual is a facilitator's visual companion -- not a student workbook. Teach
 
 ## 2. PLATFORM PLACEMENT
 
-The manual lives on the ROSES OS website at `/teaching`, protected by a 4-digit PIN gate (password: 4444).
+The manual lives on the International Aura School website at `/teaching`, protected by a 4-digit PIN gate (password: 4444).
 
 - A **"For Teachers"** link appears in the site footer navigation bar
 - The link leads to `/teaching`, which triggers the password gate
@@ -85,7 +85,7 @@ The teaching section already exists on the website with this structure:
 All images live in `public/rose med images/`. The designer has **two versions** for nearly every teaching concept:
 
 1. **Original images** -- Hand-drawn stick-and-line illustrations from the tradition, marked with "original" in the filename. These are the most accurate depictions of the energetic structures. They are the **source of truth** for what should be shown. **New designs must reflect what the originals depict** -- the energetic structures, placements, and relationships shown in the originals are what is real and must be preserved.
-2. **Reimagined images** -- Modernized, elevated versions that honor the originals while bringing them into the ROSES OS brand language. These are the larger PNG files without "original" in the filename. The reimagined images are there for **feel** -- they show the target for clothing, design style, and overall aesthetic direction. They are not the accuracy reference.
+2. **Reimagined images** -- Modernized, elevated versions that honor the originals while bringing them into the International Aura School brand language. These are the larger PNG files without "original" in the filename. The reimagined images are there for **feel** -- they show the target for clothing, design style, and overall aesthetic direction. They are not the accuracy reference.
 
 **The designer should use both sets.** The originals define *what* to show. The reimagined versions define *how it should feel*. The new designs must always honor the connection between old and new -- paying homage to the original tradition while elevating it into the modern brand language. Where a reimagined image exists, use it as inspiration for feel, clothing, and design style. The original should remain accessible as a supplementary reference that teachers may prefer for accuracy.
 
@@ -208,7 +208,7 @@ Below is the complete teaching text that accompanies each image/slide in the man
 
 > Aura Reading emerged in the 1960s, in California, channeled by a North American called **Lewis S. Bostwick**. Founder of the **Berkeley Psychic Institute** and the **Church of the Divine Man**, he channeled and systematized the techniques and tools sent by the angels, to assist in the process of evolution of humanity.
 >
-> **Lineage:** Berkeley Psychic Institute → Anastasia Plunk → Angelina Ataide → ROSES OS
+> **Lineage:** Berkeley Psychic Institute → Anastasia Plunk → Angelina Ataide → International Aura School
 
 ---
 
@@ -983,7 +983,7 @@ A "Download PDF" button at the top of the teaching section exports the entire ma
 **Requirements:**
 
 - PDF mirrors the web layout as closely as possible
-- Branded template: ROSES OS wordmark, Aura White background, consistent margins and typography
+- Branded template: International Aura School wordmark, Aura White background, consistent margins and typography
 - Formatted for both screen reading and print (A4 / Letter)
 - Cormorant Garamond for headers, Inter for body
 - Illustrations and diagrams render cleanly (SVG preferred)

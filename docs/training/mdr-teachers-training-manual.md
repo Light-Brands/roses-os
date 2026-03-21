@@ -2,7 +2,7 @@
 
 ## Introductory Course in Rose Meditation
 
-> Facilitator & Practitioner Resource -- ROSES OS Foundational Practices
+> Facilitator & Practitioner Resource -- International Aura School Foundational Practices
 
 ---
 
@@ -36,7 +36,7 @@ Aura Reading emerged in the 1960s, in California, channeled by a North American 
 
 ### Lineage
 
-Berkeley Psychic Institute --> **Anastasia Plunk** --> **Angelina Ataide** --> **ROSES OS**
+Berkeley Psychic Institute --> **Anastasia Plunk** --> **Angelina Ataide** --> **International Aura School**
 
 ---
 
@@ -511,6 +511,6 @@ The Analyzer is an advanced tool introduced in Level 3. It is an energetic point
 
 **Source:** Teachers Resource -- Rose Meditation Level 1, 2, 3 -- 2026
 
-**Organization:** ROSES OS
+**Organization:** International Aura School
 
-**Note to Designers/Presenters:** This document contains the complete text and content descriptions from the original 46-page visual presentation. Each section marked with *[Visual reference]* indicates where the original presentation contained an illustration. These illustrations are essential to the teaching and should be recreated or sourced from the original presentation materials when producing the final training manual. The visual language uses soft, warm golden tones, watercolor-style illustrations of diverse practitioners seated in meditation, and ethereal pink/mauve backgrounds consistent with the ROSES OS brand identity.
+**Note to Designers/Presenters:** This document contains the complete text and content descriptions from the original 46-page visual presentation. Each section marked with *[Visual reference]* indicates where the original presentation contained an illustration. These illustrations are essential to the teaching and should be recreated or sourced from the original presentation materials when producing the final training manual. The visual language uses soft, warm golden tones, watercolor-style illustrations of diverse practitioners seated in meditation, and ethereal pink/mauve backgrounds consistent with the International Aura School brand identity.

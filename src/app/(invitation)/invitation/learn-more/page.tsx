@@ -41,7 +41,7 @@ function OverviewSection() {
           className="text-lg text-[var(--color-foreground-muted)] leading-relaxed space-y-6"
         >
           <p>
-            ROSES OS offers guided programs in Rose Meditation and Aura Reading.
+            International Aura School offers guided programs in Rose Meditation and Aura Reading.
             Each program includes live and recorded content, online, and designed
             to meet you exactly where you are. No prior experience is needed.
           </p>

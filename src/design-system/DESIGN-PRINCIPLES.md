@@ -1,4 +1,4 @@
-# Design Principles -- ROSES OS
+# Design Principles -- International Aura School
 
 > Source of truth: [rosesos.com](https://rosesos.com) | Tokens: `src/design-system/tokens.ts` | Theme: `src/design-system/theme.css` | Tailwind: `src/app/globals.css`
 

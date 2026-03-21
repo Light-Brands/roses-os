@@ -11,7 +11,7 @@ import * as fs from 'fs';
 
 async function htmlToPdf(htmlPath: string, outputPath: string) {
   console.log('=========================================================');
-  console.log('  ROSES OS — HTML to PDF Conversion');
+  console.log('  International Aura School — HTML to PDF Conversion');
   console.log('=========================================================\n');
 
   const absoluteHtml = path.resolve(htmlPath);

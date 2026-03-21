@@ -1,4 +1,4 @@
-# ROSES OS -- Project Plan for Designer
+# International Aura School -- Project Plan for Designer
 
 > Web Platform Design Brief -- Everything the designer needs to understand, reference, and deliver.
 
@@ -22,7 +22,7 @@ Each major deliverable has its own detailed designer plan. This master document 
 
 ## 1. PROJECT OVERVIEW
 
-ROSES OS is a spiritual-modern consciousness technology brand. The design work centers on a **unified web platform** -- a single, living digital environment where all ROSES OS content is accessible online and downloadable as PDF. The platform replaces the need for separate standalone decks, fillable PDFs, and disconnected web forms. Everything lives on the web; everything can be taken offline.
+International Aura School is a spiritual-modern consciousness technology brand. The design work centers on a **unified web platform** -- a single, living digital environment where all International Aura School content is accessible online and downloadable as PDF. The platform replaces the need for separate standalone decks, fillable PDFs, and disconnected web forms. Everything lives on the web; everything can be taken offline.
 
 **Core concept:** One web platform. All content accessible in-browser. All content downloadable as beautifully formatted PDF.
 
@@ -122,7 +122,7 @@ There are **five platform sections**, in priority order:
 
 **Screen 1 -- Presentation page flow:**
 
-1. **Title** -- "ROSES OS -- A Seamless Path to Inner Freedom"
+1. **Title** -- "International Aura School -- A Seamless Path to Inner Freedom"
 2. **The Invitation** -- Einstein quote, the need for new inner tools
 3. **Welcome to the Rose** -- What it restores; "When the Rose awakens, Genius awakens"
 4. **What the Rose Is** -- Three-point simplicity (awareness, coherence, real choice)
@@ -214,7 +214,7 @@ There are **five platform sections**, in priority order:
 
 ### Section D -- The Platform Pages (Website)
 
-**What it is:** The public-facing pages of the ROSES OS web platform -- "a threshold, not a marketing site." These pages frame the entire experience and house all other sections.
+**What it is:** The public-facing pages of the International Aura School web platform -- "a threshold, not a marketing site." These pages frame the entire experience and house all other sections.
 
 **Sitemap:**
 
@@ -239,10 +239,10 @@ There are **five platform sections**, in priority order:
 
 ### Section E -- PDF Export System (Cross-Platform Feature)
 
-**What it is:** A unified PDF export system that works across the entire platform. This is not a separate section visitors see, but a design and development deliverable that ensures every downloadable PDF feels like a first-class ROSES OS artifact.
+**What it is:** A unified PDF export system that works across the entire platform. This is not a separate section visitors see, but a design and development deliverable that ensures every downloadable PDF feels like a first-class International Aura School artifact.
 
 **Requirements:**
-- Every PDF export uses the same branded template: ROSES OS wordmark, Aura White background, consistent margins and typography
+- Every PDF export uses the same branded template: International Aura School wordmark, Aura White background, consistent margins and typography
 - PDFs are formatted for both screen reading and print (A4 / Letter)
 - Cormorant Garamond for headers, Inter for body -- matching the web exactly
 - Subtle brand texture on each page (clay, linen, or fogged light -- light enough to print cleanly)
@@ -289,7 +289,7 @@ The designer must follow this system across the entire platform -- web and PDF.
 
 | Color | HEX | Role |
 |---|---|---|
-| **Rose Clay Mauve** | `#9C6F6E` | THE signature color -- field color, not accent. The "human interface layer" of ROSES OS |
+| **Rose Clay Mauve** | `#9C6F6E` | THE signature color -- field color, not accent. The "human interface layer" of International Aura School |
 | Warm Rose-Clay Brown | `#9B6A66` to `#9E6F6B` | Dusty mauve tones, supporting warmth |
 | Light Terracotta | `#C4836C` to `#CB8E7E` | Sun-warmed clay accents, grounding and luminous |
 
@@ -523,7 +523,7 @@ All platform content, manuals, and PDF exports must support all four languages w
 
 ## 10. STRATEGIC CONTEXT
 
-This work is more than design production. The web platform is a unified digital home for ROSES OS that demonstrates:
+This work is more than design production. The web platform is a unified digital home for International Aura School that demonstrates:
 
 - Design coherence across every touchpoint
 - Educational clarity for teachers and participants

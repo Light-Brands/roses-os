@@ -1,6 +1,6 @@
 # Review: Brand DNA Expert System Prompt — Health, Wellness & Healing Facilities
 
-> Expert assessment of the system prompt as a brand review framework, and its application to the ROSES OS brand.
+> Expert assessment of the system prompt as a brand review framework, and its application to the International Aura School brand.
 
 ---
 
@@ -20,23 +20,23 @@
 
 ### 1. "Healing Philosophy" Assumes a Healing Frame
 
-Not all wellness brands are healing brands. ROSES OS explicitly positions itself as a *remembrance ecosystem* — "not a self-improvement brand," not a healing loop. The prompt should account for brands that resist the healing paradigm entirely.
+Not all wellness brands are healing brands. International Aura School explicitly positions itself as a *remembrance ecosystem* — "not a self-improvement brand," not a healing loop. The prompt should account for brands that resist the healing paradigm entirely.
 
 **Better framing:** "Foundational Philosophy & Purpose — What is the core ontological claim? Is the brand about healing, prevention, transformation, remembrance, or something else? Is this distinction clearly articulated?"
 
 ### 2. "Community Identity" Needs More Teeth
 
-It asks "who is this for and who is it not for" but doesn't push on the tension between exclusivity and accessibility — the central brand paradox in this space. ROSES OS has sacred use protocols restricting access to initiated students, a tiered contribution model expanding access, and a target audience of founders/creators/leaders that skews ambitious and affluent.
+It asks "who is this for and who is it not for" but doesn't push on the tension between exclusivity and accessibility — the central brand paradox in this space. International Aura School has sacred use protocols restricting access to initiated students, a tiered contribution model expanding access, and a target audience of founders/creators/leaders that skews ambitious and affluent.
 
 **The prompt should explicitly ask:** *How does the brand reconcile gatekeeping with inclusion?*
 
 ### 3. Missing: Business Model Alignment
 
-There's no evaluation dimension for how the brand DNA aligns with the revenue model. ROSES OS uses an income-based contribution model rather than fixed pricing — this *is* the brand in action. A retreat center charging $5K/week while claiming "accessibility" has a brand contradiction. The prompt should evaluate this.
+There's no evaluation dimension for how the brand DNA aligns with the revenue model. International Aura School uses an income-based contribution model rather than fixed pricing — this *is* the brand in action. A retreat center charging $5K/week while claiming "accessibility" has a brand contradiction. The prompt should evaluate this.
 
 ### 4. Missing: Lineage & Transmission Ethics
 
-The prompt mentions "founder story" but doesn't address lineage — a critical dimension for brands rooted in channeled, indigenous, or traditional practices. ROSES OS traces its lineage through Lewis S. Bostwick → Berkeley Psychic Institute → Anastasia Plunk → Angelina Ataide.
+The prompt mentions "founder story" but doesn't address lineage — a critical dimension for brands rooted in channeled, indigenous, or traditional practices. International Aura School traces its lineage through Lewis S. Bostwick → Berkeley Psychic Institute → Anastasia Plunk → Angelina Ataide.
 
 **The prompt should ask:** "Where do these practices come from? How is that acknowledged? Is there appropriation risk?"
 
@@ -54,7 +54,7 @@ The prompt evaluates sensory/physical environment but says nothing about digital
 
 ---
 
-## III. Applying This Framework to ROSES OS
+## III. Applying This Framework to International Aura School
 
 ### Strengths
 
@@ -72,15 +72,15 @@ The prompt evaluates sensory/physical environment but says nothing about digital
 
 ### Gaps and Tensions
 
-**Core Values — Conduct Standards vs. Brand Values:** The brand has agreements and virtues (punctuality, confidentiality, co-responsibility, trust, compassion), but these read as community conduct standards, not brand values that reveal hard choices. The "ROSES OS Is Not" list gets closer to real values — these negations reveal genuine positioning choices. But the brand DNA doesn't consolidate these into explicit values.
+**Core Values — Conduct Standards vs. Brand Values:** The brand has agreements and virtues (punctuality, confidentiality, co-responsibility, trust, compassion), but these read as community conduct standards, not brand values that reveal hard choices. The "International Aura School Is Not" list gets closer to real values — these negations reveal genuine positioning choices. But the brand DNA doesn't consolidate these into explicit values.
 
 **Community Identity — The Exclusivity Paradox:** The brand simultaneously says "welcome home" and restricts material to initiated students. The contribution model creates financial accessibility, but the initiatory structure creates knowledge gatekeeping. This isn't necessarily a problem — lineage-based traditions have always operated this way — but the brand DNA doesn't name or reconcile this tension.
 
-**Ideal Guest Profile — Emotional State on Arrival:** The audience section describes *who* they are and *what they feel* but doesn't capture the specific pain point that would make someone encounter ROSES OS for the first time. Are these people in crisis? At a crossroads? Already on a spiritual path? Feeling successful but hollow?
+**Ideal Guest Profile — Emotional State on Arrival:** The audience section describes *who* they are and *what they feel* but doesn't capture the specific pain point that would make someone encounter International Aura School for the first time. Are these people in crisis? At a crossroads? Already on a spiritual path? Feeling successful but hollow?
 
-**Brand Promise — Deliverability:** The core promise includes "awakened leadership," "conscious prosperity," and "intuitive clarity." These are large outcomes. The brand DNA doesn't address how ROSES OS sets expectations or measures whether the promise is being delivered. The two core questions are elegant entry points, but the gap between those questions and "conscious prosperity" needs bridging.
+**Brand Promise — Deliverability:** The core promise includes "awakened leadership," "conscious prosperity," and "intuitive clarity." These are large outcomes. The brand DNA doesn't address how International Aura School sets expectations or measures whether the promise is being delivered. The two core questions are elegant entry points, but the gap between those questions and "conscious prosperity" needs bridging.
 
-**Cultural Sensitivity:** The lineage traces from Lewis Bostwick (1960s California) through the Berkeley Psychic Institute. The brand uses terms rooted in Hindu, Buddhist, and various esoteric traditions (chakra, aura, energetic). The brand DNA acknowledges the lineage but doesn't explicitly address the cultural origins of these practices or how ROSES OS positions itself in relation to them.
+**Cultural Sensitivity:** The lineage traces from Lewis Bostwick (1960s California) through the Berkeley Psychic Institute. The brand uses terms rooted in Hindu, Buddhist, and various esoteric traditions (chakra, aura, energetic). The brand DNA acknowledges the lineage but doesn't explicitly address the cultural origins of these practices or how International Aura School positions itself in relation to them.
 
 **Founder / Practitioner Story:** Angelina Ataide is positioned as a Guardian, not a founder-centric personality. This is strategically smart — it avoids the "guru problem." But the brand DNA is thin on her personal story and motivation. In wellness, people buy into the person. The Guardians section lists four people with brief bios but doesn't let them become dimensionally human.
 
@@ -100,13 +100,13 @@ The prompt evaluates sensory/physical environment but says nothing about digital
 
 ---
 
-## V. Fitness for ROSES OS
+## V. Fitness for International Aura School
 
-This system prompt is a solid general framework for wellness brand review, but it needs adjustments to properly evaluate ROSES OS because:
+This system prompt is a solid general framework for wellness brand review, but it needs adjustments to properly evaluate International Aura School because:
 
-- ROSES OS rejects the "healing" frame — the prompt assumes it
-- ROSES OS is lineage-based — the prompt barely touches lineage ethics
-- ROSES OS operates as an initiatory system — the prompt doesn't address gatekeeping/access tensions
-- ROSES OS has a developed digital/design system — the prompt doesn't evaluate digital brand presence
+- International Aura School rejects the "healing" frame — the prompt assumes it
+- International Aura School is lineage-based — the prompt barely touches lineage ethics
+- International Aura School operates as an initiatory system — the prompt doesn't address gatekeeping/access tensions
+- International Aura School has a developed digital/design system — the prompt doesn't evaluate digital brand presence
 
-With the modifications above, this would be a strong review tool for evaluating and refining the ROSES OS brand DNA.
+With the modifications above, this would be a strong review tool for evaluating and refining the International Aura School brand DNA.

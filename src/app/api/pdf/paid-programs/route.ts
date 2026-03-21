@@ -913,8 +913,8 @@ function drawProgramOverviewCard(
 export async function GET() {
   try {
     const doc = await PDFDocument.create();
-    doc.setTitle('ROSES OS - Additional Programs Guide');
-    doc.setAuthor('ROSES OS');
+    doc.setTitle('International Aura School - Additional Programs Guide');
+    doc.setAuthor('International Aura School');
     doc.setSubject('Paid Programs: Rose Meditation, Aura for Life, Teachers Training');
 
     const serifFont = await doc.embedFont(StandardFonts.TimesRoman);
@@ -981,9 +981,9 @@ export async function GET() {
         });
       }
 
-      // Title: ROSES OS
+      // Title: International Aura School
       let coverY = PAGE_HEIGHT / 2 + 95;
-      const title = 'ROSES OS';
+      const title = 'International Aura School';
       const titleSize = 44;
       const titleWidth = serifFont.widthOfTextAtSize(title, titleSize);
       page.drawText(title, {
@@ -1416,7 +1416,7 @@ export async function GET() {
       cardY -= 22;
 
       cardY = drawWrappedText(page,
-        'Reach out to Dara for questions about enrollment, schedule, contribution tiers, or anything about your journey with ROSES OS.',
+        'Reach out to Dara for questions about enrollment, schedule, contribution tiers, or anything about your journey with International Aura School.',
         cardTextX, cardY, sansFont, 9, cardTextWidth, COLORS.softCharcoal);
       cardY -= 16;
 

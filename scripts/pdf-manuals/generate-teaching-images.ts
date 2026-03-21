@@ -186,7 +186,7 @@ async function generateImage(
 
 async function main() {
   console.log('=========================================================');
-  console.log('  ROSES OS — Teaching Page Image Generation');
+  console.log('  International Aura School — Teaching Page Image Generation');
   console.log('=========================================================\n');
 
   const apiKey = process.env.GOOGLE_GEMINI_API_KEY;

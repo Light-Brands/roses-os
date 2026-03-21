@@ -1,6 +1,6 @@
 # The Technologies of Remembrance
 
-> Philosophical Foundation -- The Roses OS
+> Philosophical Foundation -- The International Aura School
 
 ---
 

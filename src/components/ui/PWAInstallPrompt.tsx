@@ -169,7 +169,7 @@ export function PWAInstallPrompt() {
               {/* Text */}
               <div className="flex-1 min-w-0">
                 <p className="font-semibold text-white dark:text-neutral-900 text-[15px] leading-tight">
-                  Add ROSES OS to Home Screen
+                  Add International Aura School to Home Screen
                 </p>
                 <p className="mt-0.5 text-sm text-neutral-300 dark:text-neutral-600 leading-snug">
                   {isIOS

@@ -1,5 +1,5 @@
 /**
- * Design Tokens — ROSES OS
+ * Design Tokens — International Aura School
  * Warm, sacred design system with organic curves and contemplative rhythm
  * Palette: aura white, rose clay, soft charcoal, antique olive brass
  */

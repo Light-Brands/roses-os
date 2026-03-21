@@ -1,4 +1,4 @@
-# ROSES OS -- A Seamless Path to Inner Freedom
+# International Aura School -- A Seamless Path to Inner Freedom
 
 > Public Invitation -- Rose Levels 1, 2, 3 & Aura 1
 >
