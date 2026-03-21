@@ -202,7 +202,7 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'The Cleansing Rose is placed outside of the aura. It is used to absorb and transmute foreign or stagnant energy from within your field. Energy that does not belong to you — from other people, environments, or experiences — is drawn out of the aura and into the Cleansing Rose, where it is neutralized.',
     originalImage: 'level-1/13-cleansing-rose.PNG',
-    reimaginedImage: 'level-1/13-cleansing-rose.png',
+    reimaginedImage: 'level-1/13-cleansing-rose.jpeg',
     level: 1,
     section: 'foundations',
   },
