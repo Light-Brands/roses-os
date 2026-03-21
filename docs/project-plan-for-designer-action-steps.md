@@ -42,7 +42,7 @@ Final manuals served on the website live in `public/resources/manuals/`:
 | 3 | `03-grounding-cord.jpeg` | Grounding Cord |
 | 4 | `04-golden-sun.png` | Golden Sun |
 | 5 | `05-aura-exercise.PNG` | Limits of Aura |
-| 6 | `06-expansion-grounding-cord.jpeg` | Expansion of Grounding Cord |
+| 6 | `06-expansion-grounding-cord.png` | Expansion of Grounding Cord |
 | 7 | `07-golden-sun-fills.png` | Golden Sun Fills |
 | 8 | `08-earth-energy.PNG` | Earth Energy |
 | 9 | `09-cosmos-circuit.jpeg` | Cosmos Circuit |
