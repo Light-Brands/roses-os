@@ -76,11 +76,6 @@ const MANUAL_IMAGES: ManualImage[] = [
     prompt: `A luminous rose in full bloom surrounded by three concentric rings of sacred geometry — representing three levels of mastery. The rings progress from warm rose-clay (#9C6F6E) innermost, to blush (#E8C4BF) middle, to rich gold (#9E956B) outer. The rose petals are deeply layered, translucent, glowing with inner wisdom-light. Tiny sacred symbols float within the petals — representing deeper knowledge. The rose feels ancient yet modern, powerful yet gentle. Photorealistic 3D render with mystical depth. Pure white background. ${BRAND_STYLE}`,
   },
   {
-    id: 'five-bodies',
-    name: 'Five Bodies & Five Levels of Existence',
-    prompt: `Five concentric translucent layers surrounding a central luminous human silhouette, each layer representing a body/level of existence. From innermost to outermost: physical (dense, warm rose), emotional (fluid, soft coral), mental (structured, warm gold), energetic (luminous, light rose-clay), spiritual (vast, pure golden light). Each layer is distinct yet connected. Sacred geometry connects all five layers. The feeling is of multidimensional wholeness. Elegant, layered, profound. Pure white background. ${BRAND_STYLE}`,
-  },
-  {
     id: 'agreements-stick',
     name: 'Breaking Spiritual Agreements',
     prompt: `A luminous vertical stick or rod of crystalline rose-gold light, cracking into three pieces at its center. The stick represents a spiritual agreement — it glows with ancient energy. As it breaks, tiny particles of light are released and a rose below absorbs the fragments. The feeling is of conscious liberation, spiritual sovereignty. Sacred, powerful, deliberate. The act of breaking is gentle yet definitive. Pure white background. ${BRAND_STYLE}`,
@@ -94,11 +89,6 @@ const MANUAL_IMAGES: ManualImage[] = [
     id: 'energy-cleansing',
     name: 'Post-Intimacy Energy Cleansing',
     prompt: `Two abstract luminous aura silhouettes gently separating from each other, with orange-golden roses positioned between them — absorbing and transmuting the shared energy. Thin energy cords between the two figures are being gently dissolved. A pink rose rises above them both as a blessing. The feeling is of respectful energetic hygiene, honoring, and release. Abstract, tasteful, sacred. Pure white background. ${BRAND_STYLE}`,
-  },
-  {
-    id: 'classes-consultations',
-    name: 'Classes & Consultations',
-    prompt: `A central meditation figure surrounded by a golden protective dome, with smaller luminous figures seated around them in a semicircle. Golden lines of energy connect the central figure to each person, representing the energetic bonds formed during teaching or consultation. Roses of separation are positioned between each connection. The feeling is of service, energetic integrity, and professional spiritual practice. Clean, modern, sacred. Pure white background. ${BRAND_STYLE}`,
   },
   {
     id: 'analyzer',

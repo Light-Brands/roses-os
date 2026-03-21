@@ -151,11 +151,9 @@ const manualOnlyImages: ImageEntry[] = [
 
   // Level 3
   { id: 'l3-cover', label: 'Level 3 Cover', canonicalPath: '/scripts/pdf-manuals/images/manual-l3-cover-l3.png', scope: 'manual-only', manualLevels: [3], manualFilename: 'manual-l3-cover-l3.png' },
-  { id: 'l3-five-bodies', label: 'Five Bodies', canonicalPath: '/scripts/pdf-manuals/images/manual-l3-five-bodies.png', scope: 'manual-only', manualLevels: [3], manualFilename: 'manual-l3-five-bodies.png' },
   { id: 'l3-agreements-stick', label: 'Breaking Agreements', canonicalPath: '/scripts/pdf-manuals/images/manual-l3-agreements-stick.png', scope: 'manual-only', manualLevels: [3], manualFilename: 'manual-l3-agreements-stick.png' },
   { id: 'l3-cutting-cords', label: 'Cutting Cords', canonicalPath: '/scripts/pdf-manuals/images/manual-l3-cutting-cords.png', scope: 'manual-only', manualLevels: [3], manualFilename: 'manual-l3-cutting-cords.png' },
   { id: 'l3-energy-cleansing', label: 'Post-Intimacy Cleansing', canonicalPath: '/scripts/pdf-manuals/images/manual-l3-energy-cleansing.png', scope: 'manual-only', manualLevels: [3], manualFilename: 'manual-l3-energy-cleansing.png' },
-  { id: 'l3-classes-consultations', label: 'Classes & Consultations', canonicalPath: '/scripts/pdf-manuals/images/manual-l3-classes-consultations.png', scope: 'manual-only', manualLevels: [3], manualFilename: 'manual-l3-classes-consultations.png' },
   { id: 'l3-analyzer', label: 'The Analyzer', canonicalPath: '/scripts/pdf-manuals/images/manual-l3-analyzer.png', scope: 'manual-only', manualLevels: [3], manualFilename: 'manual-l3-analyzer.png' },
   { id: 'l3-transmedium', label: 'Transmedium Channels', canonicalPath: '/scripts/pdf-manuals/images/manual-l3-transmedium-channels.png', scope: 'manual-only', manualLevels: [3], manualFilename: 'manual-l3-transmedium-channels.png' },
   { id: 'l3-creating-reality', label: 'Creating Reality', canonicalPath: '/scripts/pdf-manuals/images/manual-l3-creating-reality.png', scope: 'manual-only', manualLevels: [3], manualFilename: 'manual-l3-creating-reality.png' },
