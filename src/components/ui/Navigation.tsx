@@ -209,7 +209,7 @@ export function Navigation({
         <nav className="container-premium">
           <div className="relative flex items-center h-16 lg:h-[72px] w-full">
             {/* Left: nav links — equal flex so logo stays centered */}
-            <div className="hidden lg:flex items-center gap-1 flex-1 min-w-0 justify-start lg:pr-20">
+            <div className="hidden lg:flex items-center gap-1 flex-1 min-w-0 justify-start lg:pr-28 xl:pr-20">
               {items.map((item) => {
                 const isActive = isNavActive(item.href);
                 return (
@@ -239,12 +239,12 @@ export function Navigation({
             </div>
 
             {/* Logo — left-aligned on mobile/tablet, absolutely centered on desktop */}
-            <div className="z-10 min-w-0 lg:flex-shrink-0 lg:absolute lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2">
+            <div className="z-10 flex-1 min-w-0 lg:flex-initial lg:flex-shrink-0 lg:absolute lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2">
               {logo || <Logo size="lg" />}
             </div>
 
             {/* Right: CTA + hamburger — equal flex to balance left */}
-            <div className="flex items-center gap-2 flex-1 min-w-0 justify-end">
+            <div className="flex items-center gap-2 shrink-0 lg:flex-1 lg:min-w-0 justify-end">
               {/* CTA — pill + circle, fill-sweep on hover */}
               <Link
                 href={cta.href}
