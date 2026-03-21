@@ -16,7 +16,7 @@ interface LogoProps {
 const sizeMap = {
   sm: 'text-base',
   md: 'text-lg',
-  lg: 'text-xl',
+  lg: 'text-sm sm:text-base md:text-lg lg:text-xl',
 };
 
 export function Logo({
@@ -29,7 +29,7 @@ export function Logo({
 }: LogoProps) {
   const iconSize = size === 'lg' ? 36 : size === 'md' ? 30 : 24;
   const logoContent = (
-    <div className={cn('flex items-center gap-2', className)}>
+    <div className={cn('flex items-center gap-2 min-w-0', className)}>
       <Image
         src="/rose.png"
         alt=""
@@ -39,7 +39,7 @@ export function Logo({
       />
       <span
         className={cn(
-          'font-medium tracking-[0.08em] uppercase text-[var(--color-foreground)]',
+          'font-medium tracking-[0.08em] uppercase text-[var(--color-foreground)] truncate',
           sizeMap[size],
           textClassName
         )}
@@ -52,7 +52,7 @@ export function Logo({
 
   if (href) {
     return (
-      <Link href={href} onClick={onClick} className="inline-flex">
+      <Link href={href} onClick={onClick} className="inline-flex min-w-0">
         {logoContent}
       </Link>
     );
