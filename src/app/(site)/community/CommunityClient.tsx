@@ -317,7 +317,7 @@ export default function CommunityClient() {
         eyebrow="Community"
         title="The Living Field"
         description="A network of practitioners devoted to coherent living. Ongoing gatherings, practices, and programs that nourish the field and support your journey."
-        image="/page-images/page-community.png"
+        image="/rose.png"
       />
 
       {/* 2. Free Activities */}
