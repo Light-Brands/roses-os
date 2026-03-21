@@ -1,5 +1,5 @@
 // =============================================================================
-// GEO CONTENT DATA — ROSES OS
+// GEO CONTENT DATA — International Aura School
 // =============================================================================
 
 import type { GeoLocation, FAQItem, TimeZoneEntry } from './types';
@@ -499,7 +499,7 @@ export const geoLocations: GeoLocation[] = [
     timezoneKey: 'london',
     timezoneLabel: 'Eastern European Time (EET)',
     intro:
-      'Join Rose Meditation and Aura Reading courses from Paphos, Cyprus — home to the ROSES OS guardians and Digital Cultures. Live online classes with afternoon and evening session times. Experience the birthplace of this living ecosystem.',
+      'Join Rose Meditation and Aura Reading courses from Paphos, Cyprus — home to the International Aura School guardians and Digital Cultures. Live online classes with afternoon and evening session times. Experience the birthplace of this living ecosystem.',
     keywords: [
       'meditation classes paphos',
       'meditation classes cyprus',
@@ -539,7 +539,7 @@ export const geoFAQs: FAQItem[] = [
     id: 'what-is-rose-meditation',
     question: 'What is Rose Meditation?',
     answer:
-      'Rose Meditation is a practice that uses the image and energy of the rose to cleanse and protect your aura — your energetic field. Through simple yet powerful techniques, you learn to release energies that don\'t belong to you (from people, places, memories, or situations) and return to the presence of your own essence. It is the foundational practice of the ROSES OS ecosystem, developed over 30+ years and practiced by 5,000+ initiates across 50+ countries.',
+      'Rose Meditation is a practice that uses the image and energy of the rose to cleanse and protect your aura — your energetic field. Through simple yet powerful techniques, you learn to release energies that don\'t belong to you (from people, places, memories, or situations) and return to the presence of your own essence. It is the foundational practice of the International Aura School ecosystem, developed over 30+ years and practiced by 5,000+ initiates across 50+ countries.',
     category: 'about',
   },
   {
@@ -560,14 +560,14 @@ export const geoFAQs: FAQItem[] = [
     id: 'what-is-clairvoyance-training',
     question: 'What is clairvoyance training?',
     answer:
-      'Clairvoyance literally means "clear seeing." In the ROSES OS system, clairvoyance training is part of the Aura Reading course where you learn to perceive energy visually through your inner sight (the 6th chakra). This isn\'t about seeing the future — it\'s about developing the ability to see energy as it exists right now: colors, images, and patterns in someone\'s aura that reveal their inner state. Everyone has this capacity; the training simply helps you remember and develop it.',
+      'Clairvoyance literally means "clear seeing." In the International Aura School system, clairvoyance training is part of the Aura Reading course where you learn to perceive energy visually through your inner sight (the 6th chakra). This isn\'t about seeing the future — it\'s about developing the ability to see energy as it exists right now: colors, images, and patterns in someone\'s aura that reveal their inner state. Everyone has this capacity; the training simply helps you remember and develop it.',
     category: 'about',
   },
   {
     id: 'is-this-religious',
     question: 'Is this a religious practice?',
     answer:
-      'No. ROSES OS is not affiliated with any religion, dogma, or belief system. It is a practical, experiential path — a set of techniques and practices for working with your own energy and consciousness. People from all backgrounds, faiths, and walks of life participate. The only requirement is your openness to explore your own inner landscape.',
+      'No. International Aura School is not affiliated with any religion, dogma, or belief system. It is a practical, experiential path — a set of techniques and practices for working with your own energy and consciousness. People from all backgrounds, faiths, and walks of life participate. The only requirement is your openness to explore your own inner landscape.',
     category: 'about',
   },
   {
@@ -623,21 +623,21 @@ export const geoFAQs: FAQItem[] = [
     id: 'what-happens-after',
     question: 'What happens after the course?',
     answer:
-      'After completing a course, you gain access to the ROSES OS community — a living ecosystem of continued practice. This includes free weekly gatherings, ongoing Rose Meditation guidances, practitioner meetings, and the opportunity to continue with advanced programs like Aura Reading Level 2, Aura for Life, and eventually Teachers Training. The path unfolds at your own pace.',
+      'After completing a course, you gain access to the International Aura School community — a living ecosystem of continued practice. This includes free weekly gatherings, ongoing Rose Meditation guidances, practitioner meetings, and the opportunity to continue with advanced programs like Aura Reading Level 2, Aura for Life, and eventually Teachers Training. The path unfolds at your own pace.',
     category: 'practice',
   },
   {
     id: 'how-much-does-it-cost',
     question: 'How much do the courses cost?',
     answer:
-      'ROSES OS uses a "pay what feels right" contribution model with three tiers: Seed (a gentle entry), Bloom (a balanced exchange), and Canopy (a generous offering that supports accessibility for others). Rose Meditation ranges from $222 to $777. The full Aura Reading Level 1 (which includes Rose Meditation) ranges from $888 to $2,111. Your presence matters more than the amount.',
+      'International Aura School uses a "pay what feels right" contribution model with three tiers: Seed (a gentle entry), Bloom (a balanced exchange), and Canopy (a generous offering that supports accessibility for others). Rose Meditation ranges from $222 to $777. The full Aura Reading Level 1 (which includes Rose Meditation) ranges from $888 to $2,111. Your presence matters more than the amount.',
     category: 'pricing',
   },
   {
     id: 'pay-what-feels-right',
     question: 'What is the "pay what feels right" model?',
     answer:
-      'Rather than a fixed price, ROSES OS offers three contribution tiers so you can choose what aligns with your current financial season. The Seed tier is for those in a quieter financial period. The Bloom tier reflects a balanced exchange. The Canopy tier is a generous offering that helps make the work accessible to others. There is no difference in what you receive — all tiers access the same complete course and community.',
+      'Rather than a fixed price, International Aura School offers three contribution tiers so you can choose what aligns with your current financial season. The Seed tier is for those in a quieter financial period. The Bloom tier reflects a balanced exchange. The Canopy tier is a generous offering that helps make the work accessible to others. There is no difference in what you receive — all tiers access the same complete course and community.',
     category: 'pricing',
   },
 ];

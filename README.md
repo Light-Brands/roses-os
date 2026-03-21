@@ -1,14 +1,14 @@
-# ROSES OS
+# International Aura School
 
 > The Operating System of Remembrance
 
-ROSES OS is a remembrance ecosystem — spiritual-modern consciousness technology that restores inner symmetry and coherence. It is not a self-improvement brand. It is an operating system of coherence — where intuition becomes precise and presence becomes sovereign.
+International Aura School is a remembrance ecosystem — spiritual-modern consciousness technology that restores inner symmetry and coherence. It is not a self-improvement brand. It is an operating system of coherence — where intuition becomes precise and presence becomes sovereign.
 
 ---
 
 ## Project Overview
 
-This repository contains the **ROSES OS web platform**: the public site, invitation flow, program content, teaching materials, and admin tooling. Documentation, brand system, and project planning live in `docs/`, aligned with the [Light-Brands/roses-os](https://github.com/Light-Brands/roses-os) documentation repo.
+This repository contains the **International Aura School web platform**: the public site, invitation flow, program content, teaching materials, and admin tooling. Documentation, brand system, and project planning live in `docs/`, aligned with the [Light-Brands/roses-os](https://github.com/Light-Brands/roses-os) documentation repo.
 
 **Core programs (reflected on the site):**
 

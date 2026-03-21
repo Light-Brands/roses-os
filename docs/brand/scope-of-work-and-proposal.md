@@ -1,4 +1,4 @@
-# ROSES OS -- Scope of Work & Economic Proposal
+# International Aura School -- Scope of Work & Economic Proposal
 
 **Prepared by:** Jennifer Brooke Lawless
 **Date:** March 5, 2026
@@ -8,7 +8,7 @@
 
 ## Overview
 
-This document outlines the scope, deliverables, and structure of the work being developed for the ROSES OS digital platform and brand system -- including community stewardship of the Hummingbird program and Rose Meditation support. It is intended to give the team full visibility into what has been built, what is in progress, and what remains -- so we can define clear agreements, ownership, and next steps together.
+This document outlines the scope, deliverables, and structure of the work being developed for the International Aura School digital platform and brand system -- including community stewardship of the Hummingbird program and Rose Meditation support. It is intended to give the team full visibility into what has been built, what is in progress, and what remains -- so we can define clear agreements, ownership, and next steps together.
 
 > *This document is intended as a starting point for conversation -- not a final agreement. All scope, pricing, and terms are open for discussion and adjustment together.*
 
@@ -16,7 +16,7 @@ This document outlines the scope, deliverables, and structure of the work being 
 
 This development was created from the heart, with no compensation model in mind. The scope and pricing documented here were assembled after the work was already built -- not before. As such, no compensation is required.
 
-What the International Aura School -- now ROSES OS -- has given me is exponential in terms of my spiritual growth, and I am very grateful for the opportunity to be part of this community. I am honored to help in the creation and execution of this platform.
+What the International Aura School -- has given me is exponential in terms of my spiritual growth, and I am very grateful for the opportunity to be part of this community. I am honored to help in the creation and execution of this platform.
 
 This document is intended to serve as a record of the value that has been created and a reference for what future development could look like on the platform -- including new build-out models that may emerge as the project evolves (e.g., a customer section, new teaching integrations, or community features). It is offered in the spirit of transparency and shared stewardship.
 
@@ -26,7 +26,7 @@ In addition to the platform and brand development work, this scope encompasses c
 
 The stewardship includes:
 
-1. **Hummingbird Program** -- Facilitating the Hummingbird community program, a free weekly gathering open to everyone. Holding space for the community, leading sessions, and nurturing the living field that the Hummingbird program represents within the ROSES OS ecosystem. This includes posting the Zoom meeting information to the community ahead of each session so that everyone knows when and how to join, and ensuring that a backup facilitator is available to hold space if the primary guardian is unable to attend.
+1. **Hummingbird Program** -- Facilitating the Hummingbird community program, a free weekly gathering open to everyone. Holding space for the community, leading sessions, and nurturing the living field that the Hummingbird program represents within the International Aura School ecosystem. This includes posting the Zoom meeting information to the community ahead of each session so that everyone knows when and how to join, and ensuring that a backup facilitator is available to hold space if the primary guardian is unable to attend.
 
 2. **Rose Meditation Support** -- Attending and helping facilitate the monthly Rose Q&A sessions, and leading Rose Meditations when no other facilitator is available that week. Ensuring continuity of practice and unbroken support for the community's meditation rhythm.
 
@@ -375,7 +375,7 @@ The following larger platform features are identified from the designer plan and
 | **Unified PDF Export Template System** | Consolidate all PDF generation (Programs, Teachers Aid, Manuals, Enrollment confirmations) into a single branded template system -- consistent wordmark, margins, typography, textures across every PDF the platform produces. | Improves all existing PDF outputs. |
 | **Full Localization Pass** | Translate all platform web content (pages, forms, UI labels, navigation) into Spanish, Portuguese, and Greek. i18n infrastructure already exists (language selector in place). This covers web pages only -- manual translations are a separate deliverable. | Translation services needed. i18n infrastructure is ready. |
 | **Admin Dashboard Backend Integration** | Connect the existing admin UI scaffold (8 pages, all styled with demo data) to live Supabase backend -- real analytics, user management, content editing, media library, and feedback collection. | Supabase schema exists. Requires data migration and API wiring. |
-| **Cohesive Payment Page** | Build a single, unified branded payment page that handles all ROSES OS transactions -- contributions (income-based tiers), enrollment fees, program purchases, and future offerings. Integrates Stripe (or equivalent) with real payment processing, branded receipts, confirmation emails, and mobile-optimized checkout. Replaces the current form-only contribution flow. | Requires business/legal decisions on payment structure, Stripe account setup, and contribution tier finalization. |
+| **Cohesive Payment Page** | Build a single, unified branded payment page that handles all International Aura School transactions -- contributions (income-based tiers), enrollment fees, program purchases, and future offerings. Integrates Stripe (or equivalent) with real payment processing, branded receipts, confirmation emails, and mobile-optimized checkout. Replaces the current form-only contribution flow. | Requires business/legal decisions on payment structure, Stripe account setup, and contribution tier finalization. |
 | **Email Collection & List Management** | Implement branded email capture forms across high-traffic pages (homepage, invitation, community interest, footer). Integrate with an email marketing platform (Mailchimp, ConvertKit, or Resend) for three communication pillars: (1) automated sequences (welcome series, onboarding, milestone-triggered), (2) periodic newsletters (teachings, community updates, stories), and (3) targeted announcements (program openings, events, new offerings to relevant segments). Segment-based lists for prospective students, initiated practitioners, and general community. GDPR-compliant opt-in with double confirmation. | Requires email platform selection and brand-approved copy for welcome sequences. |
 | **Blog / Written Content Platform** | Blog section for teachings, reflections, guardian writings, and community stories. CMS integration for easy publishing. Supports SEO, community engagement, and ongoing content marketing. | Content strategy and publishing workflow needed. |
 | **YouTube Content Integration** | Embed and organize YouTube video content on the platform. Dedicated video sections, playlists organized by topic (teachings, testimonials, events), and a searchable teaching video library. | Requires YouTube channel and content to be ready. |
@@ -394,7 +394,7 @@ The following larger platform features are identified from the designer plan and
 | | | |
 | **Total (Phases 1 & 2)** | **$232,000** | **$0 required** |
 
-The market value represents **$232,000 in value** contributed to the ROSES OS mission. No compensation is required -- any gifts in kind or in exchange are welcome but entirely at the team's discretion.
+The market value represents **$232,000 in value** contributed to the International Aura School mission. No compensation is required -- any gifts in kind or in exchange are welcome but entirely at the team's discretion.
 
 ### 4.5 Gifts in Kind
 
@@ -429,10 +429,10 @@ Larger platform features (Full Payment Page, Blog, YouTube integration, customer
 
 ### 4.7 Considerations for Discussion
 
-- **Ownership & IP** -- All assets -- platform code, brand assets, and content -- are owned by ROSES OS.
+- **Ownership & IP** -- All assets -- platform code, brand assets, and content -- are owned by International Aura School.
 - **Ongoing Maintenance** -- The platform requires ongoing technical maintenance, hosting, updates, and security. How is this accounted for?
 - **Licensing** -- Are there licensing considerations for the teaching content, brand assets, or platform code?
-- **Repository Visibility** -- The ROSES OS codebase is currently hosted as a public repository at [github.com/Light-Brands-AI/roses-os](https://github.com/Light-Brands-AI/roses-os). Should it remain public or be made private? If made private, each team member who needs access will need a GitHub account (free tier). To get access: (1) Sign up at [github.com](https://github.com) (2) Share your GitHub username so you can be invited as a collaborator to the repository.
+- **Repository Visibility** -- The International Aura School codebase is currently hosted as a public repository at [github.com/Light-Brands-AI/roses-os](https://github.com/Light-Brands-AI/roses-os). Should it remain public or be made private? If made private, each team member who needs access will need a GitHub account (free tier). To get access: (1) Sign up at [github.com](https://github.com) (2) Share your GitHub username so you can be invited as a collaborator to the repository.
 
 ---
 
@@ -442,30 +442,30 @@ Larger platform features (Full Payment Page, Blog, YouTube integration, customer
 
 ### Intellectual Property
 
-All content, materials, teachings, visual assets, and platform infrastructure created under the ROSES OS ecosystem are the intellectual property of **ROSES OS**.
+All content, materials, teachings, visual assets, and platform infrastructure created under the International Aura School ecosystem are the intellectual property of **International Aura School**.
 
 This includes -- but is not limited to -- written teachings, training manuals, meditation guides, brand materials, course content, digital platform code, and design systems.
 
-Ownership of these materials remains with ROSES OS regardless of the contributors, collaborators, or partners involved in their creation or distribution.
+Ownership of these materials remains with International Aura School regardless of the contributors, collaborators, or partners involved in their creation or distribution.
 
 ### Teaching Use
 
-Content produced within the ROSES OS ecosystem is **free to use for teaching purposes** by any individual who has been initiated into the Rose path.
+Content produced within the International Aura School ecosystem is **free to use for teaching purposes** by any individual who has been initiated into the Rose path.
 
-This applies to personal teaching, group facilitation, workshops, courses, and other educational contexts -- whether offered freely or as part of a paid program. Initiated teachers and practitioners may use ROSES OS content to support their own teaching and the transmission of this work in the world.
+This applies to personal teaching, group facilitation, workshops, courses, and other educational contexts -- whether offered freely or as part of a paid program. Initiated teachers and practitioners may use International Aura School content to support their own teaching and the transmission of this work in the world.
 
 ### Conditions of Use
 
-The following conditions apply to the use of ROSES OS content:
+The following conditions apply to the use of International Aura School content:
 
-1. **Initiation** -- The individual must have been initiated into the Rose path through the ROSES OS lineage or its recognized transmission holders.
-2. **Attribution** -- All use of ROSES OS content must credit ROSES OS as the source.
+1. **Initiation** -- The individual must have been initiated into the Rose path through the International Aura School lineage or its recognized transmission holders.
+2. **Attribution** -- All use of International Aura School content must credit International Aura School as the source.
 3. **Integrity of Transmission** -- The teachings must be shared without distortion. The essence, language, and energetic integrity of the original material must be preserved. Adaptations are welcome where they serve clarity, but the core transmission must remain whole.
 4. **Sacred Use** -- In alignment with the agreements honored within this lineage -- confidentiality, co-responsibility, and trust -- materials should be shared only with those who are ready to receive them, and handled with the care they deserve.
 
 ### Platform & Infrastructure
 
-All assets created and delivered -- including the digital platform, codebase, design system, content, brand assets, and technical infrastructure -- are owned by **ROSES OS**. The techniques, processes, and technical methodologies used to create the platform are proprietary to **LIGHT BRANDS AI**. Platform and infrastructure assets are not included in the teaching-use provisions above.
+All assets created and delivered -- including the digital platform, codebase, design system, content, brand assets, and technical infrastructure -- are owned by **International Aura School**. The techniques, processes, and technical methodologies used to create the platform are proprietary to **LIGHT BRANDS AI**. Platform and infrastructure assets are not included in the teaching-use provisions above.
 
 ### A Living Agreement
 
@@ -493,7 +493,7 @@ For context on the technical foundation that supports everything above:
 
 ### Codebase & Asset Scale
 
-The ROSES OS platform comprises over **64,800 lines of authored source code, configuration, and documentation** across 225+ files -- plus **135 visual and media assets** (195MB) including custom 3D models, brand photography, teaching slide images, and multilingual PDF manuals.
+The International Aura School platform comprises over **64,800 lines of authored source code, configuration, and documentation** across 225+ files -- plus **135 visual and media assets** (195MB) including custom 3D models, brand photography, teaching slide images, and multilingual PDF manuals.
 
 #### Authored Lines Breakdown
 
@@ -539,4 +539,4 @@ The visual and media assets -- custom 3D models with hand-tuned shader effects, 
 
 ---
 
-*This document lives in the ROSES OS repository at `docs/brand/scope-of-work-and-proposal.md` and can be updated as the conversation evolves.*
+*This document lives in the International Aura School repository at `docs/brand/scope-of-work-and-proposal.md` and can be updated as the conversation evolves.*

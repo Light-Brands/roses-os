@@ -1,4 +1,4 @@
-# ROSES OS Brand Identity
+# International Aura School Brand Identity
 
 > The Operating System of Remembrance
 
@@ -6,11 +6,11 @@
 
 ## Brand Essence
 
-ROSES OS is a remembrance ecosystem -- not a self-improvement brand. It is spiritual-modern consciousness technology that restores inner symmetry and coherence.
+International Aura School is a remembrance ecosystem -- not a self-improvement brand. It is spiritual-modern consciousness technology that restores inner symmetry and coherence.
 
 **Core Promise:** Inner freedom, coherence, awakened leadership, conscious prosperity, intuitive clarity.
 
-**Brand Statement:** *ROSES OS is the operating system of coherence.*
+**Brand Statement:** *International Aura School is the operating system of coherence.*
 
 ---
 
@@ -92,7 +92,7 @@ For those who feel the world accelerating and know the tools they inherited were
 
 | Color | HEX | Usage |
 |---|---|---|
-| Rose Clay Mauve | `#9C6F6E` | Human interface layer -- the signature color of ROSES OS |
+| Rose Clay Mauve | `#9C6F6E` | Human interface layer -- the signature color of International Aura School |
 | Warm Rose-Clay Brown | `#9B6A66` to `#9E6F6B` | Dusty mauve tones |
 | Light Terracotta | `#C4836C` to `#CB8E7E` | Accent and grounding -- warm, luminous |
 

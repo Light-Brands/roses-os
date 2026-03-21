@@ -1,4 +1,4 @@
-# ROSES OS -- Designer Action Steps
+# International Aura School -- Designer Action Steps
 
 > Concrete task checklist for manual redesign and website image fixes.
 

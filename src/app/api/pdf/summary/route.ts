@@ -564,8 +564,8 @@ function drawTierCards(
 export async function GET() {
   try {
     const doc = await PDFDocument.create();
-    doc.setTitle('ROSES OS - Programs Guide');
-    doc.setAuthor('ROSES OS');
+    doc.setTitle('International Aura School - Programs Guide');
+    doc.setAuthor('International Aura School');
     doc.setSubject('Programs, Schedule, and Community');
 
     const serifFont  = await doc.embedFont(StandardFonts.TimesRoman);
@@ -615,7 +615,7 @@ export async function GET() {
       }
 
       // Title
-      const title = 'ROSES OS';
+      const title = 'International Aura School';
       const titleSize = 42;
       const titleWidth = serifFont.widthOfTextAtSize(title, titleSize);
       page.drawText(title, {
@@ -688,7 +688,7 @@ export async function GET() {
       y -= 10;
 
       y = drawWrappedText(page,
-        'ROSES OS is a living consciousness ecosystem rooted in more than three decades of lineage. It offers a path of remembrance through Rose Meditation and Aura Reading \u2014 two powerful technologies that cleanse, protect, and awaken the energy field, restoring you to your original coherence.',
+        'International Aura School is a living consciousness ecosystem rooted in more than three decades of lineage. It offers a path of remembrance through Rose Meditation and Aura Reading \u2014 two powerful technologies that cleanse, protect, and awaken the energy field, restoring you to your original coherence.',
         MARGIN, y, sansFont, 10, CONTENT_WIDTH, COLORS.softCharcoal, 1.65);
       y -= 6;
 
@@ -725,7 +725,7 @@ export async function GET() {
         { year: '1960s', name: 'Lewis S. Bostwick', desc: 'Channeled the material of Aura Reading in California.' },
         { year: '1980s', name: 'Anastasia Plunk', desc: 'Carried the teachings from the Berkeley Psychic Institute.' },
         { year: '2000s', name: 'Angelina Ataide', desc: 'Founder of CELARIS. Trained thousands in Brazil and Portugal.' },
-        { year: '2026', name: 'ROSES OS', desc: 'Crystallizes decades of lineage into a global ecosystem.' },
+        { year: '2026', name: 'International Aura School', desc: 'Crystallizes decades of lineage into a global ecosystem.' },
       ];
       for (const entry of lineageData) {
         page.drawText(entry.year, { x: MARGIN, y, size: 9, font: sansBold, color: COLORS.roseClay });
@@ -1283,7 +1283,7 @@ export async function GET() {
       y -= 4;
 
       y = drawWrappedText(page,
-        'Beyond the courses, ROSES OS offers a vibrant community of practice. Free weekly gatherings, guided meditations, and monthly meetings sustain your journey and deepen your connection with fellow practitioners around the world.',
+        'Beyond the courses, International Aura School offers a vibrant community of practice. Free weekly gatherings, guided meditations, and monthly meetings sustain your journey and deepen your connection with fellow practitioners around the world.',
         MARGIN, y, sansFont, 9, CONTENT_WIDTH);
       y -= 12;
 
@@ -1343,7 +1343,7 @@ export async function GET() {
       cardY -= 16;
 
       drawWrappedText(page,
-        'Reach out to Dara for questions about enrollment, schedule, contribution tiers, or anything about your journey with ROSES OS.',
+        'Reach out to Dara for questions about enrollment, schedule, contribution tiers, or anything about your journey with International Aura School.',
         cardX, cardY, sansFont, 8, cardMaxW, COLORS.softCharcoal);
       cardY -= 32;
 

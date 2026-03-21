@@ -4,9 +4,9 @@
 
 ---
 
-## What ROSES OS Is
+## What International Aura School Is
 
-ROSES OS is a full-stack spiritual technology platform -- part web application, part philosophical knowledge base, part educational ecosystem. It combines a modern Next.js web platform with a deep body of teachings around consciousness, coherence, and what it calls "Technologies of Remembrance."
+International Aura School is a full-stack spiritual technology platform -- part web application, part philosophical knowledge base, part educational ecosystem. It combines a modern Next.js web platform with a deep body of teachings around consciousness, coherence, and what it calls "Technologies of Remembrance."
 
 ---
 
@@ -36,7 +36,7 @@ ROSES OS is a full-stack spiritual technology platform -- part web application, 
 | 1960s, California | **Lewis S. Bostwick** | Founded Berkeley Psychic Institute, channeled "Aura Reading" |
 | -- | **Anastasia Plunk** | Transmitted the lineage forward |
 | 1990s | **Angelina Ataide** | Founded CELARIS (formerly International Aura School) |
-| 2026 | **ROSES OS** | Modern ecosystem iteration |
+| 2026 | **International Aura School** | Modern ecosystem iteration |
 
 ---
 

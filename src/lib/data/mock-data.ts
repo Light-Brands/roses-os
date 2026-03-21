@@ -1,5 +1,5 @@
 // =============================================================================
-// MOCK DATA: ROSES OS
+// MOCK DATA: International Aura School
 // =============================================================================
 
 import type {
@@ -32,7 +32,7 @@ export const guardians: Guardian[] = [
     id: '1',
     name: 'Angelina Ataíde',
     role: 'Guardian of Lineage',
-    bio: 'A pioneer in Aura Reading education in Brazil and Portugal, Angelina has dedicated over three decades to spiritual development and training aura readers. Her transformative methodology has already trained thousands of students, therapists, and teachers, combining spiritual wisdom with practical techniques as the primary steward of the ROSES OS lineage.',
+    bio: 'A pioneer in Aura Reading education in Brazil and Portugal, Angelina has dedicated over three decades to spiritual development and training aura readers. Her transformative methodology has already trained thousands of students, therapists, and teachers, combining spiritual wisdom with practical techniques as the primary steward of the International Aura School lineage.',
     image: '/images/angel.JPG',
     imagePosition: 'center 20%',
   },
@@ -49,7 +49,7 @@ export const guardians: Guardian[] = [
     id: '2',
     name: 'Diego Dosal',
     role: 'Guardian of Architecture & Structure',
-    bio: 'Diego is the bridge between spirit and structure. With over a decade of deep roots in multiple paths of spiritual practice, energy work, and community building, he carries the horizontal axis of ROSES OS by developing platforms, systems, and frameworks that harmonize intuition with strategy and build lasting foundations for this work.',
+    bio: 'Diego is the bridge between spirit and structure. With over a decade of deep roots in multiple paths of spiritual practice, energy work, and community building, he carries the horizontal axis of International Aura School by developing platforms, systems, and frameworks that harmonize intuition with strategy and build lasting foundations for this work.',
     image: '/images/61C5142D-1CB2-414A-BAED-1C2E2E30217E.png',
   },
   {
@@ -468,7 +468,7 @@ export const lineageEntries: LineageEntry[] = [
   { id: '2', year: '1980s', name: 'Anastasia Plunk', description: 'Received and carried the Aura Reading and Rose meditation teachings from the Berkeley Psychic Institute, ensuring the continuity and integrity of the lineage.' },
   { id: '3', year: '2000s', name: 'Angelina Ataide', description: 'Founder of CELARIS (Center of Aura Readings, Reiki, Intuition and Dreams).' },
   { id: '4', year: '2020s', name: 'International Aura School', description: 'The school founded to transmit and preserve the teachings of Aura Reading, bridging the lineage into a structured educational path.' },
-  { id: '5', year: '2026', name: 'ROSES OS', description: 'The platform crystallizes decades of lineage wisdom into an accessible ecosystem for consciousness, remembrance, and coherent living.' },
+  { id: '5', year: '2026', name: 'International Aura School', description: 'The platform crystallizes decades of lineage wisdom into an accessible ecosystem for consciousness, remembrance, and coherent living.' },
 ];
 
 // =============================================================================
@@ -513,7 +513,7 @@ export const techniques: Technique[] = [
 // =============================================================================
 
 export const teachingLevels: TeachingLevel[] = [
-  { level: 1, title: 'Level 1: Foundation', subtitle: 'Core Practices', description: 'The essential practices that form the foundation of all ROSES OS work. Breath, body, heart, and the Rose Meditation.' },
+  { level: 1, title: 'Level 1: Foundation', subtitle: 'Core Practices', description: 'The essential practices that form the foundation of all International Aura School work. Breath, body, heart, and the Rose Meditation.' },
   { level: 2, title: 'Level 2: Deepening', subtitle: 'Energetic & Relational', description: 'Advanced practices for subtle body awareness, emotional alchemy, and relational coherence.' },
   { level: 3, title: 'Level 3: Teaching', subtitle: 'Transmission & Facilitation', description: 'Practices and principles for holding space, transmitting the work, and serving as a guardian of the lineage.' },
 ];

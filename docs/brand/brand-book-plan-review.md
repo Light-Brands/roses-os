@@ -182,9 +182,9 @@ The live site uses: **Seekers, Healers, Teachers, Leaders, Creators.** This shou
 
 Add to the brand book content:
 
-- **"How to Enter" section** -- 1 page with plain-language definitions of core terms (coherence, distortion, sovereignty, frequency, remembrance) for readers encountering ROSES OS for the first time. Not a glossary -- a warm, invitational bridge.
+- **"How to Enter" section** -- 1 page with plain-language definitions of core terms (coherence, distortion, sovereignty, frequency, remembrance) for readers encountering International Aura School for the first time. Not a glossary -- a warm, invitational bridge.
 - **Accessibility & Sacred Protection statement** -- 1 paragraph acknowledging that the work is both openly invitational and protectively held through initiation. Name the tension rather than leaving it implicit.
-- **Lineage Acknowledgment** -- A brief, honest paragraph in the Origin section addressing the cultural origins of the practices (aura reading, chakra work) and how ROSES OS holds this with respect.
+- **Lineage Acknowledgment** -- A brief, honest paragraph in the Origin section addressing the cultural origins of the practices (aura reading, chakra work) and how International Aura School holds this with respect.
 - **Promise Bridging** -- In the Brand Drivers or Technology sections, connect the Two Core Questions (awareness + coherence) to the larger outcomes (leadership, prosperity, clarity) more explicitly.
 
 ### 6. Mark superseded documents

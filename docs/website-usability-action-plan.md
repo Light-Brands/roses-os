@@ -85,7 +85,7 @@
 
 **Issues addressed:** #3 (content overlap), #9 (consolidated About)
 
-**Problem:** Home, Invitation, and The Rose all explain "what is ROSES OS." Visitors read the same thing 3 times.
+**Problem:** Home, Invitation, and The Rose all explain "what is International Aura School." Visitors read the same thing 3 times.
 
 ### Tasks
 

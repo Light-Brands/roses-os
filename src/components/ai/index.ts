@@ -1,2 +1,2 @@
 // AI-Powered Components
-// (Previous components removed during ROSES OS migration)
+// (Previous components removed during International Aura School migration)

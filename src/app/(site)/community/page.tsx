@@ -10,7 +10,7 @@ import {
 export const metadata: Metadata = {
   title: 'Community',
   description:
-    'Join the ROSES OS community — free weekly gatherings, Rose Meditation guidances, practitioner meetings, and continued programs like Aura for Life and Teachers Training.',
+    'Join the International Aura School community — free weekly gatherings, Rose Meditation guidances, practitioner meetings, and continued programs like Aura for Life and Teachers Training.',
   keywords: [
     'rose meditation community',
     'aura reading practice group',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     'energy healing community',
   ],
   openGraph: {
-    title: 'Community | ROSES OS',
+    title: 'Community | International Aura School',
     description:
       'Free gatherings, ongoing practice, and a network of practitioners devoted to coherent living.',
     url: '/community',

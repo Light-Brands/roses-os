@@ -1,4 +1,4 @@
-# ROSES OS -- Brand Guidelines
+# International Aura School -- Brand Guidelines
 
 > The Operating System of Remembrance
 >
@@ -10,7 +10,7 @@
 
 ### The Signature Color
 
-The signature color of ROSES OS sits in a mauve-clay / mineral rose range.
+The signature color of International Aura School sits in a mauve-clay / mineral rose range.
 
 **Rose Clay Mauve**
 
@@ -102,9 +102,9 @@ This keeps it:
 - Cormorant + texture + clay = devotion
 - This mauve-clay sits between them
 
-This color becomes the **human interface layer** of ROSES OS. Alive. Calm. Intelligent.
+This color becomes the **human interface layer** of International Aura School. Alive. Calm. Intelligent.
 
-> A warm mineral field color used for moments of reflection, invitation, and remembrance. It represents the human interface of ROSES OS -- where presence meets structure. This color should feel lived-in, not decorative. Always textured. Always quiet.
+> A warm mineral field color used for moments of reflection, invitation, and remembrance. It represents the human interface of International Aura School -- where presence meets structure. This color should feel lived-in, not decorative. Always textured. Always quiet.
 
 ---
 
@@ -134,15 +134,15 @@ This color becomes the **human interface layer** of ROSES OS. Alive. Calm. Intel
 
 ## 1. Brand Essence
 
-**Brand Name:** ROSES OS
+**Brand Name:** International Aura School
 
-**Brand Definition:** ROSES OS is not a self-improvement brand. It is a remembrance ecosystem. A system designed to restore coherence, inner symmetry, and presence in modern life.
+**Brand Definition:** International Aura School is not a self-improvement brand. It is a remembrance ecosystem. A system designed to restore coherence, inner symmetry, and presence in modern life.
 
 > "Not as belief. As remembrance."
 >
 > "This is not learning. This is remembering."
 
-ROSES OS exists to dissolve distortion and return people to truth.
+International Aura School exists to dissolve distortion and return people to truth.
 
 **Core Promise:** A seamless path to:
 
@@ -152,7 +152,7 @@ ROSES OS exists to dissolve distortion and return people to truth.
 - Conscious prosperity
 - Intuitive clarity
 
-**Brand Feeling:** ROSES OS should always feel like:
+**Brand Feeling:** International Aura School should always feel like:
 
 - Warm silence
 - Sacred minimalism
@@ -164,7 +164,7 @@ ROSES OS exists to dissolve distortion and return people to truth.
 
 ## 2. Mission & Vision
 
-**Mission:** To restore inner symmetry and coherence through simple, precise instruments of consciousness. ROSES OS is built for this moment -- where life moves fast and noise is constant.
+**Mission:** To restore inner symmetry and coherence through simple, precise instruments of consciousness. International Aura School is built for this moment -- where life moves fast and noise is constant.
 
 **Vision:** A world where humans live, lead, create, and love from presence instead of distortion. Where life becomes creation instead of reaction.
 
@@ -196,14 +196,14 @@ They feel:
 
 **Category:** Spiritual-modern consciousness technology
 
-**ROSES OS Is Not:**
+**International Aura School Is Not:**
 
 - A belief system
 - A healing loop
 - A technique collection
 - Performance spirituality
 
-**ROSES OS Is:**
+**International Aura School Is:**
 
 - Coherence
 - Remembrance
@@ -213,13 +213,13 @@ They feel:
 - Clarity
 - Internal technology and alignment
 
-**Brand Statement:** ROSES OS is the operating system of coherence -- where intuition becomes precise and presence becomes sovereign.
+**Brand Statement:** International Aura School is the operating system of coherence -- where intuition becomes precise and presence becomes sovereign.
 
 ---
 
 ## 5. Brand Personality
 
-ROSES OS is:
+International Aura School is:
 
 - Grounded
 - Elegant
@@ -237,7 +237,7 @@ ROSES OS is:
 
 ### Voice Principles
 
-ROSES OS speaks with:
+International Aura School speaks with:
 
 - Simplicity
 - Reverence
@@ -410,13 +410,13 @@ No bright colors. No saturation. Calm only.
 
 ---
 
-# ROSES OS -- Design Book
+# International Aura School -- Design Book
 
 > The Visual World of Remembrance
 
 ## Atmosphere
 
-ROSES OS is the feeling of:
+International Aura School is the feeling of:
 
 - Walking into stillness
 - Remembering your center
@@ -443,7 +443,7 @@ Everything should feel touched by earth.
 
 ## Layout Philosophy
 
-ROSES OS layouts are:
+International Aura School layouts are:
 
 - Centered
 - Quiet
@@ -457,7 +457,7 @@ ROSES OS layouts are:
 
 ## Sacred-Tech Blend
 
-ROSES OS is where:
+International Aura School is where:
 
 - Spirituality meets structure
 - Mysticism meets clarity
@@ -470,7 +470,7 @@ ROSES OS is where:
 
 ## Application Examples
 
-ROSES OS design should translate into:
+International Aura School design should translate into:
 
 - Invitations
 - Retreats
@@ -496,7 +496,7 @@ ROSES OS design should translate into:
 
 ## Final Brand Truth
 
-ROSES OS is not something you follow. It is something you return to.
+International Aura School is not something you follow. It is something you return to.
 
 It does not ask for belief. It asks for presence.
 
@@ -504,12 +504,12 @@ It does not ask for belief. It asks for presence.
 
 ---
 
-# ROSES OS -- Website Style Guide
+# International Aura School -- Website Style Guide
 
 > Sacred Minimalism -- Earthy Modern -- Quiet Tech
 
 ## Website Purpose
 
-The ROSES OS website is not a marketing site. It is a threshold.
+The International Aura School website is not a marketing site. It is a threshold.
 
 A visitor should feel stillness, warmth, and remembrance upon arrival.

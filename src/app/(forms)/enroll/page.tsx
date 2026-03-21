@@ -31,7 +31,7 @@ export default function EnrollPage() {
           </h1>
           <p className="text-[var(--color-foreground-muted)] max-w-md mx-auto">
             Thank you for reaching out. We are honored by your interest in
-            the ROSES OS community. We will be in touch with you shortly.
+            the International Aura School community. We will be in touch with you shortly.
           </p>
         </div>
         <Link

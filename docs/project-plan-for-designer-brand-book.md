@@ -1,6 +1,6 @@
-# ROSES OS Brand Book -- Designer Plan
+# International Aura School Brand Book -- Designer Plan
 
-> Design brief for the ROSES OS Brand Book -- a 110-130 page designed book equivalent to the Zunya Brand Book reference.
+> Design brief for the International Aura School Brand Book -- a 110-130 page designed book equivalent to the Zunya Brand Book reference.
 
 ---
 
@@ -8,7 +8,7 @@
 
 | Item | Detail |
 |------|--------|
-| **What** | A comprehensive brand book for ROSES OS -- the definitive brand identity document |
+| **What** | A comprehensive brand book for International Aura School -- the definitive brand identity document |
 | **Format** | Designed book (InDesign or Figma), exported as high-quality PDF. Print-ready. |
 | **Page count** | 110--130 pages (comparable to Zunya Brand Book, 117 pages) |
 | **Reference** | `docs/source-materials/Zunya Brand Book.pdf` (format and structure reference) |
@@ -21,13 +21,13 @@
 
 ## 1. PURPOSE
 
-The brand book is the definitive identity document for ROSES OS. It communicates who ROSES OS is, how it looks, how it speaks, and how it feels -- to designers, partners, collaborators, and anyone entering the brand's world.
+The brand book is the definitive identity document for International Aura School. It communicates who International Aura School is, how it looks, how it speaks, and how it feels -- to designers, partners, collaborators, and anyone entering the brand's world.
 
 This is not a marketing document. It is an identity artifact. It should feel like holding something sacred and precise.
 
 **Goals:**
 
-- Establish ROSES OS as a complete, coherent brand identity
+- Establish International Aura School as a complete, coherent brand identity
 - Provide a single reference for all visual, verbal, and tonal brand decisions
 - Serve as a client-facing artifact that demonstrates design coherence and energetic intelligence
 - Guide all future design work (website, MDR manual, manuals, programs, materials)
@@ -107,7 +107,7 @@ These sections have full drafts in the content plan. They need founder approval,
 | Section | What's Needed | Estimated Pages |
 |---------|---------------|-----------------|
 | **Long Guardian Bios** | Extended biographical narratives for each Guardian -- personal story, journey into the work, what they carry. The short bios exist; the book needs full-page spreads. | 4--8 |
-| **Brand Story / Origin Narrative** | Full 2-4 page narrative of how ROSES OS came to exist. Founder interview questions are already written (see `content-plan.md` Section 1). | 2--4 |
+| **Brand Story / Origin Narrative** | Full 2-4 page narrative of how International Aura School came to exist. Founder interview questions are already written (see `content-plan.md` Section 1). | 2--4 |
 
 **Note:** The founder interview questions that unlock both of these are already prepared in `docs/brand/roses-os-brand-book-content-plan.md` (Sections 1). One round of conversations with the Guardians would complete the book's content.
 
@@ -132,7 +132,7 @@ These pages are created by the designer, not written:
 
 ## 4. BOOK STRUCTURE
 
-The following structure follows the Zunya Brand Book pattern, adapted for ROSES OS.
+The following structure follows the Zunya Brand Book pattern, adapted for International Aura School.
 
 ### Part I -- The Opening (pages 1--20)
 
@@ -146,7 +146,7 @@ The following structure follows the Zunya Brand Book pattern, adapted for ROSES 
 
 6. **Brand Essence & Definition**
 7. **Mission & Vision**
-8. **Brand Positioning** (what ROSES OS is / is not)
+8. **Brand Positioning** (what International Aura School is / is not)
 9. **Brand Personality & Archetype** (Mystic Guide x Architect x Modern Oracle)
 10. **Brand Personality Sliders** (visual scales)
 11. **Voice & Tone** (principles, what to avoid)
@@ -159,7 +159,7 @@ The following structure follows the Zunya Brand Book pattern, adapted for ROSES 
 
 ### Part III -- The Technology (pages 66--85)
 
-18. **The Technology -- What ROSES OS Is**
+18. **The Technology -- What International Aura School Is**
 19. **The Rose** (anatomy, functions)
 20. **The Three Levels** (overview + key practices per level)
 21. **The Aura**
@@ -195,7 +195,7 @@ The following structure follows the Zunya Brand Book pattern, adapted for ROSES 
 
 ## 5. VISUAL IDENTITY
 
-The brand book must embody the brand it describes. Every page should feel like ROSES OS.
+The brand book must embody the brand it describes. Every page should feel like International Aura School.
 
 ### Design Ethos
 

@@ -18,7 +18,7 @@
 |------|--------|
 | **What** | Reimagined student manuals with creative imagery in the Greek-style / Yeva World / Caravana aesthetic, aligned with the Teacher's Resource Manual |
 | **Manuals** | Three in Resources: Level 1 Manual (existing or reimagined if time permits), Level 2 Manual (priority), Level 3 Manual 2026 (priority) |
-| **Where** | Resources section of the ROSES OS platform -- accessible for enrolled students |
+| **Where** | Resources section of the International Aura School platform -- accessible for enrolled students |
 | **Format** | Web-viewable PDF and direct download -- each manual is a beautifully designed PDF document |
 | **Languages** | English, Spanish, Portuguese, Greek -- four language versions of each manual |
 | **Image direction** | All images are sourced from the Teachers Training section on the site -- the same images used in the Teacher's Resource Manual. No new images or modifications needed. Every illustration accurately depicts the teaching position or imagination technique. See Section 3.5 for the complete image-to-manual mapping. |
@@ -87,7 +87,7 @@ The student manuals are personal companions for participants -- reference docume
 
 ## 3. PLATFORM PLACEMENT
 
-Both manuals live in the **Resources** section of the ROSES OS platform.
+Both manuals live in the **Resources** section of the International Aura School platform.
 
 - Each manual is available as a **viewable PDF** in-browser and as a **downloadable PDF**
 - A clear "Download PDF" button accompanies each manual
@@ -245,14 +245,14 @@ Each manual must be produced in **four languages:**
 
 ## 6. PDF SPECIFICATIONS
 
-All manuals follow the unified ROSES OS PDF template system:
+All manuals follow the unified International Aura School PDF template system:
 
 - **Page size:** A4 / Letter (designed for both screen reading and print)
 - **Typography:** Cormorant Garamond for headers, Inter for body -- matching the web and Teacher's Manual
 - **Background:** Aura White (`#F7F5F2`) with subtle brand texture (clay, linen, or fogged light -- light enough to print cleanly)
 - **Section headers and dividers:** Rose Clay Mauve (`#9C6F6E`)
 - **Accent lines:** Antique Olive Brass (`#9E956B`)
-- **Page elements:** Page numbers, section headers in footer, ROSES OS wordmark
+- **Page elements:** Page numbers, section headers in footer, International Aura School wordmark
 - **Illustrations:** Must render cleanly in PDF (SVG or high-resolution PNG)
 - **Access:** These are **not** password-protected (unlike the Teacher's Manual) -- they are student resources
 - **File naming convention:** `ROSES-OS-Level-2-Manual-EN.pdf`, `ROSES-OS-Level-2-Manual-ES.pdf`, `ROSES-OS-Level-3-Manual-EN.pdf`, `ROSES-OS-Level-3-Manual-EL.pdf`, etc.
@@ -322,7 +322,7 @@ All manuals follow the unified ROSES OS PDF template system:
 |-------------|-------------|
 | **MDR Teacher's Resource Manual** | The manuals use the same images from the Teachers Training section on the site. See Section 3.5 for the complete image-to-manual mapping. |
 | **Brand Book** | The manuals must be consistent with the brand system documented in the Brand Book. |
-| **PDF Export System** | The manuals use the same branded PDF template as all other ROSES OS PDF exports. |
+| **PDF Export System** | The manuals use the same branded PDF template as all other International Aura School PDF exports. |
 | **Platform Resources Section** | The manuals are the primary content in the Resources section. |
 
 ---

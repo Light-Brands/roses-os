@@ -1,4 +1,4 @@
-# ROSES OS -- Master Brand DNA
+# International Aura School -- Master Brand DNA
 
 > A Living Consciousness Ecosystem
 
@@ -6,7 +6,7 @@
 
 ## Source of Truth
 
-**The live website [rosesos.com](https://rosesos.com) is the canonical source of truth for all ROSES OS brand materials.** When any brand document conflicts with what is live on the site, the site wins. This includes: taglines, navigation structure, audience language, hero copy, guardian bios, community programs, and visual identity (colors, fonts, spacing).
+**The live website [rosesos.com](https://rosesos.com) is the canonical source of truth for all International Aura School brand materials.** When any brand document conflicts with what is live on the site, the site wins. This includes: taglines, navigation structure, audience language, hero copy, guardian bios, community programs, and visual identity (colors, fonts, spacing).
 
 All brand documents -- including this one -- should be reviewed against the live site before being used in design production. This document was last audited against rosesos.com on **17 February 2026**.
 
@@ -24,7 +24,7 @@ All brand documents -- including this one -- should be reviewed against the live
 8. [Messaging Pillars](#messaging-pillars)
 9. [Key Language & Vocabulary](#key-language--vocabulary)
 10. [The Two Core Questions](#the-two-core-questions)
-11. [The Technology -- What ROSES OS Is](#the-technology----what-roses-os-is)
+11. [The Technology -- What International Aura School Is](#the-technology----what-roses-os-is)
 12. [The Rose -- Core Inner Technology](#the-rose----core-inner-technology)
 13. [Level 1 -- Foundational Practices](#level-1----foundational-practices)
 14. [Level 2 -- Sacred Space & Chakra System](#level-2----sacred-space--chakra-system)
@@ -53,14 +53,14 @@ All brand documents -- including this one -- should be reviewed against the live
 
 ## Brand Essence
 
-**Brand Name:** ROSES OS
+**Brand Name:** International Aura School
 
-**Brand Definition:** ROSES OS is not a self-improvement brand. It is a remembrance ecosystem. A system designed to restore coherence, inner symmetry, and presence in modern life.
+**Brand Definition:** International Aura School is not a self-improvement brand. It is a remembrance ecosystem. A system designed to restore coherence, inner symmetry, and presence in modern life.
 
 > "Not as belief. As remembrance."
 > "This is not learning. This is remembering."
 
-ROSES OS exists to dissolve distortion and return people to truth.
+International Aura School exists to dissolve distortion and return people to truth.
 
 **Core Promise:** A seamless path to:
 
@@ -76,9 +76,9 @@ ROSES OS exists to dissolve distortion and return people to truth.
 
 **Hero Sub-headline (rosesos.com):** "Technologies of remembrance for those ready to live in coherence."
 
-**Brand Statement:** ROSES OS is the operating system of coherence -- where intuition becomes precise and presence becomes sovereign.
+**Brand Statement:** International Aura School is the operating system of coherence -- where intuition becomes precise and presence becomes sovereign.
 
-**Brand Feeling:** ROSES OS should always feel like:
+**Brand Feeling:** International Aura School should always feel like:
 
 - Warm silence
 - Sacred minimalism
@@ -88,7 +88,7 @@ ROSES OS exists to dissolve distortion and return people to truth.
 
 ```mermaid
 mindmap
-  root((ROSES OS))
+  root((International Aura School))
     Core Promise
       Inner Freedom
       Coherence
@@ -115,13 +115,13 @@ mindmap
 
 ## Mission & Vision
 
-**Mission:** To restore inner symmetry and coherence through simple, precise instruments of consciousness. ROSES OS is built for this moment -- where life moves fast and noise is constant.
+**Mission:** To restore inner symmetry and coherence through simple, precise instruments of consciousness. International Aura School is built for this moment -- where life moves fast and noise is constant.
 
 **Vision:** A world where humans live, lead, create, and love from presence instead of distortion. Where life becomes creation instead of reaction.
 
 ```mermaid
 graph LR
-    A["Distortion<br/><i>reaction, noise, fragmentation</i>"] -->|ROSES OS dissolves| B["Coherence<br/><i>presence, clarity, alignment</i>"]
+    A["Distortion<br/><i>reaction, noise, fragmentation</i>"] -->|International Aura School dissolves| B["Coherence<br/><i>presence, clarity, alignment</i>"]
     B --> C["Creation<br/><i>leadership, love, sovereignty</i>"]
 
     style A fill:#7A3A34,color:#F7F5F2,stroke:#7A3A34
@@ -137,14 +137,14 @@ Aura Reading emerged in the 1960s, in California, channeled by a North American 
 
 ### Lineage Transmission
 
-**Lewis S. Bostwick** --> **Anastasia Plunk** --> **Angelina Ataide** --> **CELARIS** (Brazil) + **ROSES OS** (International)
+**Lewis S. Bostwick** --> **Anastasia Plunk** --> **Angelina Ataide** --> **CELARIS** (Brazil) + **International Aura School** (International)
 
 ```mermaid
 graph TD
     LB["Lewis S. Bostwick<br/><i>1960s, California<br/>Founder of the Berkeley Psychic Institute<br/>& Church of the Divine Man</i>"] --> AP["Anastasia Plunk"]
     AP --> AA["Angelina Ataide<br/><i>1990s, Founder of CELARIS<br/>(formerly International Aura School)</i>"]
     AA --> CEL["CELARIS<br/><i>Brazil</i>"]
-    AA --> ROS["ROSES OS<br/><i>2026, International</i>"]
+    AA --> ROS["International Aura School<br/><i>2026, International</i>"]
 
     style LB fill:#C7AE8C,color:#3F3E3C,stroke:#A8896D
     style AP fill:#9C6F6E,color:#F7F5F2,stroke:#9C6F6E
@@ -153,7 +153,7 @@ graph TD
     style ROS fill:#9E956B,color:#F7F5F2,stroke:#9E956B
 ```
 
-These teachings are part of a living energetic lineage. They invite inner stillness, gentle discipline, and deep self-responsibility. ROSES OS is not a system to be imposed or taught casually -- it is an energetic operating system revealed through direct practice and transmission.
+These teachings are part of a living energetic lineage. They invite inner stillness, gentle discipline, and deep self-responsibility. International Aura School is not a system to be imposed or taught casually -- it is an energetic operating system revealed through direct practice and transmission.
 
 ---
 
@@ -203,7 +203,7 @@ graph TD
         SV["Sovereignty"]
     end
 
-    WHO --> FEEL --> DESIRE --> ROS["ROSES OS"]
+    WHO --> FEEL --> DESIRE --> ROS["International Aura School"]
 
     style WHO fill:#EBD6C1,color:#3F3E3C,stroke:#C7AE8C
     style FEEL fill:#C7AE8C,color:#3F3E3C,stroke:#A8896D
@@ -217,14 +217,14 @@ graph TD
 
 **Category:** Spiritual-modern consciousness technology
 
-### ROSES OS Is Not
+### International Aura School Is Not
 
 - A belief system
 - A healing loop
 - A technique collection
 - Performance spirituality
 
-### ROSES OS Is
+### International Aura School Is
 
 - Coherence
 - Remembrance
@@ -238,7 +238,7 @@ graph TD
 
 ```mermaid
 graph LR
-    subgraph NOT["ROSES OS Is Not"]
+    subgraph NOT["International Aura School Is Not"]
         direction TB
         N1["Belief system"]
         N2["Healing loop"]
@@ -246,7 +246,7 @@ graph LR
         N4["Performance spirituality"]
     end
 
-    subgraph IS["ROSES OS Is"]
+    subgraph IS["International Aura School Is"]
         direction TB
         Y1["Coherence"]
         Y2["Remembrance"]
@@ -265,7 +265,7 @@ graph LR
 
 ## Brand Personality & Archetype
 
-ROSES OS is:
+International Aura School is:
 
 - Grounded
 - Elegant
@@ -283,7 +283,7 @@ graph TD
     TA["The Architect<br/><i>Structure, precision, system</i>"]
     MO["The Modern Oracle<br/><i>Intuition, vision, future</i>"]
 
-    MG --> ROS((ROSES OS<br/>Brand<br/>Personality))
+    MG --> ROS((International Aura School<br/>Brand<br/>Personality))
     TA --> ROS
     MO --> ROS
 
@@ -306,7 +306,7 @@ graph TD
 
 ### Voice Principles
 
-ROSES OS speaks with:
+International Aura School speaks with:
 
 - **Simplicity** -- Clear, unadorned language
 - **Reverence** -- Sacred without being religious
@@ -354,7 +354,7 @@ graph TD
         P5["Quiet Genius<br/><i>Genius awakens</i>"]
     end
 
-    P1 --> CORE((ROSES OS<br/>Message))
+    P1 --> CORE((International Aura School<br/>Message))
     P2 --> CORE
     P3 --> CORE
     P4 --> CORE
@@ -418,7 +418,7 @@ No belief needed. Just honest awareness and presence. When even a trace of coher
 
 ---
 
-## The Technology -- What ROSES OS Is
+## The Technology -- What International Aura School Is
 
 *"Insanity, as Einstein said, is expecting new results while repeating the same actions."*
 
@@ -1074,7 +1074,7 @@ mindmap
 
 ### Angelina Ataíde -- Guardian of Lineage
 
-Pioneer in aura reading education across Brazil and Portugal with over three decades dedicated to spiritual development and training aura readers. Her transformative methodology has trained thousands of students, therapists, and teachers, combining spiritual wisdom with practical techniques as the primary steward of the ROSES OS lineage.
+Pioneer in aura reading education across Brazil and Portugal with over three decades dedicated to spiritual development and training aura readers. Her transformative methodology has trained thousands of students, therapists, and teachers, combining spiritual wisdom with practical techniques as the primary steward of the International Aura School lineage.
 
 ### Diego Dosal -- Guardian of Architecture & Structure
 
@@ -1099,7 +1099,7 @@ graph TD
         PM["Peggy Mars<br/><i>Guardian of Methodology</i>"]
     end
 
-    AA --> ROS((ROSES OS))
+    AA --> ROS((International Aura School))
     DD --> ROS
     DA --> ROS
     PM --> ROS
@@ -1228,7 +1228,7 @@ The design should feel like:
 - Cormorant + texture + clay = devotion
 - Rose Clay Mauve sits between them
 
-**Rose Clay Mauve is the human interface layer of ROSES OS.** Alive. Calm. Intelligent.
+**Rose Clay Mauve is the human interface layer of International Aura School.** Alive. Calm. Intelligent.
 
 ```mermaid
 graph LR
@@ -1251,7 +1251,7 @@ graph LR
 
 | Color | HEX | Role |
 |-------|-----|------|
-| **Rose Clay Mauve** | `#9C6F6E` | The human interface layer -- the signature color of ROSES OS |
+| **Rose Clay Mauve** | `#9C6F6E` | The human interface layer -- the signature color of International Aura School |
 
 Rose Clay Mauve reads as:
 
@@ -1262,17 +1262,17 @@ Rose Clay Mauve reads as:
 
 It is not feminine -- it is biological + geological.
 
-> A warm mineral field color used for moments of reflection, invitation, and remembrance. It represents the human interface of ROSES OS -- where presence meets structure. This color should feel lived-in, not decorative. Always textured. Always quiet.
+> A warm mineral field color used for moments of reflection, invitation, and remembrance. It represents the human interface of International Aura School -- where presence meets structure. This color should feel lived-in, not decorative. Always textured. Always quiet.
 
 #### The Butterfly Wing -- Origin of the Rose Pink
 
-The rose-pink tone at the heart of the ROSES OS palette did not originate from a design trend or a color wheel. It came from the butterfly wing.
+The rose-pink tone at the heart of the International Aura School palette did not originate from a design trend or a color wheel. It came from the butterfly wing.
 
 Certain butterfly species -- among them the rose-toned wings of the *Dryocampa rubicunda* (Rosy Maple Moth) and select *Pieridae* -- carry this exact mineral-pink: warm, muted, alive. Not a cosmetic pink. A biological one. A color born from the intersection of light and living structure.
 
-Butterfly wings produce their color not through pigment alone, but through **structural coloration** -- microscopic scales that refract light, revealing beauty through architecture. The color is not applied. It is *revealed* when the structure is precise. This is how ROSES OS works: coherence is not added from outside -- it becomes visible when distortion is removed. The architecture makes the essence perceivable.
+Butterfly wings produce their color not through pigment alone, but through **structural coloration** -- microscopic scales that refract light, revealing beauty through architecture. The color is not applied. It is *revealed* when the structure is precise. This is how International Aura School works: coherence is not added from outside -- it becomes visible when distortion is removed. The architecture makes the essence perceivable.
 
-**This is why pink was chosen as a foundational tone of ROSES OS: pink is the color of divine love.**
+**This is why pink was chosen as a foundational tone of International Aura School: pink is the color of divine love.**
 
 In the Heart Chakra system carried through this lineage, green represents human love -- empathy, compassion, the love between beings. Pink represents divine love -- unconditional, sourceless, the love that simply is. The statement of the green heart is "I Love." The statement of the pink heart is "I Am Love."
 
@@ -1282,21 +1282,21 @@ The butterfly wing carries both truths: the delicacy of divine love and the prec
 
 The butterfly is one of the most universal symbols of transformation. But the transformation of the butterfly is not effort-based. The caterpillar does not *try* to become a butterfly. Inside the chrysalis, the caterpillar dissolves entirely -- its old form liquefies -- and from that dissolution, a wholly new architecture reorganizes itself. Nothing is added from outside. Everything needed was already encoded within.
 
-This is the exact movement of ROSES OS: not self-improvement, but remembrance. Not adding something new, but dissolving distortion so what was always present can emerge.
+This is the exact movement of International Aura School: not self-improvement, but remembrance. Not adding something new, but dissolving distortion so what was always present can emerge.
 
-**Five parallels between the butterfly wing and the ROSES OS brand:**
+**Five parallels between the butterfly wing and the International Aura School brand:**
 
-1. **Structural Revelation** -- The butterfly's color comes from structure, not surface. ROSES OS restores inner architecture so coherence becomes naturally visible.
+1. **Structural Revelation** -- The butterfly's color comes from structure, not surface. International Aura School restores inner architecture so coherence becomes naturally visible.
 2. **Transformation Through Dissolution** -- The chrysalis dissolves the old form entirely. The Rose dissolves distortion. Both reveal what was always there.
 3. **Divine Love Made Visible** -- The rose-pink of the butterfly wing is the color of divine love -- unconditional, quiet, and whole. This is the frequency the brand carries.
-4. **Precision in Delicacy** -- The butterfly wing is microscopically precise yet appears effortlessly beautiful. ROSES OS is simple, precise inner technology that feels like warmth and silence.
+4. **Precision in Delicacy** -- The butterfly wing is microscopically precise yet appears effortlessly beautiful. International Aura School is simple, precise inner technology that feels like warmth and silence.
 5. **Sovereignty in Lightness** -- The butterfly moves freely, guided by an intelligence it does not need to understand. When coherence returns, life organizes itself. Sovereignty becomes natural.
 
 > The butterfly wing reminds us: what appears most beautiful in nature was never decorated. It was revealed.
 
 #### The Butterfly Wing as Visual Element
 
-The image of a butterfly wing -- specifically close-up, macro-scale views showing the microscopic scale structure -- can be used as a secondary visual element within the ROSES OS brand system.
+The image of a butterfly wing -- specifically close-up, macro-scale views showing the microscopic scale structure -- can be used as a secondary visual element within the International Aura School brand system.
 
 **Appropriate Uses:**
 
@@ -1382,7 +1382,7 @@ This color should never be used like an accent button color. **It is a field col
 
 ### Color Symbolism -- Why These Colors
 
-Every color in the ROSES OS palette carries intention. These are not arbitrary aesthetic choices -- they are symbolic decisions rooted in the brand's philosophy and lineage.
+Every color in the International Aura School palette carries intention. These are not arbitrary aesthetic choices -- they are symbolic decisions rooted in the brand's philosophy and lineage.
 
 | Color | Symbolic Meaning |
 |-------|-----------------|
@@ -1539,7 +1539,7 @@ graph TD
         BTN["Buttons"]
     end
 
-    SACRED -->|"devotion<br/>timeless, poetic"| BRAND((ROSES OS<br/>Typography))
+    SACRED -->|"devotion<br/>timeless, poetic"| BRAND((International Aura School<br/>Typography))
     MODERN -->|"technology<br/>clean, precise"| BRAND
 
     style SACRED fill:#9C6F6E,color:#F7F5F2
@@ -1595,7 +1595,7 @@ Only use imagery that feels: warm, human, earthy, devotional, quiet.
 
 ### Atmosphere
 
-ROSES OS is the feeling of:
+International Aura School is the feeling of:
 
 - Walking into stillness
 - Remembering your center
@@ -1629,7 +1629,7 @@ This keeps it:
 
 ### Layout Philosophy
 
-ROSES OS layouts are:
+International Aura School layouts are:
 
 - Centered
 - Quiet
@@ -1641,7 +1641,7 @@ ROSES OS layouts are:
 
 ### Sacred-Tech Blend
 
-ROSES OS is where:
+International Aura School is where:
 
 - Spirituality meets structure
 - Mysticism meets clarity
@@ -1657,7 +1657,7 @@ graph LR
     SO["Soul"] <--> SY["System"]
     IT["Inner Tools"] <--> ML["Modern Life"]
 
-    SP --> ROS((ROSES OS<br/>Sacred-Tech))
+    SP --> ROS((International Aura School<br/>Sacred-Tech))
     ST --> ROS
     MY --> ROS
     CL --> ROS
@@ -1685,7 +1685,7 @@ graph LR
 
 ### Application Examples
 
-ROSES OS design should translate into:
+International Aura School design should translate into:
 
 - Invitations
 - Retreats
@@ -1697,7 +1697,7 @@ ROSES OS design should translate into:
 
 ### Final Brand Truth
 
-ROSES OS is not something you follow. It is something you return to. It does not ask for belief. It asks for presence.
+International Aura School is not something you follow. It is something you return to. It does not ask for belief. It asks for presence.
 
 **Welcome home.**
 
@@ -1711,7 +1711,7 @@ ROSES OS is not something you follow. It is something you return to. It does not
 
 ### Website Purpose
 
-The ROSES OS website is not a marketing site. **It is a threshold.**
+The International Aura School website is not a marketing site. **It is a threshold.**
 
 A visitor should feel:
 
@@ -1746,7 +1746,7 @@ graph TD
         P4["4. Invitation, Not Promotion<br/><i>You are welcome here</i>"]
     end
 
-    P1 & P2 & P3 & P4 --> SITE["ROSES OS Website<br/><i>A threshold, not a marketing site</i>"]
+    P1 & P2 & P3 & P4 --> SITE["International Aura School Website<br/><i>A threshold, not a marketing site</i>"]
 
     style P1 fill:#EBD6C1,color:#3F3E3C
     style P2 fill:#C7AE8C,color:#3F3E3C
@@ -1757,7 +1757,7 @@ graph TD
 
 ### Spacing + Layout System
 
-**Grid Feel:** ROSES OS is centered and spacious.
+**Grid Feel:** International Aura School is centered and spacious.
 
 - Max width: 1100px
 - Wide padding: 96px+ on desktop
@@ -1868,7 +1868,7 @@ The hero is not promotional. It is a remembering.
 
 ## Copy Style Rules
 
-ROSES OS copy must always feel like:
+International Aura School copy must always feel like:
 
 - A doorway
 - A remembering
@@ -1945,7 +1945,7 @@ graph TD
 
 ```mermaid
 graph LR
-    DISCOVER["Discover<br/><i>Find ROSES OS</i>"]
+    DISCOVER["Discover<br/><i>Find International Aura School</i>"]
     FEEL["Feel<br/><i>Experience the threshold</i>"]
     EXPLORE["Explore<br/><i>The Rose & Aura</i>"]
     RESONATE["Resonate<br/><i>The two questions</i>"]

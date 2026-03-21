@@ -279,7 +279,7 @@ async function main() {
   const skipSync = args.includes('--skip-sync');
 
   console.log('=========================================================');
-  console.log('  ROSES OS — Manual PDF Builder');
+  console.log('  International Aura School — Manual PDF Builder');
   console.log('=========================================================\n');
 
   // Determine which manuals to build

@@ -1,4 +1,4 @@
-# ROSES OS Brand Book -- Written Content Plan
+# International Aura School Brand Book -- Written Content Plan
 
 > Everything needed to create the written/content pieces for a brand book equivalent to the Zunya Brand Book (117 pages, InDesign).
 
@@ -6,7 +6,7 @@
 
 ## Source of Truth
 
-**[rosesos.com](https://rosesos.com) is the canonical source of truth for all ROSES OS brand materials.** When any brand document conflicts with what is live on the site, the site wins. This includes: taglines, navigation, audience language, hero copy, guardian bios, community programs, visual identity (colors, fonts, spacing), and CTA language.
+**[rosesos.com](https://rosesos.com) is the canonical source of truth for all International Aura School brand materials.** When any brand document conflicts with what is live on the site, the site wins. This includes: taglines, navigation, audience language, hero copy, guardian bios, community programs, visual identity (colors, fonts, spacing), and CTA language.
 
 **Design system references:** `src/design-system/tokens.ts` (tokens), `src/design-system/theme.css` (CSS variables), `src/app/globals.css` (Tailwind config), `src/app/layout.tsx` (font imports).
 
@@ -41,7 +41,7 @@
 
 - Brand Essence & Definition
 - Mission & Vision
-- Brand Positioning (affirmative -- what ROSES OS is)
+- Brand Positioning (affirmative -- what International Aura School is)
 - Brand Personality & Archetype (Mystic Guide x Architect x Modern Oracle)
 - Voice & Tone (principles and direction)
 - Messaging Pillars (6 pillars with statements -- The Rose, Aura, Human Journey, Intuition, Leadership, Your Highest Potential)
@@ -81,10 +81,10 @@
 
 ## 1. Brand Story / Origin Narrative
 
-**What it is:** A 1-2 page narrative telling the story of how ROSES OS came to exist. A living story written in the brand voice -- quiet, mythic, grounded.
+**What it is:** A 1-2 page narrative telling the story of how International Aura School came to exist. A living story written in the brand voice -- quiet, mythic, grounded.
 
 **What you have now:**
-- Brief lineage paragraph in brand-dna.md: Bostwick -> Plunk -> Angelina Ataíde -> ROSES OS
+- Brief lineage paragraph in brand-dna.md: Bostwick -> Plunk -> Angelina Ataíde -> International Aura School
 - **FOUND: Full name origin in `docs/foundation/the-codex.md` (Section III: Etymology and Numerology)** -- this is rich, brand-book-ready content:
   - **ROSES** = from *rosa* and *rhodon* -- "essence expressed outwardly, the invisible made perceivable, Spirit unfolding into form." Plural is essential: "not a single center, but a field. Not one authority, but many points of coherence." "It is not a flower. It is the archetype of conscious unfolding."
   - **OS** = Operating System -- "the invisible structure that governs function: the logic beneath action, the architecture that sustains coherence within complexity." "Roses OS is not a meditation. It is the architecture through which remembrance becomes embodied."
@@ -107,11 +107,11 @@ These questions are designed to unlock the Brand Story. They can be answered in 
 
 #### For Angelina Ataíde (Guardian of Lineage)
 
-When did you first encounter this work, and what did it feel like? Was there a single moment when you knew this was yours to carry -- and what was happening in your life at that time? Over 30 years you have trained thousands of students, therapists, and teachers across Brazil and Portugal; what kept you going in the early years, before there was a community around this? What does it mean to you to merge spiritual wisdom with practical techniques -- was that always your intention, or did it reveal itself over time? The lineage moved from Lewis Bostwick through the Berkeley Psychic Institute, through Anastasia Plunk, to you -- what did you receive from those who came before, and what did you add that is yours alone? When did you first sense that this work was ready to reach the international stage -- and what made ROSES OS the right vehicle for that expansion, alongside CELARIS continuing in Brazil?
+When did you first encounter this work, and what did it feel like? Was there a single moment when you knew this was yours to carry -- and what was happening in your life at that time? Over 30 years you have trained thousands of students, therapists, and teachers across Brazil and Portugal; what kept you going in the early years, before there was a community around this? What does it mean to you to merge spiritual wisdom with practical techniques -- was that always your intention, or did it reveal itself over time? The lineage moved from Lewis Bostwick through the Berkeley Psychic Institute, through Anastasia Plunk, to you -- what did you receive from those who came before, and what did you add that is yours alone? When did you first sense that this work was ready to reach the international stage -- and what made International Aura School the right vehicle for that expansion, alongside CELARIS continuing in Brazil?
 
 #### For All Four Guardians (can be answered individually or together)
 
-What is the moment you remember most clearly from your own journey with this work -- the one that confirmed you were on the right path? ROSES OS launched in 2026 as the international expression of a lineage carried for decades through CELARIS (Center of Aura Readings, Reiki, Intuition and Dreams) in Brazil. What made this the right moment to create an international arm with its own identity and architecture? The work has reached 5,000+ initiates across 50+ countries. How did that happen -- was it intentional growth, or did people simply find it? What is the one thing about ROSES OS you wish everyone understood immediately? Diego, you bridge spirit and structure -- what does that mean in practice, and when did you know that was your role here? Dara, you hold community and programs -- what does it feel like to hold space for others on this path, and what drew you to this work over a decade ago? Peggy, you have walked the aura reading path for 20+ years -- what has changed in you over that time, and what has remained the same? If the brand story is a single arc -- from the 1960s in California to today -- what is that arc about? What is being remembered?
+What is the moment you remember most clearly from your own journey with this work -- the one that confirmed you were on the right path? International Aura School launched in 2026 as the international expression of a lineage carried for decades through CELARIS (Center of Aura Readings, Reiki, Intuition and Dreams) in Brazil. What made this the right moment to create an international arm with its own identity and architecture? The work has reached 5,000+ initiates across 50+ countries. How did that happen -- was it intentional growth, or did people simply find it? What is the one thing about International Aura School you wish everyone understood immediately? Diego, you bridge spirit and structure -- what does that mean in practice, and when did you know that was your role here? Dara, you hold community and programs -- what does it feel like to hold space for others on this path, and what drew you to this work over a decade ago? Peggy, you have walked the aura reading path for 20+ years -- what has changed in you over that time, and what has remained the same? If the brand story is a single arc -- from the 1960s in California to today -- what is that arc about? What is being remembered?
 
 **Decisions needed:**
 - [ ] Who will conduct or facilitate these conversations?
@@ -124,7 +124,7 @@ What is the moment you remember most clearly from your own journey with this wor
 **Structure:**
 1. The lineage (where these teachings came from)
 2. The carrier (Angelina's story)
-3. The moment (why this became ROSES OS)
+3. The moment (why this became International Aura School)
 4. The name (what it means)
 5. The invitation (where it's going)
 
@@ -150,7 +150,7 @@ What is the moment you remember most clearly from your own journey with this wor
 **What's needed to write it:**
 
 - [ ] **An affirmative "state of the world" framing** -- 2-3 sentences about the current moment stated as truth, as opening, as readiness. The world is ready for something deeper.
-- [ ] **The declaration** -- What ROSES OS is. A quiet, sovereign statement of identity.
+- [ ] **The declaration** -- What International Aura School is. A quiet, sovereign statement of identity.
 - [ ] **The closing invitation** -- A single sentence that welcomes the reader in.
 
 **Tone direction:** Poetry meets purpose. Short sentences. Line breaks as breathing room. Every line states what IS -- truths, affirmations, declarations. Speak from the center.
@@ -191,7 +191,7 @@ Page 5: The welcome
 
 **What's needed to write it:**
 
-The brand DNA contains clear values throughout. These need to be extracted, named, and given standalone definitions -- each written as an affirmation of what ROSES OS stands FOR.
+The brand DNA contains clear values throughout. These need to be extracted, named, and given standalone definitions -- each written as an affirmation of what International Aura School stands FOR.
 
 ### Proposed Values
 
@@ -223,7 +223,7 @@ The Two Core Questions both begin with awareness. Awareness is the first instrum
 - [ ] Review and approve/modify proposed values above
 - [ ] Are there values the founders feel strongly about that aren't captured here?
 - [ ] Should values reference the practice directly, or stay at the brand philosophy level?
-- [ ] How many values? (Zunya has 6. Fewer feels more ROSES OS.)
+- [ ] How many values? (Zunya has 6. Fewer feels more International Aura School.)
 
 **Format per page (following Zunya pattern):**
 
@@ -237,15 +237,15 @@ The Two Core Questions both begin with awareness. Awareness is the first instrum
 
 ## 4. Perpetual Actions
 
-**What it is:** A set of "active" principles that describe how the ROSES OS community and brand behave in the world. Each is a living commitment, not a static rule. Zunya calls them "Perpetual Actions" -- each starts with "Active" (Active regeneration, Active inclusion, Active trust, etc.).
+**What it is:** A set of "active" principles that describe how the International Aura School community and brand behave in the world. Each is a living commitment, not a static rule. Zunya calls them "Perpetual Actions" -- each starts with "Active" (Active regeneration, Active inclusion, Active trust, etc.).
 
 **What you have now:** Nothing directly equivalent. But the brand DNA is rich with implied active principles.
 
 **What's needed to write it:**
 
-### Proposed Perpetual Actions (ROSES OS voice)
+### Proposed Perpetual Actions (International Aura School voice)
 
-The Zunya format uses "Active [noun]" with a description paragraph. For ROSES OS, the language should feel more like the brand voice -- quieter, more precise. Proposed naming: "Living [noun]" or simply the principle name.
+The Zunya format uses "Active [noun]" with a description paragraph. For International Aura School, the language should feel more like the brand voice -- quieter, more precise. Proposed naming: "Living [noun]" or simply the principle name.
 
 **1. LIVING REMEMBRANCE**
 We return. Every practice, every moment of awareness, is a return to what was always true. Each session is an uncovering. Each day, a homecoming.
@@ -274,7 +274,7 @@ We give. When coherence is restored, the natural impulse is contribution. We ser
 **Decisions needed:**
 - [ ] Review and approve/modify proposed actions above
 - [ ] Naming convention: "Living [noun]"? Or something different?
-- [ ] How many? (Zunya has 10. 7-8 feels right for ROSES OS.)
+- [ ] How many? (Zunya has 10. 7-8 feels right for International Aura School.)
 - [ ] Should each get its own full page (like Zunya), or paired on spreads?
 
 ---
@@ -290,13 +290,13 @@ We give. When coherence is restored, the natural impulse is contribution. We ser
 ### Proposed Drivers
 
 **1. INNER TECHNOLOGY FOR THIS MOMENT**
-Life moves fast. The inner instruments that serve this moment are simple, precise, and alive. ROSES OS is inner technology designed for the speed, complexity, and depth of modern life.
+Life moves fast. The inner instruments that serve this moment are simple, precise, and alive. International Aura School is inner technology designed for the speed, complexity, and depth of modern life.
 
 **2. COHERENCE AS LEADERSHIP**
 Leaders who are coherent inside create coherence around them. When inner symmetry is restored, leadership becomes natural, creative, and sovereign. The world is ready for this kind of leadership.
 
 **3. ACCESSIBLE CONSCIOUSNESS**
-These teachings have been transmitted through lineage for decades. ROSES OS makes them structured, available, and accessible -- honoring their depth and sacred nature while opening the door wider.
+These teachings have been transmitted through lineage for decades. International Aura School makes them structured, available, and accessible -- honoring their depth and sacred nature while opening the door wider.
 
 **Decisions needed:**
 - [ ] Review and approve/modify proposed drivers
@@ -307,7 +307,7 @@ These teachings have been transmitted through lineage for decades. ROSES OS make
 
 ## 6. Brand Perception (How We Are Known)
 
-**What it is:** A single, clear statement of how ROSES OS is perceived in the world. Stated entirely in the affirmative -- who we are, how we feel, what we embody.
+**What it is:** A single, clear statement of how International Aura School is perceived in the world. Stated entirely in the affirmative -- who we are, how we feel, what we embody.
 
 **What you have now:** Partial. Brand positioning exists but needs to be consolidated into a perception identity page.
 
@@ -315,7 +315,7 @@ These teachings have been transmitted through lineage for decades. ROSES OS make
 
 ### Draft -- We Are
 
-| ROSES OS IS |
+| International Aura School IS |
 |---|
 | A living consciousness ecosystem |
 | A remembrance ecosystem |
@@ -375,7 +375,7 @@ These teachings have been transmitted through lineage for decades. ROSES OS make
 
 ### Proposed Sliders
 
-| Spectrum | ROSES OS Position |
+| Spectrum | International Aura School Position |
 |---|---|
 | INCLUSIVE <-------> EXCLUSIVE | Center-left (accessible but initiatory) |
 | LOUD <-------> QUIET | Far right (quiet) |
@@ -402,7 +402,7 @@ These teachings have been transmitted through lineage for decades. ROSES OS make
 
 ### Proposed Photography Identity
 
-**The ROSES OS photographic style reflects our essence: grounded, warm, quiet.**
+**The International Aura School photographic style reflects our essence: grounded, warm, quiet.**
 
 **Style Words:**
 - Earthy
@@ -443,7 +443,7 @@ These teachings have been transmitted through lineage for decades. ROSES OS make
 
 ## 10. Framework Diagram Copy
 
-**What it is:** The Zunya Brand Book centers on the "Seed of Life" sacred geometry diagram as its organizing visual. ROSES OS needs an equivalent -- the Rose itself as a visual framework diagram that maps to the brand architecture.
+**What it is:** The Zunya Brand Book centers on the "Seed of Life" sacred geometry diagram as its organizing visual. International Aura School needs an equivalent -- the Rose itself as a visual framework diagram that maps to the brand architecture.
 
 **What you have now:** The Rose is described textually (roots, stem, bloom) and functionally (place, move, open, close, release). But no written copy exists that positions the Rose as the *brand framework diagram*.
 
@@ -451,7 +451,7 @@ These teachings have been transmitted through lineage for decades. ROSES OS make
 
 ### Concept
 
-The Rose has a natural three-part anatomy that maps to the ROSES OS brand:
+The Rose has a natural three-part anatomy that maps to the International Aura School brand:
 
 | Rose Part | Brand Layer | Description |
 |---|---|---|
@@ -467,7 +467,7 @@ The Rose has a natural three-part anatomy that maps to the ROSES OS brand:
 
 ## 11. Six Pillars of Awakening (Brand Book Treatment)
 
-**What it is:** The live site features six pillars that describe what the ROSES OS journey awakens. These already exist as homepage cards but need full-page brand book treatment with expanded copy.
+**What it is:** The live site features six pillars that describe what the International Aura School journey awakens. These already exist as homepage cards but need full-page brand book treatment with expanded copy.
 
 **What you have now (live on rosesos.com homepage):**
 
@@ -492,7 +492,7 @@ The Rose has a natural three-part anatomy that maps to the ROSES OS brand:
 
 **What you have now (live on /community):**
 - Hero: "The Living Field" — "A network of practitioners devoted to coherent living."
-- Vision: "The ROSES OS community is a living field. A gathering of individuals who have chosen to walk the path of remembrance together as fellow practitioners."
+- Vision: "The International Aura School community is a living field. A gathering of individuals who have chosen to walk the path of remembrance together as fellow practitioners."
 - Community Philosophy: "We hold space for one another through daily practice, shared inquiry, and the quiet commitment to showing up as we are. The community exists because the journey home is supported, not solitary."
 - Definition: "Coherence is the state in which all dimensions of being: body, heart, mind, and soul, move as one integrated field. Not a concept to understand, but a reality to embody. We believe that coherence is contagious."
 - Free Programs: Hummingbirds (weekly Saturday 10:30 AM CT), Free Live Guidances (weekly Saturday 9:30 AM CT), Meetings of Rose Meditation Practitioners (monthly)
@@ -507,17 +507,17 @@ The Rose has a natural three-part anatomy that maps to the ROSES OS brand:
 
 ## 13. Color Origin & Symbolism -- The Butterfly Wing
 
-**What it is:** A 2-4 page section in the brand book that tells the origin story of the ROSES OS color palette, anchored by the image of the butterfly wing as the natural source of the rose-pink tone. This section connects color choices to spiritual meaning (divine love), natural science (structural coloration), and brand philosophy (transformation through dissolution, not effort).
+**What it is:** A 2-4 page section in the brand book that tells the origin story of the International Aura School color palette, anchored by the image of the butterfly wing as the natural source of the rose-pink tone. This section connects color choices to spiritual meaning (divine love), natural science (structural coloration), and brand philosophy (transformation through dissolution, not effort).
 
-**Why it matters:** The Zunya Brand Book dedicates pages 83-88 to its color palette but presents colors purely as design specifications. ROSES OS has the opportunity to go deeper -- to tell *why* these colors exist. The butterfly wing gives the palette a living origin story that reinforces the brand's core themes.
+**Why it matters:** The Zunya Brand Book dedicates pages 83-88 to its color palette but presents colors purely as design specifications. International Aura School has the opportunity to go deeper -- to tell *why* these colors exist. The butterfly wing gives the palette a living origin story that reinforces the brand's core themes.
 
 **What you have now (written in `brand-dna.md`):**
 
 Full written content exists, including:
 - The butterfly wing as the natural source of the rose-pink palette tone
-- Structural coloration as a metaphor for how ROSES OS works (beauty revealed through architecture, not applied)
+- Structural coloration as a metaphor for how International Aura School works (beauty revealed through architecture, not applied)
 - The connection between pink and divine love (Heart Chakra: "I Am Love")
-- Five symbolic parallels between the butterfly wing and the ROSES OS brand
+- Five symbolic parallels between the butterfly wing and the International Aura School brand
 - Visual usage guidelines for butterfly wing macro photography as a secondary brand element
 - Complete color symbolism table connecting every palette color to its philosophical meaning
 
@@ -539,7 +539,7 @@ Page 1: The Butterfly Wing (full bleed macro image of rose-toned wing scales)
     revealed through structure."
 
 Page 2: Color Origin
-   The rose-pink tone at the heart of the ROSES OS palette
+   The rose-pink tone at the heart of the International Aura School palette
    came from the butterfly wing. [Full origin text]
 
 Page 3: Five Parallels

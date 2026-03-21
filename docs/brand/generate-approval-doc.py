@@ -1,5 +1,5 @@
 """
-Generate the ROSES OS Brand Book — Founder Approval Document (DOCX)
+Generate the International Aura School Brand Book — Founder Approval Document (DOCX)
 """
 from docx import Document
 from docx.shared import Pt, Inches, Cm, RGBColor
@@ -88,7 +88,7 @@ for _ in range(6):
 
 p = doc.add_paragraph()
 p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-run = p.add_run('ROSES OS')
+run = p.add_run('International Aura School')
 run.font.size = Pt(36)
 run.font.color.rgb = RGBColor(0x9C, 0x6F, 0x6E)
 run.font.name = 'Georgia'
@@ -110,7 +110,7 @@ for _ in range(4):
 
 p = doc.add_paragraph()
 p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-run = p.add_run('Prepared for the Guardians of ROSES OS')
+run = p.add_run('Prepared for the Guardians of International Aura School')
 run.font.size = Pt(11)
 run.font.italic = True
 run.font.color.rgb = RGBColor(0xA8, 0x89, 0x6D)
@@ -167,7 +167,7 @@ run = p.add_run('Drafted sections awaiting approval ')
 run.bold = True
 p.add_run(
     '\u2014 Brand Manifest, Brand Values, Perpetual Actions, Brand Drivers, Brand Perception, '
-    'Audience Narrative, and Personality Sliders. These are written in the ROSES OS voice and '
+    'Audience Narrative, and Personality Sliders. These are written in the International Aura School voice and '
     'ready for your review. Approve, modify, or redirect.'
 )
 
@@ -290,7 +290,7 @@ doc.add_heading('Section 2: Brand Values', level=1)
 doc.add_paragraph(
     'Core values, each given a full page in the brand book with: the value name, a subtitle, '
     'and a 2\u20134 sentence description of what it means in practice. Written as affirmations '
-    'of what ROSES OS stands for.'
+    'of what International Aura School stands for.'
 )
 
 doc.add_heading('Proposed Values', level=2)
@@ -334,7 +334,7 @@ add_decision_box(doc, [
     'Review and approve or modify the six proposed values',
     'Are there values the founders feel strongly about that aren\u2019t captured here?',
     'Should values reference the practice directly, or stay at the brand philosophy level?',
-    'How many values? (Zunya reference uses 6. Fewer may feel more ROSES OS.)',
+    'How many values? (Zunya reference uses 6. Fewer may feel more International Aura School.)',
 ])
 add_notes_area(doc)
 doc.add_page_break()
@@ -344,7 +344,7 @@ doc.add_page_break()
 # ============================================================
 doc.add_heading('Section 3: Perpetual Actions', level=1)
 doc.add_paragraph(
-    'Active principles that describe how the ROSES OS community and brand behave in the world. '
+    'Active principles that describe how the International Aura School community and brand behave in the world. '
     'Each is a living commitment, not a static rule. Proposed naming: "Living [noun]" \u2014 '
     'quieter and more precise than the Zunya format of "Active [noun]".'
 )
@@ -385,7 +385,7 @@ for name, desc in actions:
 add_decision_box(doc, [
     'Review and approve or modify the eight proposed actions',
     'Naming convention: "Living [noun]"? Or something different?',
-    'How many? (7\u20138 feels right for ROSES OS. Zunya uses 10.)',
+    'How many? (7\u20138 feels right for International Aura School. Zunya uses 10.)',
     'Should each get its own full page in the book, or paired on spreads?',
 ])
 add_notes_area(doc)
@@ -397,7 +397,7 @@ doc.add_page_break()
 doc.add_heading('Section 4: Brand Drivers', level=1)
 doc.add_paragraph(
     'Macro-level forces that the brand responds to and advances. These are the "why this matters '
-    'beyond the individual" statements \u2014 the larger context in which ROSES OS operates.'
+    'beyond the individual" statements \u2014 the larger context in which International Aura School operates.'
 )
 
 doc.add_heading('Proposed Drivers', level=2)
@@ -405,12 +405,12 @@ doc.add_heading('Proposed Drivers', level=2)
 drivers = [
     ('INNER TECHNOLOGY FOR THIS MOMENT',
      'Life moves fast. The inner instruments that serve this moment are simple, precise, and alive. '
-     'ROSES OS is inner technology designed for the speed, complexity, and depth of modern life.'),
+     'International Aura School is inner technology designed for the speed, complexity, and depth of modern life.'),
     ('COHERENCE AS LEADERSHIP',
      'Leaders who are coherent inside create coherence around them. When inner symmetry is restored, '
      'leadership becomes natural, creative, and sovereign. The world is ready for this kind of leadership.'),
     ('ACCESSIBLE CONSCIOUSNESS',
-     'These teachings have been transmitted through lineage for decades. ROSES OS makes them structured, '
+     'These teachings have been transmitted through lineage for decades. International Aura School makes them structured, '
      'available, and accessible \u2014 honoring their depth and sacred nature while opening the door wider.'),
 ]
 
@@ -432,7 +432,7 @@ doc.add_page_break()
 # ============================================================
 doc.add_heading('Section 5: Brand Perception', level=1)
 doc.add_paragraph(
-    'A clear statement of how ROSES OS is perceived in the world. Stated entirely in the affirmative '
+    'A clear statement of how International Aura School is perceived in the world. Stated entirely in the affirmative '
     '\u2014 who we are, how we feel, what we embody. This becomes a single designed page in the brand book.'
 )
 
@@ -591,7 +591,7 @@ doc.add_page_break()
 # ============================================================
 doc.add_heading('Reference: Color Palette & Symbolism', level=1)
 doc.add_paragraph(
-    'The complete ROSES OS color system. Every color carries intention \u2014 these are symbolic decisions '
+    'The complete International Aura School color system. Every color carries intention \u2014 these are symbolic decisions '
     'rooted in the brand\u2019s philosophy and lineage. Included here for reference alongside the approval sections.'
 )
 
@@ -630,7 +630,7 @@ run2 = p2.add_run('#9C6F6E')
 run2.font.size = Pt(11)
 run2.bold = True
 p3 = cell_info.add_paragraph()
-run3 = p3.add_run('The human interface layer \u2014 the signature color of ROSES OS.\n'
+run3 = p3.add_run('The human interface layer \u2014 the signature color of International Aura School.\n'
                     'Divine love made material. The rose-pink of the butterfly wing.\n'
                     'Biological, geological, devotional.')
 run3.font.size = Pt(9.5)
@@ -748,7 +748,7 @@ doc.add_page_break()
 # ============================================================
 doc.add_heading('Reference: Typography & Typeface', level=1)
 doc.add_paragraph(
-    'ROSES OS uses two typefaces that embody the sacred-tech bridge \u2014 '
+    'International Aura School uses two typefaces that embody the sacred-tech bridge \u2014 '
     'one devotional, one modern. Together they create the brand\u2019s visual voice.'
 )
 
@@ -892,12 +892,12 @@ doc.add_page_break()
 # ============================================================
 doc.add_heading('Section 8: Photography Identity', level=1)
 doc.add_paragraph(
-    'The photographic style of ROSES OS \u2014 defining how imagery feels across the brand book, '
+    'The photographic style of International Aura School \u2014 defining how imagery feels across the brand book, '
     'website, social media, and all materials. This direction needs founder approval and a decision '
     'on whether original photography assets exist or need to be commissioned.'
 )
 
-doc.add_heading('The ROSES OS Photographic Style', level=2)
+doc.add_heading('The International Aura School Photographic Style', level=2)
 doc.add_paragraph('Our imagery reflects our essence: grounded, warm, quiet.')
 
 doc.add_heading('Style Words', level=3)
@@ -972,13 +972,13 @@ doc.add_page_break()
 doc.add_heading('Section 9: The Rose as Brand Framework', level=1)
 doc.add_paragraph(
     'The Zunya Brand Book centers on the "Seed of Life" sacred geometry diagram as its organizing visual. '
-    'ROSES OS needs an equivalent \u2014 the Rose itself as a visual framework that maps to the brand architecture. '
+    'International Aura School needs an equivalent \u2014 the Rose itself as a visual framework that maps to the brand architecture. '
     'This concept needs founder approval before the designer creates the diagram.'
 )
 
 doc.add_heading('Concept: Rose Anatomy = Brand Architecture', level=2)
 doc.add_paragraph(
-    'The Rose has a natural three-part anatomy that maps directly to the ROSES OS brand layers:'
+    'The Rose has a natural three-part anatomy that maps directly to the International Aura School brand layers:'
 )
 
 # Framework table
@@ -1056,21 +1056,21 @@ doc.add_page_break()
 # ============================================================
 doc.add_heading('Section 10: The Butterfly Wing \u2014 Pending Decisions', level=1)
 doc.add_paragraph(
-    'The ROSES OS color palette origin story is anchored by the butterfly wing as the natural source '
+    'The International Aura School color palette origin story is anchored by the butterfly wing as the natural source '
     'of the rose-pink tone. Full written content exists for this section (2\u20134 pages in the brand book). '
     'Before the designer can produce these pages, the following decisions need founder input.'
 )
 
 doc.add_heading('Context', level=2)
 doc.add_paragraph(
-    'The rose-pink tone at the heart of the ROSES OS palette came from the butterfly wing. '
+    'The rose-pink tone at the heart of the International Aura School palette came from the butterfly wing. '
     'Certain butterfly species carry this exact mineral-pink: warm, muted, alive. Not a cosmetic pink. '
     'A biological one. A color born from the intersection of light and living structure.'
 )
 doc.add_paragraph(
     'Butterfly wings produce their color through structural coloration \u2014 microscopic scales that '
     'refract light, revealing beauty through architecture. The color is not applied. It is revealed '
-    'when the structure is precise. This is how ROSES OS works: coherence is not added from outside '
+    'when the structure is precise. This is how International Aura School works: coherence is not added from outside '
     '\u2014 it becomes visible when distortion is removed.'
 )
 add_quote(doc, 'Pink is the color of divine love. The statement of the green heart is "I Love." '
@@ -1079,13 +1079,13 @@ add_quote(doc, 'Pink is the color of divine love. The statement of the green hea
 doc.add_heading('Five Parallels Already Written', level=2)
 parallels = [
     ('Structural Revelation', 'The butterfly\u2019s color comes from structure, not surface. '
-     'ROSES OS restores inner architecture so coherence becomes naturally visible.'),
+     'International Aura School restores inner architecture so coherence becomes naturally visible.'),
     ('Transformation Through Dissolution', 'The chrysalis dissolves the old form entirely. '
      'The Rose dissolves distortion. Both reveal what was always there.'),
     ('Divine Love Made Visible', 'The rose-pink of the butterfly wing is the color of divine love '
      '\u2014 unconditional, quiet, and whole. This is the frequency the brand carries.'),
     ('Precision in Delicacy', 'The butterfly wing is microscopically precise yet appears '
-     'effortlessly beautiful. ROSES OS is simple, precise inner technology that feels like warmth and silence.'),
+     'effortlessly beautiful. International Aura School is simple, precise inner technology that feels like warmth and silence.'),
     ('Sovereignty in Lightness', 'The butterfly moves freely, guided by an intelligence it does not '
      'need to understand. When coherence returns, life organizes itself.'),
 ]
@@ -1100,7 +1100,7 @@ doc.add_heading('Proposed Book Structure', level=2)
 pages = [
     'Page 1: Full-bleed macro image of rose-toned wing scales. Overlay text: "The color of divine love, revealed through structure."',
     'Page 2: Color origin narrative \u2014 how the butterfly wing became the source of the palette.',
-    'Page 3: The five parallels between the butterfly wing and ROSES OS.',
+    'Page 3: The five parallels between the butterfly wing and International Aura School.',
     'Page 4: Complete color symbolism table \u2014 every palette color with its symbolic meaning.',
 ]
 for page in pages:
@@ -1126,7 +1126,7 @@ doc.add_page_break()
 # ============================================================
 doc.add_heading('Section 11: Brand Story / Origin Narrative', level=1)
 doc.add_paragraph(
-    'The brand story is a 2\u20134 page narrative telling the living story of how ROSES OS came to exist. '
+    'The brand story is a 2\u20134 page narrative telling the living story of how International Aura School came to exist. '
     'Written in the brand voice \u2014 quiet, mythic, grounded. This section cannot be written without '
     'founder stories. The questions below are designed to unlock this narrative.'
 )
@@ -1134,7 +1134,7 @@ doc.add_paragraph(
 doc.add_heading('What We Already Have', level=2)
 doc.add_paragraph(
     'The lineage path: Lewis S. Bostwick (1960s, California) \u2192 Berkeley Psychic Institute '
-    '\u2192 Anastasia Plunk \u2192 Angelina Ataíde \u2192 CELARIS (Brazil) + ROSES OS (International, 2026).'
+    '\u2192 Anastasia Plunk \u2192 Angelina Ataíde \u2192 CELARIS (Brazil) + International Aura School (International, 2026).'
 )
 doc.add_paragraph(
     'The name etymology from The Codex: ROSES = from rosa and rhodon \u2014 "essence expressed outwardly, '
@@ -1145,7 +1145,7 @@ doc.add_paragraph(
 doc.add_heading('What\u2019s Still Needed', level=2)
 missing = [
     'Angelina Ataíde\u2019s personal story \u2014 how she encountered this work, what she felt, what she carried forward',
-    'The "why now" moment \u2014 what made this the right time for ROSES OS to launch internationally',
+    'The "why now" moment \u2014 what made this the right time for International Aura School to launch internationally',
     'Diego, Dara, and Peggy\u2019s entry \u2014 how each guardian found their way to this work',
     'The growth arc \u2014 the living story behind 30+ years, 5,000+ initiates, 50+ countries',
 ]
@@ -1159,7 +1159,7 @@ doc.add_heading('Proposed Story Structure', level=2)
 structure = [
     ('1. The Lineage', 'Where these teachings came from'),
     ('2. The Carrier', 'Angelina\u2019s story'),
-    ('3. The Moment', 'Why this became ROSES OS'),
+    ('3. The Moment', 'Why this became International Aura School'),
     ('4. The Name', 'What it means'),
     ('5. The Invitation', 'Where it\u2019s going'),
 ]
@@ -1185,7 +1185,7 @@ angelina_qs = [
     'Over 30 years you have trained thousands of students, therapists, and teachers across Brazil and Portugal; what kept you going in the early years, before there was a community around this?',
     'What does it mean to you to merge spiritual wisdom with practical techniques \u2014 was that always your intention, or did it reveal itself over time?',
     'The lineage moved from Lewis Bostwick through the Berkeley Psychic Institute, through Anastasia Plunk, to you \u2014 what did you receive from those who came before, and what did you add that is yours alone?',
-    'When did you first sense that this work was ready to reach the international stage \u2014 and what made ROSES OS the right vehicle for that expansion, alongside CELARIS continuing in Brazil?',
+    'When did you first sense that this work was ready to reach the international stage \u2014 and what made International Aura School the right vehicle for that expansion, alongside CELARIS continuing in Brazil?',
 ]
 for i, q in enumerate(angelina_qs, 1):
     p = doc.add_paragraph()
@@ -1215,9 +1215,9 @@ doc.add_paragraph()
 
 guardian_qs = [
     'What is the moment you remember most clearly from your own journey with this work \u2014 the one that confirmed you were on the right path?',
-    'ROSES OS launched in 2026 as the international expression of a lineage carried for decades through CELARIS (Center of Aura Readings, Reiki, Intuition and Dreams) in Brazil. What made this the right moment to create an international arm with its own identity and architecture?',
+    'International Aura School launched in 2026 as the international expression of a lineage carried for decades through CELARIS (Center of Aura Readings, Reiki, Intuition and Dreams) in Brazil. What made this the right moment to create an international arm with its own identity and architecture?',
     'The work has reached 5,000+ initiates across 50+ countries. How did that happen \u2014 was it intentional growth, or did people simply find it?',
-    'What is the one thing about ROSES OS you wish everyone understood immediately?',
+    'What is the one thing about International Aura School you wish everyone understood immediately?',
     'Diego, you bridge spirit and structure \u2014 what does that mean in practice, and when did you know that was your role here?',
     'Dara, you hold community and programs \u2014 what does it feel like to hold space for others on this path, and what drew you to this work over a decade ago?',
     'Peggy, you have walked the aura reading path for 20+ years \u2014 what has changed in you over that time, and what has remained the same?',

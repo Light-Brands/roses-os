@@ -35,7 +35,7 @@ function InvitationHero() {
           transition={{ delay: 0.3, duration: 0.6, ease }}
           className="text-[11px] font-medium uppercase tracking-[0.2em] text-warm-400 mb-6"
         >
-          ROSES OS
+          International Aura School
         </motion.p>
 
         <motion.h1
@@ -96,7 +96,7 @@ function InvitationHero() {
 }
 
 // =============================================================================
-// SECTION: What is ROSES OS?
+// SECTION: What is International Aura School?
 // =============================================================================
 
 function WhatIsRosesOS() {
@@ -112,7 +112,7 @@ function WhatIsRosesOS() {
           transition={{ duration: 0.6, ease }}
           className="label-sacred mb-6"
         >
-          What is ROSES OS
+          What is International Aura School
         </motion.p>
         <motion.h2
           initial={{ opacity: 0, y: 24 }}
@@ -128,7 +128,7 @@ function WhatIsRosesOS() {
           transition={{ duration: 0.6, delay: 0.2, ease }}
           className="text-lg text-[var(--color-foreground-muted)] leading-relaxed"
         >
-          ROSES OS is a living architecture of technologies, practices, and
+          International Aura School is a living architecture of technologies, practices, and
           community for coherent living. A way home. A seamless path back to
           the intelligence that already lives within you, waiting to be
           remembered.

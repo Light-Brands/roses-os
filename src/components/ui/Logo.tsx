@@ -45,7 +45,7 @@ export function Logo({
         )}
         style={{ fontFamily: 'var(--font-sans)' }}
       >
-        ROSES OS
+        International Aura School
       </span>
     </div>
   );
