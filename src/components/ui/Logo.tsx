@@ -16,7 +16,7 @@ interface LogoProps {
 const sizeMap = {
   sm: 'text-base',
   md: 'text-lg',
-  lg: 'text-sm sm:text-base md:text-lg lg:text-xl',
+  lg: 'text-sm sm:text-base md:text-lg lg:text-base xl:text-xl',
 };
 
 export function Logo({
