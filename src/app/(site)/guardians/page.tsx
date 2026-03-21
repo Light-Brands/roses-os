@@ -10,7 +10,7 @@ import {
 export const metadata: Metadata = {
   title: 'Guardians',
   description:
-    'Meet the guardians of International Aura School — Angelina Ataíde, Dara Ayoub, Diego Dosal, and Peggy Mars. Teachers, stewards, and practitioners carrying the Rose Meditation and Aura Reading lineage.',
+    'Meet the guardians of International Aura School — Angelina Ataíde, Dara Ayoub, and Peggy Mars. Teachers, stewards, and practitioners carrying the Rose Meditation and Aura Reading lineage.',
   keywords: [
     'rose meditation teachers',
     'aura reading teachers',

@@ -42,7 +42,7 @@ Final manuals served on the website live in `public/resources/manuals/`:
 | 3 | `03-grounding-cord.jpeg` | Grounding Cord |
 | 4 | `04-golden-sun.png` | Golden Sun |
 | 5 | `05-aura-exercise.PNG` | Limits of Aura |
-| 6 | `06-expansion-grounding-cord.jpeg` | Expansion of Grounding Cord |
+| 6 | `06-expansion-grounding-cord.png` | Expansion of Grounding Cord |
 | 7 | `07-golden-sun-fills.png` | Golden Sun Fills |
 | 8 | `08-earth-energy.PNG` | Earth Energy |
 | 9 | `09-cosmos-circuit.jpeg` | Cosmos Circuit |
@@ -145,7 +145,7 @@ The combined Level 1&2 PDF is being split. This manual becomes **Level 2 only**.
 - [ ] **3. Replace Grounding Cord image** -- Use `level-1/03-grounding-cord.jpeg`
 - [ ] **4. Replace Golden Sun image** -- Use `level-1/04-golden-sun.png`
 - [ ] **5. Add Limits of Aura image** -- Use `level-1/05-aura-exercise.PNG` (new addition to the manual)
-- [ ] **6. Add Expansion of Grounding Cord image** -- Use `level-1/06-expansion-grounding-cord.jpeg` (new addition to the manual)
+- [x] **6. Add Expansion of Grounding Cord image** -- Use `level-1/06-expansion-grounding-cord.png` (new addition to the manual)
 - [ ] **7. Replace Four Roses image** -- Use `level-1/12-four-roses.PNG`
 - [ ] **8. Replace Earth, Cosmos, Earth+Cosmos images** -- Use THREE images:
   - `level-1/08-earth-energy.PNG`

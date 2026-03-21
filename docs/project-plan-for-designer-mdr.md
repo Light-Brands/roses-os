@@ -104,7 +104,7 @@ Below is the **complete inventory** of every image used on the site, organized b
 | 3 | **Grounding Cord** -- Energy connection from base of spine into the center of the Earth. | `level-1/03-grounding-cord.jpeg` | -- |
 | 4 | **Golden Sun** -- Radiant golden sun above the head, restoring personal life-force energy. | `level-1/04-golden-sun.png` | -- |
 | 5 | **Aura Exercise** -- Golden silhouette surrounded by concentric layers of glowing energy. | `level-1/05-aura-exercise.PNG` | `level-1/05-auraexercise-original.PNG` |
-| 6 | **Expansion of Grounding Cord** -- Grounding cord expands with the aura, anchoring the entire energy field into the Earth. | `level-1/06-expansion-grounding-cord.jpeg` | `level-1/06-grounding-cord-expansion-original.PNG` |
+| 6 | **Expansion of Grounding Cord** -- Grounding cord expands with the aura, anchoring the entire energy field into the Earth. | `level-1/06-expansion-grounding-cord.png` | `level-1/06-grounding-cord-expansion-original.PNG` |
 | 7 | **Golden Sun Fills You** -- Golden sun above the crown pours golden light down, filling the entire aura and body. | `level-1/07-golden-sun-fills.png` | `level-1/07-expansion-fill-with-golden-sun-original.PNG` |
 | 8 | **Earth Circuit** -- Energy rising through feet and legs into the body. | `level-1/08-earth-energy.PNG` | -- |
 | 9 | **Cosmos Circuit** -- Cosmic energy descending through the crown into the body. | `level-1/09-cosmos-circuit.jpeg` | `level-1/09-cosmos-original.PNG` |
@@ -262,7 +262,7 @@ Below is the complete teaching text that accompanies each image/slide in the man
 ---
 
 #### Slide 6: Expansion of Grounding Cord
-**Original:** `level-1/06-grounding-cord-expansion-original.PNG` | **Reimagined:** `level-1/06-expansion-grounding-cord.jpeg`
+**Original:** `level-1/06-grounding-cord-expansion-original.PNG` | **Reimagined:** `level-1/06-expansion-grounding-cord.png`
 
 > Once you are aware of your aura, the grounding cord practice deepens. You ground not only the physical body but also the aura itself -- allowing the entire energy field to anchor into the Earth.
 
