@@ -213,7 +213,7 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'After cleansing, the Rose is used to recover your own energy that has been left in or taken by others. The Rose is sent out as an instrument to gather and return your own life-force energy to each chakra, restoring fullness and sovereignty to each energy center.',
     originalImage: 'level-1/14-recovery-rose-original.PNG',
-    reimaginedImage: 'level-1/14-energy-recovery.png',
+    reimaginedImage: 'level-1/14-energy-recovery.jpeg',
     final: true,
     level: 1,
     section: 'foundations',
