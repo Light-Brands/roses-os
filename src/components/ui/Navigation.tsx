@@ -239,7 +239,7 @@ export function Navigation({
             </div>
 
             {/* Logo — left-aligned on mobile/tablet, absolutely centered on desktop */}
-            <div className="z-10 flex-shrink-0 lg:absolute lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2">
+            <div className="z-10 min-w-0 lg:flex-shrink-0 lg:absolute lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2">
               {logo || <Logo size="lg" />}
             </div>
 
