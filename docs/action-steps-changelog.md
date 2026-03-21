@@ -46,7 +46,7 @@
 | 3 | Replace Grounding Cord image (03) | DONE (prior) | 03-grounding-cord.jpeg in template |
 | 4 | Replace Golden Sun image (04) | DONE (prior) | 04-golden-sun.png in template |
 | 5 | Add Limits of Aura image (05) | DONE (prior) | 05-aura-exercise.PNG in template |
-| 6 | Add Expansion of Grounding Cord image (06) | DONE (prior) | 06-expansion-grounding-cord.jpeg in template |
+| 6 | Add Expansion of Grounding Cord image (06) | DONE (prior) | 06-expansion-grounding-cord.png in template |
 | 7 | Replace Four Roses image (12) | DONE (prior) | 12-four-roses.PNG in template |
 | 8 | Replace Earth, Cosmos, Earth+Cosmos (08, 09, 10) | DONE (prior) | All three in template |
 | 9 | Replace Cleansing Rose (13) and Recovery Rose (14) | DONE (prior) | Both in template |
