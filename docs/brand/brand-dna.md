@@ -142,7 +142,7 @@ Aura Reading emerged in the 1960s, in California, channeled by a North American 
 ```mermaid
 graph TD
     LB["Lewis S. Bostwick<br/><i>1960s, California<br/>Founder of the Berkeley Psychic Institute<br/>& Church of the Divine Man</i>"] --> AP["Anastasia Plunk"]
-    AP --> AA["Angelina Ataide<br/><i>1990s, Founder of CELARIS<br/>(formerly Escola da Aura & Sueños)</i>"]
+    AP --> AA["Angelina Ataide<br/><i>1990s, Founder of CELARIS<br/>(formerly International Aura School)</i>"]
     AA --> CEL["CELARIS<br/><i>Brazil</i>"]
     AA --> ROS["ROSES OS<br/><i>2026, International</i>"]
 

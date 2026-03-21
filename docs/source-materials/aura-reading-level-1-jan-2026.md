@@ -1,6 +1,6 @@
 # Aura Reading Level 1 -- Online Course | January 2026
 
-> International Aura & Dreams School
+> International Aura School
 >
 > January 15th -- 25th, 2026
 
@@ -298,19 +298,19 @@ The Rose Meditation is a key to remembering yourself -- to stand rooted in your 
 
 ### Angelina Ataíde
 
-*Co-founder and Guardian of Lineage -- International Aura & Dreams School*
+*Co-founder and Guardian of Lineage -- International Aura School*
 
 Pioneer in Aura Reading education in Brazil, Angelina Ataíde has dedicated her life to spiritual development and training aura readers for over three decades. With a journey marked by passion for transmitting ancestral knowledge in an accessible and transformative way, she has received and developed a unique methodology that has already trained thousands of students, therapists, and teachers throughout the country. Angelina is recognized for her transformative and profound approach, combining spiritual wisdom with practical techniques for daily life that allow her students to develop their intuitive abilities safely and consistently.
 
 ### Diego Dosal
 
-*Co-founder & Architect of Structure -- International Aura & Dreams School*
+*Co-founder & Architect of Structure -- International Aura School*
 
-Diego Dosal Stieglitz brings the bridge between spirit and structure, weaving inner mastery with the architecture needed for teachings to reach the world. His path unites spiritual practice, energy work and the creation of communities dedicated to remembrance. Within the Aura & Dreams School he carries the horizontal axis, developing platforms, systems and frameworks that allow the Rose and Aura teachings to be lived with clarity and coherence. His presence supports expansion, accessibility and the growth of a global community rooted in truth and simplicity. Recognized for harmonizing intuition with strategy, Diego serves the School by building the foundations that allow inner transformation to become a lived reality across cultures.
+Diego Dosal Stieglitz brings the bridge between spirit and structure, weaving inner mastery with the architecture needed for teachings to reach the world. His path unites spiritual practice, energy work and the creation of communities dedicated to remembrance. Within the International Aura School he carries the horizontal axis, developing platforms, systems and frameworks that allow the Rose and Aura teachings to be lived with clarity and coherence. His presence supports expansion, accessibility and the growth of a global community rooted in truth and simplicity. Recognized for harmonizing intuition with strategy, Diego serves the School by building the foundations that allow inner transformation to become a lived reality across cultures.
 
 ### Dara Ayoub
 
-*Guardian of the Community and Programs -- International Aura & Dreams School*
+*Guardian of the Community and Programs -- International Aura School*
 
 With a background rooted in multiple traditions of self-knowledge, Dara Ayoub developed an approach that integrates body, mind, and spirit with reverence, cultivating a holistic and harmonious understanding of all layers of existence. In the International Aura School, she supports structural development, the creation and delivery of Programs and Courses, mediating as well the organizational flow. Blending intuitive listening with grounded clarity, Dara ensures sustainable growth and a nurturing environment for all students. As Guardian of the Birthday Aura Reading, Dara upholds the practice's highest purpose: bringing individuals back to the remembrance of their true essence.
 
@@ -318,7 +318,7 @@ With a background rooted in multiple traditions of self-knowledge, Dara Ayoub de
 
 *Guardian of the Methodology -- International Aura School*
 
-Peggy Mars creates bridges between cultures, communities, and inner worlds. With over a decade walking the Aura Reading path, she integrates emotional, ancestral, and spiritual layers with clarity and compassion. She is the Guardian of the Birth Oracle, a sacred reading that reconnects us with our first memories, our purpose on Earth, and the path from where we come and where we are going. At the International Aura & Dreams School, Peggy sustains authentic connection between teachers and students, supporting each person to remember who they truly are.
+Peggy Mars creates bridges between cultures, communities, and inner worlds. With over a decade walking the Aura Reading path, she integrates emotional, ancestral, and spiritual layers with clarity and compassion. She is the Guardian of the Birth Oracle, a sacred reading that reconnects us with our first memories, our purpose on Earth, and the path from where we come and where we are going. At the International Aura School, Peggy sustains authentic connection between teachers and students, supporting each person to remember who they truly are.
 
 ---
 

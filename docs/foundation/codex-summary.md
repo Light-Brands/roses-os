@@ -35,7 +35,7 @@ ROSES OS is a full-stack spiritual technology platform -- part web application, 
 |--------|--------|-------------|
 | 1960s, California | **Lewis S. Bostwick** | Founded Berkeley Psychic Institute, channeled "Aura Reading" |
 | -- | **Anastasia Plunk** | Transmitted the lineage forward |
-| 1990s | **Angelina Ataide** | Founded CELARIS (formerly Escola da Aura & Suenos) |
+| 1990s | **Angelina Ataide** | Founded CELARIS (formerly International Aura School) |
 | 2026 | **ROSES OS** | Modern ecosystem iteration |
 
 ---
