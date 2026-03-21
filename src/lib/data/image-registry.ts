@@ -49,10 +49,10 @@ const sharedImages: ImageEntry[] = [
   {
     id: 'golden-sun',
     label: 'Golden Sun',
-    canonicalPath: '/images/teaching/teaching-golden-sun.png',
+    canonicalPath: '/images/teaching/teaching-golden-sun.jpeg',
     scope: 'shared',
     manualLevels: [1, 2],
-    manualFilename: 'teaching-golden-sun.png',
+    manualFilename: 'teaching-golden-sun.jpeg',
   },
   {
     id: 'cosmos-circuit',
