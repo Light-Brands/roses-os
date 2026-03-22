@@ -303,7 +303,7 @@ export const level2Slides: TeachingSlide[] = [
     teachingText:
       'With protection established, the cleansing follows. A Golden Rose is set above the grid and passed downward through its entire structure, removing any foreign, stagnant, or disruptive energies inside the room. This Rose comes down to be transmuted in the center of the earth through the Grounding Cord of the room.',
     originalImage: 'level-2/21-cleansing-space-original.PNG',
-    reimaginedImage: 'level-2/21-cleanse-the-space.jpg',
+    reimaginedImage: 'level-2/21-cleanse-the-space.png',
     imageNote:
       'The room should show its own grounding cord expanding within the space. The grounding cord should be clear and transparent so people understand the cord also expands within the room — same visual direction as slide 23.',
     level: 2,
