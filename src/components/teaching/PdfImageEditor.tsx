@@ -24,9 +24,9 @@ const DEFAULT_MANUALS = [
   'roses-level-1-manual-es.pdf',
   'roses-level-1-manual-pt.pdf',
   'roses-level-1-manual-el.pdf',
-  'ROSES-OS-Level-1-Manual-EN.pdf',
-  'ROSES-OS-Level-2-Manual-EN.pdf',
-  'ROSES-OS-Level-3-Manual-EN.pdf',
+  'Rose-Level-1-Manual-EN.pdf',
+  'Rose-Level-2-Manual-EN.pdf',
+  'Rose-Level-3-Manual-EN.pdf',
 ];
 
 type Status = 'idle' | 'loading' | 'success' | 'error';

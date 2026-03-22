@@ -220,7 +220,7 @@ async function buildLevel2QuickReferencePage(doc, insertIndex) {
 async function main() {
   // 1. Level 1 — copy the compressed Level 1 source PDF directly
   const level1Src = `${SOURCE_DIR}/Rose-Meditation-Level-1_compressed.pdf`;
-  const level1Dst = `${RESOURCES_DIR}/ROSES-OS-Level-1-Manual-EN.pdf`;
+  const level1Dst = `${RESOURCES_DIR}/Rose-Level-1-Manual-EN.pdf`;
   copyFileSync(level1Src, level1Dst);
   console.log(`Level 1: Copied ${level1Src} → ${level1Dst}`);
 
@@ -243,7 +243,7 @@ async function main() {
   await buildLevel2QuickReferencePage(level2Doc, 7);
 
   const level2Bytes = await level2Doc.save();
-  const level2Path = `${RESOURCES_DIR}/ROSES-OS-Level-2-Manual-EN.pdf`;
+  const level2Path = `${RESOURCES_DIR}/Rose-Level-2-Manual-EN.pdf`;
   writeFileSync(level2Path, level2Bytes);
   console.log(`Level 2: Extracted pages 11-19 from combined manual → ${level2Path} (${level2Doc.getPageCount()} pages)`);
 
@@ -275,7 +275,7 @@ async function main() {
   });
 
   const level3SavedBytes = await level3Doc.save();
-  const level3Path = `${RESOURCES_DIR}/ROSES-OS-Level-3-Manual-EN.pdf`;
+  const level3Path = `${RESOURCES_DIR}/Rose-Level-3-Manual-EN.pdf`;
   writeFileSync(level3Path, level3SavedBytes);
   console.log(`Level 3: Removed Transmedium Channels page & replaced TOC → ${level3Path} (${level3Doc.getPageCount()} pages)`);
 

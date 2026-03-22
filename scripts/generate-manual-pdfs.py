@@ -1203,14 +1203,14 @@ def generate_pdf(html_content: str, output_path: str) -> None:
 if __name__ == "__main__":
     generate_pdf(
         LEVEL_1_HTML,
-        "/home/user/roses-os/public/resources/manuals/ROSES-OS-Level-1-Manual-EN.pdf",
+        "/home/user/roses-os/public/resources/manuals/Rose-Level-1-Manual-EN.pdf",
     )
     generate_pdf(
         LEVEL_2_HTML,
-        "/home/user/roses-os/public/resources/manuals/ROSES-OS-Level-2-Manual-EN.pdf",
+        "/home/user/roses-os/public/resources/manuals/Rose-Level-2-Manual-EN.pdf",
     )
     generate_pdf(
         LEVEL_3_HTML,
-        "/home/user/roses-os/public/resources/manuals/ROSES-OS-Level-3-Manual-EN.pdf",
+        "/home/user/roses-os/public/resources/manuals/Rose-Level-3-Manual-EN.pdf",
     )
     print("Done — all three manuals generated with International Aura School brand aesthetic.")
