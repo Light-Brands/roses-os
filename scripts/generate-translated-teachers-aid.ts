@@ -189,18 +189,18 @@ function translateHtml(html: string, t: Translation, locale: string): string {
 
   // 6. Level dividers
   // Level 1 divider
-  result = result.replace('>Level 1 of 3</div>', `>${escapeHtml(t.ui.level)} 1</div>`);
+  result = result.replace('>Level 1</div>', `>${escapeHtml(t.ui.level)} 1</div>`);
   result = result.replace('>Foundational Practices</h1>', `>${escapeHtml(t.levels['1'].subtitle)}</h1>`);
 
   // Level 2 divider
-  result = result.replace('>Level 2 of 3</div>', `>${escapeHtml(t.ui.level)} 2</div>`);
+  result = result.replace('>Level 2</div>', `>${escapeHtml(t.ui.level)} 2</div>`);
   result = result.replace(
     '>Space Preparation &amp; Chakra Activation</h1>',
     `>${escapeHtml(t.levels['2'].subtitle)}</h1>`
   );
 
   // Level 3 divider
-  result = result.replace('>Level 3 of 3</div>', `>${escapeHtml(t.ui.level)} 3</div>`);
+  result = result.replace('>Level 3</div>', `>${escapeHtml(t.ui.level)} 3</div>`);
   result = result.replace('>Advanced Practice</h1>', `>${escapeHtml(t.levels['3'].subtitle)}</h1>`);
 
   // Slide range labels
