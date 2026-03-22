@@ -687,7 +687,7 @@ export const level3Slides: TeachingSlide[] = [
     concept: 'Cutting Cords',
     teachingText:
       'We engage in energetic interactions with others constantly — when we see them, hear them, touch them, and even when we think about them. When energetic cords are formed, our auras connect through these ties, allowing energy to flow between us. This is why we can often sense what is happening to people close to us, even at a distance.\n\nWhen relationships come to an end, we may be deeply affected by the energies that continue to reach us through these bonds. For this reason, it is important to know how to consciously cut them:\n\n\u2022 Close your eyes\n\u2022 Visualize your aura with bonds coming out of your chakras\n\u2022 Place your dominant hand on the 7th cervical vertebra, located at the junction of the neck and back at the level of the 5th chakra\n\u2022 Intend that your hand has the power to cut all cords\n\u2022 Make the cutting motion under your 1st chakra, placing your hand on the chair where you are sitting\n\nWe can also cut the ties when the relationship has not ended, but we feel we need more neutrality. These ties reform very quickly when we reconnect with the person.',
-    reimaginedImage: 'level-3/IMG_1853.jpeg',
+    reimaginedImage: 'level-3/42-cutting-cords.png',
     imageScale: 0.75,
     level: 3,
     section: 'advanced',
