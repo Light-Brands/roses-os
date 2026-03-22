@@ -120,6 +120,7 @@ export const level3ManualImages: ManualImageMapping = {
       title: 'The Analyzer',
       images: [
         { concept: 'The Analyzer', slideNumber: 39, reimaginedImage: 'level-3/39-analyzer.PNG' },
+        { concept: 'The Analyzer & Sacred Space', slideNumber: 40, reimaginedImage: 'level-3/40-analyzer-and-sacred-space.jpeg' },
       ],
     },
     {
