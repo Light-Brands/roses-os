@@ -213,7 +213,7 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'After cleansing, the Rose is used to recover your own energy that has been left in or taken by others. The Rose is sent out as an instrument to gather and return your own life-force energy to each chakra, restoring fullness and sovereignty to each energy center.',
     originalImage: 'level-1/14-recovery-rose-original.PNG',
-    reimaginedImage: 'level-1/14-energy-recovery.jpeg',
+    reimaginedImage: 'level-1/14-energy-recovery.png',
     final: true,
     level: 1,
     section: 'foundations',
@@ -601,7 +601,7 @@ export const level2CleansingSlides: TeachingSlide[] = [
     teachingText:
       'Once the cleansing of the chakra and its corresponding aura layer is complete, the energy recovery process can unfold at their vibration, if you feel called to do so. A recovery Rose may be created attuned to that specific frequency, drawing your energy back and restoring it at that very level. You can do it from the 1st to the 7th chakra.',
     originalImage: 'level-2/34-energyrecoveryeachchakra-original.jpg',
-    reimaginedImage: 'level-2/34-energy-recovery.png',
+    reimaginedImage: 'level-2/34-energy-recovery-rose.png',
     imageNote: 'Updated with new background image.',
     level: 2,
     section: 'cleansing',
@@ -687,7 +687,7 @@ export const level3Slides: TeachingSlide[] = [
     concept: 'Cutting Cords',
     teachingText:
       'We engage in energetic interactions with others constantly — when we see them, hear them, touch them, and even when we think about them. When energetic cords are formed, our auras connect through these ties, allowing energy to flow between us. This is why we can often sense what is happening to people close to us, even at a distance.\n\nWhen relationships come to an end, we may be deeply affected by the energies that continue to reach us through these bonds. For this reason, it is important to know how to consciously cut them:\n\n\u2022 Close your eyes\n\u2022 Visualize your aura with bonds coming out of your chakras\n\u2022 Place your dominant hand on the 7th cervical vertebra, located at the junction of the neck and back at the level of the 5th chakra\n\u2022 Intend that your hand has the power to cut all cords\n\u2022 Make the cutting motion under your 1st chakra, placing your hand on the chair where you are sitting\n\nWe can also cut the ties when the relationship has not ended, but we feel we need more neutrality. These ties reform very quickly when we reconnect with the person.',
-    reimaginedImage: 'level-3/IMG_1853.jpeg',
+    reimaginedImage: 'level-3/42-cutting-cords.png',
     imageScale: 0.75,
     level: 3,
     section: 'advanced',

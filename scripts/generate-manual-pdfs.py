@@ -1035,13 +1035,6 @@ LEVEL_3_HTML = """<!DOCTYPE html>
 <div class="page-break"></div>
 <h2>Classes &amp; Consultations</h2>
 
-<div class="image-placeholder">
-  <div class="ph-icon">&#9702;</div>
-  <p class="ph-label">Illustration — Classes &amp; Consultations</p>
-  <p class="ph-desc">A teacher or practitioner seated across from a student or client, both within their own auras. The practitioner's aura is shown with roses of protection, separation and observation. Energetic cords connect the two auras, illustrating the bonds that form during a session and need to be cleansed afterward.</p>
-  <p class="ph-ref">Ref: Classes &amp; Consultations — Energy Separation</p>
-</div>
-
 <p>When you are working in any field — or when you are a teacher or lecturer — you can use Rose Meditation to maintain your energy integrity.</p>
 
 <h3>Before</h3>
