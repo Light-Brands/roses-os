@@ -316,7 +316,7 @@ export const level2Slides: TeachingSlide[] = [
     teachingText:
       'After protection and cleansing, you claim ownership of the space. This is an act of energetic sovereignty — declaring the space as yours, filling it with your own energy and intention. The space becomes an extension of your aura and your practice.',
     originalImage: 'level-2/22-protect-the-space-original.PNG',
-    reimaginedImage: 'level-2/22-owning-space.jpg',
+    reimaginedImage: 'level-2/22-owning-space.jpeg',
     imageNote:
       'The room should show its own grounding cord expanding within the space. The grounding cord should be clear and transparent so people understand the cord also expands within the room — same visual direction as slide 23. Also: four golden lines go from the perineum to the four bottom corners of the room, and four golden lines from the crown to the top four corners of the room — this should be clear as this is what the slide demonstrates.',
     level: 2,
