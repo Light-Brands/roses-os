@@ -50,7 +50,7 @@ export const level1Slides: TeachingSlide[] = [
     concept: 'The Rose',
     teachingText:
       'The Rose is the foundational symbol and tool of this practice — a living energetic instrument used throughout all levels of the work.',
-    reimaginedImage: 'level-1/01-the-rose.PNG',
+    reimaginedImage: 'level-1/01-the-rose.jpeg',
     final: true,
     imageNote:
       'Rose illustration guideline: Roses should be shown with stems or without stems — never with thorns, and typically without prominent leaves.',
