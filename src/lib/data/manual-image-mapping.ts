@@ -35,7 +35,7 @@ export const level2ManualImages: ManualImageMapping = {
       title: 'Sacred Space & Energy Management',
       images: [
         { concept: 'Prepare Physical Space', slideNumber: 19, reimaginedImage: 'level-2/19-physical-space-abstract.png' },
-        { concept: 'Protection of the Space', slideNumber: 20, reimaginedImage: 'level-2/20-create-the-room.jpg' },
+        { concept: 'Protection of the Space', slideNumber: 20, reimaginedImage: 'level-2/20-create-the-room.png' },
         { concept: 'Cleansing of the Space', slideNumber: 21, reimaginedImage: 'level-2/21-cleanse-the-space.jpg' },
         { concept: 'Owning Your Space', slideNumber: 22, reimaginedImage: 'level-2/22-owning-space.jpg', originalImage: 'level-2/22-protect-the-space-original.PNG' },
       ],

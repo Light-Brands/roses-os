@@ -290,7 +290,7 @@ export const level2Slides: TeachingSlide[] = [
     teachingText:
       'The physical meditation space is protected by creating an energetic grid using roses. Golden roses are placed at the four corners (and above/below) of the space, connected by lines of golden energy forming a sacred geometric structure — a container for the work.',
     originalImage: 'level-2/20-protectthespace-original.jpg',
-    reimaginedImage: 'level-2/20-create-the-room.jpg',
+    reimaginedImage: 'level-2/20-create-the-room.png',
     imageNote:
       'Designer notes: The lines of the room/grid are all in gold. The room also has its own grounding cord that expands within the space — not depicted in the current image. The grounding cord should be clear and transparent so people understand the cord also expands within the room. This is a visual challenge given the complexity of the grid; the designer has creative freedom to find a solution.',
     level: 2,
