@@ -74,10 +74,8 @@ export const level1Slides: TeachingSlide[] = [
     concept: 'Grounding Cord',
     teachingText:
       'The grounding cord is an energetic connection that extends from the base of the spine (first chakra) downward into the center of the Earth. It anchors your energy body to the planet, providing stability, safety, and a channel for releasing unwanted energy.',
-    reimaginedImage: 'level-1/03-grounding-cord.jpeg',
+    reimaginedImage: 'level-1/03-grounding-cord.png',
     final: true,
-    imageNote:
-      'The original grounding cord (see slide 6 original: 6-grounding-cord-expansion-original.PNG) is more accurate than the reimagined version. New designs should reflect the original\'s depiction. The grounding cord should be more opaque/transparent, thick and strong, and less gold.',
     level: 1,
     section: 'foundations',
   },
