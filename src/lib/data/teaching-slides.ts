@@ -578,7 +578,7 @@ export const level2CleansingSlides: TeachingSlide[] = [
     teachingText:
       'Each individual chakra is cleansed using roses. The roses address two dimensions:\n\n• Dynamics of the Past — Energetic patterns, imprints, and blockages carried from past experiences\n• Dynamics of the Present — Current energetic influences, relationships, and situations affecting the chakra',
     originalImage: 'level-2/33-cleansingeachchakra-original.jpg',
-    reimaginedImage: 'level-2/33-cleansing-each-chakra.PNG',
+    reimaginedImage: 'level-2/33-cleansing-each-chakra.jpeg',
     imageNote: 'Also see: 29a-chakracleansing-original.jpg',
     level: 2,
     section: 'cleansing',
@@ -590,7 +590,7 @@ export const level2CleansingSlides: TeachingSlide[] = [
     teachingText:
       'The aura is composed of seven layers, each corresponding to a chakra. In Level 2, each layer is individually cleansed from the 1st to the 7th layer:\n\n1. 1st Aura layer\n2. 2nd Aura layer\n3. 3rd Aura layer\n4. 4th Aura layer\n5. 5th Aura layer\n6. 6th Aura layer\n7. 7th Aura layer',
     originalImage: 'level-2/32-cleansing-layers-original.jpg',
-    reimaginedImage: 'level-2/32-cleansing-each-layer.PNG',
+    reimaginedImage: 'level-2/32-cleansing-each-layer.jpeg',
     level: 2,
     section: 'cleansing',
   },
