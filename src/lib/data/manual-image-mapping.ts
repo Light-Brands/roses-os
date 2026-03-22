@@ -87,7 +87,7 @@ export const level1ManualImages: ManualImageMapping = {
       images: [
         { concept: 'The Rose', slideNumber: 1, reimaginedImage: 'level-1/01-the-rose.jpeg' },
         { concept: 'Meditation Posture', slideNumber: 2, reimaginedImage: 'level-1/02-meditation-posture.PNG' },
-        { concept: 'Grounding Cord', slideNumber: 3, reimaginedImage: 'level-1/03-grounding-cord.jpeg' },
+        { concept: 'Grounding Cord', slideNumber: 3, reimaginedImage: 'level-1/03-grounding-cord.png' },
         { concept: 'Golden Sun', slideNumber: 4, reimaginedImage: 'level-1/04-golden-sun.jpeg' },
         { concept: 'Limits of Aura', slideNumber: 5, reimaginedImage: 'level-1/05-aura-exercise.PNG' },
         { concept: 'Expansion of Grounding Cord', slideNumber: 6, reimaginedImage: 'level-1/06-expansion-grounding-cord.jpeg' },
