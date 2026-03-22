@@ -91,7 +91,7 @@ export const level1ManualImages: ManualImageMapping = {
         { concept: 'Golden Sun', slideNumber: 4, reimaginedImage: 'level-1/04-golden-sun.jpeg' },
         { concept: 'Limits of Aura', slideNumber: 5, reimaginedImage: 'level-1/05-aura-exercise.PNG' },
         { concept: 'Expansion of Grounding Cord', slideNumber: 6, reimaginedImage: 'level-1/06-expansion-grounding-cord.jpeg' },
-        { concept: 'Golden Sun Fills', slideNumber: 7, reimaginedImage: 'level-1/07-golden-sun-fills.png' },
+        { concept: 'Golden Sun Fills', slideNumber: 7, reimaginedImage: 'level-1/3BEDF45C-D415-4BB2-A55A-C5D0D2C97817.png' },
         { concept: 'Earth Energy', slideNumber: 8, reimaginedImage: 'level-1/08-earth-energy.PNG' },
         { concept: 'Cosmos Circuit', slideNumber: 9, reimaginedImage: 'level-1/09-cosmos-circuit.jpeg' },
         { concept: 'Cosmos + Earth', slideNumber: 10, reimaginedImage: 'level-1/10-cosmosearth.PNG' },

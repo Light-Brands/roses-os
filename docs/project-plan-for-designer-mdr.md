@@ -105,7 +105,7 @@ Below is the **complete inventory** of every image used on the site, organized b
 | 4 | **Golden Sun** -- Radiant golden sun above the head, restoring personal life-force energy. | `level-1/04-golden-sun.png` | -- |
 | 5 | **Aura Exercise** -- Golden silhouette surrounded by concentric layers of glowing energy. | `level-1/05-aura-exercise.PNG` | `level-1/05-auraexercise-original.PNG` |
 | 6 | **Expansion of Grounding Cord** -- Grounding cord expands with the aura, anchoring the entire energy field into the Earth. | `level-1/06-expansion-grounding-cord.png` | `level-1/06-grounding-cord-expansion-original.PNG` |
-| 7 | **Golden Sun Fills You** -- Golden sun above the crown pours golden light down, filling the entire aura and body. | `level-1/07-golden-sun-fills.png` | `level-1/07-expansion-fill-with-golden-sun-original.PNG` |
+| 7 | **Golden Sun Fills You** -- Golden sun above the crown pours golden light down, filling the entire aura and body. | `level-1/3BEDF45C-D415-4BB2-A55A-C5D0D2C97817.png` | `level-1/07-expansion-fill-with-golden-sun-original.PNG` |
 | 8 | **Earth Circuit** -- Energy rising through feet and legs into the body. | `level-1/08-earth-energy.PNG` | -- |
 | 9 | **Cosmos Circuit** -- Cosmic energy descending through the crown into the body. | `level-1/09-cosmos-circuit.jpeg` | `level-1/09-cosmos-original.PNG` |
 | 10 | **Combined Earth + Cosmos Circuit** -- Both flows active simultaneously through the body. | `level-1/10-cosmosearth.PNG` | -- |
@@ -273,7 +273,7 @@ Below is the complete teaching text that accompanies each image/slide in the man
 ---
 
 #### Slide 7: Golden Sun Fills You
-**Original:** `level-1/07-expansion-fill-with-golden-sun-original.PNG` | **Reimagined:** `level-1/07-golden-sun-fills.png`
+**Original:** `level-1/07-expansion-fill-with-golden-sun-original.PNG` | **Reimagined:** `level-1/3BEDF45C-D415-4BB2-A55A-C5D0D2C97817.png`
 
 > The Golden Sun above the crown pours golden light downward, filling the entire aura and body with your own highest vibration. This completes the full energetic architecture: posture, aura, grounding cord, and golden sun -- all active together.
 
