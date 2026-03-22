@@ -85,7 +85,7 @@ export const level1ManualImages: ManualImageMapping = {
     {
       title: 'Foundational Techniques',
       images: [
-        { concept: 'The Rose', slideNumber: 1, reimaginedImage: 'level-1/01-the-rose.PNG' },
+        { concept: 'The Rose', slideNumber: 1, reimaginedImage: 'level-1/01-the-rose.jpeg' },
         { concept: 'Meditation Posture', slideNumber: 2, reimaginedImage: 'level-1/02-meditation-posture.PNG' },
         { concept: 'Grounding Cord', slideNumber: 3, reimaginedImage: 'level-1/03-grounding-cord.jpeg' },
         { concept: 'Golden Sun', slideNumber: 4, reimaginedImage: 'level-1/04-golden-sun.jpeg' },

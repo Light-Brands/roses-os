@@ -936,7 +936,7 @@ export async function GET() {
 
     // Load brand images
     const [roseImage, backcoverImage] = await Promise.all([
-      loadAndResizeImage(doc, 'rose med images/level-1/01-the-rose.PNG', 400, 250),
+      loadAndResizeImage(doc, 'rose med images/level-1/01-the-rose.jpeg', 400, 250),
       loadAndResizeImage(doc, 'images/backcover-rose-mandala.png', 160, 160),
     ]);
 
