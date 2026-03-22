@@ -98,7 +98,7 @@ export const level1ManualImages: ManualImageMapping = {
         { concept: 'The Rose (Gold)', slideNumber: 11, reimaginedImage: 'level-1/11-therosegold.PNG' },
         { concept: 'Four Roses', slideNumber: 12, reimaginedImage: 'level-1/12-four-roses.jpeg' },
         { concept: 'Cleansing Rose', slideNumber: 13, reimaginedImage: 'level-1/13-cleansing-rose.png' },
-        { concept: 'Recovery Rose', slideNumber: 14, reimaginedImage: 'level-1/14-energy-recovery.jpeg' },
+        { concept: 'Recovery Rose', slideNumber: 14, reimaginedImage: 'level-1/14-energy-recovery.png' },
         { concept: 'Pink Rose', slideNumber: 15, reimaginedImage: 'level-1/15-pink-rose-closure.png' },
         { concept: 'Discharge Excess', slideNumber: 16, reimaginedImage: 'level-1/16-discharge-excess.PNG' },
         { concept: 'Sacred Space', slideNumber: 17, reimaginedImage: 'level-1/17-sacred-space-abstract.png' },
