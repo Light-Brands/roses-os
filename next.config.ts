@@ -6,6 +6,26 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
   serverExternalPackages: ['sharp'],
+  async redirects() {
+    return [
+      // Manual PDFs were renamed from ROSES-OS-Level-* to Rose-Level-* (commit 2dddb20)
+      {
+        source: '/resources/manuals/ROSES-OS-Level-1-Manual-EN.pdf',
+        destination: '/resources/manuals/Rose-Level-1-Manual-EN.pdf',
+        permanent: true,
+      },
+      {
+        source: '/resources/manuals/ROSES-OS-Level-2-Manual-EN.pdf',
+        destination: '/resources/manuals/Rose-Level-2-Manual-EN.pdf',
+        permanent: true,
+      },
+      {
+        source: '/resources/manuals/ROSES-OS-Level-3-Manual-EN.pdf',
+        destination: '/resources/manuals/Rose-Level-3-Manual-EN.pdf',
+        permanent: true,
+      },
+    ];
+  },
   outputFileTracingExcludes: {
     // Exclude heavy public/ directories from serverless function bundles.
     // These are served as static assets by Vercel's CDN — they don't need
