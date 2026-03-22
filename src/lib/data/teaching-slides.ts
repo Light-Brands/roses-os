@@ -125,7 +125,7 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'The Golden Sun above the crown pours golden light downward, filling the entire aura and body with your own highest vibration. This completes the full energetic architecture: posture, aura, grounding cord, and golden sun — all active together.',
     originalImage: 'level-1/07-expansion-fill-with-golden-sun-original.PNG',
-    reimaginedImage: 'level-1/07-golden-sun-fills.png',
+    reimaginedImage: 'level-1/3BEDF45C-D415-4BB2-A55A-C5D0D2C97817.png',
     final: true,
     imageNote: 'The expanded grounding cord should also be represented in this image — it is part of the full energetic architecture. Same visual direction: thick, transparent, strong, less gold. NOTE: The current image repeats the same human figure used in slide 7 — please use a different human man for this slide to distinguish the two visuals.',
     level: 1,
