@@ -125,7 +125,7 @@ All files in `public/rose med images/level-2/`.
 | Slide | Concept | Reimagined Image | Original Image |
 |-------|---------|-----------------|---------------|
 | 19 | **Prepare Your Physical Space** -- Physical environment preparation for meditation. | `level-2/19-physical-space.png` | -- |
-| 20 | **Protection of the Space** -- Golden roses at corners connected by golden lines forming a sacred grid. | `level-2/20-create-the-room.jpg` | -- |
+| 20 | **Protection of the Space** -- Golden roses at corners connected by golden lines forming a sacred grid. | `level-2/20-create-the-room.png` | -- |
 | 21 | **Cleansing of the Space** -- Large rose above the grid pouring golden energy downward. | `level-2/21-cleanse-the-space.jpg` | -- |
 | 22 | **Owning Your Space** -- Person radiating energy from within, filling the grid with their own light. | `level-2/22-owning-space.jpg` | `level-2/22-protect-the-space-original.PNG` |
 | 23 | **Let's Talk About Chakras** -- Introduction to the chakra system. | `level-2/23-chakras-intro.jpeg` | -- |
@@ -380,7 +380,7 @@ Below is the complete teaching text that accompanies each image/slide in the man
 ---
 
 #### Slide 20: Protection of the Space
-**Original:** `level-2/20-protectthespace-original.jpg` | **Reimagined:** `level-2/20-create-the-room.jpg`
+**Original:** `level-2/20-protectthespace-original.jpg` | **Reimagined:** `level-2/20-create-the-room.png`
 
 > The physical meditation space is protected by creating an energetic grid using roses. Golden roses are placed at the four corners (and above/below) of the space, connected by lines of golden energy forming a sacred geometric structure -- a container for the work.
 
