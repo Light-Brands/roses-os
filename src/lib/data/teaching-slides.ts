@@ -601,7 +601,7 @@ export const level2CleansingSlides: TeachingSlide[] = [
     teachingText:
       'Once the cleansing of the chakra and its corresponding aura layer is complete, the energy recovery process can unfold at their vibration, if you feel called to do so. A recovery Rose may be created attuned to that specific frequency, drawing your energy back and restoring it at that very level. You can do it from the 1st to the 7th chakra.',
     originalImage: 'level-2/34-energyrecoveryeachchakra-original.jpg',
-    reimaginedImage: 'level-2/34-energy-recovery.png',
+    reimaginedImage: 'level-2/34-energy-recovery-rose.png',
     imageNote: 'Updated with new background image.',
     level: 2,
     section: 'cleansing',
