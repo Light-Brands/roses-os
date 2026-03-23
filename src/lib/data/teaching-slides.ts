@@ -245,7 +245,7 @@ export const level1Slides: TeachingSlide[] = [
     slideNumber: 17,
     concept: "Let's Create Your Sacred Space",
     teachingText:
-      'Level 2 begins with creating your own sacred space — an internal energetic environment that serves as your meditation home. This is the space from which all deeper work is conducted.',
+      'Place yourself in your sacred space, where you are safe and fully aware of your energetic authority. It is from here that all energy work, including the Rose Meditation, can be done with clarity, clairvoyance, and true energetic sovereignty.\n\nThis space belongs to your Spirit — the purest dimension of your being. Keep it closed and protected at all times. Return to it for the Rose Meditation, for important decisions that call for your deepest discernment, or simply to come back into alignment with your spiritual essence.',
     reimaginedImage: 'level-1/17-sacred-space-abstract.png',
     imageNote: 'Abstract sacred space — inner stillness, spiritual authority, sacred geometry radiating from center of head.',
     level: 1,

@@ -335,7 +335,7 @@ function translateHtml(html: string, t: Translation, locale: string): string {
 
   // 10. Sacred Space callout
   result = result.replace(
-    'The Sacred Space is the culmination of Level 1 &mdash; where all foundational techniques come together in unified awareness.',
+    'This space belongs only to you, it is your sanctuary. Within it you are centered, protected and aligned with your highest vibration.',
     escapeHtml(t.ui.sacredSpace)
   );
 
@@ -401,7 +401,7 @@ function translateHtml(html: string, t: Translation, locale: string): string {
 
   // Slide 17 abbreviated
   result = replaceText(result,
-    'Creating your own sacred space &mdash; an internal energetic environment that serves as your meditation home. This is the space from which all deeper work is conducted.',
+    'Place yourself in your sacred space, where you are safe and fully aware of your energetic authority. It is from here that all energy work, including the Rose Meditation, can be done with clarity, clairvoyance, and true energetic sovereignty.',
     t.slides['l1-sacred-space']?.teachingText ? textToHtml(abbreviateText(t.slides['l1-sacred-space'].teachingText, 180)) : '',
     true
   );
@@ -608,7 +608,7 @@ const EN_SLIDES: Record<string, { concept: string; teachingText: string }> = {
   'l1-pink-rose-closure': { concept: 'Pink Rose Closure', teachingText: 'The Pink Rose Closure is offered at the end of the meditation as a gift of well-being.' },
   'l1-energy-recovery': { concept: 'Energy Recovery of Each Chakra', teachingText: 'After cleansing, the Rose is used to recover your own energy that has been left in or taken by others.' },
   'l1-discharge': { concept: 'Discharge Excess Energy', teachingText: 'After deep meditation or energy work, excess energy may accumulate in the body.' },
-  'l1-sacred-space': { concept: "Let's Create Your Sacred Space", teachingText: 'Level 2 begins with creating your own sacred space — an internal energetic environment that serves as your meditation home.' },
+  'l1-sacred-space': { concept: "Let's Create Your Sacred Space", teachingText: 'Place yourself in your sacred space, where you are safe and fully aware of your energetic authority. It is from here that all energy work, including the Rose Meditation, can be done with clarity, clairvoyance, and true energetic sovereignty.' },
   'l1-6th-7th-chakras': { concept: 'The 6th and 7th Chakras (Sacred Space)', teachingText: 'Understanding the locations and roles of the upper chakras is essential for Level 2 work.' },
   'l2-physical-space': { concept: "Let's Prepare Your Physical Space", teachingText: 'Before meditation, prepare your physical environment to support the energetic work. The external space should mirror the internal intention: clean, clear, quiet, and intentionally held.' },
   'l2-protection-space': { concept: 'Protection of the Space', teachingText: 'The physical meditation space is protected by creating an energetic grid using roses.' },
