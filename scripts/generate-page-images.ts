@@ -264,7 +264,7 @@ async function generatePrompts(
     },
   });
 
-  const text = response.text;
+  const text = response.text ?? '';
   console.log('Raw response from Gemini:\n');
   console.log(text);
   console.log('\n');

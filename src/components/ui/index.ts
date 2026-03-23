@@ -3,7 +3,7 @@ export { AnimatedNavText } from './AnimatedNavText';
 export { Button } from './Button';
 export { Card, FeatureCard, Interactive3DCard, PricingCard, TestimonialCard } from './Card';
 export { Navigation } from './Navigation';
-export { Footer, FooterMinimal } from './Footer';
+export { default as Footer, FooterMinimal } from './Footer';
 export { Logo } from './Logo';
 
 // Form Components
