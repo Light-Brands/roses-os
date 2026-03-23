@@ -220,11 +220,11 @@ async function generatePrompts(ai: GoogleGenAI): Promise<GeneratedPrompt[]> {
       }
     });
     
-    const text = response.text;
+    const text = response.text ?? '';
     console.log('📝 Raw response from Gemini:\n');
     console.log(text);
     console.log('\n');
-    
+
     // Extract JSON from response
     const jsonMatch = text.match(/\[[\s\S]*\]/);
     if (!jsonMatch) {
@@ -477,7 +477,7 @@ Return ONLY a JSON array of ${numVariations} objects with this structure:
       }
     });
     
-    const text = response.text;
+    const text = response.text ?? '';
     const jsonMatch = text.match(/\[[\s\S]*\]/);
     if (!jsonMatch) {
       throw new Error('No JSON found in variations response');

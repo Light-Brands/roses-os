@@ -70,7 +70,7 @@ export default function Level2Page() {
             {/* Sacred Space Section */}
             <section className="space-y-8">
               <h2 className="font-serif text-2xl text-[var(--color-foreground)]">
-                {t?.ui.preparingYourSpace ?? 'Preparing Your Space'}
+                {t?.ui.sacredSpace ?? 'Preparing Your Space'}
               </h2>
               {sacredSpaceSlides.map((slide, index) => (
                 <TeachingSlideCard
