@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Cormorant_Garamond, Inter } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 import { siteConfig, generateOrganizationSchema, JsonLd } from '@/lib/seo';
 import { ThemeProvider } from '@/lib/theme';
@@ -11,16 +11,26 @@ import { ScrollProgress } from '@/components/ui/ScrollProgress';
 import { ToastProvider } from '@/components/ui/Toast';
 import { PWAInstallPrompt } from '@/components/ui/PWAInstallPrompt';
 
-const cormorant = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+const cormorant = localFont({
+  src: [
+    { path: '../../public/fonts/CormorantGaramond-300.woff2', weight: '300', style: 'normal' },
+    { path: '../../public/fonts/CormorantGaramond-400.woff2', weight: '400', style: 'normal' },
+    { path: '../../public/fonts/CormorantGaramond-500.woff2', weight: '500', style: 'normal' },
+    { path: '../../public/fonts/CormorantGaramond-600.woff2', weight: '600', style: 'normal' },
+    { path: '../../public/fonts/CormorantGaramond-700.woff2', weight: '700', style: 'normal' },
+  ],
   display: 'swap',
   variable: '--font-serif',
 });
 
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+const inter = localFont({
+  src: [
+    { path: '../../public/fonts/Inter-300.woff2', weight: '300', style: 'normal' },
+    { path: '../../public/fonts/Inter-400.woff2', weight: '400', style: 'normal' },
+    { path: '../../public/fonts/Inter-500.woff2', weight: '500', style: 'normal' },
+    { path: '../../public/fonts/Inter-600.woff2', weight: '600', style: 'normal' },
+    { path: '../../public/fonts/Inter-700.woff2', weight: '700', style: 'normal' },
+  ],
   display: 'swap',
   variable: '--font-sans',
 });
