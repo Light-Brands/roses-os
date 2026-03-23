@@ -665,17 +665,17 @@ export const level3Slides: TeachingSlide[] = [
     concept: 'The Analyzer',
     teachingText:
       'The Analyzer is an advanced tool introduced in Level 3. It is an energetic point located at the back of the head, at the base of the skull (the occipital ridge / brainstem area). The Analyzer is used for deeper perception, reading, and discernment of energy — a tool for precise energetic analysis.',
-    reimaginedImage: 'level-3/39-analyzer.PNG',
+    reimaginedImage: 'level-3/39-analyzer.jpeg',
     level: 3,
     section: 'advanced',
   },
   {
     id: 'l3-analyzer-sacred-space',
     slideNumber: 40,
-    concept: 'The Analyzer & Sacred Space',
+    concept: 'Sacred Space Analyzer',
     teachingText:
       'A combined reference showing the Analyzer in relation to the sacred space. This image illustrates how the Analyzer — the energetic point at the base of the skull — operates within the context of the protected, cleansed sacred space established in Level 2. The two work together: the sacred space provides the container, and the Analyzer provides the perceptive tool for deeper energetic reading and discernment.',
-    reimaginedImage: 'level-3/40-analyzer-and-sacred-space.jpeg',
+    reimaginedImage: 'level-3/40-sacred-space-analyzer.jpeg',
     level: 3,
     section: 'advanced',
   },
