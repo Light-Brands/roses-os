@@ -576,7 +576,7 @@ export const level2CleansingSlides: TeachingSlide[] = [
     teachingText:
       'Each individual chakra is cleansed using roses. The roses address two dimensions:\n\n• Dynamics of the Past — Energetic patterns, imprints, and blockages carried from past experiences\n• Dynamics of the Present — Current energetic influences, relationships, and situations affecting the chakra',
     originalImage: 'level-2/33-cleansingeachchakra-original.jpg',
-    reimaginedImage: 'level-2/33-cleansing-each-chakra.jpeg',
+    reimaginedImage: 'level-2/33-cleansing-each-chakra.png',
     imageNote: 'Also see: 29a-chakracleansing-original.jpg',
     level: 2,
     section: 'cleansing',

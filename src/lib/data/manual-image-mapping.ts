@@ -58,7 +58,7 @@ export const level2ManualImages: ManualImageMapping = {
       title: 'Cleansing & Recovery',
       images: [
         { concept: 'Cleansing Each Aura Layer', slideNumber: 32, reimaginedImage: 'level-2/32-cleansing-each-layer.jpeg' },
-        { concept: 'Cleansing Each Chakra', slideNumber: 33, reimaginedImage: 'level-2/33-cleansing-each-chakra.jpeg' },
+        { concept: 'Cleansing Each Chakra', slideNumber: 33, reimaginedImage: 'level-2/33-cleansing-each-chakra.png' },
         { concept: 'Energy Recovery (Level 2)', slideNumber: 34, reimaginedImage: 'level-2/34-energy-recovery-rose.png' },
       ],
     },
