@@ -322,6 +322,12 @@ li::marker {
   color: #9E956B;
 }
 
+.elements-box ul ul {
+  columns: 1;
+  margin-left: 0.5cm;
+  margin-top: 0.1cm;
+}
+
 /* Image Placeholder */
 .image-placeholder {
   border: 2px dashed #C4B8AE;
@@ -696,10 +702,10 @@ LEVEL_2_HTML = """<!DOCTYPE html>
 
   <p style="font-size: 11pt; color: #3F3E3C;"><strong>Golden Sticky Roses</strong></p>
   <ul style="list-style: none; margin-left: 0.5cm; margin-bottom: 0.6cm;">
-    <li style="font-size: 10pt; color: #8C7E73;">Phase 1 &mdash; Chakra Placement</li>
-    <li style="font-size: 10pt; color: #8C7E73;">Phase 2 &mdash; Body Placement</li>
-    <li style="font-size: 10pt; color: #8C7E73;">Phase 3 &mdash; Full Body Coverage</li>
-    <li style="font-size: 10pt; color: #8C7E73;">Phase 4 &mdash; Integration</li>
+    <li style="font-size: 10pt; color: #8C7E73;">Golden Sticky Rose 1 &mdash; Cleansing the Chakras</li>
+    <li style="font-size: 10pt; color: #8C7E73;">Golden Sticky Rose 2 &mdash; Cleansing Through the Arms</li>
+    <li style="font-size: 10pt; color: #8C7E73;">Golden Sticky Rose 3 &mdash; Cleansing Through the Legs</li>
+    <li style="font-size: 10pt; color: #8C7E73;">Golden Sticky Rose 4 &mdash; Cleansing the Aura</li>
   </ul>
 
   <p style="font-size: 11pt; color: #3F3E3C;"><strong>Daily Meditation Elements</strong></p>
@@ -860,7 +866,14 @@ LEVEL_2_HTML = """<!DOCTYPE html>
   <ul>
     <li>Space protection</li>
     <li>Cleansing the Chakras and Aura Layers</li>
-    <li>Golden Sticky Roses</li>
+    <li>Golden Sticky Roses
+      <ul>
+        <li>First Rose: Crown to Root</li>
+        <li>Second Rose: Arms</li>
+        <li>Third Rose: Legs</li>
+        <li>Fourth Rose: Full Aura</li>
+      </ul>
+    </li>
   </ul>
 </div>
 
