@@ -322,6 +322,12 @@ li::marker {
   color: #9E956B;
 }
 
+.elements-box ul ul {
+  columns: 1;
+  margin-left: 0.5cm;
+  margin-top: 0.1cm;
+}
+
 /* Image Placeholder */
 .image-placeholder {
   border: 2px dashed #C4B8AE;
@@ -860,7 +866,14 @@ LEVEL_2_HTML = """<!DOCTYPE html>
   <ul>
     <li>Space protection</li>
     <li>Cleansing the Chakras and Aura Layers</li>
-    <li>Golden Sticky Roses</li>
+    <li>Golden Sticky Roses
+      <ul>
+        <li>First Rose: Crown to Root</li>
+        <li>Second Rose: Arms</li>
+        <li>Third Rose: Legs</li>
+        <li>Fourth Rose: Full Aura</li>
+      </ul>
+    </li>
   </ul>
 </div>
 
