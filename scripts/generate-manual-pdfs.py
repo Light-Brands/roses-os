@@ -696,10 +696,10 @@ LEVEL_2_HTML = """<!DOCTYPE html>
 
   <p style="font-size: 11pt; color: #3F3E3C;"><strong>Golden Sticky Roses</strong></p>
   <ul style="list-style: none; margin-left: 0.5cm; margin-bottom: 0.6cm;">
-    <li style="font-size: 10pt; color: #8C7E73;">Phase 1 &mdash; Chakra Placement</li>
-    <li style="font-size: 10pt; color: #8C7E73;">Phase 2 &mdash; Body Placement</li>
-    <li style="font-size: 10pt; color: #8C7E73;">Phase 3 &mdash; Full Body Coverage</li>
-    <li style="font-size: 10pt; color: #8C7E73;">Phase 4 &mdash; Integration</li>
+    <li style="font-size: 10pt; color: #8C7E73;">Golden Sticky Rose 1 &mdash; Cleansing the Chakras</li>
+    <li style="font-size: 10pt; color: #8C7E73;">Golden Sticky Rose 2 &mdash; Cleansing Through the Arms</li>
+    <li style="font-size: 10pt; color: #8C7E73;">Golden Sticky Rose 3 &mdash; Cleansing Through the Legs</li>
+    <li style="font-size: 10pt; color: #8C7E73;">Golden Sticky Rose 4 &mdash; Cleansing the Aura</li>
   </ul>
 
   <p style="font-size: 11pt; color: #3F3E3C;"><strong>Daily Meditation Elements</strong></p>
