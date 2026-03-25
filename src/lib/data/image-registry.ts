@@ -139,7 +139,7 @@ const manualOnlyImages: ImageEntry[] = [
 
   // Level 1&2
   { id: 'l12-cover', label: 'Levels 1&2 Cover', canonicalPath: '/scripts/pdf-manuals/images/manual-l12-cover-l12.png', scope: 'manual-only', manualLevels: [1, 2], manualFilename: 'manual-l12-cover-l12.png' },
-  { id: 'l12-four-roses', label: 'Four Roses (L1&2)', canonicalPath: '/scripts/pdf-manuals/images/manual-l12-four-roses.jpeg', scope: 'manual-only', manualLevels: [1, 2], manualFilename: 'manual-l12-four-roses.jpeg' },
+  { id: 'l12-four-roses', label: 'Four Roses (L1&2)', canonicalPath: '/scripts/pdf-manuals/images/manual-l12-four-roses.png', scope: 'manual-only', manualLevels: [1, 2], manualFilename: 'manual-l12-four-roses.png' },
   { id: 'l12-pink-rose', label: 'Pink Rose (L1&2)', canonicalPath: '/scripts/pdf-manuals/images/manual-l12-pink-rose.png', scope: 'manual-only', manualLevels: [1, 2], manualFilename: 'manual-l12-pink-rose.png' },
   { id: 'l12-sacred-space', label: 'Sacred Space', canonicalPath: '/scripts/pdf-manuals/images/manual-l12-sacred-space.png', scope: 'manual-only', manualLevels: [2], manualFilename: 'manual-l12-sacred-space.png' },
   { id: 'l12-room-preparation', label: 'Room Preparation', canonicalPath: '/scripts/pdf-manuals/images/manual-l12-room-preparation.png', scope: 'manual-only', manualLevels: [2], manualFilename: 'manual-l12-room-preparation.png' },
