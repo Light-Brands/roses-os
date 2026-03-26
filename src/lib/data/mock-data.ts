@@ -492,7 +492,7 @@ export const techniques: Technique[] = [
   { id: '6', title: 'Four Roses of Protection, Separation and Observation', description: 'Four roses placed at the edges of the aura serving as energetic sentinels for protection, separation, and observation.', level: 1, category: 'Protection' },
   { id: '7', title: 'Circuit of the Energies of Earth and Cosmos', description: 'Activate the dual flow of Earth and Cosmic energy through the body for transmutation, vitality, and spiritual information.', level: 1, category: 'Energy Circuit' },
   { id: '8', title: 'Cleansing Rose', description: 'A rose placed outside the aura to absorb and transmute foreign or stagnant energy from within your field.', level: 1, category: 'Cleansing' },
-  { id: '9', title: 'Recovery Rose', description: 'A rose that attracts and returns your own energy scattered throughout the universe back to you.', level: 1, category: 'Cleansing' },
+  { id: '9', title: 'Recovery Rose', description: 'A rose that attracts and returns your own energy scattered whatever it is back to you.', level: 1, category: 'Cleansing' },
   { id: '10', title: 'Pink Rose', description: 'An unrooted pink rose offered as a gift of well-being — for yourself or another person.', level: 1, category: 'Gift' },
   // Level 2 & 3 — placeholders until those manuals are modularized
   { id: '11', title: 'Sacred Space Creation', description: 'Creating an internal energetic environment that serves as your meditation home.', level: 1, category: 'Sacred Space' },
