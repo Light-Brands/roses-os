@@ -680,6 +680,15 @@ export const level3Slides: TeachingSlide[] = [
     section: 'advanced',
   },
   {
+    id: 'l3-5-bodies',
+    slideNumber: 40.5,
+    concept: 'The 5 Bodies & 5 Levels of Existence',
+    teachingText:
+      '1. Spiritual — On the spiritual level, every experience is valid. There is no value judgment here: suffering and adversity are understood as learning experiences. Everything that occurs has a spiritual reason for being. There is no right or wrong, no good or bad — it simply is. Within the spiritual body, we can perceive the deeper lessons one is choosing to experience in the present moment.\n\n2. Energetic — This is the realm of the subtle — where we vibrate, create frequencies, and the Aura takes form. It is the plane in which the Rose Meditation operates, where potentialities can be perceived and everything that will one day manifest in matter can already be felt. Yet it holds much more than that. It is the domain in which non-incarnated energies and entities act. And beyond that, when we create deep and meaningful relationships, it is within the energetic body that bonds are woven — cords that bind us to one another and through which we continue to feel each other beyond time and space.\n\n3. Mental — When subtle energies become denser, the first place we perceive them is in the world of ideas, thoughts, programs, and beliefs. Our mental body stores the ideas we have about the world and every element that exists in it (at all levels). Here we confront the reality perceived by the senses with the programs that — within us — dictate how the world should be.\n\n4. Emotional — The emotional body is where everything is felt. Within it are stored the imprints of emotions that have passed through us but have not yet been released. It is here that the weight of the traumas experienced throughout life resides. The emotional body connects with the physical body primarily through the organs, whose functioning shifts in response to the emotions we experience.\n\n5. Physical — This body is related to everything we experience in matter. It is the world perceived through the five senses: what we see, hear, touch, smell, and taste. The physical plane is the only plane perceived in the same way — objectively — by all people. For this reason, it serves as a reference point for verifying what is occurring across all other planes.',
+    level: 3,
+    section: 'advanced',
+  },
+  {
     id: 'l3-stick-of-agreements',
     slideNumber: 41,
     concept: 'Stick of Agreements',
