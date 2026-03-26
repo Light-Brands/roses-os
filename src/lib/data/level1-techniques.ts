@@ -208,7 +208,7 @@ export const level1Techniques: MeditationTechnique[] = [
         id: 'l1t-recovery-rose',
         title: 'Recovery Rose',
         description:
-          'Create another Rose, grounded outside your Aura, and call your energy back to this Rose. The Rose attracts your energy that is scattered throughout the universe like a vacuum cleaner or magnet. Explode the Rose out of your Aura, and receive your high vibrational and purified energy back to you.',
+          'Create another Rose, grounded outside your Aura, and call your energy back to this Rose. The Rose attracts your energy that is scattered whatever it is like a vacuum cleaner or magnet. Explode the Rose out of your Aura, and receive your high vibrational and purified energy back to you.',
       },
     ],
     linkedSlideIds: ['l1-cleansing-rose', 'l1-energy-recovery'],
