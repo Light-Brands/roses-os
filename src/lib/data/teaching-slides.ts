@@ -360,7 +360,7 @@ export const chakraSlides: ChakraSlideData[] = [
     coreStatement: 'I AM',
     focus: 'Stability — Safety — Embodiment',
     bodyLocation: 'Base of spine, Legs, Feet',
-    energy: 'Masculine — Survival / Foundation',
+    energy: 'Predominance of masculine energy — Survival / Foundation',
     balanced: [
       'Grounded presence',
       'Physical vitality',
@@ -390,7 +390,7 @@ export const chakraSlides: ChakraSlideData[] = [
     coreStatement: 'I FEEL',
     focus: 'Emotions — Creativity — Pleasure',
     bodyLocation: 'Lower abdomen, Sexual Organs',
-    energy: 'Feminine — Flow & Flexibility',
+    energy: 'Predominance of feminine energy — Flow & Flexibility',
     balanced: [
       'Emotional well-being',
       'Sensuality and intimacy',
@@ -420,7 +420,7 @@ export const chakraSlides: ChakraSlideData[] = [
     coreStatement: 'I CAN',
     focus: 'Personal Power — Self-Esteem — Drive',
     bodyLocation: 'Upper abdomen, Diaphragm',
-    energy: 'Masculine — Power & Transformation',
+    energy: 'Predominance of masculine energy — Power & Transformation',
     balanced: [
       'Confidence and motivation',
       'Responsible and disciplined',
@@ -450,7 +450,7 @@ export const chakraSlides: ChakraSlideData[] = [
     coreStatement: 'I LOVE',
     focus: 'Love — Compassion — Connection',
     bodyLocation: 'Center of chest, Heart, Lungs',
-    energy: 'Feminine — Bridge between physical & spiritual',
+    energy: 'Predominance of feminine energy — Bridge between physical & spiritual',
     balanced: [
       'Compassion and empathy',
       'Emotional openness',
@@ -468,7 +468,7 @@ export const chakraSlides: ChakraSlideData[] = [
       'Anahata — Love & Integration',
     reimaginedImage: 'level-2/28-heart-chakra.png',
     extraContent:
-      'Human Love & Divine Love:\n\nHuman Love — Statement: I LOVE — Conditional love, empathy, forgiveness, healthy relationships.\n\nDivine Love — Statement: I AM LOVE — Unconditional love, compassion, interconnectedness, divine and universal love.',
+      'Human Love & Divine Love:\n\nGreen — Human Love — Statement: I LOVE — Conditional love, empathy, forgiveness, healthy relationships.\n\nPink — Divine Love — Statement: I AM LOVE — Unconditional love, compassion, interconnectedness, divine and universal love.',
     level: 2,
     section: 'chakras',
   },
@@ -482,7 +482,7 @@ export const chakraSlides: ChakraSlideData[] = [
     coreStatement: 'I SPEAK AND I LISTEN',
     focus: 'Communication — Truth — Authenticity',
     bodyLocation: 'Throat, Neck, Jaw, Mouth',
-    energy: 'Masculine — Learning to align will with divine truth',
+    energy: 'Predominance of masculine energy — Learning to align will with divine truth',
     balanced: [
       'Clear, honest communication',
       'Authentic self-expression',
@@ -512,7 +512,7 @@ export const chakraSlides: ChakraSlideData[] = [
     coreStatement: 'I SEE',
     focus: 'Imagination — Perception — Visualization',
     bodyLocation: 'Forehead, Brow, Eye center',
-    energy: 'Feminine aspects of awareness',
+    energy: 'Predominance of feminine energy — Aspects of awareness',
     balanced: [
       'Clear seeing and intuition',
       'Good memory and imagination',
