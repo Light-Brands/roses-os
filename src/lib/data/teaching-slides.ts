@@ -611,7 +611,7 @@ export const level2CleansingSlides: TeachingSlide[] = [
     teachingText:
       'Four Golden Sticky Roses are used for deep energetic cleansing of the Aura, drawing out any foreign energies that still remain after the previous clearing. The first enters through the crown chakra, cleansing each chakra in succession down to the root.',
     originalImage: 'level-2/35-golden-sticky-1-original.jpg',
-    reimaginedImage: 'level-2/35-golden-sticky-1.jpg',
+    reimaginedImage: 'level-2/35-golden-sticky-1.png',
     imageNote: 'Add subtle arrows to indicate the direction of energy being drawn out by the golden sticky roses.',
     level: 2,
     section: 'golden-sticky',
@@ -647,7 +647,7 @@ export const level2CleansingSlides: TeachingSlide[] = [
     teachingText:
       'The fourth spans the full width of the Aura, descending through the entire energetic field. Upon completion, all four either explode outside the Aura or exit through the grounding cord, transmuting the collected energies away with them.',
     originalImage: 'level-2/38-golden-sticky-4-original.PNG',
-    reimaginedImage: 'level-2/38-golden-sticky-4.jpg',
+    reimaginedImage: 'level-2/38-golden-sticky-4.png',
     imageNote: 'Add subtle arrows to indicate the direction of energy release and golden light cascading through the body.',
     level: 2,
     section: 'golden-sticky',
