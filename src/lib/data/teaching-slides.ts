@@ -450,7 +450,7 @@ export const chakraSlides: ChakraSlideData[] = [
     coreStatement: 'I LOVE',
     focus: 'Love — Compassion — Connection',
     bodyLocation: 'Center of chest, Heart, Lungs',
-    energy: 'Bridge between physical & spiritual',
+    energy: 'Feminine — Bridge between physical & spiritual',
     balanced: [
       'Compassion and empathy',
       'Emotional openness',
@@ -468,7 +468,7 @@ export const chakraSlides: ChakraSlideData[] = [
       'Anahata — Love & Integration',
     reimaginedImage: 'level-2/28-heart-chakra.png',
     extraContent:
-      'Human Love & Spiritual Love:\n\nHuman Love — Statement: I LOVE — Empathy, compassion, forgiveness, healthy relationships, romantic and familial love.\n\nSpiritual Love — Statement: I AM LOVE — Unconditional compassion, interconnectedness, divine and universal love, oneness.',
+      'Human Love & Divine Love:\n\nHuman Love — Statement: I LOVE — Conditional love, empathy, forgiveness, healthy relationships.\n\nDivine Love — Statement: I AM LOVE — Unconditional love, compassion, interconnectedness, divine and universal love.',
     level: 2,
     section: 'chakras',
   },
@@ -482,7 +482,7 @@ export const chakraSlides: ChakraSlideData[] = [
     coreStatement: 'I SPEAK AND I LISTEN',
     focus: 'Communication — Truth — Authenticity',
     bodyLocation: 'Throat, Neck, Jaw, Mouth',
-    energy: 'Learning to align will with divine truth',
+    energy: 'Masculine — Learning to align will with divine truth',
     balanced: [
       'Clear, honest communication',
       'Authentic self-expression',
@@ -542,7 +542,7 @@ export const chakraSlides: ChakraSlideData[] = [
     coreStatement: 'I KNOW',
     focus: 'Spiritual Connection — Inner Wisdom — Higher States of Awareness',
     bodyLocation: 'Top of head',
-    energy: 'Transcending ego, merging with source',
+    energy: 'No duality — Transcending ego, merging with source',
     balanced: [
       'Spiritual faith and connection',
       'Inner peace, trust, and wisdom',

@@ -199,7 +199,7 @@ export default function ChakraSlideCard({ chakra, index = 0, className }: Chakra
           <p className="text-[var(--color-foreground-muted)] mt-0.5 font-medium">{blockages}</p>
         </div>
 
-        {/* Extra content (e.g. Heart Chakra's Human/Spiritual Love) */}
+        {/* Extra content (e.g. Heart Chakra's Human/Divine Love) */}
         {extraContent && (
           <div className="text-sm border-t border-[var(--color-border-subtle)] pt-3">
             <div className="text-[var(--color-foreground-muted)] whitespace-pre-line leading-relaxed">
