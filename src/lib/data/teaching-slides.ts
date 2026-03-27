@@ -134,7 +134,7 @@ export const level1Slides: TeachingSlide[] = [
   {
     id: 'l1-earth-circuit',
     slideNumber: 8,
-    concept: 'Circuit of the Energy of the Earth',
+    concept: 'Circuit of Energy of the Earth',
     teachingText:
       'The Earth circuit is an energetic pathway that draws the energy of the Earth upward through the feet, rising through the legs and into the body. This circuit connects you to the grounding, nourishing, stabilizing force of the planet.',
     reimaginedImage: 'level-1/08-earth-energy.PNG',
@@ -145,7 +145,7 @@ export const level1Slides: TeachingSlide[] = [
   {
     id: 'l1-cosmos-circuit',
     slideNumber: 9,
-    concept: 'Circuit of the Energy of the Cosmos',
+    concept: 'Circuit of Energy of the Cosmos',
     teachingText:
       'The Cosmic circuit is an energetic pathway that draws cosmic energy downward through the crown of the head (7th chakra) and into the body. This circuit connects you to the higher frequencies of universal consciousness, inspiration, and spiritual guidance.',
     originalImage: 'level-1/09-cosmos-original.PNG',
@@ -159,7 +159,7 @@ export const level1Slides: TeachingSlide[] = [
   {
     id: 'l1-combined-circuit',
     slideNumber: 10,
-    concept: 'Circuits of the Energy of Cosmos and Earth',
+    concept: 'Circuits of Energy of Cosmos & Earth',
     teachingText:
       'When both circuits are activated simultaneously, the energies of the Earth and Cosmos flow together through the body. Earth energy rises from below; Cosmic energy descends from above. They meet and blend within the body, creating a unified field of balanced, integrated energy.',
     reimaginedImage: 'level-1/10-cosmosearth.PNG',
