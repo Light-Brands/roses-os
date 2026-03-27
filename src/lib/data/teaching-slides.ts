@@ -189,7 +189,7 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'Roses are placed at the edges of the aura to serve as energetic sentinels. They perform three functions:\n\n1. Protection — They define and guard the boundary of your aura\n2. Observation — They help you notice what energies are approaching or interacting with your field\n3. Separation — They create healthy energetic distinction between your energy and the energy of others',
     originalImage: 'level-1/12-four-roses-original.PNG',
-    reimaginedImage: 'level-1/91B0784C-80FD-4416-90C1-42F554D385AE.png',
+    reimaginedImage: 'level-1/12-four-roses.png',
     level: 1,
     section: 'foundations',
   },
