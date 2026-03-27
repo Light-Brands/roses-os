@@ -36,7 +36,7 @@ export const level2ManualImages: ManualImageMapping = {
       images: [
         { concept: 'Prepare Physical Space', slideNumber: 19, reimaginedImage: 'level-2/19-physical-space-abstract.png' },
         { concept: 'Protection of the Space', slideNumber: 20, reimaginedImage: 'level-2/20-create-the-room.jpeg' },
-        { concept: 'Cleansing of the Space', slideNumber: 21, reimaginedImage: 'level-2/21-cleanse-the-space.png' },
+        { concept: 'Cleansing of the Space', slideNumber: 21, reimaginedImage: 'level-2/21-cleanse-the-space.jpeg' },
         { concept: 'Owning Your Space', slideNumber: 22, reimaginedImage: 'level-2/22-owning-space.jpeg', originalImage: 'level-2/22-protect-the-space-original.PNG' },
       ],
     },
@@ -96,7 +96,7 @@ export const level1ManualImages: ManualImageMapping = {
         { concept: 'Cosmos Circuit', slideNumber: 9, reimaginedImage: 'level-1/09-cosmos-circuit.jpeg' },
         { concept: 'Cosmos + Earth', slideNumber: 10, reimaginedImage: 'level-1/10-cosmosearth.PNG' },
         { concept: 'The Rose (Gold)', slideNumber: 11, reimaginedImage: 'level-1/11-therosegold.PNG' },
-        { concept: 'Four Roses', slideNumber: 12, reimaginedImage: 'level-1/91B0784C-80FD-4416-90C1-42F554D385AE.png' },
+        { concept: 'Four Roses', slideNumber: 12, reimaginedImage: 'level-1/12-four-roses.png' },
         { concept: 'Cleansing Rose', slideNumber: 13, reimaginedImage: 'level-1/13-cleansing-rose.png' },
         { concept: 'Recovery Rose', slideNumber: 14, reimaginedImage: 'level-1/14-energy-recovery.png' },
         { concept: 'Pink Rose', slideNumber: 15, reimaginedImage: 'level-1/15-pink-rose-closure.png' },
