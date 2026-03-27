@@ -189,7 +189,7 @@ export const level1Slides: TeachingSlide[] = [
     teachingText:
       'Roses are placed at the edges of the aura to serve as energetic sentinels. They perform three functions:\n\n1. Protection — They define and guard the boundary of your aura\n2. Observation — They help you notice what energies are approaching or interacting with your field\n3. Separation — They create healthy energetic distinction between your energy and the energy of others',
     originalImage: 'level-1/12-four-roses-original.PNG',
-    reimaginedImage: 'level-1/91B0784C-80FD-4416-90C1-42F554D385AE.png',
+    reimaginedImage: 'level-1/12-four-roses.png',
     level: 1,
     section: 'foundations',
   },
@@ -301,7 +301,7 @@ export const level2Slides: TeachingSlide[] = [
     teachingText:
       'With protection established, the cleansing follows. A Golden Rose is set above the grid and passed downward through its entire structure, removing any foreign, stagnant, or disruptive energies inside the room. This Rose comes down to be transmuted in the center of the earth through the Grounding Cord of the room.',
     originalImage: 'level-2/21-cleansing-space-original.PNG',
-    reimaginedImage: 'level-2/21-cleanse-the-space.png',
+    reimaginedImage: 'level-2/21-cleanse-the-space.jpeg',
     imageNote:
       'The room should show its own grounding cord expanding within the space. The grounding cord should be clear and transparent so people understand the cord also expands within the room — same visual direction as slide 23.',
     level: 2,
