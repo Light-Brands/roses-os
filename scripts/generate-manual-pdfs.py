@@ -507,7 +507,7 @@ LEVEL_1_HTML = """<!DOCTYPE html>
   <div class="ph-icon">&#9702;</div>
   <p class="ph-label">Illustration — Four Roses</p>
   <p class="ph-desc">Roses placed at the edges of the aura — in front, behind, to the left and to the right — serving as energetic sentinels. They define and guard the boundary of your aura.</p>
-  <p class="ph-ref">Ref: Slide 12 — Roses of Protection, Observation and Separation</p>
+  <p class="ph-ref">Ref: Slide 12 — Four Roses of Protection, Separation and Observation</p>
 </div>
 
 <p>Create four Roses of the color of your choice or the color that comes to you (as long as they are high-vibration, each one can have a color) grounded on the outside of your Aura (in front, behind, to the left and to the right). Each of the four Roses fulfills the same three functions: protection, separation and observation. At any time of the day, or whenever we meditate, we blow up the four Roses and create new ones. They help us maintain neutrality.</p>
@@ -523,7 +523,7 @@ LEVEL_1_HTML = """<!DOCTYPE html>
 
 <!-- ENERGY CIRCUITS -->
 <div class="page-break"></div>
-<h2>Circuit of the Energies of The Earth and The Cosmos</h2>
+<h2>Circuits of the Energy of Cosmos and Earth</h2>
 
 <p>Both the energy of the Earth and of the Cosmos continue to circulate in a constant flow as they enter, pass through their paths and leave. This activation raises our vibration, promotes energetic unblocking, brings up issues to resolve and provides spiritual information.</p>
 
