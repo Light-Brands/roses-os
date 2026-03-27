@@ -647,7 +647,7 @@ export const level2CleansingSlides: TeachingSlide[] = [
     teachingText:
       'The fourth spans the full width of the Aura, descending through the entire energetic field. Upon completion, all four either explode outside the Aura or exit through the grounding cord, transmuting the collected energies away with them.',
     originalImage: 'level-2/38-golden-sticky-4-original.PNG',
-    reimaginedImage: 'level-2/38-golden-sticky-4.png',
+    reimaginedImage: 'level-2/38-golden-sticky-4.jpeg',
     imageNote: 'Add subtle arrows to indicate the direction of energy release and golden light cascading through the body.',
     level: 2,
     section: 'golden-sticky',

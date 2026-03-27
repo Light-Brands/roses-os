@@ -68,7 +68,7 @@ export const level2ManualImages: ManualImageMapping = {
         { concept: 'Golden Sticky Roses — Phase 1', slideNumber: 35, reimaginedImage: 'level-2/35-golden-sticky-1.png' },
         { concept: 'Golden Sticky Roses — Phase 2', slideNumber: 36, reimaginedImage: 'level-2/36-golden-sticky-2.jpg' },
         { concept: 'Golden Sticky Roses — Phase 3', slideNumber: 37, reimaginedImage: 'level-2/37-golden-sticky-3.jpg' },
-        { concept: 'Golden Sticky Roses — Phase 4', slideNumber: 38, reimaginedImage: 'level-2/38-golden-sticky-4.png' },
+        { concept: 'Golden Sticky Roses — Phase 4', slideNumber: 38, reimaginedImage: 'level-2/38-golden-sticky-4.jpeg' },
       ],
     },
   ],
