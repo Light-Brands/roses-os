@@ -159,7 +159,7 @@ export const level1Slides: TeachingSlide[] = [
   {
     id: 'l1-combined-circuit',
     slideNumber: 10,
-    concept: 'Circuit of Energy of Cosmos and Earth',
+    concept: 'Circuits of the Energy of Cosmos and Earth',
     teachingText:
       'When both circuits are activated simultaneously, the energies of the Earth and Cosmos flow together through the body. Earth energy rises from below; Cosmic energy descends from above. They meet and blend within the body, creating a unified field of balanced, integrated energy.',
     reimaginedImage: 'level-1/10-cosmosearth.PNG',
@@ -185,9 +185,9 @@ export const level1Slides: TeachingSlide[] = [
   {
     id: 'l1-four-roses',
     slideNumber: 12,
-    concept: 'Roses of Protection, Observation and Separation',
+    concept: 'Four Roses of Protection, Separation and Observation',
     teachingText:
-      'Roses are placed at the edges of the aura to serve as energetic sentinels. They perform three functions:\n\n1. Protection — They define and guard the boundary of your aura\n2. Observation — They help you notice what energies are approaching or interacting with your field\n3. Separation — They create healthy energetic distinction between your energy and the energy of others',
+      'Roses are placed at the edges of the aura to serve as energetic sentinels. They perform three functions:\n\n1. Protection — They define and guard the boundary of your aura\n2. Separation — They create healthy energetic distinction between your energy and the energy of others\n3. Observation — They help you notice what energies are approaching or interacting with your field',
     originalImage: 'level-1/12-four-roses-original.PNG',
     reimaginedImage: 'level-1/12-four-roses.png',
     level: 1,

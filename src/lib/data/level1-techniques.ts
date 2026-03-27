@@ -141,7 +141,7 @@ export const level1Techniques: MeditationTechnique[] = [
   {
     id: 'l1t-energy-circuit',
     order: 7,
-    title: 'Circuit of the Energies of The Earth and The Cosmos',
+    title: 'Circuits of the Energy of Cosmos and Earth',
     level: 1,
     category: 'energy-circuit',
     description:
