@@ -463,7 +463,7 @@ export const chakraSlides: ChakraSlideData[] = [
       'Cold or detachment',
       'Difficulty forgiving',
     ],
-    blockages: 'Grief — Betrayal — Heartbreak',
+    blockages: 'Grief — Betrayal — Heartbreak — Loss — Lack of Self-Love — Disconnection from Spirit',
     teachingText:
       'Anahata — Love & Integration',
     reimaginedImage: 'level-2/28-heart-chakra.png',

@@ -241,7 +241,7 @@ The chakra system is the energetic anatomy of the human body. There are seven pr
 | Color | Red |
 | Element | Earth |
 | Body Location | Base of spine, Legs, Feet |
-| Energy | Masculine -- Survival / Foundation |
+| Energy | Predominance of masculine energy -- Survival / Foundation |
 
 **Focus:** Stability -- Safety -- Embodiment
 
@@ -266,7 +266,7 @@ The chakra system is the energetic anatomy of the human body. There are seven pr
 | Color | Orange |
 | Element | Water |
 | Body Location | Lower abdomen, Sexual Organs |
-| Energy | Feminine -- Flow & Flexibility |
+| Energy | Predominance of feminine energy -- Flow & Flexibility |
 
 **Focus:** Emotions -- Creativity -- Pleasure
 
@@ -291,7 +291,7 @@ The chakra system is the energetic anatomy of the human body. There are seven pr
 | Color | Yellow |
 | Element | Fire |
 | Body Location | Upper abdomen, Diaphragm |
-| Energy | Masculine -- Power & Transformation |
+| Energy | Predominance of masculine energy -- Power & Transformation |
 
 **Focus:** Personal Power -- Self-Esteem -- Drive
 
@@ -316,7 +316,7 @@ The chakra system is the energetic anatomy of the human body. There are seven pr
 | Color | Green (Human Love) / Pink (Divine / Unconditional Love) |
 | Element | Air |
 | Body Location | Center of chest, Heart, Lungs |
-| Energy | Bridge between physical & spiritual |
+| Energy | Predominance of feminine energy -- Bridge between physical & spiritual |
 
 **Focus:** Love -- Compassion -- Connection
 
@@ -357,7 +357,7 @@ The Heart Chakra holds two dimensions:
 | Color | Light Blue |
 | Element | Ether / Sound |
 | Body Location | Throat, Neck, Jaw, Mouth |
-| Energy | Learning to align will with divine truth |
+| Energy | Predominance of masculine energy -- Learning to align will with divine truth |
 
 **Focus:** Communication -- Truth -- Authenticity
 
@@ -384,7 +384,7 @@ The Heart Chakra holds two dimensions:
 | Color | Indigo |
 | Element | Light |
 | Body Location | Forehead, Brow, Eye center |
-| Energy | Feminine aspects of awareness |
+| Energy | Predominance of feminine energy -- Aspects of awareness |
 
 **Focus:** Imagination -- Perception -- Visualization
 
@@ -397,7 +397,7 @@ The Heart Chakra holds two dimensions:
 | Inner location | Disconnection with inner guidance |
 | Wisdom and vision | Escaping reality or spiritual bypassing |
 
-**Primary Blockages:** Suppressed Truth -- Fear of Expression -- Miscommunication
+**Primary Blockages:** Illusion -- Fear of Seeing -- Mental Rigidity
 
 ---
 
@@ -411,7 +411,7 @@ The Heart Chakra holds two dimensions:
 | Color | Violet & White |
 | Element | Thought & Universal Connection |
 | Body Location | Top of head |
-| Energy | Transcending ego, merging with source |
+| Energy | No duality -- Transcending ego, merging with source |
 
 **Focus:** Spiritual Connection -- Inner Wisdom -- Higher States of Awareness
 
