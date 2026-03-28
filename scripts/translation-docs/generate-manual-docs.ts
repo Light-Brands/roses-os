@@ -31,7 +31,7 @@ import {
 const SCRIPTS_DIR = path.resolve(__dirname, '..');
 const PDF_MANUALS_DIR = path.join(SCRIPTS_DIR, 'pdf-manuals');
 const IMAGES_DIR = path.join(PDF_MANUALS_DIR, 'images');
-const OUTPUT_DIR = path.join(__dirname, 'output');
+const OUTPUT_DIR = path.resolve(__dirname, '../../public/resources/manuals');
 
 const ROSE_CLAY = '9C6F6E';
 const GOLD = '9E956B';
