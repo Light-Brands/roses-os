@@ -81,10 +81,8 @@ Anyone with a PIN can download a manual in three formats:
 
 ---
 
-## Open Questions
+## Decisions Made
 
-Before we start building, a few things to decide:
-
-1. **Starting content** — Should we automatically pull in the existing manual text, or start fresh and let editors paste content in?
-2. **Translations** — Should editors translate directly in the system, or work in a separate tool and import?
-3. **Change awareness** — Should editors see when someone else has recently edited the same manual?
+1. **Starting content** — Pull in existing manual text automatically so editors aren't starting from scratch.
+2. **Translations** — Editors translate directly in the system. Pick a language, edit in place.
+3. **Change awareness** — The system will show when someone has recently edited a manual (e.g. "Last edited by Editor 2, 10 minutes ago") so collaborators stay aware of each other's work.
