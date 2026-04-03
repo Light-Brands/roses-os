@@ -30,9 +30,18 @@ export async function POST(request: NextRequest) {
     const editorSetting = settings?.find((s) => s.key === 'manual_editor_pin');
     const teacherSetting = settings?.find((s) => s.key === 'manual_teacher_pin');
 
-    // Parse stored PIN values (stored as JSON strings, e.g. '"1234"')
-    const editorPin = editorSetting ? JSON.parse(String(editorSetting.value)) : null;
-    const teacherPin = teacherSetting ? JSON.parse(String(teacherSetting.value)) : null;
+    // Extract PIN from JSONB value — may be stored as "1234" (JSON string) or just 1234
+    const extractPin = (val: unknown): string | null => {
+      if (val === null || val === undefined) return null;
+      // If it's already a string (JSONB text), return it directly
+      if (typeof val === 'string') return val;
+      // If it's a number, convert to string
+      if (typeof val === 'number') return String(val);
+      return String(val);
+    };
+
+    const editorPin = editorSetting ? extractPin(editorSetting.value) : null;
+    const teacherPin = teacherSetting ? extractPin(teacherSetting.value) : null;
 
     if (pin === editorPin) {
       return NextResponse.json({ success: true, role: 'editor' });

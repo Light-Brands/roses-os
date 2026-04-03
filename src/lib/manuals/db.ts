@@ -141,9 +141,11 @@ export async function getSetting(key: string): Promise<string | null> {
     .single();
 
   if (error) return null;
-  // Settings values are stored as JSON strings (e.g. '"1234"')
   const val = data.value;
-  return typeof val === 'string' ? val : JSON.stringify(val);
+  if (val === null || val === undefined) return null;
+  if (typeof val === 'string') return val;
+  if (typeof val === 'number') return String(val);
+  return String(val);
 }
 
 /** Update a setting value */
