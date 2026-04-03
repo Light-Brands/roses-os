@@ -26,7 +26,6 @@ export default function HeadingBlock({ content, onChange, onLevelChange, readOnl
     }
   };
 
-  const Tag = content.level === 1 ? 'h1' : content.level === 2 ? 'h2' : 'h3';
   const sizeClasses = {
     1: 'text-3xl md:text-4xl font-semibold',
     2: 'text-2xl md:text-3xl font-semibold',
@@ -34,19 +33,25 @@ export default function HeadingBlock({ content, onChange, onLevelChange, readOnl
   };
 
   return (
-    <div className="group relative">
-      {/* Level selector — only for editors */}
+    <div className="group/heading relative">
+      {/* Level toggle buttons — top-right, visible on hover */}
       {!readOnly && (
-        <div className="absolute -left-10 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity">
-          <select
-            value={content.level}
-            onChange={(e) => onLevelChange(Number(e.target.value) as 1 | 2 | 3)}
-            className="text-xs bg-[var(--color-background-subtle)] border border-[var(--color-border)] rounded px-1 py-0.5 text-[var(--color-foreground-muted)]"
-          >
-            <option value={1}>H1</option>
-            <option value={2}>H2</option>
-            <option value={3}>H3</option>
-          </select>
+        <div className="absolute -top-1 right-0 opacity-0 group-focus-within/heading:opacity-100 group-hover/heading:opacity-100 transition-opacity z-10 flex gap-0.5 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg px-0.5 py-0.5 shadow-sm">
+          {([1, 2, 3] as const).map((level) => (
+            <button
+              key={level}
+              type="button"
+              onMouseDown={(e) => { e.preventDefault(); onLevelChange(level); }}
+              className={cn(
+                'text-xs font-semibold w-7 h-6 rounded-md flex items-center justify-center transition-all duration-100',
+                content.level === level
+                  ? 'bg-[var(--color-rose-clay)] text-white'
+                  : 'text-[var(--color-foreground-muted)] hover:bg-[var(--color-background-subtle)] hover:text-[var(--color-foreground)]'
+              )}
+            >
+              H{level}
+            </button>
+          ))}
         </div>
       )}
 
@@ -60,10 +65,10 @@ export default function HeadingBlock({ content, onChange, onLevelChange, readOnl
           'font-serif tracking-tight text-[var(--color-foreground)] outline-none',
           sizeClasses[content.level],
           'empty:before:content-[attr(data-placeholder)] empty:before:text-[var(--color-foreground-faint)]',
-          !readOnly && 'hover:bg-[var(--color-background-subtle)]/50 focus:bg-[var(--color-background-subtle)]/50 rounded-lg px-2 -mx-2 py-1 transition-colors'
+          !readOnly && 'rounded-lg px-3 -mx-3 py-1.5 transition-colors border border-transparent hover:border-[var(--color-border)]/50 focus:border-[var(--color-rose-clay)]/30 focus:bg-[var(--color-rose-50)]/30 dark:focus:bg-[var(--color-rose-950)]/20'
         )}
         role={readOnly ? undefined : 'textbox'}
-        aria-label={`${Tag} heading`}
+        aria-label="Heading"
       />
     </div>
   );

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import { cn } from '@/lib/utils';
 import type { ImageContent } from '@/lib/manuals/types';
 
@@ -13,9 +13,10 @@ interface ImageBlockProps {
 export default function ImageBlock({ content, onChange, readOnly }: ImageBlockProps) {
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [dragOver, setDragOver] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const handleUpload = async (file: File) => {
+  const handleUpload = useCallback(async (file: File) => {
     setUploading(true);
     setError(null);
 
@@ -41,12 +42,21 @@ export default function ImageBlock({ content, onChange, readOnly }: ImageBlockPr
     } finally {
       setUploading(false);
     }
-  };
+  }, [content, onChange]);
 
   const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) handleUpload(file);
   };
+
+  const handleDrop = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    setDragOver(false);
+    const file = e.dataTransfer.files[0];
+    if (file && file.type.startsWith('image/')) {
+      handleUpload(file);
+    }
+  }, [handleUpload]);
 
   // Empty state — upload prompt
   if (!content.src) {
@@ -55,19 +65,29 @@ export default function ImageBlock({ content, onChange, readOnly }: ImageBlockPr
     return (
       <div
         onClick={() => fileInputRef.current?.click()}
+        onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
+        onDragLeave={() => setDragOver(false)}
+        onDrop={handleDrop}
         className={cn(
           'flex flex-col items-center justify-center',
-          'border-2 border-dashed border-[var(--color-border)] rounded-xl',
-          'py-12 px-6 cursor-pointer',
-          'hover:border-[var(--color-rose-clay)]/40 hover:bg-[var(--color-background-subtle)]/50',
-          'transition-colors duration-200'
+          'border-2 border-dashed rounded-xl',
+          'py-10 px-6 cursor-pointer',
+          'transition-all duration-200',
+          dragOver
+            ? 'border-[var(--color-rose-clay)] bg-[var(--color-rose-50)]/50 dark:bg-[var(--color-rose-950)]/20 scale-[1.01]'
+            : 'border-[var(--color-border)] hover:border-[var(--color-rose-clay)]/40 hover:bg-[var(--color-background-subtle)]/50'
         )}
       >
-        <svg className="w-8 h-8 text-[var(--color-foreground-faint)] mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
+        <svg className="w-10 h-10 text-[var(--color-foreground-faint)] mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
+          <rect x="3" y="3" width="18" height="18" rx="2" />
+          <circle cx="8.5" cy="8.5" r="1.5" />
+          <path d="M21 15l-5-5L5 21" />
         </svg>
-        <p className="text-sm text-[var(--color-foreground-muted)]">
-          {uploading ? 'Uploading...' : 'Click to upload an image'}
+        <p className="text-sm font-medium text-[var(--color-foreground-muted)] mb-1">
+          {uploading ? 'Uploading...' : dragOver ? 'Drop to upload' : 'Click or drag to upload'}
+        </p>
+        <p className="text-xs text-[var(--color-foreground-faint)]">
+          JPEG, PNG, WebP or GIF up to 5MB
         </p>
         {error && <p className="text-xs text-[var(--color-error)] mt-2">{error}</p>}
         <input
@@ -83,7 +103,7 @@ export default function ImageBlock({ content, onChange, readOnly }: ImageBlockPr
 
   // Image with caption
   return (
-    <div className="group relative">
+    <div className="group/img relative">
       <div className="rounded-xl overflow-hidden bg-[var(--color-background-muted)]">
         <img
           src={content.src}
@@ -107,21 +127,21 @@ export default function ImageBlock({ content, onChange, readOnly }: ImageBlockPr
               value={content.caption || ''}
               onChange={(e) => onChange({ ...content, caption: e.target.value })}
               placeholder="Add a caption..."
-              className="w-full text-sm text-center text-[var(--color-foreground-muted)] italic bg-transparent outline-none placeholder:text-[var(--color-foreground-faint)]"
+              className="w-full text-sm text-center text-[var(--color-foreground-muted)] italic bg-transparent outline-none border-b border-transparent focus:border-[var(--color-border)] pb-1 transition-colors placeholder:text-[var(--color-foreground-faint)]"
             />
           )}
         </div>
       )}
 
-      {/* Replace image button */}
+      {/* Replace / alt text controls */}
       {!readOnly && (
-        <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+        <div className="absolute top-3 right-3 flex gap-2 opacity-0 group-hover/img:opacity-100 transition-opacity">
           <button
             type="button"
             onClick={() => fileInputRef.current?.click()}
-            className="text-xs bg-black/60 text-white px-3 py-1.5 rounded-lg hover:bg-black/80 transition-colors"
+            className="text-xs bg-black/60 backdrop-blur-sm text-white px-3 py-1.5 rounded-lg hover:bg-black/80 transition-colors shadow-sm"
           >
-            {uploading ? 'Uploading...' : 'Replace'}
+            {uploading ? 'Uploading...' : 'Replace image'}
           </button>
           <input
             ref={fileInputRef}
