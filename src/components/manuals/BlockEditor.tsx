@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Reorder, useDragControls } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import type { ManualBlock, ManualLanguage, BlockType, BlockContent, HeadingContent, TextContent, ImageContent } from '@/lib/manuals/types';
 import HeadingBlock from './blocks/HeadingBlock';
@@ -31,6 +31,67 @@ function getDefaultContent(type: BlockType): BlockContent {
   }
 }
 
+/** Wrapper per block so each can call useDragControls at the top level */
+function SortableBlockItem({
+  block,
+  index,
+  totalBlocks,
+  renderBlock,
+  onDelete,
+  onMoveBlock,
+  onDuplicate,
+  onAddBlock,
+  readOnly,
+}: {
+  block: ManualBlock;
+  index: number;
+  totalBlocks: number;
+  renderBlock: (block: ManualBlock) => React.ReactNode;
+  onDelete: (blockId: string) => void;
+  onMoveBlock: (index: number, direction: 'up' | 'down') => void;
+  onDuplicate: (index: number) => void;
+  onAddBlock: (type: BlockType, afterIndex: number) => void;
+  readOnly: boolean;
+}) {
+  const dragControls = useDragControls();
+
+  return (
+    <Reorder.Item
+      value={block}
+      dragListener={false}
+      dragControls={dragControls}
+      as="div"
+      layout
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.2 }}
+      whileDrag={{
+        scale: 1.02,
+        boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
+        zIndex: 50,
+      }}
+    >
+      <BlockWrapper
+        blockType={block.block_type}
+        onDelete={() => onDelete(block.id)}
+        onMoveUp={() => onMoveBlock(index, 'up')}
+        onMoveDown={() => onMoveBlock(index, 'down')}
+        onDuplicate={() => onDuplicate(index)}
+        isFirst={index === 0}
+        isLast={index === totalBlocks - 1}
+        readOnly={readOnly}
+        dragControls={readOnly ? undefined : dragControls}
+      >
+        {renderBlock(block)}
+      </BlockWrapper>
+
+      {!readOnly && (
+        <AddBlockMenu onAdd={(type) => onAddBlock(type, index)} />
+      )}
+    </Reorder.Item>
+  );
+}
+
 export default function BlockEditor({ manualId, language, readOnly, onBlocksChange }: BlockEditorProps) {
   const [blocks, setBlocks] = useState<ManualBlock[]>([]);
   const [loading, setLoading] = useState(true);
@@ -38,6 +99,24 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
   const [lastEditInfo, setLastEditInfo] = useState<{ updated_by: string | null; updated_at: string } | null>(null);
   const saveTimeoutRef = useRef<Record<string, NodeJS.Timeout>>({});
   const blockCount = blocks.length;
+  const reorderTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Drag reorder: update state immediately, debounce API call
+  const handleDragReorder = useCallback((newBlocks: ManualBlock[]) => {
+    setBlocks(newBlocks);
+    if (reorderTimeoutRef.current) clearTimeout(reorderTimeoutRef.current);
+    reorderTimeoutRef.current = setTimeout(async () => {
+      try {
+        await fetch(`/api/manuals/${manualId}/blocks/reorder`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ block_ids: newBlocks.map((b) => b.id), updated_by: 'Editor' }),
+        });
+      } catch {
+        // Will self-correct on next page load
+      }
+    }, 300);
+  }, [manualId]);
 
   // Fetch blocks
   useEffect(() => {
@@ -308,35 +387,22 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
           <AddBlockMenu onAdd={(type) => handleAddBlock(type, -1)} />
         )}
 
-        <AnimatePresence initial={false}>
+        <Reorder.Group as="div" axis="y" values={blocks} onReorder={handleDragReorder}>
           {blocks.map((block, index) => (
-            <motion.div
+            <SortableBlockItem
               key={block.id}
-              layout
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.2 }}
-            >
-              <BlockWrapper
-                blockType={block.block_type}
-                onDelete={() => handleDeleteBlock(block.id)}
-                onMoveUp={() => handleMoveBlock(index, 'up')}
-                onMoveDown={() => handleMoveBlock(index, 'down')}
-                onDuplicate={() => handleDuplicateBlock(index)}
-                isFirst={index === 0}
-                isLast={index === blocks.length - 1}
-                readOnly={readOnly}
-              >
-                {renderBlock(block)}
-              </BlockWrapper>
-
-              {!readOnly && (
-                <AddBlockMenu onAdd={(type) => handleAddBlock(type, index)} />
-              )}
-            </motion.div>
+              block={block}
+              index={index}
+              totalBlocks={blocks.length}
+              renderBlock={renderBlock}
+              onDelete={handleDeleteBlock}
+              onMoveBlock={handleMoveBlock}
+              onDuplicate={handleDuplicateBlock}
+              onAddBlock={handleAddBlock}
+              readOnly={readOnly}
+            />
           ))}
-        </AnimatePresence>
+        </Reorder.Group>
 
         {/* Empty state */}
         {blocks.length === 0 && (

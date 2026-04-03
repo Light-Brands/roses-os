@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import type { DragControls } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 interface BlockWrapperProps {
@@ -13,6 +14,7 @@ interface BlockWrapperProps {
   isFirst: boolean;
   isLast: boolean;
   readOnly: boolean;
+  dragControls?: DragControls;
 }
 
 const TYPE_LABELS: Record<string, string> = {
@@ -33,8 +35,24 @@ export default function BlockWrapper({
   isFirst,
   isLast,
   readOnly,
+  dragControls,
 }: BlockWrapperProps) {
   const [confirmDelete, setConfirmDelete] = useState(false);
+  const [showActions, setShowActions] = useState(false);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const pointerStartRef = useRef<{ x: number; y: number } | null>(null);
+
+  // Close action menu on outside tap/click
+  useEffect(() => {
+    if (!showActions) return;
+    function handleOutside(e: PointerEvent) {
+      if (wrapperRef.current && !wrapperRef.current.contains(e.target as Node)) {
+        setShowActions(false);
+      }
+    }
+    document.addEventListener('pointerdown', handleOutside);
+    return () => document.removeEventListener('pointerdown', handleOutside);
+  }, [showActions]);
 
   if (readOnly) {
     return <div className="py-2">{children}</div>;
@@ -55,17 +73,20 @@ export default function BlockWrapper({
   };
 
   return (
-    <div className="group/block relative py-1.5">
+    <div ref={wrapperRef} className="group/block relative py-1.5">
       {/* Hover highlight bar */}
       <div className="absolute -left-3 top-0 bottom-0 w-0.5 rounded-full bg-transparent group-hover/block:bg-[var(--color-rose-clay)]/30 transition-colors duration-200" />
 
-      {/* Toolbar — appears on hover, positioned to the right */}
+      {/* Action toolbar: hover on desktop, tap drag handle on touch */}
       <div className={cn(
-        'absolute -right-2 top-1 translate-x-full',
+        'absolute right-0 -top-1 -translate-y-full',
         'flex items-center gap-0.5 px-1.5 py-1',
         'bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg shadow-sm',
-        'opacity-0 group-hover/block:opacity-100 transition-all duration-150',
-        'z-10'
+        'transition-all duration-150',
+        'z-10',
+        showActions
+          ? 'opacity-100 pointer-events-auto'
+          : 'opacity-0 pointer-events-none group-hover/block:opacity-100 group-hover/block:pointer-events-auto'
       )}>
         {/* Type label */}
         <span className="text-[10px] text-[var(--color-foreground-faint)] font-medium px-1.5 mr-0.5 select-none">
@@ -146,7 +167,48 @@ export default function BlockWrapper({
         </button>
       </div>
 
-      {children}
+      {/* Content row with drag handle */}
+      <div className="flex items-stretch">
+        <div className="flex-1 min-w-0">{children}</div>
+
+        {/* Drag handle: always visible, grab to reorder, tap for action menu */}
+        {dragControls && (
+          <div
+            className={cn(
+              'flex-shrink-0 w-8 flex flex-col items-center justify-center cursor-grab active:cursor-grabbing',
+              'text-[var(--color-foreground-faint)] hover:text-[var(--color-foreground-muted)]',
+              'rounded-r-lg hover:bg-[var(--color-background-subtle)]',
+              'opacity-50 hover:opacity-100 transition-opacity duration-150 select-none'
+            )}
+            onPointerDown={(e) => {
+              pointerStartRef.current = { x: e.clientX, y: e.clientY };
+              setShowActions(false);
+              dragControls.start(e);
+            }}
+            onClick={(e) => {
+              // Only toggle action menu if this was a tap, not a drag
+              if (pointerStartRef.current) {
+                const dx = Math.abs(e.clientX - pointerStartRef.current.x);
+                const dy = Math.abs(e.clientY - pointerStartRef.current.y);
+                if (dx > 5 || dy > 5) return;
+              }
+              setShowActions((prev) => !prev);
+            }}
+            style={{ touchAction: 'none' }}
+            title="Drag to reorder, tap for actions"
+          >
+            {/* Six-dot grip pattern */}
+            <svg className="w-4 h-6" viewBox="0 0 16 24" fill="currentColor">
+              <circle cx="5" cy="4" r="1.5" />
+              <circle cx="11" cy="4" r="1.5" />
+              <circle cx="5" cy="12" r="1.5" />
+              <circle cx="11" cy="12" r="1.5" />
+              <circle cx="5" cy="20" r="1.5" />
+              <circle cx="11" cy="20" r="1.5" />
+            </svg>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
