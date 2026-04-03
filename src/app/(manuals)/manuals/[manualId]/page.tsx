@@ -6,7 +6,8 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { useManualAuth } from '@/components/manuals/ManualPinGate';
 import BlockEditor from '@/components/manuals/BlockEditor';
-import type { Manual, ManualLanguage } from '@/lib/manuals/types';
+import DownloadMenu from '@/components/manuals/DownloadMenu';
+import type { Manual, ManualBlock, ManualLanguage } from '@/lib/manuals/types';
 import { MANUAL_LANGUAGES } from '@/lib/manuals/types';
 
 export default function ManualEditorPage() {
@@ -15,6 +16,7 @@ export default function ManualEditorPage() {
   const { isEditor } = useManualAuth();
 
   const [manual, setManual] = useState<Manual | null>(null);
+  const [blocks, setBlocks] = useState<ManualBlock[]>([]);
   const [language, setLanguage] = useState<ManualLanguage>('en');
   const [loading, setLoading] = useState(true);
 
@@ -55,6 +57,8 @@ export default function ManualEditorPage() {
     );
   }
 
+  const filename = `${manual.slug}-${language}`;
+
   return (
     <div className="min-h-screen bg-[var(--color-background)]">
       {/* Header */}
@@ -76,6 +80,13 @@ export default function ManualEditorPage() {
         </div>
 
         <div className="flex items-center gap-3">
+          {/* Download menu */}
+          <DownloadMenu
+            blocks={blocks}
+            title={manual.title}
+            filename={filename}
+          />
+
           {/* Role badge */}
           <span className={cn(
             'text-xs px-3 py-1 rounded-full font-medium',
@@ -117,6 +128,7 @@ export default function ManualEditorPage() {
           manualId={manualId}
           language={language}
           readOnly={!isEditor}
+          onBlocksChange={setBlocks}
         />
       </main>
     </div>

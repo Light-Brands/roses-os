@@ -16,6 +16,7 @@ interface BlockEditorProps {
   manualId: string;
   language: ManualLanguage;
   readOnly: boolean;
+  onBlocksChange?: (blocks: ManualBlock[]) => void;
 }
 
 type SaveStatus = 'saved' | 'saving' | 'unsaved' | 'error';
@@ -30,7 +31,7 @@ function getDefaultContent(type: BlockType): BlockContent {
   }
 }
 
-export default function BlockEditor({ manualId, language, readOnly }: BlockEditorProps) {
+export default function BlockEditor({ manualId, language, readOnly, onBlocksChange }: BlockEditorProps) {
   const [blocks, setBlocks] = useState<ManualBlock[]>([]);
   const [loading, setLoading] = useState(true);
   const [saveStatus, setSaveStatus] = useState<SaveStatus>('saved');
@@ -66,6 +67,11 @@ export default function BlockEditor({ manualId, language, readOnly }: BlockEdito
     fetchBlocks();
     return () => { cancelled = true; };
   }, [manualId, language]);
+
+  // Notify parent of blocks changes
+  useEffect(() => {
+    onBlocksChange?.(blocks);
+  }, [blocks, onBlocksChange]);
 
   // Auto-save a block (debounced)
   const saveBlock = useCallback(async (blockId: string, content: BlockContent) => {
