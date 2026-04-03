@@ -373,8 +373,65 @@ async function main() {
     console.log(`    ${Object.entries(counts).map(([k, v]) => `${k}: ${v}`).join(', ')}`);
   }
 
+  // =========================================================================
+  // COPY ENGLISH BLOCKS TO ALL OTHER LANGUAGES
+  // This gives translators a starting point — they edit in place
+  // =========================================================================
+
+  const OTHER_LANGUAGES = ['pt', 'es', 'el', 'ru', 'uk'];
+
+  console.log('\n--- Copying English content to all languages ---\n');
+
+  for (const dbManual of manuals) {
+    // Fetch English blocks for this manual
+    const { data: enBlocks, error: fetchErr } = await supabase
+      .from('manual_blocks')
+      .select('*')
+      .eq('manual_id', dbManual.id)
+      .eq('language', 'en')
+      .order('position', { ascending: true });
+
+    if (fetchErr || !enBlocks || enBlocks.length === 0) {
+      console.log(`  ${dbManual.slug}: no English blocks to copy, skipping`);
+      continue;
+    }
+
+    for (const lang of OTHER_LANGUAGES) {
+      // Check if this language already has blocks
+      const { count } = await supabase
+        .from('manual_blocks')
+        .select('id', { count: 'exact', head: true })
+        .eq('manual_id', dbManual.id)
+        .eq('language', lang);
+
+      if (count && count > 0) {
+        console.log(`  ${dbManual.slug} [${lang}]: already has ${count} blocks, skipping`);
+        continue;
+      }
+
+      // Copy English blocks to this language
+      const langRows = enBlocks.map((block, i) => ({
+        manual_id: dbManual.id,
+        language: lang,
+        block_type: block.block_type,
+        content: block.content,
+        position: i,
+        updated_by: 'Import (from English)',
+      }));
+
+      const { error: langInsErr } = await supabase.from('manual_blocks').insert(langRows);
+      if (langInsErr) {
+        console.error(`  ✗ ${dbManual.slug} [${lang}]: ${langInsErr.message}`);
+        continue;
+      }
+
+      console.log(`  ✓ ${dbManual.slug} [${lang}]: copied ${enBlocks.length} blocks`);
+    }
+  }
+
   console.log('\n✅ Import complete!');
-  console.log('Visit /manuals to see the imported content.');
+  console.log('All manuals now have content in: en, pt, es, el, ru, uk');
+  console.log('Editors can switch languages and translate in place.');
 }
 
 main().catch(console.error);
