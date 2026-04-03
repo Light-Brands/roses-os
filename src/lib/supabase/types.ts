@@ -185,6 +185,86 @@ export interface Database {
         Relationships: [];
       };
 
+      // Manuals table
+      manuals: {
+        Row: {
+          id: string;
+          slug: string;
+          title: string;
+          description: string | null;
+          cover_image: string | null;
+          sort_order: number;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          slug: string;
+          title: string;
+          description?: string | null;
+          cover_image?: string | null;
+          sort_order?: number;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          slug?: string;
+          title?: string;
+          description?: string | null;
+          cover_image?: string | null;
+          sort_order?: number;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
+
+      // Manual Blocks table
+      manual_blocks: {
+        Row: {
+          id: string;
+          manual_id: string;
+          language: string;
+          block_type: string;
+          content: Json;
+          position: number;
+          updated_by: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          manual_id: string;
+          language?: string;
+          block_type: string;
+          content?: Json;
+          position?: number;
+          updated_by?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          manual_id?: string;
+          language?: string;
+          block_type?: string;
+          content?: Json;
+          position?: number;
+          updated_by?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'manual_blocks_manual_id_fkey';
+            columns: ['manual_id'];
+            referencedRelation: 'manuals';
+            referencedColumns: ['id'];
+          }
+        ];
+      };
+
       // Analytics/Events table
       analytics_events: {
         Row: {
