@@ -1,10 +1,12 @@
-export type Locale = 'en' | 'pt' | 'es' | 'el';
+export type Locale = 'en' | 'pt' | 'es' | 'el' | 'ru' | 'uk';
 
 export const LOCALES: { code: Locale; label: string }[] = [
   { code: 'en', label: 'English' },
   { code: 'pt', label: 'Portugu\u00eas' },
   { code: 'es', label: 'Espa\u00f1ol' },
   { code: 'el', label: '\u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac' },
+  { code: 'ru', label: '\u0420\u0443\u0441\u0441\u043a\u0438\u0439' },
+  { code: 'uk', label: '\u0423\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0430' },
 ];
 
 export interface TeachingTranslations {
