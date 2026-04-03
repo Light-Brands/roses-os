@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useAdminAuth } from '@/lib/admin/auth';
+import AdminPinManager from '@/components/manuals/AdminPinManager';
 
 const tabs = [
   { id: 'profile', label: 'Profile', icon: User },
@@ -390,6 +391,11 @@ export default function SettingsPage() {
                         Sign out all
                       </button>
                     </div>
+                  </div>
+
+                  {/* Manual Access PINs */}
+                  <div className="p-4 bg-neutral-50 dark:bg-neutral-800/50 rounded-lg">
+                    <AdminPinManager />
                   </div>
                 </div>
               </div>
