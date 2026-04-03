@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import type { ImageContent } from '@/lib/manuals/types';
 
@@ -86,13 +85,10 @@ export default function ImageBlock({ content, onChange, readOnly }: ImageBlockPr
   return (
     <div className="group relative">
       <div className="rounded-xl overflow-hidden bg-[var(--color-background-muted)]">
-        <Image
+        <img
           src={content.src}
           alt={content.alt || ''}
-          width={800}
-          height={500}
           className="w-full h-auto object-contain"
-          unoptimized={content.src.startsWith('http')}
         />
       </div>
 
