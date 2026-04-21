@@ -63,7 +63,7 @@ SELECT m.id, 'en', 'text', '{"html": "<p>The transmedium channels are located at
 FROM public.manuals m WHERE m.slug = 'aura-level-1';
 
 INSERT INTO public.manual_blocks (manual_id, language, block_type, content, position, updated_by)
-SELECT m.id, 'en', 'image', '{"src": "/rose med images/aura-1/01-transmedium-channels.png", "alt": "Transmedium Channels", "caption": "Transmedium channels at the back of the neck with cleansing roses"}'::jsonb, 11, 'System'
+SELECT m.id, 'en', 'image', '{"src": "/rose med images/aura-1/01-transmedium-channels.jpeg", "alt": "Transmedium Channels", "caption": "Transmedium channels at the back of the neck with cleansing roses"}'::jsonb, 11, 'System'
 FROM public.manuals m WHERE m.slug = 'aura-level-1';
 
 INSERT INTO public.manual_blocks (manual_id, language, block_type, content, position, updated_by)
@@ -139,7 +139,7 @@ SELECT m.id, 'en', 'text', '{"html": "<p>To neutralize our lower self and direct
 FROM public.manuals m WHERE m.slug = 'aura-level-1';
 
 INSERT INTO public.manual_blocks (manual_id, language, block_type, content, position, updated_by)
-SELECT m.id, 'en', 'image', '{"src": "/rose med images/aura-1/02-chakra-closure-percentages.png", "alt": "Chakra Closure Percentages", "caption": "1st chakra: 70% closed (all). 2nd chakra: 80% women, 60% men. 3rd chakra: 30% women, 50% men."}'::jsonb, 27, 'System'
+SELECT m.id, 'en', 'image', '{"src": "/rose med images/aura-1/02-chakra-closure-percentages.jpeg", "alt": "Chakra Closure Percentages", "caption": "1st chakra: 70% closed (all). 2nd chakra: 80% women, 60% men. 3rd chakra: 30% women, 50% men."}'::jsonb, 27, 'System'
 FROM public.manuals m WHERE m.slug = 'aura-level-1';
 
 INSERT INTO public.manual_blocks (manual_id, language, block_type, content, position, updated_by)
@@ -157,7 +157,7 @@ SELECT m.id, 'en', 'text', '{"html": "<p>The reading screen is the location wher
 FROM public.manuals m WHERE m.slug = 'aura-level-1';
 
 INSERT INTO public.manual_blocks (manual_id, language, block_type, content, position, updated_by)
-SELECT m.id, 'en', 'image', '{"src": "/rose med images/aura-1/03-reading-screen.png", "alt": "Reading Screen", "caption": "The reading screen grounded to the Earth with a mirror Rose in the corner"}'::jsonb, 31, 'System'
+SELECT m.id, 'en', 'image', '{"src": "/rose med images/aura-1/03-reading-screen.jpeg", "alt": "Reading Screen", "caption": "The reading screen grounded to the Earth with a mirror Rose in the corner"}'::jsonb, 31, 'System'
 FROM public.manuals m WHERE m.slug = 'aura-level-1';
 
 -- 3. Reading Triangle (page 6)
@@ -213,7 +213,7 @@ SELECT m.id, 'en', 'text', '{"html": "<p><strong><em>Ask the person to say their
 FROM public.manuals m WHERE m.slug = 'aura-level-1';
 
 INSERT INTO public.manual_blocks (manual_id, language, block_type, content, position, updated_by)
-SELECT m.id, 'en', 'image', '{"src": "/rose med images/aura-1/05-person-sitting-in-gold.png", "alt": "Person Sitting in Gold", "caption": "The person sitting in gold with golden grounding cord"}'::jsonb, 43, 'System'
+SELECT m.id, 'en', 'image', '{"src": "/rose med images/aura-1/05-person-sitting-in-gold.jpeg", "alt": "Person Sitting in Gold", "caption": "The person sitting in gold with golden grounding cord"}'::jsonb, 43, 'System'
 FROM public.manuals m WHERE m.slug = 'aura-level-1';
 
 INSERT INTO public.manual_blocks (manual_id, language, block_type, content, position, updated_by)
@@ -311,7 +311,7 @@ SELECT m.id, 'en', 'text', '{"html": "<p>The degree of openness represents how r
 FROM public.manuals m WHERE m.slug = 'aura-level-1';
 
 INSERT INTO public.manual_blocks (manual_id, language, block_type, content, position, updated_by)
-SELECT m.id, 'en', 'image', '{"src": "/rose med images/aura-1/08-rose-opening-percentage.png", "alt": "Rose Opening Percentage", "caption": "A Rose with 50% opening percentage representing receptiveness to Divine Information"}'::jsonb, 64, 'System'
+SELECT m.id, 'en', 'image', '{"src": "/rose med images/aura-1/08-rose-opening-percentage.jpeg", "alt": "Rose Opening Percentage", "caption": "A Rose with 50% opening percentage representing receptiveness to Divine Information"}'::jsonb, 64, 'System'
 FROM public.manuals m WHERE m.slug = 'aura-level-1';
 
 INSERT INTO public.manual_blocks (manual_id, language, block_type, content, position, updated_by)
@@ -351,7 +351,7 @@ SELECT m.id, 'en', 'text', '{"html": "<p>The Rose of Maternity and Paternity Agr
 FROM public.manuals m WHERE m.slug = 'aura-level-1';
 
 INSERT INTO public.manual_blocks (manual_id, language, block_type, content, position, updated_by)
-SELECT m.id, 'en', 'image', '{"src": "/rose med images/aura-1/10-rose-with-leaves.png", "alt": "Rose with Leaves (Agreements)", "caption": "Rose with leaves on the stem representing spiritual agreements"}'::jsonb, 73, 'System'
+SELECT m.id, 'en', 'image', '{"src": "/rose med images/aura-1/10-rose-with-leaves.jpeg", "alt": "Rose with Leaves (Agreements)", "caption": "Rose with leaves on the stem representing spiritual agreements"}'::jsonb, 73, 'System'
 FROM public.manuals m WHERE m.slug = 'aura-level-1';
 
 INSERT INTO public.manual_blocks (manual_id, language, block_type, content, position, updated_by)
@@ -369,7 +369,7 @@ SELECT m.id, 'en', 'text', '{"html": "<p>Now we''re going to access the human co
 FROM public.manuals m WHERE m.slug = 'aura-level-1';
 
 INSERT INTO public.manual_blocks (manual_id, language, block_type, content, position, updated_by)
-SELECT m.id, 'en', 'image', '{"src": "/rose med images/aura-1/11-rose-with-rings.png", "alt": "Rose with Rings (Past Lives)", "caption": "Rose with rings on the stem representing past lives from the collective unconscious"}'::jsonb, 77, 'System'
+SELECT m.id, 'en', 'image', '{"src": "/rose med images/aura-1/11-rose-with-rings.jpeg", "alt": "Rose with Rings (Past Lives)", "caption": "Rose with rings on the stem representing past lives from the collective unconscious"}'::jsonb, 77, 'System'
 FROM public.manuals m WHERE m.slug = 'aura-level-1';
 
 INSERT INTO public.manual_blocks (manual_id, language, block_type, content, position, updated_by)
@@ -413,7 +413,7 @@ SELECT m.id, 'en', 'text', '{"html": "<p>One of the greatest qualities of Aura R
 FROM public.manuals m WHERE m.slug = 'aura-level-1';
 
 INSERT INTO public.manual_blocks (manual_id, language, block_type, content, position, updated_by)
-SELECT m.id, 'en', 'image', '{"src": "/rose med images/aura-1/13-mirror-rose-on-screen.png", "alt": "Mirror Rose on Screen", "caption": "Reading screen with a Mirror Rose grounded in one corner"}'::jsonb, 87, 'System'
+SELECT m.id, 'en', 'image', '{"src": "/rose med images/aura-1/13-mirror-rose-on-screen.jpeg", "alt": "Mirror Rose on Screen", "caption": "Reading screen with a Mirror Rose grounded in one corner"}'::jsonb, 87, 'System'
 FROM public.manuals m WHERE m.slug = 'aura-level-1';
 
 INSERT INTO public.manual_blocks (manual_id, language, block_type, content, position, updated_by)
@@ -509,7 +509,7 @@ SELECT m.id, 'en', 'text', '{"html": "<p>While the person is releasing the energ
 FROM public.manuals m WHERE m.slug = 'aura-level-1';
 
 INSERT INTO public.manual_blocks (manual_id, language, block_type, content, position, updated_by)
-SELECT m.id, 'en', 'image', '{"src": "/rose med images/aura-1/15-filling-with-energy.png", "alt": "Filling with Energy and Cutting Cords", "caption": "Golden Sun with name above the person, and the cord-cutting movement repeated 3 times"}'::jsonb, 108, 'System'
+SELECT m.id, 'en', 'image', '{"src": "/rose med images/aura-1/15-filling-with-energy.jpeg", "alt": "Filling with Energy and Cutting Cords", "caption": "Golden Sun with name above the person, and the cord-cutting movement repeated 3 times"}'::jsonb, 108, 'System'
 FROM public.manuals m WHERE m.slug = 'aura-level-1';
 
 -- Saying Goodbye
@@ -533,7 +533,7 @@ SELECT m.id, 'en', 'text', '{"html": "<ul><li>Create a grounded Rose in a high-v
 FROM public.manuals m WHERE m.slug = 'aura-level-1';
 
 INSERT INTO public.manual_blocks (manual_id, language, block_type, content, position, updated_by)
-SELECT m.id, 'en', 'image', '{"src": "/rose med images/aura-1/16-person-in-rose.png", "alt": "Returning Energy to the Person", "caption": "Person placed inside a grounded Rose to return their energy"}'::jsonb, 113, 'System'
+SELECT m.id, 'en', 'image', '{"src": "/rose med images/aura-1/16-person-in-rose.jpeg", "alt": "Returning Energy to the Person", "caption": "Person placed inside a grounded Rose to return their energy"}'::jsonb, 113, 'System'
 FROM public.manuals m WHERE m.slug = 'aura-level-1';
 
 -- 2) Book of Life
@@ -547,7 +547,7 @@ SELECT m.id, 'en', 'text', '{"html": "<ul><li>Create a high-vibration grounded R
 FROM public.manuals m WHERE m.slug = 'aura-level-1';
 
 INSERT INTO public.manual_blocks (manual_id, language, block_type, content, position, updated_by)
-SELECT m.id, 'en', 'image', '{"src": "/rose med images/aura-1/17-book-of-life.png", "alt": "Book of Life", "caption": "Book of life placed inside a grounded Rose with golden bow"}'::jsonb, 116, 'System'
+SELECT m.id, 'en', 'image', '{"src": "/rose med images/aura-1/17-book-of-life.jpeg", "alt": "Book of Life", "caption": "Book of life placed inside a grounded Rose with golden bow"}'::jsonb, 116, 'System'
 FROM public.manuals m WHERE m.slug = 'aura-level-1';
 
 -- 3) Stick of Agreements
