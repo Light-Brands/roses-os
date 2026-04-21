@@ -16,7 +16,7 @@ interface LogoProps {
 const sizeMap = {
   sm: 'text-base',
   md: 'text-lg',
-  lg: 'text-sm sm:text-base md:text-lg lg:text-base xl:text-xl',
+  lg: 'text-[11px] sm:text-xs md:text-sm lg:text-sm xl:text-base',
 };
 
 export function Logo({
@@ -39,7 +39,7 @@ export function Logo({
       />
       <span
         className={cn(
-          'font-medium tracking-[0.08em] uppercase text-[var(--color-foreground)] truncate',
+          'font-medium tracking-[0.04em] sm:tracking-[0.06em] md:tracking-[0.08em] uppercase text-[var(--color-foreground)] leading-tight',
           sizeMap[size],
           textClassName
         )}

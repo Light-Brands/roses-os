@@ -207,9 +207,9 @@ export function Navigation({
         )}
       >
         <nav className="container-premium">
-          <div className="relative flex items-center h-16 lg:h-[72px] w-full">
+          <div className="relative flex items-center min-h-[56px] h-auto py-2 sm:h-16 sm:py-0 lg:h-[72px] w-full">
             {/* Left: nav links — equal flex so logo stays centered */}
-            <div className="hidden lg:flex items-center gap-1 flex-1 min-w-0 justify-start lg:pr-28 xl:pr-20">
+            <div className="hidden lg:flex items-center gap-1 flex-1 min-w-0 justify-start lg:pr-16 xl:pr-12">
               {items.map((item) => {
                 const isActive = isNavActive(item.href);
                 return (
@@ -239,7 +239,7 @@ export function Navigation({
             </div>
 
             {/* Logo — left-aligned on mobile/tablet, absolutely centered on desktop */}
-            <div className="z-10 flex-1 min-w-0 lg:flex-initial lg:flex-shrink-0 lg:absolute lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2">
+            <div className="z-10 flex-1 min-w-0 max-w-[55%] sm:max-w-[60%] md:max-w-none lg:flex-initial lg:flex-shrink-0 lg:max-w-[300px] xl:max-w-none lg:absolute lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2">
               {logo || <Logo size="lg" />}
             </div>
 
@@ -379,7 +379,7 @@ export function Navigation({
               )}
             >
               {/* Top spacer for the header */}
-              <div className="h-16" />
+              <div className="min-h-[56px] sm:h-16" />
 
               <div className="px-6 pt-4 pb-10">
                 {/* Nav Items */}
