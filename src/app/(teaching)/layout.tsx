@@ -1,10 +1,10 @@
-import PasswordGate from '@/components/teaching/PasswordGate';
+import ManualPinGate from '@/components/manuals/ManualPinGate';
 import { LanguageProvider } from '@/lib/i18n';
 
 export default function TeachingLayout({ children }: { children: React.ReactNode }) {
   return (
     <LanguageProvider>
-      <PasswordGate>{children}</PasswordGate>
+      <ManualPinGate>{children}</ManualPinGate>
     </LanguageProvider>
   );
 }
