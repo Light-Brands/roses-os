@@ -13,7 +13,6 @@ import { navItems } from '@/lib/data';
 const navLinks = [
   { label: 'Home', href: '/' },
   ...navItems,
-  { label: 'For Teachers', href: '/teaching' },
 ];
 
 // =============================================================================
