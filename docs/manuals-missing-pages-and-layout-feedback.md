@@ -58,6 +58,16 @@ Could you bring the image sizing and overall page layout back in line with the o
 
 ---
 
+## 3. iPad header overlap
+
+On iPad, the **"International Aura School"** wordmark in the top header overlaps with the **"Teachers"** link/label. The header gets crowded and the two collide visually.
+
+### Ask
+- If the "Teachers" entry in the top header is what's causing the collision, **remove it from the top header on iPad (and similar widths)** and keep it only in the **footer**.
+- Alternative: tighten spacing / shrink type so the wordmark and nav items don't overlap. Removing it from the top header is the preferred quick fix if it keeps interfering.
+
+---
+
 ## Where to look
 
 - Live route: `/manuals` on the platform (each manual has a viewer + download).
