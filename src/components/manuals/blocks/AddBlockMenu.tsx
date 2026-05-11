@@ -32,6 +32,12 @@ const BLOCK_OPTIONS: { type: BlockType; label: string; icon: React.ReactNode; de
     shortcut: 'I',
   },
   {
+    type: 'image-row',
+    label: 'Image Row',
+    icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><rect x="3" y="6" width="5" height="12" rx="1" /><rect x="9.5" y="6" width="5" height="12" rx="1" /><rect x="16" y="6" width="5" height="12" rx="1" /></svg>,
+    description: '2–4 images side by side',
+  },
+  {
     type: 'divider',
     label: 'Divider',
     icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M3 12h18" strokeLinecap="round" /></svg>,

@@ -212,6 +212,9 @@ export function Navigation({
             <div className="hidden lg:flex items-center gap-1 flex-1 min-w-0 justify-start lg:pr-16 xl:pr-12">
               {items.map((item) => {
                 const isActive = isNavActive(item.href);
+                // "For Teachers" collides with the centered wordmark on iPad-landscape (lg).
+                // Hide it from the top nav below xl; it remains in the footer + mobile menu.
+                const hideOnTopNav = item.href === '/teaching';
                 return (
                   <Link
                     key={item.label}
@@ -220,6 +223,7 @@ export function Navigation({
                     className={cn(
                       'group relative px-2 xl:px-4 py-2 text-sm font-medium rounded-lg',
                       'transition-colors duration-200',
+                      hideOnTopNav && 'hidden xl:inline-flex',
                       isActive
                         ? 'text-[var(--color-foreground)]'
                         : 'text-[var(--color-foreground-muted)] hover:text-[var(--color-foreground)]'

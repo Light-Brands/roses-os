@@ -15,7 +15,7 @@ export const MANUAL_LANGUAGES: { code: ManualLanguage; label: string }[] = [
 ];
 
 /** Block types available in the manual editor */
-export type BlockType = 'heading' | 'text' | 'image' | 'divider' | 'page-break';
+export type BlockType = 'heading' | 'text' | 'image' | 'divider' | 'page-break' | 'image-row';
 
 /** Content shape per block type */
 export interface HeadingContent {
@@ -33,9 +33,24 @@ export interface ImageContent {
   caption?: string;
 }
 
+export interface ImageRowItem {
+  src: string;
+  alt: string;
+}
+
+export interface ImageRowContent {
+  images: ImageRowItem[]; // 2–4 images rendered side-by-side
+  caption?: string;
+}
+
 // Divider and page-break have no content fields
 
-export type BlockContent = HeadingContent | TextContent | ImageContent | Record<string, never>;
+export type BlockContent =
+  | HeadingContent
+  | TextContent
+  | ImageContent
+  | ImageRowContent
+  | Record<string, never>;
 
 /** A manual (e.g. "Rose Meditation Level 1") */
 export interface Manual {
