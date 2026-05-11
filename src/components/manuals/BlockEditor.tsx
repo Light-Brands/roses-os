@@ -3,10 +3,11 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { Reorder, useDragControls } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import type { ManualBlock, ManualLanguage, BlockType, BlockContent, HeadingContent, TextContent, ImageContent } from '@/lib/manuals/types';
+import type { ManualBlock, ManualLanguage, BlockType, BlockContent, HeadingContent, TextContent, ImageContent, ImageRowContent } from '@/lib/manuals/types';
 import HeadingBlock from './blocks/HeadingBlock';
 import TextBlock from './blocks/TextBlock';
 import ImageBlock from './blocks/ImageBlock';
+import ImageRowBlock from './blocks/ImageRowBlock';
 import DividerBlock from './blocks/DividerBlock';
 import PageBreakBlock from './blocks/PageBreakBlock';
 import AddBlockMenu from './blocks/AddBlockMenu';
@@ -26,6 +27,10 @@ function getDefaultContent(type: BlockType): BlockContent {
     case 'heading': return { text: '', level: 2 } as HeadingContent;
     case 'text': return { html: '' } as TextContent;
     case 'image': return { src: '', alt: '', caption: '' } as ImageContent;
+    case 'image-row': return {
+      images: [{ src: '', alt: '' }, { src: '', alt: '' }, { src: '', alt: '' }],
+      caption: '',
+    } as ImageRowContent;
     case 'divider': return {};
     case 'page-break': return {};
   }
@@ -296,6 +301,14 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
         return (
           <ImageBlock
             content={block.content as ImageContent}
+            onChange={(c) => handleContentChange(block.id, c)}
+            readOnly={readOnly}
+          />
+        );
+      case 'image-row':
+        return (
+          <ImageRowBlock
+            content={block.content as ImageRowContent}
             onChange={(c) => handleContentChange(block.id, c)}
             readOnly={readOnly}
           />
