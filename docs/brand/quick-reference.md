@@ -14,36 +14,36 @@
 
 ## Logo & emblem — four directions
 
-The live site currently uses a raster mark (`/public/rose.png`) plus a typographic lockup. No vector identity exists yet. Four directions to consider:
+The live site currently uses a raster mark (`/public/rose.png`) plus a sans-serif lockup. No vector identity exists. Each concept below is **grounded in something already on the site** — the concentric-petal SVG in [`SectionDivider`](../../src/components/ui/SectionDivider.tsx) (variant `rose`), the 3D bloom in [`RoseModel.tsx`](../../src/components/three/RoseModel.tsx) (petal `#D94060`, stem `#2D5E34`, gold rim light `#9E956B`), and the "remember who you are" tone of the hero.
 
-### A. Rose Monogram
-
-<svg viewBox="0 0 160 170" width="160" height="170" xmlns="http://www.w3.org/2000/svg">
-  <g transform="translate(80, 70)" fill="none" stroke="#9C6F6E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M -26 -4 C -26 -22, -10 -30, 0 -22 C 10 -30, 26 -22, 26 -4 C 26 14, 14 26, 0 26 C -14 26, -26 14, -26 -4 Z"/>
-    <path d="M -16 -2 C -16 -14, -6 -20, 0 -14 C 6 -20, 16 -14, 16 -2 C 16 10, 8 18, 0 18 C -8 18, -16 10, -16 -2 Z"/>
-    <path d="M -8 0 C -8 -8, -2 -12, 0 -8 C 2 -12, 8 -8, 8 0 C 8 6, 4 10, 0 10 C -4 10, -8 6, -8 0 Z"/>
-    <circle cx="0" cy="0" r="2" fill="#9C6F6E" stroke="none"/>
-  </g>
-  <text x="80" y="140" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#3F3E3C" letter-spacing="6">I · A · S</text>
-</svg>
-
-*Stacked rose petals + initials. Most literal to the brand name and the existing rose imagery. Sacrifices uniqueness — rose emblems are common in wellness brands.*
-
-### B. Aura Halo Mark
+### A. Concentric Bloom
 
 <svg viewBox="0 0 160 170" width="160" height="170" xmlns="http://www.w3.org/2000/svg">
-  <g transform="translate(80, 70)" fill="none" stroke="#9C6F6E" stroke-linecap="round">
-    <circle cx="0" cy="0" r="42" stroke-width="0.4" opacity="0.35"/>
-    <circle cx="0" cy="0" r="32" stroke-width="0.6" opacity="0.55"/>
-    <circle cx="0" cy="0" r="22" stroke-width="0.9" opacity="0.8"/>
-    <circle cx="0" cy="0" r="12" stroke-width="1.3"/>
-    <circle cx="0" cy="0" r="3" fill="#9E956B" stroke="none"/>
+  <g fill="none" stroke="#9C6F6E" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 80 54 C 80 54 48 66 48 86 C 48 101.6 62.4 110 80 110 C 97.6 110 112 101.6 112 86 C 112 66 80 54 80 54 Z" stroke-width="0.8" opacity="0.3"/>
+    <path d="M 80 42 C 80 42 56 54 56 74 C 56 87.2 66.8 98 80 98 C 93.2 98 104 87.2 104 74 C 104 54 80 42 80 42 Z" stroke-width="1" opacity="0.5"/>
+    <path d="M 80 30 C 80 30 64 46 64 62 C 64 70.8 71.2 78 80 78 C 88.8 78 96 70.8 96 62 C 96 46 80 30 80 30 Z" fill="#9C6F6E" stroke="none" opacity="0.75"/>
+    <circle cx="80" cy="70" r="2.8" fill="#9E956B" stroke="none"/>
   </g>
   <text x="80" y="140" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#3F3E3C" letter-spacing="5">INTERNATIONAL AURA SCHOOL</text>
 </svg>
 
-*Pure aura — concentric rings around a brass-gold seed. Sacred-geometry language, no flora. Sacrifices the rose lineage; gains distinctiveness and works at favicon scale.*
+*Direct evolution of the site's existing `SectionDivider variant="rose"` — three nested petal teardrops fanning downward, gold seed at the heart. Already part of the visual vocabulary; the emblem just clarifies and crowns it.*
+
+### B. Aura-Wrapped Bloom
+
+<svg viewBox="0 0 160 170" width="160" height="170" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="80" cy="70" r="56" fill="none" stroke="#9E956B" stroke-width="0.5" opacity="0.55"/>
+  <g fill="none" stroke="#9C6F6E" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 80 54 C 80 54 48 66 48 86 C 48 101.6 62.4 110 80 110 C 97.6 110 112 101.6 112 86 C 112 66 80 54 80 54 Z" stroke-width="0.8" opacity="0.3"/>
+    <path d="M 80 42 C 80 42 56 54 56 74 C 56 87.2 66.8 98 80 98 C 93.2 98 104 87.2 104 74 C 104 54 80 42 80 42 Z" stroke-width="1" opacity="0.5"/>
+    <path d="M 80 30 C 80 30 64 46 64 62 C 64 70.8 71.2 78 80 78 C 88.8 78 96 70.8 96 62 C 96 46 80 30 80 30 Z" fill="#9C6F6E" stroke="none" opacity="0.75"/>
+    <circle cx="80" cy="70" r="2.8" fill="#9E956B" stroke="none"/>
+  </g>
+  <text x="80" y="150" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#3F3E3C" letter-spacing="5">INTERNATIONAL AURA SCHOOL</text>
+</svg>
+
+*A. enclosed by a single thin gold ring — the rim-light halo from the 3D scene made explicit. Reads as "bloom within its own field of presence." Most directly says aura + rose; slightly less quiet than A.*
 
 ### C. Serif Wordmark Lockup
 
@@ -56,31 +56,25 @@ The live site currently uses a raster mark (`/public/rose.png`) plus a typograph
   </g>
 </svg>
 
-*Typography-only. Quiet, formal, print-first. Sacrifices any icon — no favicon, no app mark. Works best as the masthead pairing for one of A/B/D.*
+*Typography-only. Quiet, formal, print-first. The Cormorant Garamond serif voice already drives the hero — this is the masthead version. Sacrifices any icon; pairs naturally with A, B, or D for full lockups.*
 
-### D. Rose-Aura Sigil
+### D. Side-View Rose
 
 <svg viewBox="0 0 160 170" width="160" height="170" xmlns="http://www.w3.org/2000/svg">
-  <g transform="translate(80, 70)" fill="none" stroke="#9C6F6E" stroke-linecap="round">
-    <circle cx="0" cy="0" r="48" stroke-width="0.5" opacity="0.5"/>
-    <line x1="0" y1="-52" x2="0" y2="-44" stroke-width="0.7"/>
-    <line x1="0" y1="52" x2="0" y2="44" stroke-width="0.7"/>
-    <line x1="-52" y1="0" x2="-44" y2="0" stroke-width="0.7"/>
-    <line x1="52" y1="0" x2="44" y2="0" stroke-width="0.7"/>
-    <line x1="-37" y1="-37" x2="-31" y2="-31" stroke-width="0.5" opacity="0.6"/>
-    <line x1="37" y1="-37" x2="31" y2="-31" stroke-width="0.5" opacity="0.6"/>
-    <line x1="-37" y1="37" x2="-31" y2="31" stroke-width="0.5" opacity="0.6"/>
-    <line x1="37" y1="37" x2="31" y2="31" stroke-width="0.5" opacity="0.6"/>
-    <path d="M -14 -2 C -14 -14, -4 -18, 0 -12 C 4 -18, 14 -14, 14 -2 C 14 10, 6 16, 0 16 C -6 16, -14 10, -14 -2 Z" stroke-width="1.4"/>
-    <path d="M -7 0 C -7 -7, -2 -10, 0 -6 C 2 -10, 7 -7, 7 0 C 7 5, 3 8, 0 8 C -3 8, -7 5, -7 0 Z" stroke-width="1.2"/>
-    <circle cx="0" cy="0" r="2" fill="#9E956B" stroke="none"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="80" y1="58" x2="80" y2="112" stroke="#2D5E34" stroke-width="1.6"/>
+    <path d="M 80 88 Q 96 86 102 100 Q 94 98 80 96" stroke="#2D5E34" stroke-width="1.2" fill="none"/>
+    <path d="M 70 60 L 80 52 L 90 60" stroke="#2D5E34" stroke-width="1.2"/>
+    <path d="M 62 40 C 62 22 72 14 80 16 C 88 14 98 22 98 40 C 98 54 90 60 80 60 C 70 60 62 54 62 40 Z" stroke="#9C6F6E" stroke-width="1.5" fill="#9C6F6E" fill-opacity="0.12"/>
+    <path d="M 72 38 C 72 28 80 26 80 30 C 80 26 88 28 88 38 C 88 46 84 50 80 50 C 76 50 72 46 72 38 Z" stroke="#9C6F6E" stroke-width="1.2" fill="none"/>
+    <path d="M 76 36 Q 80 32 84 36 Q 82 42 80 42 Q 78 42 76 36 Z" stroke="#9C6F6E" stroke-width="1" fill="#9E956B" fill-opacity="0.5"/>
   </g>
-  <text x="80" y="140" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#3F3E3C" letter-spacing="5">INTERNATIONAL AURA SCHOOL</text>
+  <text x="80" y="150" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="11" fill="#3F3E3C" letter-spacing="5">INTERNATIONAL AURA SCHOOL</text>
 </svg>
 
-*Rose bloom inside a compass-halo ring with cardinal tick marks. Combines rose + aura + orientation — most ceremonial. Sacrifices simplicity; the most ornate of the four and the hardest to scale down.*
+*Botanical profile — closed rose bud, calyx, leaf, stem in the 3D model's forest green (`#2D5E34`). Most literal echo of the live `RoseCanvas`. Sacrifices the abstract-symbol read; gains warmth and direct lineage to what's on screen.*
 
-> **Choosing:** A is safest; B is most modern; C is most editorial; D is most distinctive. A printed mark will likely pair one icon (A/B/D) with the wordmark (C) for the full lockup.
+> **How to choose:** A is the safest evolution (the divider grown up). B says "aura" most clearly. C is the formal wordmark to pair with any icon. D is the botanical-portrait route closest to the 3D scene. A printed lockup will likely combine one of A / B / D with C.
 
 ---
 
