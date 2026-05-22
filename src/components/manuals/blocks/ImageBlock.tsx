@@ -104,11 +104,11 @@ export default function ImageBlock({ content, onChange, readOnly }: ImageBlockPr
   // Image with caption
   return (
     <div className="group/img relative">
-      <div className="rounded-xl overflow-hidden bg-[var(--color-background-muted)] mx-auto max-w-md sm:max-w-lg md:max-w-xl">
+      <div className="rounded-xl overflow-hidden bg-[var(--color-background-muted)] mx-auto w-full max-w-prose">
         <img
           src={content.src}
           alt={content.alt || ''}
-          className="block w-full h-auto max-h-[60vh] object-contain"
+          className="mx-auto block h-auto w-auto max-w-full max-h-[420px] object-contain"
         />
       </div>
 

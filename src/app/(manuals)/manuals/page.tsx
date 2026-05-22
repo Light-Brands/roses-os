@@ -83,7 +83,7 @@ export default function ManualsPage() {
           <div className="grid gap-6 md:grid-cols-2">
             {[1, 2, 3, 4].map((i) => (
               <div key={i} className="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 animate-pulse">
-                <div className="w-full h-32 bg-[var(--color-background-muted)] rounded-lg mb-4" />
+                <div className="w-full h-56 bg-[var(--color-background-muted)] rounded-lg mb-4" />
                 <div className="h-5 bg-[var(--color-background-muted)] rounded w-3/4 mb-2" />
                 <div className="h-4 bg-[var(--color-background-muted)] rounded w-full" />
               </div>
@@ -103,11 +103,11 @@ export default function ManualsPage() {
                   className="group block rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 transition-all duration-200 hover:shadow-lg hover:border-[var(--color-rose-clay)]/30"
                 >
                   {manual.cover_image && (
-                    <div className="w-full h-32 rounded-lg overflow-hidden mb-4 bg-[var(--color-background-muted)]">
+                    <div className="w-full h-56 rounded-lg overflow-hidden mb-4 bg-[var(--color-background-muted)] flex items-center justify-center">
                       <img
                         src={manual.cover_image}
                         alt={manual.title}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        className="max-h-full max-w-full object-contain shadow-md transition-transform duration-300 group-hover:scale-105"
                       />
                     </div>
                   )}

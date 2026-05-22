@@ -50,3 +50,4 @@ scripts/pdf-manuals/images/level-2/24-chakras.png
 _bmad
 _qie
 plans/
+.env*.local

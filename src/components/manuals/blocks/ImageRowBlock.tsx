@@ -88,7 +88,7 @@ function ImageCell({
       <img
         src={image.src}
         alt={image.alt || ''}
-        className="block w-full h-full max-h-[40vh] object-contain"
+        className="block w-full h-full max-h-[300px] object-contain"
       />
       {!readOnly && (
         <div className="absolute top-2 right-2 flex gap-1 opacity-0 group-hover/cell:opacity-100 transition-opacity">
@@ -177,7 +177,7 @@ export default function ImageRowBlock({ content, onChange, readOnly }: ImageRowB
 
   return (
     <div className="group/imgrow">
-      <div className={cn('grid gap-3 mx-auto max-w-3xl', gridCols)}>
+      <div className={cn('grid gap-6 mx-auto max-w-prose', gridCols)}>
         {images.map((image, i) => (
           <ImageCell
             key={i}
