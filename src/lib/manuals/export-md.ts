@@ -1,7 +1,14 @@
 import type { ManualBlock, HeadingContent, TextContent, ImageContent } from './types';
+import { absolutizeSrc } from './export-utils';
 
-/** Convert blocks to Markdown text */
-export function blocksToMarkdown(blocks: ManualBlock[], title: string): string {
+/**
+ * Convert blocks to Markdown text.
+ *
+ * `origin` absolutizes root-relative image paths so the exported `.md`
+ * still references images once it leaves the app origin. Defaults to
+ * empty, leaving already-absolute URLs untouched.
+ */
+export function blocksToMarkdown(blocks: ManualBlock[], title: string, origin = ''): string {
   const lines: string[] = [`# ${title}`, ''];
 
   for (const block of blocks) {
@@ -38,7 +45,7 @@ export function blocksToMarkdown(blocks: ManualBlock[], title: string): string {
       case 'image': {
         const img = block.content as ImageContent;
         if (img.src) {
-          lines.push(`![${img.alt || ''}](${img.src})`);
+          lines.push(`![${img.alt || ''}](${absolutizeSrc(img.src, origin)})`);
           if (img.caption) lines.push(`*${img.caption}*`);
           lines.push('');
         }
@@ -57,8 +64,8 @@ export function blocksToMarkdown(blocks: ManualBlock[], title: string): string {
 }
 
 /** Trigger a Markdown file download */
-export function downloadMarkdown(blocks: ManualBlock[], title: string, filename: string) {
-  const md = blocksToMarkdown(blocks, title);
+export function downloadMarkdown(blocks: ManualBlock[], title: string, filename: string, origin = '') {
+  const md = blocksToMarkdown(blocks, title, origin);
   const blob = new Blob([md], { type: 'text/markdown' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
