@@ -30,12 +30,12 @@ export default function DownloadMenu({ blocks, title, filename }: DownloadMenuPr
   }, [open]);
 
   const handleDownloadMarkdown = () => {
-    downloadMarkdown(blocks, title, filename);
+    downloadMarkdown(blocks, title, filename, window.location.origin);
     setOpen(false);
   };
 
   const handleDownloadHtml = () => {
-    const html = blocksToHtml(blocks, title);
+    const html = blocksToHtml(blocks, title, window.location.origin);
     const blob = new Blob([html], { type: 'text/html' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -51,7 +51,7 @@ export default function DownloadMenu({ blocks, title, filename }: DownloadMenuPr
     try {
       // For now, download the styled HTML — PDF generation via Puppeteer
       // would require a server-side API route
-      const html = blocksToHtml(blocks, title);
+      const html = blocksToHtml(blocks, title, window.location.origin);
       const blob = new Blob([html], { type: 'text/html' });
       const url = URL.createObjectURL(blob);
 

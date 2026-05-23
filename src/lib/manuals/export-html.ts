@@ -1,7 +1,15 @@
 import type { ManualBlock, HeadingContent, TextContent, ImageContent } from './types';
+import { absolutizeSrc } from './export-utils';
 
-/** Convert blocks to styled HTML suitable for PDF rendering */
-export function blocksToHtml(blocks: ManualBlock[], title: string): string {
+/**
+ * Convert blocks to styled HTML suitable for PDF rendering.
+ *
+ * `origin` (e.g. `window.location.origin`) is used to absolutize any
+ * root-relative image paths — the exported HTML is rendered from a `blob:`
+ * document where root-relative paths cannot resolve. Pass it from the
+ * client; it defaults to empty so existing absolute URLs are unaffected.
+ */
+export function blocksToHtml(blocks: ManualBlock[], title: string, origin = ''): string {
   const bodyHtml = blocks.map((block) => {
     switch (block.block_type) {
       case 'heading': {
@@ -21,8 +29,9 @@ export function blocksToHtml(blocks: ManualBlock[], title: string): string {
       case 'image': {
         const img = block.content as ImageContent;
         if (!img.src) return '';
+        const src = absolutizeSrc(img.src, origin);
         let html = `<div style="text-align: center; margin: 24px 0;">`;
-        html += `<img src="${img.src}" alt="${img.alt || ''}" style="max-width: 80%; border-radius: 16px;" />`;
+        html += `<img src="${src}" alt="${img.alt || ''}" style="max-width: 80%; border-radius: 16px;" />`;
         if (img.caption) {
           html += `<p style="font-size: 9pt; color: #666; font-style: italic; margin-top: 8px;">${img.caption}</p>`;
         }
