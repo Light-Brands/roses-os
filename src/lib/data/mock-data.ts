@@ -601,7 +601,7 @@ export const freePrograms: CommunityProgram[] = [
     schedule: 'Weekly — times vary, check online.',
     audience: 'Rose Meditation Practitioner',
     free: true,
-    whatsappLink: 'https://chat.whatsapp.com/Lh6bJlDmliMIryvKz63tzi?mode=gi_t',
+    whatsappLink: 'https://chat.whatsapp.com/C2C0DgvSVtW3fOB231vpRc?mode=gi_t',
     calendarLink: 'https://calendar.google.com/calendar/ical/08e5422245d1b02dabc429630bfe6086229c73da3d4d6aa6c4024429256467f9%40group.calendar.google.com/public/basic.ics',
     googleCalendarUrl: 'https://calendar.google.com/calendar/u/1?cid=MDhlNTQyMjI0NWQxYjAyZGFiYzQyOTYzMGJmZTYwODYyMjljNzNkYTNkNGQ2YWE2YzQwMjQ0MjkyNTY0NjdmOUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
     scheduleCycles: [
@@ -1104,7 +1104,7 @@ export const paidPrograms: CommunityProgram[] = [
     title: 'Aura for Life',
     description: 'A continued practice program for those who have completed the Aura Reading path. A living space to keep your reading skills sharp, deepen your perception, and stay connected to the community of practitioners.',
     free: false,
-    whatsappLink: 'https://chat.whatsapp.com/BeowpnN4CtvJdqFysxxy41',
+    whatsappLink: 'https://chat.whatsapp.com/C2C0DgvSVtW3fOB231vpRc?mode=gi_t',
     calendarLink: 'https://calendar.google.com/calendar/ical/d28269c09ef556ca45935fd59f6846c0208ae9e4681e870445fffbe011216491%40group.calendar.google.com/public/basic.ics',
     googleCalendarUrl: 'https://calendar.google.com/calendar/u/1?cid=ZDI4MjY5YzA5ZWY1NTZjYTQ1OTM1ZmQ1OWY2ODQ2YzAyMDhhZTllNDY4MWU4NzA0NDVmZmZiZTAxMTIxNjQ5MUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t',
     scheduleCycles: auraForLifeSchedule,
