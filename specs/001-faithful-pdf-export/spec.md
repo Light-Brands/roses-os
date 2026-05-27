@@ -1,3 +1,5 @@
+> Tracked as Light-Brands/roses-os#537
+
 ---
 slug: faithful-pdf-export
 title: Faithful PDF export from the /manuals editor
