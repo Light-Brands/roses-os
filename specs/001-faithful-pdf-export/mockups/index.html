@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Mockup — Faithful PDF Export — Download Menu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-viewport="desktop">
+  <header class="control-strip" role="region" aria-label="Mockup controls">
+    <div class="control-strip__title">
+      <span class="control-strip__label">Mockup</span>
+      <span class="control-strip__subtitle">faithful-pdf-export · Download menu state machine</span>
+    </div>
+
+    <div class="control-strip__group">
+      <span class="control-strip__group-label">Viewport</span>
+      <div class="control-strip__buttons" role="radiogroup" aria-label="Viewport">
+        <button class="ctl-btn" data-set-viewport="mobile" type="button" aria-pressed="false">375 mobile</button>
+        <button class="ctl-btn" data-set-viewport="desktop" type="button" aria-pressed="true">1280 desktop</button>
+      </div>
+    </div>
+
+    <div class="control-strip__group">
+      <span class="control-strip__group-label">State</span>
+      <div class="control-strip__buttons" role="radiogroup" aria-label="Menu state">
+        <button class="ctl-btn" data-set-state="idle" type="button" aria-pressed="true">idle</button>
+        <button class="ctl-btn" data-set-state="requesting" type="button" aria-pressed="false">requesting</button>
+        <button class="ctl-btn" data-set-state="rendering" type="button" aria-pressed="false">rendering</button>
+        <button class="ctl-btn" data-set-state="rendering-15s" type="button" aria-pressed="false">at 15s</button>
+        <button class="ctl-btn" data-set-state="downloading" type="button" aria-pressed="false">downloading</button>
+        <button class="ctl-btn" data-set-state="failed-runtime" type="button" aria-pressed="false">failed</button>
+        <button class="ctl-btn" data-set-state="fallback-static" type="button" aria-pressed="false">fallback static</button>
+        <button class="ctl-btn" data-set-state="fallback-html" type="button" aria-pressed="false">fallback html</button>
+      </div>
+    </div>
+
+    <div class="control-strip__group">
+      <span class="control-strip__group-label">Locale</span>
+      <div class="control-strip__buttons" role="radiogroup" aria-label="Editor locale">
+        <button class="ctl-btn" data-set-locale="en" type="button" aria-pressed="true">en</button>
+        <button class="ctl-btn" data-set-locale="es" type="button" aria-pressed="false">es</button>
+        <button class="ctl-btn" data-set-locale="pt" type="button" aria-pressed="false">pt</button>
+        <button class="ctl-btn" data-set-locale="el" type="button" aria-pressed="false">el</button>
+      </div>
+    </div>
+
+    <div class="control-strip__group">
+      <span class="control-strip__group-label">Editor</span>
+      <div class="control-strip__buttons" role="radiogroup" aria-label="Editor state">
+        <button class="ctl-btn" data-set-editor="empty" type="button" aria-pressed="false">empty</button>
+        <button class="ctl-btn" data-set-editor="loading" type="button" aria-pressed="false">loading blocks</button>
+        <button class="ctl-btn" data-set-editor="populated" type="button" aria-pressed="true">populated</button>
+        <button class="ctl-btn" data-set-editor="forbidden" type="button" aria-pressed="false">forbidden</button>
+      </div>
+    </div>
+
+    <p class="control-strip__hint" aria-live="polite">
+      Click states to walk the flow. <a href="print-preview.html" target="_blank" rel="noopener">Open print preview</a>.
+    </p>
+  </header>
+
+  <main class="stage" role="main">
+    <article class="canvas" aria-label="Editor canvas">
+      <header class="canvas__chrome">
+        <span class="canvas__breadcrumb"><a href="#">manuals</a> / rose-meditation-level-1</span>
+        <div class="canvas__meta" id="editor-meta">
+          <span>Last edited by Editor, just now</span>
+          <span>86 blocks</span>
+          <span class="canvas__save"><span class="dot dot--green"></span> All changes saved</span>
+        </div>
+        <div class="canvas__actions">
+          <span class="trust-dot" data-state="green" aria-label="Last successful render under 24h" title="Last successful render: just now">
+            <span class="trust-dot__dot"></span>
+          </span>
+          <div class="download" id="download-root">
+            <button class="download__trigger" type="button" id="download-trigger" aria-haspopup="menu" aria-expanded="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+              </svg>
+              <span>Download</span>
+            </button>
+
+            <div class="download__menu" role="menu" aria-labelledby="download-trigger">
+              <!-- PDF row -->
+              <button class="download__row download__row--pdf" type="button" role="menuitem" id="row-pdf" data-state="idle">
+                <span class="download__chip" aria-hidden="true">
+                  <span class="download__chip-label">PDF</span>
+                  <span class="download__chip-spinner" aria-hidden="true"></span>
+                </span>
+                <span class="download__body">
+                  <span class="download__label" id="pdf-label">Download PDF</span>
+                  <span class="download__subtitle" id="pdf-subtitle">From your live edits</span>
+                  <span class="download__elapsed" id="pdf-elapsed" hidden>3s</span>
+                </span>
+                <span class="download__action-slot" id="pdf-action-slot"></span>
+              </button>
+
+              <!-- Language passive line -->
+              <p class="download__lang" id="lang-line" aria-live="polite">
+                <span class="download__lang-text"><span id="lang-name">English</span> from your edits</span>
+                <span class="download__lang-chip" id="lang-chip">en</span>
+              </p>
+
+              <!-- Audit-trail tier line (mounts in resolved states) -->
+              <p class="download__tier" id="tier-line" hidden aria-live="polite"></p>
+
+              <!-- Fallback explanation block (mounts only in fallback states) -->
+              <div class="download__fallback" id="fallback-block" hidden role="status">
+                <p class="download__fallback-text" id="fallback-text"></p>
+              </div>
+
+              <!-- HTML row -->
+              <button class="download__row" type="button" role="menuitem" id="row-html">
+                <span class="download__chip download__chip--html" aria-hidden="true">HTML</span>
+                <span class="download__body">
+                  <span class="download__label">Download HTML</span>
+                  <span class="download__subtitle">Styled document for editing</span>
+                </span>
+              </button>
+
+              <!-- Markdown row -->
+              <button class="download__row" type="button" role="menuitem" id="row-md">
+                <span class="download__chip download__chip--md" aria-hidden="true">MD</span>
+                <span class="download__body">
+                  <span class="download__label">Download Markdown</span>
+                  <span class="download__subtitle">Plain text backup</span>
+                </span>
+              </button>
+
+              <div class="download__rule"></div>
+
+              <!-- Preview link -->
+              <a class="download__preview-link" href="print-preview.html" target="_blank" rel="noopener" role="menuitem">
+                Preview the print layout
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Editor body — fake blocks for the populated state -->
+      <section class="editor-body" id="editor-body">
+        <div class="editor-body__cover">
+          <img class="editor-body__cover-image" src="assets/cover-level-1.jpg" alt="Rose Meditation Level 1 cover">
+          <h1 class="editor-body__title">Rose Meditation</h1>
+          <p class="editor-body__subtitle">Level 1 — Initiation Course</p>
+        </div>
+        <h2 class="editor-body__h2">Circuit of Energy of Cosmos &amp; Earth</h2>
+        <p class="editor-body__p">Both the energy of the Earth and of the Cosmos continue to circulate in a constant flow as they enter, pass through their paths and leave. This activation raises our vibration, promotes energetic unblocking, brings up issues to resolve and provides spiritual information.</p>
+        <div class="editor-body__images">
+          <img class="editor-body__image" src="assets/09-cosmos-circuit.jpeg" alt="Cosmos circuit illustration">
+          <img class="editor-body__image" src="assets/10-cosmosearth.png" alt="Cosmos and earth circuit illustration">
+          <img class="editor-body__image" src="assets/04-golden-sun.jpeg" alt="Golden sun illustration">
+        </div>
+        <p class="editor-body__p">We call on the energy of the Earth to bring the force of transmutation and vitality to the energetic cleansing work we do in the Rose Meditation. It works through every chakra path.</p>
+      </section>
+
+      <!-- Editor body — empty state -->
+      <section class="editor-body editor-body--empty" id="editor-empty" hidden>
+        <p>This manual has no blocks yet. Add the first block to begin.</p>
+        <button type="button" class="btn-primary">Add first block</button>
+      </section>
+
+      <!-- Editor body — loading state -->
+      <section class="editor-body editor-body--loading" id="editor-loading" hidden>
+        <div class="skel skel--h1"></div>
+        <div class="skel skel--p"></div>
+        <div class="skel skel--p"></div>
+        <div class="skel skel--p"></div>
+      </section>
+
+      <!-- Editor body — forbidden state -->
+      <section class="editor-body editor-body--forbidden" id="editor-forbidden" hidden>
+        <p class="forbidden-message">You do not have permission to view this manual. Ask the lineage holder for an invitation.</p>
+      </section>
+    </article>
+  </main>
+
+  <!-- Visually-hidden announcer for screen-reader state changes -->
+  <div class="sr-only" id="sr-announce" aria-live="polite"></div>
+
+  <script type="module" src="fixture.js"></script>
+</body>
+</html>

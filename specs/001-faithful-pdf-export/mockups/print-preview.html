@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Print template preview — Rose Meditation Level 1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;400i;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { background: var(--color-stone); padding: var(--space-7) 0; }
+    .preview-banner {
+      max-width: 860px;
+      margin: 0 auto var(--space-6);
+      padding: var(--space-4) var(--space-6);
+      background: var(--color-charcoal);
+      color: var(--color-cream);
+      border-radius: var(--radius-medium);
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .preview-banner a { color: var(--color-rose-400); }
+    .preview-banner__meta { color: rgba(251, 247, 241, 0.65); font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; }
+
+    .pages {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-7);
+    }
+    .page {
+      width: 860px;
+      aspect-ratio: 8.5 / 11;
+      background: var(--color-cream);
+      box-shadow: 0 1px 0 var(--color-line);
+      padding: 64px 80px;
+      position: relative;
+      font-family: var(--font-sans);
+      color: var(--color-charcoal);
+      border: 1px solid var(--color-line);
+    }
+    .page__number {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-serif);
+      font-size: 11pt;
+      color: var(--color-soft-charcoal);
+    }
+
+    /* Cover page */
+    .page--cover {
+      padding: 0;
+      background: linear-gradient(180deg, var(--color-rose-100) 0%, var(--color-peach-sand) 100%);
+      display: grid;
+      grid-template-rows: 1fr auto 1fr;
+      align-items: end;
+      overflow: hidden;
+    }
+    .page--cover .cover-plate {
+      display: block;
+      width: 280px;
+      max-height: 380px;
+      margin: 0 auto;
+      object-fit: contain;
+      border-radius: 6px;
+      box-shadow: 0 6px 24px rgba(60, 50, 40, 0.18);
+    }
+    .page--cover .cover-text {
+      text-align: center;
+      padding: 0 80px 64px;
+    }
+    .page--cover .cover-title {
+      font-family: var(--font-serif);
+      font-size: 42pt;
+      font-weight: 500;
+      margin: 0 0 var(--space-3);
+      letter-spacing: 0.01em;
+      color: var(--color-charcoal);
+    }
+    .page--cover .cover-subtitle {
+      font-family: var(--font-serif);
+      font-size: 16pt;
+      font-style: italic;
+      margin: 0;
+      color: var(--color-soft-charcoal);
+    }
+
+    /* Body page typography */
+    .page h1 {
+      font-family: var(--font-serif);
+      font-size: 26pt;
+      font-weight: 500;
+      margin: 0 0 var(--space-6);
+      color: var(--color-charcoal);
+      letter-spacing: 0.005em;
+    }
+    .page h2 {
+      font-family: var(--font-serif);
+      font-size: 18pt;
+      font-weight: 500;
+      margin: var(--space-7) 0 var(--space-4);
+      color: var(--color-charcoal);
+    }
+    .page h3 {
+      font-family: var(--font-serif);
+      font-size: 14pt;
+      font-weight: 500;
+      margin: var(--space-6) 0 var(--space-3);
+      color: var(--color-rose-clay);
+    }
+    .page p {
+      font-size: 11pt;
+      line-height: 1.6;
+      margin: 0 0 var(--space-5);
+      color: var(--color-charcoal);
+    }
+    .page p.lead {
+      font-family: var(--font-serif);
+      font-size: 14pt;
+      font-style: italic;
+      color: var(--color-soft-charcoal);
+      margin-bottom: var(--space-6);
+    }
+    .page figcaption {
+      font-size: 9pt;
+      font-style: italic;
+      color: var(--color-soft-charcoal);
+      margin-top: var(--space-2);
+    }
+
+    /* Side-by-side panel — body text wraps toward the spine, illustration on the right */
+    .panel-side-by-side {
+      display: grid;
+      grid-template-columns: 60fr 40fr;
+      gap: var(--space-6);
+      margin: var(--space-6) 0;
+      align-items: start;
+    }
+    .panel-side-by-side .panel-figure {
+      margin: 0;
+      aspect-ratio: 3 / 4;
+      border-radius: 2px;
+      overflow: hidden;
+      background: var(--color-rose-100);
+    }
+    .panel-side-by-side .panel-figure img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Alternation: page 3 mirrors page 2 with the figure on the left */
+    .panel-side-by-side--flipped {
+      grid-template-columns: 40fr 60fr;
+    }
+    .panel-side-by-side--flipped .panel-figure { order: 0; }
+    .panel-side-by-side--flipped .panel-body { order: 1; }
+
+    /* Right-edge band: small numbered step list as seen on page 3 of Level 1 */
+    .right-band-steps {
+      position: absolute;
+      right: 40px;
+      top: 120px;
+      width: 110px;
+      font-family: var(--font-serif);
+      font-size: 10pt;
+      color: var(--color-soft-charcoal);
+    }
+    .right-band-steps ol { padding-left: 18px; margin: 0; }
+    .right-band-steps li { margin-bottom: 6px; line-height: 1.4; }
+
+    /* Full-bleed text page: margin alone holds the rhythm, no rules or ornaments */
+    .page--text-only h1 { margin-bottom: var(--space-7); }
+    .page--text-only p { max-width: 580px; }
+  </style>
+</head>
+<body>
+  <div class="preview-banner">
+    <span>Print template preview · rose-meditation-level-1 · locale en</span>
+    <span class="preview-banner__meta">PRINT_TEMPLATE_VERSION 0.1.0-mockup</span>
+    <a href="index.html">Back to menu mockup</a>
+  </div>
+
+  <div class="pages">
+    <!-- Page 1: Cover -->
+    <section class="page page--cover" aria-label="Cover">
+      <div></div>
+      <img class="cover-plate" src="assets/cover-level-1.jpg" alt="Rose Meditation Level 1 cover">
+      <div class="cover-text">
+        <h1 class="cover-title">Rose Meditation</h1>
+        <p class="cover-subtitle">Level 1 — Initiation Course</p>
+      </div>
+    </section>
+
+    <!-- Page 2: Side-by-side panel, illustration on the right (right-hand-band rule, even page) -->
+    <section class="page" aria-label="Body page with side-by-side panel">
+      <h1>Circuit of Energy of Cosmos &amp; Earth</h1>
+      <p class="lead">Both the energy of the Earth and of the Cosmos continue to circulate in a constant flow as they enter, pass through their paths and leave.</p>
+
+      <div class="panel-side-by-side">
+        <div class="panel-body">
+          <h3>Circuit of Energy of Earth</h3>
+          <p>We call on the energy of the Earth to bring the force of transmutation and vitality to the energetic cleansing work we do in the Rose Meditation. The earth receives the personality's hidden weight and dissolves it back into earth.</p>
+          <p>This activation raises our vibration, promotes energetic unblocking, and brings up issues to resolve.</p>
+        </div>
+        <figure class="panel-figure" aria-label="Illustration: meditator with earth energy">
+          <img src="assets/02-meditation-posture.png" alt="">
+        </figure>
+      </div>
+
+      <h3>Circuit of Energy of Cosmos</h3>
+      <p>The energy of the Cosmos is pure consciousness and it helps us to understand deep teachings during the Rose Meditation, one to two feet above our point of receiving so that the energy can pour clean into us.</p>
+
+      <span class="page__number">2</span>
+    </section>
+
+    <!-- Page 3: Alternation — illustration on the LEFT (right-hand-band rule, odd page) -->
+    <section class="page" aria-label="Body page with flipped panel and right-band steps">
+      <h1>Circuit Activation</h1>
+      <p class="lead">The full activation has three steps a teacher walks the student through before the first sitting.</p>
+
+      <div class="panel-side-by-side panel-side-by-side--flipped">
+        <figure class="panel-figure" aria-label="Illustration: cosmic-energy descent">
+          <img src="assets/09-cosmos-circuit.jpeg" alt="">
+        </figure>
+        <div class="panel-body">
+          <h3>Preparation</h3>
+          <p>Before the activation begins, the student sits with feet flat on the ground, hands open on the lap, and breath unforced.</p>
+        </div>
+      </div>
+
+      <h3>The Sitting</h3>
+      <p>Once the body has settled, the teacher invites the rose into the field of the student. The rose holds whatever the student offers it.</p>
+
+      <aside class="right-band-steps" aria-label="Preparation steps">
+        <ol>
+          <li>Sit with feet flat on the ground.</li>
+          <li>Hands open on the lap, palms up.</li>
+          <li>Breath unforced, eyes soft or closed.</li>
+        </ol>
+      </aside>
+
+      <span class="page__number">3</span>
+    </section>
+
+    <!-- Page 4: Full-bleed text page, held by margin alone -->
+    <section class="page page--text-only" aria-label="Text-only body page">
+      <h1>On Reverence</h1>
+      <p class="lead">Reverence is not a posture. It is the quiet recognition that what we touch in this meditation is older than we are.</p>
+
+      <p>The Rose Meditation comes from a lineage of teachers who held this practice without writing it down for many generations. When you teach it, you are not delivering content. You are offering a doorway. The student decides whether to walk through.</p>
+
+      <p>What the teacher carries forward is not a script. It is the same air the lineage breathed when the teaching first arrived in their teacher's room, and their teacher's teacher's room before that. The script can change without the air changing.</p>
+
+      <p>When you sit with a student and the meditation begins, do not perform. Be there. The presence of the teacher is the half of the meditation the student cannot see, and it is the half that does the work.</p>
+
+      <span class="page__number">4</span>
+    </section>
+  </div>
+</body>
+</html>
