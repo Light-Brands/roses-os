@@ -1,3 +1,5 @@
+> Tracked as Light-Brands/roses-os#594
+
 # Spec: Richer block editor for Roses OS manuals
 
 ## Problem
