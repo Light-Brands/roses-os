@@ -110,6 +110,42 @@ A unique constraint on `(manual_id, language, position)` is added by migration. 
 
 **Why:** the database is the only place a uniqueness invariant cannot be bypassed by a second writer or a future script. Application-only enforcement is a convention the next caller can break. This constraint also makes the D-7 idempotent upsert well-defined: the key the writer upserts on is the key the database guarantees is unique. Source: Custodian.
 
+## D-11: Extraction separates deterministic geometry from vision classification
+
+**Date:** 2026-05-31
+**Spec:** 002-faithful-content-reconstruction M1 (refines E2); landed by local spec 003-deterministic-extraction-geometry
+**Status:** active
+
+E2 splits into two modules with a hard seam between geometry and semantics. `extract-geometry.ts` is pure pdf.js over the source page, no network and no model: it calls `getTextContent()` for the exact text runs with their transform matrices (x, y, font size, font name) and walks the page operator list to find `paintImageXObject` ops, recovering each embedded image's device-space rect and its decoded pixels. Its output is a deterministic `PageGeometry`: an ordered list of text runs and figure regions, each with an exact rect in PDF user space, reading order derived from the rects by a column-aware top-to-bottom band sort (pdf.js emits runs in content-stream order, not reading order, so the sort is mandatory). `classify-regions.ts` is the only place the model is called: it receives pre-extracted regions, each as text plus font size plus exact rect plus a thumbnail of that region's own rect, and returns per region a `block_type` from the 18-type registry plus the content fields that type needs. The model never returns a coordinate and never sees a box. A deterministic rule layer classifies the unambiguous majority first (heading by font rank, contents rows by column x, cover by largest-centered-top), so the model judges only the residue. `map-to-blocks.ts` (E3, unchanged in role) assembles each classified region into a `{block_type, content}` payload and runs every payload through `validateBlockInput` (D-1) before it goes downstream; recipe overrides (D-7) apply on the same stable anchor. Classification is cached per region by a content hash of (text, font name, font size, rect, figure-bytes hash), so a re-run reads every label from cache and re-derives byte-identical staging rows.
+
+**Alternatives considered:**
+
+- **Keep the vision bounding box plus a second tightening pass.** Rejected. It treats non-convergence as a tuning problem when it is a category error: the page already carries the exact rects as data, so re-estimating them with a model pays a non-deterministic tax to approximate a deterministic fact. Two non-deterministic passes still cannot make idempotency a property, and they double the cost against the OQ3 budget. It reduces the failure rate, not the failure class.
+- **Full deterministic, no vision, classify from font and position by rule alone.** Cheapest and fully deterministic, kept as the rule-first layer but rejected as the sole mechanism. Several of the 18 types are semantic reads, not typographic ones: the callout variant is a read of the words, a quote and a spoken-instruction can share italic styling, a wisdom callout carries no label strip. A rule engine tuned to Level 1 typography would regress on Level 3 the way the box prompt regresses today, moving the brittleness from coordinates to font thresholds.
+- **The chosen hybrid: deterministic geometry, vision classifies only.** Selected. It puts each half on the tool that is correct for it, and its one fallible output (a label) is cached, schema-validated, and recipe-overridable. Every failure mode of the prior sample is structurally impossible because no box comes from the model.
+- **A third-party layout-analysis service (Textract, Document AI, Document Intelligence, LayoutLM, Surya).** Rejected. These return their own coordinate estimates and reading order, reintroducing the non-determinism D-11 removes, plus an external dependency and a vendor data path. They earn their keep on scanned documents with no text layer, which is out of scope here.
+
+**Why:** the empirical fact is non-convergence, and no prompt fixes it because the model is asked for a page-global continuous quantity it produces by estimation, which has no fixed point across a heterogeneous page set. The chosen path removes the question from the model. It is also the only alternative that makes D-7 idempotency a property rather than a hope: `extract` is deterministic and `classify` is cached on a deterministic key, so the composed function is deterministic, which is what D-7 reaches for. Determinism here is what lets a human correction in the recipe survive a re-run instead of being clobbered by a box that drifted a few pixels and re-flowed the page. Source: Winston, on Amelia's empirical probe over the real Level 1 PDF.
+
+**Non-goals:** pixel-perfect absolute-position layout in the reader app (the app renders linear blocks by D-1; this reproduces content and reading order, not canon x and y); OCR of scanned pages (a born-digital text layer is assumed); non-English locales (unchanged from spec 002, still blocked by the hard locale guard); reflowing or re-typesetting canon (curation stays the recipe's job).
+
+## D-12: Reconstruction provenance is carried in a sidecar and audit columns, not inside block content
+
+**Date:** 2026-05-31
+**Spec:** 002-faithful-content-reconstruction M1 (supports T-012, AC11)
+**Status:** active
+
+Provenance (source canon page, extraction run id, signer) is required on every reconstructed block by AC11, but the 18 content schemas are a closed discriminated union and adding a provenance field to each would dilute the read-path contract and force 18 schema edits. Provenance is instead carried in a per-run sidecar `reconstruct/<manual>.<lang>.provenance.json` keyed by the same stable (page index, block ordinal) anchor the recipe uses, plus the staging row audit columns: `updated_by` carries the signer, and a `source_page` and `run_id` pair lands via the D-6 admin writer into two nullable columns added by the M0 migration alongside the position-uniqueness constraint. The block content JSON stays exactly the 18 shapes the registry guard and `validateBlockInput` enforce. The promotion gate (D-8) reads the signer from the audit column, so AC11's "a promoted block with an empty signer does not exist" is a NOT NULL check at promotion time, not a content-schema concern.
+
+**Alternatives considered:**
+
+- **Add a provenance field to each of the 18 content schemas.** Rejected. It dilutes D-1's discriminated-union contract, forces 18 edits, and puts how-a-row-was-made metadata into the content a reader's renderer consumes.
+- **A separate provenance table joined by block id.** Rejected for v1 as heavier than the job needs; the sidecar plus two audit columns covers the AC, and the block id is not stable across re-runs the way the anchor is.
+
+**Why:** provenance is a property of how a row was made, which belongs in audit columns and a checked-in sidecar, not in content. The anchor key is the one D-7 already guarantees stable, so provenance, recipe overrides, and the classification cache all index off one deterministic coordinate. Source: Winston, with the content-schema-purity requirement from D-1.
+
+**Non-goals:** a full audit trail of every classification decision (the events log and the sidecar suffice); provenance for legacy v1 rows (only reconstructed blocks carry it).
+
 ---
 
-Last updated 2026-05-31 by spec 002-faithful-content-reconstruction (added D-5 through D-10, update mode). D-1 through D-4 unchanged.
+Last updated 2026-05-31 by spec 003-deterministic-extraction-geometry (added D-11, D-12, update mode). D-1 through D-10 unchanged.
