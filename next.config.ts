@@ -1,6 +1,13 @@
 import type { NextConfig } from "next";
+import * as path from "path";
 
 const nextConfig: NextConfig = {
+  // Pin turbopack root to this worktree so the warning about parent-dir
+  // lockfiles (C:\Users\loko_\package-lock.json) does not misroute the
+  // workspace root.
+  turbopack: {
+    root: path.resolve(__dirname),
+  },
   typescript: {
     // Pre-existing type error in admin/page.tsx (framer-motion Variants typing)
     ignoreBuildErrors: true,

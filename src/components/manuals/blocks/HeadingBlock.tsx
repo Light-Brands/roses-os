@@ -34,6 +34,25 @@ export default function HeadingBlock({ content, onChange, onLevelChange, readOnl
 
   return (
     <div className="group/heading relative">
+      {/* T-032: optional eyebrow strip above an h1 (v2 schema). */}
+      {content.level === 1 && (
+        <div className="mb-1">
+          {readOnly ? (
+            content.eyebrow ? (
+              <span className="text-xs uppercase tracking-[0.18em] text-rose-700">{content.eyebrow}</span>
+            ) : null
+          ) : (
+            <input
+              type="text"
+              value={content.eyebrow ?? ''}
+              onChange={(e) => onChange({ ...content, eyebrow: e.target.value })}
+              placeholder="Eyebrow (optional, h1 only)"
+              className="text-xs uppercase tracking-[0.18em] text-rose-700 bg-transparent border-b border-stone-300 px-0 py-0.5 w-1/2 focus:outline-none"
+              aria-label="Heading eyebrow"
+            />
+          )}
+        </div>
+      )}
       {/* Level toggle buttons — top-right, visible on hover */}
       {!readOnly && (
         <div className="absolute -top-1 right-0 opacity-0 group-focus-within/heading:opacity-100 group-hover/heading:opacity-100 transition-opacity z-10 flex gap-0.5 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg px-0.5 py-0.5 shadow-sm">

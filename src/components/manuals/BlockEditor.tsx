@@ -3,15 +3,44 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { Reorder, useDragControls } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import type { ManualBlock, ManualLanguage, BlockType, BlockContent, HeadingContent, TextContent, ImageContent, ImageRowContent } from '@/lib/manuals/types';
+import type {
+  ManualBlock, ManualLanguage, BlockType, BlockContent,
+  HeadingContent, TextContent, ImageContent, ImageRowContent,
+  CoverContent, CalloutContent, QuoteContent, NumberedExerciseContent,
+  CaptionedFigureContent, SpokenInstructionContent, TableContent,
+  ContentsContent, FootnoteContent, GlossaryContent,
+  SectionContent, TwoColumnSectionContent,
+} from '@/lib/manuals/types';
 import HeadingBlock from './blocks/HeadingBlock';
 import TextBlock from './blocks/TextBlock';
 import ImageBlock from './blocks/ImageBlock';
 import ImageRowBlock from './blocks/ImageRowBlock';
 import DividerBlock from './blocks/DividerBlock';
 import PageBreakBlock from './blocks/PageBreakBlock';
+import CoverBlock from './blocks/CoverBlock';
+import CalloutBlock from './blocks/CalloutBlock';
+import QuoteBlock from './blocks/QuoteBlock';
+import NumberedExerciseBlock from './blocks/NumberedExerciseBlock';
+import CaptionedFigureBlock from './blocks/CaptionedFigureBlock';
+import SpokenInstructionBlock from './blocks/SpokenInstructionBlock';
+import TableBlock from './blocks/TableBlock';
+import TableOfContentsBlock from './blocks/TableOfContentsBlock';
+import FootnoteBlock from './blocks/FootnoteBlock';
+import GlossaryBlock from './blocks/GlossaryBlock';
+import SectionBlock from './blocks/SectionBlock';
+import TwoColumnBlock from './blocks/TwoColumnBlock';
 import AddBlockMenu from './blocks/AddBlockMenu';
 import BlockWrapper from './BlockWrapper';
+import { defaultContent as defaultCallout } from './blocks/CalloutBlock/default';
+import { defaultContent as defaultQuote } from './blocks/QuoteBlock/default';
+import { defaultContent as defaultNumberedExercise } from './blocks/NumberedExerciseBlock/default';
+import { defaultContent as defaultCaptionedFigure } from './blocks/CaptionedFigureBlock/default';
+import { defaultContent as defaultSpokenInstruction } from './blocks/SpokenInstructionBlock/default';
+import { defaultContent as defaultTable } from './blocks/TableBlock/default';
+import { defaultContent as defaultContents } from './blocks/TableOfContentsBlock/default';
+import { defaultContent as defaultFootnote } from './blocks/FootnoteBlock/default';
+import { defaultContent as defaultGlossary } from './blocks/GlossaryBlock/default';
+import { defaultContent as defaultCover } from './blocks/CoverBlock/default';
 
 interface BlockEditorProps {
   manualId: string;
@@ -20,7 +49,16 @@ interface BlockEditorProps {
   onBlocksChange?: (blocks: ManualBlock[]) => void;
 }
 
-type SaveStatus = 'saved' | 'saving' | 'unsaved' | 'error';
+type SaveStatus = 'saved' | 'saving' | 'unsaved' | 'error' | 'conflict';
+
+interface ConflictInfo {
+  /** ISO timestamp of the conflicting remote update. */
+  remoteUpdatedAt: string;
+  /** PIN role name of the other editor, when available. */
+  otherEditor?: string;
+  /** Block id that triggered the conflict. */
+  blockId: string;
+}
 
 function getDefaultContent(type: BlockType): BlockContent {
   switch (type) {
@@ -33,6 +71,18 @@ function getDefaultContent(type: BlockType): BlockContent {
     } as ImageRowContent;
     case 'divider': return {};
     case 'page-break': return {};
+    case 'cover': return defaultCover();
+    case 'callout': return defaultCallout();
+    case 'quote': return defaultQuote();
+    case 'numbered-exercise': return defaultNumberedExercise();
+    case 'captioned-figure': return defaultCaptionedFigure();
+    case 'spoken-instruction': return defaultSpokenInstruction();
+    case 'table': return defaultTable();
+    case 'contents': return defaultContents();
+    case 'footnote': return defaultFootnote();
+    case 'glossary': return defaultGlossary();
+    case 'section': return { schema_version: 2, children: [] };
+    case 'two-column-section': return { schema_version: 2, left: [], right: [] };
   }
 }
 
@@ -101,6 +151,7 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
   const [blocks, setBlocks] = useState<ManualBlock[]>([]);
   const [loading, setLoading] = useState(true);
   const [saveStatus, setSaveStatus] = useState<SaveStatus>('saved');
+  const [conflict, setConflict] = useState<ConflictInfo | null>(null);
   const [lastEditInfo, setLastEditInfo] = useState<{ updated_by: string | null; updated_at: string } | null>(null);
   const saveTimeoutRef = useRef<Record<string, NodeJS.Timeout>>({});
   const blockCount = blocks.length;
@@ -166,15 +217,35 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
 
     saveTimeoutRef.current[blockId] = setTimeout(async () => {
       setSaveStatus('saving');
+      const ifUnmodifiedSince = lastEditInfo?.updated_at;
       try {
         const res = await fetch(`/api/manuals/${manualId}/blocks`, {
           method: 'PUT',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ id: blockId, content, updated_by: 'Editor' }),
+          headers: {
+            'Content-Type': 'application/json',
+            ...(ifUnmodifiedSince ? { 'If-Unmodified-Since': ifUnmodifiedSince } : {}),
+          },
+          body: JSON.stringify({
+            id: blockId,
+            content,
+            updated_by: 'Editor',
+            client_updated_at: ifUnmodifiedSince,
+          }),
         });
         if (res.ok) {
           setSaveStatus('saved');
           setLastEditInfo({ updated_by: 'Editor', updated_at: new Date().toISOString() });
+        } else if (res.status === 409) {
+          // T-046 + AC14: autosave conflict.
+          const body: { other_editor?: string; remote_updated_at?: string } = await res
+            .json()
+            .catch(() => ({}));
+          setSaveStatus('conflict');
+          setConflict({
+            remoteUpdatedAt: body.remote_updated_at ?? new Date().toISOString(),
+            otherEditor: body.other_editor,
+            blockId,
+          });
         } else {
           setSaveStatus('error');
         }
@@ -182,7 +253,7 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
         setSaveStatus('error');
       }
     }, 500);
-  }, [manualId]);
+  }, [manualId, lastEditInfo]);
 
   const handleContentChange = useCallback((blockId: string, content: BlockContent) => {
     setBlocks((prev) => prev.map((b) => (b.id === blockId ? { ...b, content } : b)));
@@ -317,6 +388,102 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
         return <DividerBlock />;
       case 'page-break':
         return <PageBreakBlock />;
+      case 'cover':
+        return (
+          <CoverBlock
+            content={block.content as CoverContent}
+            onChange={(c) => handleContentChange(block.id, c)}
+            readOnly={readOnly}
+          />
+        );
+      case 'callout':
+        return (
+          <CalloutBlock
+            content={block.content as CalloutContent}
+            onChange={(c) => handleContentChange(block.id, c)}
+            readOnly={readOnly}
+          />
+        );
+      case 'quote':
+        return (
+          <QuoteBlock
+            content={block.content as QuoteContent}
+            onChange={(c) => handleContentChange(block.id, c)}
+            readOnly={readOnly}
+          />
+        );
+      case 'numbered-exercise':
+        return (
+          <NumberedExerciseBlock
+            content={block.content as NumberedExerciseContent}
+            onChange={(c) => handleContentChange(block.id, c)}
+            readOnly={readOnly}
+          />
+        );
+      case 'captioned-figure':
+        return (
+          <CaptionedFigureBlock
+            content={block.content as CaptionedFigureContent}
+            onChange={(c) => handleContentChange(block.id, c)}
+            readOnly={readOnly}
+          />
+        );
+      case 'spoken-instruction':
+        return (
+          <SpokenInstructionBlock
+            content={block.content as SpokenInstructionContent}
+            onChange={(c) => handleContentChange(block.id, c)}
+            readOnly={readOnly}
+          />
+        );
+      case 'table':
+        return (
+          <TableBlock
+            content={block.content as TableContent}
+            onChange={(c) => handleContentChange(block.id, c)}
+            readOnly={readOnly}
+          />
+        );
+      case 'contents':
+        return (
+          <TableOfContentsBlock
+            content={block.content as ContentsContent}
+            onChange={(c) => handleContentChange(block.id, c)}
+            readOnly={readOnly}
+          />
+        );
+      case 'footnote':
+        return (
+          <FootnoteBlock
+            content={block.content as FootnoteContent}
+            onChange={(c) => handleContentChange(block.id, c)}
+            readOnly={readOnly}
+          />
+        );
+      case 'glossary':
+        return (
+          <GlossaryBlock
+            content={block.content as GlossaryContent}
+            onChange={(c) => handleContentChange(block.id, c)}
+            readOnly={readOnly}
+          />
+        );
+      case 'section':
+        return (
+          <SectionBlock
+            content={block.content as SectionContent}
+            onChange={(c) => handleContentChange(block.id, c)}
+            readOnly={readOnly}
+          />
+        );
+      case 'two-column-section':
+        return (
+          <TwoColumnBlock
+            content={block.content as TwoColumnSectionContent}
+            onChange={(c) => handleContentChange(block.id, c)}
+            readOnly={readOnly}
+          />
+        );
       default:
         return null;
     }
@@ -348,6 +515,27 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
 
   return (
     <div>
+      {/* Conflict banner (T-046 + AC14) */}
+      {conflict ? (
+        <div
+          role="alert"
+          aria-live="assertive"
+          className="sticky top-0 z-30 -mx-6 px-6 py-3 bg-amber-50 border-b border-amber-300 text-amber-900 flex items-center justify-between gap-3"
+        >
+          <div className="text-sm">
+            <strong>Save conflict.</strong>{' '}
+            {conflict.otherEditor ? `${conflict.otherEditor} edited` : 'Another editor changed this block'} at {new Date(conflict.remoteUpdatedAt).toLocaleTimeString()}.
+            Your local edits to block {conflict.blockId.slice(0, 8)} are not saved.
+          </div>
+          <button
+            type="button"
+            onClick={() => { setConflict(null); window.location.reload(); }}
+            className="text-xs bg-white border border-amber-300 rounded px-3 py-1 hover:bg-amber-100"
+          >
+            Refresh
+          </button>
+        </div>
+      ) : null}
       {/* Status bar — sticky */}
       <div className="sticky top-0 z-20 bg-[var(--color-background)]/90 backdrop-blur-sm border-b border-[var(--color-border)]/50 -mx-6 px-6 py-2 mb-6">
         <div className="flex items-center justify-between text-xs">

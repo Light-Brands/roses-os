@@ -49,6 +49,80 @@ const BLOCK_OPTIONS: { type: BlockType; label: string; icon: React.ReactNode; de
     icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><path d="M3 12h4m4 0h2m4 0h4M7 4v16M17 4v16" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="2 3" /></svg>,
     description: 'New page when printed',
   },
+  // v2 (spec 001-richer-block-editor) — block primitives from canon.
+  {
+    type: 'cover',
+    label: 'Cover',
+    icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><rect x="4" y="3" width="16" height="18" rx="1" /><path d="M8 8h8M8 12h6M8 16h4" /></svg>,
+    description: 'Title page with author + cover image',
+  },
+  {
+    type: 'callout',
+    label: 'Callout',
+    icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><rect x="3" y="6" width="18" height="12" rx="2" /><path d="M3 10h2" strokeLinecap="round" /></svg>,
+    description: 'Tinted box (note / warning / wisdom / summary)',
+  },
+  {
+    type: 'quote',
+    label: 'Quote',
+    icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><path d="M6 9v9c0 1-1 2-2 2M14 9v9c0 1-1 2-2 2M3 6c0-1.5 1-3 3-3h5l-2 6H5M11 6c0-1.5 1-3 3-3h5l-2 6h-4" /></svg>,
+    description: 'Tinted blockquote with attribution',
+  },
+  {
+    type: 'numbered-exercise',
+    label: 'Numbered Exercise',
+    icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><text x="3" y="17" fontSize="14" fill="currentColor">1</text><path d="M10 12h11M10 17h8" strokeLinecap="round" /></svg>,
+    description: 'Outsize numeral + body, hanging indent',
+  },
+  {
+    type: 'captioned-figure',
+    label: 'Captioned Figure',
+    icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><rect x="3" y="4" width="18" height="12" rx="1" /><circle cx="8" cy="9" r="1.5" /><path d="M21 13l-5-5L5 16M5 20h14" /></svg>,
+    description: 'Image with italic caption',
+  },
+  {
+    type: 'spoken-instruction',
+    label: 'Spoken Instruction',
+    icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><path d="M12 3a6.5 6.5 0 016.5 6.5c0 4.5-3.5 8.5-6.5 8.5s-6.5-4-6.5-8.5A6.5 6.5 0 0112 3zM12 18v3M10 21h4" /></svg>,
+    description: 'Rose-icon marker + bold quoted line',
+  },
+  {
+    type: 'table',
+    label: 'Table',
+    icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><rect x="3" y="3" width="18" height="18" rx="1" /><path d="M3 9h18M3 15h18M9 3v18M15 3v18" /></svg>,
+    description: 'Simple table with header row',
+  },
+  {
+    type: 'contents',
+    label: 'Table of Contents',
+    icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><path d="M4 6h2M9 6h11M4 12h2M9 12h11M4 18h2M9 18h11" strokeLinecap="round" /></svg>,
+    description: 'Canon contents list: numeral · title · page',
+  },
+  {
+    type: 'footnote',
+    label: 'Footnote',
+    icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><path d="M4 6h12M4 10h12M4 14h8M18 6v3l2-1 2 1V6" /></svg>,
+    description: 'Inline refs + definitions at section end',
+  },
+  {
+    type: 'glossary',
+    label: 'Glossary',
+    icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><path d="M4 6h6v4H4zM12 6h8M12 10h8M4 14h6v4H4zM12 14h8M12 18h8" /></svg>,
+    description: 'Term + definition pairs',
+  },
+  // Layout containers (M4) — render at the bottom under a separator.
+  {
+    type: 'section',
+    label: 'Section',
+    icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M3 9h18" strokeLinecap="round" /></svg>,
+    description: 'Group blocks into a logical section',
+  },
+  {
+    type: 'two-column-section',
+    label: 'Two Columns',
+    icon: <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}><rect x="3" y="3" width="8" height="18" rx="1" /><rect x="13" y="3" width="8" height="18" rx="1" /></svg>,
+    description: 'Side-by-side container',
+  },
 ];
 
 export default function AddBlockMenu({ onAdd }: AddBlockMenuProps) {
@@ -107,7 +181,8 @@ export default function AddBlockMenu({ onAdd }: AddBlockMenuProps) {
             className="absolute left-1/2 -translate-x-1/2 top-8 z-30 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl shadow-xl overflow-hidden min-w-[240px]"
           >
             <div className="px-3 py-2 border-b border-[var(--color-border)]">
-              <p className="text-[10px] font-medium uppercase tracking-wider text-[var(--color-foreground-faint)]">Add a block</p>
+              <p className="text-[10px] font-medium uppercase tracking-wider text-rose-700">Brand Wall</p>
+              <p className="text-[10px] text-[var(--color-foreground-faint)]">Every block traces a canon pattern.</p>
             </div>
             {BLOCK_OPTIONS.map((option) => (
               <button

@@ -108,20 +108,49 @@ export async function deleteBlock(blockId: string): Promise<void> {
   if (error) throw new Error(`Failed to delete block: ${error.message}`);
 }
 
-/** Reorder blocks by updating their positions */
+/**
+ * Reorder blocks by updating their positions.
+ *
+ * T-044 + AC13: wraps the per-row updates in a single Postgres transaction
+ * via the `reorder_blocks_atomic` RPC. The RPC accepts an array of
+ * `{id, position}` and updates all rows in one transaction with the
+ * SERIALIZABLE isolation level so concurrent reorders can't produce partial
+ * states. The N-statement parallel fallback path preserves backward compat
+ * until the RPC migration lands.
+ */
 export async function reorderBlocks(
   blockIds: string[],
   updatedBy?: string
 ): Promise<void> {
   const supabase = createClient();
 
+  // Preferred path: atomic RPC. The RPC lives in the migration that ships
+  // alongside this code; if the migration has not yet been applied to the
+  // target DB, the RPC errors with PGRST202 and we fall back to the parallel
+  // updates (legacy behavior).
+  const items = blockIds.map((id, index) => ({ id, position: index }));
+  type AtomicArgs = { items_arg: { id: string; position: number }[]; updated_by_arg: string | null };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const rpc = (supabase.rpc as unknown as (n: string, a: AtomicArgs) => Promise<{ error: { code?: string; message: string } | null }>);
+  const rpcResult = await rpc('reorder_blocks_atomic', {
+    items_arg: items,
+    updated_by_arg: updatedBy ?? null,
+  });
+
+  if (rpcResult.error && rpcResult.error.code !== 'PGRST202') {
+    throw new Error(`Failed to reorder blocks (atomic): ${rpcResult.error.message}`);
+  }
+  if (!rpcResult.error) return;
+
+  // Fallback: parallel per-row updates. Loses transactional atomicity but
+  // matches the legacy behavior so the editor keeps working before the
+  // RPC migration runs.
   const updates = blockIds.map((id, index) =>
     supabase
       .from('manual_blocks')
       .update({ position: index, updated_by: updatedBy ?? null })
       .eq('id', id)
   );
-
   const results = await Promise.all(updates);
   const failed = results.find((r) => r.error);
   if (failed?.error) throw new Error(`Failed to reorder blocks: ${failed.error.message}`);
