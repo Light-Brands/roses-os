@@ -195,7 +195,8 @@ header h1{margin:0;font-size:17px}header .s{font-size:12px;color:#8a7a6a}
 .lbl{font-family:Inter;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#bbab98;margin-bottom:10px}
 .side.canon img{width:100%;border:1px solid var(--line);display:block}
 .blk{margin:0 0 11px}
-.bt{font-family:Inter;font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:#cdbfad;margin-bottom:3px}
+.bt{display:none;font-family:Inter;font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:#cdbfad;margin-bottom:3px}
+body.tags .bt{display:block}
 .bad{color:#c0492b;font-weight:600}
 .blk.invalid{outline:1px dashed #d9b3a6;outline-offset:4px}
 .eyebrow{font-family:Inter;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);margin-bottom:4px}
@@ -212,7 +213,7 @@ blockquote{margin:0;font-size:20px;font-style:italic;border-left:3px solid var(-
 .twocol{display:grid;gap:18px;align-items:center}.colcell{min-width:0}.colcell .blk{margin-bottom:0}.two-column-section>.bt{color:#c2a6d0}
 @media(max-width:1100px){.cols{grid-template-columns:1fr}.side.recon{border-left:0;border-top:1px solid var(--line)}}
 </style></head><body>
-<header><h1>Rose Meditation Level 1 — deterministic reconstruction (${perPage.length} pages)</h1><div class="s">Left: canon page. Right: linear v2 blocks. Figure pixels and reading order come from pdf.js geometry, never a model box. The model classifies only the residue the rules cannot decide. Working tree, prod untouched.</div></header>
+<header><button id="tagtog" onclick="document.body.classList.toggle('tags')" style="float:right;font-family:Inter;font-size:11px;border:1px solid var(--line);background:#fff;color:#8a7a6a;border-radius:6px;padding:5px 10px;cursor:pointer">block tags</button><h1>Rose Meditation Level 1 — deterministic reconstruction (${perPage.length} pages)</h1><div class="s">Left: canon page. Right: linear v2 blocks. Figure pixels and reading order come from pdf.js geometry, never a model box. The model classifies only the residue the rules cannot decide. Working tree, prod untouched.</div></header>
 ${sections}</body></html>`;
   fs.writeFileSync(path.join(OUT, 'preview-geometry.html'), html);
 }
