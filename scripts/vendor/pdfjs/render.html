@@ -1,0 +1,21 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>pdfjs render</title></head>
+<body>
+<script type="module">
+import * as pdfjs from './pdf.min.mjs';
+pdfjs.GlobalWorkerOptions.workerSrc = './pdf.worker.min.mjs';
+window.renderPdf = async (b64, scale) => {
+  const data = Uint8Array.from(atob(b64), (c) => c.charCodeAt(0));
+  const doc = await pdfjs.getDocument({ data }).promise;
+  const page = await doc.getPage(1);
+  const viewport = page.getViewport({ scale });
+  const canvas = document.createElement('canvas');
+  canvas.width = Math.ceil(viewport.width);
+  canvas.height = Math.ceil(viewport.height);
+  const ctx = canvas.getContext('2d');
+  await page.render({ canvasContext: ctx, viewport }).promise;
+  return { dataUrl: canvas.toDataURL('image/png'), w: canvas.width, h: canvas.height };
+};
+window.__ready = true;
+</script>
+</body></html>

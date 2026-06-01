@@ -146,6 +146,25 @@ Provenance (source canon page, extraction run id, signer) is required on every r
 
 **Non-goals:** a full audit trail of every classification decision (the events log and the sidecar suffice); provenance for legacy v1 rows (only reconstructed blocks carry it).
 
+## D-13: Page structure is derived by deterministic layout analysis, improved as a general rule, never page-by-page
+
+**Date:** 2026-06-01
+**Spec:** 003b-deterministic-layout-analysis (extends 003 D-11)
+**Status:** active
+
+Reading order and multi-column structure are derived from the page geometry by a recursive XY-cut (the classic document-layout algorithm), pure and deterministic, in `src/lib/manuals/layout.ts`. The cut alternates horizontal cuts (a full-width whitespace band separates stacked sections, read top-to-bottom) and vertical cuts (a whitespace gutter separates columns, read left-to-right); reading order AND columns fall out of the same cut. A vertical cut fires only when both sides are real columns (≥2 boxes, or one box that spans ≥1.8 line-heights), so a numeral never splits from its title. Semantic grouping (a numbered exercise = numeral + title + body) is bounded by the XY-cut LEAF, so an exercise never crosses a figure or a column. A side-by-side band the cut finds is emitted as a real `two-column-section` (D-1's registry), referencing its members by id; `columns.ts` does that wrap. This replaced three earlier single-column-plus-patch heuristics (a global band sort, a figure-interleave pass, a geometric two-column detector) with one geometry-driven pass.
+
+**The operating rule (load-bearing for scale):** the corpus is thousands of pages across four manuals. Every observed error is fixed by improving the GENERAL parser or the layout/classification rules, NEVER by a page-specific patch or template. A fix that only helps one page is rejected; the test of a fix is that it is expressed as a deterministic rule over the geometry that holds across the corpus. Marked errors become rules, not exceptions.
+
+**Alternatives considered:**
+
+- **Per-page or per-manual layout templates.** Rejected. It does not scale to thousands of heterogeneous pages and turns every new page into hand-work.
+- **A model-based layout/reading-order pass.** Rejected for the same reason D-11 rejects model boxes: it reintroduces the non-determinism D-11 removed. The position is already in the PDF; cut it, do not estimate it.
+
+**Why:** the page already encodes its structure in the whitespace between its content rects. Deriving structure from that whitespace is deterministic, idempotent (D-7), and generalizes across the corpus, where a single-column assumption with per-page patches does not. Source: Quinn with Dario, after the page-6 two-column win was generalized into the XY-cut rule rather than left as a special case.
+
+**Non-goals (v1):** text that wraps around a floating figure (a full-width intro paragraph above an alternating-column body renders correctly but as its own row, not wrapped); table and glossary structure on the denser manuals (Level 3), which get their own rules when those pages are exercised. These are named so the next iteration improves the general rule, not a page.
+
 ---
 
-Last updated 2026-05-31 by spec 003-deterministic-extraction-geometry (added D-11, D-12, update mode). D-1 through D-10 unchanged.
+Last updated 2026-06-01 by spec 003b-deterministic-layout-analysis (added D-13). D-11, D-12 from spec 003; D-1 through D-10 earlier. All unchanged.

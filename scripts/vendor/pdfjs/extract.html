@@ -1,0 +1,141 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>pdfjs deterministic extract</title></head>
+<body>
+<script type="module">
+/*
+ * Browser-side deterministic geometry extraction for spec 003 (T-009a + T-FIG).
+ * Runs the vendored pdf.js v4.7.76. Exposes window.extractGeometry(b64) which
+ * returns, for page 1 of the single-page PDF:
+ *   - widthPt/heightPt: the unscaled (scale 1) viewport, i.e. PDF points
+ *   - items: every getTextContent() run {str, transform, width, height, fontName}
+ *   - images: every paintImage*XObject op with its placed rect in TOP-LEFT PDF
+ *             points (CTM-walked from the operator list), objId, kind, and the
+ *             native-resolution PNG dataUrl when page.objs can decode it (path a).
+ * No model, no network. The rects come from the operator list, never an estimate.
+ */
+import * as pdfjs from './pdf.min.mjs';
+pdfjs.GlobalWorkerOptions.workerSrc = './pdf.worker.min.mjs';
+
+const OPS = pdfjs.OPS;
+
+// 2x3 affine matrix helpers (pdf.js convention [a,b,c,d,e,f]).
+function mul(m1, m2) {
+  return [
+    m1[0] * m2[0] + m1[2] * m2[1],
+    m1[1] * m2[0] + m1[3] * m2[1],
+    m1[0] * m2[2] + m1[2] * m2[3],
+    m1[1] * m2[2] + m1[3] * m2[3],
+    m1[0] * m2[4] + m1[2] * m2[5] + m1[4],
+    m1[1] * m2[4] + m1[3] * m2[5] + m1[5],
+  ];
+}
+function apply(m, x, y) {
+  return [m[0] * x + m[2] * y + m[4], m[1] * x + m[3] * y + m[5]];
+}
+
+// Resolve a pdf.js page object (image) via the callback form, then draw it to a
+// canvas and return a PNG dataUrl at native resolution. Branches on bitmap vs
+// raw data per the probe; returns null if it cannot decode (fall to sharp crop).
+function getImagePng(page, objId) {
+  return new Promise((resolve) => {
+    let settled = false;
+    const done = (v) => { if (!settled) { settled = true; resolve(v); } };
+    const timer = setTimeout(() => done(null), 4000);
+    try {
+      page.objs.get(objId, (img) => {
+        clearTimeout(timer);
+        try {
+          if (!img) return done(null);
+          const w = img.width, h = img.height;
+          if (!w || !h) return done(null);
+          const canvas = document.createElement('canvas');
+          canvas.width = w; canvas.height = h;
+          const ctx = canvas.getContext('2d');
+          if (img.bitmap) {
+            ctx.drawImage(img.bitmap, 0, 0);
+          } else if (img.data) {
+            // RGBA or RGB raw data -> ImageData. kind 3 = RGBA_32BPP.
+            const id = ctx.createImageData(w, h);
+            const src = img.data;
+            if (src.length === w * h * 4) {
+              id.data.set(src);
+            } else if (src.length === w * h * 3) {
+              for (let i = 0, j = 0; i < src.length; i += 3, j += 4) {
+                id.data[j] = src[i]; id.data[j + 1] = src[i + 1]; id.data[j + 2] = src[i + 2]; id.data[j + 3] = 255;
+              }
+            } else {
+              return done(null);
+            }
+            ctx.putImageData(id, 0, 0);
+          } else {
+            return done(null);
+          }
+          done({ dataUrl: canvas.toDataURL('image/png'), naturalW: w, naturalH: h });
+        } catch (e) {
+          done(null);
+        }
+      });
+    } catch (e) {
+      clearTimeout(timer);
+      done(null);
+    }
+  });
+}
+
+window.extractGeometry = async (b64) => {
+  const data = Uint8Array.from(atob(b64), (c) => c.charCodeAt(0));
+  const doc = await pdfjs.getDocument({ data }).promise;
+  const page = await doc.getPage(1);
+  const vp = page.getViewport({ scale: 1 }); // PDF points
+  const W = vp.width, H = vp.height;
+
+  // --- text runs ---
+  const tc = await page.getTextContent();
+  const items = tc.items
+    .filter((it) => typeof it.str === 'string')
+    .map((it) => ({ str: it.str, transform: it.transform, width: it.width || 0, height: it.height || 0, fontName: it.fontName || '' }));
+
+  // --- image XObjects via operator-list CTM walk ---
+  const opList = await page.getOperatorList();
+  let ctm = [1, 0, 0, 1, 0, 0];
+  const stack = [];
+  const rawImages = [];
+  const pathBoxes = []; // accumulate fill/stroke extents for vector-art fallback
+  for (let i = 0; i < opList.fnArray.length; i++) {
+    const fn = opList.fnArray[i];
+    const args = opList.argsArray[i];
+    if (fn === OPS.save) { stack.push(ctm.slice()); }
+    else if (fn === OPS.restore) { ctm = stack.pop() || [1, 0, 0, 1, 0, 0]; }
+    else if (fn === OPS.transform) { ctm = mul(ctm, args); }
+    else if (fn === OPS.paintImageXObject || fn === OPS.paintJpegXObject || fn === OPS.paintImageXObjectRepeat) {
+      const objId = (args && args[0]) || null;
+      rawImages.push({ objId, ctm: ctm.slice(), kind: 'xobject' });
+    }
+  }
+
+  // Map each placed image's unit square through its CTM into top-left points.
+  const seen = new Set();
+  const images = [];
+  for (const im of rawImages) {
+    const corners = [apply(im.ctm, 0, 0), apply(im.ctm, 1, 0), apply(im.ctm, 1, 1), apply(im.ctm, 0, 1)];
+    const xs = corners.map((c) => c[0]);
+    const ysUser = corners.map((c) => c[1]); // bottom-left origin
+    const minX = Math.min(...xs), maxX = Math.max(...xs);
+    const minYu = Math.min(...ysUser), maxYu = Math.max(...ysUser);
+    // flip y: top-left rect
+    const rect = [minX, H - maxYu, maxX, H - minYu];
+    const w = rect[2] - rect[0], h = rect[3] - rect[1];
+    if (w < 1 || h < 1) continue;
+    const key = im.objId + '@' + rect.map((n) => Math.round(n)).join(',');
+    if (seen.has(key)) continue;
+    seen.add(key);
+    let png = null;
+    if (im.objId) png = await getImagePng(page, im.objId);
+    images.push({ objId: im.objId, rect, kind: im.kind, png });
+  }
+
+  return { widthPt: W, heightPt: H, items, images };
+};
+window.__ready = true;
+</script>
+</body></html>

@@ -1,6 +1,7 @@
 import { createClient } from '@/lib/supabase/client';
 import type { Json } from '@/lib/supabase/types';
 import type { Manual, ManualBlock, ManualLanguage, BlockType, BlockContent } from './types';
+import { isStagingSlug } from './staging';
 
 // =============================================================================
 // MANUAL QUERIES
@@ -15,7 +16,9 @@ export async function getManuals(): Promise<Manual[]> {
     .order('sort_order', { ascending: true });
 
   if (error) throw new Error(`Failed to fetch manuals: ${error.message}`);
-  return (data ?? []) as unknown as Manual[];
+  // Staging clones (D-5, `<slug>__staging`) live in the same table but must never
+  // surface in the reader-facing list; they are the isolated reconstruction lane.
+  return ((data ?? []) as unknown as Manual[]).filter((m) => !isStagingSlug(m.slug));
 }
 
 /** Fetch a single manual by ID */
