@@ -229,6 +229,31 @@ function check(name: string, cond: boolean, detail = ''): void {
   check('FIGURE small bud records width_pct ≈ 4 (not inflated to full width)', (figMap.get(9)?.content as any)?.width_pct === 4, JSON.stringify(figMap.get(9)?.content));
 }
 
+// ---- cover folds every line, centered, with the real size hierarchy ----------
+{
+  const ln = (text: string, y0: number, y1: number, fs: number, x0 = 220, x1 = 392) => ({ text, rect: [x0, y0, x1, y1] as const, fontSize: fs, fontName: 'g', runCount: 1 });
+  const reg = (ordinal: number, text: string, fs: number, y0: number, y1: number): BlockRegion => ({ ordinal, kind: 'text', text, rect: [220, y0, 392, y1], fontSize: fs, fontName: 'g', lines: [ln(text, y0, y1, fs)] });
+  const geo = {
+    page: 1, widthPt: 612, heightPt: 792,
+    textRegions: [
+      reg(0, 'C O M P A N Y', 6.5, 60, 67),
+      reg(1, 'Big Title', 36, 200, 240),
+      reg(2, 'A subtitle here', 15, 250, 266),
+      reg(3, 'Teachings by Someone', 9, 400, 410),
+      reg(4, 'a small closing note', 7, 700, 710),
+    ],
+    figures: [],
+    fills: [],
+  };
+  const m = classifyByRules(geo as any, { pageIndex: 1, isCoverPage: true });
+  const cover = m.get(1);
+  check('COVER the title region is the cover block', cover?.block_type === 'cover' && (cover.content as any).title === 'Big Title', JSON.stringify(cover?.content));
+  check('COVER is centered + carries subtitle + eyebrow', !!cover && (cover.content as any).align === 'center' && (cover.content as any).subtitle === 'A subtitle here' && (cover.content as any).eyebrow === 'COMPANY', JSON.stringify(cover?.content));
+  const credits = (cover?.content as any)?.credits as Array<{ text: string; sizePt: number }> | undefined;
+  check('COVER remaining lines become credits with their real size', !!credits && credits.length === 2 && credits[0].sizePt === 9 && credits[1].sizePt === 7, JSON.stringify(credits));
+  check('COVER every non-title region is folded (none spills as its own block)', [0, 2, 3, 4].every((o) => (m.get(o)?.content as any)?.__folded === true), JSON.stringify([0, 2, 3, 4].map((o) => m.get(o)?.content)));
+}
+
 // ---- tint box -> callout (general rule from a real fill, not a page patch) ----
 {
   const ln = (text: string, y0: number, y1: number, fs: number, x0 = 60, x1 = 548) => ({ text, rect: [x0, y0, x1, y1] as const, fontSize: fs, fontName: 'g', runCount: 1 });

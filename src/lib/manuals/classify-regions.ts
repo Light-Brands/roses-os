@@ -391,23 +391,31 @@ export function classifyByRules(geometry: PageGeometry, ctx: PageContext, slotKe
 
   // --- cover page ---
   if (ctx.isCoverPage) {
-    // eyebrow = a small all-caps line; title = the largest text; subtitle = the
-    // next size below the title; author/credits = the remaining small block.
+    // eyebrow = a small all-caps line above the title; title = the largest text;
+    // subtitle = the next size below. Every OTHER region is a centered credit /
+    // edition / disclaimer line — fold them all into the cover and carry each with
+    // its real font size so the renderer reproduces the canon's size hierarchy
+    // (the old code spilled them as left-aligned same-size text blocks).
     const sorted = [...regions].sort((a, b) => b.fontSize - a.fontSize);
     const titleRegion = sorted[0];
     const title = titleRegion ? titleRegion.text.replace(/\n/g, ' ').trim() : '';
     const eyebrowRegion = regions.find((r) => looksLikeEyebrow(r.text, r.fontSize, bodySize) && r.ordinal < (titleRegion?.ordinal ?? 0));
-    const subtitleRegion = sorted.find((r) => r !== titleRegion && r.fontSize < topSize && !looksLikeEyebrow(r.text, r.fontSize, bodySize));
-    const creditRegion = regions.find((r) => r.fontSize <= bodySize && r.lines.length >= 2 && r !== subtitleRegion);
-    const content: Record<string, unknown> = { schema_version: 2, title };
+    const subtitleRegion = sorted.find((r) => r !== titleRegion && r !== eyebrowRegion && r.fontSize < topSize && !looksLikeEyebrow(r.text, r.fontSize, bodySize));
+    const content: Record<string, unknown> = { schema_version: 2, title, align: 'center' };
     if (eyebrowRegion) content.eyebrow = collapseLetterSpacing(eyebrowRegion.text);
     if (subtitleRegion) content.subtitle = subtitleRegion.text.replace(/\n/g, ' ').trim();
-    if (creditRegion) content.author = creditRegion.text.trim();
+    const used = new Set<number>([titleRegion?.ordinal, eyebrowRegion?.ordinal, subtitleRegion?.ordinal].filter((o): o is number => o !== undefined));
+    const credits = regions
+      .filter((r) => !used.has(r.ordinal))
+      .sort((a, b) => a.ordinal - b.ordinal)
+      .map((r) => ({ text: collapseLetterSpacing(r.lines.map((l) => l.text.trim()).filter(Boolean).join(' ')), sizePt: r.fontSize }))
+      .filter((c) => c.text.length > 0);
+    if (credits.length) content.credits = credits;
     if (titleRegion) out.set(titleRegion.ordinal, { block_type: 'cover', content, rule: 'cover-largest-centered-top' });
-    // Fold the eyebrow/subtitle/credit regions into the cover (do not emit them
-    // again as their own blocks).
-    for (const r of [eyebrowRegion, subtitleRegion, creditRegion]) {
-      if (r && r !== titleRegion) out.set(r.ordinal, { block_type: 'cover', content: { __folded: true }, rule: 'cover-fold' });
+    // Fold every non-title region into the cover (do not emit them as own blocks).
+    for (const r of regions) {
+      if (r.ordinal === titleRegion?.ordinal) continue;
+      out.set(r.ordinal, { block_type: 'cover', content: { __folded: true }, rule: 'cover-fold' });
     }
     return out;
   }

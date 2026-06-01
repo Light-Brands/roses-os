@@ -116,8 +116,16 @@ function esc(s: unknown): string {
 function blockInner(b: MappedBlock): string {
   const c = b.content as Record<string, any>;
   switch (b.block_type) {
-    case 'cover':
-      return `${c.eyebrow ? `<div class="eyebrow">${esc(c.eyebrow)}</div>` : ''}${c.cover_image ? `<img class="coverimg" src="${esc(c.cover_image)}"/>` : ''}<div class="title">${esc(c.title)}</div>${c.subtitle ? `<div class="subtitle">${esc(c.subtitle)}</div>` : ''}${c.author ? `<div class="byline">${esc(c.author)}</div>` : ''}`;
+    case 'cover': {
+      // Credits/edition/disclaimer lines render centered at a size scaled from
+      // their real point size, so the cover keeps the canon's hierarchy.
+      const credits = Array.isArray(c.credits) ? c.credits as Array<{ text: string; sizePt: number }> : [];
+      const creditPx = (pt: number) => Math.max(9, Math.min(15, Math.round((pt || 9) * 1.35)));
+      const creditsHtml = credits.length
+        ? `<div class="cover-rule"></div>${credits.map((cr) => `<div class="credit" style="font-size:${creditPx(cr.sizePt)}px">${esc(cr.text)}</div>`).join('')}`
+        : (c.author ? `<div class="byline">${esc(c.author)}</div>` : '');
+      return `${c.eyebrow ? `<div class="eyebrow">${esc(c.eyebrow)}</div>` : ''}${c.cover_image ? `<img class="coverimg" src="${esc(c.cover_image)}"/>` : ''}<div class="title">${esc(c.title)}</div>${c.subtitle ? `<div class="subtitle">${esc(c.subtitle)}</div>` : ''}${creditsHtml}`;
+    }
     case 'contents':
       return `${c.eyebrow ? `<div class="eyebrow">${esc(c.eyebrow)}</div>` : ''}<ul class="toc">${(c.rows || []).map((r: any) => `<li><span class="num">${esc(r.numeral || '')}</span><span class="tit">${esc(r.title)}</span><span class="pg">${esc(r.page || '')}</span></li>`).join('')}</ul>`;
     case 'heading':
@@ -201,6 +209,7 @@ body.tags .bt{display:block}
 .blk.invalid{outline:1px dashed #d9b3a6;outline-offset:4px}
 .eyebrow{font-family:Inter;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);margin-bottom:4px}
 .cover{text-align:center;padding:10px 0}.cover .coverimg{max-width:58%;max-height:330px;width:auto;height:auto;display:block;margin:8px auto 14px}.cover .title{font-size:38px;font-weight:600}.cover .subtitle{font-style:italic;font-size:20px;color:#7a6553}.cover .byline{font-family:Inter;font-size:12px;color:#9a8a78;white-space:pre-line;margin-top:10px}
+.cover .cover-rule{width:42px;height:1px;background:var(--terra);opacity:.5;margin:16px auto}.cover .credit{color:#8a7a6a;margin:4px 0;line-height:1.35}.cover .credit:last-child{color:#b08a7a;font-style:italic;margin-top:10px}
 .h{font-weight:600}.h1{font-size:30px}.h2{font-size:23px}.h3{font-size:18px}
 .prose{font-size:16px;line-height:1.4}.prose p{margin:0 0 .5em}.prose p:last-child{margin-bottom:0}
 .toc{list-style:none;margin:0;padding:0}.toc li{display:flex;gap:10px;align-items:baseline;border-bottom:1px solid var(--line);padding:3px 0}.toc .num{color:var(--terra);min-width:28px}.toc .tit{flex:1;font-size:15px;line-height:1.3}.toc .pg{color:#9a8a78}
