@@ -47,14 +47,14 @@ const height = (b: LayoutBox) => b.rect[3] - b.rect[1];
 /** The widest horizontal whitespace band that no box crosses, as a y threshold to
  *  split on (boxes with top >= threshold go below). Returns null when none clears
  *  MIN_H_GAP. Greedy: picks the largest gap so the strongest structure cuts first. */
-function findHCut(boxes: LayoutBox[]): number | null {
+function findHCut(boxes: LayoutBox[], minHGap = MIN_H_GAP): number | null {
   const sorted = [...boxes].sort((a, b) => top(a) - top(b) || left(a) - left(b));
   let maxBottom = bottom(sorted[0]);
   let bestGap = 0;
   let bestThreshold: number | null = null;
   for (let i = 1; i < sorted.length; i++) {
     const gap = top(sorted[i]) - maxBottom;
-    if (gap > MIN_H_GAP && gap > bestGap) {
+    if (gap > minHGap && gap > bestGap) {
       bestGap = gap;
       bestThreshold = top(sorted[i]);
     }
@@ -99,15 +99,15 @@ function findVCut(boxes: LayoutBox[], lineH: number): number | null {
 
 /** Recursive XY-cut. Horizontal cuts first (stacked sections), then vertical cuts
  *  (columns); a node with neither is a leaf read top-to-bottom then left. */
-export function xyCut(boxes: LayoutBox[], lineH: number): LayoutNode {
+export function xyCut(boxes: LayoutBox[], lineH: number, minHGap = MIN_H_GAP): LayoutNode {
   if (boxes.length <= 1) return { type: 'leaf', boxes: [...boxes] };
 
-  const hThreshold = findHCut(boxes);
+  const hThreshold = findHCut(boxes, minHGap);
   if (hThreshold !== null) {
     const above = boxes.filter((b) => top(b) < hThreshold);
     const below = boxes.filter((b) => top(b) >= hThreshold);
     if (above.length && below.length) {
-      return { type: 'rows', children: [xyCut(above, lineH), xyCut(below, lineH)] };
+      return { type: 'rows', children: [xyCut(above, lineH, minHGap), xyCut(below, lineH, minHGap)] };
     }
   }
 
@@ -116,12 +116,21 @@ export function xyCut(boxes: LayoutBox[], lineH: number): LayoutNode {
     const leftSide = boxes.filter((b) => right(b) <= vThreshold);
     const rightSide = boxes.filter((b) => left(b) >= vThreshold);
     if (leftSide.length && rightSide.length) {
-      return { type: 'columns', children: [xyCut(leftSide, lineH), xyCut(rightSide, lineH)] };
+      return { type: 'columns', children: [xyCut(leftSide, lineH, minHGap), xyCut(rightSide, lineH, minHGap)] };
     }
   }
 
   // No clean cut: an overlapping cluster. Read top-to-bottom, then left.
   return { type: 'leaf', boxes: [...boxes].sort((a, b) => top(a) - top(b) || left(a) - left(b)) };
+}
+
+/** Every leaf's boxes, as ordered groups, in reading order (rows top-to-bottom,
+ *  columns left-to-right). Unlike `leafKeys` (which flattens to a single key list)
+ *  this preserves the leaf boundary, so a caller can group lines into regions
+ *  WITHIN a column and never merge across a column gutter. */
+export function orderedLeaves(node: LayoutNode): LayoutBox[][] {
+  if (node.type === 'leaf') return node.boxes.length ? [node.boxes] : [];
+  return node.children.flatMap(orderedLeaves);
 }
 
 /** A flattened placement slot: either a single-column run of box keys in reading

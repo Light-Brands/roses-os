@@ -31,6 +31,8 @@
 // Values are rounded to ROUND_DP decimal places so two runs over the same page
 // serialize byte-identically even if a downstream float reformats.
 
+import { xyCut, orderedLeaves, type LayoutBox } from './layout';
+
 export type Rect = readonly [number, number, number, number];
 
 /** Decimal places every coordinate is rounded to. Guards byte-identical output. */
@@ -406,6 +408,35 @@ export function groupLinesIntoRegions(lines: LineRegion[], startOrdinal = 0): Bl
   return regions;
 }
 
+/**
+ * Column-aware region grouping — the general rule for multi-column body text. The
+ * flat band sort merges runs sharing a y-band across a column gutter, so a
+ * three-up "Protection | Separation | Observation" block read left-to-right across
+ * the columns and jumbled into one line. Instead: XY-cut the runs into sections
+ * and columns first, then group lines into regions WITHIN each column leaf so a
+ * line never spans a gutter. A vertical cut only fires on a gutter empty across
+ * the whole section (an accidental wide word-gap never splits a single column,
+ * because other lines cross it). The horizontal-cut threshold is the region
+ * grouper's own paragraph gap (REGION_GAP_FACTOR × median line height), so a
+ * single-column page partitions exactly as the old flat pass did — only real
+ * columns change. Figures are not in this cut; their order is derived later by the
+ * region-level layout pass (classify-regions).
+ */
+export function groupRegionsColumnAware(runs: TextRun[]): BlockRegion[] {
+  if (runs.length === 0) return [];
+  const heights = runs.map((r) => r.rect[3] - r.rect[1]).filter((h) => h > 0);
+  const medLineH = median(heights) || runs[0].fontSize || 12;
+  const boxes: LayoutBox[] = runs.map((r, i) => ({ key: i, rect: r.rect, kind: 'text' }));
+  const tree = xyCut(boxes, medLineH, REGION_GAP_FACTOR * medLineH);
+  const regions: BlockRegion[] = [];
+  for (const leaf of orderedLeaves(tree)) {
+    const leafRuns = leaf.map((b) => runs[b.key]);
+    const lines = groupIntoLines(deriveReadingOrder(leafRuns));
+    regions.push(...groupLinesIntoRegions(lines, regions.length));
+  }
+  return regions;
+}
+
 // ----- Figures --------------------------------------------------------------
 
 /** True when an image op's placed rect is a genuine figure (a real embedded image
@@ -487,9 +518,7 @@ export function extractPageGeometry(raw: RawPageExtract): PageGeometry {
     // the band sort. A run that is purely spaces contributes nothing to a block.
     .filter((it) => it.str.length > 0 && it.str.trim().length > 0)
     .map((it) => runFromRawItem(it, raw.heightPt));
-  const ordered = deriveReadingOrder(runs);
-  const lines = groupIntoLines(ordered);
-  const textRegions = groupLinesIntoRegions(lines, 0);
+  const textRegions = groupRegionsColumnAware(runs);
   const figures = figuresFromRaw(raw.images, textRegions.length);
   const fills = fillBoxesFromRaw(raw.fills ?? [], raw.widthPt, raw.heightPt);
   return {
