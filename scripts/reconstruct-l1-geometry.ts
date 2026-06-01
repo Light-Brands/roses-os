@@ -187,8 +187,9 @@ header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line)
 header h1{margin:0;font-size:17px}header .s{font-size:12px;color:#8a7a6a}
 .page{max-width:1500px;margin:24px auto;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
 .pn{font-family:Inter;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#a0896f;padding:9px 16px;border-bottom:1px solid var(--line)}
-.cols{display:grid;grid-template-columns:1fr 1fr;align-items:start}
+.cols{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
 .side{padding:18px}.side.recon{border-left:1px solid var(--line);background:var(--warm)}
+.side.canon{display:flex;flex-direction:column}.side.canon img{margin-top:auto;margin-bottom:auto}
 .lbl{font-family:Inter;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#bbab98;margin-bottom:10px}
 .side.canon img{width:100%;border:1px solid var(--line);display:block}
 .blk{margin:0 0 11px}
