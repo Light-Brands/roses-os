@@ -191,15 +191,15 @@ header h1{margin:0;font-size:17px}header .s{font-size:12px;color:#8a7a6a}
 .side{padding:18px}.side.recon{border-left:1px solid var(--line);background:var(--warm)}
 .lbl{font-family:Inter;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#bbab98;margin-bottom:10px}
 .side.canon img{width:100%;border:1px solid var(--line);display:block}
-.blk{margin:0 0 16px}
+.blk{margin:0 0 11px}
 .bt{font-family:Inter;font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:#cdbfad;margin-bottom:3px}
 .bad{color:#c0492b;font-weight:600}
 .blk.invalid{outline:1px dashed #d9b3a6;outline-offset:4px}
 .eyebrow{font-family:Inter;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);margin-bottom:4px}
 .cover{text-align:center;padding:10px 0}.cover .coverimg{max-width:58%;max-height:330px;width:auto;height:auto;display:block;margin:8px auto 14px}.cover .title{font-size:38px;font-weight:600}.cover .subtitle{font-style:italic;font-size:20px;color:#7a6553}.cover .byline{font-family:Inter;font-size:12px;color:#9a8a78;white-space:pre-line;margin-top:10px}
 .h{font-weight:600}.h1{font-size:30px}.h2{font-size:23px}.h3{font-size:18px}
-.prose{font-size:18px;line-height:1.6}.prose p{margin:.4em 0}
-.toc{list-style:none;margin:0;padding:0}.toc li{display:flex;gap:10px;align-items:baseline;border-bottom:1px solid var(--line);padding:6px 0}.toc .num{color:var(--terra);min-width:30px}.toc .tit{flex:1;font-size:17px}.toc .pg{color:#9a8a78}
+.prose{font-size:16px;line-height:1.4}.prose p{margin:0 0 .5em}.prose p:last-child{margin-bottom:0}
+.toc{list-style:none;margin:0;padding:0}.toc li{display:flex;gap:10px;align-items:baseline;border-bottom:1px solid var(--line);padding:3px 0}.toc .num{color:var(--terra);min-width:28px}.toc .tit{flex:1;font-size:15px;line-height:1.3}.toc .pg{color:#9a8a78}
 .ex{display:flex;gap:14px;align-items:flex-start}.ex .numeral{color:var(--terra);font-weight:600;font-size:38px;line-height:.9}.ex>div{font-size:17px;line-height:1.55}
 .spoken{font-size:20px;font-style:italic;color:#5a463a;border-left:3px solid var(--terra);padding-left:14px;margin:6px 0}
 .callout{background:#fff;border:1px solid var(--line);border-left:4px solid var(--terra);border-radius:6px;padding:12px 14px;font-size:17px}

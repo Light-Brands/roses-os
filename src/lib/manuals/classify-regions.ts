@@ -302,13 +302,20 @@ function escapeHtml(s: string): string {
   return s.replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c] as string));
 }
 
-/** A multi-line body region rendered as paragraph HTML for the `text` block. */
+/** A body region rendered as ONE paragraph. A region is by definition a run of
+ *  lines with no large vertical gap (the extractor starts a new region at a real
+ *  paragraph break via REGION_GAP_FACTOR), so its physical lines are visual wraps,
+ *  not paragraph breaks — join them with a space. Emitting one <p> per physical
+ *  line was inserting a spurious paragraph break mid-sentence (the page-2
+ *  pull-quote split "…no longer" | "serve your present moment…"). */
 function bodyToHtml(region: BlockRegion): string {
-  return region.lines
+  const text = region.lines
     .map((l) => l.text.trim())
     .filter(Boolean)
-    .map((t) => `<p>${escapeHtml(t)}</p>`)
-    .join('');
+    .join(' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  return text ? `<p>${escapeHtml(text)}</p>` : '';
 }
 
 // ----- Page-level rule classification ---------------------------------------
