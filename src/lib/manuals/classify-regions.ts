@@ -21,7 +21,7 @@
  * (AC7).
  */
 
-import type { BlockRegion, FigureRegion, PageGeometry, Rect } from './extract-geometry';
+import type { BlockRegion, FigureRegion, FillRegion, PageGeometry, Rect } from './extract-geometry';
 import { regionContentHash } from './extract-geometry';
 import { xyCut, flattenLayout, assignLeaves, type LayoutBox } from './layout';
 
@@ -318,6 +318,28 @@ function bodyToHtml(region: BlockRegion): string {
   return text ? `<p>${escapeHtml(text)}</p>` : '';
 }
 
+/** A tiptap doc of one paragraph from a region's lines (joined; a region is one
+ *  paragraph — see bodyToHtml). Empty when the region has no text. */
+function docFromRegion(region: BlockRegion): Record<string, unknown> {
+  const text = region.lines.map((l) => l.text.trim()).filter(Boolean).join(' ').replace(/\s+/g, ' ').trim();
+  return { type: 'doc', content: text ? [{ type: 'paragraph', content: [{ type: 'text', text }] }] : [] };
+}
+
+/** The tightest tint box that contains a region's rect (with a small tolerance for
+ *  padding/rounding), or null. A region inside a tint box is a callout/aside. */
+function containingFill(rect: Rect, fills: FillRegion[]): FillRegion | null {
+  const T = 4;
+  let best: FillRegion | null = null;
+  let bestArea = Infinity;
+  for (const f of fills) {
+    const inside = f.rect[0] - T <= rect[0] && rect[2] <= f.rect[2] + T && f.rect[1] - T <= rect[1] && rect[3] <= f.rect[3] + T;
+    if (!inside) continue;
+    const area = (f.rect[2] - f.rect[0]) * (f.rect[3] - f.rect[1]);
+    if (area < bestArea) { bestArea = area; best = f; }
+  }
+  return best;
+}
+
 // ----- Page-level rule classification ---------------------------------------
 
 export interface PageContext {
@@ -473,6 +495,19 @@ export function classifyByRules(geometry: PageGeometry, ctx: PageContext, slotKe
   // --- per-region rules on the remaining (non-folio, non-exercise) regions ---
   for (const r of regions) {
     if (consumed.has(r.ordinal)) continue;
+
+    // A region sitting inside a tint box is a callout/aside — the page-2 pull-quote
+    // sits in a pale warm box. The box is real fill geometry, so this is a general
+    // rule, not a page patch: any text inside a content tint box reads as a callout.
+    const fill = containingFill(r.rect, geometry.fills);
+    if (fill) {
+      const body = docFromRegion(r);
+      if ((body.content as unknown[]).length > 0) {
+        out.set(r.ordinal, { block_type: 'callout', content: { schema_version: 2, variant: 'note', body }, rule: 'callout-inside-tint-box' });
+        continue;
+      }
+    }
+
     const isEyebrow = looksLikeEyebrow(r.text, r.fontSize, bodySize);
     const rankIdx = ranks.indexOf(Math.round(r.fontSize));
     const isHeadingSize = r.fontSize > bodySize + 1.5 && rankIdx >= 0 && rankIdx <= 2;

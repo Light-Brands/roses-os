@@ -8,6 +8,7 @@
 
 import { buildClassifierRequest, FORBIDDEN_REQUEST_KEYS, collapseLetterSpacing, classifyByRules, classifyFigures, parseContentsRows } from '../src/lib/manuals/classify-regions';
 import type { BlockRegion, FigureRegion, PageGeometry } from '../src/lib/manuals/extract-geometry';
+import { isTintBox } from '../src/lib/manuals/extract-geometry';
 import { mapToBlocks, type PageInput, type MappedBlock } from '../src/lib/manuals/map-to-blocks';
 import { groupTwoColumns } from '../src/lib/manuals/columns';
 import { analyzePageLayout, xyCut, assignLeaves, type LayoutBox } from '../src/lib/manuals/layout';
@@ -146,6 +147,7 @@ function check(name: string, cond: boolean, detail = ''): void {
       reg(8, 'R o s e M e d i t a t i o n', 7, 754, 761, 253, 358),
     ],
     figures: [fig],
+    fills: [],
   };
   const m = classifyByRules(geo, { pageIndex: 2, isCoverPage: false });
 
@@ -167,6 +169,34 @@ function check(name: string, cond: boolean, detail = ''): void {
   // a small ornament figure carries its real width fraction (~4% of the page).
   const figMap = classifyFigures([fig], { pageIndex: 2, isCoverPage: false }, 612);
   check('FIGURE small bud records width_pct ≈ 4 (not inflated to full width)', (figMap.get(9)?.content as any)?.width_pct === 4, JSON.stringify(figMap.get(9)?.content));
+}
+
+// ---- tint box -> callout (general rule from a real fill, not a page patch) ----
+{
+  const ln = (text: string, y0: number, y1: number, fs: number, x0 = 60, x1 = 548) => ({ text, rect: [x0, y0, x1, y1] as const, fontSize: fs, fontName: 'g', runCount: 1 });
+  const region = (ordinal: number, text: string, fs: number, y0: number, y1: number, x0 = 60, x1 = 548): BlockRegion => ({ ordinal, kind: 'text', text, rect: [x0, y0, x1, y1], fontSize: fs, fontName: 'g', lines: [ln(text, y0, y1, fs, x0, x1)] });
+
+  // A plain body region sitting inside a pale tint box; a second identical-style
+  // region with NO box over it. bodySize forced to ~10 by char mass on the boxed one.
+  const boxed = region(0, 'Roses represent the spirit. They absorb all the energies that no longer serve you.', 10, 713, 739);
+  const loose = region(1, 'A plain paragraph elsewhere on the page with no tint behind it at all here.', 10, 400, 426);
+  const geo2 = {
+    page: 5, widthPt: 612, heightPt: 792,
+    textRegions: [boxed, loose],
+    figures: [],
+    fills: [{ rect: [55, 708, 553, 744] as const, color: [245, 225, 221] as const }],
+  };
+  const m2 = classifyByRules(geo2 as any, { pageIndex: 5, isCoverPage: false });
+  check('CALLOUT a region inside a tint box becomes a callout', m2.get(0)?.block_type === 'callout', JSON.stringify(m2.get(0)));
+  check('CALLOUT the callout body carries the region text as one paragraph', (() => { const b = (m2.get(0)?.content as any)?.body; return b?.content?.length === 1 && b.content[0].content[0].text.startsWith('Roses represent'); })(), JSON.stringify((m2.get(0)?.content as any)?.body));
+  check('CALLOUT a region NOT under any box is not a callout', m2.get(1)?.block_type !== 'callout', JSON.stringify(m2.get(1)));
+
+  // isTintBox filters: white ground rejected, hairline rejected, real box kept.
+  const big = 612 * 792;
+  check('TINTBOX a pale warm box is kept', isTintBox({ rect: [55, 708, 553, 744], color: [245, 225, 221] }, 612, 792), '');
+  check('TINTBOX a white page ground is rejected', !isTintBox({ rect: [0, 0, 612, 792], color: [255, 255, 255] }, 612, 792), '');
+  check('TINTBOX a 1pt hairline rule is rejected', !isTintBox({ rect: [60, 300, 540, 301], color: [250, 240, 238] }, 612, 792), '');
+  check('TINTBOX a near-full-page tint is rejected as ground', !isTintBox({ rect: [0, 0, 612, 700], color: [245, 240, 235] }, 612, 792), String(612 * 700 / big));
 }
 
 console.log(failures === 0 ? '\nVERIFY-CLASSIFY-MAP: PASS (all checks green)' : `\nVERIFY-CLASSIFY-MAP: FAIL (${failures} checks failed)`);

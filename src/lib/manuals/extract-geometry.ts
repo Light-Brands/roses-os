@@ -62,6 +62,15 @@ export const MIN_FIGURE_AREA_PT = 200;
  *  hairline rule is 30:1 or worse. */
 export const MAX_FIGURE_ASPECT = 12;
 
+/** A fill is a content tint box only if it clears these. Area keeps it above the
+ *  TOC dot-leaders and row hairlines; short side keeps out a thick rule; aspect
+ *  keeps out a long bar. The page-2 callout box is ~480x50pt. */
+export const MIN_FILL_AREA_PT = 1500;
+export const MIN_FILL_DIM_PT = 10;
+export const MAX_FILL_ASPECT = 18;
+/** A fill covering most of the page is the page ground, not a box. */
+export const MAX_FILL_PAGE_FRACTION = 0.6;
+
 // ----- Raw shapes (the browser driver's output) ----------------------------
 
 /** One text item exactly as pdf.js `getTextContent()` yields it. */
@@ -93,6 +102,14 @@ export interface RawImageOp {
   kind: FigureKind;
 }
 
+/** One filled path the operator-list walk recovered: its placed rect (top-left
+ *  PDF points, from the path's CTM-transformed minMax) and its RGB fill color. A
+ *  tint box behind text (a callout/quote background) is the case we care about. */
+export interface RawFillOp {
+  rect: Rect;
+  color: readonly [number, number, number];
+}
+
 /** The full raw extract of one page from the browser driver. */
 export interface RawPageExtract {
   page: number;
@@ -101,6 +118,8 @@ export interface RawPageExtract {
   heightPt: number;
   items: RawTextItem[];
   images: RawImageOp[];
+  /** Filled rectangles (vector). Optional for back-compat with older raw dumps. */
+  fills?: RawFillOp[];
 }
 
 // ----- Geometry shapes (this module's deterministic output) -----------------
@@ -151,13 +170,22 @@ export interface FigureRegion {
   pixelsHash: string | null;
 }
 
-/** The deterministic geometry of one page: ordered text + figure regions. */
+/** A tint box: a filled rectangle light enough and large enough to be a content
+ *  background (a callout/quote box), not a hairline rule or the page ground. */
+export interface FillRegion {
+  rect: Rect;
+  color: readonly [number, number, number];
+}
+
+/** The deterministic geometry of one page: ordered text + figure regions, plus
+ *  the tint boxes a later pass uses to detect callouts. */
 export interface PageGeometry {
   page: number;
   widthPt: number;
   heightPt: number;
   textRegions: BlockRegion[];
   figures: FigureRegion[];
+  fills: FillRegion[];
 }
 
 // ----- Pure helpers ---------------------------------------------------------
@@ -417,6 +445,35 @@ export function figuresFromRaw(images: RawImageOp[], startOrdinal: number): Figu
   return out;
 }
 
+/** A fill is a near-white page ground (or paper) when every channel is ≥ this. */
+const NEAR_WHITE = 250;
+
+/** True when a fill rect is a content tint box: light-but-not-white, large enough,
+ *  not a hairline/bar, and not a near-full-page ground. Deterministic. */
+export function isTintBox(fill: RawFillOp, pageWidthPt: number, pageHeightPt: number): boolean {
+  const [r, g, b] = fill.color;
+  if (r >= NEAR_WHITE && g >= NEAR_WHITE && b >= NEAR_WHITE) return false; // white ground
+  const w = fill.rect[2] - fill.rect[0];
+  const h = fill.rect[3] - fill.rect[1];
+  const short = Math.min(w, h);
+  const long = Math.max(w, h);
+  if (w * h < MIN_FILL_AREA_PT) return false;
+  if (short < MIN_FILL_DIM_PT) return false;
+  if (short > 0 && long / short > MAX_FILL_ASPECT) return false;
+  if (w * h > MAX_FILL_PAGE_FRACTION * pageWidthPt * pageHeightPt) return false;
+  return true;
+}
+
+/** Keep only the tint boxes, rounded and sorted (top, then left) for byte-stable
+ *  output (AC1). A later, smaller box that nests inside a larger one is kept; the
+ *  classifier picks the tightest box that contains a region. */
+export function fillBoxesFromRaw(fills: RawFillOp[], pageWidthPt: number, pageHeightPt: number): FillRegion[] {
+  return fills
+    .filter((f) => isTintBox(f, pageWidthPt, pageHeightPt))
+    .map((f) => ({ rect: roundRect(f.rect), color: [Math.round(f.color[0]), Math.round(f.color[1]), Math.round(f.color[2])] as const }))
+    .sort((a, b) => a.rect[1] - b.rect[1] || a.rect[0] - b.rect[0] || a.rect[2] - b.rect[2]);
+}
+
 // ----- The deterministic transform: raw -> PageGeometry ---------------------
 
 /**
@@ -434,12 +491,14 @@ export function extractPageGeometry(raw: RawPageExtract): PageGeometry {
   const lines = groupIntoLines(ordered);
   const textRegions = groupLinesIntoRegions(lines, 0);
   const figures = figuresFromRaw(raw.images, textRegions.length);
+  const fills = fillBoxesFromRaw(raw.fills ?? [], raw.widthPt, raw.heightPt);
   return {
     page: raw.page,
     widthPt: round(raw.widthPt),
     heightPt: round(raw.heightPt),
     textRegions,
     figures,
+    fills,
   };
 }
 

@@ -202,7 +202,7 @@ header h1{margin:0;font-size:17px}header .s{font-size:12px;color:#8a7a6a}
 .toc{list-style:none;margin:0;padding:0}.toc li{display:flex;gap:10px;align-items:baseline;border-bottom:1px solid var(--line);padding:3px 0}.toc .num{color:var(--terra);min-width:28px}.toc .tit{flex:1;font-size:15px;line-height:1.3}.toc .pg{color:#9a8a78}
 .ex{display:flex;gap:14px;align-items:flex-start}.ex .numeral{color:var(--terra);font-weight:600;font-size:38px;line-height:.9}.ex>div{font-size:17px;line-height:1.55}
 .spoken{font-size:20px;font-style:italic;color:#5a463a;border-left:3px solid var(--terra);padding-left:14px;margin:6px 0}
-.callout{background:#fff;border:1px solid var(--line);border-left:4px solid var(--terra);border-radius:6px;padding:12px 14px;font-size:17px}
+.callout{background:#fbeee9;border-left:3px solid var(--terra);border-radius:4px;padding:10px 16px;font-size:14px;font-style:italic;color:#7a5a50;line-height:1.4}.callout p{margin:0 0 .4em}.callout p:last-child{margin-bottom:0}
 blockquote{margin:0;font-size:20px;font-style:italic;border-left:3px solid var(--terra);padding-left:14px}
 .captioned-figure{text-align:center}.captioned-figure img{max-width:90%;max-height:360px;width:auto;height:auto;border:1px solid var(--line);border-radius:4px;display:inline-block;margin:4px auto}.cap{font-style:italic;color:var(--terra);font-size:15px;margin-top:6px}
 .figph{display:inline-block;background:#efe7da;border:1px dashed #c9b9a6;border-radius:4px;padding:4px 10px;color:#b6a690;font-family:Inter;font-size:10px;text-transform:uppercase}
@@ -248,7 +248,7 @@ async function main(): Promise<void> {
       const raster = path.join(OUT, `canon-page-${tag}.png`);
       if (!fs.existsSync(pdf)) { console.log(`page ${i}: no pdf, skip`); continue; }
       const b64 = fs.readFileSync(pdf).toString('base64');
-      const rawExtract = await page.evaluate((b: string) => (window as any).extractGeometry(b), b64) as { widthPt: number; heightPt: number; items: any[]; images: RawImage[] };
+      const rawExtract = await page.evaluate((b: string) => (window as any).extractGeometry(b), b64) as { widthPt: number; heightPt: number; items: any[]; images: RawImage[]; fills?: Array<{ rect: [number, number, number, number]; color: [number, number, number] }> };
 
       const raw: RawPageExtract = {
         page: i,
@@ -256,6 +256,7 @@ async function main(): Promise<void> {
         heightPt: rawExtract.heightPt,
         items: rawExtract.items,
         images: rawExtract.images.map((im): RawImageOp => ({ objId: im.objId, rect: im.rect, kind: im.kind })),
+        fills: (rawExtract.fills ?? []).map((f) => ({ rect: f.rect, color: f.color })),
       };
 
       // AC1: byte-identical geometry across two pure extractions of the same raw.

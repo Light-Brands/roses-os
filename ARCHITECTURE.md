@@ -186,4 +186,18 @@ A "whole-page" block type is the cover ONLY. A contents page is NOT whole-page: 
 
 ---
 
-Last updated 2026-06-01 by the D-14 classification general-rules pass. D-13 from spec 003b; D-11, D-12 from spec 003; D-1 through D-10 earlier. All unchanged.
+## D-15: A filled rectangle behind text is a tint box; text inside one is a callout
+
+**Date:** 2026-06-01
+**Spec:** extends D-11 (geometry is read, not estimated) and D-14 (per-region classification)
+**Status:** active
+
+The canon sets asides and pull-quotes in a pale tinted box with a colored left border. That box is real geometry — a filled vector rectangle — not something to infer from wording. The browser extractor (`scripts/vendor/pdfjs/extract.html`) now walks the operator list for `constructPath` → `fill`, reads the path's bounding box from pdf.js's `args[2]` minMax (CTM-transformed to top-left points) and the active fill color, and emits a `fills` stream. Glyphs are drawn by text operators, not path fills, so this captures vector boxes/rules only, never letters. `extract-geometry.ts::fillBoxesFromRaw` keeps only **tint boxes** — light-but-not-white, area ≥ `MIN_FILL_AREA_PT`, short side ≥ `MIN_FILL_DIM_PT`, aspect ≤ `MAX_FILL_ASPECT`, and below `MAX_FILL_PAGE_FRACTION` of the page (so the page ground and hairline rules are dropped) — and surfaces them, rounded and sorted, on `PageGeometry.fills` (AC1 byte-stable). `classify-regions.ts` then applies one general rule: a text region whose rect sits inside the tightest containing tint box is a `callout` (its lines joined to one paragraph body). Verified across Level 1: 6 of 10 pages carry a real callout box and all 6 are detected, with no false positives on the 4 pages that have none; block count unchanged (a text→callout swap, nothing added or dropped); geometry still deterministic.
+
+**Non-goals (v1):** callout `variant` is always `note` (mapping a box's tint hue to warning/wisdom/summary is a later refinement); a tint box that contains several regions yields one callout per region rather than one grouped callout (Level 1 boxes are single-region). Named so the next iteration improves the general rule, not a page.
+
+**Why:** same principle as D-11 — the position and the box are in the PDF; read them, do not estimate. A page-specific "this paragraph is a quote" patch would not scale; a tint-box primitive over the geometry does. Source: Quinn with Dario, after the page-2 pull-quote.
+
+---
+
+Last updated 2026-06-01 by the D-15 tint-box/callout pass. D-14 same day; D-13 from spec 003b; D-11, D-12 from spec 003; D-1 through D-10 earlier. All unchanged.

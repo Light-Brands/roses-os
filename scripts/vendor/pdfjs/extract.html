@@ -95,18 +95,44 @@ window.extractGeometry = async (b64) => {
     .filter((it) => typeof it.str === 'string')
     .map((it) => ({ str: it.str, transform: it.transform, width: it.width || 0, height: it.height || 0, fontName: it.fontName || '' }));
 
-  // --- image XObjects via operator-list CTM walk ---
+  // --- image XObjects + filled rectangles via operator-list CTM walk ---
+  // Images give figures; filled rectangles give tint boxes (callout backgrounds).
+  // A filled path's box is args[2] of constructPath (pdf.js hands us the path-space
+  // minMax), transformed by the active CTM into top-left points. Glyphs are drawn
+  // by text ops, not path fills, so this captures real vector boxes only.
   const opList = await page.getOperatorList();
   let ctm = [1, 0, 0, 1, 0, 0];
+  let fillColor = [0, 0, 0];
+  let pendingPath = null; // { minMax:[x0,y0,x1,y1], ctm }
   const stack = [];
   const rawImages = [];
-  const pathBoxes = []; // accumulate fill/stroke extents for vector-art fallback
+  const rawFills = [];
+  const recordFill = () => {
+    if (!pendingPath) return;
+    const [px0, py0, px1, py1] = pendingPath.minMax;
+    // transform the 4 path-space corners by the path's CTM, flip y to top-left.
+    const corners = [apply(pendingPath.ctm, px0, py0), apply(pendingPath.ctm, px1, py0), apply(pendingPath.ctm, px1, py1), apply(pendingPath.ctm, px0, py1)];
+    const xs = corners.map((c) => c[0]); const ysU = corners.map((c) => c[1]);
+    const rect = [Math.min(...xs), H - Math.max(...ysU), Math.max(...xs), H - Math.min(...ysU)];
+    rawFills.push({ rect, color: fillColor.slice() });
+    pendingPath = null;
+  };
   for (let i = 0; i < opList.fnArray.length; i++) {
     const fn = opList.fnArray[i];
     const args = opList.argsArray[i];
     if (fn === OPS.save) { stack.push(ctm.slice()); }
     else if (fn === OPS.restore) { ctm = stack.pop() || [1, 0, 0, 1, 0, 0]; }
     else if (fn === OPS.transform) { ctm = mul(ctm, args); }
+    else if (fn === OPS.setFillRGBColor) { fillColor = [args[0], args[1], args[2]]; }
+    else if (fn === OPS.setFillGray) { const g = args[0] <= 1 ? Math.round(args[0] * 255) : args[0]; fillColor = [g, g, g]; }
+    else if (fn === OPS.setFillCMYKColor) { const [c, m, y, k] = args; fillColor = [Math.round(255 * (1 - Math.min(1, c + k))), Math.round(255 * (1 - Math.min(1, m + k))), Math.round(255 * (1 - Math.min(1, y + k)))]; }
+    else if (fn === OPS.constructPath) {
+      // args = [opCodes, coords, minMax]; prefer the supplied minMax bbox.
+      const mm = Array.isArray(args[2]) || ArrayBuffer.isView(args[2]) ? Array.from(args[2]) : null;
+      pendingPath = mm && mm.length >= 4 ? { minMax: [mm[0], mm[1], mm[2], mm[3]], ctm: ctm.slice() } : null;
+    }
+    else if (fn === OPS.fill || fn === OPS.eoFill || fn === OPS.fillStroke || fn === OPS.eoFillStroke || fn === OPS.closeFillStroke) { recordFill(); }
+    else if (fn === OPS.stroke || fn === OPS.closeStroke) { pendingPath = null; }
     else if (fn === OPS.paintImageXObject || fn === OPS.paintJpegXObject || fn === OPS.paintImageXObjectRepeat) {
       const objId = (args && args[0]) || null;
       rawImages.push({ objId, ctm: ctm.slice(), kind: 'xobject' });
@@ -134,7 +160,7 @@ window.extractGeometry = async (b64) => {
     images.push({ objId: im.objId, rect, kind: im.kind, png });
   }
 
-  return { widthPt: W, heightPt: H, items, images };
+  return { widthPt: W, heightPt: H, items, images, fills: rawFills };
 };
 window.__ready = true;
 </script>
