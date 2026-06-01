@@ -118,6 +118,41 @@ export type RegionCache = Record<string, CachedLabel>;
 
 const PAGE_NUM_RE = /(\d{1,4})\s*$/;
 const LEADING_NUMERAL_RE = /^(\d{1,3})[.)]?\s+/;
+/** A TOC leading numeral, including a range ("3–5", "3 - 5") and the case where
+ *  the page glued the numeral straight onto the title with no space ("3–5Aura").
+ *  Scoped to the contents path only; prose ambiguity still uses the strict
+ *  space-required `LEADING_NUMERAL_RE` so a number opening a sentence is not eaten. */
+const TOC_NUMERAL_RE = /^(\d{1,3}(?:\s*[–—-]\s*\d{1,3})?)[.)]?\s*/;
+
+/**
+ * Collapse PDF letter-spacing (tracking) that pdf.js extracts as literal spaces
+ * between glyphs: "C O N T E N T S" -> "CONTENTS". General over the corpus — any
+ * tracked eyebrow/label/running-head reads as single-char tokens. A run of ≥3
+ * single-character tokens (separated by single spaces) is a tracked word and is
+ * joined; a word boundary the PDF kept as a wider gap (2+ spaces) is preserved,
+ * so "A U R A  L I M I T S" -> "AURA LIMITS". Real words ("Rose Meditation") have
+ * multi-char tokens and pass through untouched. The visual tracking is restored
+ * by the renderer's letter-spacing style, never by literal spaces in the data.
+ *
+ * A word boundary the PDF kept as a wider gap (2+ spaces) is preserved. The
+ * harder case is a multi-word tracked phrase the extractor flattened to single
+ * spaces ("I N T E R N A T I O N A L  A U R A …"): the word breaks are
+ * unrecoverable from the string alone, so a single-space run that would join into
+ * a very long token (> MAX, i.e. clearly several words, not one) is left spaced
+ * rather than fused into an unreadable wall. The common single-word eyebrow
+ * ("CONTENTS", "PREPARATION") always collapses cleanly. */
+const MAX_TRACKED_WORD = 16;
+export function collapseLetterSpacing(text: string): string {
+  return text
+    .trim()
+    .split(/\s{2,}/)
+    .map((group) => {
+      const toks = group.split(/\s+/);
+      const allSingle = toks.length >= 3 && toks.every((t) => t.length === 1);
+      return allSingle && toks.length <= MAX_TRACKED_WORD ? toks.join('') : group;
+    })
+    .join(' ');
+}
 
 /** Letter-spaced or plain small-caps eyebrow: strip whitespace, all uppercase,
  *  short. e.g. "C O N T E N T S", "PREPARATION", "INTERNATIONAL". */
@@ -166,6 +201,21 @@ export function isFolio(region: BlockRegion, pageHeightPt: number): boolean {
   return region.rect[1] > pageHeightPt * 0.9;
 }
 
+/** A running header/footer: a short, sub-body-size, single-line region pinned in
+ *  the extreme top (<8%) or bottom (>92%) band — the page's running title/folio
+ *  furniture, not content. Dropped, never a block. The bottom threshold is 0.92
+ *  (not the 0.90 the contents-row filter uses) precisely so a body-size pull-quote
+ *  sitting at ~0.90 of the page height is NOT mistaken for footer furniture. */
+export function isRunningHeadFoot(region: BlockRegion, bodySize: number, pageHeightPt: number): boolean {
+  const stripped = region.text.replace(/\s+/g, '');
+  if (stripped.length === 0 || stripped.length > 40) return false;
+  if (region.lines.length > 1) return false;
+  if (region.fontSize >= bodySize) return false;
+  const inFoot = region.rect[1] > pageHeightPt * 0.92;
+  const inHead = region.rect[3] < pageHeightPt * 0.08;
+  return inFoot || inHead;
+}
+
 /** A standalone exercise numeral: a short numeral set markedly larger than body
  *  (the 28pt "1" that opens an exercise), not a folio. */
 export function isExerciseNumeral(region: BlockRegion, bodySize: number): boolean {
@@ -190,22 +240,35 @@ const PURE_NUM_RE = /^\d{1,4}$/;
  *  The big title/eyebrow and the running header/footer bands are excluded, and a
  *  line with no page number at all is not a row (so a footer note never becomes
  *  one). Returns null when the page is not contents-shaped. */
-export function parseContentsRows(regions: BlockRegion[], bodySize: number, pageHeightPt: number): Array<{ numeral?: string; title: string; page?: string }> | null {
+export interface ContentsParse {
+  rows: Array<{ numeral?: string; title: string; page?: string }>;
+  /** The region ordinals that contributed a TOC row (including a separate
+   *  right-aligned page-number region that was consumed into a row). These — and
+   *  only these — fold into the contents block; the page title, subtitle, and any
+   *  footer pull-quote are NOT here and classify on their own. */
+  rowOrdinals: Set<number>;
+}
+
+export function parseContentsRows(regions: BlockRegion[], bodySize: number, pageHeightPt: number): ContentsParse | null {
   // Collect candidate lines in reading order, excluding the big title (well above
   // body size) and the footer/header bands (a running "Rose Meditation - Level 1"
-  // footer ends in a digit and would otherwise read as a bogus row).
-  const lines: string[] = [];
+  // footer ends in a digit and would otherwise read as a bogus row). Each line
+  // carries its source region ordinal so the caller can fold exactly the row
+  // regions and leave the rest of the page to the per-region rules.
+  const lines: Array<{ text: string; ord: number }> = [];
   for (const r of regions) {
     if (r.fontSize > bodySize + 6) continue;
     if (r.rect[1] > pageHeightPt * 0.9) continue; // footer band
     if (r.rect[3] < pageHeightPt * 0.08) continue; // header band
-    for (const l of r.lines) lines.push(l.text.trim());
+    for (const l of r.lines) lines.push({ text: l.text.trim(), ord: r.ordinal });
   }
   const rows: Array<{ numeral?: string; title: string; page?: string }> = [];
+  const rowOrdinals = new Set<number>();
   for (let i = 0; i < lines.length; i++) {
-    let line = lines[i];
+    let line = lines[i].text;
     if (!line || PURE_NUM_RE.test(line)) continue; // blank, or a page-number fragment already consumed
     let page: string | undefined;
+    let consumedNextOrd: number | undefined;
     const pageM = line.match(PAGE_NUM_RE);
     if (pageM && /\d\s*$/.test(line)) {
       page = pageM[1];
@@ -213,23 +276,26 @@ export function parseContentsRows(regions: BlockRegion[], bodySize: number, page
     } else {
       // No inline page: a separate right-aligned page-number run follows.
       const next = lines[i + 1];
-      if (next && PURE_NUM_RE.test(next)) {
-        page = next;
-        lines[i + 1] = ''; // consume it
+      if (next && PURE_NUM_RE.test(next.text)) {
+        page = next.text;
+        consumedNextOrd = next.ord;
+        lines[i + 1].text = ''; // consume it
       }
     }
     if (!page) continue; // a line with no page number is not a TOC row (drops footer notes)
     line = line.replace(/[.·\s]+$/, '').trim(); // strip trailing dot/middot leaders
-    const numM = line.match(LEADING_NUMERAL_RE);
+    const numM = line.match(TOC_NUMERAL_RE);
     let numeral: string | undefined;
     if (numM) {
-      numeral = numM[1];
+      numeral = numM[1].replace(/\s+/g, ''); // normalize "3 – 5" -> "3–5"
       line = line.slice(numM[0].length).trim();
     }
     if (line.length === 0) continue;
     rows.push({ ...(numeral ? { numeral } : {}), title: line, page });
+    rowOrdinals.add(lines[i].ord);
+    if (consumedNextOrd !== undefined) rowOrdinals.add(consumedNextOrd);
   }
-  return rows.length >= 3 ? rows : null;
+  return rows.length >= 3 ? { rows, rowOrdinals } : null;
 }
 
 function escapeHtml(s: string): string {
@@ -289,8 +355,8 @@ export function classifyByRules(geometry: PageGeometry, ctx: PageContext, slotKe
   const topSize = ranks[0] ?? bodySize;
 
   // --- contents page: detect once at page level ---
-  const contentsRows = parseContentsRows(regions, bodySize, geometry.heightPt);
-  const isContentsPage = !!contentsRows;
+  const contentsParse = parseContentsRows(regions, bodySize, geometry.heightPt);
+  const isContentsPage = !!contentsParse;
 
   // --- cover page ---
   if (ctx.isCoverPage) {
@@ -303,7 +369,7 @@ export function classifyByRules(geometry: PageGeometry, ctx: PageContext, slotKe
     const subtitleRegion = sorted.find((r) => r !== titleRegion && r.fontSize < topSize && !looksLikeEyebrow(r.text, r.fontSize, bodySize));
     const creditRegion = regions.find((r) => r.fontSize <= bodySize && r.lines.length >= 2 && r !== subtitleRegion);
     const content: Record<string, unknown> = { schema_version: 2, title };
-    if (eyebrowRegion) content.eyebrow = eyebrowRegion.text.replace(/\s+/g, ' ').trim();
+    if (eyebrowRegion) content.eyebrow = collapseLetterSpacing(eyebrowRegion.text);
     if (subtitleRegion) content.subtitle = subtitleRegion.text.replace(/\n/g, ' ').trim();
     if (creditRegion) content.author = creditRegion.text.trim();
     if (titleRegion) out.set(titleRegion.ordinal, { block_type: 'cover', content, rule: 'cover-largest-centered-top' });
@@ -315,26 +381,40 @@ export function classifyByRules(geometry: PageGeometry, ctx: PageContext, slotKe
     return out;
   }
 
-  // --- contents block: emit one block, fold the rows + eyebrow into it ---
-  if (isContentsPage && contentsRows) {
-    const eyebrowRegion = regions.find((r) => looksLikeEyebrow(r.text, r.fontSize, bodySize));
-    const content: Record<string, unknown> = { schema_version: 2, rows: contentsRows };
-    if (eyebrowRegion) content.eyebrow = eyebrowRegion.text.replace(/\s+/g, ' ').trim();
-    // The contents block anchors at the first contents-ish region.
-    const anchor = regions.find((r) => r.fontSize <= bodySize + 6) ?? regions[0];
-    out.set(anchor.ordinal, { block_type: 'contents', content, rule: 'contents-rows-by-column-x' });
-    for (const r of regions) {
-      if (r.ordinal === anchor.ordinal) continue;
-      // title/subtitle on a contents page above the rows -> fold into the block's
-      // eyebrow already; everything else on this page belongs to contents.
-      out.set(r.ordinal, { block_type: 'contents', content: { __folded: true }, rule: 'contents-fold' });
+  const consumed = new Set<number>();
+
+  // --- contents block: emit ONE block carrying the rows, and fold ONLY the row
+  // regions into it. The page title, subtitle, a decorative figure, and any
+  // footer pull-quote are NOT part of the contents and are deliberately left for
+  // the per-region rules below — the old "contents page swallows the whole page"
+  // rule silently dropped them. Generalize: the contents is the rows, not the page. ---
+  if (isContentsPage && contentsParse) {
+    const { rows, rowOrdinals } = contentsParse;
+    const content: Record<string, unknown> = { schema_version: 2, rows };
+    // Anchor at the first row region so the block sits in the rows' position; the
+    // page eyebrow above the title is handled by the eyebrow-above-heading rule.
+    const anchorOrd = Math.min(...rowOrdinals);
+    out.set(anchorOrd, { block_type: 'contents', content, rule: 'contents-rows-by-column-x' });
+    consumed.add(anchorOrd);
+    for (const ord of rowOrdinals) {
+      if (ord === anchorOrd) continue;
+      out.set(ord, { block_type: 'contents', content: { __folded: true }, rule: 'contents-fold' });
+      consumed.add(ord);
     }
-    return out;
+  }
+
+  // --- running headers/footers: drop, never a content block ---
+  for (const r of regions) {
+    if (consumed.has(r.ordinal)) continue;
+    if (isRunningHeadFoot(r, bodySize, geometry.heightPt)) {
+      out.set(r.ordinal, { block_type: 'text', content: { __drop: true }, rule: 'running-head-foot-drop' });
+      consumed.add(r.ordinal);
+    }
   }
 
   // --- folio footers: drop, never a content block ---
-  const consumed = new Set<number>();
   for (const r of regions) {
+    if (consumed.has(r.ordinal)) continue;
     if (isFolio(r, geometry.heightPt)) {
       out.set(r.ordinal, { block_type: 'text', content: { __drop: true }, rule: 'folio-footer-drop' });
       consumed.add(r.ordinal);
@@ -396,7 +476,7 @@ export function classifyByRules(geometry: PageGeometry, ctx: PageContext, slotKe
       // heading region if there is one; otherwise emit as a heading eyebrow.
       const next = regions.find((x) => x.ordinal === r.ordinal + 1);
       if (next && next.fontSize > bodySize + 1.5) {
-        out.set(r.ordinal, { block_type: 'heading', content: { __eyebrowFor: next.ordinal, eyebrow: r.text.replace(/\s+/g, ' ').trim() }, rule: 'eyebrow-small-caps-above-heading' });
+        out.set(r.ordinal, { block_type: 'heading', content: { __eyebrowFor: next.ordinal, eyebrow: collapseLetterSpacing(r.text) }, rule: 'eyebrow-small-caps-above-heading' });
         continue;
       }
     }
@@ -433,13 +513,18 @@ export function classifyByRules(geometry: PageGeometry, ctx: PageContext, slotKe
  *  block on page 1; every other figure is a `captioned-figure` whose src is the
  *  extracted pixel file (filled by the driver) and whose alt is a neutral
  *  placeholder until a human or the model captions it. No model box, ever. */
-export function classifyFigures(figures: FigureRegion[], ctx: PageContext): Map<number, RuleOutcome> {
+export function classifyFigures(figures: FigureRegion[], ctx: PageContext, pageWidthPt: number): Map<number, RuleOutcome> {
   const out = new Map<number, RuleOutcome>();
   for (const f of figures) {
+    // The figure's real fraction of the page width, so a small decorative ornament
+    // (the Level 1 page-2 flower is 27pt on a 612pt page ≈ 4%) renders small and a
+    // full-bleed plate renders large. General: the on-page size is in the geometry,
+    // so carry it instead of letting every figure inflate to the renderer's max.
+    const width_pct = pageWidthPt > 0 ? Math.round((f.widthPt / pageWidthPt) * 100) : null;
     if (ctx.isCoverPage) {
-      out.set(f.ordinal, { block_type: 'captioned-figure', content: { schema_version: 2, src: '', alt: 'cover illustration', __coverImage: true }, rule: 'figure-cover-image' });
+      out.set(f.ordinal, { block_type: 'captioned-figure', content: { schema_version: 2, src: '', alt: 'cover illustration', __coverImage: true, ...(width_pct ? { width_pct } : {}) }, rule: 'figure-cover-image' });
     } else {
-      out.set(f.ordinal, { block_type: 'captioned-figure', content: { schema_version: 2, src: '', alt: 'figure' }, rule: 'figure-xobject-bounds' });
+      out.set(f.ordinal, { block_type: 'captioned-figure', content: { schema_version: 2, src: '', alt: 'figure', ...(width_pct ? { width_pct } : {}) }, rule: 'figure-xobject-bounds' });
     }
   }
   return out;
@@ -490,11 +575,14 @@ export async function classifyPage(geometry: PageGeometry, opts: ClassifyOptions
   const leafOf = assignLeaves(tree);
 
   const ruleMap = classifyByRules(geometry, ctx, (o) => `L${leafOf.get(o) ?? o}`);
-  const figureMap = classifyFigures(geometry.figures, ctx);
+  const figureMap = classifyFigures(geometry.figures, ctx, geometry.widthPt);
 
-  // A whole-page block (cover, contents) ignores the layout split; everything
-  // else reads in XY-cut order with two-column bands annotated.
-  const specialPage = [...ruleMap.values()].some((o) => (o.block_type === 'cover' || o.block_type === 'contents') && !(o.content as Record<string, unknown>).__folded);
+  // Only the cover ignores the layout split (it is genuinely one centered, whole-
+  // page composition). A contents page is NOT whole-page: it can carry a title, a
+  // subtitle, a decorative figure, and a footer pull-quote around its rows, so it
+  // reads in XY-cut geometric order like any other page, with the contents block
+  // sitting in its rows' position.
+  const specialPage = [...ruleMap.values()].some((o) => o.block_type === 'cover' && !(o.content as Record<string, unknown>).__folded);
 
   type Slotted = { region: BlockRegion | FigureRegion; colGroup?: string; colSide?: 'left' | 'right' };
   const orderedSlots: Slotted[] = [];

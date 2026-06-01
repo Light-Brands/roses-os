@@ -124,8 +124,13 @@ function blockInner(b: MappedBlock): string {
       return `${c.eyebrow ? `<div class="eyebrow">${esc(c.eyebrow)}</div>` : ''}<div class="h h${c.level || 2}">${esc(c.text)}</div>`;
     case 'text':
       return `<div class="prose">${c.html || ''}</div>`;
-    case 'captioned-figure':
-      return `${c.src ? `<img src="${esc(c.src)}"/>` : `<div class="figph">figura</div>`}${c.caption ? `<div class="cap">${esc(c.caption)}</div>` : ''}`;
+    case 'captioned-figure': {
+      // Size to the figure's real fraction of the page width (carried by the
+      // classifier as width_pct) so a small ornament stays small. Cap at 90%.
+      const pct = typeof c.width_pct === 'number' ? Math.min(90, Math.max(2, c.width_pct)) : 60;
+      const style = ` style="width:${pct}%"`;
+      return `${c.src ? `<img src="${esc(c.src)}"${style}/>` : `<div class="figph">figura</div>`}${c.caption ? `<div class="cap">${esc(c.caption)}</div>` : ''}`;
+    }
     case 'numbered-exercise':
       return `<div class="ex"><span class="numeral">${esc(c.numeral)}</span><div>${c.title ? `<strong>${esc(c.title)}</strong>` : ''}${docText(c.body)}</div></div>`;
     case 'spoken-instruction':

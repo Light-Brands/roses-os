@@ -126,19 +126,21 @@ export function mapToBlocks(pages: PageInput[], ctx: MapContext): MappedBlock[] 
   let position = 0;
 
   for (const page of pages) {
-    const byOrdinal = new Map<number, ClassifiedRegion>();
-    for (const r of page.regions) byOrdinal.set(r.ordinal, r);
-
     // Pre-pass: collect eyebrow-for-heading attachments so the heading can absorb
     // them, and the cover image so the cover block can fold it.
     const eyebrowForHeading = new Map<number, string>();
-    let coverOrdinal: number | null = null;
+    let coverImageFile = '';
     for (const r of page.regions) {
       const efh = (r.content as Record<string, unknown>).__eyebrowFor;
       if (typeof efh === 'number' && typeof r.content.eyebrow === 'string') {
         eyebrowForHeading.set(efh, r.content.eyebrow as string);
       }
-      if (r.block_type === 'cover' && !(r.content as Record<string, unknown>).__folded) coverOrdinal = r.ordinal;
+      // The cover image is folded into the cover block; resolve its file here so
+      // the cover region (which is built with a cleanContent COPY of its content)
+      // can carry cover_image, rather than mutating the raw region after the copy.
+      if (r.block_type === 'captioned-figure' && (r.content as Record<string, unknown>).__coverImage) {
+        coverImageFile = page.figureFiles.get(r.ordinal) ?? '';
+      }
     }
 
     for (const region of page.regions) {
@@ -157,14 +159,18 @@ export function mapToBlocks(pages: PageInput[], ctx: MapContext): MappedBlock[] 
       // the cover block instead of emitting its own captioned-figure.
       if (block_type === 'captioned-figure') {
         const file = page.figureFiles.get(region.ordinal) ?? '';
-        if (raw.__coverImage && coverOrdinal !== null) {
-          const cover = byOrdinal.get(coverOrdinal);
-          if (cover) (cover.content as Record<string, unknown>).cover_image = file;
-          continue; // folded into the cover; do not emit separately
+        if (raw.__coverImage) {
+          continue; // folded into the cover block (cover_image set below); do not emit
         }
         content.src = file;
         if (typeof content.alt !== 'string' || content.alt.length === 0) content.alt = 'figure';
         if (typeof content.schema_version !== 'number') content.schema_version = 2;
+      }
+
+      // Cover folds its hero image: set cover_image on the cover block's own
+      // (copied) content so it survives into the emitted block.
+      if (block_type === 'cover' && coverImageFile && typeof content.cover_image !== 'string') {
+        content.cover_image = coverImageFile;
       }
 
       // Heading absorbs a preceding eyebrow.

@@ -167,4 +167,23 @@ Reading order and multi-column structure are derived from the page geometry by a
 
 ---
 
-Last updated 2026-06-01 by spec 003b-deterministic-layout-analysis (added D-13). D-11, D-12 from spec 003; D-1 through D-10 earlier. All unchanged.
+## D-14: A page-template block (cover, contents) folds only its own constituents, never the whole page
+
+**Date:** 2026-06-01
+**Spec:** extends D-11 / D-13 (classification general rules)
+**Status:** active
+
+A "whole-page" block type is the cover ONLY. A contents page is NOT whole-page: it routinely carries a page title, a subtitle, a decorative ornament, and a footer pull-quote around its rows. The earlier contents rule folded *every* region on the page into the contents block and returned early, silently dropping the title, subtitle, and pull-quote (observed on Level 1 page 2). Generalized: `parseContentsRows` now reports the exact region ordinals that contributed a TOC row, the contents block folds ONLY those, and every other region classifies on its own (title → heading, subtitle → heading, footer prose → text). The contents page also flows in XY-cut geometric order (D-13) instead of a flat ordinal sort, so the ornament lands between the subtitle and the rows as it does in the canon. Three more general rules landed in the same pass:
+
+- **Letter-spacing (tracking) is collapsed, not literalized** (`collapseLetterSpacing`). pdf.js extracts a tracked label as single-char tokens ("C O N T E N T S"); the data carries the clean word ("CONTENTS") and the renderer restores tracking as a style. A wider gap (2+ spaces) keeps a word break; a single-spaced multi-word phrase whose join would exceed `MAX_TRACKED_WORD` is left spaced rather than fused (word breaks are unrecoverable from the flattened string — a geometry-level fix is the named non-goal).
+- **Figures carry their real on-page size** (`width_pct` = figure width / page width). A small ornament (the page-2 flower is 27pt on 612pt ≈ 4%) renders small; a full plate renders large. No renderer inflates every figure to its max box.
+- **Running headers/footers are dropped** (`isRunningHeadFoot`): a short, sub-body-size, single-line region in the extreme top (<8%) or bottom (>92%) band. The bottom threshold is 0.92, not the 0.90 the row filter uses, so a body-size pull-quote at ~0.90 is kept, not mistaken for furniture.
+- **TOC range numerals** ("3–5", and the glued "3–5Aura" with no space) are parsed by a contents-scoped numeral regex; prose ambiguity still uses the strict space-required form.
+
+**Non-goals (v1):** word-break recovery for a multi-word phrase the extractor flattened to single spaces (needs a wider-gap marker emitted at geometry time); merging a body region's physical lines into one paragraph when there is no real paragraph break (a multi-line pull-quote currently renders one `<p>` per source line). Named so the next iteration improves the general rule, not a page.
+
+**Why:** classification is per-region (or per-XY-cut-leaf), never "this whole page is type X, swallow everything." The monopoly shortcut is what dropped real content. Source: Quinn with Dario, generalizing the Level 1 page-2 fidelity gaps.
+
+---
+
+Last updated 2026-06-01 by the D-14 classification general-rules pass. D-13 from spec 003b; D-11, D-12 from spec 003; D-1 through D-10 earlier. All unchanged.
