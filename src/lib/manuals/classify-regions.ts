@@ -304,25 +304,44 @@ function escapeHtml(s: string): string {
   return s.replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c] as string));
 }
 
-/** A body region rendered as ONE paragraph. A region is by definition a run of
- *  lines with no large vertical gap (the extractor starts a new region at a real
- *  paragraph break via REGION_GAP_FACTOR), so its physical lines are visual wraps,
- *  not paragraph breaks — join them with a space. Emitting one <p> per physical
- *  line was inserting a spurious paragraph break mid-sentence (the page-2
- *  pull-quote split "…no longer" | "serve your present moment…"). */
-function bodyToHtml(region: BlockRegion): string {
-  const text = region.lines
-    .map((l) => l.text.trim())
-    .filter(Boolean)
-    .join(' ')
-    .replace(/\s+/g, ' ')
-    .trim();
-  return text ? `<p>${escapeHtml(text)}</p>` : '';
+/**
+ * Split a region's lines into paragraphs by their inter-line vertical gaps. The
+ * tightest gap in the region is the normal line leading; a gap notably larger is
+ * a paragraph break (a "punto y aparte"). Lines within a paragraph join with a
+ * space (visual wraps, not breaks). A wrapped single paragraph (the page-2
+ * pull-quote) stays ONE paragraph; a region holding two real paragraphs (the
+ * page-4 grounding-cord body) splits at the break the canon shows. The extractor
+ * keeps both in one region when their gap is under REGION_GAP_FACTOR, so the
+ * finer split has to happen here, from the geometry — never from punctuation.
+ */
+export function regionParagraphs(lines: BlockRegion['lines']): string[] {
+  const ls = lines.filter((l) => l.text.trim().length > 0);
+  if (ls.length === 0) return [];
+  if (ls.length === 1) return [ls[0].text.trim()];
+  const gaps: number[] = [];
+  for (let i = 1; i < ls.length; i++) gaps.push(ls[i].rect[1] - ls[i - 1].rect[3]);
+  const baseline = Math.min(...gaps); // tightest line gap = intra-paragraph leading
+  const paras: string[] = [];
+  let cur = [ls[0].text.trim()];
+  for (let i = 1; i < ls.length; i++) {
+    const isBreak = gaps[i - 1] > baseline * 1.5 && gaps[i - 1] - baseline > 2;
+    if (isBreak) { paras.push(cur.join(' ')); cur = [ls[i].text.trim()]; }
+    else cur.push(ls[i].text.trim());
+  }
+  paras.push(cur.join(' '));
+  return paras.map((p) => p.replace(/\s+/g, ' ').trim()).filter(Boolean);
 }
 
-/** A tiptap doc of one paragraph from a region's lines (joined; a region is one
- *  paragraph — see bodyToHtml). Empty when the region has no text. */
+/** A body region rendered as paragraph HTML for the `text` block — one <p> per
+ *  paragraph the line gaps reveal (a region can hold more than one paragraph). */
+function bodyToHtml(region: BlockRegion): string {
+  return regionParagraphs(region.lines).map((p) => `<p>${escapeHtml(p)}</p>`).join('');
+}
+
+/** A tiptap doc from a region's lines, one paragraph per line-gap paragraph. */
 function docFromRegion(region: BlockRegion): Record<string, unknown> {
+  const paras = regionParagraphs(region.lines);
+  if (paras.length) return { type: 'doc', content: paras.map((t) => ({ type: 'paragraph', content: [{ type: 'text', text: t }] })) };
   const text = region.lines.map((l) => l.text.trim()).filter(Boolean).join(' ').replace(/\s+/g, ' ').trim();
   return { type: 'doc', content: text ? [{ type: 'paragraph', content: [{ type: 'text', text }] }] : [] };
 }
