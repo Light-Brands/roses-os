@@ -6,7 +6,7 @@
  *   npx tsx scripts/verify-classify-map.ts
  */
 
-import { buildClassifierRequest, FORBIDDEN_REQUEST_KEYS, collapseLetterSpacing, classifyByRules, classifyFigures, parseContentsRows, attachHeadersToColumns, regionParagraphs } from '../src/lib/manuals/classify-regions';
+import { buildClassifierRequest, FORBIDDEN_REQUEST_KEYS, collapseLetterSpacing, classifyByRules, classifyFigures, parseContentsRows, attachHeadersToColumns, regionStructure } from '../src/lib/manuals/classify-regions';
 import type { BlockRegion, FigureRegion, PageGeometry } from '../src/lib/manuals/extract-geometry';
 import { isTintBox } from '../src/lib/manuals/extract-geometry';
 import { mapToBlocks, type PageInput, type MappedBlock } from '../src/lib/manuals/map-to-blocks';
@@ -233,11 +233,24 @@ function check(name: string, cond: boolean, detail = ''): void {
 {
   const L = (text: string, y0: number, y1: number) => ({ text, rect: [47, y0, 540, y1] as const, fontSize: 9.5, fontName: 'g', runCount: 1 });
   // page-4 grounding-cord body: a wide gap before line 2 = paragraph break.
-  const twoPara = regionParagraphs([L('Create a taut grounding cord to the center of the Earth.', 430.8, 440.3), L('The cord eliminates distractions and blockages. It brings', 451.8, 461.3), L('security, stability and helps clear energies.', 468.3, 477.8)]);
-  check('PARA a wide inter-line gap splits a region into two paragraphs', twoPara.length === 2 && twoPara[0].endsWith('Earth.') && twoPara[1].startsWith('The cord'), JSON.stringify(twoPara));
+  const twoPara = regionStructure([L('Create a taut grounding cord to the center of the Earth.', 430.8, 440.3), L('The cord eliminates distractions and blockages. It brings', 451.8, 461.3), L('security, stability and helps clear energies.', 468.3, 477.8)]);
+  check('PARA a wide inter-line gap splits a region into two paragraphs', twoPara.length === 2 && twoPara[0].kind === 'p' && (twoPara[0] as any).text.endsWith('Earth.') && (twoPara[1] as any).text.startsWith('The cord'), JSON.stringify(twoPara));
   // page-2 pull-quote: two wrapped lines, uniform gap = ONE paragraph.
-  const onePara = regionParagraphs([L("Roses represent the spirit. They absorb all the energies that don't belong to you or that no longer", 713, 726), L('serve your present moment. We can create and explode them as needed.', 727, 740)]);
-  check('PARA a wrapped single paragraph stays one paragraph', onePara.length === 1, JSON.stringify(onePara));
+  const onePara = regionStructure([L("Roses represent the spirit. They absorb all the energies that don't belong to you or that no longer", 713, 726), L('serve your present moment. We can create and explode them as needed.', 727, 740)]);
+  check('PARA a wrapped single paragraph stays one paragraph', onePara.length === 1 && onePara[0].kind === 'p', JSON.stringify(onePara));
+
+  // page-6 ex5 body: intro paragraph + three indented single-line bullets -> a ul.
+  const li = (text: string, y0: number, y1: number, x0: number) => ({ text, rect: [x0, y0, x0 + 120, y1] as const, fontSize: 9.5, fontName: 'g', runCount: 1 });
+  const withList = regionStructure([
+    li('Using your imagination, cut the grounding cord whenever you need to. This tool', 573, 582, 83),
+    li('will always be the same and become more powerful every time you use it.', 589, 599, 83),
+    li('Cut the old cord.', 613, 623, 95),
+    li('Create a new cord.', 633, 642, 95),
+    li('Expand the cord sideways to the width of the Aura every time you create one.', 652, 662, 95),
+  ]);
+  const ul = withList.find((b) => b.kind === 'ul') as { kind: 'ul'; items: string[] } | undefined;
+  check('LIST a run of indented lines becomes a bullet list with one item per line', !!ul && ul.items.length === 3 && ul.items[0] === 'Cut the old cord.', JSON.stringify(withList));
+  check('LIST the un-indented intro stays a paragraph before the list', withList[0].kind === 'p' && (withList[0] as any).text.startsWith('Using your imagination'), JSON.stringify(withList[0]));
 }
 
 // ---- cover folds every line, centered, with the real size hierarchy ----------

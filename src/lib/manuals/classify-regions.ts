@@ -305,45 +305,66 @@ function escapeHtml(s: string): string {
 }
 
 /**
- * Split a region's lines into paragraphs by their inter-line vertical gaps. The
- * tightest gap in the region is the normal line leading; a gap notably larger is
- * a paragraph break (a "punto y aparte"). Lines within a paragraph join with a
- * space (visual wraps, not breaks). A wrapped single paragraph (the page-2
- * pull-quote) stays ONE paragraph; a region holding two real paragraphs (the
- * page-4 grounding-cord body) splits at the break the canon shows. The extractor
- * keeps both in one region when their gap is under REGION_GAP_FACTOR, so the
- * finer split has to happen here, from the geometry — never from punctuation.
+ * Split a region's lines into structural blocks — paragraphs and bullet lists —
+ * from the geometry, never from punctuation. The tightest inter-line gap is the
+ * normal leading; a gap notably larger is a paragraph break (a "punto y aparte"),
+ * so a region holding two real paragraphs (the page-4 grounding-cord body) splits
+ * at the break the canon shows, while a wrapped single paragraph (the page-2
+ * pull-quote, uniform gap) stays ONE paragraph. A run of ≥2 consecutive lines
+ * indented past the region's base margin is a BULLET LIST (the page-6 "Cut the
+ * old cord / Create a new cord / …") — pdf.js dropped the bullet glyph, but the
+ * indentation is in the geometry and the renderer restores the marker. Each
+ * indented line is one item (single-line bullets).
  */
-export function regionParagraphs(lines: BlockRegion['lines']): string[] {
+export type RegionBlock = { kind: 'p'; text: string } | { kind: 'ul'; items: string[] };
+
+export function regionStructure(lines: BlockRegion['lines']): RegionBlock[] {
   const ls = lines.filter((l) => l.text.trim().length > 0);
   if (ls.length === 0) return [];
-  if (ls.length === 1) return [ls[0].text.trim()];
+  const norm = (s: string) => s.replace(/\s+/g, ' ').trim();
+  if (ls.length === 1) return [{ kind: 'p', text: norm(ls[0].text) }];
+  const base = Math.min(...ls.map((l) => l.rect[0]));
+  const indented = (l: BlockRegion['lines'][number]) => l.rect[0] > base + 6;
   const gaps: number[] = [];
   for (let i = 1; i < ls.length; i++) gaps.push(ls[i].rect[1] - ls[i - 1].rect[3]);
   const baseline = Math.min(...gaps); // tightest line gap = intra-paragraph leading
-  const paras: string[] = [];
-  let cur = [ls[0].text.trim()];
+  // Segment: a new segment starts on an indent-class change OR a paragraph break.
+  const segs: Array<BlockRegion['lines']> = [];
+  let cur: BlockRegion['lines'] = [ls[0]];
   for (let i = 1; i < ls.length; i++) {
-    const isBreak = gaps[i - 1] > baseline * 1.5 && gaps[i - 1] - baseline > 2;
-    if (isBreak) { paras.push(cur.join(' ')); cur = [ls[i].text.trim()]; }
-    else cur.push(ls[i].text.trim());
+    const classChanged = indented(ls[i]) !== indented(ls[i - 1]);
+    const paraBreak = gaps[i - 1] > baseline * 1.5 && gaps[i - 1] - baseline > 2;
+    if (classChanged || paraBreak) { segs.push(cur); cur = [ls[i]]; }
+    else cur.push(ls[i]);
   }
-  paras.push(cur.join(' '));
-  return paras.map((p) => p.replace(/\s+/g, ' ').trim()).filter(Boolean);
+  segs.push(cur);
+  return segs.map((seg): RegionBlock =>
+    indented(seg[0]) && seg.length >= 2
+      ? { kind: 'ul', items: seg.map((l) => norm(l.text)) }
+      : { kind: 'p', text: norm(seg.map((l) => l.text).join(' ')) },
+  );
 }
 
-/** A body region rendered as paragraph HTML for the `text` block — one <p> per
- *  paragraph the line gaps reveal (a region can hold more than one paragraph). */
+function blockToHtml(b: RegionBlock): string {
+  return b.kind === 'ul'
+    ? `<ul>${b.items.map((t) => `<li>${escapeHtml(t)}</li>`).join('')}</ul>`
+    : `<p>${escapeHtml(b.text)}</p>`;
+}
+
+/** A body region rendered as HTML for the `text` block — paragraphs and bullet
+ *  lists as the line gaps and indentation reveal. */
 function bodyToHtml(region: BlockRegion): string {
-  return regionParagraphs(region.lines).map((p) => `<p>${escapeHtml(p)}</p>`).join('');
+  return regionStructure(region.lines).map(blockToHtml).join('');
 }
 
-/** A tiptap doc from a region's lines, one paragraph per line-gap paragraph. */
+/** A tiptap doc from a region: paragraph + bulletList nodes (TipTap-native). */
 function docFromRegion(region: BlockRegion): Record<string, unknown> {
-  const paras = regionParagraphs(region.lines);
-  if (paras.length) return { type: 'doc', content: paras.map((t) => ({ type: 'paragraph', content: [{ type: 'text', text: t }] })) };
-  const text = region.lines.map((l) => l.text.trim()).filter(Boolean).join(' ').replace(/\s+/g, ' ').trim();
-  return { type: 'doc', content: text ? [{ type: 'paragraph', content: [{ type: 'text', text }] }] : [] };
+  const content = regionStructure(region.lines).map((b) =>
+    b.kind === 'ul'
+      ? { type: 'bulletList', content: b.items.map((t) => ({ type: 'listItem', content: [{ type: 'paragraph', content: [{ type: 'text', text: t }] }] })) }
+      : { type: 'paragraph', content: [{ type: 'text', text: b.text }] },
+  );
+  return { type: 'doc', content };
 }
 
 /** The tightest tint box that contains a region's rect (with a small tolerance for

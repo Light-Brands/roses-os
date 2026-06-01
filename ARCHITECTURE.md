@@ -222,4 +222,23 @@ Multi-column body text (a three-up "Protection | Separation | Observation" block
 
 ---
 
-Last updated 2026-06-01 by the D-16 multi-column pass. D-14/D-15 same day; D-13 from spec 003b; D-11, D-12 from spec 003; D-1 through D-10 earlier. All unchanged.
+## D-17: Sub-region structure (paragraphs + bullet lists) is derived from line geometry
+
+**Date:** 2026-06-01
+**Spec:** extends D-11 / D-14 (classification from geometry)
+**Status:** active
+
+The region splitter (`extract-geometry`) groups lines into a region at the coarse `REGION_GAP_FACTOR` gap, so one region can still hold more than one paragraph, or a paragraph followed by a bullet list. `classify-regions::regionStructure` derives that finer structure from the line rects — never from punctuation:
+
+- **Paragraph breaks.** The tightest inter-line gap in the region is its normal leading; a gap > 1.5× that (and > 2pt larger) is a paragraph break. A wrapped single paragraph (uniform gap) stays one `<p>`; a region with two real paragraphs (the page-4 grounding-cord body) splits where the canon breaks.
+- **Bullet lists.** A run of ≥2 consecutive lines indented past the region's base left margin (> 6pt) is a bullet list, one item per line. pdf.js dropped the bullet glyph (`•` is a vector path, not text), but the indentation survives in the geometry, so the list is recovered and the renderer restores the marker (`<ul>`/TipTap `bulletList`).
+
+`bodyToHtml` (text blocks) and `docFromRegion` (callouts) both render this structure; the TipTap `bulletList`/`listItem` nodes validate against the loose tiptap node schema, so the DB path gets a real list.
+
+**Non-goals (v1):** multi-line (wrapped) bullet items — each indented line is taken as its own item, so a bullet that wraps would over-split (the glyph that would disambiguate is gone); nested lists; ordered lists. Verified on Level 1: page-4 body = two paragraphs; page-6 ex5 = intro paragraph + three-item bullet list; page-2 pull-quote still one paragraph; 76/76 valid; deterministic.
+
+**Why:** the structure is in the whitespace and indentation of the real line rects — derive it, do not guess from text. Source: Quinn with Dario, after the page-4 punto-y-aparte and page-6 bullets.
+
+---
+
+Last updated 2026-06-01 by the D-17 sub-region-structure pass. D-16 same day; D-14/D-15 same day; D-13 from spec 003b; D-11, D-12 from spec 003; D-1 through D-10 earlier. All unchanged. D-14/D-15 same day; D-13 from spec 003b; D-11, D-12 from spec 003; D-1 through D-10 earlier. All unchanged.
