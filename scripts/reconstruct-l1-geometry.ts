@@ -125,9 +125,11 @@ function blockInner(b: MappedBlock): string {
     case 'text':
       return `<div class="prose">${c.html || ''}</div>`;
     case 'captioned-figure': {
-      // Size to the figure's real fraction of the page width (carried by the
-      // classifier as width_pct) so a small ornament stays small. Cap at 90%.
-      const pct = typeof c.width_pct === 'number' ? Math.min(90, Math.max(2, c.width_pct)) : 60;
+      // A figure INSIDE a column fills its cell — the column's proportion already
+      // encodes the figure's on-page width (a 36%-of-page figure sits in a
+      // 36%-wide cell). A top-level figure uses its own width_pct so a small
+      // ornament stays small. Sizing by width_pct inside a cell shrinks twice.
+      const pct = b.nested ? 100 : typeof c.width_pct === 'number' ? Math.min(90, Math.max(2, c.width_pct)) : 60;
       const style = ` style="width:${pct}%"`;
       return `${c.src ? `<img src="${esc(c.src)}"${style}/>` : `<div class="figph">figura</div>`}${c.caption ? `<div class="cap">${esc(c.caption)}</div>` : ''}`;
     }
