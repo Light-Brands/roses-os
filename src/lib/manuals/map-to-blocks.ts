@@ -51,10 +51,12 @@ export interface MappedBlock {
   /** Bounding rect (PDF points); null when the region carried none. Used by the
    *  column detector. */
   rect: Rect | null;
-  /** Two-column band id + side, carried from the XY-cut layout so a later pass can
-   *  wrap the band's members in a two-column-section. */
+  /** Multi-column band id + this block's column index + the band's column count,
+   *  carried from the XY-cut layout so a later pass can wrap the band's members in
+   *  column section(s). */
   colGroup?: string;
-  colSide?: 'left' | 'right';
+  colIndex?: number;
+  colCount?: number;
   /** True when this block is a child of a two-column-section and should not
    *  render at the top level (it renders inside its column). */
   nested?: boolean;
@@ -184,7 +186,7 @@ export function mapToBlocks(pages: PageInput[], ctx: MapContext): MappedBlock[] 
       const provenance: BlockProvenance = { source_page: page.page, run_id: ctx.runId, signer: ctx.signer };
       const id = `${page.page}:${region.ordinal}`;
       const rect = region.rect ?? null;
-      const col = region.colGroup ? { colGroup: region.colGroup, colSide: region.colSide } : {};
+      const col = region.colGroup ? { colGroup: region.colGroup, colIndex: region.colIndex, colCount: region.colCount } : {};
 
       // Sanity check before the validator.
       const bad = sanityReason(region);

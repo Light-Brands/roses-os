@@ -22,7 +22,7 @@
  */
 
 import type { BlockRegion, FigureRegion, FillRegion, PageGeometry, Rect } from './extract-geometry';
-import { regionContentHash } from './extract-geometry';
+import { regionContentHash, REGION_GAP_FACTOR } from './extract-geometry';
 import { xyCut, flattenLayout, assignLeaves, type LayoutBox } from './layout';
 
 /** A block type from the 18-type registry (subset the pipeline emits). */
@@ -54,10 +54,12 @@ export interface ClassifiedRegion {
   /** Bounding rect of this block in PDF points (union of its folded members for a
    *  grouped block). Carried so a later pass can detect side-by-side columns. */
   rect?: Rect;
-  /** When this region belongs to a two-column band, the band id (shared by its
-   *  partner) and which side it is on. Derived from the XY-cut layout. */
+  /** When this region belongs to a multi-column band: the band id (shared by every
+   *  member), this region's 0-based column index, and the band's column count.
+   *  Derived from the XY-cut layout. */
   colGroup?: string;
-  colSide?: 'left' | 'right';
+  colIndex?: number;
+  colCount?: number;
   /** Name of the rule that fired, when decidedBy === 'rule'. */
   rule?: string;
   /** True when this region needed the model but no model was available; the
@@ -611,7 +613,13 @@ export async function classifyPage(geometry: PageGeometry, opts: ClassifyOptions
   const lineH = bodyFontSize(geometry.textRegions) || 12;
   const boxes: LayoutBox[] = allRegions.map((r) => ({ key: r.ordinal, rect: r.rect, kind: r.kind === 'figure' ? 'figure' : 'text' }));
   const tree = boxes.length ? xyCut(boxes, lineH) : { type: 'leaf' as const, boxes: [] };
-  const slots = flattenLayout(tree);
+  // Column slots use a larger horizontal-gap threshold (the paragraph gap, not the
+  // 6pt default) so a multi-column block's heading row is NOT split off from its
+  // body row before the columns are found — each column keeps its heading WITH its
+  // body. Full-width content (TOC rows, a full-width exercise body) has no clean
+  // gutter and is unaffected; only genuinely narrow side-by-side columns split.
+  const slotTree = boxes.length ? xyCut(boxes, lineH, REGION_GAP_FACTOR * lineH) : { type: 'leaf' as const, boxes: [] };
+  const slots = flattenLayout(slotTree);
   // Exercise grouping is bounded by the XY-cut LEAF (a contiguous run with no
   // figure or column break), so an exercise never spans a figure or a column.
   const leafOf = assignLeaves(tree);
@@ -626,7 +634,7 @@ export async function classifyPage(geometry: PageGeometry, opts: ClassifyOptions
   // sitting in its rows' position.
   const specialPage = [...ruleMap.values()].some((o) => o.block_type === 'cover' && !(o.content as Record<string, unknown>).__folded);
 
-  type Slotted = { region: BlockRegion | FigureRegion; colGroup?: string; colSide?: 'left' | 'right' };
+  type Slotted = { region: BlockRegion | FigureRegion; colGroup?: string; colIndex?: number; colCount?: number };
   const orderedSlots: Slotted[] = [];
   if (specialPage) {
     for (const r of [...allRegions].sort((a, b) => a.ordinal - b.ordinal)) orderedSlots.push({ region: r });
@@ -636,16 +644,18 @@ export async function classifyPage(geometry: PageGeometry, opts: ClassifyOptions
         for (const k of slot.keys) { const r = byOrd.get(k); if (r) orderedSlots.push({ region: r }); }
       } else {
         const cg = `${ctx.pageIndex}:col${s}`;
-        for (const k of slot.left) { const r = byOrd.get(k); if (r) orderedSlots.push({ region: r, colGroup: cg, colSide: 'left' }); }
-        for (const k of slot.right) { const r = byOrd.get(k); if (r) orderedSlots.push({ region: r, colGroup: cg, colSide: 'right' }); }
+        const colCount = slot.columns.length;
+        slot.columns.forEach((col, idx) => {
+          for (const k of col) { const r = byOrd.get(k); if (r) orderedSlots.push({ region: r, colGroup: cg, colIndex: idx, colCount }); }
+        });
       }
     });
   }
 
-  for (const { region, colGroup, colSide } of orderedSlots) {
+  for (const { region, colGroup, colIndex, colCount } of orderedSlots) {
     const cacheKey = regionContentHash(region);
     const ruleHit = region.kind === 'figure' ? figureMap.get(region.ordinal) : ruleMap.get(region.ordinal);
-    const tag = (cr: ClassifiedRegion): ClassifiedRegion => (colGroup ? { ...cr, colGroup, colSide } : cr);
+    const tag = (cr: ClassifiedRegion): ClassifiedRegion => (colGroup ? { ...cr, colGroup, colIndex, colCount } : cr);
 
     // 1. cache
     const cached = cache[cacheKey];

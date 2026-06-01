@@ -134,14 +134,22 @@ export function orderedLeaves(node: LayoutNode): LayoutBox[][] {
 }
 
 /** A flattened placement slot: either a single-column run of box keys in reading
- *  order, or a two-column split carrying the left and right runs. */
+ *  order, or an N-column split carrying each column's reading-order keys. */
 export type LayoutSlot =
   | { kind: 'flow'; keys: number[] }
-  | { kind: 'two-col'; left: number[]; right: number[] };
+  | { kind: 'cols'; columns: number[][] };
 
-/** Flatten a layout node into ordered slots. A `columns` node with exactly two
- *  children becomes a two-col slot; deeper nesting flattens each side to its
- *  reading-order keys. Rows and leaves flow into the current run. */
+/** The sibling columns of a `columns` node, flattening nested columns into one
+ *  flat list (so columns(a, columns(b, c)) reads as three columns a|b|c, each in
+ *  its own reading order). A non-columns child (rows/leaf) is one column. */
+function columnsOf(node: LayoutNode): number[][] {
+  if (node.type === 'columns') return node.children.flatMap(columnsOf);
+  return [leafKeys(node)];
+}
+
+/** Flatten a layout node into ordered slots. A `columns` node becomes an N-column
+ *  slot (two, three, or more side-by-side columns); rows and leaves flow into the
+ *  current run. */
 export function flattenLayout(node: LayoutNode): LayoutSlot[] {
   const slots: LayoutSlot[] = [];
   let run: number[] = [];
@@ -157,16 +165,9 @@ export function flattenLayout(node: LayoutNode): LayoutSlot[] {
     } else if (n.type === 'rows') {
       n.children.forEach(visit);
     } else {
-      // columns: emit the run so far, then a two-col slot.
+      // columns: emit the run so far, then an N-column slot.
       flushRun();
-      const sideKeys = (child: LayoutNode): number[] => leafKeys(child);
-      if (n.children.length === 2) {
-        slots.push({ kind: 'two-col', left: sideKeys(n.children[0]), right: sideKeys(n.children[1]) });
-      } else {
-        // >2 columns: pair sequentially, leftover flows.
-        for (const c of n.children) run.push(...leafKeys(c));
-        flushRun();
-      }
+      slots.push({ kind: 'cols', columns: columnsOf(n) });
     }
   };
   visit(node);

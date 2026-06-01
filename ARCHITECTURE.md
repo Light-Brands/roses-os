@@ -200,4 +200,24 @@ The canon sets asides and pull-quotes in a pale tinted box with a colored left b
 
 ---
 
-Last updated 2026-06-01 by the D-15 tint-box/callout pass. D-14 same day; D-13 from spec 003b; D-11, D-12 from spec 003; D-1 through D-10 earlier. All unchanged.
+## D-16: Multi-column reading order at the run level; N columns render side-by-side
+
+**Date:** 2026-06-01
+**Spec:** extends D-13 (XY-cut layout)
+**Status:** active
+
+Multi-column body text (a three-up "Protection | Separation | Observation" block) was jumbled: the flat band sort merged runs sharing a y-band across the column gutters, so the page read left-to-right across the columns and the three headings collapsed into one. Two coordinated fixes, both deterministic:
+
+1. **Column-aware extraction** (`extract-geometry.ts::groupRegionsColumnAware`). Before grouping runs into lines, XY-cut the *runs* into sections and columns, then group lines into regions WITHIN each column leaf so a line never spans a gutter. A vertical cut only fires on a gutter empty across the whole section, so an accidental wide word-gap never splits a single column (other lines cross it). The horizontal-cut threshold is the region grouper's own paragraph gap (`REGION_GAP_FACTOR × median line height`), so a single-column page partitions exactly as the old flat pass did — only true columns change. `xyCut`/`findHCut` take an optional `minHGap`; `orderedLeaves` returns leaf box-groups preserving the leaf boundary.
+
+2. **N-column rendering.** `flattenLayout` emits an N-ary `cols` slot (flattening nested `columns` nodes into sibling columns). The region-level column-detection tree (in `classify-regions`) uses the SAME paragraph-gap `minHGap` as a SECOND tree, so a heading row is not split off from its body row before columns are found — each column keeps its heading WITH its body. (The exercise-bounds tree keeps the default 6pt threshold, untouched.) Regions are tagged `colGroup` + `colIndex` + `colCount`; `columns.ts` wraps a band of N columns into nested `two-column-section`s — left = first column, right = a section over the rest — so three-up renders side-by-side while staying inside the frozen 18-type schema (D-1). Proportions track real column widths, so three equal columns render ~1/3 each.
+
+**Why the larger threshold is safe:** a spurious column needs a clean vertical gutter that partitions every box. Full-width content (a TOC row, a full-width exercise body, a running paragraph) crosses any interior gutter, so it never columns; only genuinely narrow side-by-side columns do. An earlier attempt that simply preferred the larger of (h-gap, v-gutter) globally was rejected — it tore TOC page numbers and big exercise numerals into bogus columns. The threshold approach leaves those intact.
+
+**Non-goals (v1):** more than the nesting depth needed for the observed three-up (the nested two-column-section pattern generalizes, but very many columns would read as a deep right-spine); column-spanning headers above a multi-column block (handled as their own full-width row above the columns, which is correct here). Verified on Level 1: page 7's three-up renders as three side-by-side columns, each heading with its body; pages 2 (TOC), 6 and 8 (figure two-columns) unchanged; geometry deterministic; 83/83 valid.
+
+**Why:** the column structure is whitespace in the geometry — cut it, do not estimate it (D-11). Source: Quinn with Dario, after the page-7 three-up jumbled.
+
+---
+
+Last updated 2026-06-01 by the D-16 multi-column pass. D-14/D-15 same day; D-13 from spec 003b; D-11, D-12 from spec 003; D-1 through D-10 earlier. All unchanged.

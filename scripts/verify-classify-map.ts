@@ -11,7 +11,7 @@ import type { BlockRegion, FigureRegion, PageGeometry } from '../src/lib/manuals
 import { isTintBox } from '../src/lib/manuals/extract-geometry';
 import { mapToBlocks, type PageInput, type MappedBlock } from '../src/lib/manuals/map-to-blocks';
 import { groupTwoColumns } from '../src/lib/manuals/columns';
-import { analyzePageLayout, xyCut, assignLeaves, type LayoutBox } from '../src/lib/manuals/layout';
+import { analyzePageLayout, xyCut, assignLeaves, flattenLayout, type LayoutBox } from '../src/lib/manuals/layout';
 import type { ClassifiedRegion } from '../src/lib/manuals/classify-regions';
 
 let failures = 0;
@@ -73,8 +73,8 @@ function check(name: string, cond: boolean, detail = ''): void {
   });
   // The XY-cut layout tagged the side-by-side band: text left, figure right, both
   // sharing colGroup '6:col1'. The wide block carries no colGroup (single column).
-  const text = mk({ id: '6:0', position: 0, block_type: 'numbered-exercise', content: { schema_version: 2, numeral: '3', body: { type: 'doc', content: [] } }, anchor: { page: 6, ordinal: 0 }, rect: [83, 111, 345, 184], colGroup: '6:col1', colSide: 'left' });
-  const fig = mk({ id: '6:10', position: 1, block_type: 'captioned-figure', content: { schema_version: 2, src: 'a.png', alt: 'aura' }, anchor: { page: 6, ordinal: 10 }, rect: [389, 40, 539, 265], colGroup: '6:col1', colSide: 'right' });
+  const text = mk({ id: '6:0', position: 0, block_type: 'numbered-exercise', content: { schema_version: 2, numeral: '3', body: { type: 'doc', content: [] } }, anchor: { page: 6, ordinal: 0 }, rect: [83, 111, 345, 184], colGroup: '6:col1', colIndex: 0, colCount: 2 });
+  const fig = mk({ id: '6:10', position: 1, block_type: 'captioned-figure', content: { schema_version: 2, src: 'a.png', alt: 'aura' }, anchor: { page: 6, ordinal: 10 }, rect: [389, 40, 539, 265], colGroup: '6:col1', colIndex: 1, colCount: 2 });
   // a full-width block with no colGroup must NOT column.
   const wide = mk({ id: '6:6', position: 2, block_type: 'numbered-exercise', content: { schema_version: 2, numeral: '5', body: { type: 'doc', content: [] } }, anchor: { page: 6, ordinal: 6 }, rect: [83, 534, 554, 662] });
 
@@ -97,8 +97,8 @@ function check(name: string, cond: boolean, detail = ''): void {
     { key: 6, rect: [83, 534, 554, 662], kind: 'text' },    // ex5 full width below
   ];
   const slots = analyzePageLayout(boxes, 10);
-  const twoCol = slots.find((s) => s.kind === 'two-col') as { kind: 'two-col'; left: number[]; right: number[] } | undefined;
-  check('LAYOUT side-by-side text/figure becomes one two-col slot', !!twoCol && twoCol.left.includes(0) && twoCol.right.includes(10), JSON.stringify(slots));
+  const twoCol = slots.find((s) => s.kind === 'cols') as { kind: 'cols'; columns: number[][] } | undefined;
+  check('LAYOUT side-by-side text/figure becomes one cols slot', !!twoCol && twoCol.columns.length === 2 && twoCol.columns[0].includes(0) && twoCol.columns[1].includes(10), JSON.stringify(slots));
   check('LAYOUT full-width block stays a single flow (not columned)', slots.some((s) => s.kind === 'flow' && s.keys.includes(6)), JSON.stringify(slots));
 
   // Page-4 style: a centered figure between the title and the body must put the
@@ -112,6 +112,48 @@ function check(name: string, cond: boolean, detail = ''): void {
   const leaves = assignLeaves(xyCut(p4, 10));
   check('LAYOUT numeral and title share a leaf', leaves.get(0) === leaves.get(1), JSON.stringify([...leaves]));
   check('LAYOUT a figure between title and body splits the body into its own leaf', leaves.get(2) !== leaves.get(1), JSON.stringify([...leaves]));
+
+  // Page-7 style: a three-up "Protection | Separation | Observation" block, each
+  // column a heading + a body. With the paragraph-gap H-threshold (so the heading
+  // row is NOT split off the body row), it must become ONE cols slot with THREE
+  // columns, each carrying its own heading+body in reading order.
+  const lineH = 9;
+  const p7: LayoutBox[] = [
+    { key: 0, rect: [47, 448, 95, 459], kind: 'text' },   // Protection heading
+    { key: 1, rect: [47, 470, 205, 521], kind: 'text' },  // Protection body
+    { key: 2, rect: [226, 448, 276, 459], kind: 'text' }, // Separation heading
+    { key: 3, rect: [226, 470, 371, 507], kind: 'text' }, // Separation body
+    { key: 4, rect: [404, 448, 461, 459], kind: 'text' }, // Observation heading
+    { key: 5, rect: [404, 470, 562, 507], kind: 'text' }, // Observation body
+  ];
+  const p7slots = flattenLayout(xyCut(p7, lineH, 1.6 * lineH));
+  const cols3 = p7slots.find((s) => s.kind === 'cols') as { kind: 'cols'; columns: number[][] } | undefined;
+  check('LAYOUT a three-up block becomes one cols slot with three columns', !!cols3 && cols3.columns.length === 3, JSON.stringify(p7slots));
+  check('LAYOUT each column keeps its heading WITH its body', !!cols3 && cols3.columns[0].join() === '0,1' && cols3.columns[1].join() === '2,3' && cols3.columns[2].join() === '4,5', JSON.stringify(cols3?.columns));
+}
+
+// ---- three columns wrap into nested two-column-sections (in-schema) ----------
+{
+  const mk = (id: string, pos: number, idx: number, rect: [number, number, number, number]): MappedBlock => ({
+    id, position: pos, block_type: 'text', content: { html: '<p>x</p>' }, valid: true, error: null,
+    anchor: { page: 7, ordinal: pos }, provenance: { source_page: 7, run_id: 'r', signer: 's' },
+    decidedBy: 'rule', rect, colGroup: '7:col1', colIndex: idx, colCount: 3,
+  });
+  const members = [
+    mk('7:0', 0, 0, [47, 448, 95, 459]), mk('7:1', 1, 0, [47, 470, 205, 521]),
+    mk('7:2', 2, 1, [226, 448, 276, 459]), mk('7:3', 3, 1, [226, 470, 371, 507]),
+    mk('7:4', 4, 2, [404, 448, 461, 459]), mk('7:5', 5, 2, [404, 470, 562, 507]),
+  ];
+  const { blocks: out, columnsFormed } = groupTwoColumns(members);
+  check('COL3 a three-column band forms exactly one column band', columnsFormed === 1, String(columnsFormed));
+  const secs = out.filter((b) => b.block_type === 'two-column-section');
+  check('COL3 three columns become two nested two-column-sections', secs.length === 2, String(secs.length));
+  const outer = secs.find((b) => !b.nested);
+  const inner = secs.find((b) => b.nested);
+  check('COL3 outer section is top-level and references the inner on its right', !!outer && !!inner && (outer.content as any).right[0] === inner!.id, JSON.stringify(outer?.content));
+  check('COL3 outer left is column 0; inner splits columns 1 and 2', !!outer && (outer.content as any).left.join() === '7:0,7:1' && !!inner && (inner.content as any).left.join() === '7:2,7:3' && (inner.content as any).right.join() === '7:4,7:5', JSON.stringify({ o: outer?.content, i: inner?.content }));
+  check('COL3 all six members are flagged nested', members.every((m) => m.nested === true));
+  check('COL3 both sections validate against the schema', secs.every((s) => s.valid === true), JSON.stringify(secs.map((s) => s.error?.error.code)));
 }
 
 // ---- letter-spacing collapse (general: tracked eyebrows across the corpus) ---
