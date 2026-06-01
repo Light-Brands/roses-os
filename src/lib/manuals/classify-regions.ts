@@ -22,8 +22,8 @@
  */
 
 import type { BlockRegion, FigureRegion, FillRegion, PageGeometry, Rect } from './extract-geometry';
-import { regionContentHash, REGION_GAP_FACTOR } from './extract-geometry';
-import { xyCut, flattenLayout, assignLeaves, type LayoutBox } from './layout';
+import { regionContentHash } from './extract-geometry';
+import { xyCut, flattenLayout, assignLeaves, type LayoutBox, type LayoutSlot } from './layout';
 
 /** A block type from the 18-type registry (subset the pipeline emits). */
 export type ClassBlockType =
@@ -574,6 +574,69 @@ export function classifyFigures(figures: FigureRegion[], ctx: PageContext, pageW
   return out;
 }
 
+/**
+ * Header-row attachment: a row of N short boxes sitting directly above an N-column
+ * block, each aligned over one column, is a row of COLUMN HEADERS — fold each into
+ * the top of its column so the column reads heading-then-body (the page-7 three-up
+ * "Protection | Separation | Observation"). Short headers do not self-column (a
+ * lone short box is not a "real column"), so without this they detach into a
+ * stacked row above the body columns. Targeted and deterministic: it fires only
+ * when a flow slot of exactly N boxes precedes a cols slot of N columns, every box
+ * aligns over a distinct column, and the boxes sit above the columns. Any other
+ * layout (a single-column page, a figure+text band) never matches, so this cannot
+ * over-column.
+ */
+export function attachHeadersToColumns(slots: LayoutSlot[], rectOf: (key: number) => Rect | undefined): LayoutSlot[] {
+  const out: LayoutSlot[] = [];
+  for (let i = 0; i < slots.length; i++) {
+    const f = slots[i];
+    const c = slots[i + 1];
+    const n = c && c.kind === 'cols' ? c.columns.length : 0;
+    // The headers are the LAST n keys of the preceding flow (flatten pours every
+    // leaf before a columns node into one run, so the header row lands at its tail).
+    if (f.kind === 'flow' && c && c.kind === 'cols' && n >= 2 && f.keys.length >= n) {
+      const head = f.keys.slice(f.keys.length - n);
+      const headRects = head.map((k) => rectOf(k));
+      const colX = c.columns.map((col) => {
+        const rects = col.map((k) => rectOf(k)).filter((r): r is Rect => !!r);
+        return rects.length ? [Math.min(...rects.map((r) => r[0])), Math.max(...rects.map((r) => r[2])), Math.min(...rects.map((r) => r[1]))] as [number, number, number] : null;
+      });
+      let ok = colX.every((x) => x !== null) && headRects.every((r): r is Rect => !!r);
+      // the candidate headers must form a single row (similar tops)
+      if (ok) {
+        const tops = (headRects as Rect[]).map((r) => r[1]);
+        if (Math.max(...tops) - Math.min(...tops) > 6) ok = false;
+      }
+      const assign = new Map<number, number>();
+      const usedCols = new Set<number>();
+      if (ok) {
+        for (const k of head) {
+          const r = rectOf(k)!;
+          const cx = (r[0] + r[2]) / 2;
+          // a header aligns over an unclaimed column and sits above its top
+          const j = colX.findIndex((x, idx) => x !== null && !usedCols.has(idx) && cx >= x[0] - 4 && cx <= x[1] + 4 && r[3] <= x[2] + 4);
+          if (j < 0) { ok = false; break; }
+          assign.set(k, j);
+          usedCols.add(j);
+        }
+      }
+      if (ok && usedCols.size === n) {
+        const lead = f.keys.slice(0, f.keys.length - n);
+        if (lead.length) out.push({ kind: 'flow', keys: lead });
+        const columns = c.columns.map((col, j) => {
+          const hk = [...assign.entries()].find(([, jj]) => jj === j)?.[0];
+          return hk !== undefined ? [hk, ...col] : col;
+        });
+        out.push({ kind: 'cols', columns });
+        i += 1; // consume the cols slot
+        continue;
+      }
+    }
+    out.push(f);
+  }
+  return out;
+}
+
 // ----- The page classifier (rules -> cache -> model) ------------------------
 
 export interface ClassifyCounts {
@@ -613,13 +676,9 @@ export async function classifyPage(geometry: PageGeometry, opts: ClassifyOptions
   const lineH = bodyFontSize(geometry.textRegions) || 12;
   const boxes: LayoutBox[] = allRegions.map((r) => ({ key: r.ordinal, rect: r.rect, kind: r.kind === 'figure' ? 'figure' : 'text' }));
   const tree = boxes.length ? xyCut(boxes, lineH) : { type: 'leaf' as const, boxes: [] };
-  // Column slots use a larger horizontal-gap threshold (the paragraph gap, not the
-  // 6pt default) so a multi-column block's heading row is NOT split off from its
-  // body row before the columns are found — each column keeps its heading WITH its
-  // body. Full-width content (TOC rows, a full-width exercise body) has no clean
-  // gutter and is unaffected; only genuinely narrow side-by-side columns split.
-  const slotTree = boxes.length ? xyCut(boxes, lineH, REGION_GAP_FACTOR * lineH) : { type: 'leaf' as const, boxes: [] };
-  const slots = flattenLayout(slotTree);
+  // Fold a row of column headers into the tops of their columns (page-7 three-up).
+  const slots = attachHeadersToColumns(flattenLayout(tree), (k) => byOrd.get(k)?.rect);
+
   // Exercise grouping is bounded by the XY-cut LEAF (a contiguous run with no
   // figure or column break), so an exercise never spans a figure or a column.
   const leafOf = assignLeaves(tree);

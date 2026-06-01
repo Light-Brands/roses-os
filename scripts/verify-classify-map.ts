@@ -6,7 +6,7 @@
  *   npx tsx scripts/verify-classify-map.ts
  */
 
-import { buildClassifierRequest, FORBIDDEN_REQUEST_KEYS, collapseLetterSpacing, classifyByRules, classifyFigures, parseContentsRows } from '../src/lib/manuals/classify-regions';
+import { buildClassifierRequest, FORBIDDEN_REQUEST_KEYS, collapseLetterSpacing, classifyByRules, classifyFigures, parseContentsRows, attachHeadersToColumns } from '../src/lib/manuals/classify-regions';
 import type { BlockRegion, FigureRegion, PageGeometry } from '../src/lib/manuals/extract-geometry';
 import { isTintBox } from '../src/lib/manuals/extract-geometry';
 import { mapToBlocks, type PageInput, type MappedBlock } from '../src/lib/manuals/map-to-blocks';
@@ -130,6 +130,22 @@ function check(name: string, cond: boolean, detail = ''): void {
   const cols3 = p7slots.find((s) => s.kind === 'cols') as { kind: 'cols'; columns: number[][] } | undefined;
   check('LAYOUT a three-up block becomes one cols slot with three columns', !!cols3 && cols3.columns.length === 3, JSON.stringify(p7slots));
   check('LAYOUT each column keeps its heading WITH its body', !!cols3 && cols3.columns[0].join() === '0,1' && cols3.columns[1].join() === '2,3' && cols3.columns[2].join() === '4,5', JSON.stringify(cols3?.columns));
+
+  // Real pipeline: at the DEFAULT 6pt H-threshold the heading row splits off the
+  // bodies (flow[...,h0,h1,h2] then cols[[b0],[b1],[b2]]); attachHeadersToColumns
+  // must fold each header onto the top of its column. Headers arrive at the TAIL
+  // of the flow (flatten pours leading content into the same run), and a leading
+  // box (the intro) must remain a flow ahead of the columns.
+  const rectOf = (k: number) => p7.find((b) => b.key === k)?.rect;
+  const intro = { key: 9, rect: [47, 405, 554, 431] as [number, number, number, number], kind: 'text' as const };
+  const withIntro = flattenLayout(xyCut([intro, ...p7], lineH));
+  const attached = attachHeadersToColumns(withIntro, (k) => (k === 9 ? intro.rect : rectOf(k)));
+  const ac = attached.find((s) => s.kind === 'cols') as { kind: 'cols'; columns: number[][] } | undefined;
+  check('ATTACH headers at the flow tail fold onto their columns', !!ac && ac.columns[0].join() === '0,1' && ac.columns[1].join() === '2,3' && ac.columns[2].join() === '4,5', JSON.stringify(attached));
+  check('ATTACH a leading box (intro) stays a flow before the columns', attached.some((s) => s.kind === 'flow' && s.keys.includes(9)), JSON.stringify(attached));
+  // a flow with no aligned header row is left untouched.
+  const noHead = attachHeadersToColumns([{ kind: 'flow', keys: [9] }, { kind: 'cols', columns: [[0, 1], [2, 3]] }], (k) => (k === 9 ? intro.rect : rectOf(k)));
+  check('ATTACH leaves an unaligned flow untouched', noHead.length === 2 && noHead[0].kind === 'flow', JSON.stringify(noHead));
 }
 
 // ---- three columns wrap into nested two-column-sections (in-schema) ----------
