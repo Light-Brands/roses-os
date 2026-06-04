@@ -175,6 +175,99 @@ function renderBlock(b: MappedBlock, byId: Map<string, MappedBlock>): string {
   return `<div class="blk ${esc(b.block_type)}${b.valid ? '' : ' invalid'}"><div class="bt">${tag}</div>${blockInner(b)}</div>`;
 }
 
+// ----- reader (clean, portable, single-column client copy) -------------------
+// The side-by-side preview is an engineering QA artifact (canon vs blocks, dev
+// labels, remote Google Fonts). The reader is what a client actually sees: one
+// column, no diagnostics, fonts EMBEDDED as base64 woff2 (so titles render
+// identical in iOS Quick Look / offline / any device, never a network font hit)
+// and images INLINED as data URLs (so the file is a single self-contained .html).
+
+function embeddedFontCss(): string {
+  const faces = [
+    { fam: 'Cormorant Garamond', wt: 400, file: 'CormorantGaramond-400.woff2' },
+    { fam: 'Cormorant Garamond', wt: 500, file: 'CormorantGaramond-500.woff2' },
+    { fam: 'Cormorant Garamond', wt: 600, file: 'CormorantGaramond-600.woff2' },
+    { fam: 'Cormorant Garamond', wt: 700, file: 'CormorantGaramond-700.woff2' },
+    { fam: 'Inter', wt: 400, file: 'Inter-400.woff2' },
+    { fam: 'Inter', wt: 600, file: 'Inter-600.woff2' },
+  ];
+  return faces
+    .map((f) => {
+      const p = path.join('public', 'fonts', f.file);
+      if (!fs.existsSync(p)) return '';
+      const b64 = fs.readFileSync(p).toString('base64');
+      return `@font-face{font-family:'${f.fam}';font-style:normal;font-weight:${f.wt};font-display:swap;src:url(data:font/woff2;base64,${b64}) format('woff2')}`;
+    })
+    .filter(Boolean)
+    .join('\n');
+}
+
+/** Inline every relative <img src> as a data URL (paths resolve against OUT).
+ *  data: and http(s) srcs pass through; a missing file is left untouched. */
+function inlineImages(html: string): string {
+  return html.replace(/src="([^"]+)"/g, (m, src) => {
+    if (/^(data:|https?:)/.test(src)) return m;
+    const p = path.join(OUT, src);
+    if (!fs.existsSync(p)) return m;
+    const ext = (path.extname(p).slice(1) || 'png').toLowerCase();
+    const mime = ext === 'jpg' || ext === 'jpeg' ? 'image/jpeg' : `image/${ext}`;
+    return `src="data:${mime};base64,${fs.readFileSync(p).toString('base64')}"`;
+  });
+}
+
+function renderReader(b: MappedBlock, byId: Map<string, MappedBlock>): string {
+  if (b.block_type === 'two-column-section') {
+    const c = b.content as { left: string[]; right: string[]; proportions?: [number, number] };
+    const [lp, rp] = c.proportions ?? [1, 1];
+    const col = (ids: string[]) => ids.map((id) => byId.get(id)).filter(Boolean).map((child) => renderReader(child as MappedBlock, byId)).join('');
+    return `<div class="twocol" style="grid-template-columns:${lp}fr ${rp}fr"><div class="colcell">${col(c.left)}</div><div class="colcell">${col(c.right)}</div></div>`;
+  }
+  return `<div class="rblk ${esc(b.block_type)}">${blockInner(b)}</div>`;
+}
+
+function buildReader(perPage: Array<{ page: number; blocks: MappedBlock[]; counts: ClassifyCounts }>): void {
+  const byId = new Map<string, MappedBlock>();
+  for (const p of perPage) for (const b of p.blocks) byId.set(b.id, b);
+  const pages = perPage
+    .map((p) => {
+      const blocks = p.blocks.filter((b) => !b.nested).map((b) => renderReader(b, byId)).join('');
+      return `<section class="rpage">${blocks}</section>`;
+    })
+    .join('');
+  const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rose Meditation — Level 1</title>
+<style>
+${embeddedFontCss()}
+:root{--ink:#3a2f28;--terra:#b56a4a;--line:#e7ddd0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fbf7f1;color:var(--ink);font-family:'Cormorant Garamond',Georgia,serif;font-size:15px;line-height:1.55}
+.reader{max-width:720px;margin:0 auto;padding:36px 26px 64px}
+.rpage{padding:10px 0}
+.rpage + .rpage{border-top:1px solid var(--line);margin-top:18px;padding-top:26px}
+.rblk{margin:0 0 12px}
+.eyebrow{font-family:Inter;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);margin-bottom:4px}
+.cover{text-align:center;padding:8px 0 4px}
+.cover .coverimg{max-width:64%;max-height:320px;width:auto;height:auto;display:block;margin:6px auto 14px}
+.cover .title{font-size:34px;font-weight:600;line-height:1.1}
+.cover .subtitle{font-style:italic;font-size:18px;color:#7a6553}
+.cover .cover-rule{width:42px;height:1px;background:var(--terra);opacity:.5;margin:16px auto}
+.cover .credit{color:#8a7a6a;margin:4px 0;line-height:1.35}.cover .credit:last-child{color:#b08a7a;font-style:italic;margin-top:10px}
+.cover .byline{font-family:Inter;font-size:12px;color:#9a8a78;white-space:pre-line;margin-top:10px}
+.h{font-weight:600;line-height:1.15}.h1{font-size:26px}.h2{font-size:20px}.h3{font-size:16px}
+.prose p{margin:0 0 .55em}.prose p:last-child{margin-bottom:0}.prose ul{margin:.3em 0 .55em;padding-left:1.4em}.prose li{margin:.14em 0}
+.toc{list-style:none;margin:0;padding:0}.toc li{display:flex;gap:10px;align-items:baseline;border-bottom:1px solid var(--line);padding:3px 0}.toc .num{color:var(--terra);min-width:26px}.toc .tit{flex:1;line-height:1.3}.toc .pg{color:#9a8a78}
+.ex{display:flex;gap:13px;align-items:flex-start}.ex .numeral{color:var(--terra);font-weight:600;font-size:32px;line-height:.9}.ex>div{line-height:1.55}
+.spoken{font-size:18px;font-style:italic;color:#5a463a;border-left:3px solid var(--terra);padding-left:13px;margin:6px 0}
+.callout{background:#fbeee9;border-left:3px solid var(--terra);border-radius:4px;padding:9px 15px;font-style:italic;color:#7a5a50}.callout p{margin:0 0 .4em}.callout p:last-child{margin-bottom:0}
+blockquote{margin:0;font-size:18px;font-style:italic;border-left:3px solid var(--terra);padding-left:13px}
+.captioned-figure{text-align:center}.captioned-figure img{max-width:90%;max-height:340px;width:auto;height:auto;border-radius:4px;display:inline-block;margin:4px auto}.cap{font-style:italic;color:var(--terra);font-size:14px;margin-top:6px}
+.figph{display:inline-block;background:#efe7da;border:1px dashed #c9b9a6;border-radius:4px;padding:4px 10px;color:#b6a690;font-family:Inter;font-size:10px;text-transform:uppercase}
+.twocol{display:grid;gap:16px;align-items:start}.colcell{min-width:0}.colcell .rblk{margin-bottom:8px}
+img{max-width:100%}
+</style></head><body><main class="reader">${pages}</main></body></html>`;
+  fs.writeFileSync(path.join(OUT, 'reading-mode.html'), inlineImages(html));
+}
+
 function buildPreview(perPage: Array<{ page: number; blocks: MappedBlock[]; counts: ClassifyCounts }>): void {
   const byId = new Map<string, MappedBlock>();
   for (const p of perPage) for (const b of p.blocks) byId.set(b.id, b);
@@ -326,6 +419,7 @@ async function main(): Promise<void> {
   fs.writeFileSync(path.join(OUT, 'region-cache.json'), JSON.stringify(cache, null, 2));
 
   buildPreview(perPage);
+  buildReader(perPage);
 
   const totalCounts = perPage.reduce((a, p) => ({ rule: a.rule + p.counts.rule, model: a.model + p.counts.model, cache: a.cache + p.counts.cache, undecided: a.undecided + p.counts.undecided }), { rule: 0, model: 0, cache: 0, undecided: 0 });
   const modelCalls = (model === gemini ? gemini.calls : stub.calls);
@@ -335,6 +429,7 @@ async function main(): Promise<void> {
   console.log(`model backend: ${model === gemini ? 'gemini' : 'stub'}  model calls this run: ${modelCalls}`);
   console.log(`geometry deterministic: ${determinismOk}  figures whole: ${figuresWhole}  two-column sections: ${columnsFormed}`);
   console.log(`preview: ${path.join(OUT, 'preview-geometry.html')}`);
+  console.log(`reader:  ${path.join(OUT, 'reading-mode.html')}`);
   console.log(`provenance sidecar: ${path.join(RECON, sidecarFileName(MANUAL, LANG))}`);
   if (summary.invalid > 0) {
     console.log(`invalid blocks (surfaced, not dropped):`);
