@@ -225,7 +225,7 @@ function renderReader(b: MappedBlock, byId: Map<string, MappedBlock>): string {
   return `<div class="rblk ${esc(b.block_type)}">${blockInner(b)}</div>`;
 }
 
-function buildReader(perPage: Array<{ page: number; blocks: MappedBlock[]; counts: ClassifyCounts }>): void {
+function buildReader(perPage: Array<{ page: number; blocks: MappedBlock[]; counts: ClassifyCounts; heightPt: number }>): void {
   const byId = new Map<string, MappedBlock>();
   for (const p of perPage) for (const b of p.blocks) byId.set(b.id, b);
   const pages = perPage
@@ -268,56 +268,81 @@ img{max-width:100%}
   fs.writeFileSync(path.join(OUT, 'reading-mode.html'), inlineImages(html));
 }
 
-function buildPreview(perPage: Array<{ page: number; blocks: MappedBlock[]; counts: ClassifyCounts }>): void {
+function buildPreview(perPage: Array<{ page: number; blocks: MappedBlock[]; counts: ClassifyCounts; heightPt: number }>): void {
   const byId = new Map<string, MappedBlock>();
   for (const p of perPage) for (const b of p.blocks) byId.set(b.id, b);
   const sections = perPage.map((p) => {
     const tag = String(p.page).padStart(2, '0');
     // Skip nested children at top level; they render inside their column.
     const blocks = p.blocks.filter((b) => !b.nested).map((b) => renderBlock(b, byId)).join('');
-    const cc = p.counts;
-    return `<section class="page"><div class="pn">Page ${p.page} — rules ${cc.rule}, model ${cc.model}, cache ${cc.cache}, undecided ${cc.undecided}</div><div class="cols">
-<div class="side canon"><div class="lbl">canon</div><img src="canon-page-${tag}.png"/></div>
-<div class="side recon"><div class="lbl">deterministic reconstruction (linear v2 blocks, real figures cropped from the PDF)</div>${blocks}</div>
+    const isCover = p.page === 1;
+    // Vertical placement from canon geometry: the first KEPT block's top edge is
+    // the real content margin (running head/foot were dropped, so they don't
+    // appear here). Pushing the recon content down by that fraction reproduces
+    // the canon's vertical distribution — centered exercise pages stay centered,
+    // top-weighted pages stay at the top. Capped so a stray rect can't over-push.
+    const tops = p.blocks.filter((b) => !b.nested && b.rect).map((b) => b.rect![1]);
+    const topFrac = tops.length ? Math.max(0, Math.min(0.5, Math.min(...tops) / p.heightPt)) : 0;
+    const vtop = isCover ? '' : `<div class="vtop" style="height:${(topFrac * 100).toFixed(1)}%"></div>`;
+    return `<section class="page"><div class="cols">
+<div class="side canon"><div class="lbl">original</div><img src="canon-page-${tag}.png"/></div>
+<div class="side recon"><div class="lbl">reconstruction</div><div class="reconpage${isCover ? ' coverpage' : ''}"><div class="reconbody">${vtop}${blocks}</div><div class="foot">${p.page}</div></div></div>
 </div></section>`;
   }).join('');
   const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>L1 deterministic reconstruction</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;600&display=swap');
-:root{--ink:#3a2f28;--terra:#b56a4a;--warm:#fbf7f1;--line:#e7ddd0}
+:root{--ink:#3a2f28;--terra:#b56a4a;--warm:#fbf7f1;--line:#e7ddd0;--frame:#dcc6b6}
 *{box-sizing:border-box}body{margin:0;background:#e9e0d3;color:var(--ink);font-family:'Cormorant Garamond',Georgia,serif}
 header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);padding:12px 20px;font-family:Inter;z-index:9}
 header h1{margin:0;font-size:17px}header .s{font-size:12px;color:#8a7a6a}
 .page{max-width:1500px;margin:24px auto;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
-.pn{font-family:Inter;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#a0896f;padding:9px 16px;border-bottom:1px solid var(--line)}
 .cols{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
-.side{padding:18px}.side.recon{border-left:1px solid var(--line);background:var(--warm)}
+.side{padding:16px}.side.recon{border-left:1px solid var(--line);background:#efe6d8;display:flex;flex-direction:column}
 .side.canon{display:flex;flex-direction:column}.side.canon img{margin-top:auto;margin-bottom:auto}
 .lbl{font-family:Inter;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#bbab98;margin-bottom:10px}
 .side.canon img{width:100%;border:1px solid var(--line);display:block}
-.blk{margin:0 0 11px}
+/* recon page card: frame + bottom page number, to mirror the canon page */
+.reconpage{flex:1;background:#fff;border:1px solid var(--frame);padding:30px 34px;display:flex;flex-direction:column;position:relative}
+.reconbody{flex:1;min-height:0}
+.vtop{flex:none}
+.reconpage>.foot{text-align:center;font-family:Inter;font-size:10px;letter-spacing:.12em;color:#c2b3a0;padding-top:22px}
+.reconpage.coverpage .reconbody{display:flex;flex-direction:column;justify-content:center}.reconpage.coverpage>.foot{display:none}
+.blk{margin:0 0 9px}
 .bt{display:none;font-family:Inter;font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:#cdbfad;margin-bottom:3px}
 body.tags .bt{display:block}
 .bad{color:#c0492b;font-weight:600}
 .blk.invalid{outline:1px dashed #d9b3a6;outline-offset:4px}
-.eyebrow{font-family:Inter;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);margin-bottom:4px}
-.cover{text-align:center;padding:10px 0}.cover .coverimg{max-width:58%;max-height:330px;width:auto;height:auto;display:block;margin:8px auto 14px}.cover .title{font-size:38px;font-weight:600}.cover .subtitle{font-style:italic;font-size:20px;color:#7a6553}.cover .byline{font-family:Inter;font-size:12px;color:#9a8a78;white-space:pre-line;margin-top:10px}
-.cover .cover-rule{width:42px;height:1px;background:var(--terra);opacity:.5;margin:16px auto}.cover .credit{color:#8a7a6a;margin:4px 0;line-height:1.35}.cover .credit:last-child{color:#b08a7a;font-style:italic;margin-top:10px}
-.h{font-weight:600}.h1{font-size:30px}.h2{font-size:23px}.h3{font-size:18px}
-.prose{font-size:16px;line-height:1.4}.prose p{margin:0 0 .5em}.prose p:last-child{margin-bottom:0}.prose ul{margin:.3em 0 .5em;padding-left:1.5em}.prose li{margin:.12em 0}
-.toc{list-style:none;margin:0;padding:0}.toc li{display:flex;gap:10px;align-items:baseline;border-bottom:1px solid var(--line);padding:3px 0}.toc .num{color:var(--terra);min-width:28px}.toc .tit{flex:1;font-size:15px;line-height:1.3}.toc .pg{color:#9a8a78}
-.ex{display:flex;gap:14px;align-items:flex-start}.ex .numeral{color:var(--terra);font-weight:600;font-size:38px;line-height:.9}.ex>div{font-size:17px;line-height:1.55}
-.spoken{font-size:20px;font-style:italic;color:#5a463a;border-left:3px solid var(--terra);padding-left:14px;margin:6px 0}
-.callout{background:#fbeee9;border-left:3px solid var(--terra);border-radius:4px;padding:10px 16px;font-size:14px;font-style:italic;color:#7a5a50;line-height:1.4}.callout p{margin:0 0 .4em}.callout p:last-child{margin-bottom:0}
-blockquote{margin:0;font-size:20px;font-style:italic;border-left:3px solid var(--terra);padding-left:14px}
-.captioned-figure{text-align:center}.captioned-figure img{max-width:90%;max-height:360px;width:auto;height:auto;border:1px solid var(--line);border-radius:4px;display:inline-block;margin:4px auto}.cap{font-style:italic;color:var(--terra);font-size:15px;margin-top:6px}
+.eyebrow{font-family:Inter;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);margin-bottom:4px}
+.cover{text-align:center;padding:6px 0}.cover .coverimg{max-width:54%;max-height:300px;width:auto;height:auto;display:block;margin:6px auto 12px}.cover .title{font-size:34px;font-weight:600}.cover .subtitle{font-style:italic;font-size:18px;color:#7a6553}.cover .byline{font-family:Inter;font-size:11px;color:#9a8a78;white-space:pre-line;margin-top:10px}
+.cover .cover-rule{width:42px;height:1px;background:var(--terra);opacity:.5;margin:14px auto}.cover .credit{color:#8a7a6a;margin:3px 0;line-height:1.35;font-size:13px}.cover .credit:last-child{color:#b08a7a;font-style:italic;margin-top:9px}
+.h{font-weight:600}.h1{font-size:26px}.h2{font-size:20px}
+/* h3 = the italic-terra sub-titles (Cleansing Rose, Protection, Circuit of Energy of…); centered standalone, left inside a column, matching canon */
+.h3{font-size:16px;font-weight:500;font-style:italic;color:var(--terra);text-align:center;margin-bottom:2px}.colcell .h3{text-align:left}
+.prose{font-size:14px;line-height:1.5}.prose p{margin:0 0 .5em}.prose p:last-child{margin-bottom:0}.prose ul{margin:.3em 0 .5em;padding-left:1.4em}.prose li{margin:.12em 0}
+.toc{list-style:none;margin:0;padding:0}.toc li{display:flex;gap:10px;align-items:baseline;border-bottom:1px solid var(--line);padding:2px 0}.toc .num{color:var(--terra);min-width:26px}.toc .tit{flex:1;font-size:13px;line-height:1.3}.toc .pg{color:#9a8a78}
+.ex{display:flex;gap:13px;align-items:flex-start}.ex .numeral{color:var(--terra);font-weight:600;font-size:32px;line-height:.9}.ex>div{font-size:14px;line-height:1.55}
+.spoken{font-size:17px;font-style:italic;color:#5a463a;border-left:3px solid var(--terra);padding-left:13px;margin:6px 0}
+.callout{background:#fbeee9;border-left:3px solid var(--terra);border-radius:4px;padding:9px 15px;font-size:13px;font-style:italic;color:#7a5a50;line-height:1.45}.callout p{margin:0 0 .4em}.callout p:last-child{margin-bottom:0}
+blockquote{margin:0;font-size:17px;font-style:italic;border-left:3px solid var(--terra);padding-left:13px}
+.captioned-figure{text-align:center}.captioned-figure img{max-width:90%;max-height:300px;width:auto;height:auto;border:1px solid var(--line);border-radius:4px;display:inline-block;margin:4px auto}.cap{font-style:italic;color:var(--terra);font-size:13px;margin-top:6px}
 .figph{display:inline-block;background:#efe7da;border:1px dashed #c9b9a6;border-radius:4px;padding:4px 10px;color:#b6a690;font-family:Inter;font-size:10px;text-transform:uppercase}
-.twocol{display:grid;gap:18px;align-items:center}.colcell{min-width:0}.colcell .blk{margin-bottom:0}.two-column-section>.bt{color:#c2a6d0}
+.twocol{display:grid;gap:16px;align-items:center}.colcell{min-width:0}.colcell .blk{margin-bottom:0}.two-column-section>.bt{color:#c2a6d0}
 @media(max-width:1100px){.cols{grid-template-columns:1fr}.side.recon{border-left:0;border-top:1px solid var(--line)}}
 </style></head><body>
 <header><button id="tagtog" onclick="document.body.classList.toggle('tags')" style="float:right;font-family:Inter;font-size:11px;border:1px solid var(--line);background:#fff;color:#8a7a6a;border-radius:6px;padding:5px 10px;cursor:pointer">block tags</button><h1>Rose Meditation Level 1 — deterministic reconstruction (${perPage.length} pages)</h1><div class="s">Left: canon page. Right: linear v2 blocks. Figure pixels and reading order come from pdf.js geometry, never a model box. The model classifies only the residue the rules cannot decide. Working tree, prod untouched.</div></header>
 ${sections}</body></html>`;
   fs.writeFileSync(path.join(OUT, 'preview-geometry.html'), html);
+  // Self-contained copy for sharing: swap the remote Google-Fonts @import for
+  // embedded base64 woff2 and inline every canon/figure image as a data URL, so
+  // the side-by-side is a single portable .html that renders identically offline.
+  const portable = inlineImages(
+    html.replace(
+      "@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;600&display=swap');",
+      embeddedFontCss()
+    )
+  );
+  fs.writeFileSync(path.join(OUT, 'preview-geometry-portable.html'), portable);
 }
 
 // ----- main ------------------------------------------------------------------
@@ -337,7 +362,7 @@ async function main(): Promise<void> {
   const htmlUrl = 'file:///' + path.resolve('scripts/vendor/pdfjs/extract.html').replace(/\\/g, '/');
   const browser = await puppeteer.launch({ executablePath: CHROME, headless: 'new', args: ['--no-sandbox', '--allow-file-access-from-files', '--disable-web-security'] });
 
-  const perPage: Array<{ page: number; blocks: MappedBlock[]; counts: ClassifyCounts }> = [];
+  const perPage: Array<{ page: number; blocks: MappedBlock[]; counts: ClassifyCounts; heightPt: number }> = [];
   const pageInputs: PageInput[] = [];
   let determinismOk = true;
   let figuresWhole = 0;
@@ -397,7 +422,7 @@ async function main(): Promise<void> {
       pageInputs.push({ page: i, regions: regions as ClassifiedRegion[], figureFiles });
       fs.writeFileSync(path.join(OUT, `geometry-page-${tag}.json`), JSON.stringify(geo, null, 2));
       console.log(`  page ${i}: ${geo.textRegions.length} text regions, ${geo.figures.length} figures | rules ${counts.rule}, model ${counts.model}, cache ${counts.cache}, undecided ${counts.undecided}`);
-      perPage.push({ page: i, blocks: [], counts });
+      perPage.push({ page: i, blocks: [], counts, heightPt: geo.heightPt });
     }
   } finally {
     await browser.close();
