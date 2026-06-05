@@ -25,6 +25,7 @@ import {
   type RawPageExtract,
   type RawImageOp,
   type FigureRegion,
+  type BlockRegion,
 } from '../src/lib/manuals/extract-geometry';
 import { extractFigurePixels } from '../src/lib/manuals/figure-extract';
 import {
@@ -113,8 +114,127 @@ function esc(s: unknown): string {
   return String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c] as string));
 }
 
-function blockInner(b: MappedBlock): string {
+// ----- faithful render style (axes: size, leading, centering) -----------------
+// The side-by-side's job is to let the editor TRUST the block stream reproduces
+// the canon page. Three of the four style axes Dario asked for are pure RENDER
+// metadata read from the geometry that already exists — they never touch the
+// editable content/schema, classify, or map. They ride alongside the block (like
+// `rect`), are joined to it by (page, ordinal), and are applied ONLY in the
+// side-by-side preview, never in the clean reader copy. Color (axis 4) needs a
+// geometry-layer change (text fill color is not extracted yet) and lands later.
+
+interface PageRender { page: number; blocks: MappedBlock[]; counts: ClassifyCounts; heightPt: number; widthPt: number; regions: BlockRegion[] }
+
+/** What the preview renderer applies inline, overriding the fixed-px class CSS
+ *  with real values. Any field omitted falls back to the class default. */
+interface Faithful { fontPx?: number; lineH?: number; align?: 'left' | 'center'; numeralPx?: number }
+
+/** Manual-wide body point size: the median fontSize across `text` blocks. The
+ *  px scale is anchored to it so the already-approved body size (BASE_BODY_PX)
+ *  stays put while every other element scales to its TRUE point ratio. General
+ *  (derived from the corpus), never a per-page constant. */
+const BASE_BODY_PX = 14;
+function bodyPointSize(perPage: PageRender[]): number {
+  const sizes: number[] = [];
+  for (const p of perPage) {
+    for (const b of p.blocks) {
+      if (b.block_type !== 'text') continue;
+      const r = p.regions.find((x) => x.ordinal === b.anchor.ordinal);
+      if (r) sizes.push(r.fontSize);
+    }
+  }
+  if (!sizes.length) return 9.5;
+  sizes.sort((a, b) => a - b);
+  const med = sizes[sizes.length >> 1];
+  return Math.min(13, Math.max(7, med));
+}
+
+/** Page content frame (left/right text margins in points), derived from the body
+ *  text regions so centering is judged against the real column, not the paper
+ *  edge. Skips one-glyph regions (exercise numerals, folios) that sit outside the
+ *  text column. */
+function pageFrame(regions: BlockRegion[]): { l: number; r: number } {
+  const body = regions.filter((r) => (r.text || '').trim().length > 3);
+  if (!body.length) return { l: 47, r: 565 };
+  return { l: Math.min(...body.map((r) => r.rect[0])), r: Math.max(...body.map((r) => r.rect[2])) };
+}
+
+/** Real line-height of a region: the TIGHTEST top-to-top line pitch / fontSize.
+ *  The tightest gap is the normal in-paragraph leading; the median or max would be
+ *  inflated by a paragraph break or a gap straddling a figure (a 2-line region's
+ *  "median" is literally the larger gap). One-line regions carry no pitch and
+ *  return null (the class default applies). */
+function regionLeading(r: BlockRegion): number | null {
+  const lines = r.lines || [];
+  if (lines.length < 2 || !r.fontSize) return null;
+  const gaps: number[] = [];
+  for (let i = 1; i < lines.length; i++) {
+    const g = lines[i].rect[1] - lines[i - 1].rect[1];
+    if (g > 0) gaps.push(g);
+  }
+  if (!gaps.length) return null;
+  const pitch = Math.min(...gaps);
+  return Math.min(2.0, Math.max(1.1, pitch / r.fontSize));
+}
+
+/** Compute the faithful style for a block from its source region. Returns null
+ *  for composite/special blocks (cover, contents, figure, two-column) whose
+ *  single-ordinal join is not representative — those keep their tuned CSS. */
+function faithfulFor(b: MappedBlock, region: BlockRegion | undefined, frame: { l: number; r: number }, pxPerPt: number): Faithful | null {
+  if (!region) return null;
+  const round = (n: number) => Math.round(n);
+  const px = (pt: number) => Math.min(60, Math.max(9, round(pt * pxPerPt)));
+  switch (b.block_type) {
+    case 'numbered-exercise':
+      // The anchor region IS the big numeral; size it faithfully. The body keeps
+      // the body scale (its own region is not the anchor).
+      return { numeralPx: px(region.fontSize) };
+    case 'heading':
+    case 'text':
+    case 'callout':
+    case 'quote':
+    case 'spoken-instruction': {
+      const f: Faithful = { fontPx: px(region.fontSize) };
+      const lead = regionLeading(region);
+      if (lead != null) f.lineH = Number(lead.toFixed(2));
+      // Centering only for top-level blocks (frame = page). A nested block's frame
+      // is its column, not the page, so alignment is left to the column CSS.
+      if (!b.nested) f.align = alignOf(region, frame);
+      return f;
+    }
+    default:
+      return null;
+  }
+}
+
+/** Alignment from geometry: centered only when the region is NARROW relative to
+ *  the content frame AND its left/right margins are near-symmetric. A full-width
+ *  region (body paragraph, TOC row) reads as left/justified, never centered. */
+function alignOf(r: BlockRegion, frame: { l: number; r: number }): 'left' | 'center' {
+  const fw = frame.r - frame.l;
+  if (fw <= 0) return 'left';
+  const w = r.rect[2] - r.rect[0];
+  const leftGap = r.rect[0] - frame.l;
+  const rightGap = frame.r - r.rect[2];
+  const narrow = w < 0.82 * fw;
+  const symmetric = Math.abs(leftGap - rightGap) < 0.09 * fw;
+  const inset = leftGap > 0.05 * fw;
+  return narrow && symmetric && inset ? 'center' : 'left';
+}
+
+/** Build an inline style string from a Faithful (size/leading/align only). */
+function faithfulStyle(f: Faithful | null): string {
+  if (!f) return '';
+  const parts: string[] = [];
+  if (f.fontPx) parts.push(`font-size:${f.fontPx}px`);
+  if (f.lineH) parts.push(`line-height:${f.lineH}`);
+  if (f.align) parts.push(`text-align:${f.align}`);
+  return parts.length ? ` style="${parts.join(';')}"` : '';
+}
+
+function blockInner(b: MappedBlock, fst: Faithful | null = null): string {
   const c = b.content as Record<string, any>;
+  const fs = faithfulStyle(fst);
   switch (b.block_type) {
     case 'cover': {
       // Credits/edition/disclaimer lines render centered at a size scaled from
@@ -129,9 +249,9 @@ function blockInner(b: MappedBlock): string {
     case 'contents':
       return `${c.eyebrow ? `<div class="eyebrow">${esc(c.eyebrow)}</div>` : ''}<ul class="toc">${(c.rows || []).map((r: any) => `<li><span class="num">${esc(r.numeral || '')}</span><span class="tit">${esc(r.title)}</span><span class="pg">${esc(r.page || '')}</span></li>`).join('')}</ul>`;
     case 'heading':
-      return `${c.eyebrow ? `<div class="eyebrow">${esc(c.eyebrow)}</div>` : ''}<div class="h h${c.level || 2}">${esc(c.text)}</div>`;
+      return `${c.eyebrow ? `<div class="eyebrow">${esc(c.eyebrow)}</div>` : ''}<div class="h h${c.level || 2}"${fs}>${esc(c.text)}</div>`;
     case 'text':
-      return `<div class="prose">${c.html || ''}</div>`;
+      return `<div class="prose"${fs}>${c.html || ''}</div>`;
     case 'captioned-figure': {
       // A figure INSIDE a column fills its cell — the column's proportion already
       // encodes the figure's on-page width (a 36%-of-page figure sits in a
@@ -141,14 +261,16 @@ function blockInner(b: MappedBlock): string {
       const style = ` style="width:${pct}%"`;
       return `${c.src ? `<img src="${esc(c.src)}"${style}/>` : `<div class="figph">figura</div>`}${c.caption ? `<div class="cap">${esc(c.caption)}</div>` : ''}`;
     }
-    case 'numbered-exercise':
-      return `<div class="ex"><span class="numeral">${esc(c.numeral)}</span><div>${c.title ? `<strong>${esc(c.title)}</strong>` : ''}${docText(c.body)}</div></div>`;
+    case 'numbered-exercise': {
+      const numStyle = fst?.numeralPx ? ` style="font-size:${fst.numeralPx}px"` : '';
+      return `<div class="ex"><span class="numeral"${numStyle}>${esc(c.numeral)}</span><div>${c.title ? `<strong>${esc(c.title)}</strong>` : ''}${docText(c.body)}</div></div>`;
+    }
     case 'spoken-instruction':
-      return `<div class="spoken">&ldquo;${esc(c.spoken)}&rdquo;</div>`;
+      return `<div class="spoken"${fs}>&ldquo;${esc(c.spoken)}&rdquo;</div>`;
     case 'quote':
-      return `<blockquote>${docText(c.body)}</blockquote>`;
+      return `<blockquote${fs}>${docText(c.body)}</blockquote>`;
     case 'callout':
-      return `<div class="callout">${docText(c.body)}</div>`;
+      return `<div class="callout"${fs}>${docText(c.body)}</div>`;
     default:
       return `<div class="prose">${esc(JSON.stringify(c))}</div>`;
   }
@@ -162,17 +284,24 @@ function docText(doc: any): string {
   return out.join('');
 }
 
-function renderBlock(b: MappedBlock, byId: Map<string, MappedBlock>): string {
+/** Render context for the faithful (size/leading/centering) pass: the region join
+ *  map, per-page content frame, and the manual-wide pt->px scale. */
+interface FCtx { regionByKey: Map<string, BlockRegion>; frameByPage: Map<number, { l: number; r: number }>; pxPerPt: number }
+
+function renderBlock(b: MappedBlock, byId: Map<string, MappedBlock>, fctx: FCtx): string {
   const flag = b.valid ? '' : `<span class="bad" title="${esc(b.error?.error.message)}">INVALID</span>`;
   const tag = `${esc(b.block_type)} · ${esc(b.decidedBy)} ${flag}`;
   if (b.block_type === 'two-column-section') {
     const c = b.content as { left: string[]; right: string[]; proportions?: [number, number] };
     const [lp, rp] = c.proportions ?? [1, 1];
-    const col = (ids: string[]) => ids.map((id) => byId.get(id)).filter(Boolean).map((child) => renderBlock(child as MappedBlock, byId)).join('');
+    const col = (ids: string[]) => ids.map((id) => byId.get(id)).filter(Boolean).map((child) => renderBlock(child as MappedBlock, byId, fctx)).join('');
     return `<div class="blk two-column-section"><div class="bt">${tag}</div><div class="twocol" style="grid-template-columns:${lp}fr ${rp}fr">
 <div class="colcell">${col(c.left)}</div><div class="colcell">${col(c.right)}</div></div></div>`;
   }
-  return `<div class="blk ${esc(b.block_type)}${b.valid ? '' : ' invalid'}"><div class="bt">${tag}</div>${blockInner(b)}</div>`;
+  const region = fctx.regionByKey.get(`${b.anchor.page}:${b.anchor.ordinal}`);
+  const frame = fctx.frameByPage.get(b.anchor.page) ?? { l: 47, r: 565 };
+  const fst = faithfulFor(b, region, frame, fctx.pxPerPt);
+  return `<div class="blk ${esc(b.block_type)}${b.valid ? '' : ' invalid'}"><div class="bt">${tag}</div>${blockInner(b, fst)}</div>`;
 }
 
 // ----- reader (clean, portable, single-column client copy) -------------------
@@ -225,7 +354,7 @@ function renderReader(b: MappedBlock, byId: Map<string, MappedBlock>): string {
   return `<div class="rblk ${esc(b.block_type)}">${blockInner(b)}</div>`;
 }
 
-function buildReader(perPage: Array<{ page: number; blocks: MappedBlock[]; counts: ClassifyCounts; heightPt: number }>): void {
+function buildReader(perPage: PageRender[]): void {
   const byId = new Map<string, MappedBlock>();
   for (const p of perPage) for (const b of p.blocks) byId.set(b.id, b);
   const pages = perPage
@@ -268,13 +397,23 @@ img{max-width:100%}
   fs.writeFileSync(path.join(OUT, 'reading-mode.html'), inlineImages(html));
 }
 
-function buildPreview(perPage: Array<{ page: number; blocks: MappedBlock[]; counts: ClassifyCounts; heightPt: number }>): void {
+function buildPreview(perPage: PageRender[]): void {
   const byId = new Map<string, MappedBlock>();
   for (const p of perPage) for (const b of p.blocks) byId.set(b.id, b);
+  // Build the faithful-style context: join regions by (page, ordinal), the
+  // content frame per page, and the manual-wide pt->px scale anchored at body.
+  const regionByKey = new Map<string, BlockRegion>();
+  const frameByPage = new Map<number, { l: number; r: number }>();
+  for (const p of perPage) {
+    frameByPage.set(p.page, pageFrame(p.regions));
+    for (const r of p.regions) regionByKey.set(`${p.page}:${r.ordinal}`, r);
+  }
+  const pxPerPt = BASE_BODY_PX / bodyPointSize(perPage);
+  const fctx: FCtx = { regionByKey, frameByPage, pxPerPt };
   const sections = perPage.map((p) => {
     const tag = String(p.page).padStart(2, '0');
     // Skip nested children at top level; they render inside their column.
-    const blocks = p.blocks.filter((b) => !b.nested).map((b) => renderBlock(b, byId)).join('');
+    const blocks = p.blocks.filter((b) => !b.nested).map((b) => renderBlock(b, byId, fctx)).join('');
     const isCover = p.page === 1;
     // Vertical placement from canon geometry: the first KEPT block's top edge is
     // the real content margin (running head/foot were dropped, so they don't
@@ -362,7 +501,7 @@ async function main(): Promise<void> {
   const htmlUrl = 'file:///' + path.resolve('scripts/vendor/pdfjs/extract.html').replace(/\\/g, '/');
   const browser = await puppeteer.launch({ executablePath: CHROME, headless: 'new', args: ['--no-sandbox', '--allow-file-access-from-files', '--disable-web-security'] });
 
-  const perPage: Array<{ page: number; blocks: MappedBlock[]; counts: ClassifyCounts; heightPt: number }> = [];
+  const perPage: PageRender[] = [];
   const pageInputs: PageInput[] = [];
   let determinismOk = true;
   let figuresWhole = 0;
@@ -422,7 +561,7 @@ async function main(): Promise<void> {
       pageInputs.push({ page: i, regions: regions as ClassifiedRegion[], figureFiles });
       fs.writeFileSync(path.join(OUT, `geometry-page-${tag}.json`), JSON.stringify(geo, null, 2));
       console.log(`  page ${i}: ${geo.textRegions.length} text regions, ${geo.figures.length} figures | rules ${counts.rule}, model ${counts.model}, cache ${counts.cache}, undecided ${counts.undecided}`);
-      perPage.push({ page: i, blocks: [], counts, heightPt: geo.heightPt });
+      perPage.push({ page: i, blocks: [], counts, heightPt: geo.heightPt, widthPt: geo.widthPt, regions: geo.textRegions });
     }
   } finally {
     await browser.close();
