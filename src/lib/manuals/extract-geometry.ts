@@ -87,6 +87,9 @@ export interface RawTextItem {
   height: number;
   /** Font resource name (e.g. `g_d0_f1`); a stable per-font handle, not a family. */
   fontName: string;
+  /** RGB fill color (0-255) recovered by the driver via position match; optional
+   *  for back-compat with older raw dumps. Defaults to ink when absent. */
+  color?: readonly [number, number, number];
 }
 
 /** Kind of figure source. `xobject` is an embedded image; `vector` is a
@@ -132,6 +135,8 @@ export interface TextRun {
   rect: Rect;
   fontName: string;
   fontSize: number;
+  /** RGB fill color (0-255) of this run; ink when the driver gave none. */
+  color: readonly [number, number, number];
 }
 
 /** One coalesced line: consecutive runs in one band, x-gap-joined into text. */
@@ -141,6 +146,8 @@ export interface LineRegion {
   fontSize: number;
   fontName: string;
   runCount: number;
+  /** Dominant RGB fill color (0-255) across the line's runs. */
+  color?: readonly [number, number, number];
 }
 
 /** A block region: one or more lines with a shared font bucket and no large gap.
@@ -155,6 +162,10 @@ export interface BlockRegion {
   fontSize: number;
   /** Representative (modal) font name across the region's lines. */
   fontName: string;
+  /** Dominant RGB fill color (0-255) across the region's lines, weighted by text
+   *  length. Render metadata only — NOT part of the classification hash, so the
+   *  region cache stays valid; the renderer reads it straight from the geometry. */
+  color?: readonly [number, number, number];
   lines: LineRegion[];
 }
 
@@ -211,6 +222,9 @@ export function fontSizeOf(item: RawTextItem): number {
   return s > 0.01 ? s : Math.max(item.height, 1);
 }
 
+/** Default ink when the driver supplied no color (warm near-black). */
+const INK: readonly [number, number, number] = [63, 62, 60];
+
 /** Build a `TextRun` (top-left rect) from a raw item and the page height. */
 export function runFromRawItem(item: RawTextItem, heightPt: number): TextRun {
   const x0 = item.transform[4];
@@ -226,7 +240,27 @@ export function runFromRawItem(item: RawTextItem, heightPt: number): TextRun {
     rect: roundRect([x0, topTop, x0 + item.width, bottomTop]),
     fontName: item.fontName,
     fontSize: round(size),
+    color: item.color ? [Math.round(item.color[0]), Math.round(item.color[1]), Math.round(item.color[2])] : INK,
   };
+}
+
+/** Dominant RGB color across weighted parts (weight = text length). Picks the
+ *  color carrying the most ink; deterministic tie-break by numeric color value. */
+function dominantColor(parts: Array<{ color: readonly [number, number, number]; weight: number }>): readonly [number, number, number] {
+  if (parts.length === 0) return INK;
+  const tally = new Map<string, { color: readonly [number, number, number]; w: number }>();
+  for (const p of parts) {
+    const key = p.color.join(',');
+    const e = tally.get(key);
+    if (e) e.w += p.weight;
+    else tally.set(key, { color: p.color, w: p.weight });
+  }
+  let best = INK;
+  let bestW = -1;
+  for (const { color, w } of [...tally.values()].sort((a, b) => a.color.join(',') < b.color.join(',') ? -1 : 1)) {
+    if (w > bestW) { bestW = w; best = color; }
+  }
+  return best;
 }
 
 function median(xs: number[]): number {
@@ -340,6 +374,7 @@ export function groupIntoLines(orderedRuns: TextRun[]): LineRegion[] {
       fontSize: round(median(bucket.map((r) => r.fontSize))),
       fontName: mode(bucket.map((r) => r.fontName)),
       runCount: bucket.length,
+      color: dominantColor(bucket.map((r) => ({ color: r.color, weight: Math.max(1, r.str.trim().length) }))),
     });
     bucket = [];
   };
@@ -389,6 +424,7 @@ export function groupLinesIntoRegions(lines: LineRegion[], startOrdinal = 0): Bl
       rect: unionRect(rects),
       fontSize: round(median(bucket.map((l) => l.fontSize))),
       fontName: mode(bucket.map((l) => l.fontName)),
+      color: dominantColor(bucket.map((l) => ({ color: l.color, weight: Math.max(1, l.text.trim().length) }))),
       lines: bucket,
     });
     bucket = [];

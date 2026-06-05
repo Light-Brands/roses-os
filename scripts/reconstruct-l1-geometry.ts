@@ -128,7 +128,14 @@ interface PageRender { page: number; blocks: MappedBlock[]; counts: ClassifyCoun
 /** What the preview renderer applies inline, overriding the class CSS with real
  *  values. Sizes are cqw strings (see scaleCqwPerPt). Any field omitted falls
  *  back to the class default. */
-interface Faithful { fontCss?: string; lineH?: number; align?: 'left' | 'center'; numeralCss?: string }
+interface Faithful { fontCss?: string; lineH?: number; align?: 'left' | 'center'; colorCss?: string; numeralCss?: string; numeralColorCss?: string }
+
+/** A region's real RGB fill color as a CSS color, or null if absent/pure ink. */
+function colorCssOf(region: BlockRegion): string | null {
+  const c = region.color;
+  if (!c) return null;
+  return `rgb(${Math.round(c[0])},${Math.round(c[1])},${Math.round(c[2])})`;
+}
 
 /** The page-to-screen scale, in container-query width units per point. The recon
  *  side is a query container whose content box (100cqw) is exactly the width the
@@ -181,10 +188,12 @@ function regionLeading(r: BlockRegion): number | null {
 function faithfulFor(b: MappedBlock, region: BlockRegion | undefined, frame: { l: number; r: number }, s: number): Faithful | null {
   if (!region) return null;
   switch (b.block_type) {
-    case 'numbered-exercise':
-      // The anchor region IS the big numeral; size it faithfully. The body keeps
-      // the body scale (its own region is not the anchor).
-      return { numeralCss: cqw(region.fontSize, s) };
+    case 'numbered-exercise': {
+      // The anchor region IS the big numeral; size + color it faithfully. The body
+      // keeps the body scale (its own region is not the anchor).
+      const nc = colorCssOf(region);
+      return { numeralCss: cqw(region.fontSize, s), ...(nc ? { numeralColorCss: nc } : {}) };
+    }
     case 'heading':
     case 'text':
     case 'callout':
@@ -196,6 +205,8 @@ function faithfulFor(b: MappedBlock, region: BlockRegion | undefined, frame: { l
       // Centering only for top-level blocks (frame = page). A nested block's frame
       // is its column, not the page, so alignment is left to the column CSS.
       if (!b.nested) f.align = alignOf(region, frame);
+      const cc = colorCssOf(region);
+      if (cc) f.colorCss = cc;
       return f;
     }
     default:
@@ -225,6 +236,7 @@ function faithfulStyle(f: Faithful | null): string {
   if (f.fontCss) parts.push(`font-size:${f.fontCss}`);
   if (f.lineH) parts.push(`line-height:${f.lineH}`);
   if (f.align) parts.push(`text-align:${f.align}`);
+  if (f.colorCss) parts.push(`color:${f.colorCss}`);
   return parts.length ? ` style="${parts.join(';')}"` : '';
 }
 
@@ -260,7 +272,8 @@ function blockInner(b: MappedBlock, fst: Faithful | null = null, s = 0): string 
       return `${c.src ? `<img src="${esc(c.src)}"${style}/>` : `<div class="figph">figura</div>`}${c.caption ? `<div class="cap">${esc(c.caption)}</div>` : ''}`;
     }
     case 'numbered-exercise': {
-      const numStyle = fst?.numeralCss ? ` style="font-size:${fst.numeralCss}"` : '';
+      const numParts = [fst?.numeralCss ? `font-size:${fst.numeralCss}` : '', fst?.numeralColorCss ? `color:${fst.numeralColorCss}` : ''].filter(Boolean);
+      const numStyle = numParts.length ? ` style="${numParts.join(';')}"` : '';
       return `<div class="ex"><span class="numeral"${numStyle}>${esc(c.numeral)}</span><div>${c.title ? `<strong>${esc(c.title)}</strong>` : ''}${docText(c.body)}</div></div>`;
     }
     case 'spoken-instruction':

@@ -107,6 +107,16 @@ window.extractGeometry = async (b64) => {
   const stack = [];
   const rawImages = [];
   const rawFills = [];
+  // Text fill color, recovered by position: track the text matrix (Tm) through the
+  // text-positioning ops and, at each show op, record the text origin in user space
+  // (CTM ∘ Tm applied to 0,0) with the active fill color. getTextContent coalesces
+  // many show ops into one item, so an index zip fails; we instead match each item
+  // to the nearest recorded origin (item.transform carries the same origin).
+  const textPos = []; // { x, y, color }
+  let Tm = [1, 0, 0, 1, 0, 0];
+  let Tlm = [1, 0, 0, 1, 0, 0];
+  let leading = 0;
+  const recordTextOrigin = () => { const o = apply(mul(ctm, Tm), 0, 0); textPos.push({ x: o[0], y: o[1], color: fillColor.slice() }); };
   const recordFill = () => {
     if (!pendingPath) return;
     const [px0, py0, px1, py1] = pendingPath.minMax;
@@ -133,10 +143,33 @@ window.extractGeometry = async (b64) => {
     }
     else if (fn === OPS.fill || fn === OPS.eoFill || fn === OPS.fillStroke || fn === OPS.eoFillStroke || fn === OPS.closeFillStroke) { recordFill(); }
     else if (fn === OPS.stroke || fn === OPS.closeStroke) { pendingPath = null; }
+    else if (fn === OPS.beginText) { Tm = [1, 0, 0, 1, 0, 0]; Tlm = Tm.slice(); }
+    else if (fn === OPS.setTextMatrix) { Tm = args.slice(); Tlm = args.slice(); }
+    else if (fn === OPS.setLeading) { leading = args[0]; }
+    else if (fn === OPS.moveText) { Tlm = mul(Tlm, [1, 0, 0, 1, args[0], args[1]]); Tm = Tlm.slice(); }
+    else if (fn === OPS.setLeadingMoveText) { leading = -args[1]; Tlm = mul(Tlm, [1, 0, 0, 1, args[0], args[1]]); Tm = Tlm.slice(); }
+    else if (fn === OPS.nextLine) { Tlm = mul(Tlm, [1, 0, 0, 1, 0, -leading]); Tm = Tlm.slice(); }
+    else if (fn === OPS.showText) { recordTextOrigin(); }
+    else if (fn === OPS.nextLineShowText) { Tlm = mul(Tlm, [1, 0, 0, 1, 0, -leading]); Tm = Tlm.slice(); recordTextOrigin(); }
+    else if (fn === OPS.nextLineSetSpacingShowText) { leading = -args[1]; Tlm = mul(Tlm, [1, 0, 0, 1, 0, -leading]); Tm = Tlm.slice(); recordTextOrigin(); }
     else if (fn === OPS.paintImageXObject || fn === OPS.paintJpegXObject || fn === OPS.paintImageXObjectRepeat) {
       const objId = (args && args[0]) || null;
       rawImages.push({ objId, ctm: ctm.slice(), kind: 'xobject' });
     }
+  }
+
+  // Attach each text item's fill color by matching its origin to the nearest
+  // recorded text origin. A run of show ops on one line shares the line origin, so
+  // the nearest record is from the same line and the color is correct; an
+  // unmatched item (no record within tolerance) defaults to near-black ink.
+  for (const it of items) {
+    const ex = it.transform[4], ey = it.transform[5];
+    let best = null, bestD = Infinity;
+    for (const tp of textPos) {
+      const d = (tp.x - ex) * (tp.x - ex) + (tp.y - ey) * (tp.y - ey);
+      if (d < bestD) { bestD = d; best = tp; }
+    }
+    it.color = best && bestD <= 9 ? best.color.map((n) => Math.round(n)) : [63, 62, 60];
   }
 
   // Map each placed image's unit square through its CTM into top-left points.
