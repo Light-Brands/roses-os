@@ -125,28 +125,26 @@ function esc(s: unknown): string {
 
 interface PageRender { page: number; blocks: MappedBlock[]; counts: ClassifyCounts; heightPt: number; widthPt: number; regions: BlockRegion[] }
 
-/** What the preview renderer applies inline, overriding the fixed-px class CSS
- *  with real values. Any field omitted falls back to the class default. */
-interface Faithful { fontPx?: number; lineH?: number; align?: 'left' | 'center'; numeralPx?: number }
+/** What the preview renderer applies inline, overriding the class CSS with real
+ *  values. Sizes are cqw strings (see scaleCqwPerPt). Any field omitted falls
+ *  back to the class default. */
+interface Faithful { fontCss?: string; lineH?: number; align?: 'left' | 'center'; numeralCss?: string }
 
-/** Manual-wide body point size: the median fontSize across `text` blocks. The
- *  px scale is anchored to it so the already-approved body size (BASE_BODY_PX)
- *  stays put while every other element scales to its TRUE point ratio. General
- *  (derived from the corpus), never a per-page constant. */
-const BASE_BODY_PX = 14;
-function bodyPointSize(perPage: PageRender[]): number {
-  const sizes: number[] = [];
-  for (const p of perPage) {
-    for (const b of p.blocks) {
-      if (b.block_type !== 'text') continue;
-      const r = p.regions.find((x) => x.ordinal === b.anchor.ordinal);
-      if (r) sizes.push(r.fontSize);
-    }
-  }
-  if (!sizes.length) return 9.5;
-  sizes.sort((a, b) => a - b);
-  const med = sizes[sizes.length >> 1];
-  return Math.min(13, Math.max(7, med));
+/** The page-to-screen scale, in container-query width units per point. The recon
+ *  side is a query container whose content box (100cqw) is exactly the width the
+ *  canon page image is displayed at (equal grid columns, equal side padding). So
+ *  a glyph rendered at `pt * 100/widthPt cqw` lands at the SAME on-screen size as
+ *  the canon page's glyph, at any viewport — the only way the two sizes truly
+ *  coincide. Derived from the page width in points, never a hand constant. */
+function scaleCqwPerPt(perPage: PageRender[]): number {
+  const widths = perPage.map((p) => p.widthPt).filter((w) => w > 0).sort((a, b) => a - b);
+  const w = widths.length ? widths[widths.length >> 1] : 612;
+  return 100 / w;
+}
+/** Format a point size as a cqw length at the given scale, clamped to a sane band. */
+function cqw(pt: number, s: number): string {
+  const clamped = Math.min(44, Math.max(5, pt));
+  return `${(clamped * s).toFixed(3)}cqw`;
 }
 
 /** Page content frame (left/right text margins in points), derived from the body
@@ -180,21 +178,19 @@ function regionLeading(r: BlockRegion): number | null {
 /** Compute the faithful style for a block from its source region. Returns null
  *  for composite/special blocks (cover, contents, figure, two-column) whose
  *  single-ordinal join is not representative — those keep their tuned CSS. */
-function faithfulFor(b: MappedBlock, region: BlockRegion | undefined, frame: { l: number; r: number }, pxPerPt: number): Faithful | null {
+function faithfulFor(b: MappedBlock, region: BlockRegion | undefined, frame: { l: number; r: number }, s: number): Faithful | null {
   if (!region) return null;
-  const round = (n: number) => Math.round(n);
-  const px = (pt: number) => Math.min(60, Math.max(9, round(pt * pxPerPt)));
   switch (b.block_type) {
     case 'numbered-exercise':
       // The anchor region IS the big numeral; size it faithfully. The body keeps
       // the body scale (its own region is not the anchor).
-      return { numeralPx: px(region.fontSize) };
+      return { numeralCss: cqw(region.fontSize, s) };
     case 'heading':
     case 'text':
     case 'callout':
     case 'quote':
     case 'spoken-instruction': {
-      const f: Faithful = { fontPx: px(region.fontSize) };
+      const f: Faithful = { fontCss: cqw(region.fontSize, s) };
       const lead = regionLeading(region);
       if (lead != null) f.lineH = Number(lead.toFixed(2));
       // Centering only for top-level blocks (frame = page). A nested block's frame
@@ -226,13 +222,13 @@ function alignOf(r: BlockRegion, frame: { l: number; r: number }): 'left' | 'cen
 function faithfulStyle(f: Faithful | null): string {
   if (!f) return '';
   const parts: string[] = [];
-  if (f.fontPx) parts.push(`font-size:${f.fontPx}px`);
+  if (f.fontCss) parts.push(`font-size:${f.fontCss}`);
   if (f.lineH) parts.push(`line-height:${f.lineH}`);
   if (f.align) parts.push(`text-align:${f.align}`);
   return parts.length ? ` style="${parts.join(';')}"` : '';
 }
 
-function blockInner(b: MappedBlock, fst: Faithful | null = null): string {
+function blockInner(b: MappedBlock, fst: Faithful | null = null, s = 0): string {
   const c = b.content as Record<string, any>;
   const fs = faithfulStyle(fst);
   switch (b.block_type) {
@@ -240,9 +236,11 @@ function blockInner(b: MappedBlock, fst: Faithful | null = null): string {
       // Credits/edition/disclaimer lines render centered at a size scaled from
       // their real point size, so the cover keeps the canon's hierarchy.
       const credits = Array.isArray(c.credits) ? c.credits as Array<{ text: string; sizePt: number }> : [];
-      const creditPx = (pt: number) => Math.max(9, Math.min(15, Math.round((pt || 9) * 1.35)));
+      // Scale credits to the canon page scale (cqw) in the side-by-side; the clean
+      // reader copy (s=0) keeps a clamped px size.
+      const creditSize = (pt: number) => (s > 0 ? cqw(Math.max(8, pt || 9), s) : `${Math.max(9, Math.min(15, Math.round((pt || 9) * 1.35)))}px`);
       const creditsHtml = credits.length
-        ? `<div class="cover-rule"></div>${credits.map((cr) => `<div class="credit" style="font-size:${creditPx(cr.sizePt)}px">${esc(cr.text)}</div>`).join('')}`
+        ? `<div class="cover-rule"></div>${credits.map((cr) => `<div class="credit" style="font-size:${creditSize(cr.sizePt)}">${esc(cr.text)}</div>`).join('')}`
         : (c.author ? `<div class="byline">${esc(c.author)}</div>` : '');
       return `${c.eyebrow ? `<div class="eyebrow">${esc(c.eyebrow)}</div>` : ''}${c.cover_image ? `<img class="coverimg" src="${esc(c.cover_image)}"/>` : ''}<div class="title">${esc(c.title)}</div>${c.subtitle ? `<div class="subtitle">${esc(c.subtitle)}</div>` : ''}${creditsHtml}`;
     }
@@ -262,7 +260,7 @@ function blockInner(b: MappedBlock, fst: Faithful | null = null): string {
       return `${c.src ? `<img src="${esc(c.src)}"${style}/>` : `<div class="figph">figura</div>`}${c.caption ? `<div class="cap">${esc(c.caption)}</div>` : ''}`;
     }
     case 'numbered-exercise': {
-      const numStyle = fst?.numeralPx ? ` style="font-size:${fst.numeralPx}px"` : '';
+      const numStyle = fst?.numeralCss ? ` style="font-size:${fst.numeralCss}"` : '';
       return `<div class="ex"><span class="numeral"${numStyle}>${esc(c.numeral)}</span><div>${c.title ? `<strong>${esc(c.title)}</strong>` : ''}${docText(c.body)}</div></div>`;
     }
     case 'spoken-instruction':
@@ -286,7 +284,7 @@ function docText(doc: any): string {
 
 /** Render context for the faithful (size/leading/centering) pass: the region join
  *  map, per-page content frame, and the manual-wide pt->px scale. */
-interface FCtx { regionByKey: Map<string, BlockRegion>; frameByPage: Map<number, { l: number; r: number }>; pxPerPt: number }
+interface FCtx { regionByKey: Map<string, BlockRegion>; frameByPage: Map<number, { l: number; r: number }>; s: number }
 
 function renderBlock(b: MappedBlock, byId: Map<string, MappedBlock>, fctx: FCtx): string {
   const flag = b.valid ? '' : `<span class="bad" title="${esc(b.error?.error.message)}">INVALID</span>`;
@@ -300,8 +298,8 @@ function renderBlock(b: MappedBlock, byId: Map<string, MappedBlock>, fctx: FCtx)
   }
   const region = fctx.regionByKey.get(`${b.anchor.page}:${b.anchor.ordinal}`);
   const frame = fctx.frameByPage.get(b.anchor.page) ?? { l: 47, r: 565 };
-  const fst = faithfulFor(b, region, frame, fctx.pxPerPt);
-  return `<div class="blk ${esc(b.block_type)}${b.valid ? '' : ' invalid'}"><div class="bt">${tag}</div>${blockInner(b, fst)}</div>`;
+  const fst = faithfulFor(b, region, frame, fctx.s);
+  return `<div class="blk ${esc(b.block_type)}${b.valid ? '' : ' invalid'}"><div class="bt">${tag}</div>${blockInner(b, fst, fctx.s)}</div>`;
 }
 
 // ----- reader (clean, portable, single-column client copy) -------------------
@@ -408,8 +406,11 @@ function buildPreview(perPage: PageRender[]): void {
     frameByPage.set(p.page, pageFrame(p.regions));
     for (const r of p.regions) regionByKey.set(`${p.page}:${r.ordinal}`, r);
   }
-  const pxPerPt = BASE_BODY_PX / bodyPointSize(perPage);
-  const fctx: FCtx = { regionByKey, frameByPage, pxPerPt };
+  const s = scaleCqwPerPt(perPage);
+  const fctx: FCtx = { regionByKey, frameByPage, s };
+  // Class-default content sizes, also in cqw so non-faithful blocks (exercise
+  // body, TOC rows, cover) share the canon page scale. Typical point sizes for L1.
+  const cq = (pt: number) => cqw(pt, s);
   const sections = perPage.map((p) => {
     const tag = String(p.page).padStart(2, '0');
     // Skip nested children at top level; they render inside their column.
@@ -437,12 +438,12 @@ header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line)
 header h1{margin:0;font-size:17px}header .s{font-size:12px;color:#8a7a6a}
 .page{max-width:1500px;margin:24px auto;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
 .cols{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
-.side{padding:16px}.side.recon{border-left:1px solid var(--line);background:#efe6d8;display:flex;flex-direction:column}
+.side{padding:16px}.side.recon{border-left:1px solid var(--line);background:#efe6d8;display:flex;flex-direction:column;container-type:inline-size}
 .side.canon{display:flex;flex-direction:column}.side.canon img{margin-top:auto;margin-bottom:auto}
 .lbl{font-family:Inter;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#bbab98;margin-bottom:10px}
 .side.canon img{width:100%;border:1px solid var(--line);display:block}
 /* recon page card: frame + bottom page number, to mirror the canon page */
-.reconpage{flex:1;background:#fff;border:1px solid var(--frame);padding:30px 34px;display:flex;flex-direction:column;position:relative}
+.reconpage{flex:1;background:#fff;border:1px solid var(--frame);padding:${cq(34)} ${cq(47)};display:flex;flex-direction:column;position:relative}
 .reconbody{flex:1;min-height:0}
 .vtop{flex:none}
 .reconpage>.foot{text-align:center;font-family:Inter;font-size:10px;letter-spacing:.12em;color:#c2b3a0;padding-top:22px}
@@ -452,19 +453,19 @@ header h1{margin:0;font-size:17px}header .s{font-size:12px;color:#8a7a6a}
 body.tags .bt{display:block}
 .bad{color:#c0492b;font-weight:600}
 .blk.invalid{outline:1px dashed #d9b3a6;outline-offset:4px}
-.eyebrow{font-family:Inter;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);margin-bottom:4px}
-.cover{text-align:center;padding:6px 0}.cover .coverimg{max-width:54%;max-height:300px;width:auto;height:auto;display:block;margin:6px auto 12px}.cover .title{font-size:34px;font-weight:600}.cover .subtitle{font-style:italic;font-size:18px;color:#7a6553}.cover .byline{font-family:Inter;font-size:11px;color:#9a8a78;white-space:pre-line;margin-top:10px}
-.cover .cover-rule{width:42px;height:1px;background:var(--terra);opacity:.5;margin:14px auto}.cover .credit{color:#8a7a6a;margin:3px 0;line-height:1.35;font-size:13px}.cover .credit:last-child{color:#b08a7a;font-style:italic;margin-top:9px}
-.h{font-weight:600}.h1{font-size:26px}.h2{font-size:20px}
+.eyebrow{font-family:Inter;font-size:${cq(7)};letter-spacing:.18em;text-transform:uppercase;color:var(--terra);margin-bottom:4px}
+.cover{text-align:center;padding:6px 0}.cover .coverimg{max-width:54%;max-height:300px;width:auto;height:auto;display:block;margin:6px auto 12px}.cover .title{font-size:${cq(27)};font-weight:600}.cover .subtitle{font-style:italic;font-size:${cq(13)};color:#7a6553}.cover .byline{font-family:Inter;font-size:${cq(9)};color:#9a8a78;white-space:pre-line;margin-top:10px}
+.cover .cover-rule{width:42px;height:1px;background:var(--terra);opacity:.5;margin:14px auto}.cover .credit{color:#8a7a6a;margin:3px 0;line-height:1.35;font-size:${cq(10)}}.cover .credit:last-child{color:#b08a7a;font-style:italic;margin-top:9px}
+.h{font-weight:600}.h1{font-size:${cq(22)}}.h2{font-size:${cq(17)}}
 /* h3 = the italic-terra sub-titles (Cleansing Rose, Protection, Circuit of Energy of…); centered standalone, left inside a column, matching canon */
-.h3{font-size:16px;font-weight:500;font-style:italic;color:var(--terra);text-align:center;margin-bottom:2px}.colcell .h3{text-align:left}
-.prose{font-size:14px;line-height:1.5}.prose p{margin:0 0 .5em}.prose p:last-child{margin-bottom:0}.prose ul{margin:.3em 0 .5em;padding-left:1.4em}.prose li{margin:.12em 0}
-.toc{list-style:none;margin:0;padding:0}.toc li{display:flex;gap:10px;align-items:baseline;border-bottom:1px solid var(--line);padding:2px 0}.toc .num{color:var(--terra);min-width:26px}.toc .tit{flex:1;font-size:13px;line-height:1.3}.toc .pg{color:#9a8a78}
-.ex{display:flex;gap:13px;align-items:flex-start}.ex .numeral{color:var(--terra);font-weight:600;font-size:32px;line-height:.9}.ex>div{font-size:14px;line-height:1.55}
-.spoken{font-size:17px;font-style:italic;color:#5a463a;border-left:3px solid var(--terra);padding-left:13px;margin:6px 0}
-.callout{background:#fbeee9;border-left:3px solid var(--terra);border-radius:4px;padding:9px 15px;font-size:13px;font-style:italic;color:#7a5a50;line-height:1.45}.callout p{margin:0 0 .4em}.callout p:last-child{margin-bottom:0}
-blockquote{margin:0;font-size:17px;font-style:italic;border-left:3px solid var(--terra);padding-left:13px}
-.captioned-figure{text-align:center}.captioned-figure img{max-width:90%;max-height:300px;width:auto;height:auto;border:1px solid var(--line);border-radius:4px;display:inline-block;margin:4px auto}.cap{font-style:italic;color:var(--terra);font-size:13px;margin-top:6px}
+.h3{font-size:${cq(13)};font-weight:500;font-style:italic;color:var(--terra);text-align:center;margin-bottom:2px}.colcell .h3{text-align:left}
+.prose{font-size:${cq(9.5)};line-height:1.5}.prose p{margin:0 0 .5em}.prose p:last-child{margin-bottom:0}.prose ul{margin:.3em 0 .5em;padding-left:1.4em}.prose li{margin:.12em 0}
+.toc{list-style:none;margin:0;padding:0}.toc li{display:flex;gap:10px;align-items:baseline;border-bottom:1px solid var(--line);padding:2px 0}.toc .num{color:var(--terra);min-width:26px}.toc .tit{flex:1;font-size:${cq(10.5)};line-height:1.3}.toc .pg{color:#9a8a78}
+.ex{display:flex;gap:13px;align-items:flex-start}.ex .numeral{color:var(--terra);font-weight:600;font-size:${cq(28)};line-height:.9}.ex>div{font-size:${cq(9.5)};line-height:1.55}
+.spoken{font-size:${cq(11)};font-style:italic;color:#5a463a;border-left:3px solid var(--terra);padding-left:13px;margin:6px 0}
+.callout{background:#fbeee9;border-left:3px solid var(--terra);border-radius:4px;padding:9px 15px;font-size:${cq(10)};font-style:italic;color:#7a5a50;line-height:1.45}.callout p{margin:0 0 .4em}.callout p:last-child{margin-bottom:0}
+blockquote{margin:0;font-size:${cq(11)};font-style:italic;border-left:3px solid var(--terra);padding-left:13px}
+.captioned-figure{text-align:center}.captioned-figure img{max-width:90%;max-height:300px;width:auto;height:auto;border:1px solid var(--line);border-radius:4px;display:inline-block;margin:4px auto}.cap{font-style:italic;color:var(--terra);font-size:${cq(9)};margin-top:6px}
 .figph{display:inline-block;background:#efe7da;border:1px dashed #c9b9a6;border-radius:4px;padding:4px 10px;color:#b6a690;font-family:Inter;font-size:10px;text-transform:uppercase}
 .twocol{display:grid;gap:16px;align-items:center}.colcell{min-width:0}.colcell .blk{margin-bottom:0}.two-column-section>.bt{color:#c2a6d0}
 @media(max-width:1100px){.cols{grid-template-columns:1fr}.side.recon{border-left:0;border-top:1px solid var(--line)}}
