@@ -90,6 +90,12 @@ export interface RawTextItem {
   /** RGB fill color (0-255) recovered by the driver via position match; optional
    *  for back-compat with older raw dumps. Defaults to ink when absent. */
   color?: readonly [number, number, number];
+  /** True when the real font (resolved from the PDF font descriptor) is a serif.
+   *  The canon mixes a serif (headings) with a sans (body); this lets the render
+   *  pick the right family instead of forcing one. */
+  serif?: boolean;
+  /** The real font family name (e.g. "LiberationSerif"), descriptor-resolved. */
+  fontFamily?: string;
 }
 
 /** Kind of figure source. `xobject` is an embedded image; `vector` is a
@@ -137,6 +143,8 @@ export interface TextRun {
   fontSize: number;
   /** RGB fill color (0-255) of this run; ink when the driver gave none. */
   color: readonly [number, number, number];
+  /** True when this run's real font is a serif (descriptor-resolved). */
+  serif?: boolean;
 }
 
 /** One coalesced line: consecutive runs in one band, x-gap-joined into text. */
@@ -148,6 +156,8 @@ export interface LineRegion {
   runCount: number;
   /** Dominant RGB fill color (0-255) across the line's runs. */
   color?: readonly [number, number, number];
+  /** True when the line's text is dominantly serif. */
+  serif?: boolean;
 }
 
 /** A block region: one or more lines with a shared font bucket and no large gap.
@@ -166,6 +176,9 @@ export interface BlockRegion {
    *  length. Render metadata only — NOT part of the classification hash, so the
    *  region cache stays valid; the renderer reads it straight from the geometry. */
   color?: readonly [number, number, number];
+  /** True when the region's text is dominantly serif (descriptor-resolved). Render
+   *  metadata only — not in the classification hash. */
+  serif?: boolean;
   lines: LineRegion[];
 }
 
@@ -241,7 +254,20 @@ export function runFromRawItem(item: RawTextItem, heightPt: number): TextRun {
     fontName: item.fontName,
     fontSize: round(size),
     color: item.color ? [Math.round(item.color[0]), Math.round(item.color[1]), Math.round(item.color[2])] : INK,
+    serif: item.serif,
   };
+}
+
+/** Dominant serif-ness across weighted parts (weight = text length). Undefined
+ *  when nothing carried a serif flag. */
+function dominantSerif(parts: Array<{ serif?: boolean; weight: number }>): boolean | undefined {
+  let s = 0, ns = 0;
+  for (const p of parts) {
+    if (p.serif === true) s += p.weight;
+    else if (p.serif === false) ns += p.weight;
+  }
+  if (s === 0 && ns === 0) return undefined;
+  return s >= ns;
 }
 
 /** Dominant RGB color across weighted parts (weight = text length). Picks the
@@ -375,6 +401,7 @@ export function groupIntoLines(orderedRuns: TextRun[]): LineRegion[] {
       fontName: mode(bucket.map((r) => r.fontName)),
       runCount: bucket.length,
       color: dominantColor(bucket.map((r) => ({ color: r.color, weight: Math.max(1, r.str.trim().length) }))),
+      serif: dominantSerif(bucket.map((r) => ({ serif: r.serif, weight: Math.max(1, r.str.trim().length) }))),
     });
     bucket = [];
   };
@@ -425,6 +452,7 @@ export function groupLinesIntoRegions(lines: LineRegion[], startOrdinal = 0): Bl
       fontSize: round(median(bucket.map((l) => l.fontSize))),
       fontName: mode(bucket.map((l) => l.fontName)),
       color: dominantColor(bucket.map((l) => ({ color: l.color, weight: Math.max(1, l.text.trim().length) }))),
+      serif: dominantSerif(bucket.map((l) => ({ serif: l.serif, weight: Math.max(1, l.text.trim().length) }))),
       lines: bucket,
     });
     bucket = [];

@@ -162,7 +162,26 @@ window.extractGeometry = async (b64) => {
   // recorded text origin. A run of show ops on one line shares the line origin, so
   // the nearest record is from the same line and the color is correct; an
   // unmatched item (no record within tolerance) defaults to near-black ink.
+  // Resolve each text item's real font family (pdf.js loads the font under the
+  // resource id during getOperatorList; commonObjs then holds its real name +
+  // flags). The reconstruction otherwise paints everything in one serif, but the
+  // canon mixes a serif (headings) with a sans (body) — the real name lets the
+  // renderer pick the right family. isSerif comes from the font's descriptor flags.
+  const fontMeta = (id) => {
+    try {
+      if (!id || !page.commonObjs.has(id)) return null;
+      const f = page.commonObjs.get(id);
+      if (!f) return null;
+      const name = (f.name || '').replace(/^[A-Z]{6}\+/, '');
+      const flags = f.flags || 0; // bit 2 (value 2) = serif in the PDF font descriptor
+      const serif = (flags & 2) !== 0 || /serif|times|georgia|garamond|minion|cormorant/i.test(name) && !/sans/i.test(name);
+      return { name, serif };
+    } catch (e) { return null; }
+  };
   for (const it of items) {
+    const fm = fontMeta(it.fontName);
+    it.fontFamily = fm ? fm.name : '';
+    it.serif = fm ? fm.serif : null;
     const ex = it.transform[4], ey = it.transform[5];
     let best = null, bestD = Infinity;
     for (const tp of textPos) {

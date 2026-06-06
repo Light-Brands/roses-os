@@ -128,13 +128,27 @@ interface PageRender { page: number; blocks: MappedBlock[]; counts: ClassifyCoun
 /** What the preview renderer applies inline, overriding the class CSS with real
  *  values. Sizes are cqw strings (see scaleCqwPerPt). Any field omitted falls
  *  back to the class default. */
-interface Faithful { fontCss?: string; lineH?: number; align?: 'left' | 'center'; colorCss?: string; numeralCss?: string; numeralColorCss?: string }
+interface Faithful { fontCss?: string; lineH?: number; align?: 'left' | 'center'; colorCss?: string; familyCss?: string; numeralCss?: string; numeralColorCss?: string; numeralFamilyCss?: string }
+
+// The canon is set in the Office defaults: Liberation Serif (= Times New Roman)
+// for headings/numerals, Liberation Sans (= Arial) for body. Both are system
+// fonts, so the side-by-side matches exactly with no embedding. Dario's call:
+// match the canon, not the Cormorant brand upgrade.
+const SERIF_STACK = "'Times New Roman', Times, 'Liberation Serif', serif";
+const SANS_STACK = "Arial, Helvetica, 'Liberation Sans', sans-serif";
 
 /** A region's real RGB fill color as a CSS color, or null if absent/pure ink. */
 function colorCssOf(region: BlockRegion): string | null {
   const c = region.color;
   if (!c) return null;
   return `rgb(${Math.round(c[0])},${Math.round(c[1])},${Math.round(c[2])})`;
+}
+
+/** Font family for a region from its real serif flag, or null when unknown. */
+function familyCssOf(region: BlockRegion): string | null {
+  if (region.serif === true) return SERIF_STACK;
+  if (region.serif === false) return SANS_STACK;
+  return null;
 }
 
 /** The page-to-screen scale, in container-query width units per point. The recon
@@ -189,10 +203,11 @@ function faithfulFor(b: MappedBlock, region: BlockRegion | undefined, frame: { l
   if (!region) return null;
   switch (b.block_type) {
     case 'numbered-exercise': {
-      // The anchor region IS the big numeral; size + color it faithfully. The body
-      // keeps the body scale (its own region is not the anchor).
+      // The anchor region IS the big numeral; size + color + family it faithfully.
+      // The body keeps the body scale (its own region is not the anchor).
       const nc = colorCssOf(region);
-      return { numeralCss: cqw(region.fontSize, s), ...(nc ? { numeralColorCss: nc } : {}) };
+      const nf = familyCssOf(region);
+      return { numeralCss: cqw(region.fontSize, s), ...(nc ? { numeralColorCss: nc } : {}), ...(nf ? { numeralFamilyCss: nf } : {}) };
     }
     case 'heading':
     case 'text':
@@ -207,6 +222,8 @@ function faithfulFor(b: MappedBlock, region: BlockRegion | undefined, frame: { l
       if (!b.nested) f.align = alignOf(region, frame);
       const cc = colorCssOf(region);
       if (cc) f.colorCss = cc;
+      const ff = familyCssOf(region);
+      if (ff) f.familyCss = ff;
       return f;
     }
     default:
@@ -237,6 +254,7 @@ function faithfulStyle(f: Faithful | null): string {
   if (f.lineH) parts.push(`line-height:${f.lineH}`);
   if (f.align) parts.push(`text-align:${f.align}`);
   if (f.colorCss) parts.push(`color:${f.colorCss}`);
+  if (f.familyCss) parts.push(`font-family:${f.familyCss}`);
   return parts.length ? ` style="${parts.join(';')}"` : '';
 }
 
@@ -272,7 +290,7 @@ function blockInner(b: MappedBlock, fst: Faithful | null = null, s = 0): string 
       return `${c.src ? `<img src="${esc(c.src)}"${style}/>` : `<div class="figph">figura</div>`}${c.caption ? `<div class="cap">${esc(c.caption)}</div>` : ''}`;
     }
     case 'numbered-exercise': {
-      const numParts = [fst?.numeralCss ? `font-size:${fst.numeralCss}` : '', fst?.numeralColorCss ? `color:${fst.numeralColorCss}` : ''].filter(Boolean);
+      const numParts = [fst?.numeralCss ? `font-size:${fst.numeralCss}` : '', fst?.numeralColorCss ? `color:${fst.numeralColorCss}` : '', fst?.numeralFamilyCss ? `font-family:${fst.numeralFamilyCss}` : ''].filter(Boolean);
       const numStyle = numParts.length ? ` style="${numParts.join(';')}"` : '';
       return `<div class="ex"><span class="numeral"${numStyle}>${esc(c.numeral)}</span><div>${c.title ? `<strong>${esc(c.title)}</strong>` : ''}${docText(c.body)}</div></div>`;
     }
@@ -456,7 +474,11 @@ header h1{margin:0;font-size:17px}header .s{font-size:12px;color:#8a7a6a}
 .lbl{font-family:Inter;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#bbab98;margin-bottom:10px}
 .side.canon img{width:100%;border:1px solid var(--line);display:block}
 /* recon page card: frame + bottom page number, to mirror the canon page */
-.reconpage{flex:1;background:#fff;border:1px solid var(--frame);padding:${cq(34)} ${cq(47)};display:flex;flex-direction:column;position:relative}
+.reconpage{flex:1;background:#fff;border:1px solid var(--frame);padding:${cq(34)} ${cq(47)};display:flex;flex-direction:column;position:relative;font-family:${SANS_STACK}}
+/* Canon type system: serif (Times) for headings/numerals/TOC/quote/caption/cover
+   title, sans (Arial) for body — matches the original. Atomic blocks override
+   per-region from the real serif flag; this is the composite/fallback default. */
+.reconpage .h,.reconpage .toc,.reconpage blockquote,.reconpage .callout,.reconpage .spoken,.reconpage .cap,.reconpage .ex .numeral,.reconpage .cover .title,.reconpage .cover .subtitle{font-family:${SERIF_STACK}}
 .reconbody{flex:1;min-height:0}
 .vtop{flex:none}
 .reconpage>.foot{text-align:center;font-family:Inter;font-size:10px;letter-spacing:.12em;color:#c2b3a0;padding-top:22px}
