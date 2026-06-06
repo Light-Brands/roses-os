@@ -373,6 +373,40 @@ function inlineImages(html: string): string {
   });
 }
 
+/** Export the reconstructed blocks as ManualBlock[] so the REAL app editor can
+ *  render them (option B: a local demo that feeds our reconstruction into the
+ *  actual editor components via API interception, no DB write). Image srcs are
+ *  inlined as data URLs so the browser needs no asset hosting. The id matches the
+ *  two-column child references (`page:ordinal`). */
+function toDataUrl(rel: unknown): unknown {
+  if (typeof rel !== 'string' || /^(data:|https?:)/.test(rel)) return rel;
+  const p = path.join(OUT, rel);
+  if (!fs.existsSync(p)) return rel;
+  const ext = (path.extname(p).slice(1) || 'png').toLowerCase();
+  const mime = ext === 'jpg' || ext === 'jpeg' ? 'image/jpeg' : `image/${ext}`;
+  return `data:${mime};base64,${fs.readFileSync(p).toString('base64')}`;
+}
+function writeEditorBlocks(blocks: MappedBlock[], manualId: string): void {
+  const STAMP = '2026-06-06T00:00:00.000Z';
+  const out = blocks.map((b, i) => {
+    const content = JSON.parse(JSON.stringify(b.content)) as Record<string, unknown>;
+    if (typeof content.src === 'string') content.src = toDataUrl(content.src);
+    if (typeof content.cover_image === 'string') content.cover_image = toDataUrl(content.cover_image);
+    return {
+      id: b.id,
+      manual_id: manualId,
+      language: 'en',
+      block_type: b.block_type,
+      content,
+      position: i,
+      updated_by: 'reconstruction',
+      created_at: STAMP,
+      updated_at: STAMP,
+    };
+  });
+  fs.writeFileSync(path.join(OUT, 'editor-blocks.json'), JSON.stringify({ data: out }, null, 2));
+}
+
 function renderReader(b: MappedBlock, byId: Map<string, MappedBlock>): string {
   if (b.block_type === 'two-column-section') {
     const c = b.content as { left: string[]; right: string[]; proportions?: [number, number] };
@@ -620,6 +654,8 @@ async function main(): Promise<void> {
 
   buildPreview(perPage);
   buildReader(perPage);
+  // Option B export: ManualBlock[] for the local "real editor" demo (API intercept).
+  writeEditorBlocks(blocks, 'afd5453c-3d59-4568-92a3-40b843656240');
 
   const totalCounts = perPage.reduce((a, p) => ({ rule: a.rule + p.counts.rule, model: a.model + p.counts.model, cache: a.cache + p.counts.cache, undecided: a.undecided + p.counts.undecided }), { rule: 0, model: 0, cache: 0, undecided: 0 });
   const modelCalls = (model === gemini ? gemini.calls : stub.calls);
