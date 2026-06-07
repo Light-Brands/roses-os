@@ -57,30 +57,8 @@ export default function CaptionedFigureBlock({ content, onChange, readOnly, fill
             className="w-full text-xs bg-transparent border-b border-stone-300 px-0 py-1 focus:outline-none"
             aria-label="Image alt text"
           />
-          <input
-            type="text"
-            value={content.caption ?? ''}
-            onChange={(e) => onChange({ ...content, caption: e.target.value })}
-            placeholder="Caption (optional)"
-            className="w-full text-xs italic bg-transparent border-b border-stone-300 px-0 py-1 focus:outline-none"
-            aria-label="Image caption"
-          />
-          <input
-            type="text"
-            value={content.credit ?? ''}
-            onChange={(e) => onChange({ ...content, credit: e.target.value })}
-            placeholder="Credit (optional)"
-            className="w-full text-xs italic bg-transparent border-b border-stone-300 px-0 py-1 focus:outline-none"
-            aria-label="Image credit"
-          />
         </div>
       )}
-      {readOnly && (content.caption || content.credit) ? (
-        <figcaption className="mt-2 text-xs italic text-rose-700 text-center">
-          {content.caption}
-          {content.credit ? <span className="block text-stone-500 not-italic">{content.credit}</span> : null}
-        </figcaption>
-      ) : null}
     </figure>
   );
 }
