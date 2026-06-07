@@ -76,6 +76,8 @@ if (!SERVICE_KEY) {
 }
 
 interface ExportRow {
+  /** Synthetic export id (page:ordinal); NOT the DB uuid. */
+  id?: string;
   block_type: string;
   content: Record<string, unknown>;
   position: number;
@@ -160,6 +162,52 @@ async function main() {
     process.exit(1);
   }
   console.log(`\n✅ Upserted ${data?.length ?? 0} blocks into ${stagingSlug} [${LANG}]`);
+
+  // 5b) Remap nested child references. The export references children by its
+  // synthetic page:ordinal ids, but Postgres assigned fresh uuids on insert, so
+  // a two-column-section / section's left/right/children arrays would point at
+  // ids that no longer exist. Rebuild them: position is the stable join key.
+  const { data: stagedRows, error: stErr } = await supabase
+    .from('manual_blocks')
+    .select('id, position')
+    .eq('manual_id', stagingId)
+    .eq('language', LANG);
+  if (stErr || !stagedRows) {
+    console.error(`✗ could not read back staged rows for remap: ${stErr?.message}`);
+    process.exit(1);
+  }
+  const posToUuid = new Map<number, string>(stagedRows.map((r) => [r.position, r.id]));
+  const synthToUuid = new Map<string, string>();
+  rows.forEach((r) => {
+    const u = posToUuid.get(r.position);
+    if (r.id && u) synthToUuid.set(r.id, u);
+  });
+  const remapIds = (ids: unknown): string[] =>
+    Array.isArray(ids) ? ids.map((id) => synthToUuid.get(id as string)).filter((x): x is string => !!x) : [];
+
+  let patched = 0;
+  let droppedRefs = 0;
+  for (const r of rows) {
+    if (r.block_type !== 'two-column-section' && r.block_type !== 'section') continue;
+    const uuid = posToUuid.get(r.position);
+    if (!uuid) continue;
+    const c: Record<string, unknown> = { ...r.content };
+    if (r.block_type === 'two-column-section') {
+      const left = remapIds(r.content.left);
+      const right = remapIds(r.content.right);
+      droppedRefs += ((r.content.left as unknown[])?.length ?? 0) - left.length;
+      droppedRefs += ((r.content.right as unknown[])?.length ?? 0) - right.length;
+      c.left = left;
+      c.right = right;
+    } else {
+      const children = remapIds(r.content.children);
+      droppedRefs += ((r.content.children as unknown[])?.length ?? 0) - children.length;
+      c.children = children;
+    }
+    const { error: upErr } = await supabase.from('manual_blocks').update({ content: c }).eq('id', uuid);
+    if (!upErr) patched++;
+  }
+  console.log(`   remapped child refs in ${patched} container block(s)${droppedRefs ? ` (⚠ ${droppedRefs} unresolved refs dropped)` : ''}`);
 
   // 6) verify
   const { count } = await supabase
