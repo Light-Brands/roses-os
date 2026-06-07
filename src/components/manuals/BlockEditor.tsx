@@ -154,19 +154,25 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
   const [conflict, setConflict] = useState<ConflictInfo | null>(null);
   const [lastEditInfo, setLastEditInfo] = useState<{ updated_by: string | null; updated_at: string } | null>(null);
   const saveTimeoutRef = useRef<Record<string, NodeJS.Timeout>>({});
+  const blocksRef = useRef<ManualBlock[]>([]);
   const blockCount = blocks.length;
   const reorderTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Drag reorder: update state immediately, debounce API call
-  const handleDragReorder = useCallback((newBlocks: ManualBlock[]) => {
-    setBlocks(newBlocks);
+  // Drag reorder: update state immediately, debounce API call. The Reorder list
+  // only carries top-level blocks (nested column children are pulled out), so
+  // merge the children back before persisting to keep every position unique.
+  const handleDragReorder = useCallback((newTop: ManualBlock[]) => {
+    const topIds = new Set(newTop.map((b) => b.id));
+    const children = blocksRef.current.filter((b) => !topIds.has(b.id));
+    const merged = [...newTop, ...children];
+    setBlocks(merged);
     if (reorderTimeoutRef.current) clearTimeout(reorderTimeoutRef.current);
     reorderTimeoutRef.current = setTimeout(async () => {
       try {
         await fetch(`/api/manuals/${manualId}/blocks/reorder`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ block_ids: newBlocks.map((b) => b.id), updated_by: 'Editor' }),
+          body: JSON.stringify({ block_ids: merged.map((b) => b.id), updated_by: 'Editor' }),
         });
       } catch {
         // Will self-correct on next page load
@@ -203,8 +209,10 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
     return () => { cancelled = true; };
   }, [manualId, language]);
 
-  // Notify parent of blocks changes
+  // Notify parent of blocks changes; keep a ref of the latest blocks for the
+  // reorder merge (which runs outside React's render closure).
   useEffect(() => {
+    blocksRef.current = blocks;
     onBlocksChange?.(blocks);
   }, [blocks, onBlocksChange]);
 
@@ -349,7 +357,31 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
     }
   }, [blocks, manualId]);
 
-  const renderBlock = (block: ManualBlock) => {
+  // Nested layout: two-column / section blocks reference their children by id.
+  // Those children must render INSIDE the parent container and be removed from
+  // the flat top-level list so they don't also render standalone.
+  const blocksById = new Map(blocks.map((b) => [b.id, b]));
+  const childIdSet = new Set<string>();
+  for (const b of blocks) {
+    if (b.block_type === 'two-column-section') {
+      const c = b.content as TwoColumnSectionContent;
+      [...(c.left ?? []), ...(c.right ?? [])].forEach((id) => childIdSet.add(id));
+    } else if (b.block_type === 'section') {
+      const c = b.content as SectionContent;
+      (c.children ?? []).forEach((id) => childIdSet.add(id));
+    }
+  }
+  const topLevelBlocks = blocks.filter((b) => !childIdSet.has(b.id));
+
+  const renderChildren = (childIds: string[]) =>
+    childIds.map((id) => {
+      const child = blocksById.get(id);
+      if (!child) return null;
+      // fill: a figure in a column fills its cell (the cell carries the width).
+      return <div key={child.id}>{renderBlock(child, { fill: true })}</div>;
+    });
+
+  const renderBlock = (block: ManualBlock, opts?: { fill?: boolean }) => {
     switch (block.block_type) {
       case 'heading':
         return (
@@ -426,6 +458,7 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
             content={block.content as CaptionedFigureContent}
             onChange={(c) => handleContentChange(block.id, c)}
             readOnly={readOnly}
+            fill={opts?.fill}
           />
         );
       case 'spoken-instruction':
@@ -482,6 +515,7 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
             content={block.content as TwoColumnSectionContent}
             onChange={(c) => handleContentChange(block.id, c)}
             readOnly={readOnly}
+            renderChildren={(ids) => renderChildren(ids)}
           />
         );
       default:
@@ -588,8 +622,10 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
           <AddBlockMenu onAdd={(type) => handleAddBlock(type, -1)} />
         )}
 
-        <Reorder.Group as="div" axis="y" values={blocks} onReorder={handleDragReorder}>
-          {blocks.map((block, index) => (
+        <Reorder.Group as="div" axis="y" values={topLevelBlocks} onReorder={handleDragReorder}>
+          {topLevelBlocks.map((block) => {
+            const index = blocks.indexOf(block);
+            return (
             <SortableBlockItem
               key={block.id}
               block={block}
@@ -602,7 +638,8 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
               onAddBlock={handleAddBlock}
               readOnly={readOnly}
             />
-          ))}
+            );
+          })}
         </Reorder.Group>
 
         {/* Empty state */}
