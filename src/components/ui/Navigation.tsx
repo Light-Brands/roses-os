@@ -250,7 +250,7 @@ export function Navigation({
               {/* Wordmark text shows on mobile and on wide desktops (>=2xl);
                   in the lg/xl laptop band it compacts to the rose icon alone so
                   the six nav links never collide with the centered wordmark. */}
-              {logo || <Logo size="lg" textClassName="inline lg:hidden 2xl:inline" />}
+              {logo || <Logo size="lg" textClassName="inline lg:hidden min-[1700px]:inline" />}
             </div>
 
             {/* Right: CTA + hamburger — equal flex to balance left */}
