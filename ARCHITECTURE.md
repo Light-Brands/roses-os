@@ -241,4 +241,64 @@ The region splitter (`extract-geometry`) groups lines into a region at the coars
 
 ---
 
-Last updated 2026-06-01 by the D-17 sub-region-structure pass. D-16 same day; D-14/D-15 same day; D-13 from spec 003b; D-11, D-12 from spec 003; D-1 through D-10 earlier. All unchanged. D-14/D-15 same day; D-13 from spec 003b; D-11, D-12 from spec 003; D-1 through D-10 earlier. All unchanged.
+## D-18: The promotion executor implements D-8; the headless run exercises it staging-to-staging only and never against prod
+
+**Date:** 2026-06-09
+**Spec:** 004-site-ready-all-manuals (refines D-8 dated 2026-05-31)
+**Status:** active
+
+`scripts/promote.ts` is the concrete D-8 transaction: snapshot the target rows to a backup, delete them, insert the source rows under the target manual_id, commit. The obligatory child-ref remap (export `page:ordinal` ids to DB uuids by position, per `stage-reconstruction.ts`) runs inside the insert. Granularity is `--manual <slug> --language <lang>`. A `--dry-run` prints the row delta and runs no write. A signer not-null precheck reads the D-12 audit column and refuses an unsigned source; the held marker (D-21) is also refused. In the headless run the executor is built and tested with BOTH endpoints on a staging lane, so prod is never a connection the run holds.
+
+**Alternatives.** (a) Build promotion to run prod-to-prod under a guard flag in the same run: rejected; one flag flip from a headless bot is exactly the failure the operator contract removes, and a guard the bot can disable is not a boundary. (b) Skip building it and leave D-8 named: rejected; #596/#597/#598 need a tested promotion path, and an untested transaction discovered on prod-day is the worst time to find the remap bug. (c) Delete-then-insert across two anon calls (the stage-translation.ts pattern): rejected; a mid-flight failure empties the live locale with no rollback (Custodian).
+
+**Why:** the executor is fully validated without ever putting prod within reach, so Gate G1 (service token) is the only thing standing between staging and prod, exactly where the operator wants the human. The service-role key and prod connection are absent from the headless environment; the run uses the anon key only. Source: Winston, on the operator contract, with Custodian's rollback seam.
+
+---
+
+## D-19: The L3 table is one deterministic rule over row fill-rects plus aligned text x-columns; it adds exactly one block type
+
+**Date:** 2026-06-09
+**Spec:** 004-site-ready-all-manuals (extends D-11 geometry-is-read, D-13 general-rule)
+**Status:** active
+
+**Empirical basis:** Winston ran a probe over the real Level 3 PDF, all 12 pages, dumping text-run positions, fills, and strokes. Page 9 is a genuine table: five rows at regular y (547, 568, 589, 610, 631), each row a thin filled rectangle the existing driver already captures, every row split at a cell wall x=322, text aligned to fixed columns (label x=63, value x=126, annotation x=432-463). Page 2 contents has the same full-width row fills but a single column, so it stays a TOC under D-14, not a table. Strokes are nearly empty (1-2 per page, the page border); table grids are fills, so no driver change is needed.
+
+Add ONE block type `table` (CHECK then registry then TS, the D-2 order). A deterministic rule in `classify-regions.ts`: when a band carries >=3 evenly spaced horizontal fill-rects of equal width and the text runs between them cluster into >=2 stable x-columns, emit a `table` whose cells are the runs bucketed by (row band, x-column). Cell walls come from rule x-segments (the x=322 split), never inferred.
+
+**Alternatives.** (a) Render the table as a `two-column-section` of text (D-16): rejected; it loses row alignment and the third annotation column, and a reader cannot scan label-to-value. (b) A model label per cell: rejected by D-11; position is in the PDF, do not estimate it. (c) Three new types (table, glossary, footnote): rejected as ungrounded; the probe shows no glossary-with-definitions and no footnotes exist.
+
+**Why:** one rule over already-captured geometry generalizes across the corpus (D-13) and keeps the type surface minimal. The registry guard and CHECK widen by one; the HTML/MD exporters gain one serializer; the editor gets one renderer. Source: Winston, on the L3 probe.
+
+---
+
+## D-20: L3 footnotes and the page-11 glossary are non-goals because the probe shows neither structure exists
+
+**Date:** 2026-06-09
+**Spec:** 004-site-ready-all-manuals (extends D-19)
+**Status:** active
+
+**Empirical basis:** across all 12 Level 3 pages every small-font (6.5-7pt) run is a letter-spaced section eyebrow ("FOUNDATION", "POST-SESSION CLEANSING STEPS"), a running header or footer, a page number, or page-1 copyright print. None sits below a mid-content separator rule, which is the footnote signature. Page 11 is a two-column LIST of term names with no definitions, which D-16 N-column rendering already handles.
+
+No footnote block type and no glossary block type. The eyebrow and furniture cases are already covered by D-14 running-header/footer dropping. Page 11 stages as a two-column-section of text/list blocks.
+
+**Alternatives.** Add footnote/glossary types speculatively: rejected; a type with no producer is dead weight on the registry and the CHECK constraint, and the deterministic-extraction lesson is to ground a type in real geometry before committing it.
+
+**Why:** it keeps the frozen schema honest. If a later manual (Aura) carries a real footnote, the rule is added then, against that geometry, not now. Source: Winston, on the L3 probe.
+
+---
+
+## D-21: The MT engine is a producer of translations.<lang>.json against the frozen source.json contract; el/ru/uk carry a held-for-native-review marker as data
+
+**Date:** 2026-06-09
+**Spec:** 004-site-ready-all-manuals (extends the translate-fields contract)
+**Status:** active
+
+`scripts/translate-mt.ts` reads the existing `source.json` `strings: [{idx, position, path, kind, text}]`, calls the Gemini provider, and writes `translations.<lang>.json` of `{idx, text}` aligned by idx, which `stage-translation.ts` already joins back by path and validates through `validateBlockInput`. The MT call touches only `strings`; it never sees structure, src, child refs, enums, colors, or schema_version. For el/ru/uk the stager writes a held-for-native-review marker so the row is staged but visibly not promotable. In the anon-only headless run the marker rides a `run_id` convention; the clean `review_status` column ships as the 0008 migration applied at promotion time (G1).
+
+**Alternatives.** (a) Have the MT call emit blocks directly: rejected; it would bypass the structure-preserving boundary `collectStrings`/`applyStrings` enforce and could mutate child refs. (b) Carry the held marker only in a sidecar: rejected; the promotion precheck (D-18) reads row-level state, so the marker must be a value the gate can refuse on. (c) Block el/ru/uk from staging until the column exists: rejected; staging them now is useful for native review as long as the marker is honest.
+
+**Why:** the MT engine is one more producer of the same flat-string contract, so all six languages scale off one code path and the held state is enforceable at promotion. A non-deterministic MT call would break the D-7 idempotency the rest of the pipeline holds, so translations cache by a hash of the source strings: a re-run with unchanged source reuses the cache and only changed strings re-call MT. D-18 promotion refuses a held row; Gate G2 (native review) clears it by flipping the marker after signoff. Source: Winston, on the operator contract, with Amelia and Custodian on the marker substrate.
+
+---
+
+Last updated 2026-06-09 by spec 004-site-ready-all-manuals (D-18 promotion executor, D-19 table rule, D-20 footnote/glossary non-goals, D-21 MT engine). D-17 from 2026-06-01; D-16 same day; D-14/D-15 same day; D-13 from spec 003b; D-11, D-12 from spec 003; D-1 through D-10 earlier. All unchanged.
