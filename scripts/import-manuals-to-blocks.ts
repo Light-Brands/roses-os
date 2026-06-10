@@ -128,7 +128,7 @@ function extractBlocksFromInner(inner: string, blocks: Block[], level: number): 
   const labelRegex = /<div class="label"[^>]*>([\s\S]*?)<\/div>/gi;
   content = content.replace(labelRegex, (_, text) => {
     const cleaned = stripTags(text).trim();
-    if (cleaned && cleaned !== 'International Aura School' && cleaned !== 'Quick Reference') {
+    if (cleaned && cleaned !== 'International Aura and Dream School' && cleaned !== 'Quick Reference') {
       blocks.push({ block_type: 'heading', content: { text: cleaned, level: 3 } });
     }
     return '';

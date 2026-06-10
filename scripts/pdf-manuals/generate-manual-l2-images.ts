@@ -199,7 +199,7 @@ async function generateImage(
 
 async function main() {
   console.log('=========================================================');
-  console.log('  International Aura School — Manual Image Generation (Levels 1 & 2)');
+  console.log('  International Aura and Dream School — Manual Image Generation (Levels 1 & 2)');
   console.log('=========================================================\n');
 
   const apiKey = process.env.GOOGLE_GEMINI_API_KEY;

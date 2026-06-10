@@ -1,12 +1,12 @@
 """
-Generate branded International Aura School student manual PDFs using weasyprint.
+Generate branded International Aura and Dream School student manual PDFs using weasyprint.
 Applies the website aesthetic: Cormorant Garamond + Inter, warm palette.
 """
 
 import weasyprint
 
 # =============================================================================
-# BRAND STYLES (matching International Aura School website)
+# BRAND STYLES (matching International Aura and Dream School website)
 # =============================================================================
 
 BRAND_CSS = """
@@ -25,7 +25,7 @@ BRAND_CSS = """
   }
 
   @bottom-right {
-    content: 'International Aura School';
+    content: 'International Aura and Dream School';
     font-family: 'Inter', sans-serif;
     font-size: 8pt;
     font-weight: 500;
@@ -398,7 +398,7 @@ li::marker {
 
 LEVEL_1_HTML = """<!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><title>International Aura School — Level 1 Manual</title></head>
+<head><meta charset="UTF-8"><title>International Aura and Dream School — Level 1 Manual</title></head>
 <body>
 
 <!-- COVER -->
@@ -408,7 +408,7 @@ LEVEL_1_HTML = """<!DOCTYPE html>
   <h1 class="cover-title">Level 1</h1>
   <p class="cover-subtitle">Foundation Practices</p>
   <div class="cover-divider"></div>
-  <p class="cover-brand">International Aura School</p>
+  <p class="cover-brand">International Aura and Dream School</p>
   <p class="cover-note">Teachings by Angelina Ataíde</p>
 </div>
 
@@ -649,9 +649,9 @@ LEVEL_1_HTML = """<!DOCTYPE html>
   <p><strong>Teachings by Angelina Ataíde</strong></p>
   <p style="font-size: 9pt; margin-top: 0.5cm; color: #8C7E73; font-style: normal; font-family: Inter, sans-serif;">Illustrations: Saraswati Noemi, Cecilia Lynch, Drica Voivodic</p>
   <p style="font-size: 9pt; color: #8C7E73; font-style: normal; font-family: Inter, sans-serif;">No part of this manual may be reproduced and/or shown to people who have not attended a Rose Meditation Course.</p>
-  <p style="font-size: 8pt; margin-top: 0.5cm; color: #B5A89D; font-style: normal; font-family: Inter, sans-serif;">2021 Review &bull; International Aura School 2026 Edition</p>
+  <p style="font-size: 8pt; margin-top: 0.5cm; color: #B5A89D; font-style: normal; font-family: Inter, sans-serif;">2021 Review &bull; International Aura and Dream School 2026 Edition</p>
   <div class="cover-divider"></div>
-  <p>International Aura School</p>
+  <p>International Aura and Dream School</p>
   <p style="font-size: 10pt; margin-top: 0.5cm; color: #B5A89D; font-style: normal; font-family: Inter, sans-serif;">rosesos.com</p>
 </div>
 
@@ -664,18 +664,18 @@ LEVEL_1_HTML = """<!DOCTYPE html>
 
 LEVEL_2_HTML = """<!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><title>International Aura School — Level 2 Manual</title></head>
+<head><meta charset="UTF-8"><title>International Aura and Dream School — Level 2 Manual</title></head>
 <body>
 
 <!-- COVER -->
 <div class="cover">
-  <p class="cover-eyebrow">International Aura School &mdash; A Living Consciousness Ecosystem</p>
+  <p class="cover-eyebrow">International Aura and Dream School &mdash; A Living Consciousness Ecosystem</p>
   <img src="public/images/backcover-rose-mandala.png" style="max-width: 45%; height: auto; margin-bottom: 1.5cm; border-radius: 50%;" />
   <p class="cover-eyebrow">Student Manual</p>
   <h1 class="cover-title">Level 2</h1>
   <p class="cover-subtitle">Chakra Cleansing &amp; Energy Recovery</p>
   <div class="cover-divider"></div>
-  <p class="cover-brand">International Aura School</p>
+  <p class="cover-brand">International Aura and Dream School</p>
   <p class="cover-note">Teachings by Angelina Ataíde</p>
   <p style="font-size: 8pt; margin-top: 0.6cm; color: #B5A89D; font-family: Inter, sans-serif;">Illustrations: Saraswati Noemi, Cecilia Lynch, Drica Voivodic</p>
   <p style="font-size: 7.5pt; margin-top: 0.4cm; color: #B5A89D; font-family: Inter, sans-serif; max-width: 30em; line-height: 1.4;">No part of this manual may be reproduced and/or shown to people who have not attended a Rose Meditation Course.</p>
@@ -894,9 +894,9 @@ LEVEL_2_HTML = """<!DOCTYPE html>
   <p><strong>Teachings by Angelina Ataíde</strong></p>
   <p style="font-size: 9pt; margin-top: 0.5cm; color: #8C7E73; font-style: normal; font-family: Inter, sans-serif;">Illustrations: Saraswati Noemi, Cecilia Lynch, Drica Voivodic</p>
   <p style="font-size: 9pt; color: #8C7E73; font-style: normal; font-family: Inter, sans-serif;">No part of this manual may be reproduced and/or shown to people who have not attended a Rose Meditation Course.</p>
-  <p style="font-size: 8pt; margin-top: 0.5cm; color: #B5A89D; font-style: normal; font-family: Inter, sans-serif;">2021 Review &bull; International Aura School 2026 Edition</p>
+  <p style="font-size: 8pt; margin-top: 0.5cm; color: #B5A89D; font-style: normal; font-family: Inter, sans-serif;">2021 Review &bull; International Aura and Dream School 2026 Edition</p>
   <div class="cover-divider"></div>
-  <p>International Aura School</p>
+  <p>International Aura and Dream School</p>
   <p style="font-size: 10pt; margin-top: 0.5cm; color: #B5A89D; font-style: normal; font-family: Inter, sans-serif;">rosesos.com</p>
 </div>
 
@@ -909,7 +909,7 @@ LEVEL_2_HTML = """<!DOCTYPE html>
 
 LEVEL_3_HTML = """<!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><title>International Aura School — Level 3 Manual</title></head>
+<head><meta charset="UTF-8"><title>International Aura and Dream School — Level 3 Manual</title></head>
 <body>
 
 <!-- COVER -->
@@ -919,7 +919,7 @@ LEVEL_3_HTML = """<!DOCTYPE html>
   <h1 class="cover-title">Level 3</h1>
   <p class="cover-subtitle">Advanced Perception, The Analyzer &amp; Creating Reality</p>
   <div class="cover-divider"></div>
-  <p class="cover-brand">International Aura School</p>
+  <p class="cover-brand">International Aura and Dream School</p>
   <p class="cover-note">Teachings by Angelina Ataíde</p>
 </div>
 
@@ -1196,9 +1196,9 @@ LEVEL_3_HTML = """<!DOCTYPE html>
   <p><strong>Teachings by Angelina Ataíde</strong></p>
   <p style="font-size: 9pt; margin-top: 0.5cm; color: #8C7E73; font-style: normal; font-family: Inter, sans-serif;">Illustrations: Saraswati Noemi, Cecilia Lynch, Drica Voivodic</p>
   <p style="font-size: 9pt; color: #8C7E73; font-style: normal; font-family: Inter, sans-serif;">No part of this manual may be reproduced and/or shown to people who have not attended a Level 3 Rose Meditation Course.</p>
-  <p style="font-size: 8pt; margin-top: 0.5cm; color: #B5A89D; font-style: normal; font-family: Inter, sans-serif;">2021 Review &bull; International Aura School 2026 Edition</p>
+  <p style="font-size: 8pt; margin-top: 0.5cm; color: #B5A89D; font-style: normal; font-family: Inter, sans-serif;">2021 Review &bull; International Aura and Dream School 2026 Edition</p>
   <div class="cover-divider"></div>
-  <p>International Aura School</p>
+  <p>International Aura and Dream School</p>
   <p style="font-size: 10pt; margin-top: 0.5cm; color: #B5A89D; font-style: normal; font-family: Inter, sans-serif;">rosesos.com</p>
 </div>
 
@@ -1226,4 +1226,4 @@ if __name__ == "__main__":
         LEVEL_3_HTML,
         "/home/user/roses-os/public/resources/manuals/Rose-Level-3-Manual-EN.pdf",
     )
-    print("Done — all three manuals generated with International Aura School brand aesthetic.")
+    print("Done — all three manuals generated with International Aura and Dream School brand aesthetic.")

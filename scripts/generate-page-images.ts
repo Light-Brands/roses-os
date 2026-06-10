@@ -1,6 +1,6 @@
 /**
  * Page Accent Image Generation Script
- * Generates subtle, decorative abstract images for each International Aura School page
+ * Generates subtle, decorative abstract images for each International Aura and Dream School page
  * These are complimentary details, small flourishes that make the site shine
  * Uses Google Gemini for prompt generation + image generation
  *
@@ -90,7 +90,7 @@ const PAGES: PageConfig[] = [
     slug: 'the-codex',
     title: 'A Living Document of Coherent Being',
     theme:
-      'The philosophical container of International Aura School encompassing a map of the territory, 13 domains of coherence, four architectural layers, and eleven capacities. A living document of lineage and sacred geometry.',
+      'The philosophical container of International Aura and Dream School encompassing a map of the territory, 13 domains of coherence, four architectural layers, and eleven capacities. A living document of lineage and sacred geometry.',
     keywords: [
       'sacred geometry',
       'codex',
@@ -164,7 +164,7 @@ const PAGES: PageConfig[] = [
 // ---------------------------------------------------------------------------
 
 const BRAND_PALETTE = `
-COLOR PALETTE (International Aura School brand — use these as accent tones on a white background):
+COLOR PALETTE (International Aura and Dream School brand — use these as accent tones on a white background):
 - Rose Clay: #9C6F6E (primary brand rose — muted, earthy)
 - Rose 400: #D4A09A (lighter warm rose)
 - Rose 300: #E8C4BF (pale blush)
@@ -185,7 +185,7 @@ interface GeneratedPrompt {
   prompt: string;
 }
 
-const PROMPT_GENERATOR_INSTRUCTION = `You are an art director for International Aura School — a consciousness and remembrance ecosystem. The brand is sacred, warm, elevated, and deeply meaningful. Every visual must MEAN something.
+const PROMPT_GENERATOR_INSTRUCTION = `You are an art director for International Aura and Dream School — a consciousness and remembrance ecosystem. The brand is sacred, warm, elevated, and deeply meaningful. Every visual must MEAN something.
 
 I need 7 image prompts — one per page. Each image must FULLY REPRESENT the meaning and essence of that page. These images will sit on the page as complimentary visuals that reinforce the message of the writing.
 
@@ -210,7 +210,7 @@ STYLE:
 Here are the 7 pages with the ACTUAL COPY from the site. Use this writing to deeply inform what each image should depict:
 
 1. PAGE: "home" — "A Seamless Path to Inner Freedom"
-   COPY: "A Consciousness & Remembrance Ecosystem. Technologies of remembrance for those ready to live in coherence. What if the intelligence you seek is already within you, waiting to be remembered? International Aura School is a living architecture of technologies, practices, and community for coherent living. Not a course. Not a cure. A way home."
+   COPY: "A Consciousness & Remembrance Ecosystem. Technologies of remembrance for those ready to live in coherence. What if the intelligence you seek is already within you, waiting to be remembered? International Aura and Dream School is a living architecture of technologies, practices, and community for coherent living. Not a course. Not a cure. A way home."
    VISUAL IDEA: A beautiful, luminous rose in full bloom — the central symbol of the brand. Sacred, alive, glowing with warmth.
 
 2. PAGE: "the-rose" — "The Intelligence of Silence"
@@ -218,7 +218,7 @@ Here are the 7 pages with the ACTUAL COPY from the site. Use this writing to dee
    VISUAL IDEA: Something representing breath, body, and inner stillness — perhaps an abstract human silhouette made of petals, or a rose unfolding from within a body-like form.
 
 3. PAGE: "the-codex" — "A Living Document of Coherent Being"
-   COPY: "The Codex is the philosophical container of International Aura School — a map of the territory. Coherence is the state in which all dimensions of being — body, heart, mind, and soul — move as one integrated field. 13 Domains of Coherence. Four Layers of the Architecture. Eleven Capacities."
+   COPY: "The Codex is the philosophical container of International Aura and Dream School — a map of the territory. Coherence is the state in which all dimensions of being — body, heart, mind, and soul — move as one integrated field. 13 Domains of Coherence. Four Layers of the Architecture. Eleven Capacities."
    VISUAL IDEA: Sacred geometry, a mandala-like structure, interconnected layers or a flower of life pattern — representing structure, domains, architecture.
 
 4. PAGE: "programs" — "Current Offerings"
@@ -378,7 +378,7 @@ function savePromptsToFile(
 
 async function main() {
   console.log('=========================================================');
-  console.log('  International Aura School — Page Image Generation');
+  console.log('  International Aura and Dream School — Page Image Generation');
   console.log('  Gemini Flash (prompts) + Gemini Pro Image (images)');
   console.log('=========================================================\n');
 

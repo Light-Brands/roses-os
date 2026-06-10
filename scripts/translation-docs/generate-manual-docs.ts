@@ -516,7 +516,7 @@ async function generateManualDoc(config: ManualConfig) {
   const paragraphs = buildDocxSections(allBlocks, config);
 
   const doc = new Document({
-    creator: 'International Aura School',
+    creator: 'International Aura and Dream School',
     title: `Rose Meditation — ${config.subtitle}`,
     description: `Editable version of the Rose Meditation ${config.subtitle} manual for translation review.`,
     styles: {

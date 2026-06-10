@@ -1,5 +1,5 @@
 /**
- * Generate Missing Images for International Aura School
+ * Generate Missing Images for International Aura and Dream School
  * Uses Google Gemini to create:
  *   1. 42-cutting-cords.png (Level 3 manual — missing from disk)
  *   2. 17-sacred-space-abstract.png (Level 1 website — abstract replacement)
@@ -167,7 +167,7 @@ async function generateImage(
 
 async function main() {
   console.log('=========================================================');
-  console.log('  International Aura School — Generate Missing Images');
+  console.log('  International Aura and Dream School — Generate Missing Images');
   console.log('=========================================================\n');
 
   const apiKey = process.env.GOOGLE_GEMINI_API_KEY;
