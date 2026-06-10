@@ -208,11 +208,19 @@ export function Navigation({
       >
         <nav className="container-premium">
           <div className="relative flex items-center min-h-[56px] h-auto py-2 sm:h-16 sm:py-0 lg:h-[72px] w-full">
-            {/* Left: nav links — equal flex so logo stays centered */}
-            <div className="hidden lg:flex items-center gap-1 flex-1 min-w-0 justify-start lg:pr-16 xl:pr-12">
+            {/* Logo — always shows the rose + full wordmark. Left-aligned: on mobile
+                it fills the row and pushes the hamburger to the right; on desktop it
+                sits at the start with the nav links beside it. Side-by-side layout so
+                the title is always visible and never overlaps the links at any width. */}
+            <div className="z-10 flex items-center min-w-0 flex-1 max-w-[55%] sm:max-w-[60%] md:max-w-none lg:flex-none lg:shrink-0 lg:max-w-none lg:mr-8 xl:mr-10">
+              {logo || <Logo size="lg" />}
+            </div>
+
+            {/* Nav links — fill the space between the logo and the CTA */}
+            <div className="hidden lg:flex items-center gap-1 flex-1 min-w-0 justify-start">
               {items.map((item) => {
                 const isActive = isNavActive(item.href);
-                // "For Teachers" collides with the centered wordmark on iPad-landscape (lg).
+                // "For Teachers" can crowd the row on iPad-landscape (lg).
                 // Hide it from the top nav below xl; it remains in the footer + mobile menu.
                 const hideOnTopNav = item.href === '/teaching';
                 return (
@@ -221,7 +229,7 @@ export function Navigation({
                     href={item.href}
                     aria-current={isActive ? 'page' : undefined}
                     className={cn(
-                      'group relative px-2 xl:px-4 py-2 text-sm font-medium rounded-lg',
+                      'group relative px-2 xl:px-3 py-2 text-sm font-medium rounded-lg',
                       'transition-colors duration-200',
                       hideOnTopNav && 'hidden xl:inline-flex',
                       isActive
@@ -233,7 +241,7 @@ export function Navigation({
                     {isActive && (
                       <motion.span
                         layoutId="nav-active-underline"
-                        className="absolute bottom-0 left-2 right-2 xl:left-4 xl:right-4 h-[2px] bg-[var(--color-rose-500)] rounded-full"
+                        className="absolute bottom-0 left-2 right-2 xl:left-3 xl:right-3 h-[2px] bg-[var(--color-rose-500)] rounded-full"
                         transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                       />
                     )}
@@ -242,19 +250,8 @@ export function Navigation({
               })}
             </div>
 
-            {/* Logo — left-aligned on mobile/tablet; on desktop it's a natural-width
-                center column between the two flex-1 nav regions, so it stays centered
-                without overlapping the links (the previous absolute centering ignored
-                the left nav's width and collided with it). */}
-            <div className="z-10 flex items-center justify-start flex-1 min-w-0 max-w-[55%] sm:max-w-[60%] md:max-w-none lg:flex-initial lg:flex-shrink-0 lg:max-w-none lg:justify-center lg:px-6">
-              {/* Wordmark text shows on mobile and on wide desktops (>=2xl);
-                  in the lg/xl laptop band it compacts to the rose icon alone so
-                  the six nav links never collide with the centered wordmark. */}
-              {logo || <Logo size="lg" textClassName="inline lg:hidden min-[1700px]:inline" />}
-            </div>
-
-            {/* Right: CTA + hamburger — equal flex to balance left */}
-            <div className="flex items-center gap-2 shrink-0 lg:flex-1 lg:min-w-0 justify-end">
+            {/* Right: CTA + hamburger */}
+            <div className="flex items-center gap-2 shrink-0 justify-end">
               {/* CTA — pill + circle, fill-sweep on hover */}
               <Link
                 href={cta.href}
