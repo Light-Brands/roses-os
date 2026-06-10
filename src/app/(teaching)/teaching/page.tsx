@@ -6,9 +6,11 @@ import { openingAgreements, openingImportantToKnow, openingHistory } from '@/lib
 import PrintPageButton from '@/components/teaching/PrintPageButton';
 import LanguageSelector from '@/components/teaching/LanguageSelector';
 import { useLanguage } from '@/lib/i18n';
+import { useManualAuth } from '@/components/manuals/ManualPinGate';
 
 export default function TeachingPage() {
   const { t } = useLanguage();
+  const { isEditor } = useManualAuth();
 
   const agreements = t?.opening.agreements ?? openingAgreements;
   const history = t?.opening.history ?? openingHistory;
@@ -31,12 +33,25 @@ export default function TeachingPage() {
           </svg>
           Back to Home
         </Link>
-        <Link
-          href="/"
-          className="font-sans text-sm font-medium tracking-wide uppercase text-[var(--color-foreground)]"
-        >
-          {t?.ui.rosesOs ?? 'International Aura School'}
-        </Link>
+        <div className="flex items-center gap-3">
+          {isEditor && (
+            <Link
+              href="/manuals"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--color-accent)] text-[var(--color-accent-foreground)] text-sm font-medium hover:bg-[var(--color-accent-hover)] transition-all duration-200"
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+              </svg>
+              For Editing
+            </Link>
+          )}
+          <Link
+            href="/"
+            className="font-sans text-sm font-medium tracking-wide uppercase text-[var(--color-foreground)]"
+          >
+            {t?.ui.rosesOs ?? 'International Aura School'}
+          </Link>
+        </div>
       </header>
 
       <main className="max-w-4xl mx-auto px-6 py-12 lg:py-16">
