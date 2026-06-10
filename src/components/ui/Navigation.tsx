@@ -212,12 +212,12 @@ export function Navigation({
                 it fills the row and pushes the hamburger to the right; on desktop it
                 sits at the start with the nav links beside it. Side-by-side layout so
                 the title is always visible and never overlaps the links at any width. */}
-            <div className="z-10 flex items-center min-w-0 flex-1 max-w-[55%] sm:max-w-[60%] md:max-w-none lg:flex-none lg:shrink-0 lg:max-w-none lg:mr-8 xl:mr-10">
+            <div className="z-10 flex items-center min-w-0 flex-1 max-w-[55%] sm:max-w-[60%] md:max-w-none xl:flex-none xl:shrink-0 lg:max-w-none xl:mr-8 2xl:mr-10">
               {logo || <Logo size="lg" />}
             </div>
 
             {/* Nav links — fill the space between the logo and the CTA */}
-            <div className="hidden lg:flex items-center gap-1 flex-1 min-w-0 justify-start">
+            <div className="hidden xl:flex items-center gap-1 flex-1 min-w-0 justify-start">
               {items.map((item) => {
                 const isActive = isNavActive(item.href);
                 // "For Teachers" can crowd the row on iPad-landscape (lg).
@@ -339,7 +339,7 @@ export function Navigation({
                 ref={hamburgerRef}
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className={cn(
-                  'lg:hidden p-3 rounded-lg relative z-50 min-w-[44px] min-h-[44px] flex items-center justify-center',
+                  'xl:hidden p-3 rounded-lg relative z-50 min-w-[44px] min-h-[44px] flex items-center justify-center',
                   'text-[var(--color-foreground)]',
                   'transition-colors duration-200'
                 )}
@@ -366,7 +366,7 @@ export function Navigation({
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 lg:hidden"
+              className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 xl:hidden"
               onClick={() => setIsMobileMenuOpen(false)}
             />
 
@@ -379,7 +379,7 @@ export function Navigation({
               exit={{ x: '100%' }}
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className={cn(
-                'fixed top-0 right-0 bottom-0 w-full max-w-sm z-40 lg:hidden',
+                'fixed top-0 right-0 bottom-0 w-full max-w-sm z-40 xl:hidden',
                 'bg-[var(--color-background)]/95 backdrop-blur-xl',
                 'border-l border-[var(--color-border-subtle)]',
                 'overflow-y-auto'
