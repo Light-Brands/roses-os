@@ -247,7 +247,10 @@ export function Navigation({
                 without overlapping the links (the previous absolute centering ignored
                 the left nav's width and collided with it). */}
             <div className="z-10 flex items-center justify-start flex-1 min-w-0 max-w-[55%] sm:max-w-[60%] md:max-w-none lg:flex-initial lg:flex-shrink-0 lg:max-w-none lg:justify-center lg:px-6">
-              {logo || <Logo size="lg" />}
+              {/* Wordmark text shows on mobile and on wide desktops (>=2xl);
+                  in the lg/xl laptop band it compacts to the rose icon alone so
+                  the six nav links never collide with the centered wordmark. */}
+              {logo || <Logo size="lg" textClassName="inline lg:hidden 2xl:inline" />}
             </div>
 
             {/* Right: CTA + hamburger — equal flex to balance left */}
