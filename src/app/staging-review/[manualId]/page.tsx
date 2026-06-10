@@ -26,15 +26,18 @@ export default function StagingReviewPage() {
   const router = useRouter();
   const manualId = params.manualId as string;
   const lang = search.get('lang') ?? '';
+  // ?role=teacher opens a clean read-only view (no edit chrome) — the right surface
+  // for showing the author the staged manual. Default is editor.
+  const role = search.get('role') === 'teacher' ? 'teacher' : 'editor';
   const [done, setDone] = useState(false);
 
   useEffect(() => {
-    // Inject the editor PIN so the staging lane opens without a manual PIN entry.
-    setManualAuth('editor');
+    // Inject the PIN so the staging lane opens without a manual PIN entry.
+    setManualAuth(role);
     const dest = `/manuals/${manualId}${lang ? `?lang=${encodeURIComponent(lang)}` : ''}`;
     setDone(true);
     router.replace(dest);
-  }, [manualId, lang, router]);
+  }, [manualId, lang, role, router]);
 
   return (
     <div className="min-h-screen bg-[var(--color-background)] flex items-center justify-center">
