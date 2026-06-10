@@ -251,19 +251,57 @@ export interface ContentsParse {
   rowOrdinals: Set<number>;
 }
 
-export function parseContentsRows(regions: BlockRegion[], bodySize: number, pageHeightPt: number): ContentsParse | null {
-  // Collect candidate lines in reading order, excluding the big title (well above
-  // body size) and the footer/header bands (a running "Rose Meditation - Level 1"
-  // footer ends in a digit and would otherwise read as a bogus row). Each line
-  // carries its source region ordinal so the caller can fold exactly the row
-  // regions and leave the rest of the page to the per-region rules.
-  const lines: Array<{ text: string; ord: number }> = [];
+const TOC_PAGE_ONLY = /^\d{1,3}(?:\s*[–—-]\s*\d{1,3})?$/;
+
+export function parseContentsRows(regions: BlockRegion[], bodySize: number, pageHeightPt: number, pageWidthPt?: number): ContentsParse | null {
+  // Collect candidate lines (with geometry), excluding the big title (well above body
+  // size) and the header/footer bands. Each line carries its region ordinal + x/y so
+  // the caller can fold exactly the row regions, and so a separate right-aligned
+  // page-number column can be paired to titles by vertical alignment.
+  const glines: Array<{ text: string; ord: number; x0: number; yc: number }> = [];
   for (const r of regions) {
     if (r.fontSize > bodySize + 6) continue;
     if (r.rect[1] > pageHeightPt * 0.9) continue; // footer band
     if (r.rect[3] < pageHeightPt * 0.08) continue; // header band
-    for (const l of r.lines) lines.push({ text: l.text.trim(), ord: r.ordinal });
+    for (const l of r.lines) glines.push({ text: l.text.trim(), ord: r.ordinal, x0: l.rect[0], yc: (l.rect[1] + l.rect[3]) / 2 });
   }
+
+  // Geometry path: a TOC whose page numbers sit in a separate right-aligned column.
+  // The reading-order pairing below scrambles such a TOC (numbers are not adjacent to
+  // their titles) and even eats a title's trailing digit ("Elements of Level 2" ->
+  // page 2). Detect the number column and pair each title line to the number nearest
+  // in y. This reproduces the real two-level TOC (numbered entries + indented subs).
+  const W = pageWidthPt ?? (glines.length ? Math.max(...glines.map((l) => l.x0)) + 60 : 612);
+  const numCol = glines.filter((l) => TOC_PAGE_ONLY.test(l.text) && l.x0 > W * 0.55);
+  const numColTight = numCol.length >= 3 && Math.max(...numCol.map((l) => l.x0)) - Math.min(...numCol.map((l) => l.x0)) < 40;
+  if (numColTight) {
+    const titleLines = glines
+      .filter((l) => l.text && !TOC_PAGE_ONLY.test(l.text) && l.x0 < W * 0.5)
+      .sort((a, b) => a.yc - b.yc);
+    const rows: Array<{ numeral?: string; title: string; page?: string }> = [];
+    const rowOrdinals = new Set<number>();
+    for (const tl of titleLines) {
+      let best: typeof numCol[number] | null = null;
+      let bd = 12; // a row's title and its page sit on the same baseline (± a few pt)
+      for (const n of numCol) { const d = Math.abs(n.yc - tl.yc); if (d < bd) { bd = d; best = n; } }
+      // A TOC row always has a page number in the column. A left line with no aligned
+      // page (the "CONTENTS" eyebrow, the "Level 2 — Deeper Practice" subtitle) is NOT
+      // a row — leave it unconsumed so it classifies as the page's eyebrow/heading.
+      if (!best) continue;
+      let title = tl.text.replace(/[.·\s]+$/, '').trim();
+      const m = title.match(/^(\d{1,3})\s+(.+)/); // a leading "N " marks a numbered main entry
+      const numeral = m ? m[1] : undefined;
+      if (m) title = m[2].trim();
+      if (!title) continue;
+      rows.push({ ...(numeral ? { numeral } : {}), title, page: best.text.replace(/\s+/g, '') });
+      rowOrdinals.add(tl.ord);
+      rowOrdinals.add(best.ord);
+    }
+    return rows.length >= 3 ? { rows, rowOrdinals } : null;
+  }
+
+  // Fallback: reading-order inline / next-line pairing (TOCs with inline page numbers).
+  const lines: Array<{ text: string; ord: number }> = glines.map((l) => ({ text: l.text, ord: l.ord }));
   const rows: Array<{ numeral?: string; title: string; page?: string }> = [];
   const rowOrdinals = new Set<number>();
   for (let i = 0; i < lines.length; i++) {
@@ -662,7 +700,7 @@ export function classifyByRules(geometry: PageGeometry, ctx: PageContext, slotKe
   const topSize = ranks[0] ?? bodySize;
 
   // --- contents page: detect once at page level ---
-  const contentsParse = parseContentsRows(regions, bodySize, geometry.heightPt);
+  const contentsParse = parseContentsRows(regions, bodySize, geometry.heightPt, geometry.widthPt);
   const isContentsPage = !!contentsParse;
 
   // --- cover page ---
