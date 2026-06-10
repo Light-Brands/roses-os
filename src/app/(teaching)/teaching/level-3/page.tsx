@@ -29,7 +29,7 @@ export default function Level3Page() {
           {t?.ui.rosesOs ?? 'International Aura School'}
         </Link>
         <div className="flex items-center gap-3">
-          <EditorLink />
+          <EditorLink manualSlug="rose-meditation-level-3" />
           <Link
             href="/teaching"
             className="text-sm text-[var(--color-foreground-muted)] hover:text-[var(--color-foreground)] transition-colors"
