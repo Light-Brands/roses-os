@@ -12,6 +12,7 @@ import { manualPdfConfigs } from '@/lib/data/manual-pdf-paths';
 import { ImageDownloadButton } from '@/components/teaching/ImageDownloadButton';
 import LanguageSelector from '@/components/teaching/LanguageSelector';
 import LevelNavigation from '@/components/teaching/LevelNavigation';
+import EditorLink from '@/components/teaching/EditorLink';
 import { useLanguage } from '@/lib/i18n';
 
 export default function Level2Page() {
@@ -33,12 +34,15 @@ export default function Level2Page() {
         >
           {t?.ui.rosesOs ?? 'International Aura School'}
         </Link>
-        <Link
-          href="/teaching"
-          className="text-sm text-[var(--color-foreground-muted)] hover:text-[var(--color-foreground)] transition-colors"
-        >
-          &larr; {t?.ui.allLevels ?? 'All Levels'}
-        </Link>
+        <div className="flex items-center gap-3">
+          <EditorLink />
+          <Link
+            href="/teaching"
+            className="text-sm text-[var(--color-foreground-muted)] hover:text-[var(--color-foreground)] transition-colors"
+          >
+            &larr; {t?.ui.allLevels ?? 'All Levels'}
+          </Link>
+        </div>
       </header>
 
       <div className="flex flex-col md:flex-row">
