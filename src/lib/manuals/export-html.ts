@@ -96,7 +96,13 @@ export function blocksToHtml(blocks: ManualBlock[], title: string, origin = ''):
       case 'captioned-figure': {
         const c = block.content as CaptionedFigureContent;
         if (!c.src) return '';
-        return `<figure class="figure">${imgTag(c.src, c.alt, 'max-width:80%;border-radius:12px;')}${c.caption ? `<figcaption>${esc(c.caption)}</figcaption>` : ''}${c.credit ? `<figcaption class="credit">${esc(c.credit)}</figcaption>` : ''}</figure>`;
+        // Honor the figure's geometric width_pct (figure width / page width) so a
+        // small ornament renders small and a plate large, instead of a flat 80%.
+        // Cap height so a tall figure never dominates a page.
+        const pct = typeof (c as { width_pct?: number }).width_pct === 'number'
+          ? Math.min(90, Math.max(2, (c as { width_pct?: number }).width_pct as number))
+          : 70;
+        return `<figure class="figure">${imgTag(c.src, c.alt, `width:${pct}%;max-width:100%;max-height:6.5in;height:auto;border-radius:12px;`)}${c.caption ? `<figcaption>${esc(c.caption)}</figcaption>` : ''}${c.credit ? `<figcaption class="credit">${esc(c.credit)}</figcaption>` : ''}</figure>`;
       }
       case 'image-row': {
         const c = block.content as ImageRowContent;
@@ -109,7 +115,7 @@ export function blocksToHtml(blocks: ManualBlock[], title: string, origin = ''):
         const align = c.align === 'left' ? 'left' : 'center';
         return `<div class="cover" style="text-align:${align};">`
           + (c.eyebrow ? `<div class="cover-eyebrow">${esc(c.eyebrow)}</div>` : '')
-          + (c.cover_image ? imgTag(c.cover_image, c.title, 'max-width:60%;margin:12px auto;display:block;') : '')
+          + (c.cover_image ? imgTag(c.cover_image, c.title, 'max-width:48%;max-height:4in;width:auto;height:auto;object-fit:contain;margin:12px auto;display:block;') : '')
           + `<h1 class="cover-title">${esc(c.title)}</h1>`
           + (c.subtitle ? `<div class="cover-subtitle">${esc(c.subtitle)}</div>` : '')
           + (c.author ? `<div class="cover-credit">${esc(c.author)}</div>` : '')

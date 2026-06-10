@@ -174,12 +174,21 @@ async function main() {
     run_id: r.run_id ?? RUN_ID,
   }));
 
-  // 5) upsert on the (manual_id, language, position) key (idempotent re-run).
-  // Chunked: a reconstructed manual embeds figure pixels as data URLs, so the
-  // payload can be tens of MB. A single upsert of all rows trips the Postgres
-  // statement timeout over PostgREST (seen on L2: 55MB / 157 blocks). Upserting in
-  // small batches keeps each statement under the timeout; the on-conflict key makes
-  // a re-run idempotent regardless of batch boundaries.
+  // 4b) Clear the (lane, language) slot first. Without this, a re-stage that produces
+  // FEWER blocks than before leaves stale tail rows (an upsert by position only
+  // overwrites positions that exist in the new payload). Seen on L2: 157 -> 151 left
+  // 7 stale rows that then leaked into the translations via extract. Clear-then-insert
+  // makes the lane exactly the new content (matches stage-translation.ts).
+  const { error: clrErr } = await supabase
+    .from('manual_blocks')
+    .delete()
+    .eq('manual_id', stagingId)
+    .eq('language', LANG);
+  if (clrErr) { console.error(`✗ clear failed: ${clrErr.message}`); process.exit(1); }
+
+  // 5) insert the new blocks (chunked). A reconstructed manual embeds figure paths;
+  // even light, a single insert of all rows can trip the Postgres statement timeout,
+  // so insert in small batches. The lane was cleared above, so this is a clean replace.
   const CHUNK = Math.max(1, parseInt(arg('chunk', '10')!, 10));
   let upserted = 0;
   for (let i = 0; i < payload.length; i += CHUNK) {

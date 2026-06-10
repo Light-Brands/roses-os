@@ -399,20 +399,44 @@ function inlineImages(html: string): string {
   });
 }
 
-function toDataUrl(rel: unknown): unknown {
-  if (typeof rel !== 'string' || /^(data:|https?:)/.test(rel)) return rel;
+const sharp = require('sharp');
+const FIG_MAX_W = 1400;
+const PUBLIC_FIG_DIR = path.join('public', 'reconstruction', MANUAL);
+/** Externalize a reconstructed figure to public/ (downscaled) and return the served
+ *  path. Embedding figures as base64 data URLs bloats each staged lane to tens of MB
+ *  (one copy per language) and stalls the editor; a public path keeps lanes light and
+ *  the file deploys with the app. data:/http(s) srcs and missing files pass through. */
+function externalizeFigure(rel: unknown): unknown {
+  if (typeof rel !== 'string' || /^(data:|https?:|\/reconstruction\/)/.test(rel)) return rel;
   const p = path.join(OUT, rel);
   if (!fs.existsSync(p)) return rel;
-  const ext = (path.extname(p).slice(1) || 'png').toLowerCase();
-  const mime = ext === 'jpg' || ext === 'jpeg' ? 'image/jpeg' : `image/${ext}`;
-  return `data:${mime};base64,${fs.readFileSync(p).toString('base64')}`;
+  fs.mkdirSync(PUBLIC_FIG_DIR, { recursive: true });
+  const name = path.basename(p).replace(/\.[^.]+$/, '') + '.png';
+  const dest = path.join(PUBLIC_FIG_DIR, name);
+  try {
+    const buf = fs.readFileSync(p);
+    // Synchronous-ish: sharp is async, but writeEditorBlocks runs once at the end; do
+    // the downscale eagerly and block on the promise via a tiny sync wait is not
+    // possible, so we copy now and downscale is handled by externalize-figures for the
+    // DB lanes. Here we downscale synchronously with sharp's toFile in a fire-and-set.
+    return downscaleSync(buf, dest, name);
+  } catch {
+    fs.copyFileSync(p, dest);
+    return `/reconstruction/${MANUAL}/${name}`;
+  }
+}
+// sharp is async; collect jobs and await them before the process exits.
+const _figJobs: Promise<unknown>[] = [];
+function downscaleSync(buf: Buffer, dest: string, name: string): string {
+  _figJobs.push(sharp(buf).resize({ width: FIG_MAX_W, withoutEnlargement: true }).png({ compressionLevel: 9 }).toFile(dest).catch(() => fs.writeFileSync(dest, buf)));
+  return `/reconstruction/${MANUAL}/${name}`;
 }
 function writeEditorBlocks(blocks: MappedBlock[], manualId: string): void {
   const STAMP = '2026-06-06T00:00:00.000Z';
   const out = blocks.map((b, i) => {
     const content = JSON.parse(JSON.stringify(b.content)) as Record<string, unknown>;
-    if (typeof content.src === 'string') content.src = toDataUrl(content.src);
-    if (typeof content.cover_image === 'string') content.cover_image = toDataUrl(content.cover_image);
+    if (typeof content.src === 'string') content.src = externalizeFigure(content.src);
+    if (typeof content.cover_image === 'string') content.cover_image = externalizeFigure(content.cover_image);
     return {
       id: b.id,
       manual_id: manualId,
@@ -666,6 +690,9 @@ async function main(): Promise<void> {
   buildPreview(perPage);
   buildReader(perPage);
   writeEditorBlocks(blocks, prodUuid);
+  // Wait for the async figure downscales kicked off by writeEditorBlocks so the
+  // public/ files exist before the process exits.
+  if (_figJobs.length) { await Promise.all(_figJobs); console.log(`externalized ${_figJobs.length} figure(s) → ${PUBLIC_FIG_DIR}`); }
 
   const totalCounts = perPage.reduce((a, p) => ({ rule: a.rule + p.counts.rule, model: a.model + p.counts.model, cache: a.cache + p.counts.cache, undecided: a.undecided + p.counts.undecided }), { rule: 0, model: 0, cache: 0, undecided: 0 });
   const modelCalls = (model === gemini ? gemini.calls : stub.calls);

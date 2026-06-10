@@ -716,6 +716,20 @@ export function classifyByRules(geometry: PageGeometry, ctx: PageContext, slotKe
       out.set(ord, { block_type: 'contents', content: { __folded: true }, rule: 'contents-fold' });
       consumed.add(ord);
     }
+    // Page-number column fold: a TOC whose page numbers sit in a separate right-
+    // aligned column (L2/L3) leaves those pure-numeral regions unpaired by the
+    // inline-pairing parser, so they leak as standalone `text` blocks. On a contents
+    // page a region that is ONLY a page number (a numeral or numeral range) is never
+    // body content — fold every such unconsumed region into the contents block. Safe
+    // and general (scoped to contents pages); no page-specific coordinate.
+    const PAGE_NUM_ONLY = /^\s*\d{1,3}(?:\s*[–—-]\s*\d{1,3})?\s*$/;
+    for (const r of regions) {
+      if (consumed.has(r.ordinal)) continue;
+      if (PAGE_NUM_ONLY.test(r.text.replace(/\s+/g, ' '))) {
+        out.set(r.ordinal, { block_type: 'contents', content: { __folded: true }, rule: 'contents-pagenum-fold' });
+        consumed.add(r.ordinal);
+      }
+    }
   }
 
   // --- running headers/footers: drop, never a content block ---
@@ -733,6 +747,29 @@ export function classifyByRules(geometry: PageGeometry, ctx: PageContext, slotKe
     if (isFolio(r, geometry.heightPt)) {
       out.set(r.ordinal, { block_type: 'text', content: { __drop: true }, rule: 'folio-footer-drop' });
       consumed.add(r.ordinal);
+    }
+  }
+
+  // --- right-margin page-number column: drop. A TOC/index whose page numbers sit in
+  // a separate right-aligned column leaves >=3 small pure-numeral regions stacked at
+  // the right edge. The contents parser cannot always pair them to titles (L3's TOC
+  // merges all titles into one region), so they leak as standalone `text` blocks.
+  // This catches them generally, NOT gated on a parsed contents page: >=3 pure-numeral
+  // regions, sub-/at-body font, tightly x-clustered in the right margin (x0 > 78% of
+  // the page width) is navigation furniture in a scrolled reader, never content. ---
+  {
+    const PAGE_NUM_ONLY = /^\s*\d{1,3}(?:\s*[–—-]\s*\d{1,3})?\s*$/;
+    const cands = regions.filter(
+      (r) => !consumed.has(r.ordinal) && PAGE_NUM_ONLY.test(r.text) && r.fontSize <= bodySize + 1 && r.rect[0] > geometry.widthPt * 0.78,
+    );
+    if (cands.length >= 3) {
+      const xs = cands.map((r) => r.rect[0]);
+      if (Math.max(...xs) - Math.min(...xs) < 22) {
+        for (const r of cands) {
+          out.set(r.ordinal, { block_type: 'text', content: { __drop: true }, rule: 'toc-pagenum-column-drop' });
+          consumed.add(r.ordinal);
+        }
+      }
     }
   }
 
