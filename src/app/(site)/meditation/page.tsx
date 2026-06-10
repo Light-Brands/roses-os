@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     'chakra meditation course',
   ],
   openGraph: {
-    title: 'Meditation Courses by City | International Aura School',
+    title: 'Meditation Courses by City | International Aura and Dream School',
     description:
       'Find Rose Meditation & Aura Reading courses at your local timezone. Live online classes in 20+ cities worldwide.',
     url: '/meditation',

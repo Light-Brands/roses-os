@@ -45,7 +45,7 @@ export function Logo({
         )}
         style={{ fontFamily: 'var(--font-sans)' }}
       >
-        International Aura School
+        International Aura and Dream School
       </span>
     </div>
   );

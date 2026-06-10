@@ -1,5 +1,5 @@
 /**
- * Design Tokens — International Aura School
+ * Design Tokens — International Aura and Dream School
  * Warm, sacred design system with organic curves and contemplative rhythm
  * Palette: aura white, rose clay, soft charcoal, antique olive brass
  */

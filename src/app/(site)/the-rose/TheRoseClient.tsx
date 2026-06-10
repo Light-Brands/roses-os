@@ -324,7 +324,7 @@ export default function TheRoseClient() {
           so many traditions and centuries.
         </p>
         <p className="text-[var(--color-foreground)] font-medium">
-          International Aura School carries this lineage forward. The rose is not a metaphor — it is the living
+          International Aura and Dream School carries this lineage forward. The rose is not a metaphor — it is the living
           instrument at the center of the practice.
         </p>
       </RevealSection>

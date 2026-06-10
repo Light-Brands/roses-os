@@ -10,16 +10,16 @@ import {
 export const metadata: Metadata = {
   title: 'Guardians',
   description:
-    'Meet the guardians of International Aura School — Angelina Ataíde, Dara Ayoub, Peggy Mars, Silvia Coelho, and Jennifer Brooke Lawless. Teachers, stewards, and practitioners carrying the Rose Meditation and Aura Reading lineage.',
+    'Meet the guardians of International Aura and Dream School — Angelina Ataíde, Dara Ayoub, Peggy Mars, Silvia Coelho, and Jennifer Brooke Lawless. Teachers, stewards, and practitioners carrying the Rose Meditation and Aura Reading lineage.',
   keywords: [
     'rose meditation teachers',
     'aura reading teachers',
-    'International Aura School guardians',
+    'International Aura and Dream School guardians',
     'spiritual teachers',
     'energy healing mentors',
   ],
   openGraph: {
-    title: 'Guardians | International Aura School',
+    title: 'Guardians | International Aura and Dream School',
     description:
       'Meet the guardians who carry and transmit the Rose Meditation and Aura Reading lineage.',
     url: '/guardians',

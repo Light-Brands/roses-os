@@ -14,7 +14,7 @@ body {
 
 /* =============================================================================
    TAILWIND THEME CONFIGURATION
-   International Aura School warm design tokens
+   International Aura and Dream School warm design tokens
    ============================================================================= */
 
 @theme inline {
@@ -232,7 +232,7 @@ body {
   100% { background-position: 200% 0; }
 }
 
-/* International Aura School organic animations */
+/* International Aura and Dream School organic animations */
 @keyframes breathe {
   0%, 100% { transform: scale(1); opacity: 0.8; }
   50% { transform: scale(1.02); opacity: 1; }
@@ -492,7 +492,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* =============================================================================
-   International Aura School — Texture utilities
+   International Aura and Dream School — Texture utilities
    ============================================================================= */
 
 /* Grain texture overlay */

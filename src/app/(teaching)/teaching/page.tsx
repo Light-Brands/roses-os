@@ -38,23 +38,23 @@ export default function TeachingPage() {
             href="/"
             className="font-sans text-sm font-medium tracking-wide uppercase text-[var(--color-foreground)]"
           >
-            {t?.ui.rosesOs ?? 'International Aura School'}
+            {t?.ui.rosesOs ?? 'International Aura and Dream School'}
           </Link>
         </div>
       </header>
 
       <main className="max-w-4xl mx-auto px-6 py-12 lg:py-16">
-        {/* International Aura School Hero Header */}
+        {/* International Aura and Dream School Hero Header */}
         <div className="flex flex-col items-center justify-center mb-12">
           <img
             src="/rose.png"
-            alt="International Aura School"
+            alt="International Aura and Dream School"
             width={72}
             height={72}
             className="object-contain mb-4"
           />
           <h1 className="font-serif text-4xl md:text-5xl tracking-wide text-[var(--color-foreground)] mb-2">
-            {t?.ui.rosesOs ?? 'International Aura School'}
+            {t?.ui.rosesOs ?? 'International Aura and Dream School'}
           </h1>
           <p className="text-sm uppercase tracking-widest text-[var(--color-foreground-muted)] mb-6">
             {t?.ui.teacherVisualAidManual ?? 'Teacher Visual Aid Manual'}

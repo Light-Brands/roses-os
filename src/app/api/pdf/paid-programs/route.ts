@@ -913,8 +913,8 @@ function drawProgramOverviewCard(
 export async function GET() {
   try {
     const doc = await PDFDocument.create();
-    doc.setTitle('International Aura School - Additional Programs Guide');
-    doc.setAuthor('International Aura School');
+    doc.setTitle('International Aura and Dream School - Additional Programs Guide');
+    doc.setAuthor('International Aura and Dream School');
     doc.setSubject('Paid Programs: Rose Meditation, Aura for Life, Teachers Training');
 
     const serifFont = await doc.embedFont(StandardFonts.TimesRoman);
@@ -981,9 +981,9 @@ export async function GET() {
         });
       }
 
-      // Title: International Aura School
+      // Title: International Aura and Dream School
       let coverY = PAGE_HEIGHT / 2 + 95;
-      const title = 'International Aura School';
+      const title = 'International Aura and Dream School';
       const titleSize = 44;
       const titleWidth = serifFont.widthOfTextAtSize(title, titleSize);
       page.drawText(title, {
@@ -1416,7 +1416,7 @@ export async function GET() {
       cardY -= 22;
 
       cardY = drawWrappedText(page,
-        'Reach out to Dara for questions about enrollment, schedule, contribution tiers, or anything about your journey with International Aura School.',
+        'Reach out to Dara for questions about enrollment, schedule, contribution tiers, or anything about your journey with International Aura and Dream School.',
         cardTextX, cardY, sansFont, 9, cardTextWidth, COLORS.softCharcoal);
       cardY -= 16;
 

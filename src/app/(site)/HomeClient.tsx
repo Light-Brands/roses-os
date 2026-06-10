@@ -445,7 +445,7 @@ function InvitationCTA() {
           >
             <Image
               src="/page-images/page-home.png"
-              alt="International Aura School"
+              alt="International Aura and Dream School"
               width={64}
               height={64}
               className="w-10 h-10 object-contain"

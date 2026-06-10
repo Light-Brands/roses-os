@@ -6,8 +6,8 @@ import { Metadata } from 'next';
  */
 
 export const siteConfig = {
-  name: 'International Aura School',
-  description: 'A seamless path to inner freedom. International Aura School offers Rose Meditation and Aura Reading courses online — a living ecosystem of practices, teachings, and community to help you remember who you truly are.',
+  name: 'International Aura and Dream School',
+  description: 'A seamless path to inner freedom. International Aura and Dream School offers Rose Meditation and Aura Reading courses online — a living ecosystem of practices, teachings, and community to help you remember who you truly are.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://rosesos.com',
   ogImage: '/og-image.jpg',
   creator: '@rosesos',
@@ -110,7 +110,7 @@ export function generateOrganizationSchema() {
     url: siteConfig.url,
     logo: `${siteConfig.url}/logo.png`,
     sameAs: [
-      // TODO: Add International Aura School social media URLs (Instagram, YouTube, etc.)
+      // TODO: Add International Aura and Dream School social media URLs (Instagram, YouTube, etc.)
     ],
   };
 }

@@ -32,7 +32,7 @@ export default function Level2Page() {
           href="/"
           className="font-sans text-sm font-medium tracking-wide uppercase text-[var(--color-foreground)]"
         >
-          {t?.ui.rosesOs ?? 'International Aura School'}
+          {t?.ui.rosesOs ?? 'International Aura and Dream School'}
         </Link>
         <div className="flex items-center gap-3">
           <EditorLink manualSlug="rose-meditation-level-2" />

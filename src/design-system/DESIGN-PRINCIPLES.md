@@ -1,4 +1,4 @@
-# Design Principles -- International Aura School
+# Design Principles -- International Aura and Dream School
 
 > Source of truth: [rosesos.com](https://rosesos.com) | Tokens: `src/design-system/tokens.ts` | Theme: `src/design-system/theme.css` | Tailwind: `src/app/globals.css`
 

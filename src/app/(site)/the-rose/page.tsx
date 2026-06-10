@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     'rose in spirituality',
   ],
   openGraph: {
-    title: 'The Rose | International Aura School',
+    title: 'The Rose | International Aura and Dream School',
     description:
       'A living path of remembrance — Rose Meditation, Aura Reading, and the journey to coherent living.',
     url: '/the-rose',
@@ -42,7 +42,7 @@ const theRoseFAQs = [
   {
     question: 'What is aura reading?',
     answer:
-      'Aura reading is the practice of perceiving and interpreting the human energy field — the layers of light, color, and information that surround every person. In the International Aura School tradition, aura reading is a clairvoyant skill developed through Rose Meditation training.',
+      'Aura reading is the practice of perceiving and interpreting the human energy field — the layers of light, color, and information that surround every person. In the International Aura and Dream School tradition, aura reading is a clairvoyant skill developed through Rose Meditation training.',
   },
   {
     question: 'How does Rose Meditation work?',
@@ -57,7 +57,7 @@ const theRoseFAQs = [
   {
     question: 'What is the spiritual significance of the rose?',
     answer:
-      'The rose is the oldest spiritual symbol in the known universe. Across every culture and era, its unfolding petals have represented the same truth — the opening of the soul, from potential to realization. In International Aura School, the rose is the living instrument at the center of the meditation practice.',
+      'The rose is the oldest spiritual symbol in the known universe. Across every culture and era, its unfolding petals have represented the same truth — the opening of the soul, from potential to realization. In International Aura and Dream School, the rose is the living instrument at the center of the meditation practice.',
   },
   {
     question: 'Why is the rose used in meditation?',

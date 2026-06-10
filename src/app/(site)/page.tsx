@@ -10,7 +10,7 @@ import {
 export const metadata: Metadata = {
   title: 'Remember Who You Are | Rose Meditation & Aura Reading Courses Online',
   description:
-    'International Aura School is a living consciousness ecosystem offering Rose Meditation and Aura Reading courses online. Join 5,000+ initiates across 50+ countries on a path to inner freedom and coherence.',
+    'International Aura and Dream School is a living consciousness ecosystem offering Rose Meditation and Aura Reading courses online. Join 5,000+ initiates across 50+ countries on a path to inner freedom and coherence.',
   keywords: [
     'rose meditation',
     'aura reading course',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     'remembrance',
   ],
   openGraph: {
-    title: 'International Aura School — Remember Who You Are',
+    title: 'International Aura and Dream School — Remember Who You Are',
     description:
       'Rose Meditation & Aura Reading courses online. A living path to inner freedom and coherence.',
     url: siteConfig.url,
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   const webPageSchema = generateWebPageSchema({
-    title: 'International Aura School — Remember Who You Are',
+    title: 'International Aura and Dream School — Remember Who You Are',
     description: siteConfig.description,
     pathname: '',
   });

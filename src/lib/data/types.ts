@@ -1,5 +1,5 @@
 // =============================================================================
-// SHARED TYPES — International Aura School
+// SHARED TYPES — International Aura and Dream School
 // =============================================================================
 
 /** Navigation item */

@@ -35,7 +35,7 @@ export default function ManualsPage() {
           href="/"
           className="font-sans text-sm font-medium tracking-wide uppercase text-[var(--color-foreground)]"
         >
-          International Aura School
+          International Aura and Dream School
         </Link>
         <div className="flex items-center gap-4">
           <span className={cn(
@@ -63,7 +63,7 @@ export default function ManualsPage() {
         <div className="flex flex-col items-center justify-center mb-12">
           <img
             src="/rose.png"
-            alt="International Aura School"
+            alt="International Aura and Dream School"
             width={56}
             height={56}
             className="object-contain mb-4"

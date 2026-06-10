@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     'spiritual development program',
   ],
   openGraph: {
-    title: 'Offerings | International Aura School',
+    title: 'Offerings | International Aura and Dream School',
     description:
       'Rose Meditation & Aura Reading courses — live online instruction with multi-timezone support.',
     url: '/offerings',
@@ -33,7 +33,7 @@ const offeringsFAQs = [
   {
     question: 'How much do Rose Meditation courses cost?',
     answer:
-      'International Aura School uses a "pay what feels right" contribution model. Rose Meditation starts at $222 and Aura Reading Level 1 starts at $888. Students choose what feels aligned — there are no fixed prices or paywalls.',
+      'International Aura and Dream School uses a "pay what feels right" contribution model. Rose Meditation starts at $222 and Aura Reading Level 1 starts at $888. Students choose what feels aligned — there are no fixed prices or paywalls.',
   },
   {
     question: 'What timezones are classes available in?',
