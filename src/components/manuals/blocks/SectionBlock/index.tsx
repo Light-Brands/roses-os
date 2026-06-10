@@ -12,16 +12,22 @@
  */
 
 import type { ReactNode } from 'react';
-import type { SectionContent } from '@/lib/manuals/types';
+import type { BlockType, SectionContent } from '@/lib/manuals/types';
+import AddBlockMenu from '../AddBlockMenu';
 
 interface Props {
   content: SectionContent;
   onChange: (content: SectionContent) => void;
   readOnly: boolean;
   renderChildren?: (childIds: string[]) => ReactNode;
+  /** Create a new block inside this section (M5). */
+  onAddChild?: (type: BlockType) => void;
 }
 
-export default function SectionBlock({ content, onChange, readOnly, renderChildren }: Props) {
+// Nested containers inside a section are out of scope for M5.
+const SECTION_EXCLUDE: BlockType[] = ['section', 'two-column-section'];
+
+export default function SectionBlock({ content, onChange, readOnly, renderChildren, onAddChild }: Props) {
   return (
     <section
       className="my-4 border-l-2 border-rose-200 pl-3"
@@ -43,8 +49,16 @@ export default function SectionBlock({ content, onChange, readOnly, renderChildr
         />
       )}
       {renderChildren ? renderChildren(content.children) : (
-        <p className="text-xs text-stone-500 italic">{content.children.length} child block{content.children.length === 1 ? '' : 's'} (page-aware preview lands in M5).</p>
+        <p className="text-xs text-stone-500 italic">{content.children.length} child block{content.children.length === 1 ? '' : 's'}.</p>
       )}
+      {!readOnly && onAddChild ? (
+        <div className="mt-2">
+          {content.children.length === 0 ? (
+            <p className="text-[10px] uppercase tracking-wider text-stone-400 mb-1">Empty · add a block</p>
+          ) : null}
+          <AddBlockMenu onAdd={(type) => onAddChild(type)} exclude={SECTION_EXCLUDE} />
+        </div>
+      ) : null}
     </section>
   );
 }

@@ -17,18 +17,32 @@ export async function PUT(request: NextRequest) {
 
     const supabase = await createServerSupabaseClient();
 
-    const updates = block_ids.map((id: string, index: number) =>
-      supabase
-        .from('manual_blocks')
-        .update({ position: index, updated_by: updated_by ?? null })
-        .eq('id', id)
-    );
+    // `manual_blocks` carries a UNIQUE (manual_id, language, position) key
+    // (migration 0006). Renumbering directly to 0..N-1 — whether in parallel or
+    // sequentially — transiently collides with rows that still hold a target
+    // position, raising 23505. Renumber in two passes through a DISJOINT offset
+    // window instead: every target in pass 1 is >= OFFSET (above any live
+    // position) and every target in pass 2 is < OFFSET (every source is now
+    // >= OFFSET), so no per-row uniqueness check can ever collide. Each pass is
+    // one transaction via the atomic RPC.
+    const OFFSET = 1_000_000;
+    const parked = block_ids.map((id: string, index: number) => ({ id, position: OFFSET + index }));
+    const final = block_ids.map((id: string, index: number) => ({ id, position: index }));
 
-    const results = await Promise.all(updates);
-    const failed = results.find((r) => r.error);
+    const { error: parkErr } = await supabase.rpc('reorder_blocks_atomic', {
+      items_arg: parked,
+      updated_by_arg: updated_by ?? null,
+    });
+    if (parkErr) {
+      return NextResponse.json({ error: parkErr.message }, { status: 500 });
+    }
 
-    if (failed?.error) {
-      return NextResponse.json({ error: failed.error.message }, { status: 500 });
+    const { error: finalErr } = await supabase.rpc('reorder_blocks_atomic', {
+      items_arg: final,
+      updated_by_arg: updated_by ?? null,
+    });
+    if (finalErr) {
+      return NextResponse.json({ error: finalErr.message }, { status: 500 });
     }
 
     return NextResponse.json({ success: true });

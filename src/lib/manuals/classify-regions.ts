@@ -382,6 +382,242 @@ function containingFill(rect: Rect, fills: FillRegion[]): FillRegion | null {
   return best;
 }
 
+// ----- D-19 table detection (spec 004 T-005) --------------------------------
+
+/** A horizontal rule fill: thin in y, wide in x. These are a table's row dividers
+ *  (the L3 grid draws filled rectangles, not strokes — the engine captures them as
+ *  fills). Thin = height <= 3.5pt; wide = at least 25% of the page width. */
+function isHorizontalRule(f: FillRegion, pageWidthPt: number): boolean {
+  const h = f.rect[3] - f.rect[1];
+  const w = f.rect[2] - f.rect[0];
+  return h > 0 && h <= 3.5 && w >= pageWidthPt * 0.25;
+}
+
+/** A vertical rule fill: thin in x, tall in y. These are a table's cell walls (the
+ *  x=322 wall on L3 page 9). Thin = width <= 3.5pt; tall = >= 12pt. */
+function isVerticalRule(f: FillRegion): boolean {
+  const h = f.rect[3] - f.rect[1];
+  const w = f.rect[2] - f.rect[0];
+  return w > 0 && w <= 3.5 && h >= 12;
+}
+
+export interface TableDetection {
+  /** Anchor ordinal: the table block sits at the first cell region's position. */
+  anchorOrd: number;
+  content: Record<string, unknown>;
+  rect: Rect;
+  /** Every region ordinal the table consumed (folded into it). */
+  members: number[];
+}
+
+/**
+ * Deterministic D-19 table rule: at least three evenly spaced horizontal fill-rects
+ * plus at least two stable x-columns make a `table`. Columns come from vertical rule
+ * fills (cell walls) when present, else from clustering the cell text's left edges.
+ * Rows are the bands the horizontal rules cut. The cell text is read straight from
+ * the geometry; the model is never consulted. Returns null when the page carries no
+ * table-shaped grid (the common case), so this never fires on a normal page.
+ */
+export function detectTable(geometry: PageGeometry): TableDetection | null {
+  // Two real geometries carry a table in this corpus:
+  //  (a) >=3 evenly spaced horizontal rule fills (the original D-19 probe shape), or
+  //  (b) ONE container tint box holding text laid out in a >=2 column x >=3 row grid
+  //      (the actual L3 page-9 "label / action / chakra" grid: a single fill box, the
+  //      cell walls are the gaps between aligned text columns, not drawn rules).
+  // Try the rule-grid first, then the gridded-text-in-a-box. Both honor D-19's
+  // ">=3 evenly spaced rows + >=2 stable x-columns" — only the row evidence differs
+  // (drawn rules vs aligned text baselines). Generalized per ARCHITECTURE D-13.
+  return detectTableByRules(geometry) ?? detectTableByGrid(geometry);
+}
+
+function detectTableByRules(geometry: PageGeometry): TableDetection | null {
+  const hrules = geometry.fills
+    .filter((f) => isHorizontalRule(f, geometry.widthPt))
+    .sort((a, b) => a.rect[1] - b.rect[1]);
+  if (hrules.length < 3) return null;
+
+  // Even spacing: consecutive pitches within 40% of the median pitch.
+  const pitches: number[] = [];
+  for (let i = 1; i < hrules.length; i++) pitches.push(hrules[i].rect[1] - hrules[i - 1].rect[1]);
+  const sorted = [...pitches].sort((a, b) => a - b);
+  const medPitch = sorted[sorted.length >> 1];
+  if (medPitch <= 0) return null;
+  const even = pitches.every((p) => Math.abs(p - medPitch) <= medPitch * 0.4);
+  if (!even) return null;
+
+  // Table bounds: x from the rules, y from first to last rule (extended by a pitch
+  // so text in the top/bottom bands, outside the rule strokes, is still captured).
+  const tx0 = Math.min(...hrules.map((f) => f.rect[0]));
+  const tx1 = Math.max(...hrules.map((f) => f.rect[2]));
+  const topY = hrules[0].rect[1] - medPitch;
+  const botY = hrules[hrules.length - 1].rect[3] + medPitch;
+
+  const inTable = (r: BlockRegion): boolean => {
+    const cx = (r.rect[0] + r.rect[2]) / 2;
+    const cy = (r.rect[1] + r.rect[3]) / 2;
+    return cx >= tx0 - 4 && cx <= tx1 + 4 && cy >= topY && cy <= botY;
+  };
+  const cells = geometry.textRegions.filter(inTable);
+  if (cells.length < 2) return null;
+
+  // Columns: prefer real vertical cell walls; else cluster cell left-edges.
+  const walls = geometry.fills
+    .filter((f) => isVerticalRule(f) && f.rect[0] >= tx0 - 4 && f.rect[2] <= tx1 + 4)
+    .map((f) => (f.rect[0] + f.rect[2]) / 2)
+    .sort((a, b) => a - b);
+  let boundaries: number[];
+  if (walls.length >= 1) {
+    boundaries = walls; // interior walls split the x-span into columns
+  } else {
+    // cluster left-edges: a gap > 24pt opens a new column; boundary at the midpoint.
+    const lefts = [...new Set(cells.map((c) => Math.round(c.rect[0])))].sort((a, b) => a - b);
+    const clusters: number[][] = [];
+    for (const x of lefts) {
+      const last = clusters[clusters.length - 1];
+      if (last && x - last[last.length - 1] <= 24) last.push(x);
+      else clusters.push([x]);
+    }
+    if (clusters.length < 2) return null;
+    boundaries = [];
+    for (let i = 1; i < clusters.length; i++) {
+      const prev = clusters[i - 1];
+      const cur = clusters[i];
+      boundaries.push((prev[prev.length - 1] + cur[0]) / 2);
+    }
+  }
+  const colCount = boundaries.length + 1;
+  if (colCount < 2) return null;
+  const colOf = (r: BlockRegion): number => {
+    const cx = (r.rect[0] + r.rect[2]) / 2;
+    let c = 0;
+    for (const b of boundaries) { if (cx > b) c++; else break; }
+    return c;
+  };
+
+  // Row bands: virtual boundaries at topY, each rule's y, then botY. A cell's band
+  // is the interval containing its y-center. Drop empty bands.
+  const rowBounds = [topY, ...hrules.map((f) => (f.rect[1] + f.rect[3]) / 2), botY];
+  const bandOf = (r: BlockRegion): number => {
+    const cy = (r.rect[1] + r.rect[3]) / 2;
+    for (let i = 1; i < rowBounds.length; i++) if (cy <= rowBounds[i]) return i - 1;
+    return rowBounds.length - 2;
+  };
+
+  // Assemble band -> column -> text, in reading order within a cell.
+  const grid = new Map<number, Map<number, BlockRegion[]>>();
+  for (const r of cells) {
+    const band = bandOf(r);
+    const col = colOf(r);
+    if (!grid.has(band)) grid.set(band, new Map());
+    const row = grid.get(band)!;
+    if (!row.has(col)) row.set(col, []);
+    row.get(col)!.push(r);
+  }
+  const norm = (s: string) => s.replace(/\s+/g, ' ').trim();
+  const cellText = (regs: BlockRegion[] | undefined): string =>
+    (regs ?? []).sort((a, b) => a.ordinal - b.ordinal).map((r) => norm(r.text)).join(' ').trim();
+
+  const bands = [...grid.keys()].sort((a, b) => a - b);
+  const rows: string[][] = bands.map((band) => {
+    const row = grid.get(band)!;
+    return Array.from({ length: colCount }, (_, c) => cellText(row.get(c)));
+  });
+  if (rows.length < 2) return null; // a single band is not a table
+
+  const members = cells.map((c) => c.ordinal).sort((a, b) => a - b);
+  const content: Record<string, unknown> = { schema_version: 2, header: [], rows };
+  return {
+    anchorOrd: members[0],
+    content,
+    rect: [tx0, hrules[0].rect[1], tx1, hrules[hrules.length - 1].rect[3]],
+    members,
+  };
+}
+
+/** Cluster sorted numbers into groups; a gap larger than `gap` opens a new group.
+ *  Returns the group means in ascending order. */
+function clusterMeans(values: number[], gap: number): number[] {
+  if (!values.length) return [];
+  const sorted = [...values].sort((a, b) => a - b);
+  const groups: number[][] = [[sorted[0]]];
+  for (let i = 1; i < sorted.length; i++) {
+    const g = groups[groups.length - 1];
+    if (sorted[i] - g[g.length - 1] <= gap) g.push(sorted[i]);
+    else groups.push([sorted[i]]);
+  }
+  return groups.map((g) => g.reduce((a, b) => a + b, 0) / g.length);
+}
+
+/**
+ * Detect a table from gridded text inside a container fill box (the real L3 page-9
+ * shape). A table is: one wide, tall tint box; text whose LINES inside it form >=2
+ * stable x-columns (by line left edge) AND >=3 row bands (by line y-center) with a
+ * roughly even pitch. Cells are read line-by-line so a single multi-line column
+ * region (one region holding five stacked labels) contributes one line per row.
+ * Returns null when no such grid exists — a plain callout tint box (one column) and
+ * a normal page (no wide box) both fall through, so this never over-fires.
+ */
+function detectTableByGrid(geometry: PageGeometry): TableDetection | null {
+  const boxes = geometry.fills
+    .filter((f) => (f.rect[2] - f.rect[0]) >= geometry.widthPt * 0.4 && (f.rect[3] - f.rect[1]) >= 24)
+    .sort((a, b) => (b.rect[2] - b.rect[0]) * (b.rect[3] - b.rect[1]) - (a.rect[2] - a.rect[0]) * (a.rect[3] - a.rect[1]));
+  if (!boxes.length) return null;
+  const [bx0, by0, bx1, by1] = boxes[0].rect;
+
+  // Collect the lines whose center sits inside the box.
+  interface Cell { x0: number; yc: number; text: string; ord: number }
+  const lines: Cell[] = [];
+  const memberOrds = new Set<number>();
+  for (const r of geometry.textRegions) {
+    for (const ln of r.lines) {
+      const cx = (ln.rect[0] + ln.rect[2]) / 2;
+      const cy = (ln.rect[1] + ln.rect[3]) / 2;
+      const t = ln.text.trim();
+      if (!t) continue;
+      if (cx >= bx0 - 4 && cx <= bx1 + 4 && cy >= by0 - 4 && cy <= by1 + 4) {
+        lines.push({ x0: ln.rect[0], yc: cy, text: t, ord: r.ordinal });
+        memberOrds.add(r.ordinal);
+      }
+    }
+  }
+  if (lines.length < 4) return null;
+
+  // Columns from line left-edges; rows from line y-centers.
+  const colCenters = clusterMeans(lines.map((l) => l.x0), 40);
+  if (colCenters.length < 2) return null;
+  const rowCenters = clusterMeans(lines.map((l) => l.yc), 10);
+  if (rowCenters.length < 3) return null;
+
+  // Even pitch: row spacings within 50% of the median (a real grid is regular).
+  const pitches: number[] = [];
+  for (let i = 1; i < rowCenters.length; i++) pitches.push(rowCenters[i] - rowCenters[i - 1]);
+  const medPitch = [...pitches].sort((a, b) => a - b)[pitches.length >> 1];
+  if (!(medPitch > 0) || !pitches.every((p) => Math.abs(p - medPitch) <= medPitch * 0.5)) return null;
+
+  const nearestIdx = (v: number, centers: number[]): number => {
+    let bi = 0, bd = Infinity;
+    centers.forEach((c, i) => { const d = Math.abs(c - v); if (d < bd) { bd = d; bi = i; } });
+    return bi;
+  };
+  const grid: string[][] = rowCenters.map(() => colCenters.map(() => ''));
+  for (const l of lines) {
+    const ri = nearestIdx(l.yc, rowCenters);
+    const ci = nearestIdx(l.x0, colCenters);
+    grid[ri][ci] = grid[ri][ci] ? `${grid[ri][ci]} ${l.text}` : l.text;
+  }
+  // A table needs at least two populated columns across the rows.
+  const colsUsed = colCenters.map((_, c) => grid.some((row) => row[c] !== '')).filter(Boolean).length;
+  if (colsUsed < 2) return null;
+
+  const members = [...memberOrds].sort((a, b) => a - b);
+  return {
+    anchorOrd: members[0],
+    content: { schema_version: 2, header: [], rows: grid },
+    rect: [bx0, by0, bx1, by1],
+    members,
+  };
+}
+
 // ----- Page-level rule classification ---------------------------------------
 
 export interface PageContext {
@@ -497,6 +733,22 @@ export function classifyByRules(geometry: PageGeometry, ctx: PageContext, slotKe
     if (isFolio(r, geometry.heightPt)) {
       out.set(r.ordinal, { block_type: 'text', content: { __drop: true }, rule: 'folio-footer-drop' });
       consumed.add(r.ordinal);
+    }
+  }
+
+  // --- D-19 table: a grid of >=3 evenly spaced horizontal rules + >=2 columns is
+  // ONE table block; its cell regions fold into it. Detected before exercises so a
+  // leading numeral in a table's first column is never mistaken for an exercise. ---
+  if (!isContentsPage) {
+    const table = detectTable(geometry);
+    if (table) {
+      out.set(table.anchorOrd, { block_type: 'table', content: table.content, rule: 'table-grid-d19', rect: table.rect });
+      consumed.add(table.anchorOrd);
+      for (const ord of table.members) {
+        if (ord === table.anchorOrd) continue;
+        out.set(ord, { block_type: 'table', content: { __folded: true }, rule: 'table-fold' });
+        consumed.add(ord);
+      }
     }
   }
 

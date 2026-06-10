@@ -7,6 +7,8 @@ import type { BlockType } from '@/lib/manuals/types';
 
 interface AddBlockMenuProps {
   onAdd: (type: BlockType) => void;
+  /** Block types to hide from the menu (e.g. nested containers inside a column). */
+  exclude?: BlockType[];
 }
 
 const BLOCK_OPTIONS: { type: BlockType; label: string; icon: React.ReactNode; description: string; shortcut?: string }[] = [
@@ -125,9 +127,10 @@ const BLOCK_OPTIONS: { type: BlockType; label: string; icon: React.ReactNode; de
   },
 ];
 
-export default function AddBlockMenu({ onAdd }: AddBlockMenuProps) {
+export default function AddBlockMenu({ onAdd, exclude }: AddBlockMenuProps) {
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const options = exclude && exclude.length ? BLOCK_OPTIONS.filter((o) => !exclude.includes(o.type)) : BLOCK_OPTIONS;
 
   useEffect(() => {
     if (!open) return;
@@ -184,7 +187,7 @@ export default function AddBlockMenu({ onAdd }: AddBlockMenuProps) {
               <p className="text-[10px] font-medium uppercase tracking-wider text-rose-700">Brand Wall</p>
               <p className="text-[10px] text-[var(--color-foreground-faint)]">Every block traces a canon pattern.</p>
             </div>
-            {BLOCK_OPTIONS.map((option) => (
+            {options.map((option) => (
               <button
                 key={option.type}
                 type="button"

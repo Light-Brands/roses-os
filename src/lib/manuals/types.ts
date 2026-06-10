@@ -265,6 +265,12 @@ export interface ManualBlock {
   updated_by: string | null;
   created_at: string;
   updated_at: string;
+  /**
+   * Reconstruction provenance (migration 0006, D-12): the 1-based canon PDF page
+   * this block was extracted from. NULL for legacy and interactively-added rows.
+   * Render-only — the editor uses it to mark canon page boundaries.
+   */
+  source_page?: number | null;
 }
 
 /** Role assigned after PIN verification */

@@ -6,7 +6,7 @@
  *   npx tsx scripts/verify-classify-map.ts
  */
 
-import { buildClassifierRequest, FORBIDDEN_REQUEST_KEYS, collapseLetterSpacing, classifyByRules, classifyFigures, parseContentsRows, attachHeadersToColumns, regionStructure } from '../src/lib/manuals/classify-regions';
+import { buildClassifierRequest, FORBIDDEN_REQUEST_KEYS, collapseLetterSpacing, classifyByRules, classifyFigures, parseContentsRows, attachHeadersToColumns, regionStructure, detectTable } from '../src/lib/manuals/classify-regions';
 import type { BlockRegion, FigureRegion, PageGeometry } from '../src/lib/manuals/extract-geometry';
 import { isTintBox } from '../src/lib/manuals/extract-geometry';
 import { mapToBlocks, type PageInput, type MappedBlock } from '../src/lib/manuals/map-to-blocks';
@@ -304,6 +304,74 @@ function check(name: string, cond: boolean, detail = ''): void {
   check('TINTBOX a white page ground is rejected', !isTintBox({ rect: [0, 0, 612, 792], color: [255, 255, 255] }, 612, 792), '');
   check('TINTBOX a 1pt hairline rule is rejected', !isTintBox({ rect: [60, 300, 540, 301], color: [250, 240, 238] }, 612, 792), '');
   check('TINTBOX a near-full-page tint is rejected as ground', !isTintBox({ rect: [0, 0, 612, 700], color: [245, 240, 235] }, 612, 792), String(612 * 700 / big));
+}
+
+// ---- D-19 table: >=3 evenly spaced horizontal rules + >=2 columns -> table ----
+{
+  const ln = (text: string, y0: number, y1: number, fs: number, x0: number, x1: number) => ({ text, rect: [x0, y0, x1, y1] as const, fontSize: fs, fontName: 'g', runCount: 1 });
+  const reg = (ordinal: number, text: string, y0: number, y1: number, x0: number, x1: number): BlockRegion =>
+    ({ ordinal, kind: 'text', text, rect: [x0, y0, x1, y1], fontSize: 9, fontName: 'g', lines: [ln(text, y0, y1, 9, x0, x1)] });
+  // Three evenly spaced horizontal fill-rules (pitch 24) cut a 3-row grid; two text
+  // columns (left edges 80 and 320). Mirrors the L3 page-9 label-value grid shape.
+  const geoT: PageGeometry = {
+    page: 9, widthPt: 612, heightPt: 792,
+    textRegions: [
+      reg(0, 'Label A', 183, 193, 80, 160), reg(1, 'Value A', 183, 193, 320, 420),
+      reg(2, 'Label B', 208, 218, 80, 160), reg(3, 'Value B', 208, 218, 320, 420),
+      reg(4, 'Label C', 232, 242, 80, 160), reg(5, 'Value C', 232, 242, 320, 420),
+    ],
+    figures: [],
+    fills: [
+      { rect: [80, 200, 540, 202], color: [40, 40, 40] },
+      { rect: [80, 224, 540, 226], color: [40, 40, 40] },
+      { rect: [80, 248, 540, 250], color: [40, 40, 40] },
+    ],
+  };
+  const t = detectTable(geoT);
+  check('TABLE D-19 grid is detected', !!t, JSON.stringify(t));
+  check('TABLE has 3 rows x 2 columns', !!t && (t.content as any).rows.length === 3 && (t.content as any).rows[0].length === 2, JSON.stringify((t?.content as any)?.rows));
+  check('TABLE cells read in row/column order', !!t && (t.content as any).rows[0].join('|') === 'Label A|Value A' && (t.content as any).rows[2].join('|') === 'Label C|Value C', JSON.stringify((t?.content as any)?.rows));
+  // classifyByRules emits exactly one table block at the first cell ordinal; cells fold.
+  const m = classifyByRules(geoT, { pageIndex: 9, isCoverPage: false });
+  const anchor = m.get(0);
+  check('TABLE classifyByRules emits a table at the anchor', anchor?.block_type === 'table' && !(anchor.content as any).__folded, JSON.stringify(anchor));
+  check('TABLE the other cell regions are folded into the table', [1, 2, 3, 4, 5].every((o) => (m.get(o)?.content as any)?.__folded === true), JSON.stringify([1, 2, 3, 4, 5].map((o) => m.get(o)?.block_type)));
+  // A page with no rule fills never produces a table (no false positives).
+  const geoNone: PageGeometry = { ...geoT, fills: [] };
+  check('TABLE a page with no horizontal rules yields no table', detectTable(geoNone) === null, JSON.stringify(detectTable(geoNone)));
+  // Two rules only (below the >=3 threshold) is not a table.
+  const geoTwo: PageGeometry = { ...geoT, fills: geoT.fills.slice(0, 2) };
+  check('TABLE fewer than three rules is not a table', detectTable(geoTwo) === null, '');
+}
+
+// ---- D-19 table by gridded text in a container box (the real L3 page-9 shape) --
+{
+  const ln = (text: string, y0: number, y1: number, x0: number, x1: number) => ({ text, rect: [x0, y0, x1, y1] as const, fontSize: 9, fontName: 'g', runCount: 1 });
+  const reg = (ordinal: number, text: string, y0: number, y1: number, x0: number, x1: number): BlockRegion =>
+    ({ ordinal, kind: 'text', text, rect: [x0, y0, x1, y1], fontSize: 9, fontName: 'g', lines: [ln(text, y0, y1, x0, x1)] });
+  // One container tint box; text in 3 columns x 3 rows (pitch 40). No drawn rules.
+  const geoG: PageGeometry = {
+    page: 9, widthPt: 612, heightPt: 792,
+    textRegions: [
+      reg(0, 'Intention', 215, 225, 60, 120), reg(1, 'I want', 215, 225, 250, 360), reg(2, '7th chakra', 215, 225, 440, 540),
+      reg(3, 'Thought', 255, 265, 60, 120), reg(4, 'I think', 255, 265, 250, 360), reg(5, '6th chakra', 255, 265, 440, 540),
+      reg(6, 'Word', 295, 305, 60, 120), reg(7, 'I say', 295, 305, 250, 360), reg(8, '5th chakra', 295, 305, 440, 540),
+    ],
+    figures: [],
+    fills: [{ rect: [40, 200, 560, 320], color: [63, 62, 60] }],
+  };
+  const t = detectTable(geoG);
+  check('TABLE-GRID a container box with gridded text is detected', !!t, JSON.stringify(t));
+  check('TABLE-GRID has 3 rows x 3 columns', !!t && (t.content as any).rows.length === 3 && (t.content as any).rows[0].length === 3, JSON.stringify((t?.content as any)?.rows));
+  check('TABLE-GRID cells read in row/column order', !!t && (t.content as any).rows[0].join('|') === 'Intention|I want|7th chakra' && (t.content as any).rows[2].join('|') === 'Word|I say|5th chakra', JSON.stringify((t?.content as any)?.rows));
+  // A single-column callout tint box (the L1 pull-quote shape) is NOT a table.
+  const geoCallout: PageGeometry = {
+    page: 5, widthPt: 612, heightPt: 792,
+    textRegions: [reg(0, 'Roses represent the spirit', 715, 725, 60, 540), reg(1, 'they absorb energies', 730, 740, 60, 540)],
+    figures: [],
+    fills: [{ rect: [55, 708, 553, 744], color: [245, 225, 221] }],
+  };
+  check('TABLE-GRID a one-column callout box is not a table', detectTable(geoCallout) === null, JSON.stringify(detectTable(geoCallout)));
 }
 
 console.log(failures === 0 ? '\nVERIFY-CLASSIFY-MAP: PASS (all checks green)' : `\nVERIFY-CLASSIFY-MAP: FAIL (${failures} checks failed)`);

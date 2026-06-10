@@ -35,7 +35,7 @@ export default function DownloadMenu({ blocks, title, filename }: DownloadMenuPr
   };
 
   const handleDownloadHtml = () => {
-    const html = blocksToHtml(blocks, title);
+    const html = blocksToHtml(blocks, title, window.location.origin);
     const blob = new Blob([html], { type: 'text/html' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -49,19 +49,13 @@ export default function DownloadMenu({ blocks, title, filename }: DownloadMenuPr
   const handleDownloadPdf = async () => {
     setGenerating('pdf');
     try {
-      // For now, download the styled HTML — PDF generation via Puppeteer
-      // would require a server-side API route
-      const html = blocksToHtml(blocks, title);
+      // Render the styled HTML with absolute image URLs and open it. The page
+      // self-prints once its images finish loading (script embedded in the HTML),
+      // so figures are never blank. Use "Save as PDF" in the print dialog.
+      const html = blocksToHtml(blocks, title, window.location.origin);
       const blob = new Blob([html], { type: 'text/html' });
       const url = URL.createObjectURL(blob);
-
-      // Open in new window for printing
-      const printWindow = window.open(url, '_blank');
-      if (printWindow) {
-        printWindow.addEventListener('load', () => {
-          printWindow.print();
-        });
-      }
+      window.open(url, '_blank');
     } catch {
       // Failed
     } finally {

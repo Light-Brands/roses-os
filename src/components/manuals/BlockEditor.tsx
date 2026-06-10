@@ -86,6 +86,45 @@ function getDefaultContent(type: BlockType): BlockContent {
   }
 }
 
+/** Which child list a container edit targets. Sections use 'children'. */
+type ChildSide = 'left' | 'right' | 'children';
+
+function getChildArray(block: ManualBlock, side: ChildSide): string[] {
+  if (block.block_type === 'two-column-section') {
+    const c = block.content as TwoColumnSectionContent;
+    return side === 'right' ? (c.right ?? []) : (c.left ?? []);
+  }
+  const c = block.content as SectionContent;
+  return c.children ?? [];
+}
+
+function withChildArray(block: ManualBlock, side: ChildSide, nextArr: string[]): BlockContent {
+  if (block.block_type === 'two-column-section') {
+    const c = block.content as TwoColumnSectionContent;
+    return side === 'right' ? { ...c, right: nextArr } : { ...c, left: nextArr };
+  }
+  const c = block.content as SectionContent;
+  return { ...c, children: nextArr };
+}
+
+/**
+ * Canon page boundary marker — shown in the editor (not the client reading view)
+ * wherever a block's `source_page` provenance increments. Visually distinct from
+ * the author-insertable "Page Break" block: this is a derived review aid, not a
+ * schema block. Render-only.
+ */
+function PageBoundary({ page }: { page: number }) {
+  return (
+    <div className="flex items-center gap-3 py-2 select-none" aria-hidden>
+      <div className="flex-1 border-t-2 border-dotted border-[var(--color-rose-clay)]/40" />
+      <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-rose-clay)]/80 px-2 py-0.5 rounded-full bg-[var(--color-rose-50)] dark:bg-[var(--color-rose-950)]/30 border border-[var(--color-rose-clay)]/30">
+        Page {page}
+      </span>
+      <div className="flex-1 border-t-2 border-dotted border-[var(--color-rose-clay)]/40" />
+    </div>
+  );
+}
+
 /** Wrapper per block so each can call useDragControls at the top level */
 function SortableBlockItem({
   block,
@@ -97,6 +136,7 @@ function SortableBlockItem({
   onDuplicate,
   onAddBlock,
   readOnly,
+  pageBoundary,
 }: {
   block: ManualBlock;
   index: number;
@@ -107,6 +147,7 @@ function SortableBlockItem({
   onDuplicate: (index: number) => void;
   onAddBlock: (type: BlockType, afterIndex: number) => void;
   readOnly: boolean;
+  pageBoundary: number | null;
 }) {
   const dragControls = useDragControls();
 
@@ -126,6 +167,7 @@ function SortableBlockItem({
         zIndex: 50,
       }}
     >
+      {pageBoundary !== null && <PageBoundary page={pageBoundary} />}
       <BlockWrapper
         blockType={block.block_type}
         onDelete={() => onDelete(block.id)}
@@ -268,59 +310,72 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
     if (!readOnly) saveBlock(blockId, content);
   }, [readOnly, saveBlock]);
 
-  // Add block
-  const handleAddBlock = useCallback(async (type: BlockType, afterIndex: number) => {
-    const content = getDefaultContent(type);
-    const position = afterIndex + 1;
-
-    try {
-      const res = await fetch(`/api/manuals/${manualId}/blocks`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ language, block_type: type, content, position, updated_by: 'Editor' }),
-      });
-      const json = await res.json();
-      if (json.data) {
-        setBlocks((prev) => {
-          const newBlocks = [...prev];
-          newBlocks.splice(position, 0, json.data);
-          return newBlocks;
+  // Insert a freshly-created block at `afterIndex` in the flat list, then persist
+  // the new order. `manual_blocks` has a UNIQUE (manual_id, language, position)
+  // key (migration 0006), so we CANNOT POST straight into an occupied position —
+  // that raises 23505 and the block silently never appears. Instead create the
+  // row at a free trailing slot, then let the (collision-free, two-phase) reorder
+  // endpoint renumber every row to its final 0..N-1 position.
+  const insertCreatedBlock = useCallback(
+    async (afterIndex: number, payload: { block_type: BlockType; content: BlockContent }) => {
+      const current = blocksRef.current;
+      const freePosition = current.length; // above every live position → never collides
+      try {
+        const res = await fetch(`/api/manuals/${manualId}/blocks`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            language,
+            block_type: payload.block_type,
+            content: payload.content,
+            position: freePosition,
+            updated_by: 'Editor',
+          }),
         });
+        const json = await res.json();
+        const created: ManualBlock | undefined = json.data;
+        if (!created) return;
+
+        // Optimistically place the new block in the UI at afterIndex + 1.
+        const insertAt = Math.min(Math.max(afterIndex + 1, 0), current.length);
+        setBlocks((prev) => {
+          const next = [...prev];
+          next.splice(insertAt, 0, created);
+          return next;
+        });
+
+        // Persist the final order across ALL rows (top-level + nested children),
+        // so positions stay unique and contiguous.
+        const orderIds = current.map((b) => b.id);
+        orderIds.splice(insertAt, 0, created.id);
+        await fetch(`/api/manuals/${manualId}/blocks/reorder`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ block_ids: orderIds, updated_by: 'Editor' }),
+        });
+      } catch {
+        // Failed — UI will self-correct on next load.
       }
-    } catch {
-      // Failed
-    }
-  }, [manualId, language]);
+    },
+    [manualId, language]
+  );
+
+  // Add block
+  const handleAddBlock = useCallback(
+    (type: BlockType, afterIndex: number) =>
+      insertCreatedBlock(afterIndex, { block_type: type, content: getDefaultContent(type) }),
+    [insertCreatedBlock]
+  );
 
   // Duplicate block
-  const handleDuplicateBlock = useCallback(async (index: number) => {
-    const block = blocks[index];
-    if (!block) return;
-
-    try {
-      const res = await fetch(`/api/manuals/${manualId}/blocks`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          language,
-          block_type: block.block_type,
-          content: block.content,
-          position: index + 1,
-          updated_by: 'Editor',
-        }),
-      });
-      const json = await res.json();
-      if (json.data) {
-        setBlocks((prev) => {
-          const newBlocks = [...prev];
-          newBlocks.splice(index + 1, 0, json.data);
-          return newBlocks;
-        });
-      }
-    } catch {
-      // Failed
-    }
-  }, [blocks, manualId, language]);
+  const handleDuplicateBlock = useCallback(
+    (index: number) => {
+      const block = blocksRef.current[index];
+      if (!block) return Promise.resolve();
+      return insertCreatedBlock(index, { block_type: block.block_type, content: block.content });
+    },
+    [insertCreatedBlock]
+  );
 
   // Delete block
   const handleDeleteBlock = useCallback(async (blockId: string) => {
@@ -357,6 +412,71 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
     }
   }, [blocks, manualId]);
 
+  // ── In-column authoring (M5) ────────────────────────────────────────────────
+  // A container (two-column-section / section) owns its children by id in its
+  // content arrays. Creating a child = create a flat row, then append its id to
+  // the container's array and persist the container. Once the id is in the array,
+  // the childIdSet logic below pulls the row out of the top-level list so it only
+  // renders inside its column. Move/remove are pure array edits on the container.
+
+  const createBlockRow = useCallback(async (type: BlockType): Promise<ManualBlock | null> => {
+    try {
+      const res = await fetch(`/api/manuals/${manualId}/blocks`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ language, block_type: type, content: getDefaultContent(type), updated_by: 'Editor' }),
+      });
+      const json = await res.json();
+      return (json.data as ManualBlock) ?? null;
+    } catch {
+      return null;
+    }
+  }, [manualId, language]);
+
+  const handleAddChild = useCallback(async (containerId: string, side: ChildSide, type: BlockType) => {
+    const container = blocksRef.current.find((b) => b.id === containerId);
+    if (!container) return;
+    const created = await createBlockRow(type);
+    if (!created) return;
+    const newContent = withChildArray(container, side, [...getChildArray(container, side), created.id]);
+    setBlocks((prev) => {
+      const withChild = prev.some((b) => b.id === created.id) ? prev : [...prev, created];
+      return withChild.map((b) => (b.id === containerId ? { ...b, content: newContent } : b));
+    });
+    if (!readOnly) saveBlock(containerId, newContent);
+  }, [createBlockRow, readOnly, saveBlock]);
+
+  const handleRemoveChild = useCallback(async (containerId: string, side: ChildSide, childId: string) => {
+    const container = blocksRef.current.find((b) => b.id === containerId);
+    if (!container) return;
+    const newContent = withChildArray(container, side, getChildArray(container, side).filter((id) => id !== childId));
+    setBlocks((prev) => prev.filter((b) => b.id !== childId).map((b) => (b.id === containerId ? { ...b, content: newContent } : b)));
+    if (!readOnly) saveBlock(containerId, newContent);
+    try {
+      await fetch(`/api/manuals/${manualId}/blocks`, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: childId }),
+      });
+    } catch {
+      // Row delete is best-effort; the container no longer references it.
+    }
+  }, [manualId, readOnly, saveBlock]);
+
+  const handleMoveChild = useCallback((containerId: string, side: ChildSide, childId: string, direction: 'up' | 'down') => {
+    const container = blocksRef.current.find((b) => b.id === containerId);
+    if (!container) return;
+    const arr = [...getChildArray(container, side)];
+    const i = arr.indexOf(childId);
+    if (i < 0) return;
+    const j = direction === 'up' ? i - 1 : i + 1;
+    if (j < 0 || j >= arr.length) return;
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+    const newContent = withChildArray(container, side, arr);
+    setBlocks((prev) => prev.map((b) => (b.id === containerId ? { ...b, content: newContent } : b)));
+    if (!readOnly) saveBlock(containerId, newContent);
+  }, [readOnly, saveBlock]);
+
   // Nested layout: two-column / section blocks reference their children by id.
   // Those children must render INSIDE the parent container and be removed from
   // the flat top-level list so they don't also render standalone.
@@ -373,12 +493,49 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
   }
   const topLevelBlocks = blocks.filter((b) => !childIdSet.has(b.id));
 
-  const renderChildren = (childIds: string[]) =>
-    childIds.map((id) => {
+  // Render a container's children inside their column, each wrapped with compact
+  // move/remove controls (revealed on hover). The child block itself renders
+  // editable via renderBlock, so typing inside a column works as normal.
+  const renderColumnChildren = (containerId: string, side: ChildSide, childIds: string[]) =>
+    childIds.map((id, idx) => {
       const child = blocksById.get(id);
       if (!child) return null;
       // fill: a figure in a column fills its cell (the cell carries the width).
-      return <div key={child.id}>{renderBlock(child, { fill: true })}</div>;
+      return (
+        <div key={child.id} className="relative group/nested rounded">
+          {!readOnly && (
+            <div className="absolute -top-2 right-0 z-10 flex items-center gap-0.5 px-0.5 py-0.5 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-md shadow-sm opacity-0 group-hover/nested:opacity-100 transition-opacity duration-150">
+              <button
+                type="button"
+                title="Move up"
+                disabled={idx === 0}
+                onClick={() => handleMoveChild(containerId, side, id, 'up')}
+                className="w-6 h-6 rounded flex items-center justify-center text-[var(--color-foreground-muted)] hover:text-[var(--color-foreground)] hover:bg-[var(--color-background-subtle)] disabled:opacity-25 disabled:cursor-not-allowed"
+              >
+                <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" /></svg>
+              </button>
+              <button
+                type="button"
+                title="Move down"
+                disabled={idx === childIds.length - 1}
+                onClick={() => handleMoveChild(containerId, side, id, 'down')}
+                className="w-6 h-6 rounded flex items-center justify-center text-[var(--color-foreground-muted)] hover:text-[var(--color-foreground)] hover:bg-[var(--color-background-subtle)] disabled:opacity-25 disabled:cursor-not-allowed"
+              >
+                <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+              </button>
+              <button
+                type="button"
+                title="Remove from column"
+                onClick={() => handleRemoveChild(containerId, side, id)}
+                className="w-6 h-6 rounded flex items-center justify-center text-[var(--color-foreground-muted)] hover:text-[var(--color-error)] hover:bg-[var(--color-error)]/10"
+              >
+                <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+              </button>
+            </div>
+          )}
+          {renderBlock(child, { fill: true })}
+        </div>
+      );
     });
 
   const renderBlock = (block: ManualBlock, opts?: { fill?: boolean }) => {
@@ -507,6 +664,8 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
             content={block.content as SectionContent}
             onChange={(c) => handleContentChange(block.id, c)}
             readOnly={readOnly}
+            renderChildren={(ids) => renderColumnChildren(block.id, 'children', ids)}
+            onAddChild={(type) => handleAddChild(block.id, 'children', type)}
           />
         );
       case 'two-column-section':
@@ -515,7 +674,8 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
             content={block.content as TwoColumnSectionContent}
             onChange={(c) => handleContentChange(block.id, c)}
             readOnly={readOnly}
-            renderChildren={(ids) => renderChildren(ids)}
+            renderChildren={(ids, side) => renderColumnChildren(block.id, side, ids)}
+            onAddChild={(side, type) => handleAddChild(block.id, side, type)}
           />
         );
       default:
@@ -623,23 +783,34 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
         )}
 
         <Reorder.Group as="div" axis="y" values={topLevelBlocks} onReorder={handleDragReorder}>
-          {topLevelBlocks.map((block) => {
-            const index = blocks.indexOf(block);
-            return (
-            <SortableBlockItem
-              key={block.id}
-              block={block}
-              index={index}
-              totalBlocks={blocks.length}
-              renderBlock={renderBlock}
-              onDelete={handleDeleteBlock}
-              onMoveBlock={handleMoveBlock}
-              onDuplicate={handleDuplicateBlock}
-              onAddBlock={handleAddBlock}
-              readOnly={readOnly}
-            />
-            );
-          })}
+          {(() => {
+            // Canon page boundaries (editor only): mark each top-level block whose
+            // `source_page` provenance differs from the running page. Null-page
+            // rows (legacy / interactively added) never start a boundary and never
+            // reset the running page.
+            let runningPage: number | null = null;
+            return topLevelBlocks.map((block) => {
+              const index = blocks.indexOf(block);
+              const sp = block.source_page ?? null;
+              const pageBoundary = !readOnly && sp !== null && sp !== runningPage ? sp : null;
+              if (sp !== null) runningPage = sp;
+              return (
+                <SortableBlockItem
+                  key={block.id}
+                  block={block}
+                  index={index}
+                  totalBlocks={blocks.length}
+                  renderBlock={renderBlock}
+                  onDelete={handleDeleteBlock}
+                  onMoveBlock={handleMoveBlock}
+                  onDuplicate={handleDuplicateBlock}
+                  onAddBlock={handleAddBlock}
+                  readOnly={readOnly}
+                  pageBoundary={pageBoundary}
+                />
+              );
+            });
+          })()}
         </Reorder.Group>
 
         {/* Empty state */}

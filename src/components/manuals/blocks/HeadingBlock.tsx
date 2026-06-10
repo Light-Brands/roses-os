@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import type { HeadingContent } from '@/lib/manuals/types';
 
@@ -13,12 +13,34 @@ interface HeadingBlockProps {
 
 export default function HeadingBlock({ content, onChange, onLevelChange, readOnly }: HeadingBlockProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (ref.current && ref.current.textContent !== content.text) {
       ref.current.textContent = content.text;
     }
   }, [content.text]);
+
+  // The level menu opens on click and stays open (JS state) until a level is
+  // chosen, an outside pointer-down, or Escape. It deliberately does NOT depend
+  // on hover/focus: once open, moving the cursor away from the heading can't
+  // close it before the user reaches the H1/H2/H3 buttons.
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onDown = (e: PointerEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) setMenuOpen(false);
+    };
+    const onEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMenuOpen(false);
+    };
+    document.addEventListener('pointerdown', onDown);
+    document.addEventListener('keydown', onEsc);
+    return () => {
+      document.removeEventListener('pointerdown', onDown);
+      document.removeEventListener('keydown', onEsc);
+    };
+  }, [menuOpen]);
 
   const handleInput = () => {
     if (ref.current) {
@@ -53,24 +75,54 @@ export default function HeadingBlock({ content, onChange, onLevelChange, readOnl
           )}
         </div>
       )}
-      {/* Level toggle buttons — top-right, visible on hover */}
+      {/* Level control — top-LEFT, clear of the block action toolbar on the
+          right. A small trigger (showing the current level) is revealed on
+          hover/focus; clicking it opens a menu that PERSISTS via JS state, so
+          the user can move the cursor to the H1/H2/H3 buttons without the hover
+          dropping and closing it. z-20 keeps it above the action toolbar. */}
       {!readOnly && (
-        <div className="absolute -top-1 right-0 opacity-0 group-focus-within/heading:opacity-100 group-hover/heading:opacity-100 transition-opacity z-10 flex gap-0.5 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg px-0.5 py-0.5 shadow-sm">
-          {([1, 2, 3] as const).map((level) => (
-            <button
-              key={level}
-              type="button"
-              onMouseDown={(e) => { e.preventDefault(); onLevelChange(level); }}
-              className={cn(
-                'text-xs font-semibold w-7 h-6 rounded-md flex items-center justify-center transition-all duration-100',
-                content.level === level
-                  ? 'bg-[var(--color-rose-clay)] text-white'
-                  : 'text-[var(--color-foreground-muted)] hover:bg-[var(--color-background-subtle)] hover:text-[var(--color-foreground)]'
-              )}
-            >
-              H{level}
-            </button>
-          ))}
+        <div ref={menuRef} className="absolute left-0 top-0 -translate-y-full z-20 pb-2">
+          <button
+            type="button"
+            onMouseDown={(e) => e.preventDefault()} /* keep the heading selection */
+            onClick={() => setMenuOpen((o) => !o)}
+            aria-label="Change heading level"
+            aria-expanded={menuOpen}
+            className={cn(
+              'flex items-center gap-1 h-6 px-2 rounded-md text-xs font-semibold shadow-sm',
+              'bg-[var(--color-surface)] border border-[var(--color-border)]',
+              'text-[var(--color-foreground-muted)] hover:text-[var(--color-foreground)]',
+              'transition-opacity duration-150',
+              menuOpen
+                ? 'opacity-100'
+                : 'opacity-0 group-hover/heading:opacity-100 group-focus-within/heading:opacity-100'
+            )}
+          >
+            <span>H{content.level}</span>
+            <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+
+          {menuOpen && (
+            <div className="mt-1 flex gap-0.5 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg px-0.5 py-0.5 shadow-md">
+              {([1, 2, 3] as const).map((level) => (
+                <button
+                  key={level}
+                  type="button"
+                  onMouseDown={(e) => { e.preventDefault(); onLevelChange(level); setMenuOpen(false); }}
+                  className={cn(
+                    'text-xs font-semibold w-7 h-6 rounded-md flex items-center justify-center transition-all duration-100',
+                    content.level === level
+                      ? 'bg-[var(--color-rose-clay)] text-white'
+                      : 'text-[var(--color-foreground-muted)] hover:bg-[var(--color-background-subtle)] hover:text-[var(--color-foreground)]'
+                  )}
+                >
+                  H{level}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       )}
 

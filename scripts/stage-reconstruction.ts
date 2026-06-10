@@ -13,14 +13,24 @@
  * General by design (ARCHITECTURE D-13): drive any manual/level/locale via flags,
  * never a per-page patch.
  *
+ * Anon staging path (spec 004 T-002, AC2, D-18 operator contract): the headless
+ * run holds no service role key, so staging into the `__staging` lane goes through
+ * the anon key. The lane's RLS policy is `USING (true)` (proven by stage-translation.ts
+ * and the live editor), so an anon insert/upsert into a `__staging` manual_id is
+ * allowed. The service role key is still used when present (it bypasses RLS and is
+ * the right tool for a bulk prod-adjacent write), but its absence no longer halts
+ * the run. `--dry-run` needs no key at all: it reads the export, validates every
+ * block through the Zod gate, and prints the block-type distribution.
+ *
  *   Usage:
- *     SUPABASE_SERVICE_ROLE_KEY=sb_secret_... npx tsx scripts/stage-reconstruction.ts \
+ *     npx tsx scripts/stage-reconstruction.ts \
  *       [--manual rose-meditation-level-1] [--lang en] \
  *       [--input _qie-output/roses-os/reconstruction/l1-en/editor-blocks.json] \
  *       [--run-id recon-l1-geometry] [--dry-run]
  *
- * Reads SUPABASE_URL (or NEXT_PUBLIC_SUPABASE_URL) and SUPABASE_SERVICE_ROLE_KEY
- * from the environment, falling back to .env.local for the URL/anon only.
+ * Reads SUPABASE_URL (or NEXT_PUBLIC_SUPABASE_URL) plus either
+ * SUPABASE_SERVICE_ROLE_KEY (preferred when present) or the anon key, from the
+ * environment, falling back to .env.local.
  */
 
 import { readFileSync } from 'fs';
@@ -65,13 +75,23 @@ const SUPABASE_URL =
   envFile.SUPABASE_URL ||
   envFile.NEXT_PUBLIC_SUPABASE_URL;
 const SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const ANON_KEY =
+  process.env.SUPABASE_ANON_KEY ||
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
+  envFile.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+// Prefer the service role when present (it bypasses RLS); fall back to anon, whose
+// USING(true) policy on the __staging lane allows the write. The headless run has
+// only anon, and that is the operator-contract boundary (no service token in-run).
+const WRITE_KEY = SERVICE_KEY || ANON_KEY;
+const KEY_KIND = SERVICE_KEY ? 'service-role' : 'anon';
 
 if (!SUPABASE_URL) {
   console.error('✗ SUPABASE_URL / NEXT_PUBLIC_SUPABASE_URL not set.');
   process.exit(1);
 }
-if (!SERVICE_KEY) {
-  console.error('✗ SUPABASE_SERVICE_ROLE_KEY not set (fail closed — bulk staging needs the service role).');
+// A real write needs a key; --dry-run does not (it only reads + validates + counts).
+if (!WRITE_KEY && !DRY_RUN) {
+  console.error('✗ No Supabase key: set SUPABASE_SERVICE_ROLE_KEY or NEXT_PUBLIC_SUPABASE_ANON_KEY (or pass --dry-run).');
   process.exit(1);
 }
 
@@ -88,11 +108,7 @@ interface ExportRow {
 
 async function main() {
   console.log(`🌹 Staging reconstruction → ${MANUAL_SLUG}__staging [${LANG}]`);
-  console.log(`   input: ${INPUT}${DRY_RUN ? '  (DRY RUN — no writes)' : ''}\n`);
-
-  const supabase = createClient(SUPABASE_URL!, SERVICE_KEY!, {
-    auth: { persistSession: false, autoRefreshToken: false },
-  });
+  console.log(`   input: ${INPUT}  key: ${DRY_RUN ? 'none (dry run)' : KEY_KIND}${DRY_RUN ? '  (DRY RUN — no writes)' : ''}\n`);
 
   // 1) read + parse export
   const parsed = JSON.parse(readFileSync(join(__dirname, '..', INPUT), 'utf-8'));
@@ -117,6 +133,20 @@ async function main() {
     process.exit(1);
   }
   console.log(`   ✓ all ${rows.length} blocks pass the Zod write gate`);
+
+  // Dry-run reports the block-type distribution and exits with no DB call and no
+  // key required (AC2). Everything below needs a Supabase client.
+  if (DRY_RUN) {
+    const counts: Record<string, number> = {};
+    rows.forEach((r) => { counts[r.block_type] = (counts[r.block_type] || 0) + 1; });
+    console.log('\n   DRY RUN — would upsert distribution:', JSON.stringify(counts));
+    console.log(`   target lane: ${stagingSlugFor(MANUAL_SLUG)} [${LANG}]  (no writes performed)`);
+    return;
+  }
+
+  const supabase = createClient(SUPABASE_URL!, WRITE_KEY!, {
+    auth: { persistSession: false, autoRefreshToken: false },
+  });
 
   // 3) resolve the staging manual_id
   const stagingSlug = stagingSlugFor(MANUAL_SLUG);
@@ -144,24 +174,28 @@ async function main() {
     run_id: r.run_id ?? RUN_ID,
   }));
 
-  if (DRY_RUN) {
-    const counts: Record<string, number> = {};
-    rows.forEach((r) => { counts[r.block_type] = (counts[r.block_type] || 0) + 1; });
-    console.log('\n   DRY RUN — would upsert:', JSON.stringify(counts));
-    console.log('   (no writes performed)');
-    return;
+  // 5) upsert on the (manual_id, language, position) key (idempotent re-run).
+  // Chunked: a reconstructed manual embeds figure pixels as data URLs, so the
+  // payload can be tens of MB. A single upsert of all rows trips the Postgres
+  // statement timeout over PostgREST (seen on L2: 55MB / 157 blocks). Upserting in
+  // small batches keeps each statement under the timeout; the on-conflict key makes
+  // a re-run idempotent regardless of batch boundaries.
+  const CHUNK = Math.max(1, parseInt(arg('chunk', '10')!, 10));
+  let upserted = 0;
+  for (let i = 0; i < payload.length; i += CHUNK) {
+    const batch = payload.slice(i, i + CHUNK);
+    const { data, error } = await supabase
+      .from('manual_blocks')
+      .upsert(batch, { onConflict: 'manual_id,language,position' })
+      .select('id');
+    if (error) {
+      console.error(`✗ upsert failed on rows ${i}..${i + batch.length - 1}: ${error.message}`);
+      process.exit(1);
+    }
+    upserted += data?.length ?? 0;
+    process.stdout.write(`\r   upserted ${upserted}/${payload.length}`);
   }
-
-  // 5) upsert on the (manual_id, language, position) key (idempotent re-run)
-  const { data, error } = await supabase
-    .from('manual_blocks')
-    .upsert(payload, { onConflict: 'manual_id,language,position' })
-    .select('id');
-  if (error) {
-    console.error(`✗ upsert failed: ${error.message}`);
-    process.exit(1);
-  }
-  console.log(`\n✅ Upserted ${data?.length ?? 0} blocks into ${stagingSlug} [${LANG}]`);
+  console.log(`\n✅ Upserted ${upserted} blocks into ${stagingSlug} [${LANG}]`);
 
   // 5b) Remap nested child references. The export references children by its
   // synthetic page:ordinal ids, but Postgres assigned fresh uuids on insert, so
