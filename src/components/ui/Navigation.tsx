@@ -242,8 +242,11 @@ export function Navigation({
               })}
             </div>
 
-            {/* Logo — left-aligned on mobile/tablet, absolutely centered on desktop */}
-            <div className="z-10 flex-1 min-w-0 max-w-[55%] sm:max-w-[60%] md:max-w-none lg:flex-initial lg:flex-shrink-0 lg:max-w-[300px] xl:max-w-none lg:absolute lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2">
+            {/* Logo — left-aligned on mobile/tablet; on desktop it's a natural-width
+                center column between the two flex-1 nav regions, so it stays centered
+                without overlapping the links (the previous absolute centering ignored
+                the left nav's width and collided with it). */}
+            <div className="z-10 flex items-center justify-start flex-1 min-w-0 max-w-[55%] sm:max-w-[60%] md:max-w-none lg:flex-initial lg:flex-shrink-0 lg:max-w-none lg:justify-center lg:px-6">
               {logo || <Logo size="lg" />}
             </div>
 
