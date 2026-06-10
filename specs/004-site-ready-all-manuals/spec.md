@@ -1,3 +1,5 @@
+> Tracked as Light-Brands/roses-os#616
+
 ---
 slug: 004-site-ready-all-manuals
 title: Site ready, all manuals reconstructed translated and staged
