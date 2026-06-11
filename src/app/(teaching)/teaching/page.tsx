@@ -6,6 +6,7 @@ import { openingAgreements, openingImportantToKnow, openingHistory } from '@/lib
 import PrintPageButton from '@/components/teaching/PrintPageButton';
 import LanguageSelector from '@/components/teaching/LanguageSelector';
 import EditorLink from '@/components/teaching/EditorLink';
+import { stackBrandName } from '@/components/ui/BrandName';
 import { useLanguage } from '@/lib/i18n';
 
 export default function TeachingPage() {
@@ -36,9 +37,9 @@ export default function TeachingPage() {
           <EditorLink />
           <Link
             href="/"
-            className="font-sans text-sm font-medium tracking-wide uppercase text-[var(--color-foreground)]"
+            className="font-sans text-sm font-medium tracking-wide uppercase text-[var(--color-foreground)] leading-tight"
           >
-            {t?.ui.rosesOs ?? 'International Aura and Dream School'}
+            {stackBrandName(t?.ui.rosesOs)}
           </Link>
         </div>
       </header>
@@ -53,8 +54,8 @@ export default function TeachingPage() {
             height={72}
             className="object-contain mb-4"
           />
-          <h1 className="font-serif text-4xl md:text-5xl tracking-wide text-[var(--color-foreground)] mb-2">
-            {t?.ui.rosesOs ?? 'International Aura and Dream School'}
+          <h1 className="font-serif text-4xl md:text-5xl tracking-wide text-[var(--color-foreground)] mb-2 leading-tight">
+            {stackBrandName(t?.ui.rosesOs)}
           </h1>
           <p className="text-sm uppercase tracking-widest text-[var(--color-foreground-muted)] mb-6">
             {t?.ui.teacherVisualAidManual ?? 'Teacher Visual Aid Manual'}

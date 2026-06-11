@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { useManualAuth } from '@/components/manuals/ManualPinGate';
+import { stackBrandName } from '@/components/ui/BrandName';
 import type { Manual } from '@/lib/manuals/types';
 
 export default function ManualsPage() {
@@ -33,9 +34,9 @@ export default function ManualsPage() {
       <header className="px-6 py-4 border-b border-[var(--color-border)] flex items-center justify-between">
         <Link
           href="/"
-          className="font-sans text-sm font-medium tracking-wide uppercase text-[var(--color-foreground)]"
+          className="font-sans text-sm font-medium tracking-wide uppercase text-[var(--color-foreground)] leading-tight"
         >
-          International Aura and Dream School
+          {stackBrandName()}
         </Link>
         <div className="flex items-center gap-4">
           <span className={cn(

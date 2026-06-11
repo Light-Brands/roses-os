@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
+import { BRAND_NAME, stackBrandName } from './BrandName';
 
 interface LogoProps {
   href?: string;
@@ -48,15 +49,7 @@ export function Logo({
         )}
         style={{ fontFamily: 'var(--font-sans)' }}
       >
-        {twoLine ? (
-          <>
-            International
-            <br />
-            Aura and Dream School
-          </>
-        ) : (
-          'International Aura and Dream School'
-        )}
+        {twoLine ? stackBrandName() : BRAND_NAME}
       </span>
     </div>
   );

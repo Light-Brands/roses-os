@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import { stackBrandName } from '@/components/ui/BrandName';
 
 // =============================================================================
 // SHARED EASE
@@ -33,9 +34,9 @@ function InvitationHero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6, ease }}
-          className="text-[11px] font-medium uppercase tracking-[0.2em] text-warm-400 mb-6"
+          className="text-[11px] font-medium uppercase tracking-[0.2em] text-warm-400 mb-6 leading-relaxed"
         >
-          International Aura and Dream School
+          {stackBrandName()}
         </motion.p>
 
         <motion.h1

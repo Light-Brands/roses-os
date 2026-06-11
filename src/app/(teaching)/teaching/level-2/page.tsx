@@ -13,6 +13,7 @@ import { ImageDownloadButton } from '@/components/teaching/ImageDownloadButton';
 import LanguageSelector from '@/components/teaching/LanguageSelector';
 import LevelNavigation from '@/components/teaching/LevelNavigation';
 import EditorLink from '@/components/teaching/EditorLink';
+import { stackBrandName } from '@/components/ui/BrandName';
 import { useLanguage } from '@/lib/i18n';
 
 export default function Level2Page() {
@@ -30,9 +31,9 @@ export default function Level2Page() {
       <header className="flex items-center justify-between px-6 py-4 border-b border-[var(--color-border)]">
         <Link
           href="/"
-          className="font-sans text-sm font-medium tracking-wide uppercase text-[var(--color-foreground)]"
+          className="font-sans text-sm font-medium tracking-wide uppercase text-[var(--color-foreground)] leading-tight"
         >
-          {t?.ui.rosesOs ?? 'International Aura and Dream School'}
+          {stackBrandName(t?.ui.rosesOs)}
         </Link>
         <div className="flex items-center gap-3">
           <EditorLink manualSlug="rose-meditation-level-2" />
