@@ -98,7 +98,6 @@ export const level1Slides: TeachingSlide[] = [
     concept: 'An Exercise to Feel Your Aura',
     teachingText:
       'The aura is the energetic field that surrounds your physical body. This exercise helps you become aware of its presence, its edges, and its quality. The aura consists of multiple layers radiating outward from the body.',
-    originalImage: 'level-1/05-auraexercise-original.PNG',
     reimaginedImage: 'level-1/05-aura-exercise.PNG',
     final: true,
     level: 1,
@@ -110,7 +109,6 @@ export const level1Slides: TeachingSlide[] = [
     concept: 'Expansion of Grounding Cord',
     teachingText:
       'Once you are aware of your aura, the grounding cord practice deepens. You ground not only the physical body but also the aura itself — allowing the entire energy field to anchor into the Earth.',
-    originalImage: 'level-1/06-grounding-cord-expansion-original.PNG',
     reimaginedImage: 'level-1/06-expansion-grounding-cord.png',
     final: true,
     imageNote:
@@ -124,7 +122,6 @@ export const level1Slides: TeachingSlide[] = [
     concept: 'Golden Sun Fills You',
     teachingText:
       'The Golden Sun above the crown pours golden light downward, filling the entire aura and body with your own highest vibration. This completes the full energetic architecture: posture, aura, grounding cord, and golden sun — all active together.',
-    originalImage: 'level-1/07-expansion-fill-with-golden-sun-original.PNG',
     reimaginedImage: 'level-1/7-fillgoldensun.png',
     final: true,
     imageNote: 'The expanded grounding cord should also be represented in this image — it is part of the full energetic architecture. Same visual direction: thick, transparent, strong, less gold. NOTE: The current image repeats the same human figure used in slide 7 — please use a different human man for this slide to distinguish the two visuals.',
@@ -148,7 +145,6 @@ export const level1Slides: TeachingSlide[] = [
     concept: 'Circuit of Energy of the Cosmos',
     teachingText:
       'The Cosmic circuit is an energetic pathway that draws cosmic energy downward through the crown of the head (7th chakra) and into the body. This circuit connects you to the higher frequencies of universal consciousness, inspiration, and spiritual guidance.',
-    originalImage: 'level-1/09-cosmos-original.PNG',
     reimaginedImage: 'level-1/09-cosmos-circuit.jpeg',
     final: true,
     imageNote:
@@ -188,7 +184,6 @@ export const level1Slides: TeachingSlide[] = [
     concept: 'Four Roses of Protection, Separation and Observation',
     teachingText:
       'Roses are placed at the edges of the aura to serve as energetic sentinels. They perform three functions:\n\n1. Protection — They define and guard the boundary of your aura\n2. Separation — They create healthy energetic distinction between your energy and the energy of others\n3. Observation — They help you notice what energies are approaching or interacting with your field',
-    originalImage: 'level-1/12-four-roses-original.PNG',
     reimaginedImage: 'level-1/12-four-roses.png',
     level: 1,
     section: 'foundations',
@@ -210,7 +205,6 @@ export const level1Slides: TeachingSlide[] = [
     concept: 'Energy Recovery of Each Chakra',
     teachingText:
       'After cleansing, the Rose is used to recover your own energy that has been left in or taken by others. The Rose is sent out as an instrument to gather and return your own life-force energy to each chakra, restoring fullness and sovereignty to each energy center.',
-    originalImage: 'level-1/14-recovery-rose-original.PNG',
     reimaginedImage: 'level-1/14-energy-recovery.png',
     final: true,
     level: 1,
@@ -232,7 +226,6 @@ export const level1Slides: TeachingSlide[] = [
     concept: 'Discharge Excess Energy',
     teachingText:
       'After deep meditation or energy work, excess energy may accumulate in the body. To discharge it, lean forward from the seated position with hands reaching toward the ground. Allow the excess energy to flow out through the hands and into the earth, returning the body to a calm, balanced state.',
-    originalImage: 'level-1/16-discharge-energy-original.PNG',
     reimaginedImage: 'level-1/16-discharge-excess.PNG',
     level: 1,
     section: 'foundations',
@@ -257,7 +250,6 @@ export const level1Slides: TeachingSlide[] = [
     concept: 'The 6th and 7th Chakras (Sacred Space)',
     teachingText:
       'Understanding the locations and roles of the upper chakras is essential for Level 2 work:\n\n• 6th Chakra (Third Eye) — Located at the center of the forehead, between and slightly above the eyebrows\n• 7th Chakra (Crown) — Located at the top of the head',
-    originalImage: 'level-1/18-sacredspace-original.jpg',
     reimaginedImage: 'level-1/18-sacred-space.PNG',
     imageNote: 'Part of the sacred space slide sequence.',
     level: 1,
@@ -287,7 +279,6 @@ export const level2Slides: TeachingSlide[] = [
     concept: 'Protection of the Space',
     teachingText:
       'The physical meditation space is protected by creating an energetic grid using roses. Golden roses are placed at the four corners (and above/below) of the space, connected by lines of golden energy forming a sacred geometric structure — a container for the work.',
-    originalImage: 'level-2/20-protectthespace-original.jpg',
     reimaginedImage: 'level-2/20-create-the-room.jpeg',
     imageNote:
       'Designer notes: The lines of the room/grid are all in gold. The room also has its own grounding cord that expands within the space — not depicted in the current image. The grounding cord should be clear and transparent so people understand the cord also expands within the room. This is a visual challenge given the complexity of the grid; the designer has creative freedom to find a solution.',
@@ -300,7 +291,6 @@ export const level2Slides: TeachingSlide[] = [
     concept: 'Cleansing of the Space',
     teachingText:
       'With protection established, the cleansing follows. A Golden Rose is set above the grid and passed downward through its entire structure, removing any foreign, stagnant, or disruptive energies inside the room. This Rose comes down to be transmuted in the center of the earth through the Grounding Cord of the room.',
-    originalImage: 'level-2/21-cleansing-space-original.PNG',
     reimaginedImage: 'level-2/21-cleanse-the-space.jpeg',
     imageNote:
       'The room should show its own grounding cord expanding within the space. The grounding cord should be clear and transparent so people understand the cord also expands within the room — same visual direction as slide 23.',
@@ -313,7 +303,6 @@ export const level2Slides: TeachingSlide[] = [
     concept: 'Owning Your Space',
     teachingText:
       'After protection and cleansing, you claim ownership of the space. This is an act of energetic sovereignty — declaring the space as yours, filling it with your own energy and intention. The space becomes an extension of your aura and your practice.',
-    originalImage: 'level-2/22-protect-the-space-original.PNG',
     reimaginedImage: 'level-2/22-owning-space.jpeg',
     imageNote:
       'The room should show its own grounding cord expanding within the space. The grounding cord should be clear and transparent so people understand the cord also expands within the room — same visual direction as slide 23. Also: four golden lines go from the perineum to the four bottom corners of the room, and four golden lines from the crown to the top four corners of the room — this should be clear as this is what the slide demonstrates.',
@@ -337,7 +326,6 @@ export const level2Slides: TeachingSlide[] = [
     concept: 'The Seven Chakras',
     teachingText:
       'The seven primary chakras, from crown to root:\n\n7. Crown — Top of head\n6. Third Eye — Center of forehead\n5. Throat — Throat\n4. Heart — Center of chest\n3. Solar Plexus — Upper abdomen\n2. Sacral — Lower abdomen\n1. Root — Base of spine',
-    originalImage: 'level-2/24-chakras-original.PNG',
     reimaginedImage: 'level-2/24-chakras.png',
     imageNote: 'Also see style reference: 21a-example-of-chakra-slides.PNG',
     level: 2,
@@ -575,7 +563,6 @@ export const level2CleansingSlides: TeachingSlide[] = [
     concept: 'Cleansing of Each Chakra',
     teachingText:
       'Each individual chakra is cleansed using roses. The roses address two dimensions:\n\n• Dynamics of the Past — Energetic patterns, imprints, and blockages carried from past experiences\n• Dynamics of the Present — Current energetic influences, relationships, and situations affecting the chakra',
-    originalImage: 'level-2/33-cleansingeachchakra-original.jpg',
     reimaginedImage: 'level-2/33-cleansing-each-chakra.png',
     imageNote: 'Also see: 29a-chakracleansing-original.jpg',
     level: 2,
@@ -587,7 +574,6 @@ export const level2CleansingSlides: TeachingSlide[] = [
     concept: 'Cleansing of Each Aura Layer',
     teachingText:
       'The aura is composed of seven layers, each corresponding to a chakra. In Level 2, each layer is individually cleansed from the 1st to the 7th layer:\n\n1. 1st Aura layer\n2. 2nd Aura layer\n3. 3rd Aura layer\n4. 4th Aura layer\n5. 5th Aura layer\n6. 6th Aura layer\n7. 7th Aura layer',
-    originalImage: 'level-2/32-cleansing-layers-original.jpg',
     reimaginedImage: 'level-2/32-cleansing-each-layer.jpeg',
     level: 2,
     section: 'cleansing',
@@ -598,7 +584,6 @@ export const level2CleansingSlides: TeachingSlide[] = [
     concept: 'Energy Recovery Rose in Depth',
     teachingText:
       'Once the cleansing of the chakra and its corresponding aura layer is complete, the energy recovery process can unfold at their vibration, if you feel called to do so. A recovery Rose may be created attuned to that specific frequency, drawing your energy back and restoring it at that very level. You can do it from the 1st to the 7th chakra.',
-    originalImage: 'level-2/34-energyrecoveryeachchakra-original.jpg',
     reimaginedImage: 'level-2/34-energy-recovery-rose.png',
     imageNote: 'Updated with new background image.',
     level: 2,
@@ -610,7 +595,6 @@ export const level2CleansingSlides: TeachingSlide[] = [
     concept: 'Golden Sticky Roses — First Rose (Crown to Root)',
     teachingText:
       'Four Golden Sticky Roses are used for deep energetic cleansing of the Aura, drawing out any foreign energies that still remain after the previous clearing. The first enters through the crown chakra, cleansing each chakra in succession down to the root.',
-    originalImage: 'level-2/35-golden-sticky-1-original.jpg',
     reimaginedImage: 'level-2/35-golden-sticky-1.png',
     imageNote: 'Add subtle arrows to indicate the direction of energy being drawn out by the golden sticky roses.',
     level: 2,
@@ -622,7 +606,6 @@ export const level2CleansingSlides: TeachingSlide[] = [
     concept: 'Golden Sticky Roses — Second Rose (Arms)',
     teachingText:
       'The second descends to the throat chakra, where it splits into two Roses that travel the channels of the arms, exiting through the hand chakras.',
-    originalImage: 'level-2/36-golden-sticky-2-original.PNG',
     reimaginedImage: 'level-2/36-golden-sticky-2.jpg',
     imageNote: 'Add subtle arrows to indicate the direction of energy being drawn out by the golden sticky roses.',
     level: 2,
@@ -634,7 +617,6 @@ export const level2CleansingSlides: TeachingSlide[] = [
     concept: 'Golden Sticky Roses — Third Rose (Legs)',
     teachingText:
       'The third descends to the root chakra, where it becomes two Roses that follow the channels of the legs, exiting through the foot chakras.',
-    originalImage: 'level-2/37-golden-sticky-3-original.PNG',
     reimaginedImage: 'level-2/37-golden-sticky-3.jpg',
     imageNote: 'Also see: 34-golden-sticky-3-original-alt.PNG. Add subtle arrows to indicate the direction of energy being drawn out by the golden sticky roses.',
     level: 2,
@@ -646,7 +628,6 @@ export const level2CleansingSlides: TeachingSlide[] = [
     concept: 'Golden Sticky Roses — Fourth Rose (Full Aura)',
     teachingText:
       'The fourth spans the full width of the Aura, descending through the entire energetic field. Upon completion, all four either explode outside the Aura or exit through the grounding cord, transmuting the collected energies away with them.',
-    originalImage: 'level-2/38-golden-sticky-4-original.PNG',
     reimaginedImage: 'level-2/38-golden-sticky-4.jpeg',
     imageNote: 'Add subtle arrows to indicate the direction of energy release and golden light cascading through the body.',
     level: 2,
