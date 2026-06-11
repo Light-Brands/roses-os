@@ -34,6 +34,8 @@ export const manualPdfConfigs: ManualPdfConfig[] = [
     level: 2,
     paths: {
       en: '/resources/manuals/Rose-Level-2-Manual-EN.pdf',
+      es: '/resources/manuals/Rose-Level-2-Manual-ES.pdf',
+      pt: '/resources/manuals/Rose-Level-2-Manual-PT.pdf',
     },
     labels: {
       en: 'Download Student Manual',
@@ -46,6 +48,8 @@ export const manualPdfConfigs: ManualPdfConfig[] = [
     level: 3,
     paths: {
       en: '/resources/manuals/Rose-Level-3-Manual-EN.pdf',
+      es: '/resources/manuals/Rose-Level-3-Manual-ES.pdf',
+      pt: '/resources/manuals/Rose-Level-3-Manual-PT.pdf',
     },
     labels: {
       en: 'Download Student Manual',

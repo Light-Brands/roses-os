@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meditación de la Rosa — Nivel 3</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+    :root {
+      --rose-clay: #9C6F6E;
+      --rose-400: #D4A09A;
+      --rose-300: #E8C4BF;
+      --rose-200: #F5E1DD;
+      --rose-100: #FAF0EE;
+      --rose-50: #FDF8F7;
+      --rose-700: #6E4A49;
+      --rose-800: #523737;
+      --rose-900: #3B2828;
+      --gold: #9E956B;
+      --gold-light: #B8B08A;
+      --warm-0: #F7F5F2;
+      --charcoal: #3F3E3C;
+      --soft-charcoal: #5A5856;
+      --font-serif: 'Cormorant Garamond', 'Georgia', serif;
+      --font-sans: 'Inter', -apple-system, sans-serif;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    @page { size: 8.5in 11in; margin: 0; }
+    html { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { font-family: var(--font-sans); color: var(--charcoal); line-height: 1.7; background: white; }
+
+    .page {
+      width: 8.5in; height: 11in;
+      position: relative;
+      page-break-after: always;
+      display: flex; flex-direction: column;
+      overflow: hidden;
+    }
+    .page:last-child { page-break-after: auto; }
+
+    .page::before {
+      content: ''; position: absolute;
+      top: 0.35in; left: 0.35in; right: 0.35in; bottom: 0.35in;
+      border: 0.5px solid var(--rose-200);
+      border-radius: 2px; pointer-events: none; z-index: 0;
+    }
+
+    .inner {
+      position: relative; z-index: 1;
+      margin: 0.55in 0.65in; flex: 1;
+      display: flex; flex-direction: column;
+    }
+
+    .ck { position: absolute; width: 16px; height: 16px; z-index: 2; }
+    .ck::before, .ck::after { content: ''; position: absolute; background: var(--rose-300); }
+    .ck-tl { top: 0.3in; left: 0.3in; }
+    .ck-tr { top: 0.3in; right: 0.3in; }
+    .ck-bl { bottom: 0.3in; left: 0.3in; }
+    .ck-br { bottom: 0.3in; right: 0.3in; }
+    .ck-tl::before { width: 16px; height: 0.5px; top: 0; left: 0; }
+    .ck-tl::after  { width: 0.5px; height: 16px; top: 0; left: 0; }
+    .ck-tr::before { width: 16px; height: 0.5px; top: 0; right: 0; }
+    .ck-tr::after  { width: 0.5px; height: 16px; top: 0; right: 0; }
+    .ck-bl::before { width: 16px; height: 0.5px; bottom: 0; left: 0; }
+    .ck-bl::after  { width: 0.5px; height: 16px; bottom: 0; left: 0; }
+    .ck-br::before { width: 16px; height: 0.5px; bottom: 0; right: 0; }
+    .ck-br::after  { width: 0.5px; height: 16px; bottom: 0; right: 0; }
+
+    .pn {
+      position: absolute; bottom: 0.38in; left: 0; right: 0;
+      text-align: center; font-family: var(--font-sans);
+      font-size: 7pt; color: var(--rose-400);
+      letter-spacing: 0.12em; z-index: 2;
+    }
+    .pn span { display: inline-block; padding: 0 8px; background: white; }
+
+    /* IMAGES */
+    .img-full {
+      width: 80%; max-width: 480px; margin: 0 auto;
+      border-radius: 16px; overflow: hidden; display: flex;
+    }
+    .img-full img {
+      width: 100%; height: auto; display: block;
+      border-radius: 16px;
+    }
+
+    .img-circle {
+      border-radius: 50%; overflow: hidden;
+      flex-shrink: 0; aspect-ratio: 1;
+    }
+    .img-circle img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+    }
+
+    /* TYPOGRAPHY */
+    .label {
+      font-family: var(--font-sans);
+      font-size: 6.5pt; font-weight: 500;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold);
+    }
+    .h-xl {
+      font-family: var(--font-serif);
+      font-size: 36pt; font-weight: 300;
+      color: var(--rose-800); line-height: 1.12; letter-spacing: -0.02em;
+    }
+    .h-lg {
+      font-family: var(--font-serif);
+      font-size: 22pt; font-weight: 300;
+      color: var(--rose-800); line-height: 1.2; letter-spacing: -0.015em;
+    }
+    .h-md {
+      font-family: var(--font-serif);
+      font-size: 15pt; font-weight: 400;
+      color: var(--rose-800); line-height: 1.3;
+    }
+    .h-sm {
+      font-family: var(--font-serif);
+      font-size: 11.5pt; font-weight: 500;
+      font-style: italic; color: var(--rose-clay);
+    }
+    .sub {
+      font-family: var(--font-serif);
+      font-size: 15pt; font-weight: 400;
+      font-style: italic; color: var(--rose-clay);
+    }
+    .body {
+      font-family: var(--font-sans);
+      font-size: 9.5pt; line-height: 1.75; color: var(--charcoal);
+    }
+    .body-sm {
+      font-family: var(--font-sans);
+      font-size: 8.5pt; line-height: 1.7; color: var(--soft-charcoal);
+    }
+    em { font-family: var(--font-serif); color: var(--rose-700); }
+
+    .line { width: 36px; height: 0.5px; background: var(--rose-300); }
+    .line-c { width: 36px; height: 0.5px; background: var(--rose-300); margin: 0 auto; }
+
+    .call {
+      background: var(--rose-50);
+      border-left: 2px solid var(--rose-clay);
+      padding: 12px 16px; border-radius: 0 8px 8px 0;
+    }
+    .call p {
+      font-family: var(--font-serif);
+      font-size: 10pt; font-style: italic;
+      line-height: 1.6; color: var(--rose-700);
+    }
+    .call-gold { border-left-color: var(--gold); background: linear-gradient(135deg, var(--rose-50), var(--warm-0)); }
+
+    .bul { list-style: none; }
+    .bul li {
+      font-family: var(--font-sans); font-size: 9.5pt;
+      line-height: 1.75; color: var(--charcoal);
+      padding: 2px 0 2px 16px; position: relative;
+    }
+    .bul li::before {
+      content: ''; position: absolute;
+      left: 2px; top: 11px;
+      width: 5px; height: 5px;
+      background: var(--rose-clay); border-radius: 50%;
+    }
+
+    .cols { display: flex; gap: 24px; }
+    .cols > div { flex: 1; }
+
+    .sum {
+      background: linear-gradient(135deg, var(--rose-50), var(--warm-0));
+      border: 0.5px solid var(--rose-200);
+      border-radius: 16px; padding: 20px 24px;
+    }
+    .sum .bul li { font-size: 9pt; padding: 2px 0 2px 14px; }
+    .sum .bul li::before { top: 9px; width: 4px; height: 4px; }
+
+    .s4  { height: 4px; }
+    .s6  { height: 6px; }
+    .s6  { height: 6px; }
+    .s8  { height: 8px; }
+    .s10 { height: 10px; }
+    .s12 { height: 12px; }
+    .s16 { height: 16px; }
+    .s20 { height: 20px; }
+    .s24 { height: 24px; }
+    .s28 { height: 28px; }
+    .s32 { height: 32px; }
+    .s40 { height: 40px; }
+    .grow { flex: 1; }
+
+    .cover-bg {
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--rose-50) 40%, var(--warm-0) 100%);
+    }
+    .cover-bg::before { border-color: var(--rose-300); }
+    .closing-bg {
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--rose-50) 50%, var(--warm-0) 100%);
+    }
+
+    .phase-badge {
+      display: inline-block;
+      font-family: var(--font-sans);
+      font-size: 7pt; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold-light);
+      padding: 4px 14px; border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =====================================================
+       PAGE 1 — COVER
+       ===================================================== -->
+  <div class="page cover-bg">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="align-items: center; justify-content: center; text-align: center;">
+      <div class="label">International Aura and Dream School</div>
+      <div class="s28"></div>
+
+      <div class="img-circle" style="width: 320px; height: 320px;">
+        <img src="images/manual-l3-cover-l3.png" alt="Sacred Rose Nivel 3">
+      </div>
+      <div class="s32"></div>
+
+      <h1 class="h-xl">Meditación de la Rosa</h1>
+      <div class="s6"></div>
+      <p class="sub">Nivel 3 — Práctica Avanzada</p>
+      <div class="s32"></div>
+
+      <div class="line-c"></div>
+      <div class="s28"></div>
+
+      <div style="font-family: var(--font-sans); font-size: 8.5pt; color: var(--soft-charcoal); line-height: 1.8; letter-spacing: 0.04em;">
+        <strong style="font-weight: 500; color: var(--charcoal); font-size: 9pt;">Enseñanzas de Angelina Ataíde</strong><br>
+        International Aura and Dream School<br><br>
+        <span style="font-size: 7.5pt; color: var(--rose-400);">
+          Ilustraciones: Drica Voivodic &amp; Ana Leite<br>
+          Edición y Traducción: Dara Ayoub &nbsp;·&nbsp; Diseño: Jennifer Lawless
+        </span>
+      </div>
+      <div class="s16"></div>
+      <div style="font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400); letter-spacing: 0.2em;">2026 &nbsp;·&nbsp; EDICIÓN DE REVISIÓN</div>
+    </div>
+
+    <div style="position: absolute; bottom: 0.55in; left: 0.8in; right: 0.8in; text-align: center; font-family: var(--font-sans); font-size: 6.5pt; color: var(--rose-400); line-height: 1.6; font-style: italic;">
+      Ninguna parte de este manual puede ser reproducida y/o mostrada a personas que no hayan participado en un curso de Meditación de la Rosa de Nivel 3. El requisito para participar en este curso es haber participado en los cursos de Rosas 1 y 2. Para tu propia protección, por favor no compartas esta información.
+    </div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 2 — TABLE OF CONTENTS
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="padding-top: 0.3in;">
+      <div class="label">Contenido</div>
+      <div class="s6"></div>
+      <h2 class="h-lg" style="font-size: 26pt;">Meditación de la Rosa</h2>
+      <div class="s4"></div>
+      <p class="sub" style="font-size: 13pt;">Nivel 3 — Práctica Avanzada</p>
+      <div class="s20"></div>
+      <div class="line"></div>
+      <div class="s12"></div>
+
+      <!-- Rose icon on TOC -->
+      <div class="img-circle" style="width: 36px; height: 36px; margin: 0 auto 8px auto;">
+        <img src="images/level-1/01-the-rose.jpeg" alt="The Rose" style="object-position: top;">
+      </div>
+
+      <table style="width: 100%; border-collapse: collapse;">
+        <tbody>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="width: 26px; padding: 5px 0;"></td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">El Analizador</td>
+            <td style="width: 24px; padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">3</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 5px 0;"></td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Los 5 Cuerpos y 5 Niveles de Existencia</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">4</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 5px 0;"></td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Nivel Espiritual — Romper Acuerdos</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">5</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 5px 0;"></td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Nivel Energético — Cortar Cordones</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">6</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 5px 0;"></td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Relaciones Sexuales</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">7</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 5px 0;"></td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Clases y Servicios</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">8</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 5px 0;"></td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Creación de la Realidad e Impecabilidad</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">9</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 5px 0;"></td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Mock-up — Técnica de Manifestación</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">10</td>
+          </tr>
+          <tr>
+            <td style="padding: 5px 0;"></td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Elementos del Nivel 3</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">11</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="grow"></div>
+
+      <div class="call">
+        <p>Las Rosas representan el espíritu. Absorben todas las energías, emociones y situaciones que no sirven a tu momento presente. Podemos crearlas y explotarlas tantas veces como sea necesario. Cuando explotamos las rosas, estas purifican y transmutan la energía, y la devuelven a su origen.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>Meditación de la Rosa &nbsp;·&nbsp; Nivel 3</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 3 — THE ANALYZER
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="label">Arquitectura Interior</div>
+      <div class="s4"></div>
+      <h2 class="h-lg">El Analizador</h2>
+      <div class="s6"></div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <div style="display: flex; flex-direction: column;">
+          <div style="border-radius: 10px; overflow: hidden; margin-bottom: 4px;">
+            <img src="images/level-3/39-analyzer.jpeg" alt="El Analizador" style="width: 100%; height: auto; display: block; border-radius: 10px;">
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column;">
+          <div style="border-radius: 10px; overflow: hidden; margin-bottom: 4px;">
+            <img src="images/level-3/40-sacred-space-analyzer.jpeg" alt="Sacred Space Analyzer" style="width: 100%; height: auto; display: block; border-radius: 10px;">
+          </div>
+        </div>
+      </div>
+      <div class="s6"></div>
+
+      <p class="body" style="margin-bottom: 4px;">El analizador está ubicado dentro de la cabeza. Sus funciones son: analizar, juzgar y criticar. Almacena nuestros programas y creencias. Limpiar el analizador y las energías allí almacenadas te permite liberarte de limitaciones que impactan tu vida y también percibir la vida de una manera más objetiva.</p>
+      <p class="body">El analizador se limpia en todos los colores de los chakras. Aquí está la descripción para el color rojo:</p>
+      <div class="s4"></div>
+
+      <ul class="bul">
+        <li>Visualiza el analizador en rojo.</li>
+        <li>Enraíza el analizador al centro de la Tierra con un cordón de enraizamiento rojo.</li>
+        <li>Crea una Rosa roja enraizada detrás de ti, fuera de tu Aura, a la altura del analizador.</li>
+        <li>La Rosa ahora limpia el analizador en esa vibración.</li>
+        <li>Explota la Rosa siempre fuera del aura.</li>
+      </ul>
+      <div class="s4"></div>
+      <p class="body" style="margin-bottom: 4px;">Este mismo procedimiento debe hacerse con la vibración de todos los chakras (naranja, amarillo, verde, rosa, azul celeste, azul índigo y violeta).</p>
+      <ul class="bul">
+        <li>Ahora visualiza el analizador en color dorado elevando su vibración.</li>
+        <li>Crea una Rosa Dorada Adhesiva que venga del centro del Universo, del tamaño del analizador.</li>
+        <li>Entra en el analizador y gira en espiral por dentro y por fuera, limpiando cualquier energía ajena que pudiera haber quedado allí.</li>
+        <li>La Rosa desciende por el cordón de enraizamiento.</li>
+        <li>Ahora cierra el analizador por completo.</li>
+      </ul>
+
+    </div>
+
+    <div class="pn"><span>3</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 4 — THE 5 BODIES
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="label">Fundamento</div>
+      <div class="s4"></div>
+      <h2 class="h-lg">Los 5 Cuerpos y 5 Niveles de Existencia</h2>
+      <div class="s8"></div>
+
+      <p class="body-sm" style="margin-bottom: 4px;">Todo lo que se manifiesta en la materia tiene su origen en el plano espiritual. Esto es lo mismo que decir que todo tiene una razón de ser. Todo es también energía. Cuanto más densa es la energía, más se mueve hacia la manifestación y así llega a existir de una forma que podemos percibir objetivamente.</p>
+      <div class="s6"></div>
+
+      <div class="cols" style="gap: 16px;">
+        <div>
+          <h4 class="h-sm">1. Espiritual</h4>
+          <div class="s4"></div>
+          <p class="body-sm" style="font-size: 7.5pt; line-height: 1.6;">En el nivel espiritual, toda experiencia es válida. Aquí no hay juicio de valor: el sufrimiento y la adversidad se entienden como experiencias de aprendizaje. Todo lo que ocurre tiene una razón de ser espiritual. No hay correcto o incorrecto, ni bueno o malo — simplemente es. Dentro del cuerpo espiritual, podemos percibir las lecciones más profundas que uno está eligiendo experimentar en el momento presente.</p>
+
+          <div class="s8"></div>
+          <h4 class="h-sm">2. Energético</h4>
+          <div class="s4"></div>
+          <p class="body-sm" style="font-size: 7.5pt; line-height: 1.6;">Este es el reino de lo sutil — donde vibramos, creamos frecuencias y el Aura toma forma. Es el plano en el que opera la Meditación de la Rosa, donde pueden percibirse las potencialidades y donde ya puede sentirse todo lo que un día se manifestará en la materia. Sin embargo, contiene mucho más que eso. Es el dominio en el que actúan las energías y entidades no encarnadas. Y más allá de eso, cuando creamos relaciones profundas y significativas, es dentro del cuerpo energético donde se tejen los vínculos — cordones que nos unen unos a otros y a través de los cuales seguimos sintiéndonos más allá del tiempo y el espacio.</p>
+
+          <div class="s8"></div>
+          <h4 class="h-sm">3. Mental</h4>
+          <div class="s4"></div>
+          <p class="body-sm" style="font-size: 7.5pt; line-height: 1.6;">Cuando las energías sutiles se densifican, el primer lugar donde las percibimos es en el mundo de las ideas, pensamientos, programas y creencias. Nuestro cuerpo mental almacena las ideas que tenemos sobre el mundo y cada elemento que existe en él (en todos los niveles). Aquí confrontamos la realidad percibida por los sentidos con los programas que — dentro de nosotros — dictan cómo debería ser el mundo.</p>
+        </div>
+        <div>
+          <h4 class="h-sm">4. Emocional</h4>
+          <div class="s4"></div>
+          <p class="body-sm" style="font-size: 7.5pt; line-height: 1.6;">El cuerpo emocional es donde todo se siente. Dentro de él se almacenan las huellas de las emociones que han pasado por nosotros pero que aún no han sido liberadas. Es aquí donde reside el peso de los traumas vividos a lo largo de la vida. El cuerpo emocional se conecta con el cuerpo físico principalmente a través de los órganos, cuyo funcionamiento cambia en respuesta a las emociones que experimentamos.</p>
+
+          <div class="s8"></div>
+          <h4 class="h-sm">5. Físico</h4>
+          <div class="s4"></div>
+          <p class="body-sm" style="font-size: 7.5pt; line-height: 1.6;">Este cuerpo se relaciona con todo lo que experimentamos en la materia. Es el mundo percibido a través de los cinco sentidos: lo que vemos, oímos, tocamos, olemos y saboreamos. El plano físico es el único plano percibido de la misma manera — objetivamente — por todas las personas. Por esta razón, sirve como punto de referencia para verificar lo que está ocurriendo en todos los demás planos.</p>
+
+          <div class="s8"></div>
+          <div class="call-gold call" style="padding: 8px 14px;">
+            <p style="color: var(--rose-800); font-size: 9pt;">Todo lo que se manifiesta en la materia tiene su origen en el plano espiritual. Esto es lo mismo que decir que todo tiene una razón de ser.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="s12"></div>
+      <div class="line-c"></div>
+      <div class="s8"></div>
+
+      <div class="label" style="text-align: center;">Técnicas de Limpieza</div>
+      <div class="s4"></div>
+      <p style="font-family: var(--font-serif); font-size: 12pt; font-weight: 300; color: var(--rose-800); text-align: center; line-height: 1.4;">
+        Las siguientes técnicas trabajan en los niveles espiritual<br>y energético de nuestra existencia.
+      </p>
+    </div>
+
+    <div class="pn"><span>4</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 6 — BREAKING SPIRITUAL AGREEMENTS
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="phase-badge">Nivel Espiritual</div>
+      <div class="s8"></div>
+      <h2 class="h-lg">Romper Acuerdos Espirituales</h2>
+      <div class="s6"></div>
+
+      <div class="img-full" style="max-width: 300px;">
+        <img src="images/level-3/41-stick-of-agreements.png" alt="Breaking Agreements">
+      </div>
+      <div class="s6"></div>
+
+      <p class="body" style="margin-bottom: 6px;">Una relación solo puede manifestarse en el mundo material si está sostenida por un acuerdo espiritual. Tales acuerdos se forman con el consentimiento de ambas partes a nivel espiritual y pueden ser disueltos por cualquiera de las partes mediante la voluntad consciente. Cada vez que se crea un acuerdo espiritual, se forma un 'palo de acuerdos' entre las personas involucradas.</p>
+      <p class="body" style="margin-bottom: 6px;">A veces, estos acuerdos se alinean con nuestras intenciones conscientes — por ejemplo, cuando dos personas eligen casarse. Otras veces, resuenan con deseos inconscientes, que es cuando pueden desplegarse situaciones que no queremos conscientemente. A través de esta técnica de la Meditación de la Rosa, sin embargo, siempre es posible disolver estos palos de acuerdos.</p>
+      <div class="s6"></div>
+
+      <div class="label" style="margin-bottom: 6px;">Para Romper Estos Acuerdos</div>
+      <ul class="bul">
+        <li>Crea una situación de alta vibración, por ejemplo justo después de la Meditación de las Rosas.</li>
+        <li>Visualiza el palo de acuerdos que contiene todos los acuerdos que quieres romper.</li>
+        <li>Rompe este palo en tres pedazos.</li>
+        <li>Crea una Rosa enraizada.</li>
+        <li>Coloca los tres pedazos del palo en esta Rosa.</li>
+        <li>Explota la Rosa fuera del Aura.</li>
+      </ul>
+
+      <div class="s8"></div>
+      <div class="call">
+        <p>Este proceso debe abordarse con gran conciencia, ya que conlleva consecuencias muy tangibles en nuestras vidas.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>5</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 7 — CUTTING ENERGETIC CORDS
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="phase-badge">Nivel Energético</div>
+      <div class="s12"></div>
+      <h2 class="h-lg">Cortar Cordones Energéticos</h2>
+      <div class="s16"></div>
+
+      <div class="img-full">
+        <img src="images/level-3/42-cutting-cords.png" alt="Cortar Cordones Energéticos">
+      </div>
+      <div class="s16"></div>
+
+      <p class="body" style="margin-bottom: 8px;">Tenemos interacciones energéticas con otros constantemente — cuando los vemos, los oímos, los tocamos e incluso cuando pensamos en ellos. Cuando se forman cordones energéticos, nuestras auras se conectan a través de estos lazos, permitiendo que la energía fluya entre nosotros. Por eso a menudo podemos sentir lo que les sucede a las personas cercanas a nosotros, incluso a la distancia.</p>
+      <p class="body">Cuando las relaciones llegan a su fin, podemos vernos profundamente afectados por las energías que continúan llegándonos a través de estos vínculos. Por esta razón, es importante saber cómo cortarlos conscientemente:</p>
+      <div class="s8"></div>
+
+      <ul class="bul">
+        <li>Cierra los ojos.</li>
+        <li>Visualiza tu aura con vínculos saliendo de tus chakras.</li>
+        <li>Coloca tu mano dominante sobre la 7ª vértebra cervical, ubicada en la unión del cuello y la espalda, a la altura del 5º chakra.</li>
+        <li>Ten la intención de que tu mano tiene el poder de cortar todos los cordones.</li>
+        <li>Haz el movimiento de corte por debajo de tu 1er chakra, colocando tu mano sobre la silla en la que estás sentado.</li>
+      </ul>
+
+      <div class="s10"></div>
+      <div class="call">
+        <p>También podemos cortar los lazos cuando la relación no ha terminado, pero sentimos que necesitamos más neutralidad. Estos lazos se reforman muy rápido cuando nos reconectamos con la persona.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>6</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 8 — SEXUAL RELATIONSHIPS
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="label">Técnica Aplicada</div>
+      <div class="s6"></div>
+      <h2 class="h-lg">Relaciones Sexuales</h2>
+      <div class="s4"></div>
+
+      <div class="img-full" style="max-width: 180px;">
+        <img src="images/level-3/43-sexual-recovery-rose.png" alt="Relaciones Sexuales Energy Cleansing">
+      </div>
+      <div class="s4"></div>
+
+      <p class="body" style="margin-bottom: 6px; font-size: 8pt;">Después de una relación sexual, si quieres recuperar cualquier energía que puedas haber dejado con la otra persona y devolver cualquier energía que esta pueda haber dejado contigo, simplemente sigue estos pasos:</p>
+      <ul class="bul">
+        <li style="font-size: 7.5pt; line-height: 1.5; padding: 1px 0 1px 16px;">Realiza las técnicas de preparación (cordón de enraizamiento, Sol Dorado, energía de la Tierra y el Cosmos, espacio sagrado).</li>
+        <li style="font-size: 7.5pt; line-height: 1.5; padding: 1px 0 1px 16px;">Crea una Rosa naranja y coloca en ella la energía de la persona con su cuerpo físico, emociones y sentimientos que puedan surgir en ese momento — puedes visualizar a la persona entrando en la rosa, la situación que acabas de vivir. Explota (puedes repetir este paso tantas veces como sea necesario).</li>
+        <li style="font-size: 7.5pt; line-height: 1.5; padding: 1px 0 1px 16px;">Crea una Rosa sin enraizar de color naranja que limpie cualquier energía de la persona que pueda haber quedado en alguna capa de tu aura. Explota.</li>
+        <li style="font-size: 7.5pt; line-height: 1.5; padding: 1px 0 1px 16px;">Crea una Rosa naranja enraizada y ten la intención de que esta rosa recupere la energía que quedó con esta persona. Explota.</li>
+        <li style="font-size: 7.5pt; line-height: 1.5; padding: 1px 0 1px 16px;">Si quieres permanecer energéticamente separado de esta persona, haz el movimiento de cortar los cordones energéticos que se han establecido durante la relación.</li>
+        <li style="font-size: 7.5pt; line-height: 1.5; padding: 1px 0 1px 16px;">Crea una Rosa rosada sin enraizar, coloca a la persona en ella, visualízala feliz con plena salud en su cuerpo, mente y alma. Repite mentalmente: <em>"Feliz, sano, íntegro, cuerpo, mente y alma."</em> Haz que la Rosa se eleve hacia el centro del universo, deseándole lo mejor.</li>
+        <li style="font-size: 7.5pt; line-height: 1.5; padding: 1px 0 1px 16px;">Renueva tu cordón de enraizamiento. Llénate con la luz del Sol Dorado. Apoya tus manos en el suelo para descargar el exceso de energía.</li>
+      </ul>
+
+      <div class="s4"></div>
+      <div class="call" style="padding: 8px 14px;">
+        <p style="font-size: 9pt;">También puedes usar esta técnica para relaciones que ocurrieron hace mucho tiempo o cuando terminas una relación. En este caso, puede ser interesante romper también el palo de acuerdos que tienes con esa persona.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>7</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 9 — CLASSES AND SERVICES (combined)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="label">Práctica Profesional</div>
+      <div class="s4"></div>
+      <h2 class="h-lg">Clases y Servicios</h2>
+      <div class="s8"></div>
+
+      <p class="body-sm" style="margin-bottom: 8px;">Cuando prestas servicios en cualquier área — o cuando eres profesor o conferencista — puedes usar la Meditación de la Rosa para mantener tu integridad energética.</p>
+
+      <div class="cols" style="gap: 16px;">
+        <div>
+          <h4 class="h-sm">Antes</h4>
+          <div class="s4"></div>
+          <p class="body-sm" style="font-size: 8pt;">Realiza todas las técnicas de preparación de la Meditación de la Rosa (cordón de enraizamiento, Sol Dorado, energía de la Tierra y el Cosmos, espacio sagrado) y limpia y protege el espacio físico donde tendrá lugar la consulta o la clase.</p>
+        </div>
+        <div>
+          <h4 class="h-sm">Después</h4>
+          <div class="s4"></div>
+          <p class="body-sm" style="font-size: 8pt;">Después de despedirte de la persona que atendiste o de tus estudiantes, puedes tomarte unos momentos para reorganizar tus energías y realizar las técnicas de separación energética, ya que durante una clase o tratamiento pueden formarse muchos vínculos emocionales, energéticos y espirituales.</p>
+        </div>
+      </div>
+
+      <div class="s12"></div>
+      <div class="line"></div>
+      <div class="s8"></div>
+
+      <div class="label" style="margin-bottom: 4px;">Pasos de Limpieza Posteriores a la Sesión</div>
+      <div class="s4"></div>
+
+      <ul class="bul">
+        <li style="font-size: 8pt; padding: 1px 0 1px 16px;">Corta el cordón de enraizamiento y crea uno nuevo.</li>
+        <li style="font-size: 8pt; padding: 1px 0 1px 16px;">Llénate con la luz del Sol Dorado.</li>
+        <li style="font-size: 8pt; padding: 1px 0 1px 16px;">Corta los cordones que unen tu Aura al Aura de la(s) persona(s).</li>
+        <li style="font-size: 8pt; padding: 1px 0 1px 16px;">Crea una Rosa enraizada frente a ti, atrae tu propia energía hacia la Rosa y explota la Rosa — esto recupera tu energía que pueda haber quedado en el Aura de la(s) persona(s).</li>
+        <li style="font-size: 8pt; padding: 1px 0 1px 16px;">Explota las Rosas de separación, protección y observación y crea nuevas.</li>
+        <li style="font-size: 8pt; padding: 1px 0 1px 16px;">Crea una Rosa, coloca dentro de la Rosa a la persona que atendiste o a tus estudiantes, y explota la Rosa. De esta manera, devuelves cualquier energía que pueda haber quedado en tu aura.</li>
+        <li style="font-size: 8pt; padding: 1px 0 1px 16px;">Al terminar contratos, cuando ya no planeas atender a la persona: rompe los acuerdos espirituales.</li>
+        <li style="font-size: 8pt; padding: 1px 0 1px 16px;">Crea una Rosa rosada sin enraizar, coloca a la(s) persona(s) en esta Rosa, visualiza a la(s) persona(s) feliz con plena salud en su cuerpo, mente y Alma. Repite mentalmente: <em>"Feliz, sano, completo, cuerpo, mente, Alma."</em> Haz que la rosa se eleve hacia el centro del Universo.</li>
+        <li style="font-size: 8pt; padding: 1px 0 1px 16px;">Haz la meditación de limpieza de las Rosas Doradas Adhesivas (o la meditación completa si es necesario).</li>
+        <li style="font-size: 8pt; padding: 1px 0 1px 16px;">Crea un nuevo cordón de enraizamiento. Llénate con la luz del Sol Dorado.</li>
+        <li style="font-size: 8pt; padding: 1px 0 1px 16px;">Elimina el exceso de energía apoyando tus manos en el suelo.</li>
+        <li style="font-size: 8pt; padding: 1px 0 1px 16px;">Explota las 4 Rosas en las esquinas de la sala.</li>
+      </ul>
+    </div>
+
+    <div class="pn"><span>8</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 11 — CREATION OF REALITY & IMPECCABILITY
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="label">Maestría</div>
+      <div class="s4"></div>
+      <h2 class="h-lg">Creación de la Realidad</h2>
+      <div class="s6"></div>
+
+      <div class="img-full" style="width: 55%; max-width: 340px;">
+        <img src="images/manual-l3-creating-reality.png" alt="Creación de la Realidad">
+      </div>
+      <div class="s6"></div>
+
+      <p class="body" style="margin-bottom: 6px; font-size: 9pt;">Los seres humanos somos seres complejos, dotados de la capacidad de crear mundos internos a través de la imaginación y la mente. Esta misma capacidad nos permite dar forma a realidades complejas fuera de nosotros. La realidad que experimentamos hoy es el resultado de lo que hemos plantado en el pasado, ya sea en esta vida o en vidas anteriores. Si deseamos transformar la realidad que nos rodea, debemos observar cómo estamos viviendo y comenzar un proceso de transformación de adentro hacia afuera.</p>
+
+      <div class="s4"></div>
+      <h3 class="h-md">Impecabilidad</h3>
+      <div class="s4"></div>
+      <p class="body" style="margin-bottom: 6px; font-size: 9pt;">A menudo nos encontramos viviendo realidades que no deseamos, sin comprender por qué no logramos manifestar lo que anhelamos. Esto ocurre porque diferentes partes de nosotros intentan moverse en distintas direcciones al mismo tiempo, todas usando el mismo cuerpo. Tal conflicto interno hace imposible avanzar y resulta en estancamiento.</p>
+      <p class="body" style="margin-bottom: 6px; font-size: 9pt;">La ciencia de crear la realidad implica aprender a ser impecables con nosotros mismos, poniendo toda nuestra energía y chakras en la misma dirección:</p>
+
+      <div class="sum" style="padding: 14px 20px;">
+        <table style="width: 100%; border-collapse: collapse;">
+          <tbody>
+            <tr style="border-bottom: 0.5px solid var(--rose-200);">
+              <td style="padding: 2px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--rose-800); width: 85px;">Intención</td>
+              <td style="padding: 2px 0; font-family: var(--font-sans); font-size: 8pt; color: var(--charcoal);">Quiero / pido / rezo</td>
+              <td style="padding: 2px 0; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400); text-align: right;">conectado al 7º chakra</td>
+            </tr>
+            <tr style="border-bottom: 0.5px solid var(--rose-200);">
+              <td style="padding: 2px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--rose-800);">Pensamiento</td>
+              <td style="padding: 2px 0; font-family: var(--font-sans); font-size: 8pt; color: var(--charcoal);">Pienso / imagino / veo</td>
+              <td style="padding: 2px 0; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400); text-align: right;">conectado al 6º chakra</td>
+            </tr>
+            <tr style="border-bottom: 0.5px solid var(--rose-200);">
+              <td style="padding: 2px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--rose-800);">Palabra</td>
+              <td style="padding: 2px 0; font-family: var(--font-sans); font-size: 8pt; color: var(--charcoal);">Digo / callo / reflexiono</td>
+              <td style="padding: 2px 0; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400); text-align: right;">conectado al 5º chakra</td>
+            </tr>
+            <tr style="border-bottom: 0.5px solid var(--rose-200);">
+              <td style="padding: 2px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--rose-800);">Sentimiento</td>
+              <td style="padding: 2px 0; font-family: var(--font-sans); font-size: 8pt; color: var(--charcoal);">Siento / digiero / alquimizo</td>
+              <td style="padding: 2px 0; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400); text-align: right;">conectado al 2º y 4º chakras</td>
+            </tr>
+            <tr>
+              <td style="padding: 2px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--rose-800);">Acción</td>
+              <td style="padding: 2px 0; font-family: var(--font-sans); font-size: 8pt; color: var(--charcoal);">Actúo / hago / renuncio</td>
+              <td style="padding: 2px 0; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400); text-align: right;">conectado al 1er y 3er chakras</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="pn"><span>9</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 12 — MOCK-UP
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="label">Manifestación</div>
+      <div class="s6"></div>
+      <h2 class="h-lg">Mock-up</h2>
+      <div class="s10"></div>
+
+      <div class="img-full" style="max-width: 380px;">
+        <img src="images/level-3/44-mock-up.png" alt="Mock-up Manifestación">
+      </div>
+      <div class="s10"></div>
+
+      <p class="body" style="margin-bottom: 6px; font-size: 9pt;">Esta es una técnica para manifestar situaciones o resultados en el plano físico. Es importante señalar que esta práctica debe usarse solo para uno mismo; no puede realizarse en nombre de otra persona. Para que sea efectiva, debe practicarse durante siete días consecutivos y enfocarse en un objetivo a la vez. Cuanto más alto sea tu estado vibracional al crear el mock-up, más efectivo será el proceso. Por esta razón, un momento ideal para practicarlo es, por ejemplo, inmediatamente después de completar la Meditación de la Rosa.</p>
+
+      <ul class="bul">
+        <li style="font-size: 8pt;">Crea una Rosa enraizada y dentro de esa Rosa imagina lo que quieres, creando la imagen con todo el detalle que puedas.</li>
+        <li style="font-size: 8pt;">Crea una segunda Rosa enraizada que debe colocarse a la derecha de la primera Rosa. Tenemos la intención de que esta Rosa limpie toda energía que no pertenezca a la primera Rosa, cualquier tipo de bloqueo que interfiera con la realización de lo que deseas. No te enfoques en lo que se está limpiando, simplemente establece la intención de limpiar.</li>
+        <li style="font-size: 8pt;">Crea una tercera Rosa rosada enraizada (el color del Amor Divino). En esta Rosa, traemos a tu interior la imagen de algo que amas mucho, algo que te da gran satisfacción y placer para que puedas elevar tu vibración al máximo, a la vibración del amor.</li>
+        <li style="font-size: 8pt;">Inspirado por la Rosa anterior, ahora imagina la energía del Amor Divino, en rosa, saliendo de tu corazón y envolviendo la primera Rosa, colocándola en un hermoso círculo rosado, como una burbuja.</li>
+        <li style="font-size: 8pt;">Corta las raíces de la primera Rosa y déjala elevarse hacia el centro del Universo. Pide siempre que se haga si es para el bien mayor.</li>
+        <li style="font-size: 8pt;">Explota la tercera Rosa (la rosada). Explota la segunda Rosa (la rosa de limpieza).</li>
+      </ul>
+
+      <div class="s6"></div>
+      <div class="call">
+        <p>Recuerda repetir esta técnica durante 7 días consecutivos. Si te saltas un día antes de completar el ciclo de 7 días, vuelve al principio. Después de completar el mock-up, vive tu vida tratando de alinearte en todos los niveles, entregando la realización de tus deseos al Ser Supremo, abierto a recibir de la manera que el Gran Misterio permita.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>10</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 13 — ELEMENTS SUMMARY
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="justify-content: center;">
+      <div class="img-full" style="max-width: 360px; border-radius: 50%; overflow: hidden; background: transparent;">
+        <img src="images/level-3/l3-p13-elements-summary-realistic-rose.png" alt="Elementos del Nivel 3" style="border-radius: 50%;">
+      </div>
+      <div class="s12"></div>
+
+      <div class="sum" style="padding: 14px 18px;">
+        <div class="label" style="margin-bottom: 3px;">Referencia Rápida</div>
+        <h2 class="h-md" style="margin-bottom: 6px; font-size: 13pt;">Elementos de la Meditación de la Rosa Diaria Nivel 3</h2>
+        <div class="line" style="margin-bottom: 8px;"></div>
+
+        <div class="cols" style="gap: 14px;">
+          <div>
+            <p class="body-sm" style="font-weight: 500; color: var(--rose-clay); margin-bottom: 3px; font-size: 8pt;">Práctica Diaria</p>
+            <ul class="bul" style="font-size: 7.5pt;">
+              <li style="padding: 1px 0 1px 12px;">Cordón de enraizamiento</li>
+              <li style="padding: 1px 0 1px 12px;">Sol Dorado</li>
+              <li style="padding: 1px 0 1px 12px;">Límites del Aura y expansión del cordón</li>
+              <li style="padding: 1px 0 1px 12px;">Rosas de protección, separación y observación</li>
+              <li style="padding: 1px 0 1px 12px;">Energías de la Tierra y Cósmicas</li>
+              <li style="padding: 1px 0 1px 12px;">Rosa de Limpieza</li>
+              <li style="padding: 1px 0 1px 12px;">Rosa de recuperación de energía</li>
+              <li style="padding: 1px 0 1px 12px;">Espacio sagrado</li>
+              <li style="padding: 1px 0 1px 12px;">Protección del espacio</li>
+              <li style="padding: 1px 0 1px 12px;">Rosas enraizadas que limpian los chakras delanteros y traseros</li>
+              <li style="padding: 1px 0 1px 12px;">Rosas sin enraizar que limpian las capas del aura</li>
+              <li style="padding: 1px 0 1px 12px;">Rosas Doradas Adhesivas</li>
+              <li style="padding: 1px 0 1px 12px;">Limpieza del analizador</li>
+              <li style="padding: 1px 0 1px 12px;">Rosa Rosada Sin Enraizar</li>
+              <li style="padding: 1px 0 1px 12px;">Cierre: Cordón + Sol Dorado + Descarga del exceso de energía</li>
+            </ul>
+          </div>
+          <div>
+            <p class="body-sm" style="font-weight: 500; color: var(--rose-clay); margin-bottom: 3px; font-size: 8pt;">Otros Elementos del Nivel 3</p>
+            <ul class="bul" style="font-size: 7.5pt;">
+              <li style="padding: 1px 0 1px 12px;">Romper acuerdos espirituales</li>
+              <li style="padding: 1px 0 1px 12px;">Cortar cordones energéticos</li>
+              <li style="padding: 1px 0 1px 12px;">Limpieza de la energía de las parejas sexuales</li>
+              <li style="padding: 1px 0 1px 12px;">Preparación y limpieza para clases y consultas</li>
+              <li style="padding: 1px 0 1px 12px;">Mock-up</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pn"><span>11</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 14 — CLOSING
+       ===================================================== -->
+  <div class="page closing-bg">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="align-items: center; justify-content: center; text-align: center;">
+
+      <div class="img-circle" style="width: 180px; height: 180px; margin-bottom: 36px;">
+        <img src="images/manual-l3-cover-l3.png" alt="Rose">
+      </div>
+
+      <div style="font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400); line-height: 1.8; letter-spacing: 0.03em;">
+        Enseñanzas de Angelina Ataíde &nbsp;·&nbsp; International Aura and Dream School<br>
+        Ilustraciones: Drica Voivodic &amp; Ana Leite<br>
+        Edición y Traducción: Dara Ayoub &nbsp;·&nbsp; Diseño: Jennifer Lawless
+      </div>
+      <div class="s20"></div>
+      <div style="font-family: var(--font-sans); font-size: 6.5pt; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold);">International Aura and Dream School</div>
+      <div class="s8"></div>
+    </div>
+  </div>
+
+</body>
+</html>
