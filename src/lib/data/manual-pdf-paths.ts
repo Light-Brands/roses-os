@@ -14,6 +14,25 @@ export interface ManualPdfConfig {
   labels: Partial<Record<Locale, string>>;
 }
 
+/**
+ * Per-locale label builders for the per-level student manual button.
+ * Each embeds the level number so the button reads e.g. "Baixar Manual do Nível 3"
+ * instead of a generic "Baixar Manual do Estudante" repeated across every level.
+ * Locales without a builder (ru, uk) fall back to the English label in the button.
+ */
+const manualLabelBuilders: Partial<Record<Locale, (level: number) => string>> = {
+  en: (level) => `Download Level ${level} Manual`,
+  es: (level) => `Descargar Manual del Nivel ${level}`,
+  pt: (level) => `Baixar Manual do Nível ${level}`,
+  el: (level) => `Λήψη Εγχειριδίου Επιπέδου ${level}`,
+};
+
+function manualLabels(level: number): Partial<Record<Locale, string>> {
+  return Object.fromEntries(
+    Object.entries(manualLabelBuilders).map(([locale, build]) => [locale, build(level)]),
+  ) as Partial<Record<Locale, string>>;
+}
+
 export const manualPdfConfigs: ManualPdfConfig[] = [
   {
     level: 1,
@@ -23,12 +42,7 @@ export const manualPdfConfigs: ManualPdfConfig[] = [
       pt: '/resources/manuals/Rose-Level-1-Manual-PT.pdf',
       el: '/resources/manuals/Rose-Level-1-Manual-EL.pdf',
     },
-    labels: {
-      en: 'Download Student Manual',
-      es: 'Descargar Manual del Estudiante',
-      pt: 'Baixar Manual do Estudante',
-      el: 'Λήψη Εγχειριδίου Μαθητή',
-    },
+    labels: manualLabels(1),
   },
   {
     level: 2,
@@ -37,12 +51,7 @@ export const manualPdfConfigs: ManualPdfConfig[] = [
       es: '/resources/manuals/Rose-Level-2-Manual-ES.pdf',
       pt: '/resources/manuals/Rose-Level-2-Manual-PT.pdf',
     },
-    labels: {
-      en: 'Download Student Manual',
-      es: 'Descargar Manual del Estudiante',
-      pt: 'Baixar Manual do Estudante',
-      el: 'Λήψη Εγχειριδίου Μαθητή',
-    },
+    labels: manualLabels(2),
   },
   {
     level: 3,
@@ -51,12 +60,7 @@ export const manualPdfConfigs: ManualPdfConfig[] = [
       es: '/resources/manuals/Rose-Level-3-Manual-ES.pdf',
       pt: '/resources/manuals/Rose-Level-3-Manual-PT.pdf',
     },
-    labels: {
-      en: 'Download Student Manual',
-      es: 'Descargar Manual del Estudiante',
-      pt: 'Baixar Manual do Estudante',
-      el: 'Λήψη Εγχειριδίου Μαθητή',
-    },
+    labels: manualLabels(3),
   },
 ];
 
