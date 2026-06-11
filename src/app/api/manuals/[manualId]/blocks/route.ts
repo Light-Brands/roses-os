@@ -44,25 +44,53 @@ export async function POST(
   try {
     const { manualId } = await params;
     const body = await request.json();
-    const { language, block_type, content, position, updated_by } = body;
+    const { language, block_type, content, updated_by } = body;
 
-    if (!language || !block_type || position === undefined) {
+    if (!language || !block_type) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
     const supabase = await createServerSupabaseClient();
-    const { data, error } = await supabase
-      .from('manual_blocks')
-      .insert({
-        manual_id: manualId,
-        language,
-        block_type,
-        content: (content ?? {}) as Json,
-        position,
-        updated_by: updated_by ?? null,
-      })
-      .select()
-      .single();
+
+    // The interim insert position is assigned SERVER-SIDE as (current max for this
+    // manual + language) + 1, so a create can never collide with an occupied slot.
+    // `manual_blocks` carries a UNIQUE (manual_id, language, position) key
+    // (migration 0006). A client cannot safely pick the free slot: after a delete
+    // (which does not renumber) positions are non-contiguous and `row count` is
+    // an occupied position, raising 23505. The client reorders immediately after
+    // every create, which re-contiguifies, so this interim position only has to
+    // be collision-free, not final. A one-shot retry covers the rare concurrent
+    // create race that two readers of max could otherwise lose.
+    async function nextPosition(): Promise<number> {
+      const { data: top } = await supabase
+        .from('manual_blocks')
+        .select('position')
+        .eq('manual_id', manualId)
+        .eq('language', language)
+        .order('position', { ascending: false })
+        .limit(1)
+        .maybeSingle();
+      return (top?.position ?? -1) + 1;
+    }
+
+    const insert = (position: number) =>
+      supabase
+        .from('manual_blocks')
+        .insert({
+          manual_id: manualId,
+          language,
+          block_type,
+          content: (content ?? {}) as Json,
+          position,
+          updated_by: updated_by ?? null,
+        })
+        .select()
+        .single();
+
+    let { data, error } = await insert(await nextPosition());
+    if (error && error.code === '23505') {
+      ({ data, error } = await insert(await nextPosition()));
+    }
 
     if (error) {
       return NextResponse.json({ error: error.message }, { status: 500 });

@@ -46,6 +46,11 @@ next-env.d.ts
 scripts/pdf-manuals/images/level-2/19-physical-space.png
 scripts/pdf-manuals/images/level-2/24-chakras.png
 
+# Canon source PDFs (local reconstruction input, too large for git; ~58MB).
+# The pipeline renders these from a local docs/canon/ checkout. patterns.yaml
+# is the small block-pattern map and IS committed.
+docs/canon/*.pdf
+
 # QIE Intelligence Framework (symlink — not part of this project)
 _bmad
 _qie

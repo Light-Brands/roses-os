@@ -1,0 +1,98 @@
+/*
+ * Shared print CSS for the manual editor (T-042).
+ *
+ * Consumed by:
+ *   - PreviewPane.tsx (client-side preview)
+ *   - The Chromium adapter PDF route in the sister-arc faithful-pdf-export
+ *     worktree (once that PR merges, this file becomes the single source).
+ *
+ * Tokens come from typography.ts. CSS custom properties let consumers stamp
+ * the same surface whether rendered in the browser or in a Puppeteer page.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+
+.manual-print, .manual-preview {
+  font-family: var(--type-font-sans, 'Inter', sans-serif);
+  font-size: var(--type-size-body, 11pt);
+  line-height: var(--type-line-body, 1.7);
+  color: var(--type-ink, #3F3E3C);
+  background: var(--type-paper, #FFF);
+  padding: 0.75in;
+  max-width: 8.5in;
+  margin: 0 auto;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.manual-print h1, .manual-preview h1 {
+  font-family: var(--type-font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: var(--type-size-h1, 26pt);
+  line-height: var(--type-line-heading, 1.25);
+  font-weight: 600;
+  margin: 32px 0 16px;
+}
+
+.manual-print h2, .manual-preview h2 {
+  font-family: var(--type-font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: var(--type-size-h2, 20pt);
+  line-height: var(--type-line-heading, 1.25);
+  font-weight: 600;
+  margin: 28px 0 12px;
+}
+
+.manual-print h3, .manual-preview h3 {
+  font-family: var(--type-font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: var(--type-size-h3, 16pt);
+  font-weight: 500;
+  margin: 24px 0 10px;
+}
+
+.manual-print p, .manual-preview p { margin-bottom: 12px; }
+.manual-print ul, .manual-preview ul,
+.manual-print ol, .manual-preview ol { padding-left: 24px; margin-bottom: 12px; }
+.manual-print li, .manual-preview li { margin-bottom: 4px; }
+.manual-print strong, .manual-preview strong { font-weight: 600; }
+.manual-print em, .manual-preview em { font-style: italic; }
+
+.manual-print figure, .manual-preview figure { margin: 16px 0; text-align: center; }
+.manual-print figure img, .manual-preview figure img { max-width: 100%; border-radius: 4px; }
+.manual-print figcaption, .manual-preview figcaption {
+  font-style: italic;
+  font-size: var(--type-size-caption, 9pt);
+  color: var(--type-terracotta, #9C6F6E);
+  margin-top: 6px;
+}
+
+.manual-print .callout, .manual-preview .callout {
+  border-left: 3px solid var(--type-terracotta, #9C6F6E);
+  background: var(--type-rose-tint, #FDF4F2);
+  padding: 12px 16px;
+  margin: 16px 0;
+  break-inside: avoid;
+}
+
+.manual-print .numbered-exercise, .manual-preview .numbered-exercise {
+  display: grid;
+  grid-template-columns: 4em 1fr;
+  gap: 16px;
+  margin: 16px 0;
+  break-inside: avoid;
+}
+
+.manual-print .spoken-instruction, .manual-preview .spoken-instruction {
+  border-left: 3px solid var(--type-terracotta, #9C6F6E);
+  background: rgba(252, 240, 235, 0.5);
+  padding: 12px 16px;
+  margin: 16px 0;
+  font-weight: 600;
+  color: var(--type-plum, #5E4A5F);
+  break-inside: avoid;
+}
+
+.manual-print .page-break, .manual-preview .page-break {
+  page-break-after: always;
+  break-after: page;
+}
+
+.manual-print .section, .manual-preview .section { break-inside: avoid-page; }

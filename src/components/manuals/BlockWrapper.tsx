@@ -77,16 +77,22 @@ export default function BlockWrapper({
       {/* Hover highlight bar */}
       <div className="absolute -left-3 top-0 bottom-0 w-0.5 rounded-full bg-transparent group-hover/block:bg-[var(--color-rose-clay)]/30 transition-colors duration-200" />
 
-      {/* Action toolbar: hover on desktop, tap drag handle on touch */}
+      {/* Action toolbar: hover on desktop, tap drag handle on touch.
+          The outer container sits just above the block (top-0 -translate-y-full)
+          and carries `pb-2` as a transparent hover-bridge so its hoverable area
+          touches the block top — no dead zone where the cursor drops the hover
+          and the toolbar fades before it can be clicked. It's a descendant of
+          group/block, so hovering it keeps the group hovered. */}
       <div className={cn(
-        'absolute right-0 -top-1 -translate-y-full',
-        'flex items-center gap-0.5 px-1.5 py-1',
-        'bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg shadow-sm',
-        'transition-all duration-150',
-        'z-10',
+        'absolute right-0 top-0 -translate-y-full z-10 pb-2',
+        'transition-opacity duration-150',
         showActions
           ? 'opacity-100 pointer-events-auto'
           : 'opacity-0 pointer-events-none group-hover/block:opacity-100 group-hover/block:pointer-events-auto'
+      )}>
+      <div className={cn(
+        'flex items-center gap-0.5 px-1.5 py-1',
+        'bg-[var(--color-surface)] border border-[var(--color-border)] rounded-lg shadow-sm'
       )}>
         {/* Type label */}
         <span className="text-[10px] text-[var(--color-foreground-faint)] font-medium px-1.5 mr-0.5 select-none">
@@ -165,6 +171,7 @@ export default function BlockWrapper({
             <path strokeLinecap="round" strokeLinejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
           </svg>
         </button>
+      </div>
       </div>
 
       {/* Content row with drag handle */}
