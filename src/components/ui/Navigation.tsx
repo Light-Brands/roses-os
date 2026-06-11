@@ -213,7 +213,7 @@ export function Navigation({
                 sits at the start with the nav links beside it. Side-by-side layout so
                 the title is always visible and never overlaps the links at any width. */}
             <div className="z-10 flex items-center min-w-0 flex-1 max-w-[55%] sm:max-w-[60%] md:max-w-none xl:flex-none xl:shrink-0 lg:max-w-none xl:mr-8 2xl:mr-10">
-              {logo || <Logo size="lg" />}
+              {logo || <Logo size="lg" twoLine />}
             </div>
 
             {/* Nav links — fill the space between the logo and the CTA */}
