@@ -10,6 +10,8 @@ interface LogoProps {
   size?: 'sm' | 'md' | 'lg';
   showText?: boolean;
   textClassName?: string;
+  /** Wrap the school name onto two lines to save horizontal space (e.g. in the header). */
+  twoLine?: boolean;
   onClick?: () => void;
 }
 
@@ -25,6 +27,7 @@ export function Logo({
   size = 'md',
   showText = false,
   textClassName,
+  twoLine = false,
   onClick,
 }: LogoProps) {
   const iconSize = size === 'lg' ? 36 : size === 'md' ? 30 : 24;
@@ -45,7 +48,15 @@ export function Logo({
         )}
         style={{ fontFamily: 'var(--font-sans)' }}
       >
-        International Aura and Dream School
+        {twoLine ? (
+          <>
+            International
+            <br />
+            Aura and Dream School
+          </>
+        ) : (
+          'International Aura and Dream School'
+        )}
       </span>
     </div>
   );
