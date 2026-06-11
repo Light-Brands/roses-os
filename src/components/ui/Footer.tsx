@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, useInView } from 'framer-motion';
 import { navItems } from '@/lib/data';
+import { stackBrandName } from './BrandName';
 
 // =============================================================================
 // DATA
@@ -40,7 +41,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-10 border-b border-warm-800 dark:border-warm-200">
             {/* Col 1: Brand */}
             <div className="sm:col-span-2 lg:col-span-1">
-              <p className="font-serif text-xl text-white dark:text-warm-900 mb-3">International Aura and Dream School</p>
+              <p className="font-serif text-xl text-white dark:text-warm-900 mb-3 leading-tight">{stackBrandName()}</p>
               <p className="text-sm text-warm-500 dark:text-warm-400 leading-relaxed max-w-xs">
                 A living operating system for spiritual development. Rose Meditation, Aura Reading, and the journey to coherent living.
               </p>
