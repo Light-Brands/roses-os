@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meditação da Rosa — Nível 1 — Curso de Iniciação</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+    :root {
+      --rose-clay: #9C6F6E;
+      --rose-400: #D4A09A;
+      --rose-300: #E8C4BF;
+      --rose-200: #F5E1DD;
+      --rose-100: #FAF0EE;
+      --rose-50: #FDF8F7;
+      --rose-700: #6E4A49;
+      --rose-800: #523737;
+      --rose-900: #3B2828;
+      --gold: #9E956B;
+      --warm-0: #F7F5F2;
+      --charcoal: #3F3E3C;
+      --soft-charcoal: #5A5856;
+      --font-serif: 'Cormorant Garamond', 'Georgia', serif;
+      --font-sans: 'Inter', -apple-system, sans-serif;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    @page { size: 8.5in 11in; margin: 0; }
+    html { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { font-family: var(--font-sans); color: var(--charcoal); line-height: 1.7; background: white; }
+
+    /* PAGE */
+    .page {
+      width: 8.5in;
+      height: 11in;
+      position: relative;
+      page-break-after: always;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .page:last-child { page-break-after: auto; }
+
+    /* Border frame */
+    .page::before {
+      content: '';
+      position: absolute;
+      top: 0.35in; left: 0.35in; right: 0.35in; bottom: 0.35in;
+      border: 0.5px solid var(--rose-200);
+      border-radius: 2px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Inner padding — all content lives here */
+    .inner {
+      position: relative;
+      z-index: 1;
+      margin: 0.55in 0.65in 0.55in 0.65in;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Corner ticks */
+    .ck { position: absolute; width: 16px; height: 16px; z-index: 2; }
+    .ck::before, .ck::after { content: ''; position: absolute; background: var(--rose-300); }
+    .ck-tl { top: 0.3in; left: 0.3in; }
+    .ck-tr { top: 0.3in; right: 0.3in; }
+    .ck-bl { bottom: 0.3in; left: 0.3in; }
+    .ck-br { bottom: 0.3in; right: 0.3in; }
+    .ck-tl::before { width: 16px; height: 0.5px; top: 0; left: 0; }
+    .ck-tl::after  { width: 0.5px; height: 16px; top: 0; left: 0; }
+    .ck-tr::before { width: 16px; height: 0.5px; top: 0; right: 0; }
+    .ck-tr::after  { width: 0.5px; height: 16px; top: 0; right: 0; }
+    .ck-bl::before { width: 16px; height: 0.5px; bottom: 0; left: 0; }
+    .ck-bl::after  { width: 0.5px; height: 16px; bottom: 0; left: 0; }
+    .ck-br::before { width: 16px; height: 0.5px; bottom: 0; right: 0; }
+    .ck-br::after  { width: 0.5px; height: 16px; bottom: 0; right: 0; }
+
+    /* Page number */
+    .pn {
+      position: absolute;
+      bottom: 0.38in; left: 0; right: 0;
+      text-align: center;
+      font-family: var(--font-sans);
+      font-size: 7pt;
+      color: var(--rose-400);
+      letter-spacing: 0.12em;
+      z-index: 2;
+    }
+    .pn span { display: inline-block; padding: 0 8px; background: white; }
+
+    /* ============================================================
+       IMAGES — full-width hero approach
+       ============================================================ */
+
+    /* Centered image — 80% width, centered */
+    .img-full {
+      width: 80%;
+      max-width: 480px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+    }
+    .img-full img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+      outline: 0.5px solid var(--rose-200);
+      outline-offset: -0.5px;
+    }
+
+    /* Centered image with max-width — maintains 1:1 ratio */
+    .img-center {
+      display: flex;
+      justify-content: center;
+    }
+    .img-center img {
+      height: auto;
+      display: block;
+      border-radius: 16px;
+      outline: 0.5px solid var(--rose-200);
+      outline-offset: -0.5px;
+    }
+
+    /* Circular image — always 1:1 by nature */
+    .img-circle {
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+      aspect-ratio: 1;
+      box-shadow: 0 0 0 0.5px var(--rose-200);
+    }
+    .img-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Side-by-side: image + text */
+    .split {
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+    }
+    .split-img {
+      flex: 1;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 0 0 0.5px var(--rose-200);
+    }
+    .split-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+    }
+    .split-text {
+      flex: 1;
+    }
+
+    /* ============================================================
+       TYPOGRAPHY
+       ============================================================ */
+
+    .label {
+      font-family: var(--font-sans);
+      font-size: 6.5pt; font-weight: 500;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .h-xl {
+      font-family: var(--font-serif);
+      font-size: 36pt; font-weight: 300;
+      color: var(--rose-800);
+      line-height: 1.12; letter-spacing: -0.02em;
+    }
+
+    .h-lg {
+      font-family: var(--font-serif);
+      font-size: 22pt; font-weight: 300;
+      color: var(--rose-800);
+      line-height: 1.2; letter-spacing: -0.015em;
+    }
+
+    .h-md {
+      font-family: var(--font-serif);
+      font-size: 15pt; font-weight: 400;
+      color: var(--rose-800);
+      line-height: 1.3;
+    }
+
+    .h-sm {
+      font-family: var(--font-serif);
+      font-size: 11.5pt; font-weight: 500;
+      font-style: italic;
+      color: var(--rose-clay);
+    }
+
+    .sub {
+      font-family: var(--font-serif);
+      font-size: 15pt; font-weight: 400;
+      font-style: italic;
+      color: var(--rose-clay);
+    }
+
+    .body {
+      font-family: var(--font-sans);
+      font-size: 9.5pt; line-height: 1.75;
+      color: var(--charcoal);
+    }
+
+    .body-sm {
+      font-family: var(--font-sans);
+      font-size: 8.5pt; line-height: 1.7;
+      color: var(--soft-charcoal);
+    }
+
+    em { font-family: var(--font-serif); color: var(--rose-700); }
+
+    .line { width: 36px; height: 0.5px; background: var(--rose-300); }
+    .line-c { width: 36px; height: 0.5px; background: var(--rose-300); margin: 0 auto; }
+
+    /* Callout */
+    .call {
+      background: var(--rose-50);
+      border-left: 2px solid var(--rose-clay);
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+    }
+    .call p {
+      font-family: var(--font-serif);
+      font-size: 10pt; font-style: italic;
+      line-height: 1.6; color: var(--rose-700);
+    }
+    .call-gold { border-left-color: var(--gold); background: linear-gradient(135deg, var(--rose-50), var(--warm-0)); }
+
+    /* Lists */
+    .bul { list-style: none; }
+    .bul li {
+      font-family: var(--font-sans); font-size: 9.5pt;
+      line-height: 1.75; color: var(--charcoal);
+      padding: 2px 0 2px 16px; position: relative;
+    }
+    .bul li::before {
+      content: ''; position: absolute;
+      left: 2px; top: 11px;
+      width: 5px; height: 5px;
+      background: var(--rose-clay); border-radius: 50%;
+    }
+
+    .num { list-style: none; counter-reset: n; }
+    .num li {
+      counter-increment: n;
+      font-family: var(--font-sans); font-size: 9.5pt;
+      line-height: 1.75; color: var(--charcoal);
+      padding: 3px 0 3px 26px; position: relative;
+    }
+    .num li::before {
+      content: counter(n) '.'; position: absolute; left: 0;
+      font-family: var(--font-serif); font-size: 12pt; font-weight: 400;
+      color: var(--rose-clay);
+    }
+
+    /* Step card */
+    .step { display: flex; gap: 14px; align-items: baseline; }
+    .sn {
+      font-family: var(--font-serif);
+      font-size: 28pt; font-weight: 300;
+      color: var(--rose-300); line-height: 1;
+      flex-shrink: 0; width: 34px; text-align: center;
+    }
+
+    /* Two columns */
+    .cols { display: flex; gap: 24px; }
+    .cols > div { flex: 1; }
+
+    /* Summary card */
+    .sum {
+      background: linear-gradient(135deg, var(--rose-50), var(--warm-0));
+      border: 0.5px solid var(--rose-200);
+      border-radius: 16px;
+      padding: 20px 24px;
+    }
+    .sum .bul li { font-size: 9pt; padding: 2px 0 2px 14px; }
+    .sum .bul li::before { top: 9px; width: 4px; height: 4px; }
+
+    /* Spacers */
+    .s4  { height: 4px; }
+    .s6  { height: 6px; }
+    .s8  { height: 8px; }
+    .s10 { height: 10px; }
+    .s12 { height: 12px; }
+    .s16 { height: 16px; }
+    .s20 { height: 20px; }
+    .s24 { height: 24px; }
+    .s28 { height: 28px; }
+    .s32 { height: 32px; }
+    .s40 { height: 40px; }
+    .grow { flex: 1; }
+
+    /* Cover specific */
+    .cover-bg {
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--rose-50) 40%, var(--warm-0) 100%);
+    }
+    .cover-bg::before { border-color: var(--rose-300); }
+
+    .closing-bg {
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--rose-50) 50%, var(--warm-0) 100%);
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- =====================================================
+       PAGE 1 — COVER
+       ===================================================== -->
+  <div class="page cover-bg">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="align-items: center; justify-content: center; text-align: center;">
+      <div class="label">International Aura and Dream School</div>
+      <div class="s28"></div>
+
+      <div class="img-circle" style="width: 320px; height: 320px;">
+        <img src="images/manual-l1-cover.png" alt="Sacred Rose">
+      </div>
+      <div class="s32"></div>
+
+      <h1 class="h-xl">Meditação da Rosa</h1>
+      <div class="s6"></div>
+      <p class="sub">Nível 1 — Curso de Iniciação</p>
+      <div class="s32"></div>
+
+      <div class="line-c"></div>
+      <div class="s28"></div>
+
+      <div style="font-family: var(--font-sans); font-size: 8.5pt; color: var(--soft-charcoal); line-height: 1.8; letter-spacing: 0.04em;">
+        <strong style="font-weight: 500; color: var(--charcoal); font-size: 9pt;">Ensinamentos de Angelina Ataíde</strong><br>
+        International Aura and Dream School<br><br>
+        <span style="font-size: 7.5pt; color: var(--rose-400);">
+          Ilustrações originais: Saraswati Noemi, Cecilia Lynch &amp; Drica Voivodic<br>
+          Edição: Dara Ayoub &nbsp;·&nbsp; Design: Jennifer Lawless
+        </span>
+      </div>
+      <div class="s16"></div>
+      <div style="font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400); letter-spacing: 0.2em;">2026 &nbsp;·&nbsp; EDIÇÃO DE REVISÃO</div>
+    </div>
+
+    <div style="position: absolute; bottom: 0.55in; left: 0.8in; right: 0.8in; text-align: center; font-family: var(--font-sans); font-size: 6.5pt; color: var(--rose-400); line-height: 1.6; font-style: italic;">
+      Este manual destina-se exclusivamente a quem concluiu um curso de Meditação da Rosa de Nível 1.<br>
+      Para a sua própria proteção e para honrar a integridade desta linhagem, por favor não compartilhe nem reproduza este material com pessoas que não tenham recebido a iniciação.
+    </div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 2 — TABLE OF CONTENTS
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="padding-top: 0.3in;">
+      <div class="label">Conteúdo</div>
+      <div class="s6"></div>
+      <h2 class="h-lg" style="font-size: 26pt;">Meditação da Rosa</h2>
+      <div class="s4"></div>
+      <p class="sub" style="font-size: 13pt;">Nível 1 — Curso de Iniciação</p>
+      <div class="s20"></div>
+      <div class="line"></div>
+      <div class="s12"></div>
+
+      <!-- Rose icon on TOC -->
+      <div class="img-circle" style="width: 36px; height: 36px; margin: 0 auto 8px auto;">
+        <img src="images/level-1/01-the-rose.jpeg" alt="The Rose" style="object-position: top;">
+      </div>
+
+      <table style="width: 100%; border-collapse: collapse;">
+        <tbody>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="width: 26px; padding: 6px 0; font-family: var(--font-serif); font-size: 13pt; color: var(--rose-clay); vertical-align: baseline;"></td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Preparação para Começar</td>
+            <td style="width: 24px; padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">3</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 13pt; color: var(--rose-clay);">1</td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Cordão de Aterramento</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">4</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 13pt; color: var(--rose-clay);">2</td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Sol Dourado</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">5</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 13pt; color: var(--rose-clay);">3–5</td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Limites da Aura, Expansão e Renovação do Cordão</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">6</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 13pt; color: var(--rose-clay);">6</td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Quatro Rosas de Proteção, Separação e Observação</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">7</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 13pt; color: var(--rose-clay);">7</td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Circuitos de Energia do Cosmos e da Terra</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">8</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 13pt; color: var(--rose-clay);">8</td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Rosas para Limpar e Recuperar Energia</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">9</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 13pt; color: var(--rose-clay);">9</td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Rosa Cor-de-Rosa</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">10</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 13pt; color: var(--rose-clay);">10</td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Espaço Sagrado</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">11</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 6px 0;"></td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">To End the Meditation</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">12</td>
+          </tr>
+          <tr>
+            <td style="padding: 6px 0;"></td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Elementos da Meditação da Rosa Nível 1</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">13</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="grow"></div>
+
+      <div class="call">
+        <p>As Rosas representam o espírito. Absorvem todas as energias, emoções e situações que não lhe pertencem ou que já não servem ao seu momento presente. Podemos criá-las e explodi-las quantas vezes forem necessárias.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>Meditação da Rosa &nbsp;·&nbsp; Nível 1</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 3 — GETTING READY TO START
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="justify-content: center;">
+      <div class="label">Preparação</div>
+      <div class="s8"></div>
+      <h2 class="h-lg">Preparação para Começar</h2>
+      <div class="s16"></div>
+
+      <div class="img-full" style="max-width: 280px;">
+        <img src="images/level-1/02-meditation-posture.PNG" alt="Meditation Posture" style="border-radius: 16px;">
+      </div>
+      <div class="s16"></div>
+
+      <ol class="num">
+        <li>Sente-se e mantenha a coluna alinhada numa postura ereta. Apoie ambos os pés no chão, com as mãos sobre os joelhos e as palmas voltadas para cima.</li>
+        <li>Concentre-se, feche os olhos, traga a sua presença para o momento presente e respire profunda e lentamente.</li>
+        <li>Use o poder da sua imaginação <em>(image in action)</em> para visualizar as técnicas.</li>
+      </ol>
+
+      <div class="s32"></div>
+      <div class="call-gold call">
+        <p style="color: var(--rose-800);">A Meditação da Rosa é uma ferramenta para limpar a aura e os sete chakras principais, proporcionando proteção e equilíbrio energético. Através desta técnica é possível libertar energias bloqueadas, energias que não são nossas, tomar consciência da nossa força vital e desprogramar padrões que impedem o contato direto com a nossa essência.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>3</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 4 — GROUNDING CORD (full-spread image page)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="step">
+        <div class="sn">1</div>
+        <h3 class="h-md">Cordão de Aterramento</h3>
+      </div>
+      <div class="s16"></div>
+
+      <div class="img-center">
+        <img src="images/level-1/03-grounding-cord.png" alt="Cordão de Aterramento" style="width: 300px;">
+      </div>
+      <div class="s16"></div>
+
+      <p class="body">
+        Crie um cordão de aterramento esticado que vai do seu primeiro chakra até ao centro da Terra.
+      </p>
+      <div class="s6"></div>
+      <p class="body">
+        O cordão elimina as distrações, os pensamentos e os bloqueios que o impedem de estar no momento presente. Traz segurança, estabilidade e ajuda a limpar energias que não são da sua essência.
+      </p>
+      <div class="s10"></div>
+
+      <div class="call">
+        <p>Com o tempo e a prática, o cordão torna-se naturalmente transparente.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>4</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 5 — GOLDEN SUN (full-spread image page)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="step">
+        <div class="sn">2</div>
+        <h3 class="h-md">Sol Dourado</h3>
+      </div>
+      <div class="s16"></div>
+
+      <div class="img-center">
+        <img src="images/level-1/04-golden-sun.jpeg" alt="Sol Dourado" style="width: 300px;">
+      </div>
+      <div class="s16"></div>
+
+      <p class="body">
+        Crie um Sol Dourado acima da sua cabeça e preencha todo o espaço da sua Aura e do seu corpo físico com a luz dourada que vem do Sol. Este sol representa o Ser Supremo, eleva a sua vibração e preenche os espaços energéticos vazios com energia Divina após qualquer libertação subtil de energia.
+      </p>
+      <div class="s10"></div>
+
+      <div class="call">
+        <p>Preencha-se com a luz do Sol Dourado sempre que renovar o Cordão de Aterramento, para finalizar a sua meditação e/ou em qualquer momento do dia em que queira elevar a sua vibração.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>5</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 6 — AURA + CORD EXPANSION + RENEWAL
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+
+      <div class="split" style="gap: 20px; align-items: center;">
+        <div class="split-text" style="flex: 1.2;">
+          <div class="step" style="align-items: flex-start;">
+            <div class="sn">3</div>
+            <div>
+              <h3 class="h-md">Limites da Aura</h3>
+              <div class="s6"></div>
+              <p class="body">A aura é um campo energético que envolve o nosso corpo físico. Pode expandir-se e contrair-se. Para a Meditação da Rosa, estabeleça a sua Aura a 50 cm (20 polegadas) ao redor de todo o seu corpo.</p>
+            </div>
+          </div>
+        </div>
+        <div style="flex: 0.8;">
+          <div class="img-center">
+            <img src="images/level-1/05-aura-exercise.PNG" alt="Limites da Aura" style="width: 200px; border-radius: 16px; outline: 0.5px solid var(--rose-200);">
+          </div>
+        </div>
+      </div>
+
+      <div class="s16"></div>
+      <div class="line"></div>
+      <div class="s16"></div>
+
+      <div class="split" style="gap: 20px; align-items: center;">
+        <div style="flex: 0.8;">
+          <div class="img-center">
+            <img src="images/level-1/06-expansion-grounding-cord.png" alt="Expansion of Cordão de Aterramento" style="width: 200px; border-radius: 16px; outline: 0.5px solid var(--rose-200);">
+          </div>
+        </div>
+        <div class="split-text" style="flex: 1.2;">
+          <div class="step" style="align-items: flex-start;">
+            <div class="sn">4</div>
+            <div>
+              <h3 class="h-md">Expansão do Cordão de Aterramento</h3>
+              <div class="s6"></div>
+              <p class="body">Expanda o cordão lateralmente até à largura da Aura, aterrando toda a Aura.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="s16"></div>
+      <div class="line"></div>
+      <div class="s16"></div>
+
+      <div class="step">
+        <div class="sn">5</div>
+        <div>
+          <h3 class="h-md">Renovação do Cordão de Aterramento</h3>
+          <div class="s6"></div>
+          <p class="body">Usando a sua imaginação e a sua ferramenta de corte, corte o cordão de aterramento sempre que precisar. Esta ferramenta será sempre a mesma e tornar-se-á mais poderosa cada vez que a usar.</p>
+          <div class="s8"></div>
+          <ul class="bul">
+            <li>Corte o cordão anterior.</li>
+            <li>Crie um cordão novo.</li>
+            <li>Expanda o cordão lateralmente até à largura da Aura sempre que criar um novo.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="pn"><span>6</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 7 — FOUR ROSES (full-spread image page)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="step">
+        <div class="sn">6</div>
+        <h3 class="h-md">Quatro Rosas de Proteção, Separação e Observação</h3>
+      </div>
+      <div class="s16"></div>
+
+      <div class="img-center">
+        <img src="images/level-1/12-four-roses.png" alt="Four Roses of Proteção" style="width: 280px;">
+      </div>
+      <div class="s12"></div>
+
+      <p class="body" style="margin-bottom: 12px;">
+        Crie quatro Rosas da cor que escolher ou da cor que lhe vier (desde que sejam de alta vibração) aterradas no exterior da sua Aura — à frente, atrás, à esquerda e à direita. Cada Rosa cumpre três funções:
+      </p>
+
+      <div class="cols">
+        <div>
+          <h4 class="h-sm">Proteção</h4>
+          <div class="s4"></div>
+          <p class="body-sm">Diariamente interagimos com energias que não são nossas. Ao proteger-nos, aumentamos a nossa compreensão das dinâmicas que vivenciamos.</p>
+        </div>
+        <div>
+          <h4 class="h-sm">Separação</h4>
+          <div class="s4"></div>
+          <p class="body-sm">Ajuda a nossa Aura a permanecer separada da Aura de outras pessoas, trazendo uma perceção mais clara da nossa individualidade.</p>
+        </div>
+        <div>
+          <h4 class="h-sm">Observação</h4>
+          <div class="s4"></div>
+          <p class="body-sm">Quando observamos a partir de um estado neutro, como espectadores, desenvolvemos compaixão, não julgamento.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pn"><span>7</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 8 — CIRCUIT OF ENERGIES (alternating split layout)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="step">
+        <div class="sn">7</div>
+        <h3 class="h-md">Circuitos de Energia do Cosmos e da Terra</h3>
+      </div>
+      <div class="s12"></div>
+
+      <!-- Earth Energy — image left, text right -->
+      <div class="split" style="gap: 20px; align-items: flex-start;">
+        <div style="flex: 0 0 180px;">
+          <div class="img-center">
+            <img src="images/level-1/08-earth-energy.PNG" alt="Earth Energy" style="width: 180px; border-radius: 14px; outline: 0.5px solid var(--rose-200);">
+          </div>
+        </div>
+        <div class="split-text" style="flex: 1;">
+          <h4 class="h-sm">Circuito de Energia da Terra</h4>
+          <div class="s4"></div>
+          <p class="body-sm">Invocamos a energia da Terra para trazer a força de transmutação e vitalidade ao trabalho de limpeza energética que fazemos na Meditação da Rosa. Funciona como um motor que aumenta o poder de tudo o que fazemos durante a meditação.</p>
+          <div class="s4"></div>
+          <p class="body-sm">Visualize uma energia cobre-dourada que vem do centro da Terra e entra pela planta dos pés, sobe pelas pernas, passa pelo cóccix e desce pelo cordão de aterramento. Ao passar pelo cóccix, 10% desta energia sobe para se misturar com a energia do cosmos.</p>
+        </div>
+      </div>
+
+      <div class="s12"></div>
+      <div class="line"></div>
+      <div class="s12"></div>
+
+      <!-- Cosmos Energy — text left, image right -->
+      <div class="split" style="gap: 20px; align-items: flex-start;">
+        <div class="split-text" style="flex: 1;">
+          <h4 class="h-sm">Circuito de Energia do Cosmos</h4>
+          <div class="s4"></div>
+          <p class="body-sm">A energia do Cosmos é consciência pura e ajuda-nos a compreender o que acontece durante a Meditação da Rosa e nas nossas vidas. Com este circuito ativo, podemos receber informação para compreender quem somos, por que vivenciamos os desafios que vivenciamos, que energias carregamos na nossa Aura, como as absorvemos e que ajustes podemos fazer para criar uma realidade diferente no futuro.</p>
+          <div class="s4"></div>
+          <p class="body-sm">Visualize uma energia dourada luminosa que vem do centro do Universo, entra pelo chakra coronário, desce pela coluna, passa pelo cóccix e sobe pela frente do corpo até ao chakra da garganta, onde se divide em três partes. Uma parte sai pelo chakra coronário e as outras duas passam pela parte superior dos braços e saem pelas mãos, como uma fonte. Ao passar pelo cóccix, 10% desta energia desce para se misturar com a energia da Terra.</p>
+        </div>
+        <div style="flex: 0 0 180px;">
+          <div class="img-center">
+            <img src="images/level-1/09-cosmos-circuit.jpeg" alt="Cosmos Circuit" style="width: 180px; border-radius: 14px; outline: 0.5px solid var(--rose-200);">
+          </div>
+        </div>
+      </div>
+
+      <div class="s12"></div>
+      <div class="line"></div>
+      <div class="s12"></div>
+
+      <!-- Earth & Cosmos Combined — centered image + callout -->
+      <div style="display: flex; gap: 20px; align-items: center;">
+        <div style="flex: 0 0 160px;">
+          <div class="img-center">
+            <img src="images/level-1/10-cosmosearth.PNG" alt="Earth &amp; Cosmos Circuit" style="width: 160px; border-radius: 14px; outline: 0.5px solid var(--rose-200);">
+          </div>
+        </div>
+        <div style="flex: 1;">
+          <h4 class="h-sm" style="margin-bottom: 6px;">Circuitos de Energia do Cosmos e da Terra</h4>
+          <div class="call" style="margin: 0;">
+            <p>Tanto a energia da Terra como a do Cosmos continuam a circular num fluxo constante à medida que entram, percorrem os seus caminhos e saem. Esta ativação eleva a nossa vibração, promove o desbloqueio energético, faz emergir questões a resolver e fornece informação espiritual.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pn"><span>8</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 9 — CLEANSING & RECOVERY (full-spread image)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="step">
+        <div class="sn">8</div>
+        <h3 class="h-md">Rosas para Limpar e Recuperar Energia</h3>
+      </div>
+      <div class="s12"></div>
+
+      <!-- Rosa de Limpeza — stacked above Recovery -->
+      <div class="img-center" style="justify-content: center;">
+        <img src="images/level-1/13-cleansing-rose.png" alt="Rosa de Limpeza" style="width: 180px; border-radius: 12px; outline: 0.5px solid var(--rose-200);">
+      </div>
+      <div class="s8"></div>
+      <h4 class="h-sm" style="text-align: center;">Rosa de Limpeza</h4>
+      <div class="s4"></div>
+      <p class="body-sm">Crie uma Rosa de uma cor de alta vibração, aterrada à sua frente, fora da sua Aura. Coloque nela qualquer situação desconfortável — pensamentos, pessoas, acontecimentos, medos. Tenha a intenção de que a Rosa absorva a energia como um aspirador.</p>
+      <div class="s4"></div>
+      <p class="body-sm">Explode a Rosa para fora da sua Aura para limpar a energia e elevar a vibração. Crie novas Rosas quantas vezes forem necessárias.</p>
+
+      <div class="s12"></div>
+
+      <!-- Rosa de Recuperação -->
+      <div class="img-center" style="justify-content: center;">
+        <img src="images/level-1/14-energy-recovery.png" alt="Rosa de Recuperação" style="width: 180px; border-radius: 12px; outline: 0.5px solid var(--rose-200);">
+      </div>
+      <div class="s8"></div>
+      <h4 class="h-sm" style="text-align: center;">Rosa de Recuperação</h4>
+      <div class="s4"></div>
+      <p class="body-sm">Crie outra Rosa, aterrada fora da sua Aura, e chame a sua energia de volta. A Rosa atrai como um íman a sua energia dispersa, esteja onde estiver.</p>
+      <div class="s4"></div>
+      <p class="body-sm">Explode a Rosa para fora da sua Aura e receba de volta a sua energia purificada e de alta vibração.</p>
+
+      <div class="s12"></div>
+      <div class="call">
+        <p>Pode criar e explodir quantas rosas quiser. Faça o mesmo em situações positivas em que deseje elevar ainda mais a vibração.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>9</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 10 — PINK ROSE (split layout)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="img-full" style="max-height: 340px; justify-content: center;">
+        <img src="images/level-1/15-pink-rose-closure.png" alt="Rosa Cor-de-Rosa Blessing" style="width: auto; max-height: 340px;">
+      </div>
+      <div class="s16"></div>
+
+      <div class="step">
+        <div class="sn">9</div>
+        <div>
+          <h3 class="h-md">Rosa Cor-de-Rosa</h3>
+          <div class="s6"></div>
+          <p class="body">Podemos oferecer esta rosa como uma dádiva, depois de limpar a energia de outra pessoa da nossa Aura, ou principalmente para nós mesmos:</p>
+          <div class="s8"></div>
+          <ul class="bul">
+            <li>Crie uma Rosa cor-de-rosa sem aterramento.</li>
+            <li>Coloque a pessoa ou a si mesmo nesta Rosa visualizando <em>"Feliz, Saudável, Inteiro, Corpo, Mente e Alma."</em></li>
+            <li>Repita na sua mente: <em>"Feliz, Saudável, Inteiro, Corpo, Mente e Alma."</em></li>
+            <li>Enquanto repete, faça a Rosa subir em direção ao centro do Universo, desejando a si ou à pessoa nela tudo de melhor.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="pn"><span>10</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 11 — SACRED SPACE
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="step">
+        <div class="sn">10</div>
+        <h3 class="h-md">Espaço Sagrado</h3>
+      </div>
+      <div class="s12"></div>
+
+      <div class="img-center">
+        <img src="images/level-1/18-sacred-space.PNG" alt="Espaço Sagrado" style="width: 300px; border-radius: 16px; outline: 0.5px solid var(--rose-200);">
+      </div>
+      <div class="s12"></div>
+
+      <p class="body">
+        Coloque-se no seu espaço sagrado, onde está seguro e plenamente consciente da sua autoridade energética. É a partir daqui que todo o trabalho energético, incluindo a Meditação da Rosa, pode ser feito com clareza, clarividência e verdadeira soberania energética.
+      </p>
+      <div class="s8"></div>
+      <p class="body">
+        Este espaço pertence ao seu Espírito &mdash; a dimensão mais pura do seu ser. Mantenha-o fechado e protegido em todos os momentos. Regresse a ele para a Meditação da Rosa, para decisões importantes que exijam o seu discernimento mais profundo, ou simplesmente para voltar a alinhar-se com a sua essência espiritual.
+      </p>
+      <div class="s12"></div>
+
+      <div class="call-gold call">
+        <p style="color: var(--rose-800);">Este espaço pertence apenas a si, é o seu santuário. Dentro dele está centrado, protegido e alinhado com a sua vibração mais alta.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>11</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 12 — TO END THE MEDITATION
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="justify-content: center;">
+      <div class="label">Conclusão</div>
+      <div class="s8"></div>
+      <h2 class="h-lg">To End the Meditation</h2>
+      <div class="s20"></div>
+
+      <div class="img-center">
+        <img src="images/level-1/16-discharge-excess.PNG" alt="Discharge Excess Energy" style="width: 240px; border-radius: 16px; outline: 0.5px solid var(--rose-200);">
+      </div>
+      <div class="s16"></div>
+
+      <ul class="bul">
+        <li>Corte o cordão de aterramento e crie um novo.</li>
+        <li>Preencha-se com o sol dourado.</li>
+        <li>Se sentir, renove qualquer técnica que desejar — as quatro rosas de proteção, separação e observação; os circuitos do cosmos e da terra.</li>
+        <li>Apoie as mãos no chão para libertar o excesso de energia.</li>
+      </ul>
+
+      <div class="s20"></div>
+      <div class="line"></div>
+      <div class="s12"></div>
+
+      <div class="call-gold call">
+        <p style="color: var(--rose-800);">Em qualquer momento do dia, ou sempre que meditamos, explodimos as quatro Rosas e criamos novas. Ajudam-nos a manter a neutralidade.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>12</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 13 — ELEMENTS SUMMARY (full-spread image)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="justify-content: center;">
+
+      <div class="img-center">
+        <img src="images/level-1/11-therosegold.PNG" alt="The Rose Gold" style="width: 280px; border-radius: 16px; outline: 0.5px solid var(--rose-200);">
+      </div>
+      <div class="s16"></div>
+
+      <div class="sum">
+        <div class="label" style="margin-bottom: 6px;">Referência Rápida</div>
+        <h2 class="h-md" style="margin-bottom: 12px;">Elementos da Meditação da Rosa Nível 1</h2>
+        <div class="line" style="margin-bottom: 14px;"></div>
+        <ul class="bul">
+          <li>Cordão de aterramento</li>
+          <li>Sol Dourado</li>
+          <li>Limites da Aura e expansão do cordão</li>
+          <li>Rosas de proteção, separação e observação</li>
+          <li>Energias da Terra e do Cosmos</li>
+          <li>Rosa de Limpeza</li>
+          <li>Rosa de Recuperação de Energia</li>
+          <li>Rosa Cor-de-Rosa</li>
+          <li>Espaço Sagrado</li>
+          <li>Encerramento: cordão + sol dourado + descarga do excesso de energia</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pn"><span>13</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 14 — CLOSING
+       ===================================================== -->
+  <div class="page closing-bg">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="align-items: center; justify-content: center; text-align: center;">
+
+      <div class="img-circle" style="width: 180px; height: 180px; margin-bottom: 36px;">
+        <img src="images/manual-l1-cover.png" alt="Rose">
+      </div>
+
+      <div style="font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400); line-height: 1.8; letter-spacing: 0.03em;">
+        Ensinamentos de Angelina Ataíde<br>
+        Ilustrações originais: Saraswati Noemi, Cecilia Lynch &amp; Drica Voivodic<br>
+        Edição: Dara Ayoub &nbsp;·&nbsp; Design: Jennifer Lawless
+      </div>
+      <div class="s20"></div>
+      <div style="font-family: var(--font-sans); font-size: 6.5pt; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold);">International Aura and Dream School</div>
+    </div>
+  </div>
+
+</body>
+</html>
