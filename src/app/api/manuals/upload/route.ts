@@ -1,11 +1,27 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createServerSupabaseClient } from '@/lib/supabase/server';
+import { writeFile, mkdir } from 'fs/promises';
+import path from 'path';
 
 /**
  * POST /api/manuals/upload
- * Upload an image for use in manual blocks
- * Accepts multipart form data with a 'file' field
+ * Upload an image (file picker, drag-drop, or clipboard paste) for use in
+ * manual blocks. Accepts multipart form data with a 'file' field.
+ *
+ * Storage model matches the extracted reconstruction figures: images are written
+ * to `public/uploads/` and referenced by path (`/uploads/<file>`), exactly like
+ * `public/reconstruction/l1/*.png`. No Supabase storage bucket is involved (none
+ * is provisioned on this project). This persists in local/dev review; for a prod
+ * deploy the uploaded files are committed/hosted the same way the reconstruction
+ * figures are.
  */
+
+const MIME_EXT: Record<string, string> = {
+  'image/jpeg': 'jpg',
+  'image/png': 'png',
+  'image/webp': 'webp',
+  'image/gif': 'gif',
+};
+
 export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData();
@@ -15,50 +31,25 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'No file provided' }, { status: 400 });
     }
 
-    // Validate file type
-    const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
-    if (!allowedTypes.includes(file.type)) {
+    const ext = MIME_EXT[file.type];
+    if (!ext) {
       return NextResponse.json({ error: 'Invalid file type. Allowed: JPEG, PNG, WebP, GIF' }, { status: 400 });
     }
 
-    // Validate file size (max 5MB)
     const maxSize = 5 * 1024 * 1024;
     if (file.size > maxSize) {
       return NextResponse.json({ error: 'File too large. Maximum size is 5MB' }, { status: 400 });
     }
 
-    const supabase = await createServerSupabaseClient();
+    const filename = `upload-${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}`;
+    const dir = path.join(process.cwd(), 'public', 'uploads');
+    await mkdir(dir, { recursive: true });
 
-    // Generate a unique filename
-    const ext = file.name.split('.').pop() || 'jpg';
-    const filename = `manual-${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}`;
-    const path = `manual-images/${filename}`;
+    const buffer = Buffer.from(await file.arrayBuffer());
+    await writeFile(path.join(dir, filename), buffer);
 
-    // Upload to Supabase Storage
-    const arrayBuffer = await file.arrayBuffer();
-    const { error: uploadError } = await supabase.storage
-      .from('media')
-      .upload(path, arrayBuffer, {
-        contentType: file.type,
-        upsert: false,
-      });
-
-    if (uploadError) {
-      return NextResponse.json({ error: `Upload failed: ${uploadError.message}` }, { status: 500 });
-    }
-
-    // Get the public URL
-    const { data: urlData } = supabase.storage
-      .from('media')
-      .getPublicUrl(path);
-
-    return NextResponse.json({
-      data: {
-        url: urlData.publicUrl,
-        path,
-        filename,
-      },
-    }, { status: 201 });
+    const url = `/uploads/${filename}`;
+    return NextResponse.json({ data: { url, path: `uploads/${filename}`, filename } }, { status: 201 });
   } catch {
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }

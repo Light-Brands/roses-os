@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import type { ImageContent } from '@/lib/manuals/types';
 
@@ -15,6 +15,7 @@ export default function ImageBlock({ content, onChange, readOnly }: ImageBlockPr
   const [error, setError] = useState<string | null>(null);
   const [dragOver, setDragOver] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const dropRef = useRef<HTMLDivElement>(null);
 
   const handleUpload = useCallback(async (file: File) => {
     setUploading(true);
@@ -58,21 +59,49 @@ export default function ImageBlock({ content, onChange, readOnly }: ImageBlockPr
     }
   }, [handleUpload]);
 
+  // Paste an image from the clipboard (screenshot, copied image, etc.).
+  const handlePaste = useCallback((e: React.ClipboardEvent) => {
+    const items = e.clipboardData?.items;
+    if (!items) return;
+    for (const item of items) {
+      if (item.type.startsWith('image/')) {
+        const file = item.getAsFile();
+        if (file) {
+          e.preventDefault();
+          handleUpload(file);
+          return;
+        }
+      }
+    }
+  }, [handleUpload]);
+
+  // Focus the empty dropzone when it mounts so Ctrl/Cmd+V pastes immediately
+  // after adding the block, without clicking first.
+  useEffect(() => {
+    if (!content.src && !readOnly) dropRef.current?.focus({ preventScroll: true });
+  }, [content.src, readOnly]);
+
   // Empty state — upload prompt
   if (!content.src) {
     if (readOnly) return null;
 
     return (
       <div
+        ref={dropRef}
+        tabIndex={0}
+        role="button"
+        aria-label="Upload image: paste, drop, or click"
         onClick={() => fileInputRef.current?.click()}
+        onPaste={handlePaste}
         onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
         onDragLeave={() => setDragOver(false)}
         onDrop={handleDrop}
         className={cn(
           'flex flex-col items-center justify-center',
           'border-2 border-dashed rounded-xl',
-          'py-10 px-6 cursor-pointer',
+          'py-10 px-6 cursor-pointer outline-none',
           'transition-all duration-200',
+          'focus:border-[var(--color-rose-clay)] focus:bg-[var(--color-rose-50)]/40',
           dragOver
             ? 'border-[var(--color-rose-clay)] bg-[var(--color-rose-50)]/50 dark:bg-[var(--color-rose-950)]/20 scale-[1.01]'
             : 'border-[var(--color-border)] hover:border-[var(--color-rose-clay)]/40 hover:bg-[var(--color-background-subtle)]/50'
@@ -84,10 +113,10 @@ export default function ImageBlock({ content, onChange, readOnly }: ImageBlockPr
           <path d="M21 15l-5-5L5 21" />
         </svg>
         <p className="text-sm font-medium text-[var(--color-foreground-muted)] mb-1">
-          {uploading ? 'Uploading...' : dragOver ? 'Drop to upload' : 'Click or drag to upload'}
+          {uploading ? 'Uploading...' : dragOver ? 'Drop to upload' : 'Paste, drop, or click to upload'}
         </p>
         <p className="text-xs text-[var(--color-foreground-faint)]">
-          JPEG, PNG, WebP or GIF up to 5MB
+          Paste an image with Ctrl/Cmd+V. JPEG, PNG, WebP or GIF up to 5MB.
         </p>
         {error && <p className="text-xs text-[var(--color-error)] mt-2">{error}</p>}
         <input

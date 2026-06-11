@@ -307,7 +307,12 @@ export interface Database {
       [_ in never]: never;
     };
     Functions: {
-      [_ in never]: never;
+      // Atomic block reorder (migration 0004): renumbers positions in a single
+      // transaction. items_arg is an array of { id: uuid, position: int }.
+      reorder_blocks_atomic: {
+        Args: { items_arg: Json; updated_by_arg?: string | null };
+        Returns: undefined;
+      };
     };
     Enums: {
       user_role: 'user' | 'admin' | 'editor';

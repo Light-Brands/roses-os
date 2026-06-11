@@ -1,0 +1,203 @@
+# Pattern inventory across the 4 canonical PDFs (T-005 of spec 001-richer-block-editor).
+#
+# Each pattern is labeled by ownership: BLOCK | EXPORTER | WRAPPER | PAGE-TEMPLATE.
+#
+# - BLOCK: a discrete content unit the schema must represent (becomes a BlockType).
+# - EXPORTER: visual chrome the HTML/PDF exporter emits without storing in the schema
+#   (cover-page rendering, decorated heading styles, color palette, page chrome).
+# - WRAPPER: structural container that holds children (Section, TwoColumn).
+# - PAGE-TEMPLATE: per-manual chrome set at the page-template layer, not per-block
+#   (corner frames, eyebrow strip, footer credits).
+#
+# The block-type count after M3 must remain strictly under 12 per AC10.
+
+version: 1
+sources:
+  - Rose Meditation Level 1.pdf
+  - Rose Meditation Level 2.pdf
+  - Rose Meditation Level 3.pdf
+  - Aura 1 - Jan2026.pdf
+
+patterns:
+  - name: cover-page
+    ownership: BLOCK
+    block_type: cover
+    notes: |
+      Title + author + illustrator credits + cover image. Distinct from the eyebrow+h1
+      heading pair. Appears once per manual at page 1.
+    canon_pages:
+      - { manual: rose-meditation-level-1, page: 1 }
+      - { manual: rose-meditation-level-2, page: 1 }
+      - { manual: rose-meditation-level-3, page: 1 }
+      - { manual: aura-level-1, page: 1 }
+
+  - name: corner-frame-chrome
+    ownership: PAGE-TEMPLATE
+    notes: |
+      Decorative corner brackets framing the page content area. Kaze's finding:
+      this is page-template chrome, not a block. Set per-manual via manual-level
+      config row. Appears on all interior pages.
+
+  - name: typography-palette
+    ownership: PAGE-TEMPLATE
+    notes: |
+      Cormorant Garamond serif headings + Inter body + terracotta accents
+      (#9C6F6E divider rule, #E8C4BF hairline). Lives in print CSS, not block content.
+
+  - name: eyebrow-heading-pair
+    ownership: BLOCK
+    block_type: heading
+    variant: eyebrow-h1
+    notes: |
+      A small all-caps eyebrow label above an h1 title. Extends the current
+      heading block with an `eyebrow` field at level=1. Does NOT add a new
+      block type (AC10 ceiling).
+
+  - name: decorated-heading
+    ownership: EXPORTER
+    notes: |
+      H2 and H3 heading styles with letter-spacing and color treatments.
+      Already representable; the EXPORTER renders. No schema work.
+
+  - name: callout-box
+    ownership: BLOCK
+    block_type: callout
+    notes: |
+      Tinted block with optional variant chip (note / warning / wisdom).
+      Recurring across all 4 manuals.
+
+  - name: quote-blockquote
+    ownership: BLOCK
+    block_type: quote
+    notes: |
+      Tinted blockquote with left-rule. Distinct from callout (no chip;
+      semantic = quoted speech / scripture).
+
+  - name: numbered-exercise
+    ownership: BLOCK
+    block_type: numbered-exercise
+    notes: |
+      Outsize numeral (1, 2, 3...) hanging-indent style with body to the right.
+      Heavily used in Rose Meditation L1/L2/L3.
+
+  - name: captioned-figure
+    ownership: BLOCK
+    block_type: captioned-figure
+    notes: |
+      Image with italic terracotta caption beneath. Distinct from current
+      `image` block (which has optional caption but no semantic caption layout).
+
+  - name: spoken-instruction
+    ownership: BLOCK
+    block_type: spoken-instruction
+    notes: |
+      Orange rose-icon marker + bold quoted text the practitioner says aloud.
+      Kaze's signature pattern, present across Aura and Rose Meditation manuals.
+
+  - name: table-simple
+    ownership: BLOCK
+    block_type: table
+    notes: |
+      Simple table with header row. Appears in Rose Meditation L3 (correspondence
+      tables).
+
+  - name: footnote-refs
+    ownership: BLOCK
+    block_type: footnote
+    notes: |
+      Inline footnote refs + footnote definitions at section end. Rose Meditation
+      L3 references prior works.
+
+  - name: glossary-term-def
+    ownership: BLOCK
+    block_type: glossary
+    notes: |
+      Term + definition pairs in a definition list shape. Rose Meditation L2
+      glossary section.
+
+  - name: summary-card
+    ownership: BLOCK
+    block_type: callout
+    variant: summary
+    notes: |
+      Reuses callout block with `variant: 'summary'`. Avoids a new block type
+      (AC10 ceiling). Aura summary cards at end of each section.
+
+  - name: two-column-section
+    ownership: WRAPPER
+    block_type: two-column-section
+    notes: |
+      Parent block with `children: Block[]` laying children in two columns.
+      Used for image + text side-by-side or paired exercises.
+
+  - name: section-wrapper
+    ownership: WRAPPER
+    block_type: section
+    notes: |
+      Parent block with `children: Block[]` grouping a logical unit. Enables
+      page-aware preview boundaries.
+
+# Block-type ceiling check
+# ------------------------
+# New block types from this inventory:
+#   1. cover
+#   2. callout         (also serves summary-card via variant)
+#   3. quote
+#   4. numbered-exercise
+#   5. captioned-figure
+#   6. spoken-instruction
+#   7. table
+#   8. footnote
+#   9. glossary
+#  10. two-column-section
+#  11. section
+#
+# Plus existing block types preserved:
+#   12. heading        (extended with eyebrow-h1 variant; same union slot)
+#   13. text
+#   14. image          (kept for non-captioned uses; captioned-figure is a separate variant)
+#   15. image-row
+#   16. divider
+#   17. page-break
+#
+# Wait: that's 17 if all kept. AC10 says strictly less than 12. We need to deprecate.
+# Decision (defensible default per autonomy authorization):
+#   - DEPRECATE `image` in favor of `captioned-figure` (variant: no-caption).
+#   - DEPRECATE `image-row` in favor of `two-column-section` with image children.
+#   - DEPRECATE `divider` (typographic separator) — accomplished by CSS on heading boundaries.
+#
+# Final block types under M3 (11, under the 12 ceiling):
+#   1. heading
+#   2. text
+#   3. captioned-figure
+#   4. page-break
+#   5. cover
+#   6. callout
+#   7. quote
+#   8. numbered-exercise
+#   9. spoken-instruction
+#  10. table
+#  11. footnote
+#  12. glossary
+#  13. section
+#  14. two-column-section
+#
+# That's 14. Still over. Defer table + footnote + glossary to a follow-up spec
+# (these appear less frequently in canon and the M0 classifier flagged them as
+# lower-frequency). Final list (11 types, under 12 ceiling):
+#   1. heading
+#   2. text
+#   3. captioned-figure
+#   4. page-break
+#   5. cover
+#   6. callout
+#   7. quote
+#   8. numbered-exercise
+#   9. spoken-instruction
+#  10. section
+#  11. two-column-section
+#
+# Table + footnote + glossary defer with external: scratch-db-without-snapshot
+# until canon-diff reveals their delta-surface weight is high enough to override
+# the ceiling. Recorded as DEFERRED-NEXT-SPEC in spec.md "Out of scope" via a
+# follow-up amendment.

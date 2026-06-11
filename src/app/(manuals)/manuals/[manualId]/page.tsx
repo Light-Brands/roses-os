@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useParams } from 'next/navigation';
+import { useParams, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { useManualAuth } from '@/components/manuals/ManualPinGate';
@@ -12,12 +12,22 @@ import { MANUAL_LANGUAGES } from '@/lib/manuals/types';
 
 export default function ManualEditorPage() {
   const params = useParams();
+  const search = useSearchParams();
   const manualId = params.manualId as string;
   const { isEditor } = useManualAuth();
 
+  // An initial ?lang= (e.g. from the staging-review route, T-013) preselects a
+  // translation lane; otherwise default to English. Only honored when it names a
+  // supported language code.
+  const langParam = search.get('lang');
+  const initialLang: ManualLanguage =
+    langParam && MANUAL_LANGUAGES.some((l) => l.code === langParam)
+      ? (langParam as ManualLanguage)
+      : 'en';
+
   const [manual, setManual] = useState<Manual | null>(null);
   const [blocks, setBlocks] = useState<ManualBlock[]>([]);
-  const [language, setLanguage] = useState<ManualLanguage>('en');
+  const [language, setLanguage] = useState<ManualLanguage>(initialLang);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

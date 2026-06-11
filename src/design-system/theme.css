@@ -56,6 +56,9 @@
   --color-background-elevated: #FFFFFF;
   --color-background-overlay: rgba(63, 62, 60, 0.5);
   --color-background-rose: #FDF8F7;
+  /* Opaque elevated surface for menus / popovers / toolbars (was undefined,
+     which made those panels transparent over page content). */
+  --color-surface: #FFFFFF;
 
   --color-foreground: #3F3E3C;
   --color-foreground-subtle: #504540;
@@ -186,6 +189,7 @@
   --color-background-elevated: #2A2020;
   --color-background-overlay: rgba(26, 23, 22, 0.7);
   --color-background-rose: #2A1C1C;
+  --color-surface: #2A2020;
 
   --color-foreground: #F5F0EB;
   --color-foreground-subtle: #E8E0D8;
@@ -248,6 +252,8 @@
   --color-accent: #523737;
   --color-accent-foreground: #FDF8F7;
   --color-accent-hover: #6E4A49;
+
+  --color-surface: #FFFFFF;
 
   /* Borders — rose-tinted */
   --color-border: #F5E1DD;

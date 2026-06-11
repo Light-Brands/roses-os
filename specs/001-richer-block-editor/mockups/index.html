@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Roses OS — richer block editor mockup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <nav class="state-nav" role="toolbar" aria-label="Mockup state switcher">
+    <span class="state-nav__label">State</span>
+    <button type="button" data-state="empty" aria-pressed="false">Empty</button>
+    <button type="button" data-state="loading" aria-pressed="false">Loading</button>
+    <button type="button" data-state="small" aria-pressed="false">Populated · 1 block</button>
+    <button type="button" data-state="medium" aria-pressed="true">Populated · ~50</button>
+    <button type="button" data-state="large" aria-pressed="false">Populated · ~200</button>
+    <button type="button" data-state="error-validation" aria-pressed="false">Error · validation</button>
+    <button type="button" data-state="error-conflict" aria-pressed="false">Error · 409 conflict</button>
+    <button type="button" data-state="error-permission" aria-pressed="false">Error · 403 PIN</button>
+    <span style="margin-left: auto; color: var(--color-mute-gold); font-size: 12px;">Resize the window to see mobile (&lt; 768px).</span>
+  </nav>
+
+  <div id="mockup-root"></div>
+
+  <script type="module" src="./fixture.js"></script>
+  <script type="module">
+    import { manual, locales, paletteGroups, populatedBlocks, volumes, errorStates } from './fixture.js';
+
+    const root = document.getElementById('mockup-root');
+
+    function renderPalette() {
+      return `
+        <aside class="editor__palette" role="toolbar" aria-label="Block palette">
+          ${paletteGroups.map(group => `
+            <div class="palette-group">
+              <h3 class="palette-group__name">${group.name}</h3>
+              ${group.entries.map(entry => `
+                <button type="button" class="palette-entry" draggable="true" data-kind="${entry.kind}">
+                  <span class="palette-entry__glyph" aria-hidden="true">${entry.label[0]}</span>
+                  <span class="palette-entry__label">${entry.label}</span>
+                  <span class="palette-entry__cite" aria-hidden="true">${entry.cite}</span>
+                </button>
+              `).join('')}
+            </div>
+          `).join('')}
+        </aside>
+      `;
+    }
+
+    function renderStatus(saveState = 'saved', activeLocale = 'en') {
+      return `
+        <header class="editor__status">
+          <ul class="locale-chips" role="tablist" aria-label="Locale">
+            ${locales.map(l => `
+              <li>
+                <button type="button" class="locale-chip" role="tab" aria-pressed="${l.code === activeLocale}">
+                  ${l.label}
+                  <span class="locale-chip__dot locale-chip__dot--${l.coverage}" aria-hidden="true"></span>
+                </button>
+              </li>
+            `).join('')}
+          </ul>
+          <span class="save-pill" data-state="${saveState}" role="status" aria-live="polite">
+            <span class="save-pill__indicator" aria-hidden="true"></span>
+            ${saveStateLabel(saveState)}
+          </span>
+        </header>
+      `;
+    }
+
+    function saveStateLabel(state) {
+      return { dirty: 'Unsaved', saving: 'Saving', saved: 'Saved', error: 'Save blocked' }[state] || 'Saved';
+    }
+
+    function renderConflictBanner(visible) {
+      if (!visible) return '<div class="conflict-banner" role="alert" aria-live="assertive"></div>';
+      const c = errorStates.conflict;
+      return `
+        <div class="conflict-banner is-visible" role="alert" aria-live="assertive">
+          <span>Conflict. ${c.other_editor} edited the ${c.other_locale} locale at ${c.last_seen}.</span>
+          <button type="button">Refresh from server</button>
+        </div>
+      `;
+    }
+
+    function renderBlock(b, invalidId = null) {
+      const isInvalid = b.id === invalidId;
+      return `
+        <article class="block block--${b.kind} ${isInvalid ? 'is-invalid' : ''}" role="article" aria-label="${b.kind} block">
+          <button type="button" class="block__handle" aria-label="Drag handle. Press Space to grab.">
+            <svg viewBox="0 0 12 12" aria-hidden="true"><circle cx="3" cy="3" r="1.2"/><circle cx="9" cy="3" r="1.2"/><circle cx="3" cy="6" r="1.2"/><circle cx="9" cy="6" r="1.2"/><circle cx="3" cy="9" r="1.2"/><circle cx="9" cy="9" r="1.2"/></svg>
+          </button>
+          <button type="button" class="block__remove" aria-label="Remove block">×</button>
+          ${renderBlockContent(b)}
+          ${isInvalid ? `<span class="error-message" role="alert">${errorStates.validation.message}</span>` : ''}
+        </article>
+      `;
+    }
+
+    function renderBlockContent(b) {
+      switch (b.kind) {
+        case 'eyebrow-heading':
+          return `<p class="eyebrow">${b.content.eyebrow}</p><h1>${b.content.title}</h1>`;
+        case 'text':
+          return `<p>${b.content.doc}</p>`;
+        case 'spoken-instruction':
+          return `<span class="marker" aria-hidden="true">✿</span><p class="line">${b.content.line}</p>`;
+        case 'numbered-exercise':
+          return `<p class="numeral" aria-hidden="true">${b.content.numeral}</p><p class="body">${b.content.body}</p>`;
+        case 'two-column-section':
+          return b.content.children.map(c => `<div class="col">${renderBlockContent(c)}</div>`).join('');
+        case 'captioned-figure':
+          return `<div class="img-placeholder">Figure placeholder</div><p class="caption">${b.content.caption}</p>`;
+        case 'callout':
+          return `<div>${b.content.body}</div>`;
+        case 'quote':
+          return `<div>${b.content.body}<span class="attribution">${b.content.attribution}</span></div>`;
+        case 'divider':
+          return '';
+        default:
+          return `<pre style="color: var(--color-whisper); font-family: monospace; font-size: 12px;">${b.kind}</pre>`;
+      }
+    }
+
+    function renderCanvas(blocks, invalidId = null, label = 'Editor canvas') {
+      const inner = blocks.length === 0
+        ? `<div class="empty-state">
+            <p>Place the first block. The page is waiting.</p>
+            <p class="keyboard-hint">Press <kbd>/</kbd> to open the palette, or drag a tile from the left.</p>
+          </div>`
+        : `<div class="add-gap"><button type="button" class="add-gap__btn" aria-label="Add block here">+</button></div>
+           ${blocks.map(b => `
+             ${renderBlock(b, invalidId)}
+             <div class="add-gap"><button type="button" class="add-gap__btn" aria-label="Add block here">+</button></div>
+           `).join('')}`;
+      return `
+        <main class="editor__canvas" role="main" aria-label="${label}">
+          <div class="page page--with-frame">
+            <span class="corner-tr" aria-hidden="true"></span>
+            <span class="corner-bl" aria-hidden="true"></span>
+            ${inner}
+          </div>
+        </main>
+      `;
+    }
+
+    function renderPreview(blocks) {
+      return `
+        <aside class="editor__preview" aria-label="Live preview">
+          <div class="page page--with-frame">
+            <span class="corner-tr" aria-hidden="true"></span>
+            <span class="corner-bl" aria-hidden="true"></span>
+            ${blocks.map(b => `<div class="block block--${b.kind}">${renderBlockContent(b)}</div>`).join('')}
+          </div>
+        </aside>
+      `;
+    }
+
+    function renderEditor({ blocks, saveState, invalidId, conflict, locale, canvasLabel, volumeTail }) {
+      return `
+        <div class="mobile-banner">Editing requires a desktop browser. Mobile is read-only preview.</div>
+        ${renderConflictBanner(conflict)}
+        <div class="editor">
+          ${renderPalette()}
+          ${renderStatus(saveState, locale || 'en')}
+          ${renderCanvas(blocks, invalidId, canvasLabel)}
+          ${volumeTail ? `<div class="volume-tail" style="grid-column: 2; padding-top: var(--gap-3);">${volumeTail}</div>` : ''}
+          ${renderPreview(blocks.slice(0, 6))}
+        </div>
+      `;
+    }
+
+    function renderPermissionError() {
+      const e = errorStates.permission;
+      return `
+        <main class="permission-error" role="main">
+          <h2>You do not have edit access</h2>
+          <p>This editor requires the <strong>${e.role_required}</strong> role. The PIN on this session resolved to <strong>${e.role_seen}</strong>.</p>
+          <p>${e.suggestion}</p>
+          <button type="button">Refresh and enter PIN</button>
+        </main>
+      `;
+    }
+
+    const STATES = {
+      empty:               { blocks: [],                  saveState: 'saved'  },
+      loading:             { blocks: populatedBlocks,     saveState: 'saving' },
+      small:               { blocks: volumes.small,       saveState: 'saved'  },
+      medium:              { blocks: volumes.medium,      saveState: 'saved',
+                              volumeTail: 'Showing 18 of 50 blocks for mockup density. Scroll to see the rest.' },
+      large:               { blocks: volumes.large,       saveState: 'saved',
+                              volumeTail: 'Showing 30 of 200 blocks for mockup density. Virtual scroll planned at AC11 budget.' },
+      'error-validation':  { blocks: populatedBlocks,     saveState: 'error', invalidId: 'b6' },
+      'error-conflict':    { blocks: populatedBlocks,     saveState: 'dirty', conflict: true },
+      'error-permission':  { permission: true },
+    };
+
+    function setState(name) {
+      const cfg = STATES[name];
+      document.querySelectorAll('.state-nav button').forEach(b => {
+        b.setAttribute('aria-pressed', b.dataset.state === name ? 'true' : 'false');
+      });
+      if (cfg.permission) {
+        root.innerHTML = renderPermissionError();
+        return;
+      }
+      root.innerHTML = renderEditor({
+        blocks: cfg.blocks,
+        saveState: cfg.saveState,
+        invalidId: cfg.invalidId,
+        conflict: cfg.conflict,
+        volumeTail: cfg.volumeTail,
+        canvasLabel: `Editor canvas — ${name}`,
+      });
+      attachWiredHandlers(name);
+    }
+
+    function attachWiredHandlers(stateName) {
+      // AC12 wired: clicking the drag handle toggles a grabbed class (local state mutation).
+      root.querySelectorAll('.block__handle').forEach(h => {
+        h.addEventListener('click', () => h.closest('.block').classList.toggle('is-grabbed'));
+        h.addEventListener('keydown', e => {
+          if (e.key === ' ' || e.key === 'Spacebar') {
+            e.preventDefault();
+            h.closest('.block').classList.toggle('is-grabbed');
+          }
+        });
+      });
+      // AC11 wired: clicking the locale chip toggles aria-pressed (local state mutation).
+      root.querySelectorAll('.locale-chip').forEach(c => {
+        c.addEventListener('click', () => {
+          root.querySelectorAll('.locale-chip').forEach(o => o.setAttribute('aria-pressed', 'false'));
+          c.setAttribute('aria-pressed', 'true');
+        });
+      });
+      // AC15 wired: clicking the remove × hides the block locally.
+      root.querySelectorAll('.block__remove').forEach(r => {
+        r.addEventListener('click', () => {
+          const block = r.closest('.block');
+          block.style.opacity = '0';
+          block.style.transform = 'translateY(-8px)';
+          setTimeout(() => block.remove(), 200);
+        });
+      });
+      // AC8 wired: add-gap + button opens a tiny palette inline (toggles a class).
+      root.querySelectorAll('.add-gap__btn').forEach(a => {
+        a.addEventListener('click', () => a.closest('.add-gap').classList.toggle('is-open'));
+      });
+      // AC14 wired: clicking conflict banner Refresh dismisses the banner.
+      root.querySelectorAll('.conflict-banner button').forEach(b => {
+        b.addEventListener('click', () => b.closest('.conflict-banner').classList.remove('is-visible'));
+      });
+      // Palette entry drag visual hint (does not actually re-order).
+      root.querySelectorAll('.palette-entry').forEach(p => {
+        p.addEventListener('dragstart', e => e.dataTransfer.setData('kind', p.dataset.kind));
+      });
+    }
+
+    // Top-nav handler.
+    document.querySelectorAll('.state-nav button').forEach(b => {
+      b.addEventListener('click', () => setState(b.dataset.state));
+    });
+    // Keyboard shortcut: number 1-8 jumps to states.
+    document.addEventListener('keydown', e => {
+      const map = ['empty','loading','small','medium','large','error-validation','error-conflict','error-permission'];
+      const i = parseInt(e.key, 10);
+      if (i >= 1 && i <= map.length) setState(map[i - 1]);
+    });
+    // Initial state.
+    setState('medium');
+  </script>
+</body>
+</html>
