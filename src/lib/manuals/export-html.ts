@@ -197,6 +197,14 @@ export function blocksToHtml(blocks: ManualBlock[], title: string, origin = ''):
     @page { size: 8.5in 11in; margin: 0.75in; }
     html { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     body { font-family: 'Inter', -apple-system, sans-serif; color: #3F3E3C; line-height: 1.6; background: #fff; padding: 0.5in; }
+    /* On screen (the blob preview shown before "Save as PDF") frame the document
+       at page width. Without this the body stretches the full monitor, so images
+       (sized as a % of width) blow up to 1000px+ and the text looks tiny next to
+       them. Print ignores this block and uses the real @page width. */
+    @media screen {
+      html { background: #ECEAE6; }
+      body { max-width: 8.5in; margin: 24px auto; box-shadow: 0 2px 28px rgba(0,0,0,0.14); border-radius: 4px; }
+    }
     h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; color: #523737; line-height: 1.2; }
     h1 { font-size: 26pt; font-weight: 600; margin: 28px 0 14px; }
     h2 { font-size: 20pt; font-weight: 600; margin: 24px 0 12px; }
@@ -209,7 +217,7 @@ export function blocksToHtml(blocks: ManualBlock[], title: string, origin = ''):
     .eyebrow { display:block; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.18em; color: #9C6F6E; margin-bottom: 4px; }
     .text { margin-bottom: 12px; }
     .figure { text-align: center; margin: 20px 0; }
-    .figure img { display: inline-block; height: auto; }
+    .figure img { display: inline-block; height: auto; max-width: 100%; max-height: 5in; object-fit: contain; }
     .figure figcaption { font-size: 9pt; color: #777; font-style: italic; margin-top: 6px; }
     .figure figcaption.credit { font-size: 8pt; color: #999; }
     .image-row { display: flex; gap: 8px; justify-content: center; }
