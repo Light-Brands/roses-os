@@ -26,11 +26,9 @@ const SLUG_TO_PDF: Record<string, FinalPdf> = {
     url: '/manuals/pdf/rose-meditation-level-1.pdf',
     downloadName: 'Rose Meditation Level 1.pdf',
   },
-  // Level 2: the only Level-2 source we have is the combined Levels 1 & 2
-  // print PDF. Serving the combined doc was an explicit call (see #506).
   'rose-meditation-level-2': {
-    url: '/manuals/pdf/rose-meditation-level-1-and-2.pdf',
-    downloadName: 'Rose Meditation Levels 1 and 2.pdf',
+    url: '/manuals/pdf/rose-meditation-level-2.pdf',
+    downloadName: 'Rose Meditation Level 2.pdf',
   },
   'rose-meditation-level-3': {
     url: '/manuals/pdf/rose-meditation-level-3.pdf',
