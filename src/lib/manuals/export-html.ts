@@ -91,7 +91,7 @@ export function blocksToHtml(blocks: ManualBlock[], title: string, origin = ''):
       case 'image': {
         const c = block.content as ImageContent;
         if (!c.src) return '';
-        return `<figure class="figure">${imgTag(c.src, c.alt, 'max-width:80%;border-radius:12px;')}${c.caption ? `<figcaption>${esc(c.caption)}</figcaption>` : ''}</figure>`;
+        return `<figure class="figure">${imgTag(c.src, c.alt, 'width:80%;border-radius:12px;')}${c.caption ? `<figcaption>${esc(c.caption)}</figcaption>` : ''}</figure>`;
       }
       case 'captioned-figure': {
         const c = block.content as CaptionedFigureContent;
@@ -102,7 +102,7 @@ export function blocksToHtml(blocks: ManualBlock[], title: string, origin = ''):
         const pct = typeof (c as { width_pct?: number }).width_pct === 'number'
           ? Math.min(90, Math.max(2, (c as { width_pct?: number }).width_pct as number))
           : 70;
-        return `<figure class="figure">${imgTag(c.src, c.alt, `width:${pct}%;max-width:100%;max-height:6.5in;height:auto;border-radius:12px;`)}${c.caption ? `<figcaption>${esc(c.caption)}</figcaption>` : ''}${c.credit ? `<figcaption class="credit">${esc(c.credit)}</figcaption>` : ''}</figure>`;
+        return `<figure class="figure">${imgTag(c.src, c.alt, `width:${pct}%;height:auto;border-radius:12px;`)}${c.caption ? `<figcaption>${esc(c.caption)}</figcaption>` : ''}${c.credit ? `<figcaption class="credit">${esc(c.credit)}</figcaption>` : ''}</figure>`;
       }
       case 'image-row': {
         const c = block.content as ImageRowContent;
@@ -217,7 +217,10 @@ export function blocksToHtml(blocks: ManualBlock[], title: string, origin = ''):
     .eyebrow { display:block; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.18em; color: #9C6F6E; margin-bottom: 4px; }
     .text { margin-bottom: 12px; }
     .figure { text-align: center; margin: 20px 0; }
-    .figure img { display: inline-block; height: auto; max-width: 100%; max-height: 5in; object-fit: contain; }
+    /* Match the original designed manual, which caps every image at 480px
+       (.img-full { width:80%; max-width:480px }). Without this cap export images
+       hit 650-735px and dominate the page. */
+    .figure img { display: inline-block; height: auto; max-width: min(100%, 480px); max-height: 5in; object-fit: contain; }
     .figure figcaption { font-size: 9pt; color: #777; font-style: italic; margin-top: 6px; }
     .figure figcaption.credit { font-size: 8pt; color: #999; }
     .image-row { display: flex; gap: 8px; justify-content: center; align-items: flex-start; }
