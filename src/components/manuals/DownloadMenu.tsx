@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import type { ManualBlock } from '@/lib/manuals/types';
+import type { ManualBlock, ManualLanguage } from '@/lib/manuals/types';
 import { downloadMarkdown } from '@/lib/manuals/export-md';
 import { blocksToHtml } from '@/lib/manuals/export-html';
 import { getFinalPdfForSlug } from '@/lib/manuals/pdf-map';
@@ -14,13 +14,15 @@ interface DownloadMenuProps {
   filename: string;
   /** Manual slug; used to look up the canonical Final Version PDF. */
   slug: string;
+  /** Selected language; the designed PDF is served in this language. */
+  language: ManualLanguage;
 }
 
-export default function DownloadMenu({ blocks, title, filename, slug }: DownloadMenuProps) {
+export default function DownloadMenu({ blocks, title, filename, slug, language }: DownloadMenuProps) {
   const [open, setOpen] = useState(false);
   const [generating, setGenerating] = useState<string | null>(null);
   const menuRef = useRef<HTMLDivElement>(null);
-  const finalPdf = getFinalPdfForSlug(slug);
+  const finalPdf = getFinalPdfForSlug(slug, language);
 
   useEffect(() => {
     if (!open) return;
