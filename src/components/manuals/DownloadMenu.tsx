@@ -6,21 +6,17 @@ import { cn } from '@/lib/utils';
 import type { ManualBlock } from '@/lib/manuals/types';
 import { downloadMarkdown } from '@/lib/manuals/export-md';
 import { blocksToHtml } from '@/lib/manuals/export-html';
-import { getFinalPdfForSlug } from '@/lib/manuals/pdf-map';
 
 interface DownloadMenuProps {
   blocks: ManualBlock[];
   title: string;
   filename: string;
-  /** Manual slug; used to look up the canonical Final Version PDF. */
-  slug: string;
 }
 
-export default function DownloadMenu({ blocks, title, filename, slug }: DownloadMenuProps) {
+export default function DownloadMenu({ blocks, title, filename }: DownloadMenuProps) {
   const [open, setOpen] = useState(false);
   const [generating, setGenerating] = useState<string | null>(null);
   const menuRef = useRef<HTMLDivElement>(null);
-  const finalPdf = getFinalPdfForSlug(slug);
 
   useEffect(() => {
     if (!open) return;
@@ -51,23 +47,13 @@ export default function DownloadMenu({ blocks, title, filename, slug }: Download
   };
 
   const handleDownloadPdf = async () => {
-    // Mapped manuals serve the canonical Final Version PDF directly.
-    // Unmapped manuals fall back to the placeholder blocksToHtml flow
-    // (renders content but not the designed layout — tracked in #506).
-    if (finalPdf) {
-      const a = document.createElement('a');
-      a.href = finalPdf.url;
-      a.download = finalPdf.downloadName;
-      a.click();
-      setOpen(false);
-      return;
-    }
-
+    // Always render the LIVE editor content to styled HTML and open it; the page
+    // self-prints once its images finish loading (script embedded in the HTML),
+    // so figures are never blank. Use "Save as PDF" in the print dialog. The old
+    // path served a pre-baked designed PDF that ignored every edit (stale brand +
+    // content); serving current content is the deliberate trade-off (roses-os#506).
     setGenerating('pdf');
     try {
-      // Render the styled HTML with absolute image URLs and open it. The page
-      // self-prints once its images finish loading (script embedded in the HTML),
-      // so figures are never blank. Use "Save as PDF" in the print dialog.
       const html = blocksToHtml(blocks, title, window.location.origin);
       const blob = new Blob([html], { type: 'text/html' });
       const url = URL.createObjectURL(blob);
@@ -121,14 +107,10 @@ export default function DownloadMenu({ blocks, title, filename, slug }: Download
               </span>
               <div>
                 <div className="text-sm font-medium text-[var(--color-foreground)]">
-                  {generating === 'pdf'
-                    ? 'Generating...'
-                    : finalPdf
-                      ? 'Download PDF'
-                      : 'Print as PDF'}
+                  {generating === 'pdf' ? 'Generating...' : 'Print as PDF'}
                 </div>
                 <div className="text-xs text-[var(--color-foreground-faint)]">
-                  {finalPdf ? 'Designed print original' : 'US Letter, ready to print'}
+                  Current content, ready to print
                 </div>
               </div>
             </button>

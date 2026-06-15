@@ -95,7 +95,6 @@ export default function ManualEditorPage() {
             blocks={blocks}
             title={manual.title}
             filename={filename}
-            slug={manual.slug}
           />
 
           {/* Role badge */}
