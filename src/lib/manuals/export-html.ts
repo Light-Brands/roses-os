@@ -220,7 +220,11 @@ export function blocksToHtml(blocks: ManualBlock[], title: string, origin = ''):
     .figure img { display: inline-block; height: auto; max-width: 100%; max-height: 5in; object-fit: contain; }
     .figure figcaption { font-size: 9pt; color: #777; font-style: italic; margin-top: 6px; }
     .figure figcaption.credit { font-size: 8pt; color: #999; }
-    .image-row { display: flex; gap: 8px; justify-content: center; }
+    .image-row { display: flex; gap: 8px; justify-content: center; align-items: flex-start; }
+    /* Each image carries inline width:100%; flex items default to min-width:auto,
+       so 3-up rows refuse to shrink and overflow the page. flex:1 1 0 + min-width:0
+       makes them share the row width equally and never spill past the column. */
+    .image-row img { flex: 1 1 0; min-width: 0; max-height: 4in; }
     .cover { margin: 24px 0 32px; }
     .cover-eyebrow { font-size: 9pt; text-transform: uppercase; letter-spacing: 0.2em; color: #9C6F6E; margin-bottom: 8px; }
     .cover-title { font-size: 34pt; }
