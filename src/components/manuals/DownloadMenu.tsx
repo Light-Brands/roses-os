@@ -108,7 +108,7 @@ export default function DownloadMenu({ blocks, title, filename, slug }: Download
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -4, scale: 0.95 }}
             transition={{ duration: 0.15 }}
-            className="absolute right-0 top-12 z-20 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl shadow-lg overflow-hidden min-w-[220px]"
+            className="absolute right-0 top-12 z-50 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl shadow-lg overflow-hidden min-w-[220px]"
           >
             <button
               type="button"
