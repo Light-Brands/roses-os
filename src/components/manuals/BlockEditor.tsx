@@ -269,12 +269,16 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
       setSaveStatus('saving');
       const ifUnmodifiedSince = lastEditInfo?.updated_at;
       try {
+        // Do NOT send an `If-Unmodified-Since` request header. Its value is an
+        // ISO-8601 timestamp (not an HTTP-date), and Vercel's edge evaluates the
+        // conditional and rejects the PUT with 412 Precondition Failed before it
+        // reaches the route — surfacing as "Failed to save — will retry" that
+        // never recovers, since every retry re-sends the same header. The route
+        // never read the header anyway. The timestamp still rides along in the
+        // body as `client_updated_at` for any future server-side conflict check.
         const res = await fetch(`/api/manuals/${manualId}/blocks`, {
           method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json',
-            ...(ifUnmodifiedSince ? { 'If-Unmodified-Since': ifUnmodifiedSince } : {}),
-          },
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             id: blockId,
             content,
