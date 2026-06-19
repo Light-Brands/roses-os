@@ -10,9 +10,45 @@ interface PrintPageButtonProps {
 }
 
 export default function PrintPageButton({ className, label = 'Print Page' }: PrintPageButtonProps) {
+  // Slide cards lazy-load their images, so any slide not yet scrolled into view
+  // has an unloaded <img loading="lazy">. The print stylesheet reveals every card
+  // (overriding framer-motion's inline opacity), but unloaded images still print
+  // blank. So before printing we flip every lazy image to eager and wait for the
+  // newly-triggered loads to settle — that's what makes ALL slides print, not just
+  // the ones already on screen.
+  const handlePrint = async () => {
+    const lazyImages = Array.from(
+      document.querySelectorAll<HTMLImageElement>('img[loading="lazy"]')
+    );
+
+    lazyImages.forEach((img) => {
+      img.loading = 'eager';
+    });
+
+    const pending = lazyImages.filter((img) => !img.complete);
+    if (pending.length > 0) {
+      await Promise.race([
+        Promise.all(
+          pending.map(
+            (img) =>
+              new Promise<void>((resolve) => {
+                img.addEventListener('load', () => resolve(), { once: true });
+                img.addEventListener('error', () => resolve(), { once: true });
+              })
+          )
+        ),
+        // Safety valve: never block the print dialog for more than 5s if an
+        // image stalls (slow network, missing file).
+        new Promise<void>((resolve) => window.setTimeout(resolve, 5000)),
+      ]);
+    }
+
+    window.print();
+  };
+
   return (
     <motion.button
-      onClick={() => window.print()}
+      onClick={handlePrint}
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       className={cn(
