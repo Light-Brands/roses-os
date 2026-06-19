@@ -735,9 +735,14 @@ html {
    ============================================================================= */
 
 @media print {
-  /* Hide non-essential elements */
+  /* Hide non-essential elements. The page-transition and preloader panels are
+     fixed inset-0 overlays that sit idle in the DOM (panel translated off-screen,
+     rose logo at opacity:0). They must never print — and crucially must be killed
+     BEFORE the scroll-reveal override below, or that override resets them to cover
+     every page with a blank panel + centered rose. */
   nav, footer, .cursor-dot, .cursor-ring, .scroll-progress,
-  .hero-sphere-container, button[aria-label="Toggle theme"] {
+  .hero-sphere-container, button[aria-label="Toggle theme"],
+  .print-hide {
     display: none !important;
   }
 
@@ -758,9 +763,12 @@ html {
      Teaching slides are gated by framer-motion (inline opacity:0 / translateY
      until scrolled into view, once:true). Without this only the slides already
      scrolled past would print and the rest come out blank — i.e. "only the
-     first page prints". A stylesheet !important overrides framer's inline style. */
-  [style*="opacity"],
-  [style*="transform"] {
+     first page prints". A stylesheet !important overrides framer's inline style.
+     Scoped to `main` on purpose: the fixed inset-0 page-transition / preloader
+     overlays also carry inline opacity/transform, and an unscoped rule would
+     reset them on top of every page (blank panel + centered rose). */
+  main [style*="opacity"],
+  main [style*="transform"] {
     opacity: 1 !important;
     transform: none !important;
   }
