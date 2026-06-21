@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Медитація Троянди — Рівень 2</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+    :root {
+      --rose-clay: #9C6F6E;
+      --rose-400: #D4A09A;
+      --rose-300: #E8C4BF;
+      --rose-200: #F5E1DD;
+      --rose-100: #FAF0EE;
+      --rose-50: #FDF8F7;
+      --rose-700: #6E4A49;
+      --rose-800: #523737;
+      --rose-900: #3B2828;
+      --gold: #9E956B;
+      --gold-light: #B8B08A;
+      --warm-0: #F7F5F2;
+      --cream: #FFF8E7;
+      --charcoal: #3F3E3C;
+      --soft-charcoal: #5A5856;
+      --font-serif: 'Cormorant Garamond', 'Georgia', serif;
+      --font-sans: 'Inter', -apple-system, sans-serif;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    @page { size: 8.5in 11in; margin: 0; }
+    html { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { font-family: var(--font-sans); color: var(--charcoal); line-height: 1.7; background: white; }
+
+    /* PAGE */
+    .page {
+      width: 8.5in;
+      height: 11in;
+      position: relative;
+      page-break-after: always;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .page:last-child { page-break-after: auto; }
+
+    /* Border frame */
+    .page::before {
+      content: '';
+      position: absolute;
+      top: 0.35in; left: 0.35in; right: 0.35in; bottom: 0.35in;
+      border: 0.5px solid var(--rose-200);
+      border-radius: 2px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Inner padding */
+    .inner {
+      position: relative;
+      z-index: 1;
+      margin: 0.55in 0.65in 0.55in 0.65in;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Corner ticks */
+    .ck { position: absolute; width: 16px; height: 16px; z-index: 2; }
+    .ck::before, .ck::after { content: ''; position: absolute; background: var(--rose-300); }
+    .ck-tl { top: 0.3in; left: 0.3in; }
+    .ck-tr { top: 0.3in; right: 0.3in; }
+    .ck-bl { bottom: 0.3in; left: 0.3in; }
+    .ck-br { bottom: 0.3in; right: 0.3in; }
+    .ck-tl::before { width: 16px; height: 0.5px; top: 0; left: 0; }
+    .ck-tl::after  { width: 0.5px; height: 16px; top: 0; left: 0; }
+    .ck-tr::before { width: 16px; height: 0.5px; top: 0; right: 0; }
+    .ck-tr::after  { width: 0.5px; height: 16px; top: 0; right: 0; }
+    .ck-bl::before { width: 16px; height: 0.5px; bottom: 0; left: 0; }
+    .ck-bl::after  { width: 0.5px; height: 16px; bottom: 0; left: 0; }
+    .ck-br::before { width: 16px; height: 0.5px; bottom: 0; right: 0; }
+    .ck-br::after  { width: 0.5px; height: 16px; bottom: 0; right: 0; }
+
+    /* Page number */
+    .pn {
+      position: absolute;
+      bottom: 0.38in; left: 0; right: 0;
+      text-align: center;
+      font-family: var(--font-sans);
+      font-size: 7pt;
+      color: var(--rose-400);
+      letter-spacing: 0.12em;
+      z-index: 2;
+    }
+    .pn span { display: inline-block; padding: 0 8px; background: white; }
+
+    /* ============================================================
+       IMAGES
+       ============================================================ */
+
+    .img-full {
+      width: 80%;
+      max-width: 480px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+    }
+    .img-full img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+    }
+
+    .img-circle {
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+      aspect-ratio: 1;
+    }
+    .img-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ============================================================
+       TYPOGRAPHY
+       ============================================================ */
+
+    .label {
+      font-family: var(--font-sans);
+      font-size: 6.5pt; font-weight: 500;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .h-xl {
+      font-family: var(--font-serif);
+      font-size: 36pt; font-weight: 300;
+      color: var(--rose-800);
+      line-height: 1.12; letter-spacing: -0.02em;
+    }
+
+    .h-lg {
+      font-family: var(--font-serif);
+      font-size: 22pt; font-weight: 300;
+      color: var(--rose-800);
+      line-height: 1.2; letter-spacing: -0.015em;
+    }
+
+    .h-md {
+      font-family: var(--font-serif);
+      font-size: 15pt; font-weight: 400;
+      color: var(--rose-800);
+      line-height: 1.3;
+    }
+
+    .h-sm {
+      font-family: var(--font-serif);
+      font-size: 11.5pt; font-weight: 500;
+      font-style: italic;
+      color: var(--rose-clay);
+    }
+
+    .sub {
+      font-family: var(--font-serif);
+      font-size: 15pt; font-weight: 400;
+      font-style: italic;
+      color: var(--rose-clay);
+    }
+
+    .body {
+      font-family: var(--font-sans);
+      font-size: 9.5pt; line-height: 1.75;
+      color: var(--charcoal);
+    }
+
+    .body-sm {
+      font-family: var(--font-sans);
+      font-size: 8.5pt; line-height: 1.7;
+      color: var(--soft-charcoal);
+    }
+
+    em { font-family: var(--font-serif); color: var(--rose-700); }
+
+    .line { width: 36px; height: 0.5px; background: var(--rose-300); }
+    .line-c { width: 36px; height: 0.5px; background: var(--rose-300); margin: 0 auto; }
+
+    /* Callout */
+    .call {
+      background: var(--rose-50);
+      border-left: 2px solid var(--rose-clay);
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+    }
+    .call p {
+      font-family: var(--font-serif);
+      font-size: 10pt; font-style: italic;
+      line-height: 1.6; color: var(--rose-700);
+    }
+    .call-gold { border-left-color: var(--gold); background: linear-gradient(135deg, var(--rose-50), var(--warm-0)); }
+
+    /* Lists */
+    .bul { list-style: none; }
+    .bul li {
+      font-family: var(--font-sans); font-size: 9.5pt;
+      line-height: 1.75; color: var(--charcoal);
+      padding: 2px 0 2px 16px; position: relative;
+    }
+    .bul li::before {
+      content: ''; position: absolute;
+      left: 2px; top: 11px;
+      width: 5px; height: 5px;
+      background: var(--rose-clay); border-radius: 50%;
+    }
+
+    .num { list-style: none; counter-reset: n; }
+    .num li {
+      counter-increment: n;
+      font-family: var(--font-sans); font-size: 9.5pt;
+      line-height: 1.75; color: var(--charcoal);
+      padding: 3px 0 3px 26px; position: relative;
+    }
+    .num li::before {
+      content: counter(n) '.'; position: absolute; left: 0;
+      font-family: var(--font-serif); font-size: 12pt; font-weight: 400;
+      color: var(--rose-clay);
+    }
+
+    /* Step card */
+    .step { display: flex; gap: 14px; align-items: baseline; }
+    .sn {
+      font-family: var(--font-serif);
+      font-size: 28pt; font-weight: 300;
+      color: var(--rose-300); line-height: 1;
+      flex-shrink: 0; width: 34px; text-align: center;
+    }
+
+    /* Two columns */
+    .cols { display: flex; gap: 24px; }
+    .cols > div { flex: 1; }
+
+    /* Summary card */
+    .sum {
+      background: linear-gradient(135deg, var(--rose-50), var(--warm-0));
+      border: 0.5px solid var(--rose-200);
+      border-radius: 16px;
+      padding: 20px 24px;
+    }
+    .sum .bul li { font-size: 9pt; padding: 2px 0 2px 14px; }
+    .sum .bul li::before { top: 9px; width: 4px; height: 4px; }
+
+    /* Spacers */
+    .s4  { height: 4px; }
+    .s6  { height: 6px; }
+    .s8  { height: 8px; }
+    .s10 { height: 10px; }
+    .s12 { height: 12px; }
+    .s16 { height: 16px; }
+    .s20 { height: 20px; }
+    .s24 { height: 24px; }
+    .s28 { height: 28px; }
+    .s32 { height: 32px; }
+    .s40 { height: 40px; }
+    .grow { flex: 1; }
+
+    /* Cover */
+    .cover-bg {
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--rose-50) 40%, var(--warm-0) 100%);
+    }
+    .cover-bg::before { border-color: var(--rose-300); }
+
+    /* Closing */
+    .closing-bg {
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--rose-50) 50%, var(--warm-0) 100%);
+    }
+
+    /* Phase badge */
+    .phase-badge {
+      display: inline-block;
+      font-family: var(--font-sans);
+      font-size: 7pt; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold-light);
+      padding: 4px 14px;
+      border-radius: 20px;
+    }
+
+    /* ============================================================
+       CHAKRA CARDS
+       ============================================================ */
+
+    .chakra-card {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .chakra-img {
+      width: 160px;
+      height: auto;
+      border-radius: 12px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .chakra-img img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .chakra-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .chakra-name {
+      font-family: var(--font-serif);
+      font-size: 14pt;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .chakra-sanskrit {
+      font-family: var(--font-serif);
+      font-size: 9.5pt;
+      font-style: italic;
+      color: var(--soft-charcoal);
+    }
+
+    .chakra-statement {
+      font-family: var(--font-serif);
+      font-size: 13pt;
+      font-weight: 500;
+      font-style: italic;
+      margin: 4px 0;
+    }
+
+    .chakra-meta {
+      font-family: var(--font-sans);
+      font-size: 7.5pt;
+      line-height: 1.6;
+      color: var(--soft-charcoal);
+    }
+
+    .chakra-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .chakra-cols h5 {
+      font-family: var(--font-sans);
+      font-size: 7pt;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 3px;
+    }
+
+    .chakra-cols .bul li {
+      font-size: 7.5pt;
+      line-height: 1.55;
+      padding: 1px 0 1px 12px;
+    }
+    .chakra-cols .bul li::before {
+      top: 7px;
+      width: 3px;
+      height: 3px;
+    }
+
+    .chakra-blockages {
+      font-family: var(--font-sans);
+      font-size: 7.5pt;
+      font-style: italic;
+      color: var(--soft-charcoal);
+    }
+
+    .chakra-divider {
+      height: 1.5px;
+      margin: 10px 0;
+      border-radius: 1px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- =====================================================
+       PAGE 1 — COVER
+       ===================================================== -->
+  <div class="page cover-bg">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="align-items: center; justify-content: center; text-align: center;">
+      <div class="label">International Aura and Dream School</div>
+      <div class="s28"></div>
+
+      <div class="img-circle" style="width: 320px; height: 320px;">
+        <img src="images/manual-l12-cover-l12.png" alt="Sacred Rose — Рівень 2">
+      </div>
+      <div class="s32"></div>
+
+      <h1 class="h-xl">Медитація Троянди</h1>
+      <div class="s6"></div>
+      <p class="sub">Рівень 2 — Глибша практика</p>
+      <div class="s32"></div>
+
+      <div class="line-c"></div>
+      <div class="s28"></div>
+
+      <div style="font-family: var(--font-sans); font-size: 8.5pt; color: var(--soft-charcoal); line-height: 1.8; letter-spacing: 0.04em;">
+        <strong style="font-weight: 500; color: var(--charcoal); font-size: 9pt;">Вчення Angelina Ataíde</strong><br>
+        International Aura and Dream School<br><br>
+        <span style="font-size: 7.5pt; color: var(--rose-400);">
+          Ілюстрації: Saraswati Noemi, Cecilia Lynch &amp; Drica Voivodic<br>
+          Редактор: Dara Ayoub &nbsp;·&nbsp; Дизайн: Jennifer Lawless
+        </span>
+      </div>
+      <div class="s16"></div>
+      <div style="font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400); letter-spacing: 0.2em;">2026 &nbsp;·&nbsp; ОГЛЯДОВЕ ВИДАННЯ</div>
+    </div>
+
+    <div style="position: absolute; bottom: 0.55in; left: 0.8in; right: 0.8in; text-align: center; font-family: var(--font-sans); font-size: 6.5pt; color: var(--rose-400); line-height: 1.6; font-style: italic;">
+      Жодна частина цього посібника не може бути відтворена та/або показана людям, які не відвідували Курс медитації троянд Рівня 2. Для вашого власного захисту, будь ласка, не діліться цією інформацією.
+    </div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 2 — TABLE OF CONTENTS
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="padding-top: 0.3in;">
+      <div class="label">Зміст</div>
+      <div class="s6"></div>
+      <h2 class="h-lg" style="font-size: 26pt;">Медитація Троянди</h2>
+      <div class="s4"></div>
+      <p class="sub" style="font-size: 13pt;">Рівень 2 — Глибша практика</p>
+      <div class="s20"></div>
+      <div class="line"></div>
+      <div class="s16"></div>
+
+      <!-- Rose icon on TOC -->
+      <div class="img-circle" style="width: 36px; height: 36px; margin: 0 auto 8px auto;">
+        <img src="images/level-1/01-the-rose.jpeg" alt="The Rose" style="object-position: top;">
+      </div>
+
+      <table style="width: 100%; border-collapse: collapse;">
+        <tbody>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="width: 26px; padding: 5px 0; font-family: var(--font-serif); font-size: 12pt; color: var(--rose-clay);">1</td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Підготовка простору</td>
+            <td style="width: 24px; padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">3</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 5px 0;"></td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Очищення &amp; Володіння вашим простором</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">4</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 12pt; color: var(--rose-clay);">2</td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Вступ до чакр</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">5</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 5px 0;"></td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Окремі чакри</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400); white-space: nowrap;">6–9</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 12pt; color: var(--rose-clay);">3</td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Очищення шарів аури</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">10</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 5px 0;"></td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Очищення кожної чакри</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">11</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 5px 0;"></td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Відновлення енергії</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">12</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 12pt; color: var(--rose-clay);">4</td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Золоті липкі троянди</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">13</td>
+          </tr>
+          <tr>
+            <td style="padding: 5px 0;"></td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Елементи Рівня 2</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">14</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="grow"></div>
+
+      <div class="call">
+        <p>Рівень 2 ґрунтується на основах медитації троянд. Тут ви навчитеся готувати та захищати фізичні простори, очищати та балансувати свої чакри та шари аури, а також працювати із Золотими Липкими Трояндами для глибокого енергетичного очищення.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>Медитація Троянди &nbsp;·&nbsp; Рівень 2</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 3 — PREPARING THE SPACE (slides 19-20)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="phase-badge">Фаза B &nbsp;·&nbsp; Підготовка простору</div>
+      <div class="s12"></div>
+
+      <h2 class="h-lg">Підготовка вашого фізичного простору</h2>
+      <div class="s8"></div>
+      <p class="body">Перед медитацією підготуйте своє фізичне середовище для підтримки енергетичної роботи. Зовнішній простір повинен відображати внутрішній намір: чистий, ясний, тихий і свідомо утримуваний.</p>
+      <div class="s16"></div>
+
+      <div style="text-align: center;">
+        <div class="img-full" style="max-width: 360px;">
+          <img src="images/level-2/20-create-the-room.jpeg" alt="Захист простору">
+        </div>
+        <div class="s6"></div>
+        <p class="body-sm" style="text-align: center; font-style: italic;">Захист простору</p>
+      </div>
+      <div class="s16"></div>
+
+      <p class="body" style="margin-bottom: 8px;">Тепер підготуйте кімнату, в якій ви перебуваєте, щоб вона була чистою та захищеною:</p>
+
+      <ul class="bul">
+        <li>Створіть 4 Золоті Троянди, кожна із золотим стеблом і заземлена.</li>
+        <li>Створіть 4 золоті лінії з чотирьох верхніх кутів кімнати, що з'єднуються в центрі стелі.</li>
+        <li>Створіть 4 золоті лінії з чотирьох нижніх кутів, що з'єднуються в центрі підлоги.</li>
+        <li>Створіть золоту лінію від верхньої точки до нижньої, об'єднуючи енергію.</li>
+        <li>Від центру підлоги, де сходяться 4 лінії, створіть прозорий заземлюючий шнур до центру Землі та розширте його до країв кімнати.</li>
+        <li>Побачте, як вся кімната вібрує золотом.</li>
+      </ul>
+    </div>
+
+    <div class="pn"><span>3</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 4 — CLEANSING & OWNING YOUR SPACE (slides 21-22)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="label">Очищення простору</div>
+      <div class="s8"></div>
+      <h2 class="h-md" style="font-size: 17pt;">Очищення простору</h2>
+      <div class="s10"></div>
+
+      <div style="display: flex; gap: 20px; align-items: flex-start;">
+        <div class="img-full" style="width: 200px; max-width: 200px; flex-shrink: 0;">
+          <img src="images/level-2/21-cleanse-the-space.jpeg" alt="Очищення простору">
+        </div>
+        <div>
+          <p class="body">Після встановлення захисту слідує очищення. Золота Троянда встановлюється над сіткою і проходить вниз через всю її структуру, видаляючи будь-які сторонні, застійні або руйнівні енергії всередині кімнати. Ця Троянда опускається, щоб бути трансмутованою в центрі землі через Заземлюючий Шнур кімнати.</p>
+        </div>
+      </div>
+
+      <div class="s20"></div>
+      <div class="line"></div>
+      <div class="s16"></div>
+
+      <div class="label">Енергетичний авторитет</div>
+      <div class="s8"></div>
+      <h2 class="h-md" style="font-size: 17pt;">Володіння своїм простором</h2>
+      <div class="s10"></div>
+
+      <div style="display: flex; gap: 20px; align-items: flex-start;">
+        <div class="img-full" style="width: 200px; max-width: 200px; flex-shrink: 0;">
+          <img src="images/level-2/22-owning-space.jpeg" alt="Володіння своїм простором">
+        </div>
+        <div>
+          <p class="body" style="margin-bottom: 8px;">Володійте кімнатою, щоб мати владу над простором, де ви медитуєте:</p>
+          <ul class="bul">
+            <li>Створіть 4 золоті лінії від коронної чакри до 4 верхніх кутів кімнати.</li>
+            <li>Створіть 4 золоті лінії від кореневої чакри до чотирьох нижніх кутів кімнати.</li>
+            <li>Якщо медитуєте на відкритому повітрі, створіть купол або золоту кімнату навколо себе і виконуйте всі техніки, як у приміщенні.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="s16"></div>
+
+      <div class="label" style="margin-bottom: 8px;">Важливі зауваження</div>
+      <p class="body" style="font-size: 8.5pt;">Якщо ви медитуєте в просторі, який не знаходиться під вашою енергетичною владою, обмежте свій захист безпосередньою зоною навколо вас, а потім вибухніть чотири Золоті Троянди назовні після завершення. Якщо простір ваш &mdash; або знаходиться в межах вашої енергетичної влади &mdash; чотири Золоті Троянди можуть залишитися, продовжуючи утримувати та захищати його.</p>
+    </div>
+
+    <div class="pn"><span>4</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 5 — CHAKRAS INTRO + SEVEN CHAKRAS (slides 23-24)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="phase-badge">Фаза C &nbsp;·&nbsp; Система чакр</div>
+      <div class="s12"></div>
+
+      <h2 class="h-lg">Поговоримо про чакри</h2>
+      <div class="s8"></div>
+      <p class="body">Система чакр &mdash; це енергетична анатомія людського тіла. Існує сім основних чакр, кожна з яких керує певними аспектами фізичного, емоційного, ментального та духовного життя.</p>
+      <div class="s16"></div>
+
+      <div class="img-full" style="max-width: 200px;">
+        <img src="images/level-2/23-chakras-intro.jpeg" alt="Chakras Introduction">
+      </div>
+      <div class="s12"></div>
+
+      <div class="label" style="margin-bottom: 6px;">Довідка</div>
+      <h3 class="h-md">Сім чакр</h3>
+      <div class="s8"></div>
+
+      <div class="sum" style="padding: 14px 20px;">
+        <table style="width: 100%; border-collapse: collapse;">
+          <tbody>
+            <tr style="border-bottom: 0.5px solid var(--rose-200);">
+              <td style="padding: 4px 0; font-family: var(--font-serif); font-size: 9.5pt; font-weight: 500; color: #7B2D8E; width: 30px;">7th</td>
+              <td style="padding: 4px 0; font-family: var(--font-serif); font-size: 9.5pt; color: var(--charcoal);">Корона — <span style="color: #7B2D8E;">Фіолетовий</span></td>
+            </tr>
+            <tr style="border-bottom: 0.5px solid var(--rose-200);">
+              <td style="padding: 4px 0; font-family: var(--font-serif); font-size: 9.5pt; font-weight: 500; color: #2E3192;">6th</td>
+              <td style="padding: 4px 0; font-family: var(--font-serif); font-size: 9.5pt; color: var(--charcoal);">Третє око — <span style="color: #2E3192;">Індиго синій</span></td>
+            </tr>
+            <tr style="border-bottom: 0.5px solid var(--rose-200);">
+              <td style="padding: 4px 0; font-family: var(--font-serif); font-size: 9.5pt; font-weight: 500; color: #29ABE2;">5th</td>
+              <td style="padding: 4px 0; font-family: var(--font-serif); font-size: 9.5pt; color: var(--charcoal);">Горло / Спілкування — <span style="color: #29ABE2;">Небесно-блакитний</span></td>
+            </tr>
+            <tr style="border-bottom: 0.5px solid var(--rose-200);">
+              <td style="padding: 4px 0; font-family: var(--font-serif); font-size: 9.5pt; font-weight: 500; color: #D4669A;">4th</td>
+              <td style="padding: 4px 0; font-family: var(--font-serif); font-size: 9.5pt; color: var(--charcoal);">Heart — <span style="color: #D4669A;">Рожевий</span> and <span style="color: #4CAF50;">Зелений</span> <span style="font-size: 7.5pt; color: var(--soft-charcoal);">(робити обидві вібрації)</span></td>
+            </tr>
+            <tr style="border-bottom: 0.5px solid var(--rose-200);">
+              <td style="padding: 4px 0; font-family: var(--font-serif); font-size: 9.5pt; font-weight: 500; color: #F7C948;">3rd</td>
+              <td style="padding: 4px 0; font-family: var(--font-serif); font-size: 9.5pt; color: var(--charcoal);">Сонячне сплетіння — <span style="color: #F7C948;">Жовтий</span></td>
+            </tr>
+            <tr style="border-bottom: 0.5px solid var(--rose-200);">
+              <td style="padding: 4px 0; font-family: var(--font-serif); font-size: 9.5pt; font-weight: 500; color: #F7931E;">2nd</td>
+              <td style="padding: 4px 0; font-family: var(--font-serif); font-size: 9.5pt; color: var(--charcoal);">Сакральна / Пупкова — <span style="color: #F7931E;">Помаранчевий</span></td>
+            </tr>
+            <tr>
+              <td style="padding: 4px 0; font-family: var(--font-serif); font-size: 9.5pt; font-weight: 500; color: #C1272D;">1st</td>
+              <td style="padding: 4px 0; font-family: var(--font-serif); font-size: 9.5pt; color: var(--charcoal);">Коренева / Основа — <span style="color: #C1272D;">Червоний</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="pn"><span>5</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 6 — ROOT + SACRAL CHAKRAS (slides 25-26)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="label">Окремі чакри</div>
+      <div class="s10"></div>
+
+      <!-- Коренева чакра -->
+      <div class="chakra-card">
+        <div class="chakra-img">
+          <img class="nadi-full" src="images/level-2/25-pdf-root-chakra.jpeg" alt="Коренева чакра">
+        </div>
+        <div class="chakra-info">
+          <div class="chakra-name" style="color: #DC2626;">Коренева чакра</div>
+          <div class="chakra-sanskrit">Muladhara &nbsp;·&nbsp; Земля</div>
+          <div class="chakra-statement" style="color: #DC2626;">"Я Є"</div>
+          <div class="chakra-meta">
+            <strong>Фокус:</strong> Стабільність — Безпека — Втілення<br>
+            <strong>Тіло:</strong> Основа хребта, Ноги, Стопи<br>
+            <strong>Енергія:</strong> Перевага чоловічої енергії — Виживання / Фундамент
+          </div>
+        </div>
+      </div>
+      <div class="s8"></div>
+      <div class="chakra-cols">
+        <div>
+          <h5 style="color: #4CAF50;">Коли збалансовано</h5>
+          <ul class="bul">
+            <li>Заземлена присутність</li>
+            <li>Фізична життєздатність</li>
+            <li>Довіра до життя</li>
+            <li>Відчуття безпеки в тілі</li>
+          </ul>
+        </div>
+        <div>
+          <h5 style="color: #C1272D;">Коли незбалансовано</h5>
+          <ul class="bul">
+            <li>Страх і невпевненість</li>
+            <li>Тривога виживання</li>
+            <li>Від'єднання від тіла</li>
+            <li>Мислення дефіциту</li>
+          </ul>
+        </div>
+      </div>
+      <div class="s4"></div>
+      <p class="chakra-blockages"><strong>Блокування:</strong> Страх — Невпевненість — Травма виживання</p>
+
+      <div class="chakra-divider" style="background: linear-gradient(90deg, #DC2626, #EA580C);"></div>
+
+      <!-- Сакральна чакра -->
+      <div class="chakra-card">
+        <div class="chakra-img">
+          <img class="nadi-full" src="images/level-2/26-pdf-sacral-chakra.jpeg" alt="Сакральна чакра">
+        </div>
+        <div class="chakra-info">
+          <div class="chakra-name" style="color: #EA580C;">Сакральна чакра</div>
+          <div class="chakra-sanskrit">Svadhisthana &nbsp;·&nbsp; Вода</div>
+          <div class="chakra-statement" style="color: #EA580C;">"Я ВІДЧУВАЮ"</div>
+          <div class="chakra-meta">
+            <strong>Фокус:</strong> Емоції — Творчість — Задоволення<br>
+            <strong>Тіло:</strong> Нижня частина живота, Статеві органи<br>
+            <strong>Енергія:</strong> Перевага жіночої енергії — Потік &amp; Гнучкість
+          </div>
+        </div>
+      </div>
+      <div class="s8"></div>
+      <div class="chakra-cols">
+        <div>
+          <h5 style="color: #4CAF50;">Коли збалансовано</h5>
+          <ul class="bul">
+            <li>Емоційне благополуччя</li>
+            <li>Чуттєвість та інтимність</li>
+            <li>Пристрасть та задоволення</li>
+            <li>Адаптивність</li>
+          </ul>
+        </div>
+        <div>
+          <h5 style="color: #C1272D;">Коли незбалансовано</h5>
+          <ul class="bul">
+            <li>Депресія та оніміння</li>
+            <li>Сексуальна дисфункція</li>
+            <li>Емоційна нестабільність</li>
+            <li>Страх змін</li>
+          </ul>
+        </div>
+      </div>
+      <div class="s4"></div>
+      <p class="chakra-blockages"><strong>Блокування:</strong> Сором — Емоційне придушення — Провина</p>
+    </div>
+
+    <div class="pn"><span>6</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 7 — SOLAR PLEXUS + HEART CHAKRAS (slides 27-28)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <!-- Чакра сонячного сплетіння -->
+      <div class="chakra-card">
+        <div class="chakra-img" style="width: 140px;">
+          <img src="images/level-2/27-pdf-solar-plexus-chakra.jpeg" alt="Чакра сонячного сплетіння">
+        </div>
+        <div class="chakra-info">
+          <div class="chakra-name" style="color: #CA8A04;">Чакра сонячного сплетіння</div>
+          <div class="chakra-sanskrit">Manipura &nbsp;·&nbsp; Вогонь</div>
+          <div class="chakra-statement" style="color: #CA8A04;">"Я МОЖУ"</div>
+          <div class="chakra-meta">
+            <strong>Фокус:</strong> Особиста сила — Самооцінка — Драйв<br>
+            <strong>Тіло:</strong> Верхня частина живота, Діафрагма<br>
+            <strong>Енергія:</strong> Перевага чоловічої енергії — Сила &amp; Трансформація
+          </div>
+        </div>
+      </div>
+      <div class="s6"></div>
+      <div class="chakra-cols">
+        <div>
+          <h5 style="color: #4CAF50;">Коли збалансовано</h5>
+          <ul class="bul">
+            <li>Впевненість та мотивація</li>
+            <li>Відповідальний та дисциплінований</li>
+            <li>Здорове почуття себе</li>
+            <li>Автономія</li>
+          </ul>
+        </div>
+        <div>
+          <h5 style="color: #C1272D;">Коли незбалансовано</h5>
+          <ul class="bul">
+            <li>Низька самооцінка</li>
+            <li>Агресія або контроль</li>
+            <li>Впертий та владний</li>
+            <li>Відсутність напрямку або мети</li>
+          </ul>
+        </div>
+      </div>
+      <div class="s4"></div>
+      <p class="chakra-blockages"><strong>Блокування:</strong> Невпевненість у собі — Невпевненість — Страх відмови</p>
+
+      <div class="chakra-divider" style="background: linear-gradient(90deg, #CA8A04, #16A34A);"></div>
+
+      <!-- Серцева чакра -->
+      <div class="chakra-card">
+        <div class="chakra-img" style="width: 140px;">
+          <img src="images/level-2/28-pdf-heart-chakra.jpeg" alt="Серцева чакра">
+        </div>
+        <div class="chakra-info">
+          <div class="chakra-name" style="color: #16A34A;">Серцева чакра</div>
+          <div class="chakra-sanskrit">Anahata &nbsp;·&nbsp; Повітря</div>
+          <div class="chakra-statement" style="color: #16A34A;">"Я ЛЮБЛЮ"</div>
+          <div class="chakra-meta">
+            <strong>Фокус:</strong> Любов — Співчуття — Зв'язок<br>
+            <strong>Тіло:</strong> Центр грудей, Серце, Легені<br>
+            <strong>Енергія:</strong> Перевага жіночої енергії — Міст між фізичним &amp; духовним
+          </div>
+        </div>
+      </div>
+      <div class="s6"></div>
+      <div class="chakra-cols">
+        <div>
+          <h5 style="color: #4CAF50;">Коли збалансовано</h5>
+          <ul class="bul">
+            <li>Співчуття та емпатія</li>
+            <li>Емоційна відкритість</li>
+            <li>Прощення</li>
+            <li>Здорова інтимність та самолюбов</li>
+          </ul>
+        </div>
+        <div>
+          <h5 style="color: #C1272D;">Коли незбалансовано</h5>
+          <ul class="bul">
+            <li>Емоційне відсторонення або надмірна віддача</li>
+            <li>Страх інтимності</li>
+            <li>Холодність або відстороненість</li>
+            <li>Труднощі з прощенням</li>
+          </ul>
+        </div>
+      </div>
+      <div class="s4"></div>
+      <p class="chakra-blockages"><strong>Блокування:</strong> Горе — Зрада — Розбите серце</p>
+      <div class="s4"></div>
+      <div class="call" style="padding: 6px 14px;">
+        <p style="font-size: 8pt;"><span style="color: #4CAF50;">Зелений — Людська Любов</span> — "Я ЛЮБЛЮ" — Умовна любов, емпатія, прощення, здорові стосунки.</p>
+      </div>
+      <div class="s4"></div>
+      <div class="call" style="padding: 6px 14px;">
+        <p style="font-size: 8pt;"><span style="color: #D4669A;">Рожевий — Божественна Любов</span> — "Я Є ЛЮБОВ" — Безумовна любов, співчуття, взаємозв'язок, божественна та вселенська любов.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>7</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 8 — THROAT + THIRD EYE CHAKRAS (slides 29-30)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <!-- Горлова чакра -->
+      <div class="chakra-card">
+        <div class="chakra-img">
+          <img src="images/level-2/29-pdf-throat-chakra.jpeg" alt="Горлова чакра">
+        </div>
+        <div class="chakra-info">
+          <div class="chakra-name" style="color: #0EA5E9;">Горлова чакра</div>
+          <div class="chakra-sanskrit">Vishuddha &nbsp;·&nbsp; Ефір / Звук</div>
+          <div class="chakra-statement" style="color: #0EA5E9;">"Я ГОВОРЮ І Я СЛУХАЮ"</div>
+          <div class="chakra-meta">
+            <strong>Фокус:</strong> Комунікація — Істина — Автентичність<br>
+            <strong>Тіло:</strong> Горло, Шия, Щелепа, Рот<br>
+            <strong>Енергія:</strong> Перевага чоловічої енергії — Навчання узгоджувати волю з божественною істиною
+          </div>
+        </div>
+      </div>
+      <div class="s8"></div>
+      <div class="chakra-cols">
+        <div>
+          <h5 style="color: #4CAF50;">Коли збалансовано</h5>
+          <ul class="bul">
+            <li>Чітка, чесна комунікація</li>
+            <li>Автентичне самовираження</li>
+            <li>Хороший слухач</li>
+            <li>Сильний голос та збалансована мова</li>
+          </ul>
+        </div>
+        <div>
+          <h5 style="color: #C1272D;">Коли незбалансовано</h5>
+          <ul class="bul">
+            <li>Страх висловлюватися</li>
+            <li>Бути непочутим або незрозумілим</li>
+            <li>Догоджання людям</li>
+            <li>Пригнічені почуття або брехня</li>
+          </ul>
+        </div>
+      </div>
+      <div class="s4"></div>
+      <p class="chakra-blockages"><strong>Блокування:</strong> Пригнічена Істина — Страх Вираження — Непорозуміння</p>
+
+      <div class="chakra-divider" style="background: linear-gradient(90deg, #0EA5E9, #4F46E5);"></div>
+
+      <!-- Чакра третього ока -->
+      <div class="chakra-card">
+        <div class="chakra-img">
+          <img src="images/level-2/30-pdf-third-eye-chakra.jpeg" alt="Чакра третього ока">
+        </div>
+        <div class="chakra-info">
+          <div class="chakra-name" style="color: #4F46E5;">Чакра третього ока</div>
+          <div class="chakra-sanskrit">Ajna &nbsp;·&nbsp; Світло</div>
+          <div class="chakra-statement" style="color: #4F46E5;">"Я БАЧУ"</div>
+          <div class="chakra-meta">
+            <strong>Фокус:</strong> Уява — Сприйняття — Візуалізація<br>
+            <strong>Тіло:</strong> Лоб, Брова, Центр ока<br>
+            <strong>Енергія:</strong> Перевага жіночої енергії — Аспекти усвідомлення
+          </div>
+        </div>
+      </div>
+      <div class="s8"></div>
+      <div class="chakra-cols">
+        <div>
+          <h5 style="color: #4CAF50;">Коли збалансовано</h5>
+          <ul class="bul">
+            <li>Чітке бачення та інтуїція</li>
+            <li>Хороша пам'ять та уява</li>
+            <li>Внутрішнє розташування</li>
+            <li>Мудрість та бачення</li>
+          </ul>
+        </div>
+        <div>
+          <h5 style="color: #C1272D;">Коли незбалансовано</h5>
+          <ul class="bul">
+            <li>Надмірне мислення</li>
+            <li>Ментальний туман</li>
+            <li>Відключення від внутрішнього керівництва</li>
+            <li>Втеча від реальності або духовне обминання</li>
+          </ul>
+        </div>
+      </div>
+      <div class="s4"></div>
+      <p class="chakra-blockages"><strong>Блокування:</strong> Ілюзія — Страх Бачити — Ментальна Ригідність</p>
+    </div>
+
+    <div class="pn"><span>8</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 9 — CROWN CHAKRA (slide 31) + TRANSITION
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <!-- Коронна чакра — larger solo layout -->
+      <div style="display: flex; gap: 24px; align-items: flex-start;">
+        <div style="width: 160px; flex-shrink: 0; border-radius: 12px; overflow: hidden;">
+          <img src="images/level-2/31-pdf-crown-chakra.jpeg" alt="Коронна чакра" style="width: 100%; height: auto; border-radius: 12px;">
+        </div>
+        <div>
+          <div class="chakra-name" style="color: #7C3AED; font-size: 18pt;">Коронна чакра</div>
+          <div class="chakra-sanskrit" style="font-size: 10.5pt;">Sahasrara &nbsp;·&nbsp; Думка &amp; Всесвітній Зв'язок</div>
+          <div class="chakra-statement" style="color: #7C3AED; font-size: 16pt;">"Я ЗНАЮ"</div>
+          <div class="s6"></div>
+          <div class="chakra-meta" style="font-size: 8.5pt;">
+            <strong>Фокус:</strong> Духовний Зв'язок — Внутрішня Мудрість — Вищі Стани Усвідомлення<br>
+            <strong>Тіло:</strong> Верхівка голови<br>
+            <strong>Енергія:</strong> Без дуальності — Трансцендування его, злиття з джерелом
+          </div>
+        </div>
+      </div>
+      <div class="s16"></div>
+
+      <div class="chakra-cols" style="gap: 20px;">
+        <div>
+          <h5 style="color: #4CAF50; font-size: 7.5pt;">Коли збалансовано</h5>
+          <ul class="bul">
+            <li style="font-size: 8.5pt; padding: 2px 0 2px 14px;">Духовна віра та зв'язок</li>
+            <li style="font-size: 8.5pt; padding: 2px 0 2px 14px;">Внутрішній спокій, довіра та мудрість</li>
+            <li style="font-size: 8.5pt; padding: 2px 0 2px 14px;">Відкритість та усвідомленість</li>
+            <li style="font-size: 8.5pt; padding: 2px 0 2px 14px;">Відчуття життєвої мети</li>
+          </ul>
+        </div>
+        <div>
+          <h5 style="color: #C1272D; font-size: 7.5pt;">Коли незбалансовано</h5>
+          <ul class="bul">
+            <li style="font-size: 8.5pt; padding: 2px 0 2px 14px;">Духовна порожнеча</li>
+            <li style="font-size: 8.5pt; padding: 2px 0 2px 14px;">Екзистенційний сумнів</li>
+            <li style="font-size: 8.5pt; padding: 2px 0 2px 14px;">Відчуття ізоляції або самотності</li>
+            <li style="font-size: 8.5pt; padding: 2px 0 2px 14px;">Відсутність мети</li>
+          </ul>
+        </div>
+      </div>
+      <div class="s6"></div>
+      <p class="chakra-blockages" style="font-size: 8.5pt;"><strong>Блокування:</strong> Відключення — Цинізм — Втрата сенсу</p>
+
+      <div class="grow"></div>
+
+      <div class="call-gold call">
+        <p style="color: var(--rose-800);">Тепер, коли ви розумієте кожну чакру, ви навчитеся очищати їх індивідуально — починаючи з шарів аури, потім кожну чакру, і нарешті повне відновлення енергії.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>9</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 10 — CLEANSING EACH CHAKRA (slide 32)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="phase-badge">Фаза C &nbsp;·&nbsp; Очищення чакр</div>
+      <div class="s12"></div>
+
+      <h2 class="h-lg">Очищення кожної чакри</h2>
+      <div class="s8"></div>
+      <p class="body">Кожна окрема чакра очищається за допомогою троянд. Троянди охоплюють два виміри: <em>Динаміка Минулого</em> &mdash; енергетичні патерни, відбитки та блокування, перенесені з минулого досвіду, та <em>Динаміка Сьогодення</em> &mdash; поточні енергетичні впливи, стосунки та ситуації, що впливають на чакру.</p>
+      <div class="s16"></div>
+
+      <div class="img-full" style="max-width: 480px;">
+        <img src="images/level-2/33-cleansing-each-chakra.png" alt="Очищення чакр">
+      </div>
+      <div class="s10"></div>
+
+      <ul class="bul">
+        <li>Зовні Аури створіть дві заземлені троянди (кольору чакри), одну позаду вас і одну спереду, на рівні чакри. Передня Троянда очищає енергії сьогодення; задня Троянда очищає енергії минулого.</li>
+        <li>Створіть і вибухніть кілька Троянд, щоб глибоко очистити чакру.</li>
+        <li>Створіть незакорінену троянду (кольору чакри), щоб очистити відповідний шар Аури на висоті чакри.</li>
+        <li>Створіть і вибухніть кілька Троянд, щоб очистити шари Аури.</li>
+        <li>Створіть заземлену троянду на рівні чакри поза Аурою, щоб поглинути всю вашу розсіяну енергію в цій вібрації. Вибухніть її &mdash; ваша енергія повертається піднесеною та очищеною.</li>
+      </ul>
+
+      <div class="s10"></div>
+      <div class="call">
+        <p>Цю процедуру слід виконувати однаково для всіх чакр, починаючи з першої і піднімаючись по порядку до сьомої.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>10</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 11 — CLEANSING EACH AURA LAYER (slide 33)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="label">Очищення шарів аури</div>
+      <div class="s8"></div>
+      <h2 class="h-lg">Очищення кожного шару аури</h2>
+      <div class="s8"></div>
+      <p class="body">Аура складається з семи шарів, кожен з яких відповідає чакрі. На Рівні 2 кожен шар індивідуально очищається від 1-го до 7-го шару.</p>
+      <div class="s16"></div>
+
+      <div class="img-full" style="max-width: 300px;">
+        <img src="images/level-2/32-cleansing-each-layer.jpeg" alt="Cleansing Each Aura Layer">
+      </div>
+      <div class="s12"></div>
+
+      <div class="label" style="margin-bottom: 6px;">Сім шарів аури</div>
+      <ol class="num">
+        <li>1st Aura layer — Root</li>
+        <li>2nd Aura layer — Sacral</li>
+        <li>3rd Aura layer — Сонячне сплетіння</li>
+        <li>4th Aura layer — Heart</li>
+        <li>5th Aura layer — Throat</li>
+        <li>6th Aura layer — Третє око</li>
+        <li>7th Aura layer — Корона</li>
+      </ol>
+
+      <div class="s12"></div>
+      <div class="call">
+        <p>Очистіть кожен шар аури за допомогою незакоріненої троянди відповідного кольору чакри. Створіть і вибухніть кілька троянд для кожного шару, працюючи від 1-го шару до 7-го.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>11</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 12 — ENERGY RECOVERY (slide 34)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="justify-content: center;">
+      <div class="label">Відновлення</div>
+      <div class="s8"></div>
+      <h2 class="h-lg">Відновлення енергії: Троянда поглиблено</h2>
+      <div class="s8"></div>
+      <p class="body">Після завершення очищення чакри та її відповідного шару аури, процес відновлення енергії може розгорнутися на їхній вібрації, якщо ви відчуваєте покликання це зробити. Може бути створена відновлювальна Троянда, налаштована на цю конкретну частоту, яка повертає вашу енергію та відновлює її на цьому ж рівні. Ви можете робити це від 1-ї до 7-ї чакри.</p>
+      <div class="s20"></div>
+
+      <div class="img-full" style="max-width: 320px;">
+        <img src="images/level-2/34-energy-recovery-rose.png" alt="Відновлення енергії Rose">
+      </div>
+    </div>
+
+    <div class="pn"><span>12</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 13 — GOLDEN STICKY ROSES Roses 1 & 2 (slides 35-36)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="label">Глибоке очищення</div>
+      <div class="s8"></div>
+      <h2 class="h-lg">Золоті липкі троянди</h2>
+      <div style="height: 4px;"></div>
+      <p class="body" style="margin-bottom: 6px; font-size: 8.5pt;">Чотири Золоті Липкі Троянди використовуються для глибокого енергетичного очищення Аури, витягуючи будь-які сторонні енергії, які все ще залишаються після попереднього очищення.</p>
+
+      <!-- Side-by-side: Roses 1 & 2 -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+
+        <!-- Rose 1 -->
+        <div style="display: flex; flex-direction: column;">
+          <div style="border-radius: 10px; overflow: hidden; margin-bottom: 4px;">
+            <img src="images/level-2/35-golden-sticky-1.png" alt="Golden Sticky Rose — First Rose: Корона to Root" style="width: 100%; height: auto; display: block; border-radius: 10px;">
+          </div>
+          <p class="h-sm" style="font-size: 8.5pt; margin-bottom: 2px; color: var(--gold);">Перша троянда — від Корони до Кореня</p>
+          <p class="body" style="font-size: 7.5pt; line-height: 1.4;">Перша входить через коронну чакру, послідовно очищаючи кожну чакру до кореневої.</p>
+        </div>
+
+        <!-- Rose 2 -->
+        <div style="display: flex; flex-direction: column;">
+          <div style="border-radius: 10px; overflow: hidden; margin-bottom: 4px;">
+            <img src="images/level-2/36-golden-sticky-2.jpg" alt="Golden Sticky Rose — Second Rose: Arms" style="width: 100%; height: auto; display: block; border-radius: 10px;">
+          </div>
+          <p class="h-sm" style="font-size: 8.5pt; margin-bottom: 2px; color: var(--gold);">Друга троянда — Руки</p>
+          <p class="body" style="font-size: 7.5pt; line-height: 1.4;">Друга опускається до горлової чакри, де вона розділяється на дві Троянди, які проходять по каналах рук, виходячи через чакри рук.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="pn"><span>13</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 14 — GOLDEN STICKY ROSES Roses 3 & 4 (slides 37-38)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="label">Глибоке очищення</div>
+      <div class="s8"></div>
+      <h2 class="h-lg">Золоті липкі троянди <span style="font-weight: 400; font-size: 0.75em;">(продовження)</span></h2>
+      <div style="height: 4px;"></div>
+
+      <!-- Side-by-side: Roses 3 & 4 -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+
+        <!-- Rose 3 -->
+        <div style="display: flex; flex-direction: column;">
+          <div style="border-radius: 10px; overflow: hidden; margin-bottom: 4px;">
+            <img src="images/level-2/37-golden-sticky-3.jpg" alt="Golden Sticky Rose — Third Rose: Legs" style="width: 100%; height: auto; display: block; border-radius: 10px;">
+          </div>
+          <p class="h-sm" style="font-size: 8.5pt; margin-bottom: 2px; color: var(--gold);">Третя троянда — Ноги</p>
+          <p class="body" style="font-size: 7.5pt; line-height: 1.4;">Третій спускається до кореневої чакри, де стає двома Трояндами, які йдуть по каналах ніг, виходячи через чакри стоп.</p>
+        </div>
+
+        <!-- Rose 4 -->
+        <div style="display: flex; flex-direction: column;">
+          <div style="border-radius: 10px; overflow: hidden; margin-bottom: 4px;">
+            <img src="images/level-2/38-golden-sticky-4.jpeg" alt="Golden Sticky Rose — Fourth Rose: Full Aura" style="width: 100%; height: auto; display: block; border-radius: 10px;">
+          </div>
+          <p class="h-sm" style="font-size: 8.5pt; margin-bottom: 2px; color: var(--gold);">Четверта троянда — Повна аура</p>
+          <p class="body" style="font-size: 7.5pt; line-height: 1.4;">Четвертий охоплює всю ширину Аури, спускаючись через все енергетичне поле.</p>
+        </div>
+
+      </div>
+
+      <div style="height: 6px;"></div>
+      <div class="call-gold call">
+        <p style="color: var(--rose-800); font-size: 8pt;">Після завершення всі чотири або вибухають за межами Аури, або виходять через заземлюючий шнур, трансмутуючи зібрані енергії разом із собою.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>14</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 15 — ELEMENTS SUMMARY (Рівень 2)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="justify-content: center;">
+      <div class="img-full">
+        <img src="images/level-2/19-physical-space-abstract.png" alt="Elements of Медитація Троянди Рівень 2">
+      </div>
+      <div class="s20"></div>
+
+      <div class="sum">
+        <div class="label" style="margin-bottom: 6px;">Швидка довідка</div>
+        <h2 class="h-md" style="margin-bottom: 12px;">Елементи медитації з трояндою — Рівень 2</h2>
+        <div class="line" style="margin-bottom: 14px;"></div>
+
+        <div class="cols">
+          <div>
+            <h4 class="h-sm" style="margin-bottom: 6px;">Підготовка простору</h4>
+            <ul class="bul">
+              <li>Підготуйте та захистіть кімнату</li>
+              <li>Очистіть простір золотою трояндою</li>
+              <li>Володійте простором (корона + корінь до кутів)</li>
+              <li>Золотий купол для громадських місць</li>
+            </ul>
+            <div class="s10"></div>
+            <h4 class="h-sm" style="margin-bottom: 6px;">Сім чакр</h4>
+            <ul class="bul">
+              <li>Коренева, Сакральна, Сонячне сплетіння, Серцева</li>
+              <li>Горлова, Третє око, Коронна</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="h-sm" style="margin-bottom: 6px;">Очищення чакр &amp; аури</h4>
+            <ul class="bul">
+              <li>Очистіть кожен шар аури (7 шарів)</li>
+              <li>Очистіть кожну чакру (передні + задні троянди)</li>
+              <li>Відновлювальна троянда на чакру</li>
+            </ul>
+            <div class="s10"></div>
+            <h4 class="h-sm" style="margin-bottom: 6px;">Золоті липкі троянди</h4>
+            <ul class="bul">
+              <li>Перша троянда — від Корони до Кореня</li>
+              <li>Друга троянда — Руки</li>
+              <li>Третя троянда — Ноги</li>
+              <li>Четверта троянда — Повна аура</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="s16"></div>
+      <div class="call-gold call">
+        <p style="color: var(--rose-800); font-size: 11pt;">ТАК! ТЕПЕР ВИ ГОТОВІ ДО ПРЕКРАСНОГО ДНЯ!</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>15</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 15 — CLOSING
+       ===================================================== -->
+  <div class="page closing-bg">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="align-items: center; justify-content: center; text-align: center;">
+
+      <div class="img-circle" style="width: 180px; height: 180px; margin-bottom: 36px;">
+        <img src="images/manual-l12-cover-l12.png" alt="Sacred Rose">
+      </div>
+
+      <div style="font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400); line-height: 1.8; letter-spacing: 0.03em;">
+        Вчення Angelina Ataíde<br>
+        Ілюстрації: Saraswati Noemi, Cecilia Lynch &amp; Drica Voivodic<br>
+        Редактор: Dara Ayoub &nbsp;·&nbsp; Дизайн: Jennifer Lawless
+      </div>
+      <div class="s20"></div>
+      <div style="font-family: var(--font-sans); font-size: 6.5pt; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold);">International Aura and Dream School</div>
+    </div>
+  </div>
+
+</body>
+</html>

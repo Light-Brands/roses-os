@@ -24,7 +24,7 @@ const MANUAL_DIR = path.join(ROOT, 'scripts', 'pdf-manuals');
 const TRANSLATIONS_PATH = path.join(MANUAL_DIR, 'student-manual-translations.json');
 
 const LEVELS = ['1', '2', '3'] as const;
-const LOCALES = ['es', 'pt'] as const;
+const LOCALES = ['es', 'pt', 'ru', 'uk'] as const;
 
 type Locale = (typeof LOCALES)[number];
 type Translations = Record<string, Record<Locale, Record<string, string>>>;

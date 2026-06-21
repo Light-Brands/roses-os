@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Трояндова Медитація — Рівень 1 — Вступний Курс</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+    :root {
+      --rose-clay: #9C6F6E;
+      --rose-400: #D4A09A;
+      --rose-300: #E8C4BF;
+      --rose-200: #F5E1DD;
+      --rose-100: #FAF0EE;
+      --rose-50: #FDF8F7;
+      --rose-700: #6E4A49;
+      --rose-800: #523737;
+      --rose-900: #3B2828;
+      --gold: #9E956B;
+      --warm-0: #F7F5F2;
+      --charcoal: #3F3E3C;
+      --soft-charcoal: #5A5856;
+      --font-serif: 'Cormorant Garamond', 'Georgia', serif;
+      --font-sans: 'Inter', -apple-system, sans-serif;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    @page { size: 8.5in 11in; margin: 0; }
+    html { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { font-family: var(--font-sans); color: var(--charcoal); line-height: 1.7; background: white; }
+
+    /* PAGE */
+    .page {
+      width: 8.5in;
+      height: 11in;
+      position: relative;
+      page-break-after: always;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .page:last-child { page-break-after: auto; }
+
+    /* Border frame */
+    .page::before {
+      content: '';
+      position: absolute;
+      top: 0.35in; left: 0.35in; right: 0.35in; bottom: 0.35in;
+      border: 0.5px solid var(--rose-200);
+      border-radius: 2px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Inner padding — all content lives here */
+    .inner {
+      position: relative;
+      z-index: 1;
+      margin: 0.55in 0.65in 0.55in 0.65in;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Corner ticks */
+    .ck { position: absolute; width: 16px; height: 16px; z-index: 2; }
+    .ck::before, .ck::after { content: ''; position: absolute; background: var(--rose-300); }
+    .ck-tl { top: 0.3in; left: 0.3in; }
+    .ck-tr { top: 0.3in; right: 0.3in; }
+    .ck-bl { bottom: 0.3in; left: 0.3in; }
+    .ck-br { bottom: 0.3in; right: 0.3in; }
+    .ck-tl::before { width: 16px; height: 0.5px; top: 0; left: 0; }
+    .ck-tl::after  { width: 0.5px; height: 16px; top: 0; left: 0; }
+    .ck-tr::before { width: 16px; height: 0.5px; top: 0; right: 0; }
+    .ck-tr::after  { width: 0.5px; height: 16px; top: 0; right: 0; }
+    .ck-bl::before { width: 16px; height: 0.5px; bottom: 0; left: 0; }
+    .ck-bl::after  { width: 0.5px; height: 16px; bottom: 0; left: 0; }
+    .ck-br::before { width: 16px; height: 0.5px; bottom: 0; right: 0; }
+    .ck-br::after  { width: 0.5px; height: 16px; bottom: 0; right: 0; }
+
+    /* Page number */
+    .pn {
+      position: absolute;
+      bottom: 0.38in; left: 0; right: 0;
+      text-align: center;
+      font-family: var(--font-sans);
+      font-size: 7pt;
+      color: var(--rose-400);
+      letter-spacing: 0.12em;
+      z-index: 2;
+    }
+    .pn span { display: inline-block; padding: 0 8px; background: white; }
+
+    /* ============================================================
+       IMAGES — full-width hero approach
+       ============================================================ */
+
+    /* Centered image — 80% width, centered */
+    .img-full {
+      width: 80%;
+      max-width: 480px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+    }
+    .img-full img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+      outline: 0.5px solid var(--rose-200);
+      outline-offset: -0.5px;
+    }
+
+    /* Centered image with max-width — maintains 1:1 ratio */
+    .img-center {
+      display: flex;
+      justify-content: center;
+    }
+    .img-center img {
+      height: auto;
+      display: block;
+      border-radius: 16px;
+      outline: 0.5px solid var(--rose-200);
+      outline-offset: -0.5px;
+    }
+
+    /* Circular image — always 1:1 by nature */
+    .img-circle {
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+      aspect-ratio: 1;
+      box-shadow: 0 0 0 0.5px var(--rose-200);
+    }
+    .img-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Side-by-side: image + text */
+    .split {
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+    }
+    .split-img {
+      flex: 1;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 0 0 0.5px var(--rose-200);
+    }
+    .split-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+    }
+    .split-text {
+      flex: 1;
+    }
+
+    /* ============================================================
+       TYPOGRAPHY
+       ============================================================ */
+
+    .label {
+      font-family: var(--font-sans);
+      font-size: 6.5pt; font-weight: 500;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .h-xl {
+      font-family: var(--font-serif);
+      font-size: 36pt; font-weight: 300;
+      color: var(--rose-800);
+      line-height: 1.12; letter-spacing: -0.02em;
+    }
+
+    .h-lg {
+      font-family: var(--font-serif);
+      font-size: 22pt; font-weight: 300;
+      color: var(--rose-800);
+      line-height: 1.2; letter-spacing: -0.015em;
+    }
+
+    .h-md {
+      font-family: var(--font-serif);
+      font-size: 15pt; font-weight: 400;
+      color: var(--rose-800);
+      line-height: 1.3;
+    }
+
+    .h-sm {
+      font-family: var(--font-serif);
+      font-size: 11.5pt; font-weight: 500;
+      font-style: italic;
+      color: var(--rose-clay);
+    }
+
+    .sub {
+      font-family: var(--font-serif);
+      font-size: 15pt; font-weight: 400;
+      font-style: italic;
+      color: var(--rose-clay);
+    }
+
+    .body {
+      font-family: var(--font-sans);
+      font-size: 9.5pt; line-height: 1.75;
+      color: var(--charcoal);
+    }
+
+    .body-sm {
+      font-family: var(--font-sans);
+      font-size: 8.5pt; line-height: 1.7;
+      color: var(--soft-charcoal);
+    }
+
+    em { font-family: var(--font-serif); color: var(--rose-700); }
+
+    .line { width: 36px; height: 0.5px; background: var(--rose-300); }
+    .line-c { width: 36px; height: 0.5px; background: var(--rose-300); margin: 0 auto; }
+
+    /* Callout */
+    .call {
+      background: var(--rose-50);
+      border-left: 2px solid var(--rose-clay);
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+    }
+    .call p {
+      font-family: var(--font-serif);
+      font-size: 10pt; font-style: italic;
+      line-height: 1.6; color: var(--rose-700);
+    }
+    .call-gold { border-left-color: var(--gold); background: linear-gradient(135deg, var(--rose-50), var(--warm-0)); }
+
+    /* Lists */
+    .bul { list-style: none; }
+    .bul li {
+      font-family: var(--font-sans); font-size: 9.5pt;
+      line-height: 1.75; color: var(--charcoal);
+      padding: 2px 0 2px 16px; position: relative;
+    }
+    .bul li::before {
+      content: ''; position: absolute;
+      left: 2px; top: 11px;
+      width: 5px; height: 5px;
+      background: var(--rose-clay); border-radius: 50%;
+    }
+
+    .num { list-style: none; counter-reset: n; }
+    .num li {
+      counter-increment: n;
+      font-family: var(--font-sans); font-size: 9.5pt;
+      line-height: 1.75; color: var(--charcoal);
+      padding: 3px 0 3px 26px; position: relative;
+    }
+    .num li::before {
+      content: counter(n) '.'; position: absolute; left: 0;
+      font-family: var(--font-serif); font-size: 12pt; font-weight: 400;
+      color: var(--rose-clay);
+    }
+
+    /* Step card */
+    .step { display: flex; gap: 14px; align-items: baseline; }
+    .sn {
+      font-family: var(--font-serif);
+      font-size: 28pt; font-weight: 300;
+      color: var(--rose-300); line-height: 1;
+      flex-shrink: 0; width: 34px; text-align: center;
+    }
+
+    /* Two columns */
+    .cols { display: flex; gap: 24px; }
+    .cols > div { flex: 1; }
+
+    /* Summary card */
+    .sum {
+      background: linear-gradient(135deg, var(--rose-50), var(--warm-0));
+      border: 0.5px solid var(--rose-200);
+      border-radius: 16px;
+      padding: 20px 24px;
+    }
+    .sum .bul li { font-size: 9pt; padding: 2px 0 2px 14px; }
+    .sum .bul li::before { top: 9px; width: 4px; height: 4px; }
+
+    /* Spacers */
+    .s4  { height: 4px; }
+    .s6  { height: 6px; }
+    .s8  { height: 8px; }
+    .s10 { height: 10px; }
+    .s12 { height: 12px; }
+    .s16 { height: 16px; }
+    .s20 { height: 20px; }
+    .s24 { height: 24px; }
+    .s28 { height: 28px; }
+    .s32 { height: 32px; }
+    .s40 { height: 40px; }
+    .grow { flex: 1; }
+
+    /* Cover specific */
+    .cover-bg {
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--rose-50) 40%, var(--warm-0) 100%);
+    }
+    .cover-bg::before { border-color: var(--rose-300); }
+
+    .closing-bg {
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--rose-50) 50%, var(--warm-0) 100%);
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- =====================================================
+       PAGE 1 — COVER
+       ===================================================== -->
+  <div class="page cover-bg">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="align-items: center; justify-content: center; text-align: center;">
+      <div class="label">International Aura and Dream School</div>
+      <div class="s28"></div>
+
+      <div class="img-circle" style="width: 320px; height: 320px;">
+        <img src="images/manual-l1-cover.png" alt="Sacred Rose">
+      </div>
+      <div class="s32"></div>
+
+      <h1 class="h-xl">Трояндова Медитація</h1>
+      <div class="s6"></div>
+      <p class="sub">Рівень 1 — Вступний Курс</p>
+      <div class="s32"></div>
+
+      <div class="line-c"></div>
+      <div class="s28"></div>
+
+      <div style="font-family: var(--font-sans); font-size: 8.5pt; color: var(--soft-charcoal); line-height: 1.8; letter-spacing: 0.04em;">
+        <strong style="font-weight: 500; color: var(--charcoal); font-size: 9pt;">Вчення Angelina Ataíde</strong><br>
+        International Aura and Dream School<br><br>
+        <span style="font-size: 7.5pt; color: var(--rose-400);">
+          Оригінальні ілюстрації: Saraswati Noemi, Cecilia Lynch &amp; Drica Voivodic<br>
+          Редактор: Dara Ayoub &nbsp;·&nbsp; Дизайн: Jennifer Lawless
+        </span>
+      </div>
+      <div class="s16"></div>
+      <div style="font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400); letter-spacing: 0.2em;">2026 &nbsp;·&nbsp; ОГЛЯДОВЕ ВИДАННЯ</div>
+    </div>
+
+    <div style="position: absolute; bottom: 0.55in; left: 0.8in; right: 0.8in; text-align: center; font-family: var(--font-sans); font-size: 6.5pt; color: var(--rose-400); line-height: 1.6; font-style: italic;">
+      Цей посібник призначений виключно для тих, хто пройшов курс медитації Троянди Рівня 1.<br>
+      Для вашого власного захисту та щоб вшанувати цілісність цього роду, будь ласка, не діліться та не відтворюйте цей матеріал з іншими, хто не отримав ініціації.
+    </div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 2 — TABLE OF CONTENTS
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="padding-top: 0.3in;">
+      <div class="label">Зміст</div>
+      <div class="s6"></div>
+      <h2 class="h-lg" style="font-size: 26pt;">Трояндова Медитація</h2>
+      <div class="s4"></div>
+      <p class="sub" style="font-size: 13pt;">Рівень 1 — Вступний Курс</p>
+      <div class="s20"></div>
+      <div class="line"></div>
+      <div class="s12"></div>
+
+      <!-- Rose icon on TOC -->
+      <div class="img-circle" style="width: 36px; height: 36px; margin: 0 auto 8px auto;">
+        <img src="images/level-1/01-the-rose.jpeg" alt="The Rose" style="object-position: top;">
+      </div>
+
+      <table style="width: 100%; border-collapse: collapse;">
+        <tbody>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="width: 26px; padding: 6px 0; font-family: var(--font-serif); font-size: 13pt; color: var(--rose-clay); vertical-align: baseline;"></td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Підготовка до початку</td>
+            <td style="width: 24px; padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">3</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 13pt; color: var(--rose-clay);">1</td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Заземлювальний Шнур</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">4</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 13pt; color: var(--rose-clay);">2</td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Золоте Сонце</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">5</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 13pt; color: var(--rose-clay); white-space: nowrap;">3–5</td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Межі Аури, Розширення Шнура &amp; Оновлення</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">6</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 13pt; color: var(--rose-clay);">6</td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Чотири Троянди Захисту, Розділення &amp; Спостереження</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">7</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 13pt; color: var(--rose-clay);">7</td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Кола Енергії Космосу &amp; Землі</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">8</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 13pt; color: var(--rose-clay);">8</td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Троянди для Очищення &amp; Відновлення Енергії</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">9</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 13pt; color: var(--rose-clay);">9</td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Рожева Троянда</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">10</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 13pt; color: var(--rose-clay);">10</td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Священний Простір</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">11</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 6px 0;"></td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Завершення Медитації</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">12</td>
+          </tr>
+          <tr>
+            <td style="padding: 6px 0;"></td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Елементи Трояндової Медитації Рівень 1</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">13</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="grow"></div>
+
+      <div class="call">
+        <p>Троянди представляють дух. Вони поглинають усі енергії, емоції та ситуації, які вам не належать або які більше не служать вашому теперішньому моменту. Ми можемо створювати та вибухати їх стільки разів, скільки необхідно.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>Трояндова Медитація &nbsp;·&nbsp; Рівень 1</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 3 — GETTING READY TO START
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="justify-content: center;">
+      <div class="label">Підготовка</div>
+      <div class="s8"></div>
+      <h2 class="h-lg">Підготовка до початку</h2>
+      <div class="s16"></div>
+
+      <div class="img-full" style="max-width: 280px;">
+        <img src="images/level-1/02-meditation-posture.PNG" alt="Meditation Posture" style="border-radius: 16px;">
+      </div>
+      <div class="s16"></div>
+
+      <ol class="num">
+        <li>Сядьте і тримайте хребет вирівняним у вертикальному положенні. Поставте обидві стопи на підлогу, руки покладіть на коліна долонями вгору.</li>
+        <li>Зосередьтеся, заплющте очі, перенесіть свою присутність у теперішній момент і дихайте глибоко та повільно.</li>
+        <li>Використовуйте силу своєї уяви <em>(зображення в дії)</em> щоб візуалізувати техніки.</li>
+      </ol>
+
+      <div class="s32"></div>
+      <div class="call-gold call">
+        <p style="color: var(--rose-800);">Медитація Троянди — це інструмент для очищення аури та семи основних чакр, що забезпечує захист та енергетичний баланс. Завдяки цій техніці можна вивільнити заблоковані енергії, енергії, які не є нашими, усвідомити свою життєву силу та депрограмувати патерни, що перешкоджають прямому контакту з нашою сутністю.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>3</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 4 — GROUNDING CORD (full-spread image page)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="step">
+        <div class="sn">1</div>
+        <h3 class="h-md">Заземлювальний Шнур</h3>
+      </div>
+      <div class="s16"></div>
+
+      <div class="img-center">
+        <img src="images/level-1/03-grounding-cord.png" alt="Заземлювальний Шнур" style="width: 300px;">
+      </div>
+      <div class="s16"></div>
+
+      <p class="body">
+        Створіть натягнутий заземлюючий шнур, який проходить від вашої першої чакри до центру Землі.
+      </p>
+      <div class="s6"></div>
+      <p class="body">
+        Шнур усуває відволікання, думки та блоки, які заважають вам бути в теперішньому моменті. Він приносить безпеку, стабільність і допомагає очистити енергії, які не є вашою сутністю.
+      </p>
+      <div class="s10"></div>
+
+      <div class="call">
+        <p>З часом і практикою шнур природно стає прозорим.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>4</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 5 — GOLDEN SUN (full-spread image page)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="step">
+        <div class="sn">2</div>
+        <h3 class="h-md">Золоте Сонце</h3>
+      </div>
+      <div class="s16"></div>
+
+      <div class="img-center">
+        <img src="images/level-1/04-golden-sun.jpeg" alt="Золоте Сонце" style="width: 300px;">
+      </div>
+      <div class="s16"></div>
+
+      <p class="body">
+        Створіть Золоте Сонце над головою і наповніть весь простір вашої Аури та фізичного тіла золотим світлом, що йде від Сонця. Це сонце представляє Вищу Істоту, воно підвищує вашу вібрацію та заповнює порожні енергетичні простори Божественною енергією після будь-якого тонкого вивільнення енергії.
+      </p>
+      <div class="s10"></div>
+
+      <div class="call">
+        <p>Наповнюйте себе світлом Золотого Сонця щоразу, коли ви оновлюєте Заземлюючий Шнур, щоб завершити медитацію та/або в будь-який час дня, коли ви хочете підвищити свою вібрацію.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>5</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 6 — AURA + CORD EXPANSION + RENEWAL
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+
+      <div class="split" style="gap: 20px; align-items: center;">
+        <div class="split-text" style="flex: 1.2;">
+          <div class="step" style="align-items: flex-start;">
+            <div class="sn">3</div>
+            <div>
+              <h3 class="h-md">Межі Аури</h3>
+              <div class="s6"></div>
+              <p class="body">Аура — це енергетичне поле, яке оточує наше фізичне тіло. Вона може розширюватися та стискатися. Для медитації Троянди встановіть свою Ауру на 20 дюймів (50 см) навколо всього тіла.</p>
+            </div>
+          </div>
+        </div>
+        <div style="flex: 0.8;">
+          <div class="img-center">
+            <img src="images/level-1/05-aura-exercise.PNG" alt="Межі Аури" style="width: 200px; border-radius: 16px; outline: 0.5px solid var(--rose-200);">
+          </div>
+        </div>
+      </div>
+
+      <div class="s16"></div>
+      <div class="line"></div>
+      <div class="s16"></div>
+
+      <div class="split" style="gap: 20px; align-items: center;">
+        <div style="flex: 0.8;">
+          <div class="img-center">
+            <img src="images/level-1/06-expansion-grounding-cord.png" alt="Expansion of Заземлювальний Шнур" style="width: 200px; border-radius: 16px; outline: 0.5px solid var(--rose-200);">
+          </div>
+        </div>
+        <div class="split-text" style="flex: 1.2;">
+          <div class="step" style="align-items: flex-start;">
+            <div class="sn">4</div>
+            <div>
+              <h3 class="h-md">Розширення Заземлювального Шнура</h3>
+              <div class="s6"></div>
+              <p class="body">Розширте шнур убік до ширини Аури, заземлюючи всю Ауру.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="s16"></div>
+      <div class="line"></div>
+      <div class="s16"></div>
+
+      <div class="step">
+        <div class="sn">5</div>
+        <div>
+          <h3 class="h-md">Відновлення Заземлювального Шнура</h3>
+          <div class="s6"></div>
+          <p class="body">Використовуючи свою уяву та свій ріжучий інструмент, обрізайте заземлюючий шнур, коли вам це потрібно. Цей інструмент завжди буде тим самим і ставатиме потужнішим щоразу, коли ви його використовуєте.</p>
+          <div class="s8"></div>
+          <ul class="bul">
+            <li>Обріжте старий шнур.</li>
+            <li>Створіть новий шнур.</li>
+            <li>Розширюйте шнур убік до ширини Аури щоразу, коли створюєте новий.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="pn"><span>6</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 7 — FOUR ROSES (full-spread image page)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="step">
+        <div class="sn">6</div>
+        <h3 class="h-md">Чотири Троянди Захисту, Розділення &amp; Спостереження</h3>
+      </div>
+      <div class="s16"></div>
+
+      <div class="img-center">
+        <img src="images/level-1/12-four-roses.png" alt="Four Roses of Захист" style="width: 280px;">
+      </div>
+      <div class="s12"></div>
+
+      <p class="body" style="margin-bottom: 12px;">
+        Створіть чотири Троянди обраного вами кольору або кольору, який приходить до вас (за умови, що вони високо-вібраційні), заземлені зовні вашої Аури — спереду, ззаду, ліворуч і праворуч. Кожна Троянда виконує три функції:
+      </p>
+
+      <div class="cols">
+        <div>
+          <h4 class="h-sm">Захист</h4>
+          <div class="s4"></div>
+          <p class="body-sm">Щодня ми взаємодіємо з енергіями, які не є нашими. Захищаючи себе, ми поглиблюємо наше розуміння динаміки, яку ми переживаємо.</p>
+        </div>
+        <div>
+          <h4 class="h-sm">Розділення</h4>
+          <div class="s4"></div>
+          <p class="body-sm">Це допомагає нашій Аурі залишатися відокремленою від Аури інших людей, приносячи чіткіше сприйняття нашої індивідуальності.</p>
+        </div>
+        <div>
+          <h4 class="h-sm">Спостереження</h4>
+          <div class="s4"></div>
+          <p class="body-sm">Коли ми спостерігаємо з нейтрального стану, як глядач, ми розвиваємо співчуття, а не осуд.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pn"><span>7</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 8 — CIRCUIT OF ENERGIES (alternating split layout)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="step">
+        <div class="sn">7</div>
+        <h3 class="h-md">Кола Енергії Космосу &amp; Землі</h3>
+      </div>
+      <div class="s12"></div>
+
+      <!-- Earth Energy — image left, text right -->
+      <div class="split" style="gap: 20px; align-items: flex-start;">
+        <div style="flex: 0 0 180px;">
+          <div class="img-center">
+            <img src="images/level-1/08-earth-energy.PNG" alt="Earth Energy" style="width: 180px; border-radius: 14px; outline: 0.5px solid var(--rose-200);">
+          </div>
+        </div>
+        <div class="split-text" style="flex: 1;">
+          <h4 class="h-sm">Коло Енергії Землі</h4>
+          <div class="s4"></div>
+          <p class="body-sm">Ми закликаємо енергію Землі, щоб вона принесла силу трансмутації та життєвої сили до роботи з енергетичного очищення, яку ми виконуємо в медитації Троянди. Вона працює як двигун, що збільшує силу всього, що ми робимо під час медитації.</p>
+          <div class="s4"></div>
+          <p class="body-sm">Уявіть мідно-золоту енергію, яка йде з центру Землі і входить через підошви ніг, піднімається через ноги, проходить через куприк і спускається через заземлюючий шнур. Коли вона проходить через куприк, 10% цієї енергії піднімається, щоб змішатися з енергією космосу.</p>
+        </div>
+      </div>
+
+      <div class="s12"></div>
+      <div class="line"></div>
+      <div class="s12"></div>
+
+      <!-- Cosmos Energy — text left, image right -->
+      <div class="split" style="gap: 20px; align-items: flex-start;">
+        <div class="split-text" style="flex: 1;">
+          <h4 class="h-sm">Коло Енергії Космосу</h4>
+          <div class="s4"></div>
+          <p class="body-sm">Енергія Космосу — це чиста свідомість, і вона допомагає нам зрозуміти, що відбувається під час медитації Троянди та в нашому житті. Завдяки цьому активному ланцюгу ми можемо отримувати інформацію, щоб зрозуміти, хто ми є, чому ми переживаємо ті виклики, які переживаємо, які енергії ми несемо в нашій Аурі, як ми їх поглинаємо та які корективи ми можемо внести, щоб створити іншу реальність у майбутньому.</p>
+          <div class="s4"></div>
+          <p class="body-sm">Уявіть сяючу золоту енергію, яка йде з центру Всесвіту, входить через коронну чакру, спускається по хребту, проходить через куприк і піднімається по передній частині тіла до горлової чакри, де розділяється на три частини. Одна частина виходить через коронну чакру, а дві інші частини проходять через верхні руки і виходять через долоні, як фонтан. Коли вона проходить через куприк, 10% цієї енергії спускається, щоб змішатися з енергією Землі.</p>
+        </div>
+        <div style="flex: 0 0 180px;">
+          <div class="img-center">
+            <img src="images/level-1/09-cosmos-circuit.jpeg" alt="Cosmos Circuit" style="width: 180px; border-radius: 14px; outline: 0.5px solid var(--rose-200);">
+          </div>
+        </div>
+      </div>
+
+      <div class="s12"></div>
+      <div class="line"></div>
+      <div class="s12"></div>
+
+      <!-- Earth & Cosmos Combined — centered image + callout -->
+      <div style="display: flex; gap: 20px; align-items: center;">
+        <div style="flex: 0 0 160px;">
+          <div class="img-center">
+            <img src="images/level-1/10-cosmosearth.PNG" alt="Earth &amp; Cosmos Circuit" style="width: 160px; border-radius: 14px; outline: 0.5px solid var(--rose-200);">
+          </div>
+        </div>
+        <div style="flex: 1;">
+          <h4 class="h-sm" style="margin-bottom: 6px;">Кола Енергії Космосу &amp; Землі</h4>
+          <div class="call" style="margin: 0;">
+            <p>Як енергія Землі, так і енергія Космосу продовжують циркулювати в постійному потоці, коли вони входять, проходять своїми шляхами та виходять. Ця активація підвищує нашу вібрацію, сприяє енергетичному розблокуванню, виносить на поверхню питання для вирішення та надає духовну інформацію.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pn"><span>8</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 9 — CLEANSING & RECOVERY (full-spread image)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="step">
+        <div class="sn">8</div>
+        <h3 class="h-md">Троянди для Очищення &amp; Відновлення Енергії</h3>
+      </div>
+      <div class="s12"></div>
+
+      <!-- Очищувальна Троянда — stacked above Recovery -->
+      <div class="img-center" style="justify-content: center;">
+        <img src="images/level-1/13-cleansing-rose.png" alt="Очищувальна Троянда" style="width: 180px; border-radius: 12px; outline: 0.5px solid var(--rose-200);">
+      </div>
+      <div class="s8"></div>
+      <h4 class="h-sm" style="text-align: center;">Очищувальна Троянда</h4>
+      <div class="s4"></div>
+      <p class="body-sm">Створіть Троянду високо-вібраційного кольору, заземлену перед вами, за межами вашої Аури. Помістіть на неї будь-яку некомфортну ситуацію — думки, людей, події, страхи. Намір, щоб Троянда всмоктувала енергію, як пилосос.</p>
+      <div class="s4"></div>
+      <p class="body-sm">Вибухніть Троянду зі своєї Аури, щоб очистити енергію та підвищити вібрацію. Створюйте нові Троянди стільки разів, скільки потрібно.</p>
+
+      <div class="s12"></div>
+
+      <!-- Відновлювальна Троянда -->
+      <div class="img-center" style="justify-content: center;">
+        <img src="images/level-1/14-energy-recovery.png" alt="Відновлювальна Троянда" style="width: 180px; border-radius: 12px; outline: 0.5px solid var(--rose-200);">
+      </div>
+      <div class="s8"></div>
+      <h4 class="h-sm" style="text-align: center;">Відновлювальна Троянда</h4>
+      <div class="s4"></div>
+      <p class="body-sm">Створіть ще одну Троянду, заземлену поза вашою Аурою, і поверніть свою енергію. Троянда притягує вашу розсіяну енергію, де б вона не була, як магніт.</p>
+      <div class="s4"></div>
+      <p class="body-sm">Вибухніть Троянду зі своєї Аури та отримайте свою високочастотну та очищену енергію назад.</p>
+
+      <div class="s12"></div>
+      <div class="call">
+        <p>Ви можете створювати та вибухати стільки троянд, скільки забажаєте. Робіть те саме в позитивних ситуаціях, коли ви хочете ще більше підвищити вібрацію.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>9</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 10 — PINK ROSE (split layout)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="img-full" style="max-height: 340px; justify-content: center;">
+        <img src="images/level-1/15-pink-rose-closure.png" alt="Рожева Троянда Blessing" style="width: auto; max-height: 340px;">
+      </div>
+      <div class="s16"></div>
+
+      <div class="step">
+        <div class="sn">9</div>
+        <div>
+          <h3 class="h-md">Рожева Троянда</h3>
+          <div class="s6"></div>
+          <p class="body">Ми можемо запропонувати цю троянду як подарунок, після очищення енергії іншої людини з нашої Аури, або головним чином для себе:</p>
+          <div class="s8"></div>
+          <ul class="bul">
+            <li>Створіть некореневу рожеву Троянду.</li>
+            <li>Помістіть людину або себе в цю Троянду, візуалізуючи <em>"Щасливе, Здорове, Цілісне, Тіло, Розум &amp; Душа."</em></li>
+            <li>Повторюйте в голові: <em>"Щасливе, Здорове, Цілісне, Тіло, Розум &amp; Душа."</em></li>
+            <li>Повторюючи, змусьте Троянду піднятися до центру Всесвіту, бажаючи вам або людині в ній всього найкращого.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="pn"><span>10</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 11 — SACRED SPACE
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="step">
+        <div class="sn">10</div>
+        <h3 class="h-md">Священний Простір</h3>
+      </div>
+      <div class="s12"></div>
+
+      <div class="img-center">
+        <img src="images/level-1/18-sacred-space.PNG" alt="Священний Простір" style="width: 300px; border-radius: 16px; outline: 0.5px solid var(--rose-200);">
+      </div>
+      <div class="s12"></div>
+
+      <p class="body">
+        Помістіть себе у свій священний простір, де ви в безпеці та повністю усвідомлюєте свою енергетичну владу. Саме звідси вся енергетична робота, включаючи Медитацію Троянди, може бути виконана з ясністю, ясновидінням та справжнім енергетичним суверенітетом.
+      </p>
+      <div class="s8"></div>
+      <p class="body">
+        Цей простір належить вашому Духу &mdash; найчистішому виміру вашого буття. Тримайте його закритим і захищеним завжди. Повертайтеся до нього для Медитації Троянди, для важливих рішень, які вимагають вашого найглибшого розрізнення, або просто, щоб повернутися до відповідності зі своєю духовною сутністю.
+      </p>
+      <div class="s12"></div>
+
+      <div class="call-gold call">
+        <p style="color: var(--rose-800);">Цей простір належить тільки вам, це ваше святилище. У ньому ви зосереджені, захищені та узгоджені зі своєю найвищою вібрацією.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>11</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 12 — TO END THE MEDITATION
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="justify-content: center;">
+      <div class="label">Завершення</div>
+      <div class="s8"></div>
+      <h2 class="h-lg">Завершення Медитації</h2>
+      <div class="s20"></div>
+
+      <div class="img-center">
+        <img src="images/level-1/16-discharge-excess.PNG" alt="Discharge Excess Energy" style="width: 240px; border-radius: 16px; outline: 0.5px solid var(--rose-200);">
+      </div>
+      <div class="s16"></div>
+
+      <ul class="bul">
+        <li>Переріжте заземлюючий шнур і створіть новий.</li>
+        <li>Наповніть себе золотим сонцем.</li>
+        <li>Якщо відчуваєте, оновіть будь-яку техніку, яку забажаєте — чотири троянди захисту, розділення та спостереження; кола космосу та землі.</li>
+        <li>Покладіть руки на підлогу, щоб вивільнити надлишкову енергію.</li>
+      </ul>
+
+      <div class="s20"></div>
+      <div class="line"></div>
+      <div class="s12"></div>
+
+      <div class="call-gold call">
+        <p style="color: var(--rose-800);">У будь-який час доби, або коли ми медитуємо, ми вибухаємо чотири Троянди і створюємо нові. Вони допомагають нам підтримувати нейтралітет.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>12</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 13 — ELEMENTS SUMMARY (full-spread image)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="justify-content: center;">
+
+      <div class="img-center">
+        <img src="images/level-1/11-therosegold.PNG" alt="The Rose Gold" style="width: 280px; border-radius: 16px; outline: 0.5px solid var(--rose-200);">
+      </div>
+      <div class="s16"></div>
+
+      <div class="sum">
+        <div class="label" style="margin-bottom: 6px;">Швидкий Довідник</div>
+        <h2 class="h-md" style="margin-bottom: 12px;">Елементи Трояндової Медитації Рівень 1</h2>
+        <div class="line" style="margin-bottom: 14px;"></div>
+        <ul class="bul">
+          <li>Заземлюючий шнур</li>
+          <li>Золоте Сонце</li>
+          <li>Межі аури та розширення шнура</li>
+          <li>Троянди захисту, розділення та спостереження</li>
+          <li>Енергії Землі та Космосу</li>
+          <li>Очищувальна Троянда</li>
+          <li>Троянда відновлення енергії</li>
+          <li>Рожева Троянда</li>
+          <li>Священний Простір</li>
+          <li>Завершення: шнур + золоте сонце + скидання надлишкової енергії</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pn"><span>13</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 14 — CLOSING
+       ===================================================== -->
+  <div class="page closing-bg">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="align-items: center; justify-content: center; text-align: center;">
+
+      <div class="img-circle" style="width: 180px; height: 180px; margin-bottom: 36px;">
+        <img src="images/manual-l1-cover.png" alt="Rose">
+      </div>
+
+      <div style="font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400); line-height: 1.8; letter-spacing: 0.03em;">
+        Вчення Angelina Ataíde<br>
+        Оригінальні ілюстрації: Saraswati Noemi, Cecilia Lynch &amp; Drica Voivodic<br>
+        Редактор: Dara Ayoub &nbsp;·&nbsp; Дизайн: Jennifer Lawless
+      </div>
+      <div class="s20"></div>
+      <div style="font-family: var(--font-sans); font-size: 6.5pt; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold);">International Aura and Dream School</div>
+    </div>
+  </div>
+
+</body>
+</html>

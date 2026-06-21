@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Трояндова Медитація — Рівень 3</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+    :root {
+      --rose-clay: #9C6F6E;
+      --rose-400: #D4A09A;
+      --rose-300: #E8C4BF;
+      --rose-200: #F5E1DD;
+      --rose-100: #FAF0EE;
+      --rose-50: #FDF8F7;
+      --rose-700: #6E4A49;
+      --rose-800: #523737;
+      --rose-900: #3B2828;
+      --gold: #9E956B;
+      --gold-light: #B8B08A;
+      --warm-0: #F7F5F2;
+      --charcoal: #3F3E3C;
+      --soft-charcoal: #5A5856;
+      --font-serif: 'Cormorant Garamond', 'Georgia', serif;
+      --font-sans: 'Inter', -apple-system, sans-serif;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    @page { size: 8.5in 11in; margin: 0; }
+    html { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { font-family: var(--font-sans); color: var(--charcoal); line-height: 1.7; background: white; }
+
+    .page {
+      width: 8.5in; height: 11in;
+      position: relative;
+      page-break-after: always;
+      display: flex; flex-direction: column;
+      overflow: hidden;
+    }
+    .page:last-child { page-break-after: auto; }
+
+    .page::before {
+      content: ''; position: absolute;
+      top: 0.35in; left: 0.35in; right: 0.35in; bottom: 0.35in;
+      border: 0.5px solid var(--rose-200);
+      border-radius: 2px; pointer-events: none; z-index: 0;
+    }
+
+    .inner {
+      position: relative; z-index: 1;
+      margin: 0.55in 0.65in; flex: 1;
+      display: flex; flex-direction: column;
+    }
+
+    .ck { position: absolute; width: 16px; height: 16px; z-index: 2; }
+    .ck::before, .ck::after { content: ''; position: absolute; background: var(--rose-300); }
+    .ck-tl { top: 0.3in; left: 0.3in; }
+    .ck-tr { top: 0.3in; right: 0.3in; }
+    .ck-bl { bottom: 0.3in; left: 0.3in; }
+    .ck-br { bottom: 0.3in; right: 0.3in; }
+    .ck-tl::before { width: 16px; height: 0.5px; top: 0; left: 0; }
+    .ck-tl::after  { width: 0.5px; height: 16px; top: 0; left: 0; }
+    .ck-tr::before { width: 16px; height: 0.5px; top: 0; right: 0; }
+    .ck-tr::after  { width: 0.5px; height: 16px; top: 0; right: 0; }
+    .ck-bl::before { width: 16px; height: 0.5px; bottom: 0; left: 0; }
+    .ck-bl::after  { width: 0.5px; height: 16px; bottom: 0; left: 0; }
+    .ck-br::before { width: 16px; height: 0.5px; bottom: 0; right: 0; }
+    .ck-br::after  { width: 0.5px; height: 16px; bottom: 0; right: 0; }
+
+    .pn {
+      position: absolute; bottom: 0.38in; left: 0; right: 0;
+      text-align: center; font-family: var(--font-sans);
+      font-size: 7pt; color: var(--rose-400);
+      letter-spacing: 0.12em; z-index: 2;
+    }
+    .pn span { display: inline-block; padding: 0 8px; background: white; }
+
+    /* IMAGES */
+    .img-full {
+      width: 80%; max-width: 480px; margin: 0 auto;
+      border-radius: 16px; overflow: hidden; display: flex;
+    }
+    .img-full img {
+      width: 100%; height: auto; display: block;
+      border-radius: 16px;
+    }
+
+    .img-circle {
+      border-radius: 50%; overflow: hidden;
+      flex-shrink: 0; aspect-ratio: 1;
+    }
+    .img-circle img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+    }
+
+    /* TYPOGRAPHY */
+    .label {
+      font-family: var(--font-sans);
+      font-size: 6.5pt; font-weight: 500;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold);
+    }
+    .h-xl {
+      font-family: var(--font-serif);
+      font-size: 36pt; font-weight: 300;
+      color: var(--rose-800); line-height: 1.12; letter-spacing: -0.02em;
+    }
+    .h-lg {
+      font-family: var(--font-serif);
+      font-size: 22pt; font-weight: 300;
+      color: var(--rose-800); line-height: 1.2; letter-spacing: -0.015em;
+    }
+    .h-md {
+      font-family: var(--font-serif);
+      font-size: 15pt; font-weight: 400;
+      color: var(--rose-800); line-height: 1.3;
+    }
+    .h-sm {
+      font-family: var(--font-serif);
+      font-size: 11.5pt; font-weight: 500;
+      font-style: italic; color: var(--rose-clay);
+    }
+    .sub {
+      font-family: var(--font-serif);
+      font-size: 15pt; font-weight: 400;
+      font-style: italic; color: var(--rose-clay);
+    }
+    .body {
+      font-family: var(--font-sans);
+      font-size: 9.5pt; line-height: 1.75; color: var(--charcoal);
+    }
+    .body-sm {
+      font-family: var(--font-sans);
+      font-size: 8.5pt; line-height: 1.7; color: var(--soft-charcoal);
+    }
+    em { font-family: var(--font-serif); color: var(--rose-700); }
+
+    .line { width: 36px; height: 0.5px; background: var(--rose-300); }
+    .line-c { width: 36px; height: 0.5px; background: var(--rose-300); margin: 0 auto; }
+
+    .call {
+      background: var(--rose-50);
+      border-left: 2px solid var(--rose-clay);
+      padding: 12px 16px; border-radius: 0 8px 8px 0;
+    }
+    .call p {
+      font-family: var(--font-serif);
+      font-size: 10pt; font-style: italic;
+      line-height: 1.6; color: var(--rose-700);
+    }
+    .call-gold { border-left-color: var(--gold); background: linear-gradient(135deg, var(--rose-50), var(--warm-0)); }
+
+    .bul { list-style: none; }
+    .bul li {
+      font-family: var(--font-sans); font-size: 9.5pt;
+      line-height: 1.75; color: var(--charcoal);
+      padding: 2px 0 2px 16px; position: relative;
+    }
+    .bul li::before {
+      content: ''; position: absolute;
+      left: 2px; top: 11px;
+      width: 5px; height: 5px;
+      background: var(--rose-clay); border-radius: 50%;
+    }
+
+    .cols { display: flex; gap: 24px; }
+    .cols > div { flex: 1; }
+
+    .sum {
+      background: linear-gradient(135deg, var(--rose-50), var(--warm-0));
+      border: 0.5px solid var(--rose-200);
+      border-radius: 16px; padding: 20px 24px;
+    }
+    .sum .bul li { font-size: 9pt; padding: 2px 0 2px 14px; }
+    .sum .bul li::before { top: 9px; width: 4px; height: 4px; }
+
+    .s4  { height: 4px; }
+    .s6  { height: 6px; }
+    .s6  { height: 6px; }
+    .s8  { height: 8px; }
+    .s10 { height: 10px; }
+    .s12 { height: 12px; }
+    .s16 { height: 16px; }
+    .s20 { height: 20px; }
+    .s24 { height: 24px; }
+    .s28 { height: 28px; }
+    .s32 { height: 32px; }
+    .s40 { height: 40px; }
+    .grow { flex: 1; }
+
+    .cover-bg {
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--rose-50) 40%, var(--warm-0) 100%);
+    }
+    .cover-bg::before { border-color: var(--rose-300); }
+    .closing-bg {
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--rose-50) 50%, var(--warm-0) 100%);
+    }
+
+    .phase-badge {
+      display: inline-block;
+      font-family: var(--font-sans);
+      font-size: 7pt; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold-light);
+      padding: 4px 14px; border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =====================================================
+       PAGE 1 — COVER
+       ===================================================== -->
+  <div class="page cover-bg">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="align-items: center; justify-content: center; text-align: center;">
+      <div class="label">International Aura and Dream School</div>
+      <div class="s28"></div>
+
+      <div class="img-circle" style="width: 320px; height: 320px;">
+        <img src="images/manual-l3-cover-l3.png" alt="Sacred Rose Рівень 3">
+      </div>
+      <div class="s32"></div>
+
+      <h1 class="h-xl">Трояндова Медитація</h1>
+      <div class="s6"></div>
+      <p class="sub">Рівень 3 — Поглиблена Практика</p>
+      <div class="s32"></div>
+
+      <div class="line-c"></div>
+      <div class="s28"></div>
+
+      <div style="font-family: var(--font-sans); font-size: 8.5pt; color: var(--soft-charcoal); line-height: 1.8; letter-spacing: 0.04em;">
+        <strong style="font-weight: 500; color: var(--charcoal); font-size: 9pt;">Вчення Ангеліни Атаїде</strong><br>
+        International Aura and Dream School<br><br>
+        <span style="font-size: 7.5pt; color: var(--rose-400);">
+          Ілюстрації: Drica Voivodic &amp; Ana Leite<br>
+          Редактор &amp; Переклад: Dara Ayoub &nbsp;·&nbsp; Дизайн: Jennifer Lawless
+        </span>
+      </div>
+      <div class="s16"></div>
+      <div style="font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400); letter-spacing: 0.2em;">2026 &nbsp;·&nbsp; ОГЛЯДОВЕ ВИДАННЯ</div>
+    </div>
+
+    <div style="position: absolute; bottom: 0.55in; left: 0.8in; right: 0.8in; text-align: center; font-family: var(--font-sans); font-size: 6.5pt; color: var(--rose-400); line-height: 1.6; font-style: italic;">
+      Жодна частина цього посібника не може бути відтворена та/або показана людям, які не брали участі в курсі медитації з трояндами 3-го рівня. Передумовою для участі в цьому курсі є участь у курсах "Троянди 1" та "Троянди 2". Для вашого власного захисту, будь ласка, не діліться цією інформацією.
+    </div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 2 — TABLE OF CONTENTS
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="padding-top: 0.3in;">
+      <div class="label">Зміст</div>
+      <div class="s6"></div>
+      <h2 class="h-lg" style="font-size: 26pt;">Трояндова Медитація</h2>
+      <div class="s4"></div>
+      <p class="sub" style="font-size: 13pt;">Рівень 3 — Поглиблена Практика</p>
+      <div class="s20"></div>
+      <div class="line"></div>
+      <div class="s12"></div>
+
+      <!-- Rose icon on TOC -->
+      <div class="img-circle" style="width: 36px; height: 36px; margin: 0 auto 8px auto;">
+        <img src="images/level-1/01-the-rose.jpeg" alt="The Rose" style="object-position: top;">
+      </div>
+
+      <table style="width: 100%; border-collapse: collapse;">
+        <tbody>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="width: 26px; padding: 5px 0;"></td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Аналізатор</td>
+            <td style="width: 24px; padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">3</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 5px 0;"></td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">5 Тіл &amp; 5 Рівнів Існування</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">4</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 5px 0;"></td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Духовний Рівень — Розрив Угод</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">5</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 5px 0;"></td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Енергетичний Рівень — Перерізання Шнурів</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">6</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 5px 0;"></td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Сексуальні стосунки</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">7</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 5px 0;"></td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Заняття &amp; Послуги</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">8</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 5px 0;"></td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Створення Реальності &amp; Бездоганність</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">9</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 5px 0;"></td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Макет — Техніка Маніфестації</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">10</td>
+          </tr>
+          <tr>
+            <td style="padding: 5px 0;"></td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Елементи Рівня 3</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">11</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="grow"></div>
+
+      <div class="call">
+        <p>Троянди представляють дух. Вони поглинають усі енергії, емоції та ситуації, які не служать вашому теперішньому моменту. Ми можемо створювати та вибухати їх стільки разів, скільки необхідно. Коли ми вибухаємо троянди, вони очищають і трансмутують енергію, і відправляють її назад до її джерела.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>Трояндова Медитація &nbsp;·&nbsp; Рівень 3</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 3 — THE ANALYZER
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="label">Внутрішня архітектура</div>
+      <div class="s4"></div>
+      <h2 class="h-lg">Аналізатор</h2>
+      <div class="s6"></div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <div style="display: flex; flex-direction: column;">
+          <div style="border-radius: 10px; overflow: hidden; margin-bottom: 4px;">
+            <img src="images/level-3/39-analyzer.jpeg" alt="Аналізатор" style="width: 100%; height: auto; display: block; border-radius: 10px;">
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column;">
+          <div style="border-radius: 10px; overflow: hidden; margin-bottom: 4px;">
+            <img src="images/level-3/40-sacred-space-analyzer.jpeg" alt="Sacred Space Analyzer" style="width: 100%; height: auto; display: block; border-radius: 10px;">
+          </div>
+        </div>
+      </div>
+      <div class="s6"></div>
+
+      <p class="body" style="margin-bottom: 4px;">Аналізатор розташований всередині голови. Його функції: аналізувати, судити та критикувати. Він зберігає наші програми та переконання. Очищення аналізатора та енергій, що зберігаються там, дозволяє вам звільнитися від обмежень, які впливають на ваше життя, а також сприймати життя більш об'єктивно.</p>
+      <p class="body">Аналізатор очищається у всіх кольорах чакр. Ось опис для червоного кольору:</p>
+      <div class="s4"></div>
+
+      <ul class="bul">
+        <li>Побачте аналізатор у червоному кольорі.</li>
+        <li>Заземліть аналізатор до центру Землі за допомогою червоного заземлювального шнура.</li>
+        <li>Створіть червону Троянду, заземлену позаду вас, за межами вашої Аури, на висоті аналізатора.</li>
+        <li>Троянда тепер очищає аналізатор на цій вібрації.</li>
+        <li>Вибухайте Троянду завжди за межами аури.</li>
+      </ul>
+      <div class="s4"></div>
+      <p class="body" style="margin-bottom: 4px;">Цю ж процедуру слід виконати з вібрацією всіх чакр (помаранчевої, жовтої, зеленої, рожевої, небесно-блакитної, індиго та фіолетової).</p>
+      <ul class="bul">
+        <li>Тепер побачте аналізатор у золотому кольорі, що підвищує свою вібрацію.</li>
+        <li>Створіть Золоту Липку Троянду, яка походить з центру Всесвіту, розміром з аналізатор.</li>
+        <li>Вона входить в аналізатор і спірально обертається всередині та зовні, очищаючи будь-яку залишену чужорідну енергію, яка могла там залишитися.</li>
+        <li>Троянда спускається через заземлювальний шнур.</li>
+        <li>Тепер повністю закрийте аналізатор.</li>
+      </ul>
+
+    </div>
+
+    <div class="pn"><span>3</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 4 — THE 5 BODIES
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="label">Фундамент</div>
+      <div class="s4"></div>
+      <h2 class="h-lg">5 Тіл &amp; 5 Рівнів Існування</h2>
+      <div class="s8"></div>
+
+      <p class="body-sm" style="margin-bottom: 4px;">Все, що проявляється в матерії, має своє походження в духовному царстві. Це те саме, що сказати, що все має причину свого існування. Все також є енергією. Чим щільніша енергія, тим більше вона рухається до прояву і таким чином виникає у спосіб, який ми можемо сприймати об'єктивно.</p>
+      <div class="s6"></div>
+
+      <div class="cols" style="gap: 16px;">
+        <div>
+          <h4 class="h-sm">1. Духовний</h4>
+          <div class="s4"></div>
+          <p class="body-sm" style="font-size: 7.5pt; line-height: 1.6;">На духовному рівні кожен досвід є дійсним. Тут немає ціннісних суджень: страждання та негаразди розуміються як навчальний досвід. Все, що відбувається, має духовну причину свого існування. Немає правильного чи неправильного, доброго чи поганого — воно просто є. У духовному тілі ми можемо сприймати глибші уроки, які людина обирає пережити в теперішній момент.</p>
+
+          <div class="s8"></div>
+          <h4 class="h-sm">2. Енергетичний</h4>
+          <div class="s4"></div>
+          <p class="body-sm" style="font-size: 7.5pt; line-height: 1.6;">Це царство тонкого — де ми вібруємо, створюємо частоти, і Аура набуває форми. Це план, на якому діє Медитація Троянди, де можна сприймати потенціали і все, що одного дня проявиться в матерії, вже можна відчути. Проте воно містить набагато більше. Це домен, в якому діють неінкарновані енергії та сутності. І крім того, коли ми створюємо глибокі та значущі стосунки, саме в енергетичному тілі сплітаються зв'язки — шнури, які пов'язують нас один з одним і через які ми продовжуємо відчувати один одного поза часом і простором.</p>
+
+          <div class="s8"></div>
+          <h4 class="h-sm">3. Ментальний</h4>
+          <div class="s4"></div>
+          <p class="body-sm" style="font-size: 7.5pt; line-height: 1.6;">Коли тонкі енергії стають щільнішими, перше місце, де ми їх сприймаємо, — це світ ідей, думок, програм та переконань. Наше ментальне тіло зберігає ідеї, які ми маємо про світ, та кожен елемент, що існує в ньому (на всіх рівнях). Тут ми зіставляємо реальність, сприйняту органами чуття, з програмами, які — всередині нас — диктують, яким має бути світ.</p>
+        </div>
+        <div>
+          <h4 class="h-sm">4. Емоційний</h4>
+          <div class="s4"></div>
+          <p class="body-sm" style="font-size: 7.5pt; line-height: 1.6;">Емоційне тіло — це місце, де відчувається все. У ньому зберігаються відбитки емоцій, які пройшли крізь нас, але ще не були вивільнені. Саме тут знаходиться тягар травм, пережитих протягом життя. Емоційне тіло з'єднується з фізичним тілом переважно через органи, функціонування яких змінюється у відповідь на емоції, які ми переживаємо.</p>
+
+          <div class="s8"></div>
+          <h4 class="h-sm">5. Фізичний</h4>
+          <div class="s4"></div>
+          <p class="body-sm" style="font-size: 7.5pt; line-height: 1.6;">Це тіло пов'язане з усім, що ми переживаємо в матерії. Це світ, сприйнятий через п'ять почуттів: те, що ми бачимо, чуємо, торкаємося, нюхаємо та смакуємо. Фізичний план — це єдиний план, який сприймається однаково — об'єктивно — всіма людьми. З цієї причини він служить орієнтиром для перевірки того, що відбувається на всіх інших планах.</p>
+
+          <div class="s8"></div>
+          <div class="call-gold call" style="padding: 8px 14px;">
+            <p style="color: var(--rose-800); font-size: 9pt;">Все, що проявляється в матерії, має своє походження в духовному царстві. Це те саме, що сказати, що все має причину свого існування.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="s12"></div>
+      <div class="line-c"></div>
+      <div class="s8"></div>
+
+      <div class="label" style="text-align: center;">Техніки очищення</div>
+      <div class="s4"></div>
+      <p style="font-family: var(--font-serif); font-size: 12pt; font-weight: 300; color: var(--rose-800); text-align: center; line-height: 1.4;">
+        Наступні техніки працюють на духовному<br>та енергетичному рівнях нашого існування.
+      </p>
+    </div>
+
+    <div class="pn"><span>4</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 6 — BREAKING SPIRITUAL AGREEMENTS
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="phase-badge">Духовний рівень</div>
+      <div class="s8"></div>
+      <h2 class="h-lg">Розрив Духовних Угод</h2>
+      <div class="s6"></div>
+
+      <div class="img-full" style="max-width: 300px;">
+        <img src="images/level-3/41-stick-of-agreements.png" alt="Breaking Agreements">
+      </div>
+      <div class="s6"></div>
+
+      <p class="body" style="margin-bottom: 6px;">Стосунки можуть проявитися в матеріальному світі лише тоді, якщо вони підтримуються духовною угодою. Такі угоди формуються за згодою обох сторін на духовному рівні і можуть бути розірвані будь-якою стороною через свідому волю. Кожного разу, коли створюється духовна угода, між залученими особами формується "палиця угод".</p>
+      <p class="body" style="margin-bottom: 6px;">Іноді ці угоди узгоджуються з нашими свідомими намірами — наприклад, коли двоє людей вирішують одружитися. В інший час вони резонують з несвідомими бажаннями, і тоді можуть розгортатися ситуації, яких ми свідомо не хочемо. Однак за допомогою цієї техніки Медитації Троянди завжди можливо розірвати ці палиці угод.</p>
+      <div class="s6"></div>
+
+      <div class="label" style="margin-bottom: 6px;">Щоб розірвати ці угоди</div>
+      <ul class="bul">
+        <li>Створіть ситуацію високої вібрації, наприклад, відразу після Медитації Троянд.</li>
+        <li>Візуалізуйте палицю угод, яка містить усі угоди, які ви хочете розірвати.</li>
+        <li>Розламайте цю палицю на три частини.</li>
+        <li>Створіть заземлену Троянду.</li>
+        <li>Помістіть три частини палиці в цю Троянду.</li>
+        <li>Підірвіть Троянду за межами Аури.</li>
+      </ul>
+
+      <div class="s8"></div>
+      <div class="call">
+        <p>До цього процесу слід підходити з великою усвідомленістю, оскільки він несе дуже відчутні наслідки в нашому житті.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>5</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 7 — CUTTING ENERGETIC CORDS
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="phase-badge">Енергетичний рівень</div>
+      <div class="s12"></div>
+      <h2 class="h-lg">Перерізання Енергетичних Шнурів</h2>
+      <div class="s16"></div>
+
+      <div class="img-full">
+        <img src="images/level-3/42-cutting-cords.png" alt="Перерізання Енергетичних Шнурів">
+      </div>
+      <div class="s16"></div>
+
+      <p class="body" style="margin-bottom: 8px;">Ми постійно вступаємо в енергетичні взаємодії з іншими &mdash; коли бачимо їх, чуємо, торкаємося і навіть коли думаємо про них. Коли утворюються енергетичні шнури, наші аури з'єднуються через ці зв'язки, дозволяючи енергії текти між нами. Ось чому ми часто можемо відчувати, що відбувається з близькими нам людьми, навіть на відстані.</p>
+      <p class="body">Коли стосунки закінчуються, ми можемо бути глибоко вражені енергіями, які продовжують надходити до нас через ці зв'язки. З цієї причини важливо знати, як свідомо їх розірвати:</p>
+      <div class="s8"></div>
+
+      <ul class="bul">
+        <li>Закрийте очі.</li>
+        <li>Візуалізуйте свою ауру зі зв'язками, що виходять з ваших чакр.</li>
+        <li>Покладіть свою домінуючу руку на 7-й шийний хребець, розташований на стику шиї та спини на рівні 5-ї чакри.</li>
+        <li>Намір, щоб ваша рука мала силу розірвати всі шнури.</li>
+        <li>Зробіть рух розрізання під вашою 1-ю чакрою, поклавши руку на стілець, на якому ви сидите.</li>
+      </ul>
+
+      <div class="s10"></div>
+      <div class="call">
+        <p>Ми також можемо розірвати зв'язки, коли стосунки не закінчилися, але ми відчуваємо, що нам потрібна більша нейтральність. Ці зв'язки дуже швидко відновлюються, коли ми знову з'єднуємося з людиною.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>6</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 8 — SEXUAL RELATIONSHIPS
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="label">Прикладна техніка</div>
+      <div class="s6"></div>
+      <h2 class="h-lg">Сексуальні стосунки</h2>
+      <div class="s4"></div>
+
+      <div class="img-full" style="max-width: 180px;">
+        <img src="images/level-3/43-sexual-recovery-rose.png" alt="Сексуальні стосунки Energy Cleansing">
+      </div>
+      <div class="s4"></div>
+
+      <p class="body" style="margin-bottom: 6px; font-size: 8pt;">Після статевого акту, якщо ви хочете відновити будь-яку енергію, яку ви могли залишити з іншою людиною, і повернути будь-яку енергію, яку вони могли залишити з вами, просто виконайте ці кроки:</p>
+      <ul class="bul">
+        <li style="font-size: 7.5pt; line-height: 1.5; padding: 1px 0 1px 16px;">Виконайте підготовчі техніки (заземлюючий шнур, Золоте Сонце, енергія Землі та Космосу, священний простір).</li>
+        <li style="font-size: 7.5pt; line-height: 1.5; padding: 1px 0 1px 16px;">Створіть помаранчеву Троянду і помістіть в неї енергію людини з її фізичним тілом, емоціями та почуттями, які можуть виникнути в цей момент &mdash; ви можете візуалізувати, як людина входить у троянду, ситуацію, яку ви щойно пережили. Підірвіть (ви можете повторювати цей крок стільки разів, скільки необхідно).</li>
+        <li style="font-size: 7.5pt; line-height: 1.5; padding: 1px 0 1px 16px;">Створіть помаранчеву безкореневу Троянду, яка очищає будь-яку енергію від людини, яка могла залишитися в будь-якому шарі вашої аури. Підірвіть.</li>
+        <li style="font-size: 7.5pt; line-height: 1.5; padding: 1px 0 1px 16px;">Створіть заземлену помаранчеву Троянду і намір, щоб ця троянда відновила енергію, яка залишилася з цією людиною. Підірвіть.</li>
+        <li style="font-size: 7.5pt; line-height: 1.5; padding: 1px 0 1px 16px;">Якщо ви хочете залишатися енергетично відокремленими від цієї людини, зробіть рух розрізання енергетичних шнурів, які були встановлені під час стосунків.</li>
+        <li style="font-size: 7.5pt; line-height: 1.5; padding: 1px 0 1px 16px;">Створіть безкореневу рожеву Троянду, помістіть в неї людину, візуалізуйте її щасливою з повним здоров'ям у її тілі, розумі та душі. Повторіть подумки: <em>"Щасливий, здоровий, цілісний, тіло, розум і душа."</em> Змусьте Троянду піднятися до центру всесвіту, бажаючи їм найкращого.</li>
+        <li style="font-size: 7.5pt; line-height: 1.5; padding: 1px 0 1px 16px;">Оновіть свій заземлюючий шнур. Наповніть себе світлом Золотого Сонця. Покладіть руки на землю, щоб розрядити надлишкову енергію.</li>
+      </ul>
+
+      <div class="s4"></div>
+      <div class="call" style="padding: 8px 14px;">
+        <p style="font-size: 9pt;">Ви також можете використовувати цю техніку для стосунків, які відбулися давно, або коли ви закінчуєте стосунки. У цьому випадку може бути цікаво розірвати палицю угод, які ви маєте з цією людиною.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>7</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 9 — CLASSES AND SERVICES (combined)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="label">Професійна практика</div>
+      <div class="s4"></div>
+      <h2 class="h-lg">Заняття &amp; Послуги</h2>
+      <div class="s8"></div>
+
+      <p class="body-sm" style="margin-bottom: 8px;">Коли ви надаєте послуги в будь-якій сфері &mdash; або коли ви є вчителем чи лектором &mdash; ви можете використовувати Медитацію Троянди для підтримки своєї енергетичної цілісності.</p>
+
+      <div class="cols" style="gap: 16px;">
+        <div>
+          <h4 class="h-sm">До</h4>
+          <div class="s4"></div>
+          <p class="body-sm" style="font-size: 8pt;">Виконайте всі підготовчі техніки для Медитації Троянди (заземлюючий шнур, Золоте Сонце, енергія Землі та Космосу, священний простір) та очистіть і захистіть фізичний простір, де відбуватиметься консультація або заняття.</p>
+        </div>
+        <div>
+          <h4 class="h-sm">Після</h4>
+          <div class="s4"></div>
+          <p class="body-sm" style="font-size: 8pt;">Після прощання з людиною, яку ви лікували, або вашими учнями, ви можете приділити кілька хвилин, щоб реорганізувати свої енергії та виконати техніки енергетичного розділення, оскільки під час заняття або лікування може утворитися багато емоційних, енергетичних та духовних зв'язків.</p>
+        </div>
+      </div>
+
+      <div class="s12"></div>
+      <div class="line"></div>
+      <div class="s8"></div>
+
+      <div class="label" style="margin-bottom: 4px;">Кроки очищення після сесії</div>
+      <div class="s4"></div>
+
+      <ul class="bul">
+        <li style="font-size: 8pt; padding: 1px 0 1px 16px;">Переріжте заземлюючий шнур і створіть новий.</li>
+        <li style="font-size: 8pt; padding: 1px 0 1px 16px;">Наповніть себе світлом Золотого Сонця.</li>
+        <li style="font-size: 8pt; padding: 1px 0 1px 16px;">Переріжте шнури, які зв'язують вашу Ауру з Аурою людини (людей).</li>
+        <li style="font-size: 8pt; padding: 1px 0 1px 16px;">Створіть заземлену Троянду перед собою, втягніть свою власну енергію в Троянду і підірвіть Троянду &mdash; це відновлює вашу енергію, яка могла залишитися в Аурі людини (людей).</li>
+        <li style="font-size: 8pt; padding: 1px 0 1px 16px;">Підірвіть Троянди розділення, захисту та спостереження і створіть нові.</li>
+        <li style="font-size: 8pt; padding: 1px 0 1px 16px;">Створіть Троянду, помістіть людину, якій ви служили, або своїх учнів всередину Троянди, і підірвіть Троянду. Таким чином, ви повертаєте будь-які енергії, які могли залишитися у вашій аурі.</li>
+        <li style="font-size: 8pt; padding: 1px 0 1px 16px;">При розірванні контрактів, коли ви більше не плануєте служити людині: розірвіть духовні угоди.</li>
+        <li style="font-size: 8pt; padding: 1px 0 1px 16px;">Створіть безкореневу рожеву Троянду, помістіть людину (людей) у цю Троянду, візуалізуйте людину (людей) щасливою з повним здоров'ям у її тілі, розумі та Душі. Повторіть подумки: <em>"Щасливий, здоровий, цілісний, тіло, розум, Душа."</em> Змусьте троянду піднятися до центру Всесвіту.</li>
+        <li style="font-size: 8pt; padding: 1px 0 1px 16px;">Виконайте очисну медитацію Золотих Липких Троянд (або повну медитацію, якщо необхідно).</li>
+        <li style="font-size: 8pt; padding: 1px 0 1px 16px;">Створіть новий заземлюючий шнур. Наповніть себе світлом Золотого Сонця.</li>
+        <li style="font-size: 8pt; padding: 1px 0 1px 16px;">Усуньте надлишкову енергію, поклавши руки на підлогу.</li>
+        <li style="font-size: 8pt; padding: 1px 0 1px 16px;">Підірвіть 4 Троянди в кутах кімнати.</li>
+      </ul>
+    </div>
+
+    <div class="pn"><span>8</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 11 — CREATION OF REALITY & IMPECCABILITY
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="label">Майстерність</div>
+      <div class="s4"></div>
+      <h2 class="h-lg">Створення Реальності</h2>
+      <div class="s6"></div>
+
+      <div class="img-full" style="width: 55%; max-width: 340px;">
+        <img src="images/manual-l3-creating-reality.png" alt="Створення Реальності">
+      </div>
+      <div class="s6"></div>
+
+      <p class="body" style="margin-bottom: 6px; font-size: 9pt;">Ми, люди, є складними істотами, наділеними здатністю створювати внутрішні світи за допомогою уяви та розуму. Ця ж здатність дозволяє нам формувати складні реальності поза нами. Реальність, яку ми переживаємо сьогодні, є результатом того, що ми посадили в минулому, чи то в цьому житті, чи в попередніх. Якщо ми бажаємо трансформувати реальність навколо нас, ми повинні спостерігати, як ми живемо, і розпочати процес трансформації зсередини назовні.</p>
+
+      <div class="s4"></div>
+      <h3 class="h-md">Бездоганність</h3>
+      <div class="s4"></div>
+      <p class="body" style="margin-bottom: 6px; font-size: 9pt;">Ми часто виявляємо, що живемо в реаліях, яких не бажаємо, не розуміючи, чому ми не можемо проявити те, чого прагнемо. Це відбувається тому, що різні частини нас самих намагаються рухатися в різних напрямках одночасно, використовуючи одне й те саме тіло. Такий внутрішній конфлікт унеможливлює рух вперед і призводить до стагнації.</p>
+      <p class="body" style="margin-bottom: 6px; font-size: 9pt;">Наука створення реальності передбачає навчання бути бездоганними із собою, спрямовуючи всю нашу енергію та чакри в одному напрямку:</p>
+
+      <div class="sum" style="padding: 14px 20px;">
+        <table style="width: 100%; border-collapse: collapse;">
+          <tbody>
+            <tr style="border-bottom: 0.5px solid var(--rose-200);">
+              <td style="padding: 2px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--rose-800); width: 85px;">Намір</td>
+              <td style="padding: 2px 0; font-family: var(--font-sans); font-size: 8pt; color: var(--charcoal);">Я хочу / Я прошу / Я молюся</td>
+              <td style="padding: 2px 0; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400); text-align: right;">пов'язано з 7-ю чакрою</td>
+            </tr>
+            <tr style="border-bottom: 0.5px solid var(--rose-200);">
+              <td style="padding: 2px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--rose-800);">Думка</td>
+              <td style="padding: 2px 0; font-family: var(--font-sans); font-size: 8pt; color: var(--charcoal);">Я думаю / уявляю / бачу</td>
+              <td style="padding: 2px 0; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400); text-align: right;">пов'язано з 6-ю чакрою</td>
+            </tr>
+            <tr style="border-bottom: 0.5px solid var(--rose-200);">
+              <td style="padding: 2px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--rose-800);">Слово</td>
+              <td style="padding: 2px 0; font-family: var(--font-sans); font-size: 8pt; color: var(--charcoal);">Я кажу / Я мовчу / Я розмірковую</td>
+              <td style="padding: 2px 0; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400); text-align: right;">пов'язано з 5-ю чакрою</td>
+            </tr>
+            <tr style="border-bottom: 0.5px solid var(--rose-200);">
+              <td style="padding: 2px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--rose-800);">Почуття</td>
+              <td style="padding: 2px 0; font-family: var(--font-sans); font-size: 8pt; color: var(--charcoal);">Я відчуваю / перетравлюю / алхімізую</td>
+              <td style="padding: 2px 0; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400); text-align: right;">пов'язано з 2-ю та 4-ю чакрами</td>
+            </tr>
+            <tr>
+              <td style="padding: 2px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--rose-800);">Дія</td>
+              <td style="padding: 2px 0; font-family: var(--font-sans); font-size: 8pt; color: var(--charcoal);">Я дію / Я роблю / Я відмовляюся</td>
+              <td style="padding: 2px 0; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400); text-align: right;">пов'язано з 1-ю та 3-ю чакрами</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="pn"><span>9</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 12 — MOCK-UP
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="label">Маніфестація</div>
+      <div class="s6"></div>
+      <h2 class="h-lg">Макет</h2>
+      <div class="s10"></div>
+
+      <div class="img-full" style="max-width: 380px;">
+        <img src="images/level-3/44-mock-up.png" alt="Макет Маніфестація">
+      </div>
+      <div class="s10"></div>
+
+      <p class="body" style="margin-bottom: 6px; font-size: 9pt;">Це техніка для прояву ситуацій або результатів на фізичному плані. Важливо зазначити, що цю практику слід використовувати лише для себе; її не можна виконувати від імені іншої особи. Щоб вона була ефективною, її потрібно практикувати протягом семи послідовних днів і зосереджуватися на одній меті за раз. Чим вищий ваш вібраційний стан під час створення макета, тим ефективнішим буде процес. З цієї причини ідеальним моментом для її практики є, наприклад, відразу після завершення Медитації Троянди.</p>
+
+      <ul class="bul">
+        <li style="font-size: 8pt;">Створіть заземлену Троянду і всередині цієї Троянди уявіть те, що ви хочете, створюючи образ з якомога більшою деталізацією.</li>
+        <li style="font-size: 8pt;">Створіть другу заземлену Троянду, яку слід розмістити праворуч від першої Троянди. Ми маємо намір, щоб ця Троянда очистила всю енергію, яка не належить до першої Троянди, будь-який тип блокування, що перешкоджає реалізації того, чого ви бажаєте. Не зосереджуйтесь на тому, що очищається, просто встановіть намір очистити.</li>
+        <li style="font-size: 8pt;">Створіть третю рожеву заземлену Троянду (колір Божественної Любові). У цій Троянді ми вносимо у ваше внутрішнє "я" образ чогось, що ви дуже любите, чогось, що приносить вам велике задоволення та насолоду, щоб ви могли підняти свою вібрацію до максимуму, до вібрації любові.</li>
+        <li style="font-size: 8pt;">Натхненні попередньою Трояндою, тепер уявіть енергію Божественної Любові, рожевого кольору, що виходить з вашого серця і огортає першу Троянду, поміщаючи її в красиве рожеве коло, наче бульбашку.</li>
+        <li style="font-size: 8pt;">Обріжте коріння першої Троянди і дозвольте їй піднятися до центру Всесвіту. Завжди просіть, щоб це було зроблено, якщо це для вищого блага.</li>
+        <li style="font-size: 8pt;">Підірвіть третю Троянду (рожеву). Підірвіть другу Троянду (очищувальну троянду).</li>
+      </ul>
+
+      <div class="s6"></div>
+      <div class="call">
+        <p>Пам'ятайте, що цю техніку потрібно повторювати протягом 7 послідовних днів. Якщо ви пропустите день до завершення 7-денного циклу, поверніться до початку. Після завершення макета живіть своїм життям, намагаючись вирівнятися на всіх рівнях, віддаючи виконання своїх бажань Вищій Істоті, відкриті до отримання будь-яким способом, який дозволить Велике Таїнство.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>10</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 13 — ELEMENTS SUMMARY
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="justify-content: center;">
+      <div class="img-full" style="max-width: 360px; border-radius: 50%; overflow: hidden; background: transparent;">
+        <img src="images/level-3/l3-p13-elements-summary-realistic-rose.png" alt="Елементи Рівня 3" style="border-radius: 50%;">
+      </div>
+      <div class="s12"></div>
+
+      <div class="sum" style="padding: 14px 18px;">
+        <div class="label" style="margin-bottom: 3px;">Швидкий довідник</div>
+        <h2 class="h-md" style="margin-bottom: 6px; font-size: 13pt;">Елементи щоденної медитації Троянди Рівня 3</h2>
+        <div class="line" style="margin-bottom: 8px;"></div>
+
+        <div class="cols" style="gap: 14px;">
+          <div>
+            <p class="body-sm" style="font-weight: 500; color: var(--rose-clay); margin-bottom: 3px; font-size: 8pt;">Щоденна практика</p>
+            <ul class="bul" style="font-size: 7.5pt;">
+              <li style="padding: 1px 0 1px 12px;">Заземлюючий шнур</li>
+              <li style="padding: 1px 0 1px 12px;">Золоте Сонце</li>
+              <li style="padding: 1px 0 1px 12px;">Межі аури та розширення шнура</li>
+              <li style="padding: 1px 0 1px 12px;">Троянди захисту, розділення та спостереження</li>
+              <li style="padding: 1px 0 1px 12px;">Земні та Космічні Енергії</li>
+              <li style="padding: 1px 0 1px 12px;">Очищувальна троянда</li>
+              <li style="padding: 1px 0 1px 12px;">Троянда відновлення енергії</li>
+              <li style="padding: 1px 0 1px 12px;">Священний простір</li>
+              <li style="padding: 1px 0 1px 12px;">Захист простору</li>
+              <li style="padding: 1px 0 1px 12px;">Заземлені троянди, що очищають передню та задню чакри</li>
+              <li style="padding: 1px 0 1px 12px;">Незаземлені троянди, що очищають шари аури</li>
+              <li style="padding: 1px 0 1px 12px;">Золоті липкі троянди</li>
+              <li style="padding: 1px 0 1px 12px;">Очищення аналізатора</li>
+              <li style="padding: 1px 0 1px 12px;">Рожева незаземлена троянда</li>
+              <li style="padding: 1px 0 1px 12px;">Завершення: Шнур + Золоте Сонце + Розрядження надлишкової енергії</li>
+            </ul>
+          </div>
+          <div>
+            <p class="body-sm" style="font-weight: 500; color: var(--rose-clay); margin-bottom: 3px; font-size: 8pt;">Інші елементи Рівня 3</p>
+            <ul class="bul" style="font-size: 7.5pt;">
+              <li style="padding: 1px 0 1px 12px;">Розрив духовних угод</li>
+              <li style="padding: 1px 0 1px 12px;">Перерізання енергетичних шнурів</li>
+              <li style="padding: 1px 0 1px 12px;">Очищення енергії сексуальних партнерів</li>
+              <li style="padding: 1px 0 1px 12px;">Підготовка та очищення для занять та консультацій</li>
+              <li style="padding: 1px 0 1px 12px;">Макет</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pn"><span>11</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 14 — CLOSING
+       ===================================================== -->
+  <div class="page closing-bg">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="align-items: center; justify-content: center; text-align: center;">
+
+      <div class="img-circle" style="width: 180px; height: 180px; margin-bottom: 36px;">
+        <img src="images/manual-l3-cover-l3.png" alt="Rose">
+      </div>
+
+      <div style="font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400); line-height: 1.8; letter-spacing: 0.03em;">
+        Вчення Ангеліни Атаїде &nbsp;·&nbsp; International Aura and Dream School<br>
+        Ілюстрації: Drica Voivodic &amp; Ana Leite<br>
+        Редактор &amp; Переклад: Dara Ayoub &nbsp;·&nbsp; Дизайн: Jennifer Lawless
+      </div>
+      <div class="s20"></div>
+      <div style="font-family: var(--font-sans); font-size: 6.5pt; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold);">International Aura and Dream School</div>
+      <div class="s8"></div>
+    </div>
+  </div>
+
+</body>
+</html>

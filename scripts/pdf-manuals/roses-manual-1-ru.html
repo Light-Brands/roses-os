@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Медитация Розы — Уровень 1 — Начальный Курс</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+    :root {
+      --rose-clay: #9C6F6E;
+      --rose-400: #D4A09A;
+      --rose-300: #E8C4BF;
+      --rose-200: #F5E1DD;
+      --rose-100: #FAF0EE;
+      --rose-50: #FDF8F7;
+      --rose-700: #6E4A49;
+      --rose-800: #523737;
+      --rose-900: #3B2828;
+      --gold: #9E956B;
+      --warm-0: #F7F5F2;
+      --charcoal: #3F3E3C;
+      --soft-charcoal: #5A5856;
+      --font-serif: 'Cormorant Garamond', 'Georgia', serif;
+      --font-sans: 'Inter', -apple-system, sans-serif;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    @page { size: 8.5in 11in; margin: 0; }
+    html { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { font-family: var(--font-sans); color: var(--charcoal); line-height: 1.7; background: white; }
+
+    /* PAGE */
+    .page {
+      width: 8.5in;
+      height: 11in;
+      position: relative;
+      page-break-after: always;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .page:last-child { page-break-after: auto; }
+
+    /* Border frame */
+    .page::before {
+      content: '';
+      position: absolute;
+      top: 0.35in; left: 0.35in; right: 0.35in; bottom: 0.35in;
+      border: 0.5px solid var(--rose-200);
+      border-radius: 2px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Inner padding — all content lives here */
+    .inner {
+      position: relative;
+      z-index: 1;
+      margin: 0.55in 0.65in 0.55in 0.65in;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Corner ticks */
+    .ck { position: absolute; width: 16px; height: 16px; z-index: 2; }
+    .ck::before, .ck::after { content: ''; position: absolute; background: var(--rose-300); }
+    .ck-tl { top: 0.3in; left: 0.3in; }
+    .ck-tr { top: 0.3in; right: 0.3in; }
+    .ck-bl { bottom: 0.3in; left: 0.3in; }
+    .ck-br { bottom: 0.3in; right: 0.3in; }
+    .ck-tl::before { width: 16px; height: 0.5px; top: 0; left: 0; }
+    .ck-tl::after  { width: 0.5px; height: 16px; top: 0; left: 0; }
+    .ck-tr::before { width: 16px; height: 0.5px; top: 0; right: 0; }
+    .ck-tr::after  { width: 0.5px; height: 16px; top: 0; right: 0; }
+    .ck-bl::before { width: 16px; height: 0.5px; bottom: 0; left: 0; }
+    .ck-bl::after  { width: 0.5px; height: 16px; bottom: 0; left: 0; }
+    .ck-br::before { width: 16px; height: 0.5px; bottom: 0; right: 0; }
+    .ck-br::after  { width: 0.5px; height: 16px; bottom: 0; right: 0; }
+
+    /* Page number */
+    .pn {
+      position: absolute;
+      bottom: 0.38in; left: 0; right: 0;
+      text-align: center;
+      font-family: var(--font-sans);
+      font-size: 7pt;
+      color: var(--rose-400);
+      letter-spacing: 0.12em;
+      z-index: 2;
+    }
+    .pn span { display: inline-block; padding: 0 8px; background: white; }
+
+    /* ============================================================
+       IMAGES — full-width hero approach
+       ============================================================ */
+
+    /* Centered image — 80% width, centered */
+    .img-full {
+      width: 80%;
+      max-width: 480px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+    }
+    .img-full img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+      outline: 0.5px solid var(--rose-200);
+      outline-offset: -0.5px;
+    }
+
+    /* Centered image with max-width — maintains 1:1 ratio */
+    .img-center {
+      display: flex;
+      justify-content: center;
+    }
+    .img-center img {
+      height: auto;
+      display: block;
+      border-radius: 16px;
+      outline: 0.5px solid var(--rose-200);
+      outline-offset: -0.5px;
+    }
+
+    /* Circular image — always 1:1 by nature */
+    .img-circle {
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+      aspect-ratio: 1;
+      box-shadow: 0 0 0 0.5px var(--rose-200);
+    }
+    .img-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Side-by-side: image + text */
+    .split {
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+    }
+    .split-img {
+      flex: 1;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 0 0 0.5px var(--rose-200);
+    }
+    .split-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+    }
+    .split-text {
+      flex: 1;
+    }
+
+    /* ============================================================
+       TYPOGRAPHY
+       ============================================================ */
+
+    .label {
+      font-family: var(--font-sans);
+      font-size: 6.5pt; font-weight: 500;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .h-xl {
+      font-family: var(--font-serif);
+      font-size: 36pt; font-weight: 300;
+      color: var(--rose-800);
+      line-height: 1.12; letter-spacing: -0.02em;
+    }
+
+    .h-lg {
+      font-family: var(--font-serif);
+      font-size: 22pt; font-weight: 300;
+      color: var(--rose-800);
+      line-height: 1.2; letter-spacing: -0.015em;
+    }
+
+    .h-md {
+      font-family: var(--font-serif);
+      font-size: 15pt; font-weight: 400;
+      color: var(--rose-800);
+      line-height: 1.3;
+    }
+
+    .h-sm {
+      font-family: var(--font-serif);
+      font-size: 11.5pt; font-weight: 500;
+      font-style: italic;
+      color: var(--rose-clay);
+    }
+
+    .sub {
+      font-family: var(--font-serif);
+      font-size: 15pt; font-weight: 400;
+      font-style: italic;
+      color: var(--rose-clay);
+    }
+
+    .body {
+      font-family: var(--font-sans);
+      font-size: 9.5pt; line-height: 1.75;
+      color: var(--charcoal);
+    }
+
+    .body-sm {
+      font-family: var(--font-sans);
+      font-size: 8.5pt; line-height: 1.7;
+      color: var(--soft-charcoal);
+    }
+
+    em { font-family: var(--font-serif); color: var(--rose-700); }
+
+    .line { width: 36px; height: 0.5px; background: var(--rose-300); }
+    .line-c { width: 36px; height: 0.5px; background: var(--rose-300); margin: 0 auto; }
+
+    /* Callout */
+    .call {
+      background: var(--rose-50);
+      border-left: 2px solid var(--rose-clay);
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+    }
+    .call p {
+      font-family: var(--font-serif);
+      font-size: 10pt; font-style: italic;
+      line-height: 1.6; color: var(--rose-700);
+    }
+    .call-gold { border-left-color: var(--gold); background: linear-gradient(135deg, var(--rose-50), var(--warm-0)); }
+
+    /* Lists */
+    .bul { list-style: none; }
+    .bul li {
+      font-family: var(--font-sans); font-size: 9.5pt;
+      line-height: 1.75; color: var(--charcoal);
+      padding: 2px 0 2px 16px; position: relative;
+    }
+    .bul li::before {
+      content: ''; position: absolute;
+      left: 2px; top: 11px;
+      width: 5px; height: 5px;
+      background: var(--rose-clay); border-radius: 50%;
+    }
+
+    .num { list-style: none; counter-reset: n; }
+    .num li {
+      counter-increment: n;
+      font-family: var(--font-sans); font-size: 9.5pt;
+      line-height: 1.75; color: var(--charcoal);
+      padding: 3px 0 3px 26px; position: relative;
+    }
+    .num li::before {
+      content: counter(n) '.'; position: absolute; left: 0;
+      font-family: var(--font-serif); font-size: 12pt; font-weight: 400;
+      color: var(--rose-clay);
+    }
+
+    /* Step card */
+    .step { display: flex; gap: 14px; align-items: baseline; }
+    .sn {
+      font-family: var(--font-serif);
+      font-size: 28pt; font-weight: 300;
+      color: var(--rose-300); line-height: 1;
+      flex-shrink: 0; width: 34px; text-align: center;
+    }
+
+    /* Two columns */
+    .cols { display: flex; gap: 24px; }
+    .cols > div { flex: 1; }
+
+    /* Summary card */
+    .sum {
+      background: linear-gradient(135deg, var(--rose-50), var(--warm-0));
+      border: 0.5px solid var(--rose-200);
+      border-radius: 16px;
+      padding: 20px 24px;
+    }
+    .sum .bul li { font-size: 9pt; padding: 2px 0 2px 14px; }
+    .sum .bul li::before { top: 9px; width: 4px; height: 4px; }
+
+    /* Spacers */
+    .s4  { height: 4px; }
+    .s6  { height: 6px; }
+    .s8  { height: 8px; }
+    .s10 { height: 10px; }
+    .s12 { height: 12px; }
+    .s16 { height: 16px; }
+    .s20 { height: 20px; }
+    .s24 { height: 24px; }
+    .s28 { height: 28px; }
+    .s32 { height: 32px; }
+    .s40 { height: 40px; }
+    .grow { flex: 1; }
+
+    /* Cover specific */
+    .cover-bg {
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--rose-50) 40%, var(--warm-0) 100%);
+    }
+    .cover-bg::before { border-color: var(--rose-300); }
+
+    .closing-bg {
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--rose-50) 50%, var(--warm-0) 100%);
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- =====================================================
+       PAGE 1 — COVER
+       ===================================================== -->
+  <div class="page cover-bg">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="align-items: center; justify-content: center; text-align: center;">
+      <div class="label">International Aura and Dream School</div>
+      <div class="s28"></div>
+
+      <div class="img-circle" style="width: 320px; height: 320px;">
+        <img src="images/manual-l1-cover.png" alt="Sacred Rose">
+      </div>
+      <div class="s32"></div>
+
+      <h1 class="h-xl">Медитация Розы</h1>
+      <div class="s6"></div>
+      <p class="sub">Уровень 1 — Начальный Курс</p>
+      <div class="s32"></div>
+
+      <div class="line-c"></div>
+      <div class="s28"></div>
+
+      <div style="font-family: var(--font-sans); font-size: 8.5pt; color: var(--soft-charcoal); line-height: 1.8; letter-spacing: 0.04em;">
+        <strong style="font-weight: 500; color: var(--charcoal); font-size: 9pt;">Учения Angelina Ataíde</strong><br>
+        International Aura and Dream School<br><br>
+        <span style="font-size: 7.5pt; color: var(--rose-400);">
+          Оригинальные иллюстрации: Saraswati Noemi, Cecilia Lynch &amp; Drica Voivodic<br>
+          Редактор: Dara Ayoub &nbsp;·&nbsp; Дизайн: Jennifer Lawless
+        </span>
+      </div>
+      <div class="s16"></div>
+      <div style="font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400); letter-spacing: 0.2em;">2026 &nbsp;·&nbsp; ОБЗОРНОЕ ИЗДАНИЕ</div>
+    </div>
+
+    <div style="position: absolute; bottom: 0.55in; left: 0.8in; right: 0.8in; text-align: center; font-family: var(--font-sans); font-size: 6.5pt; color: var(--rose-400); line-height: 1.6; font-style: italic;">
+      Это руководство предназначено исключительно для тех, кто прошел курс медитации с розами Уровня 1.<br>
+      Для вашей собственной защиты и в знак уважения к целостности этой линии, пожалуйста, не делитесь и не воспроизводите этот материал с другими, кто не получил посвящения.
+    </div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 2 — TABLE OF CONTENTS
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="padding-top: 0.3in;">
+      <div class="label">Содержание</div>
+      <div class="s6"></div>
+      <h2 class="h-lg" style="font-size: 26pt;">Медитация Розы</h2>
+      <div class="s4"></div>
+      <p class="sub" style="font-size: 13pt;">Уровень 1 — Начальный Курс</p>
+      <div class="s20"></div>
+      <div class="line"></div>
+      <div class="s12"></div>
+
+      <!-- Rose icon on TOC -->
+      <div class="img-circle" style="width: 36px; height: 36px; margin: 0 auto 8px auto;">
+        <img src="images/level-1/01-the-rose.jpeg" alt="The Rose" style="object-position: top;">
+      </div>
+
+      <table style="width: 100%; border-collapse: collapse;">
+        <tbody>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="width: 26px; padding: 6px 0; font-family: var(--font-serif); font-size: 13pt; color: var(--rose-clay); vertical-align: baseline;"></td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Подготовка к началу</td>
+            <td style="width: 24px; padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">3</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 13pt; color: var(--rose-clay);">1</td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Заземляющий Шнур</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">4</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 13pt; color: var(--rose-clay);">2</td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Золотое Солнце</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">5</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 13pt; color: var(--rose-clay); white-space: nowrap;">3–5</td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Пределы Ауры, Расширение Шнура &amp; Обновление</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">6</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 13pt; color: var(--rose-clay);">6</td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Четыре Розы Защиты, Разделения &amp; Наблюдения</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">7</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 13pt; color: var(--rose-clay);">7</td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Контуры Энергии Космоса &amp; Земли</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">8</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 13pt; color: var(--rose-clay);">8</td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Розы для Очищения &amp; Восстановления Энергии</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">9</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 13pt; color: var(--rose-clay);">9</td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Розовая Роза</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">10</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 13pt; color: var(--rose-clay);">10</td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Священное Пространство</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">11</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 6px 0;"></td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Завершение Медитации</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">12</td>
+          </tr>
+          <tr>
+            <td style="padding: 6px 0;"></td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Элементы Медитации Розы Уровень 1</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">13</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="grow"></div>
+
+      <div class="call">
+        <p>Розы представляют дух. Они поглощают все энергии, эмоции и ситуации, которые вам не принадлежат или которые больше не служат вашему настоящему моменту. Мы можем создавать и взрывать их столько раз, сколько необходимо.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>Медитация Розы &nbsp;·&nbsp; Уровень 1</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 3 — GETTING READY TO START
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="justify-content: center;">
+      <div class="label">Подготовка</div>
+      <div class="s8"></div>
+      <h2 class="h-lg">Подготовка к началу</h2>
+      <div class="s16"></div>
+
+      <div class="img-full" style="max-width: 280px;">
+        <img src="images/level-1/02-meditation-posture.PNG" alt="Meditation Posture" style="border-radius: 16px;">
+      </div>
+      <div class="s16"></div>
+
+      <ol class="num">
+        <li>Сядьте и держите позвоночник прямо. Поставьте обе ступни на пол, руки положите на колени ладонями вверх.</li>
+        <li>Сконцентрируйтесь, закройте глаза, перенесите свое присутствие в настоящий момент и дышите глубоко и медленно.</li>
+        <li>Используйте силу своего воображения <em>(изображение в действии)</em> чтобы визуализировать техники.</li>
+      </ol>
+
+      <div class="s32"></div>
+      <div class="call-gold call">
+        <p style="color: var(--rose-800);">Медитация с розами — это инструмент для очищения ауры и семи основных чакр, обеспечивающий защиту и энергетический баланс. С помощью этой техники можно высвободить заблокированные энергии, энергии, которые не являются нашими, осознать нашу жизненную силу и депрограммировать паттерны, препятствующие прямому контакту с нашей сущностью.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>3</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 4 — GROUNDING CORD (full-spread image page)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="step">
+        <div class="sn">1</div>
+        <h3 class="h-md">Заземляющий Шнур</h3>
+      </div>
+      <div class="s16"></div>
+
+      <div class="img-center">
+        <img src="images/level-1/03-grounding-cord.png" alt="Заземляющий Шнур" style="width: 300px;">
+      </div>
+      <div class="s16"></div>
+
+      <p class="body">
+        Создайте натянутый заземляющий шнур, который идет от вашей первой чакры к центру Земли.
+      </p>
+      <div class="s6"></div>
+      <p class="body">
+        Шнур устраняет отвлекающие факторы, мысли и блокировки, которые мешают вам находиться в настоящем моменте. Он приносит безопасность, стабильность и помогает очистить энергии, которые не являются вашей сущностью.
+      </p>
+      <div class="s10"></div>
+
+      <div class="call">
+        <p>Со временем и практикой шнур естественным образом становится прозрачным.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>4</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 5 — GOLDEN SUN (full-spread image page)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="step">
+        <div class="sn">2</div>
+        <h3 class="h-md">Золотое Солнце</h3>
+      </div>
+      <div class="s16"></div>
+
+      <div class="img-center">
+        <img src="images/level-1/04-golden-sun.jpeg" alt="Золотое Солнце" style="width: 300px;">
+      </div>
+      <div class="s16"></div>
+
+      <p class="body">
+        Создайте Золотое Солнце над своей головой и заполните все пространство вашей Ауры и физического тела золотым светом, исходящим от Солнца. Это солнце представляет Высшее Существо, оно повышает вашу вибрацию и заполняет пустые энергетические пространства Божественной энергией после любого тонкого высвобождения энергии.
+      </p>
+      <div class="s10"></div>
+
+      <div class="call">
+        <p>Наполняйте себя светом Золотого Солнца всякий раз, когда вы обновляете Заземляющий Шнур, чтобы завершить медитацию и/или в любое время дня, когда вы хотите повысить свою вибрацию.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>5</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 6 — AURA + CORD EXPANSION + RENEWAL
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+
+      <div class="split" style="gap: 20px; align-items: center;">
+        <div class="split-text" style="flex: 1.2;">
+          <div class="step" style="align-items: flex-start;">
+            <div class="sn">3</div>
+            <div>
+              <h3 class="h-md">Пределы Ауры</h3>
+              <div class="s6"></div>
+              <p class="body">Аура — это энергетическое поле, которое окружает наше физическое тело. Она может расширяться и сжиматься. Для медитации с розами установите свою Ауру на 20 дюймов (50 см) вокруг всего вашего тела.</p>
+            </div>
+          </div>
+        </div>
+        <div style="flex: 0.8;">
+          <div class="img-center">
+            <img src="images/level-1/05-aura-exercise.PNG" alt="Пределы Ауры" style="width: 200px; border-radius: 16px; outline: 0.5px solid var(--rose-200);">
+          </div>
+        </div>
+      </div>
+
+      <div class="s16"></div>
+      <div class="line"></div>
+      <div class="s16"></div>
+
+      <div class="split" style="gap: 20px; align-items: center;">
+        <div style="flex: 0.8;">
+          <div class="img-center">
+            <img src="images/level-1/06-expansion-grounding-cord.png" alt="Expansion of Заземляющий Шнур" style="width: 200px; border-radius: 16px; outline: 0.5px solid var(--rose-200);">
+          </div>
+        </div>
+        <div class="split-text" style="flex: 1.2;">
+          <div class="step" style="align-items: flex-start;">
+            <div class="sn">4</div>
+            <div>
+              <h3 class="h-md">Расширение Заземляющего Шнура</h3>
+              <div class="s6"></div>
+              <p class="body">Расширьте шнур в стороны до ширины Ауры, заземляя всю Ауру.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="s16"></div>
+      <div class="line"></div>
+      <div class="s16"></div>
+
+      <div class="step">
+        <div class="sn">5</div>
+        <div>
+          <h3 class="h-md">Обновление Заземляющего Шнура</h3>
+          <div class="s6"></div>
+          <p class="body">Используя свое воображение и свой режущий инструмент, обрезайте заземляющий шнур всякий раз, когда вам это нужно. Этот инструмент всегда будет одним и тем же и будет становиться все более мощным с каждым использованием.</p>
+          <div class="s8"></div>
+          <ul class="bul">
+            <li>Обрежьте старый шнур.</li>
+            <li>Создайте новый шнур.</li>
+            <li>Расширяйте шнур в стороны до ширины Ауры каждый раз, когда создаете новый.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="pn"><span>6</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 7 — FOUR ROSES (full-spread image page)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="step">
+        <div class="sn">6</div>
+        <h3 class="h-md">Четыре Розы Защиты, Разделения &amp; Наблюдения</h3>
+      </div>
+      <div class="s16"></div>
+
+      <div class="img-center">
+        <img src="images/level-1/12-four-roses.png" alt="Four Roses of Защита" style="width: 280px;">
+      </div>
+      <div class="s12"></div>
+
+      <p class="body" style="margin-bottom: 12px;">
+        Создайте четыре Розы выбранного вами цвета или цвета, который приходит к вам (при условии, что они высокочастотные), заземленные снаружи вашей Ауры — спереди, сзади, слева и справа. Каждая Роза выполняет три функции:
+      </p>
+
+      <div class="cols">
+        <div>
+          <h4 class="h-sm">Защита</h4>
+          <div class="s4"></div>
+          <p class="body-sm">Ежедневно мы взаимодействуем с энергиями, которые не являются нашими. Защищая себя, мы углубляем наше понимание динамики, которую мы переживаем.</p>
+        </div>
+        <div>
+          <h4 class="h-sm">Разделение</h4>
+          <div class="s4"></div>
+          <p class="body-sm">Это помогает нашей Ауре оставаться отдельной от Ауры других людей, принося более ясное восприятие нашей индивидуальности.</p>
+        </div>
+        <div>
+          <h4 class="h-sm">Наблюдение</h4>
+          <div class="s4"></div>
+          <p class="body-sm">Когда мы наблюдаем из нейтрального состояния, как зритель, мы развиваем сострадание, а не осуждение.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pn"><span>7</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 8 — CIRCUIT OF ENERGIES (alternating split layout)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="step">
+        <div class="sn">7</div>
+        <h3 class="h-md">Контуры Энергии Космоса &amp; Земли</h3>
+      </div>
+      <div class="s12"></div>
+
+      <!-- Earth Energy — image left, text right -->
+      <div class="split" style="gap: 20px; align-items: flex-start;">
+        <div style="flex: 0 0 180px;">
+          <div class="img-center">
+            <img src="images/level-1/08-earth-energy.PNG" alt="Earth Energy" style="width: 180px; border-radius: 14px; outline: 0.5px solid var(--rose-200);">
+          </div>
+        </div>
+        <div class="split-text" style="flex: 1;">
+          <h4 class="h-sm">Контур Энергии Земли</h4>
+          <div class="s4"></div>
+          <p class="body-sm">Мы призываем энергию Земли, чтобы она принесла силу трансмутации и жизненной энергии в работу по энергетическому очищению, которую мы выполняем в медитации с розами. Она работает как двигатель, который увеличивает силу всего, что мы делаем во время медитации.</p>
+          <div class="s4"></div>
+          <p class="body-sm">Представьте медно-золотую энергию, которая исходит из центра Земли и входит через подошвы ног, поднимается через ноги, проходит через копчик и опускается через заземляющий шнур. Когда она проходит через копчик, 10% этой энергии поднимается, чтобы смешаться с энергией космоса.</p>
+        </div>
+      </div>
+
+      <div class="s12"></div>
+      <div class="line"></div>
+      <div class="s12"></div>
+
+      <!-- Cosmos Energy — text left, image right -->
+      <div class="split" style="gap: 20px; align-items: flex-start;">
+        <div class="split-text" style="flex: 1;">
+          <h4 class="h-sm">Контур Энергии Космоса</h4>
+          <div class="s4"></div>
+          <p class="body-sm">Энергия Космоса — это чистое сознание, и она помогает нам понять, что происходит во время медитации с розами и в нашей жизни. С помощью этой активной цепи мы можем получать информацию, чтобы понять, кто мы, почему мы сталкиваемся с теми или иными трудностями, какие энергии мы несем в нашей Ауре, как мы их поглощаем и какие корректировки мы можем внести, чтобы создать другую реальность в будущем.</p>
+          <div class="s4"></div>
+          <p class="body-sm">Представьте сияющую золотую энергию, которая исходит из центра Вселенной, входит через коронную чакру, спускается по позвоночнику, проходит через копчик и поднимается по передней части тела к горловой чакре, где она разделяется на три части. Одна часть выходит через коронную чакру, а две другие части проходят через предплечья и выходят через руки, как фонтан. Когда она проходит через копчик, 10% этой энергии опускается, чтобы смешаться с энергией Земли.</p>
+        </div>
+        <div style="flex: 0 0 180px;">
+          <div class="img-center">
+            <img src="images/level-1/09-cosmos-circuit.jpeg" alt="Cosmos Circuit" style="width: 180px; border-radius: 14px; outline: 0.5px solid var(--rose-200);">
+          </div>
+        </div>
+      </div>
+
+      <div class="s12"></div>
+      <div class="line"></div>
+      <div class="s12"></div>
+
+      <!-- Earth & Cosmos Combined — centered image + callout -->
+      <div style="display: flex; gap: 20px; align-items: center;">
+        <div style="flex: 0 0 160px;">
+          <div class="img-center">
+            <img src="images/level-1/10-cosmosearth.PNG" alt="Earth &amp; Cosmos Circuit" style="width: 160px; border-radius: 14px; outline: 0.5px solid var(--rose-200);">
+          </div>
+        </div>
+        <div style="flex: 1;">
+          <h4 class="h-sm" style="margin-bottom: 6px;">Контуры Энергии Космоса &amp; Земли</h4>
+          <div class="call" style="margin: 0;">
+            <p>Как энергия Земли, так и энергия Космоса продолжают циркулировать в постоянном потоке, входя, проходя по своим путям и выходя. Эта активация повышает нашу вибрацию, способствует энергетической разблокировке, выявляет проблемы для решения и предоставляет духовную информацию.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pn"><span>8</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 9 — CLEANSING & RECOVERY (full-spread image)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="step">
+        <div class="sn">8</div>
+        <h3 class="h-md">Розы для Очищения &amp; Восстановления Энергии</h3>
+      </div>
+      <div class="s12"></div>
+
+      <!-- Очищающая Роза — stacked above Recovery -->
+      <div class="img-center" style="justify-content: center;">
+        <img src="images/level-1/13-cleansing-rose.png" alt="Очищающая Роза" style="width: 180px; border-radius: 12px; outline: 0.5px solid var(--rose-200);">
+      </div>
+      <div class="s8"></div>
+      <h4 class="h-sm" style="text-align: center;">Очищающая Роза</h4>
+      <div class="s4"></div>
+      <p class="body-sm">Создайте Розу высокочастотного цвета, заземленную перед вами, вне вашей Ауры. Поместите на нее любую некомфортную ситуацию — мысли, людей, события, страхи. Намеревайтесь, чтобы Роза всасывала энергию, как пылесос.</p>
+      <div class="s4"></div>
+      <p class="body-sm">Взорвите Розу из вашей Ауры, чтобы очистить энергию и поднять вибрацию. Создавайте новые Розы столько раз, сколько потребуется.</p>
+
+      <div class="s12"></div>
+
+      <!-- Восстанавливающая Роза -->
+      <div class="img-center" style="justify-content: center;">
+        <img src="images/level-1/14-energy-recovery.png" alt="Восстанавливающая Роза" style="width: 180px; border-radius: 12px; outline: 0.5px solid var(--rose-200);">
+      </div>
+      <div class="s8"></div>
+      <h4 class="h-sm" style="text-align: center;">Восстанавливающая Роза</h4>
+      <div class="s4"></div>
+      <p class="body-sm">Создайте еще одну Розу, заземленную вне вашей Ауры, и призовите свою энергию обратно. Роза притягивает вашу рассеянную энергию, где бы она ни находилась, как магнит.</p>
+      <div class="s4"></div>
+      <p class="body-sm">Взорвите Розу из вашей Ауры и получите свою высоковибрационную и очищенную энергию обратно.</p>
+
+      <div class="s12"></div>
+      <div class="call">
+        <p>Вы можете создавать и взрывать столько роз, сколько захотите. Делайте то же самое в позитивных ситуациях, когда вы хотите еще больше поднять вибрацию.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>9</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 10 — PINK ROSE (split layout)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="img-full" style="max-height: 340px; justify-content: center;">
+        <img src="images/level-1/15-pink-rose-closure.png" alt="Розовая Роза Blessing" style="width: auto; max-height: 340px;">
+      </div>
+      <div class="s16"></div>
+
+      <div class="step">
+        <div class="sn">9</div>
+        <div>
+          <h3 class="h-md">Розовая Роза</h3>
+          <div class="s6"></div>
+          <p class="body">Мы можем предложить эту розу в качестве подарка, после очищения энергии другого человека из нашей Ауры, или главным образом для себя:</p>
+          <div class="s8"></div>
+          <ul class="bul">
+            <li>Создайте неукорененную розовую Розу.</li>
+            <li>Поместите человека или себя в эту Розу, визуализируя <em>"Счастливый, Здоровый, Целостный, Тело, Разум &amp; Душа."</em></li>
+            <li>Повторяйте про себя: <em>"Счастливый, Здоровый, Целостный, Тело, Разум &amp; Душа."</em></li>
+            <li>Повторяя, заставьте Розу подняться к центру Вселенной, желая вам или человеку в ней всего наилучшего.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="pn"><span>10</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 11 — SACRED SPACE
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="step">
+        <div class="sn">10</div>
+        <h3 class="h-md">Священное Пространство</h3>
+      </div>
+      <div class="s12"></div>
+
+      <div class="img-center">
+        <img src="images/level-1/18-sacred-space.PNG" alt="Священное Пространство" style="width: 300px; border-radius: 16px; outline: 0.5px solid var(--rose-200);">
+      </div>
+      <div class="s12"></div>
+
+      <p class="body">
+        Поместите себя в свое священное пространство, где вы в безопасности и полностью осознаете свою энергетическую власть. Именно отсюда вся энергетическая работа, включая Медитацию Розы, может быть выполнена с ясностью, ясновидением и истинным энергетическим суверенитетом.
+      </p>
+      <div class="s8"></div>
+      <p class="body">
+        Это пространство принадлежит вашему Духу &mdash; чистейшему измерению вашего существа. Держите его закрытым и защищенным всегда. Возвращайтесь в него для Медитации Розы, для важных решений, требующих вашей глубочайшей проницательности, или просто чтобы вернуться в соответствие со своей духовной сущностью.
+      </p>
+      <div class="s12"></div>
+
+      <div class="call-gold call">
+        <p style="color: var(--rose-800);">Это пространство принадлежит только вам, это ваше святилище. В нем вы центрированы, защищены и согласованы с вашей высочайшей вибрацией.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>11</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 12 — TO END THE MEDITATION
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="justify-content: center;">
+      <div class="label">Завершение</div>
+      <div class="s8"></div>
+      <h2 class="h-lg">Завершение Медитации</h2>
+      <div class="s20"></div>
+
+      <div class="img-center">
+        <img src="images/level-1/16-discharge-excess.PNG" alt="Discharge Excess Energy" style="width: 240px; border-radius: 16px; outline: 0.5px solid var(--rose-200);">
+      </div>
+      <div class="s16"></div>
+
+      <ul class="bul">
+        <li>Обрежьте заземляющий шнур и создайте новый.</li>
+        <li>Наполните себя золотым солнцем.</li>
+        <li>Если чувствуете, обновите любую технику, которую захотите — четыре розы защиты, разделения и наблюдения; контуры космоса и земли.</li>
+        <li>Положите руки на пол, чтобы высвободить избыточную энергию.</li>
+      </ul>
+
+      <div class="s20"></div>
+      <div class="line"></div>
+      <div class="s12"></div>
+
+      <div class="call-gold call">
+        <p style="color: var(--rose-800);">В любое время дня, или когда мы медитируем, мы взрываем четыре Розы и создаем новые. Они помогают нам сохранять нейтралитет.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>12</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 13 — ELEMENTS SUMMARY (full-spread image)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="justify-content: center;">
+
+      <div class="img-center">
+        <img src="images/level-1/11-therosegold.PNG" alt="The Rose Gold" style="width: 280px; border-radius: 16px; outline: 0.5px solid var(--rose-200);">
+      </div>
+      <div class="s16"></div>
+
+      <div class="sum">
+        <div class="label" style="margin-bottom: 6px;">Краткий Справочник</div>
+        <h2 class="h-md" style="margin-bottom: 12px;">Элементы Медитации Розы Уровень 1</h2>
+        <div class="line" style="margin-bottom: 14px;"></div>
+        <ul class="bul">
+          <li>Заземляющий шнур</li>
+          <li>Золотое Солнце</li>
+          <li>Границы Ауры и расширение шнура</li>
+          <li>Розы защиты, разделения и наблюдения</li>
+          <li>Энергии Земли и Космоса</li>
+          <li>Очищающая Роза</li>
+          <li>Роза восстановления энергии</li>
+          <li>Розовая Роза</li>
+          <li>Священное Пространство</li>
+          <li>Завершение: шнур + золотое солнце + сброс избыточной энергии</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pn"><span>13</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 14 — CLOSING
+       ===================================================== -->
+  <div class="page closing-bg">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="align-items: center; justify-content: center; text-align: center;">
+
+      <div class="img-circle" style="width: 180px; height: 180px; margin-bottom: 36px;">
+        <img src="images/manual-l1-cover.png" alt="Rose">
+      </div>
+
+      <div style="font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400); line-height: 1.8; letter-spacing: 0.03em;">
+        Учения Angelina Ataíde<br>
+        Оригинальные иллюстрации: Saraswati Noemi, Cecilia Lynch &amp; Drica Voivodic<br>
+        Редактор: Dara Ayoub &nbsp;·&nbsp; Дизайн: Jennifer Lawless
+      </div>
+      <div class="s20"></div>
+      <div style="font-family: var(--font-sans); font-size: 6.5pt; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold);">International Aura and Dream School</div>
+    </div>
+  </div>
+
+</body>
+</html>
