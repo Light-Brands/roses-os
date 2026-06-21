@@ -103,19 +103,6 @@ function walkInPage(schoolName) {
 
     if (has(el, 'line') || has(el, 'line-c')) return [{ t: 'divider' }];
 
-    // Multi-column row: .cols (CSS grid), .split, or an inline flex row with >=2
-    // element kids. Each kid is one column; recurse it. 2 columns -> one
-    // two-column-section; 3+ -> nested two-column-sections (the editor already
-    // renders nested columns, so no new block primitive is needed).
-    const isCols = has(el, 'cols');
-    const flexRow = (has(el, 'split') || /display:\s*flex/.test(style)) && elChildren(el).length >= 2;
-    if (isCols || flexRow) {
-      const columns = elChildren(el).map((k) => nodeIntents(k)).filter((c) => c.length);
-      if (columns.length >= 2) return [{ t: 'cols', columns }];
-      if (columns.length === 1) return columns[0];
-      return [];
-    }
-
     if (tag === 'img') return [imgIntent(el)];
     if (has(el, 'img-center') || has(el, 'img-circle') || has(el, 'img-full')) {
       const img = el.querySelector('img');
@@ -167,11 +154,35 @@ function walkInPage(schoolName) {
       return plain.length > 2 ? [{ t: 'text', html: `<p>${h}</p>` }] : [];
     }
 
-    // Wrapper (div/span/section/etc) -> recurse in DOM order.
-    if (el.querySelector && (tag === 'div' || tag === 'section' || tag === 'span' || tag === 'tbody')) {
-      return elChildren(el).flatMap(nodeIntents);
+    // Multi-column row, detected by COMPUTED style (catches class-based flex/grid
+    // like .chakra-card / .chakra-cols, not just inline styles or .split/.cols).
+    // Each element child is one column. 2 cols -> one two-column-section; 3+ ->
+    // nested two-column-sections. .step is already handled above, so its sn|heading
+    // flex never reaches here.
+    const kids = elChildren(el);
+    if (kids.length >= 2) {
+      const cs = getComputedStyle(el);
+      const flexRow = cs.display.includes('flex') && !/column/.test(cs.flexDirection);
+      const gridRow = cs.display.includes('grid') && cs.gridTemplateColumns.split(' ').filter((x) => x && x !== '0px' && x !== 'none').length >= 2;
+      if (flexRow || gridRow || has(el, 'split') || has(el, 'cols')) {
+        const columns = kids.map((k) => nodeIntents(k)).filter((c) => c.length);
+        if (columns.length >= 2) return [{ t: 'cols', columns }];
+        if (columns.length === 1) return columns[0];
+        return [];
+      }
     }
-    return [];
+
+    // Leaf element carrying text (no block-level child) -> a text block. Manuals
+    // put real content in styled <div>s (chakra-name, sanskrit, statement,
+    // blockages), which would otherwise be silently dropped.
+    const blockChild = kids.some((c) => /^(DIV|P|H1|H2|H3|H4|UL|OL|TABLE|SECTION|IMG|BLOCKQUOTE|FIGURE)$/.test(c.tagName));
+    if (!blockChild) {
+      const txt = clean(el.textContent);
+      return txt.length > 1 ? [{ t: 'text', html: `<p>${inlineHtml(el)}</p>` }] : [];
+    }
+
+    // Wrapper -> recurse in DOM order.
+    return kids.flatMap(nodeIntents);
   }
 
   const pages = [];
