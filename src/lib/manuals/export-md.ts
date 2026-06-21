@@ -9,7 +9,12 @@ import { absolutizeSrc } from './export-utils';
  * empty, leaving already-absolute URLs untouched.
  */
 export function blocksToMarkdown(blocks: ManualBlock[], title: string, origin = ''): string {
-  const lines: string[] = [`# ${title}`, ''];
+  // Prefer the cover block's (translated) title over the manual's English
+  // `title` column, and skip the redundant top heading when a cover exists —
+  // otherwise a translated export is topped with an English title.
+  const coverBlock = blocks.find((b) => b.block_type === 'cover');
+  const docTitle = (coverBlock?.content as { title?: string } | undefined)?.title || title;
+  const lines: string[] = coverBlock ? [] : [`# ${docTitle}`, ''];
 
   for (const block of blocks) {
     switch (block.block_type) {

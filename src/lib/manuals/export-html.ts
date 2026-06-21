@@ -186,11 +186,23 @@ export function blocksToHtml(blocks: ManualBlock[], title: string, origin = ''):
 
   const bodyHtml = top.map(renderBlock).join('\n');
 
+  // The document title + language must follow the SELECTED language, not the
+  // manual's English `title` column. A cover block already carries the translated
+  // title, so prefer it; and when a cover exists, skip the redundant top-of-page
+  // H1 (it would print the English manual title above the translated cover).
+  const coverBlock = top.find((b) => b.block_type === 'cover');
+  const coverTitle = coverBlock ? (coverBlock.content as { title?: string }).title : undefined;
+  const docTitle = coverTitle || title;
+  const docLang = blocks.find((b) => b.language)?.language || 'en';
+  const headerHtml = coverBlock
+    ? ''
+    : `<div style="text-align:center; margin-bottom: 28px;"><h1 style="font-size:30pt;">${esc(docTitle)}</h1><div style="width:60px; height:1px; background:#9C6F6E; margin:14px auto;"></div></div>`;
+
   return `<!DOCTYPE html>
-<html lang="en">
+<html lang="${esc(docLang)}">
 <head>
   <meta charset="UTF-8">
-  <title>${esc(title)}</title>
+  <title>${esc(docTitle)}</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -268,10 +280,7 @@ export function blocksToHtml(blocks: ManualBlock[], title: string, origin = ''):
   </style>
 </head>
 <body>
-  <div style="text-align:center; margin-bottom: 28px;">
-    <h1 style="font-size:30pt;">${esc(title)}</h1>
-    <div style="width:60px; height:1px; background:#9C6F6E; margin:14px auto;"></div>
-  </div>
+  ${headerHtml}
   ${bodyHtml}
   <script>
     // Wait for images to load before printing, otherwise the print fires with
