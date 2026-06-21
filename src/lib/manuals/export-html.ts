@@ -178,7 +178,10 @@ export function blocksToHtml(blocks: ManualBlock[], title: string, origin = ''):
       case 'divider':
         return `<hr class="divider" />`;
       case 'page-break':
-        return `<div class="page-break"></div>`;
+        // A soft breather between canonical pages, NOT a forced new sheet. Forcing
+        // a hard break at every canonical boundary left big whitespace (the export
+        // flows differently than the designed PDF). Content now paginates naturally.
+        return `<div class="soft-break"></div>`;
       default:
         return '';
     }
@@ -276,7 +279,16 @@ export function blocksToHtml(blocks: ManualBlock[], title: string, origin = ''):
     .two-col { display: grid; gap: 18px; align-items: start; margin: 16px 0; }
     .two-col .col { min-width: 0; }
     .divider { border: none; border-top: 1px solid #E8C4BF; margin: 22px 0; }
-    .page-break { page-break-after: always; }
+    .soft-break { height: 10px; }
+    /* Pagination: let content flow and fill pages (no forced break per canonical
+       page). Keep the title page alone, keep atomic blocks whole, and never strand
+       a heading at the foot of a page. */
+    .cover { break-after: page; }
+    .figure, .captioned-figure, .image-row, .callout, .quote, .exercise, .table, .contents, .two-col, .glossary, .footnote {
+      break-inside: avoid;
+    }
+    h1, h2, h3 { break-after: avoid; }
+    p, li { orphans: 2; widows: 2; }
   </style>
 </head>
 <body>
