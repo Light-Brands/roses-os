@@ -25,6 +25,8 @@ const manualLabelBuilders: Partial<Record<Locale, (level: number) => string>> = 
   es: (level) => `Descargar Manual del Nivel ${level}`,
   pt: (level) => `Baixar Manual do Nível ${level}`,
   el: (level) => `Λήψη Εγχειριδίου Επιπέδου ${level}`,
+  ru: (level) => `Скачать руководство уровня ${level}`,
+  uk: (level) => `Завантажити посібник рівня ${level}`,
 };
 
 function manualLabels(level: number): Partial<Record<Locale, string>> {

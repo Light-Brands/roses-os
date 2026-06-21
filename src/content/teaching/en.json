@@ -1,7 +1,7 @@
 {
   "ui": {
     "teacherVisualAidManual": "Teacher Visual Aid Manual",
-    "facilitatorCompanion": "A facilitator\u2019s visual companion for teaching Rose Meditation.",
+    "facilitatorCompanion": "A facilitator’s visual companion for teaching Rose Meditation.",
     "selectTeachingLevel": "Select a Teaching Level",
     "allLevels": "All Levels",
     "level": "Level",
@@ -24,9 +24,10 @@
     "rosesOs": "International Aura and Dream School",
     "exportTeachersAidPdf": "Export Teachers Aid PDF",
     "downloadImages": "Download Images",
-    "preparingDownload": "Preparing download\u2026",
+    "preparingDownload": "Preparing download…",
     "nextLevel": "Next",
-    "previousLevel": "Previous"
+    "previousLevel": "Previous",
+    "printPage": "Print Page"
   },
   "opening": {
     "agreements": {
@@ -57,7 +58,7 @@
     "history": {
       "title": "History & Lineage",
       "text": "Aura Reading emerged in the 1960s, in California, channeled by a North American called Lewis S. Bostwick. Founder of the Berkeley Psychic Institute and the Church of the Divine Man, he channeled and systematized the techniques and tools sent by the angels, to assist in the process of evolution of humanity.",
-      "lineage": "Berkeley Psychic Institute \u2192 Anastasia Plunk \u2192 Angelina Ataide \u2192 Escola da Aura \u2192 International Aura and Dream School"
+      "lineage": "Berkeley Psychic Institute → Anastasia Plunk → Angelina Ataide → Escola da Aura → International Aura and Dream School"
     }
   },
   "levels": {
@@ -80,11 +81,11 @@
   "slides": {
     "l1-the-rose": {
       "concept": "The Rose",
-      "teachingText": "The Rose is the foundational symbol and tool of this practice \u2014 a living energetic instrument used throughout all levels of the work."
+      "teachingText": "The Rose is the foundational symbol and tool of this practice — a living energetic instrument used throughout all levels of the work."
     },
     "l1-posture": {
       "concept": "Meditation Posture",
-      "teachingText": "Proper meditation posture is seated upright in a chair. Feet are flat on the floor, hands resting gently on the thighs or knees, spine upright, eyes closed. The body is relaxed yet alert \u2014 grounded and receptive."
+      "teachingText": "Proper meditation posture is seated upright in a chair. Feet are flat on the floor, hands resting gently on the thighs or knees, spine upright, eyes closed. The body is relaxed yet alert — grounded and receptive."
     },
     "l1-grounding-cord": {
       "concept": "Grounding Cord",
@@ -92,7 +93,7 @@
     },
     "l1-golden-sun": {
       "concept": "Golden Sun",
-      "teachingText": "The Golden Sun is a tool for replenishing and restoring your own energy. Visualize a radiant golden sun above your head. It calls back your own life-force energy from wherever you may have left it \u2014 in people, places, situations, or time. It fills you with your own highest vibration."
+      "teachingText": "The Golden Sun is a tool for replenishing and restoring your own energy. Visualize a radiant golden sun above your head. It calls back your own life-force energy from wherever you may have left it — in people, places, situations, or time. It fills you with your own highest vibration."
     },
     "l1-aura-exercise": {
       "concept": "An Exercise to Feel Your Aura",
@@ -100,11 +101,11 @@
     },
     "l1-grounding-expansion": {
       "concept": "Expansion of Grounding Cord",
-      "teachingText": "Once you are aware of your aura, the grounding cord practice deepens. You ground not only the physical body but also the aura itself \u2014 allowing the entire energy field to anchor into the Earth."
+      "teachingText": "Once you are aware of your aura, the grounding cord practice deepens. You ground not only the physical body but also the aura itself — allowing the entire energy field to anchor into the Earth."
     },
-"l1-golden-sun-fills": {
+    "l1-golden-sun-fills": {
       "concept": "Golden Sun Fills You",
-      "teachingText": "The Golden Sun above the crown pours golden light downward, filling the entire aura and body with your own highest vibration. This completes the full energetic architecture: posture, aura, grounding cord, and golden sun \u2014 all active together."
+      "teachingText": "The Golden Sun above the crown pours golden light downward, filling the entire aura and body with your own highest vibration. This completes the full energetic architecture: posture, aura, grounding cord, and golden sun — all active together."
     },
     "l1-earth-circuit": {
       "concept": "Circuit of Energy of the Earth",
@@ -124,11 +125,11 @@
     },
     "l1-four-roses": {
       "concept": "Four Roses of Protection, Separation and Observation",
-      "teachingText": "Roses are placed at the edges of the aura to serve as energetic sentinels. They perform three functions:\n\n1. Protection \u2014 They define and guard the boundary of your aura\n2. Separation \u2014 They create healthy energetic distinction between your energy and the energy of others\n3. Observation \u2014 They help you notice what energies are approaching or interacting with your field"
+      "teachingText": "Roses are placed at the edges of the aura to serve as energetic sentinels. They perform three functions:\n\n1. Protection — They define and guard the boundary of your aura\n2. Separation — They create healthy energetic distinction between your energy and the energy of others\n3. Observation — They help you notice what energies are approaching or interacting with your field"
     },
     "l1-cleansing-rose": {
       "concept": "Cleansing Rose",
-      "teachingText": "The Cleansing Rose is placed outside of the aura. It is used to absorb and transmute foreign or stagnant energy from within your field. Energy that does not belong to you \u2014 from other people, environments, or experiences \u2014 is drawn out of the aura and into the Cleansing Rose, where it is neutralized."
+      "teachingText": "The Cleansing Rose is placed outside of the aura. It is used to absorb and transmute foreign or stagnant energy from within your field. Energy that does not belong to you — from other people, environments, or experiences — is drawn out of the aura and into the Cleansing Rose, where it is neutralized."
     },
     "l1-energy-recovery": {
       "concept": "Energy Recovery of Each Chakra",
@@ -139,20 +140,20 @@
       "teachingText": "After deep meditation or energy work, excess energy may accumulate in the body. To discharge it, lean forward from the seated position with hands reaching toward the ground. Allow the excess energy to flow out through the hands and into the earth, returning the body to a calm, balanced state."
     },
     "l1-sacred-space": {
-      "concept": "Let\u2019s Create Your Sacred Space",
-      "teachingText": "Place yourself in your sacred space, where you are safe and fully aware of your energetic authority. It is from here that all energy work, including the Rose Meditation, can be done with clarity, clairvoyance, and true energetic sovereignty.\n\nThis space belongs to your Spirit \u2014 the purest dimension of your being. Keep it closed and protected at all times. Return to it for the Rose Meditation, for important decisions that call for your deepest discernment, or simply to come back into alignment with your spiritual essence."
+      "concept": "Let’s Create Your Sacred Space",
+      "teachingText": "Place yourself in your sacred space, where you are safe and fully aware of your energetic authority. It is from here that all energy work, including the Rose Meditation, can be done with clarity, clairvoyance, and true energetic sovereignty.\n\nThis space belongs to your Spirit — the purest dimension of your being. Keep it closed and protected at all times. Return to it for the Rose Meditation, for important decisions that call for your deepest discernment, or simply to come back into alignment with your spiritual essence."
     },
     "l1-6th-7th-chakras": {
       "concept": "The 6th and 7th Chakras (Sacred Space)",
-      "teachingText": "Understanding the locations and roles of the upper chakras is essential for Level 2 work:\n\n\u2022 6th Chakra (Third Eye) \u2014 Located at the center of the forehead, between and slightly above the eyebrows\n\u2022 7th Chakra (Crown) \u2014 Located at the top of the head"
+      "teachingText": "Understanding the locations and roles of the upper chakras is essential for Level 2 work:\n\n• 6th Chakra (Third Eye) — Located at the center of the forehead, between and slightly above the eyebrows\n• 7th Chakra (Crown) — Located at the top of the head"
     },
     "l2-physical-space": {
-      "concept": "Let\u2019s Prepare Your Physical Space",
+      "concept": "Let’s Prepare Your Physical Space",
       "teachingText": "Before meditation, prepare your physical environment to support the energetic work. The external space should mirror the internal intention: clean, clear, quiet, and intentionally held."
     },
     "l2-protection-space": {
       "concept": "Protection of the Space",
-      "teachingText": "The physical meditation space is protected by creating an energetic grid using roses. Golden roses are placed at the four corners (and above/below) of the space, connected by lines of golden energy forming a sacred geometric structure \u2014 a container for the work."
+      "teachingText": "The physical meditation space is protected by creating an energetic grid using roses. Golden roses are placed at the four corners (and above/below) of the space, connected by lines of golden energy forming a sacred geometric structure — a container for the work."
     },
     "l2-cleansing-space": {
       "concept": "Cleansing of the Space",
@@ -160,15 +161,15 @@
     },
     "l2-owning-space": {
       "concept": "Owning Your Space",
-      "teachingText": "After protection and cleansing, you claim ownership of the space. This is an act of energetic sovereignty \u2014 declaring the space as yours, filling it with your own energy and intention. The space becomes an extension of your aura and your practice."
+      "teachingText": "After protection and cleansing, you claim ownership of the space. This is an act of energetic sovereignty — declaring the space as yours, filling it with your own energy and intention. The space becomes an extension of your aura and your practice."
     },
     "l2-chakras-intro": {
-      "concept": "Let\u2019s Talk About Chakras",
+      "concept": "Let’s Talk About Chakras",
       "teachingText": "The chakra system is the energetic anatomy of the human body. There are seven primary chakras, each governing specific aspects of physical, emotional, mental, and spiritual life."
     },
     "l2-seven-chakras": {
       "concept": "The Seven Chakras",
-      "teachingText": "The seven primary chakras, from crown to root:\n\n7. Crown \u2014 Top of head\n6. Third Eye \u2014 Center of forehead\n5. Throat \u2014 Throat\n4. Heart \u2014 Center of chest\n3. Solar Plexus \u2014 Upper abdomen\n2. Sacral \u2014 Lower abdomen\n1. Root \u2014 Base of spine"
+      "teachingText": "The seven primary chakras, from crown to root:\n\n7. Crown — Top of head\n6. Third Eye — Center of forehead\n5. Throat — Throat\n4. Heart — Center of chest\n3. Solar Plexus — Upper abdomen\n2. Sacral — Lower abdomen\n1. Root — Base of spine"
     },
     "l2-cleansing-aura-layers": {
       "concept": "Cleansing of Each Aura Layer",
@@ -176,59 +177,59 @@
     },
     "l2-cleansing-each-chakra": {
       "concept": "Cleansing of Each Chakra",
-      "teachingText": "Each individual chakra is cleansed using roses. The roses address two dimensions:\n\n\u2022 Dynamics of the Past \u2014 Energetic patterns, imprints, and blockages carried from past experiences\n\u2022 Dynamics of the Present \u2014 Current energetic influences, relationships, and situations affecting the chakra"
+      "teachingText": "Each individual chakra is cleansed using roses. The roses address two dimensions:\n\n• Dynamics of the Past — Energetic patterns, imprints, and blockages carried from past experiences\n• Dynamics of the Present — Current energetic influences, relationships, and situations affecting the chakra"
     },
     "l2-energy-recovery": {
       "concept": "Energy Recovery Rose in Depth",
       "teachingText": "Once the cleansing of the chakra and its corresponding aura layer is complete, the energy recovery process can unfold at their vibration, if you feel called to do so. A recovery Rose may be created attuned to that specific frequency, drawing your energy back and restoring it at that very level. You can do it from the 1st to the 7th chakra."
     },
     "l2-golden-sticky-1": {
-      "concept": "Golden Sticky Roses \u2014 First Rose (Crown to Root)",
+      "concept": "Golden Sticky Roses — First Rose (Crown to Root)",
       "teachingText": "Four Golden Sticky Roses are used for deep energetic cleansing of the Aura, drawing out any foreign energies that still remain after the previous clearing. The first enters through the crown chakra, cleansing each chakra in succession down to the root."
     },
     "l2-golden-sticky-2": {
-      "concept": "Golden Sticky Roses \u2014 Second Rose (Arms)",
+      "concept": "Golden Sticky Roses — Second Rose (Arms)",
       "teachingText": "The second descends to the throat chakra, where it splits into two Roses that travel the channels of the arms, exiting through the hand chakras."
     },
     "l2-golden-sticky-3": {
-      "concept": "Golden Sticky Roses \u2014 Third Rose (Legs)",
+      "concept": "Golden Sticky Roses — Third Rose (Legs)",
       "teachingText": "The third descends to the root chakra, where it becomes two Roses that follow the channels of the legs, exiting through the foot chakras."
     },
     "l2-golden-sticky-4": {
-      "concept": "Golden Sticky Roses \u2014 Fourth Rose (Full Aura)",
+      "concept": "Golden Sticky Roses — Fourth Rose (Full Aura)",
       "teachingText": "The fourth spans the full width of the Aura, descending through the entire energetic field. Upon completion, all four either explode outside the Aura or exit through the grounding cord, transmuting the collected energies away with them."
     },
     "l3-analyzer": {
       "concept": "The Analyzer",
-      "teachingText": "The Analyzer is an advanced tool introduced in Level 3. It is an energetic point located at the back of the head, at the base of the skull (the occipital ridge / brainstem area). The Analyzer is used for deeper perception, reading, and discernment of energy \u2014 a tool for precise energetic analysis."
+      "teachingText": "The Analyzer is an advanced tool introduced in Level 3. It is an energetic point located at the back of the head, at the base of the skull (the occipital ridge / brainstem area). The Analyzer is used for deeper perception, reading, and discernment of energy — a tool for precise energetic analysis."
     },
     "l3-analyzer-sacred-space": {
       "concept": "Sacred Space Analyzer",
-      "teachingText": "A combined reference showing the Analyzer in relation to the sacred space. This image illustrates how the Analyzer \u2014 the energetic point at the base of the skull \u2014 operates within the context of the protected, cleansed sacred space established in Level 2. The two work together: the sacred space provides the container, and the Analyzer provides the perceptive tool for deeper energetic reading and discernment."
+      "teachingText": "A combined reference showing the Analyzer in relation to the sacred space. This image illustrates how the Analyzer — the energetic point at the base of the skull — operates within the context of the protected, cleansed sacred space established in Level 2. The two work together: the sacred space provides the container, and the Analyzer provides the perceptive tool for deeper energetic reading and discernment."
     },
     "l3-stick-of-agreements": {
       "concept": "Stick of Agreements",
-      "teachingText": "A relationship can only manifest in the material world if it is sustained by a spiritual agreement. Such agreements are formed with the consent of both parties on a spiritual level and may be dissolved by either party through conscious will.\n\nEach time a spiritual agreement is created, a \"stick of agreements\" is formed between the individuals involved. Through this Rose Meditation technique, it is always possible to dissolve these sticks of agreements. This process should be approached with great awareness, as it carries very tangible consequences in our lives.\n\nTo break these agreements:\n\n\u2022 Create a high-vibration situation, for example, right after the Roses Meditation\n\u2022 Visualize the stick of agreements that contains all the agreements you want to break\n\u2022 Break this stick into three pieces\n\u2022 Create a grounded Rose\n\u2022 Place the three pieces of the stick in this Rose\n\u2022 Explode the Rose outside the Aura"
+      "teachingText": "A relationship can only manifest in the material world if it is sustained by a spiritual agreement. Such agreements are formed with the consent of both parties on a spiritual level and may be dissolved by either party through conscious will.\n\nEach time a spiritual agreement is created, a \"stick of agreements\" is formed between the individuals involved. Through this Rose Meditation technique, it is always possible to dissolve these sticks of agreements. This process should be approached with great awareness, as it carries very tangible consequences in our lives.\n\nTo break these agreements:\n\n• Create a high-vibration situation, for example, right after the Roses Meditation\n• Visualize the stick of agreements that contains all the agreements you want to break\n• Break this stick into three pieces\n• Create a grounded Rose\n• Place the three pieces of the stick in this Rose\n• Explode the Rose outside the Aura"
     },
     "l3-cutting-cords": {
       "concept": "Cutting Cords",
-      "teachingText": "We engage in energetic interactions with others constantly \u2014 when we see them, hear them, touch them, and even when we think about them. When energetic cords are formed, our auras connect through these ties, allowing energy to flow between us. This is why we can often sense what is happening to people close to us, even at a distance.\n\nWhen relationships come to an end, we may be deeply affected by the energies that continue to reach us through these bonds. For this reason, it is important to know how to consciously cut them:\n\n\u2022 Close your eyes\n\u2022 Visualize your aura with bonds coming out of your chakras\n\u2022 Place your dominant hand on the 7th cervical vertebra, located at the junction of the neck and back at the level of the 5th chakra\n\u2022 Intend that your hand has the power to cut all cords\n\u2022 Make the cutting motion under your 1st chakra, placing your hand on the chair where you are sitting\n\nWe can also cut the ties when the relationship has not ended, but we feel we need more neutrality. These ties reform very quickly when we reconnect with the person."
+      "teachingText": "We engage in energetic interactions with others constantly — when we see them, hear them, touch them, and even when we think about them. When energetic cords are formed, our auras connect through these ties, allowing energy to flow between us. This is why we can often sense what is happening to people close to us, even at a distance.\n\nWhen relationships come to an end, we may be deeply affected by the energies that continue to reach us through these bonds. For this reason, it is important to know how to consciously cut them:\n\n• Close your eyes\n• Visualize your aura with bonds coming out of your chakras\n• Place your dominant hand on the 7th cervical vertebra, located at the junction of the neck and back at the level of the 5th chakra\n• Intend that your hand has the power to cut all cords\n• Make the cutting motion under your 1st chakra, placing your hand on the chair where you are sitting\n\nWe can also cut the ties when the relationship has not ended, but we feel we need more neutrality. These ties reform very quickly when we reconnect with the person."
     },
     "l3-sexual-recovery-rose": {
       "concept": "Post Intimacy / Sexual Recovery Rose",
-      "teachingText": "After sexual intercourse, if you want to recover any energy you may have left with the other person and return any energy they may have left with you, follow these steps:\n\n\u2022 Perform the preparation techniques (grounding cord, Golden Sun, Earth and Cosmos energy, sacred space)\n\u2022 Create an orange Rose and place the person\u2019s energy in it with their physical body, emotions, and feelings that may arise at that moment \u2014 you can visualize the person entering the rose, the situation you just experienced; explode (you can repeat this step as many times as necessary)\n\u2022 Create an orange-colored unrooted Rose that cleanses any energy from the person that may have remained in any layer of your aura; explode\n\u2022 Create a grounded orange Rose and intend for this rose to recover energy that remained with this person; explode\n\u2022 If you want to remain energetically separate from this person, make the movement of cutting the energetic cords\n\u2022 Create an unrooted pink Rose, place the person in it, visualize them happy with complete health in their body, mind, and soul. Repeat mentally: \"Happy, healthy, whole, body, mind and soul.\" Make the Rose rise toward the center of the universe, wishing the best for them\n\u2022 Renew your grounding cord\n\u2022 Fill yourself with the light of the Golden Sun\n\u2022 Place your hands on the ground to discharge excess energy\n\nYou can also use this technique for relationships that happened a long time ago or when you end a relationship."
+      "teachingText": "After sexual intercourse, if you want to recover any energy you may have left with the other person and return any energy they may have left with you, follow these steps:\n\n• Perform the preparation techniques (grounding cord, Golden Sun, Earth and Cosmos energy, sacred space)\n• Create an orange Rose and place the person’s energy in it with their physical body, emotions, and feelings that may arise at that moment — you can visualize the person entering the rose, the situation you just experienced; explode (you can repeat this step as many times as necessary)\n• Create an orange-colored unrooted Rose that cleanses any energy from the person that may have remained in any layer of your aura; explode\n• Create a grounded orange Rose and intend for this rose to recover energy that remained with this person; explode\n• If you want to remain energetically separate from this person, make the movement of cutting the energetic cords\n• Create an unrooted pink Rose, place the person in it, visualize them happy with complete health in their body, mind, and soul. Repeat mentally: \"Happy, healthy, whole, body, mind and soul.\" Make the Rose rise toward the center of the universe, wishing the best for them\n• Renew your grounding cord\n• Fill yourself with the light of the Golden Sun\n• Place your hands on the ground to discharge excess energy\n\nYou can also use this technique for relationships that happened a long time ago or when you end a relationship."
     },
     "l3-mock-up": {
       "concept": "Mock Up",
-      "teachingText": "The Mock Up is a technique for manifesting situations or outcomes on the physical plane. It should be used only for oneself; it cannot be performed on behalf of another person. For it to be effective, it must be practiced for seven consecutive days and focused on one goal at a time. The higher your vibrational state while creating the mock-up, the more effective the process will be.\n\n\u2022 Create a grounded Rose and inside that Rose imagine what you want, creating the image with as much detail as you can\n\u2022 Create a second grounded Rose placed to the right of the first Rose. Intend for this Rose to cleanse all energy that does not belong to the first Rose, any type of blockage that interferes with the realization of what you desire\n\u2022 Create a third pink grounded Rose (the color of Divine Love). In this Rose, bring into your inner self the image of something you love very much, something that gives you great satisfaction and pleasure so that you can raise your vibration to the maximum\n\u2022 Inspired by the previous Rose, imagine the energy of Divine Love, in pink, coming out of your heart and enveloping the first Rose, placing it in a beautiful pink circle, like a bubble\n\u2022 Cut the roots of the first Rose and let it rise to the center of the Universe. Always ask for it to be done if it is for the greater good\n\u2022 Explode the third Rose (the pink one)\n\u2022 Explode the second Rose (the cleansing rose)\n\nRemember to repeat this technique for 7 consecutive days. If you miss a day before completing the 7-day cycle, go back to the beginning."
+      "teachingText": "The Mock Up is a technique for manifesting situations or outcomes on the physical plane. It should be used only for oneself; it cannot be performed on behalf of another person. For it to be effective, it must be practiced for seven consecutive days and focused on one goal at a time. The higher your vibrational state while creating the mock-up, the more effective the process will be.\n\n• Create a grounded Rose and inside that Rose imagine what you want, creating the image with as much detail as you can\n• Create a second grounded Rose placed to the right of the first Rose. Intend for this Rose to cleanse all energy that does not belong to the first Rose, any type of blockage that interferes with the realization of what you desire\n• Create a third pink grounded Rose (the color of Divine Love). In this Rose, bring into your inner self the image of something you love very much, something that gives you great satisfaction and pleasure so that you can raise your vibration to the maximum\n• Inspired by the previous Rose, imagine the energy of Divine Love, in pink, coming out of your heart and enveloping the first Rose, placing it in a beautiful pink circle, like a bubble\n• Cut the roots of the first Rose and let it rise to the center of the Universe. Always ask for it to be done if it is for the greater good\n• Explode the third Rose (the pink one)\n• Explode the second Rose (the cleansing rose)\n\nRemember to repeat this technique for 7 consecutive days. If you miss a day before completing the 7-day cycle, go back to the beginning."
     }
   },
   "chakras": {
     "l2-chakra-root": {
       "concept": "Root Chakra",
-      "teachingText": "Muladhara \u2014 Grounding & Safety",
-      "focus": "Stability \u2014 Safety \u2014 Embodiment",
-      "energy": "Masculine \u2014 Survival / Foundation",
+      "teachingText": "Muladhara — Grounding & Safety",
+      "focus": "Stability — Safety — Embodiment",
+      "energy": "Masculine — Survival / Foundation",
       "bodyLocation": "Base of spine, Legs, Feet",
       "balanced": [
         "Grounded presence",
@@ -242,13 +243,13 @@
         "Disconnection from body",
         "Scarcity mindset"
       ],
-      "blockages": "Fear \u2014 Insecurity \u2014 Survival Trauma"
+      "blockages": "Fear — Insecurity — Survival Trauma"
     },
     "l2-chakra-sacral": {
       "concept": "Sacral Chakra",
-      "teachingText": "Svadhisthana \u2014 Emotion & Creativity",
-      "focus": "Emotions \u2014 Creativity \u2014 Pleasure",
-      "energy": "Feminine \u2014 Flow & Flexibility",
+      "teachingText": "Svadhisthana — Emotion & Creativity",
+      "focus": "Emotions — Creativity — Pleasure",
+      "energy": "Feminine — Flow & Flexibility",
       "bodyLocation": "Lower abdomen, Sexual Organs",
       "balanced": [
         "Emotional well-being",
@@ -262,13 +263,13 @@
         "Emotional instability",
         "Fear of change"
       ],
-      "blockages": "Shame \u2014 Emotional Repression \u2014 Guilt"
+      "blockages": "Shame — Emotional Repression — Guilt"
     },
     "l2-chakra-solar-plexus": {
       "concept": "Solar Plexus Chakra",
-      "teachingText": "Manipura \u2014 Willpower & Confidence",
-      "focus": "Personal Power \u2014 Self-Esteem \u2014 Drive",
-      "energy": "Masculine \u2014 Power & Transformation",
+      "teachingText": "Manipura — Willpower & Confidence",
+      "focus": "Personal Power — Self-Esteem — Drive",
+      "energy": "Masculine — Power & Transformation",
       "bodyLocation": "Upper abdomen, Diaphragm",
       "balanced": [
         "Confidence and motivation",
@@ -282,12 +283,12 @@
         "Stubborn and domineering",
         "Lack of direction or purpose"
       ],
-      "blockages": "Self-Doubt \u2014 Insecurity \u2014 Fear of Rejection"
+      "blockages": "Self-Doubt — Insecurity — Fear of Rejection"
     },
     "l2-chakra-heart": {
       "concept": "Heart Chakra",
-      "teachingText": "Anahata \u2014 Love & Integration",
-      "focus": "Love \u2014 Compassion \u2014 Connection",
+      "teachingText": "Anahata — Love & Integration",
+      "focus": "Love — Compassion — Connection",
       "energy": "Feminine — Bridge between physical & spiritual",
       "bodyLocation": "Center of chest, Heart, Lungs",
       "balanced": [
@@ -302,13 +303,13 @@
         "Cold or detachment",
         "Difficulty forgiving"
       ],
-      "blockages": "Grief \u2014 Betrayal \u2014 Heartbreak",
-      "extraContent": "Human Love & Divine Love:\n\nHuman Love \u2014 Statement: I LOVE \u2014 Conditional love, empathy, forgiveness, healthy relationships.\n\nDivine Love \u2014 Statement: I AM LOVE \u2014 Unconditional love, compassion, interconnectedness, divine and universal love."
+      "blockages": "Grief — Betrayal — Heartbreak",
+      "extraContent": "Human Love & Divine Love:\n\nHuman Love — Statement: I LOVE — Conditional love, empathy, forgiveness, healthy relationships.\n\nDivine Love — Statement: I AM LOVE — Unconditional love, compassion, interconnectedness, divine and universal love."
     },
     "l2-chakra-throat": {
       "concept": "Throat Chakra",
-      "teachingText": "Vishuddha \u2014 Communication & Expression",
-      "focus": "Communication \u2014 Truth \u2014 Authenticity",
+      "teachingText": "Vishuddha — Communication & Expression",
+      "focus": "Communication — Truth — Authenticity",
       "energy": "Masculine — Learning to align will with divine truth",
       "bodyLocation": "Throat, Neck, Jaw, Mouth",
       "balanced": [
@@ -323,12 +324,12 @@
         "People-pleasing",
         "Suppressed feelings or lies"
       ],
-      "blockages": "Suppressed Truth \u2014 Fear of Expression \u2014 Miscommunication"
+      "blockages": "Suppressed Truth — Fear of Expression — Miscommunication"
     },
     "l2-chakra-third-eye": {
       "concept": "Third Eye Chakra",
-      "teachingText": "Ajna \u2014 Intuition & Insight",
-      "focus": "Imagination \u2014 Perception \u2014 Visualization",
+      "teachingText": "Ajna — Intuition & Insight",
+      "focus": "Imagination — Perception — Visualization",
       "energy": "Feminine aspects of awareness",
       "bodyLocation": "Forehead, Brow, Eye center",
       "balanced": [
@@ -343,12 +344,12 @@
         "Disconnection with inner guidance",
         "Escaping reality or spiritual bypassing"
       ],
-      "blockages": "Illusion \u2014 Fear of Seeing \u2014 Mental Rigidity"
+      "blockages": "Illusion — Fear of Seeing — Mental Rigidity"
     },
     "l2-chakra-crown": {
       "concept": "Crown Chakra",
-      "teachingText": "Sahasrara \u2014 Spirituality & Consciousness",
-      "focus": "Spiritual Connection \u2014 Inner Wisdom \u2014 Higher States of Awareness",
+      "teachingText": "Sahasrara — Spirituality & Consciousness",
+      "focus": "Spiritual Connection — Inner Wisdom — Higher States of Awareness",
       "energy": "No duality — Transcending ego, merging with source",
       "bodyLocation": "Top of head",
       "balanced": [
@@ -363,7 +364,7 @@
         "Feeling isolated or alone",
         "Lack of purpose"
       ],
-      "blockages": "Disconnection \u2014 Cynicism \u2014 Loss of Meaning"
+      "blockages": "Disconnection — Cynicism — Loss of Meaning"
     }
   }
 }

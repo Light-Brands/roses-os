@@ -16,6 +16,9 @@ export default function LevelNavigation({ currentLevel }: LevelNavigationProps) 
 
   if (!prevLevel && !nextLevel) return null;
 
+  const levelTitle = (lvl: { level: number; title: string }) =>
+    t?.levels?.[String(lvl.level) as '1' | '2' | '3']?.title ?? lvl.title;
+
   return (
     <div className="border-t border-[var(--color-border)] pt-10">
       <div className={`grid gap-4 ${prevLevel && nextLevel ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1'}`}>
@@ -32,7 +35,7 @@ export default function LevelNavigation({ currentLevel }: LevelNavigationProps) 
                 {t?.ui.previousLevel ?? 'Previous'}
               </span>
               <p className="font-serif text-lg text-[var(--color-foreground)]">
-                {prevLevel.title}
+                {levelTitle(prevLevel)}
               </p>
             </div>
           </Link>
@@ -47,7 +50,7 @@ export default function LevelNavigation({ currentLevel }: LevelNavigationProps) 
                 {t?.ui.nextLevel ?? 'Next'}
               </span>
               <p className="font-serif text-lg text-[var(--color-foreground)]">
-                {nextLevel.title}
+                {levelTitle(nextLevel)}
               </p>
             </div>
             <span className="text-[var(--color-foreground-muted)] transition-transform duration-200 group-hover:translate-x-1">

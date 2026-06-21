@@ -24,9 +24,10 @@
     "rosesOs": "International Aura and Dream School",
     "exportTeachersAidPdf": "Exportar PDF de Ayuda para Profesores",
     "downloadImages": "Descargar Imágenes",
-    "preparingDownload": "Preparando descarga\u2026",
+    "preparingDownload": "Preparando descarga…",
     "nextLevel": "Siguiente",
-    "previousLevel": "Anterior"
+    "previousLevel": "Anterior",
+    "printPage": "Imprimir página"
   },
   "opening": {
     "agreements": {
@@ -102,7 +103,7 @@
       "concept": "Expansión del Cordón de Enraizamiento",
       "teachingText": "Una vez que usted es consciente de su aura, la práctica del cordón de enraizamiento se profundiza. Usted enraíza no solo el cuerpo físico, sino también el aura misma — permitiendo que todo el campo energético se ancle en la Tierra."
     },
-"l1-golden-sun-fills": {
+    "l1-golden-sun-fills": {
       "concept": "El Sol Dorado Lo Llena",
       "teachingText": "El Sol Dorado sobre la corona derrama luz dorada hacia abajo, llenando toda el aura y el cuerpo con su vibración más elevada. Esto completa la arquitectura energética completa: postura, aura, cordón de enraizamiento y sol dorado — todos activos juntos."
     },

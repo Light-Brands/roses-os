@@ -38,6 +38,7 @@ export interface TeachingTranslations {
     preparingDownload: string;
     nextLevel: string;
     previousLevel: string;
+    printPage: string;
   };
   opening: {
     agreements: {

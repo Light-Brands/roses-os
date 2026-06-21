@@ -3,13 +3,16 @@
 import { motion } from 'framer-motion';
 import { Printer } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useLanguage } from '@/lib/i18n';
 
 interface PrintPageButtonProps {
   className?: string;
   label?: string;
 }
 
-export default function PrintPageButton({ className, label = 'Print Page' }: PrintPageButtonProps) {
+export default function PrintPageButton({ className, label }: PrintPageButtonProps) {
+  const { t } = useLanguage();
+  const text = label ?? t?.ui?.printPage ?? 'Print Page';
   // Slide cards lazy-load their images, so any slide not yet scrolled into view
   // has an unloaded <img loading="lazy">. The print stylesheet reveals every card
   // (overriding framer-motion's inline opacity), but unloaded images still print
@@ -62,7 +65,7 @@ export default function PrintPageButton({ className, label = 'Print Page' }: Pri
       )}
     >
       <Printer className="h-4 w-4" />
-      <span>{label}</span>
+      <span>{text}</span>
     </motion.button>
   );
 }

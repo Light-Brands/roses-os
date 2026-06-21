@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { useLanguage } from '@/lib/i18n';
 import type { TeachingLevel } from '@/lib/data/types';
 
 // =============================================================================
@@ -24,6 +25,7 @@ function getLevelHref(level: number): string {
 
 export default function LevelNav({ levels, activeLevel, className }: LevelNavProps) {
   const pathname = usePathname();
+  const { t } = useLanguage();
 
   return (
     <nav
@@ -43,6 +45,9 @@ export default function LevelNav({ levels, activeLevel, className }: LevelNavPro
       {levels.map((level) => {
         const href = getLevelHref(level.level);
         const isActive = level.level === activeLevel || pathname === href;
+        const tl = t?.levels?.[String(level.level) as '1' | '2' | '3'];
+        const title = tl?.title ?? level.title;
+        const subtitle = tl?.subtitle ?? level.subtitle;
 
         return (
           <Link
@@ -105,7 +110,7 @@ export default function LevelNav({ levels, activeLevel, className }: LevelNavPro
                 >
                   {String(level.level).padStart(2, '0')}
                 </span>
-                <span>{level.title}</span>
+                <span>{title}</span>
               </span>
 
               {/* Subtitle (desktop only) */}
@@ -118,7 +123,7 @@ export default function LevelNav({ levels, activeLevel, className }: LevelNavPro
                     : 'text-[var(--color-foreground-faint)]'
                 )}
               >
-                {level.subtitle}
+                {subtitle}
               </span>
             </div>
           </Link>
