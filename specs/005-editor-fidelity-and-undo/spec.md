@@ -1,3 +1,5 @@
+> Tracked as Light-Brands/roses-os#644
+
 ---
 slug: editor-fidelity-and-undo
 title: Manual editor fidelity, undo, and image replace (Jennifer Brooke feedback)
