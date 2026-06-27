@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" data-viewport="mobile" data-state="populated">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manual editor: fidelity, undo, replace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="chrome">
+    <div class="chrome-left">
+      <button class="back" type="button" aria-label="Back to home">Back to Home</button>
+      <span class="webview-chip" title="What you edit here drives the website pages. The downloaded PDF is the designed print master.">
+        <span class="dot" aria-hidden="true"></span> Web view
+      </span>
+    </div>
+    <div class="chrome-right">
+      <div class="undo-group" role="group" aria-label="History">
+        <button id="undo" class="icon-btn" type="button" aria-label="Undo (Ctrl+Z)" title="Undo (Ctrl+Z)" disabled>
+          <span aria-hidden="true">&#8634;</span>
+        </button>
+        <button id="redo" class="icon-btn" type="button" aria-label="Redo (Ctrl+Shift+Z)" title="Redo (Ctrl+Shift+Z)" disabled>
+          <span aria-hidden="true">&#8635;</span>
+        </button>
+      </div>
+      <div class="save-state" id="saveState" aria-live="polite">All changes saved</div>
+      <div class="download">
+        <button id="downloadBtn" class="primary" type="button" aria-haspopup="true" aria-expanded="false">Download</button>
+        <div class="menu" id="downloadMenu" role="menu" hidden>
+          <button class="menu-item" role="menuitem" type="button">
+            <span class="mi-title">Designed print original</span>
+            <span class="mi-note">The hand-designed PDF teachers print. Your edits do not change it.</span>
+          </button>
+          <button class="menu-item" role="menuitem" type="button">
+            <span class="mi-title">Draft PDF from your edits</span>
+            <span class="mi-note">Generated from what you see here. A draft, not the print master.</span>
+          </button>
+          <div class="menu-sep" role="separator"></div>
+          <button class="menu-item subtle" role="menuitem" type="button"><span class="mi-title">Download HTML</span></button>
+          <button class="menu-item subtle" role="menuitem" type="button"><span class="mi-title">Download Markdown</span></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <div class="meta">
+      <span>Nivel 1 &mdash; Curso de Iniciacao</span>
+      <span class="meta-dim" id="blockCount">8 blocks</span>
+    </div>
+    <div class="controls">
+      <label class="switch">State
+        <select id="stateSel">
+          <option value="populated">populated</option>
+          <option value="empty">empty</option>
+          <option value="loading">loading</option>
+          <option value="error-save">error: save failed</option>
+          <option value="error-upload">error: upload failed</option>
+          <option value="error-readonly">error: read-only</option>
+        </select>
+      </label>
+      <label class="switch">View
+        <select id="viewSel">
+          <option value="mobile">mobile 375</option>
+          <option value="desktop">desktop 1280</option>
+        </select>
+      </label>
+    </div>
+  </div>
+
+  <main id="canvas" class="canvas" aria-label="Manual editor canvas">
+    <!-- rendered by fixture.js -->
+  </main>
+
+  <div class="banner" id="errBanner" role="alert" hidden></div>
+
+  <script type="module" src="fixture.js"></script>
+</body>
+</html>
