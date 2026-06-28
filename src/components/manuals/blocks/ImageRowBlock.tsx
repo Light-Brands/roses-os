@@ -3,6 +3,7 @@
 import { useState, useRef, useCallback, useMemo } from 'react';
 import { cn } from '@/lib/utils';
 import type { ImageRowContent, ImageRowItem } from '@/lib/manuals/types';
+import { useImageUpload } from './useImageUpload';
 
 interface ImageRowBlockProps {
   content: ImageRowContent;
@@ -130,33 +131,24 @@ export default function ImageRowBlock({ content, onChange, readOnly }: ImageRowB
       : [{ src: '', alt: '' }, { src: '', alt: '' }]),
     [content.images]
   );
+  const { upload, error } = useImageUpload();
   const [uploadingIndex, setUploadingIndex] = useState<number | null>(null);
-  const [error, setError] = useState<string | null>(null);
 
   const handleUpload = useCallback(async (file: File, index: number) => {
     setUploadingIndex(index);
-    setError(null);
     try {
-      const formData = new FormData();
-      formData.append('file', file);
-      const res = await fetch('/api/manuals/upload', { method: 'POST', body: formData });
-      const json = await res.json();
-      if (json.error) {
-        setError(json.error);
-        return;
-      }
+      const result = await upload(file);
+      if (!result) return;
       const next = images.map((img, i) =>
         i === index
-          ? { src: json.data.url, alt: img.alt || file.name.replace(/\.[^.]+$/, '') }
+          ? { src: result.url, alt: img.alt || file.name.replace(/\.[^.]+$/, '') }
           : img
       );
       onChange({ ...content, images: next });
-    } catch {
-      setError('Upload failed.');
     } finally {
       setUploadingIndex(null);
     }
-  }, [content, images, onChange]);
+  }, [content, images, onChange, upload]);
 
   const handleRemove = useCallback((index: number) => {
     if (images.length <= MIN_IMAGES) return;

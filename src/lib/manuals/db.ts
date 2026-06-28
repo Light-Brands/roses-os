@@ -46,6 +46,7 @@ export async function getBlocks(manualId: string, language: ManualLanguage): Pro
     .select('*')
     .eq('manual_id', manualId)
     .eq('language', language)
+    .eq('is_deleted', false)
     .order('position', { ascending: true });
 
   if (error) throw new Error(`Failed to fetch blocks: ${error.message}`);
@@ -100,15 +101,30 @@ export async function updateBlock(
   return data as unknown as ManualBlock;
 }
 
-/** Delete a block */
+/**
+ * Soft-delete a block (migration 0009, D-23). The row survives with
+ * `is_deleted = true` so undo can restore it; reads filter it out. AC3 requires
+ * the same id come back on undo, which only a soft-delete preserves.
+ */
 export async function deleteBlock(blockId: string): Promise<void> {
   const supabase = createClient();
   const { error } = await supabase
     .from('manual_blocks')
-    .delete()
+    .update({ is_deleted: true })
     .eq('id', blockId);
 
   if (error) throw new Error(`Failed to delete block: ${error.message}`);
+}
+
+/** Restore a soft-deleted block (un-flag), the server side of delete-undo. */
+export async function restoreBlock(blockId: string): Promise<void> {
+  const supabase = createClient();
+  const { error } = await supabase
+    .from('manual_blocks')
+    .update({ is_deleted: false })
+    .eq('id', blockId);
+
+  if (error) throw new Error(`Failed to restore block: ${error.message}`);
 }
 
 /**

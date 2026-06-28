@@ -37,12 +37,23 @@ export type LayoutNode =
 export const MIN_H_GAP = 6;
 /** Minimum whitespace gutter (points) that can trigger a vertical (column) cut. */
 export const MIN_V_GUTTER = 12;
+/**
+ * A lone figure anchors a column only when it spans at least this fraction of the
+ * content width being cut (D-25, T-010). Below it, a single small centered
+ * ornament (the Level-1 table-of-contents rose, about 4% of the page) is NOT a
+ * column: wrapping it into a band would let the cell's `fill: true` blow its real
+ * `width_pct` up to 100% and paint the empty sibling cell as a tan panel. A
+ * genuine figure column (e.g. the page-6 aura figure, about a quarter of the
+ * content width) clears this easily. Text columns keep the height-only rule.
+ */
+export const MIN_FIGURE_COL_FRAC = 0.18;
 
 const top = (b: LayoutBox) => b.rect[1];
 const bottom = (b: LayoutBox) => b.rect[3];
 const left = (b: LayoutBox) => b.rect[0];
 const right = (b: LayoutBox) => b.rect[2];
 const height = (b: LayoutBox) => b.rect[3] - b.rect[1];
+const width = (b: LayoutBox) => b.rect[2] - b.rect[0];
 
 /** The widest horizontal whitespace band that no box crosses, as a y threshold to
  *  split on (boxes with top >= threshold go below). Returns null when none clears
@@ -65,10 +76,17 @@ function findHCut(boxes: LayoutBox[], minHGap = MIN_H_GAP): number | null {
 
 /** A side of a vertical cut is a real column only when it carries ≥2 boxes OR a
  *  single box tall enough to be a column (a figure, a stacked paragraph), never a
- *  lone inline fragment (a numeral). `lineH` is the page's median line height. */
-function isRealColumn(side: LayoutBox[], lineH: number): boolean {
+ *  lone inline fragment (a numeral). `lineH` is the page's median line height;
+ *  `contentWidth` is the span of the boxes being cut. A lone FIGURE must also be
+ *  wide enough to be a real column (D-25, T-010): a small centered ornament that
+ *  is tall but narrow is not a column, so it is never wrapped into a band. */
+function isRealColumn(side: LayoutBox[], lineH: number, contentWidth: number): boolean {
   if (side.length >= 2) return true;
-  return height(side[0]) >= 1.8 * lineH;
+  const only = side[0];
+  if (only.kind === 'figure') {
+    return height(only) >= 1.8 * lineH && width(only) >= MIN_FIGURE_COL_FRAC * contentWidth;
+  }
+  return height(only) >= 1.8 * lineH;
 }
 
 /** The widest vertical whitespace gutter that cleanly separates two real columns,
@@ -77,6 +95,9 @@ function findVCut(boxes: LayoutBox[], lineH: number): number | null {
   // Candidate gutters live between the right edge of one box and the left edge of
   // the next, scanning left to right on a running max-right (interval merge).
   const sorted = [...boxes].sort((a, b) => left(a) - left(b) || top(a) - top(b));
+  // The content width spanned by the boxes being cut, used by the lone-figure
+  // column guard (D-25): a narrow ornament is not a column at this scale.
+  const contentWidth = Math.max(1, Math.max(...boxes.map(right)) - Math.min(...boxes.map(left)));
   let maxRight = right(sorted[0]);
   let bestGap = 0;
   let bestThreshold: number | null = null;
@@ -87,7 +108,7 @@ function findVCut(boxes: LayoutBox[], lineH: number): number | null {
       const leftSide = boxes.filter((b) => right(b) <= threshold);
       const rightSide = boxes.filter((b) => left(b) >= threshold);
       // A valid cut partitions every box and both sides are real columns.
-      if (leftSide.length + rightSide.length === boxes.length && isRealColumn(leftSide, lineH) && isRealColumn(rightSide, lineH)) {
+      if (leftSide.length + rightSide.length === boxes.length && isRealColumn(leftSide, lineH, contentWidth) && isRealColumn(rightSide, lineH, contentWidth)) {
         bestGap = gap;
         bestThreshold = threshold;
       }

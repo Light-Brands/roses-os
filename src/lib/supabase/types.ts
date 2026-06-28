@@ -232,6 +232,7 @@ export interface Database {
           updated_by: string | null;
           created_at: string;
           updated_at: string;
+          is_deleted: boolean;
         };
         Insert: {
           id?: string;
@@ -243,6 +244,7 @@ export interface Database {
           updated_by?: string | null;
           created_at?: string;
           updated_at?: string;
+          is_deleted?: boolean;
         };
         Update: {
           id?: string;
@@ -254,6 +256,7 @@ export interface Database {
           updated_by?: string | null;
           created_at?: string;
           updated_at?: string;
+          is_deleted?: boolean;
         };
         Relationships: [
           {

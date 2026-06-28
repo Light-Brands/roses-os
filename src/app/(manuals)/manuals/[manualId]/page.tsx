@@ -95,6 +95,7 @@ export default function ManualEditorPage() {
             blocks={blocks}
             title={manual.title}
             filename={filename}
+            manualId={manualId}
             slug={manual.slug}
             language={language}
           />

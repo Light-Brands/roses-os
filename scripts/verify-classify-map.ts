@@ -11,6 +11,7 @@ import type { BlockRegion, FigureRegion, PageGeometry } from '../src/lib/manuals
 import { isTintBox } from '../src/lib/manuals/extract-geometry';
 import { mapToBlocks, type PageInput, type MappedBlock } from '../src/lib/manuals/map-to-blocks';
 import { groupTwoColumns } from '../src/lib/manuals/columns';
+import { applyFigureOverrides, withFigureOverride, humanTouchedAnchors, figureAnchorKey } from '../src/lib/manuals/figure-overrides';
 import { analyzePageLayout, xyCut, assignLeaves, flattenLayout, type LayoutBox } from '../src/lib/manuals/layout';
 import type { ClassifiedRegion } from '../src/lib/manuals/classify-regions';
 
@@ -146,6 +147,66 @@ function check(name: string, cond: boolean, detail = ''): void {
   // a flow with no aligned header row is left untouched.
   const noHead = attachHeadersToColumns([{ kind: 'flow', keys: [9] }, { kind: 'cols', columns: [[0, 1], [2, 3]] }], (k) => (k === 9 ? intro.rect : rectOf(k)));
   check('ATTACH leaves an unaligned flow untouched', noHead.length === 2 && noHead[0].kind === 'flow', JSON.stringify(noHead));
+}
+
+// ---- D-25 / T-010: a lone small figure is not a column band -----------------
+// Regression guard for the tan-rose bug: a narrow centered ornament beside a
+// text column must NOT form a two-column band (which would fill:true it to 100%
+// and paint the empty sibling as a tan panel). The real two-column and three-up
+// pages (6, 7, 8) must keep detecting columns (T-011).
+{
+  const lineH = 10;
+  // A wide text column on the left and a NARROW ornament on the right, overlapping
+  // in y. The ornament (~10% of the content width) is not a real column.
+  const text = { key: 0, rect: [47, 150, 250, 400] as [number, number, number, number], kind: 'text' as const };
+  const bud = { key: 1, rect: [293, 158, 320, 198] as [number, number, number, number], kind: 'figure' as const };
+  const slotsLone = analyzePageLayout([text, bud], lineH);
+  check('D25 a lone small centered figure does NOT form a column band',
+    !slotsLone.some((s) => s.kind === 'cols'), JSON.stringify(slotsLone));
+
+  // Same geometry but a WIDE figure (a real page-8-style figure two-column) MUST
+  // still detect a column band.
+  const wideFig = { key: 2, rect: [300, 100, 560, 400] as [number, number, number, number], kind: 'figure' as const };
+  const slotsWide = analyzePageLayout([text, wideFig], lineH);
+  const wideCols = slotsWide.find((s) => s.kind === 'cols') as { kind: 'cols'; columns: number[][] } | undefined;
+  check('T011 page-8 style wide figure beside text still detects two columns',
+    !!wideCols && wideCols.columns.length === 2, JSON.stringify(slotsWide));
+
+  // Page-6 (two-col) and page-7 (three-up) fixtures above already assert columns
+  // still form. The valid-block-count invariant: the lone-figure page yields the
+  // figure as a single top-level block (no band, no empty sibling cell), so the
+  // block count is unchanged by the guard.
+  const mk = (over: Partial<MappedBlock>): MappedBlock => ({
+    id: 'x', position: 0, block_type: 'text', content: {}, valid: true, error: null,
+    anchor: { page: 2, ordinal: 0 }, provenance: { source_page: 2, run_id: 'r', signer: 's' },
+    decidedBy: 'rule', rect: null, ...over,
+  });
+  // A lone figure left untagged (no colGroup) by the guard groups into zero bands.
+  const loneFig = mk({ id: '2:9', block_type: 'captioned-figure', content: { schema_version: 2, src: 'bud.png', alt: 'rose' }, rect: [293, 158, 320, 198] });
+  const { columnsFormed: loneCols, blocks: loneOut } = groupTwoColumns([loneFig]);
+  check('T011 a lone figure with no colGroup forms zero bands and stays one block',
+    loneCols === 0 && loneOut.length === 1 && !loneOut[0].nested, JSON.stringify({ loneCols, n: loneOut.length }));
+}
+
+// ---- D-24 / T-008: recipe figure-to-asset override survives a re-run ----------
+// A human swaps the figure at anchor 6:10 in the editor. The override is recorded
+// keyed by (page, ordinal); the next reconstruction merges it into the extracted
+// figureFiles so the swap is preserved instead of clobbered (D-24). The override
+// carries the D-12 human-touch marker (T-009).
+{
+  const extracted = new Map<number, string>([[10, 'fig-geom/figg-p6-o10.png'], [11, 'fig-geom/figg-p6-o11.png']]);
+  const overrides = withFigureOverride({}, 6, 10, '/uploads/teacher-aura.png', 'Editor', '2026-06-27T00:00:00Z');
+  check('T008 override key is the stable page:ordinal anchor', figureAnchorKey(6, 10) === '6:10', figureAnchorKey(6, 10));
+  const mergedP6 = applyFigureOverrides(extracted, overrides, 6);
+  check('T008 a re-run on the same page honors the human figure swap',
+    mergedP6.get(10) === '/uploads/teacher-aura.png' && mergedP6.get(11) === 'fig-geom/figg-p6-o11.png',
+    JSON.stringify([...mergedP6]));
+  const mergedP7 = applyFigureOverrides(extracted, overrides, 7);
+  check('T008 the override only applies to its own page',
+    mergedP7.get(10) === 'fig-geom/figg-p6-o10.png', JSON.stringify([...mergedP7]));
+  check('T009 the override carries the human-touch marker for D-18 promotion',
+    overrides['6:10'].human === true && overrides['6:10'].replaced_by === 'Editor' && humanTouchedAnchors(overrides).join() === '6:10',
+    JSON.stringify(overrides));
 }
 
 // ---- three columns wrap into nested two-column-sections (in-schema) ----------

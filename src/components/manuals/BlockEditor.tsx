@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback, useRef, useReducer } from 'react';
 import { Reorder, useDragControls } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import type {
@@ -200,10 +200,156 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
   const blockCount = blocks.length;
   const reorderTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
+  // ── Undo / redo history (T-001, T-003, D-23) ────────────────────────────────
+  // Snapshot-based history over the whole `blocks` array. Every mutating action
+  // pushes the prior state; undo/redo swap snapshots and re-persist the diff
+  // through the existing block routes so the server follows the client (the row
+  // it undoes a delete on is restored by id via soft-delete, T-002). History is
+  // in-session and in-memory by design (D-23): durable recovery lives in the D-8
+  // backup and the D-7 recipe, not a per-edit versions table.
+  const pastRef = useRef<ManualBlock[][]>([]);
+  const futureRef = useRef<ManualBlock[][]>([]);
+  // A run of keystrokes in one block coalesces into a single undo step: capture
+  // the pre-edit snapshot once, commit it when focus moves or an action fires.
+  const pendingEditRef = useRef<{ blockId: string; snapshot: ManualBlock[] } | null>(null);
+  // Repeated same-kind structural actions (drag reorder fires many times) keep
+  // only the first pre-action snapshot of the gesture.
+  const lastStructRef = useRef<{ key: string; at: number } | null>(null);
+  const [, bumpHistory] = useReducer((n: number) => n + 1, 0);
+
+  const commitPendingEdit = useCallback(() => {
+    const pe = pendingEditRef.current;
+    if (!pe) return;
+    pastRef.current.push(pe.snapshot);
+    futureRef.current = [];
+    pendingEditRef.current = null;
+  }, []);
+
+  // Capture the pre-action state for a structural mutation (add, delete, move,
+  // reorder, column edit). `coalesceKey` collapses a burst of the same action.
+  const snapshotStructural = useCallback((coalesceKey?: string) => {
+    commitPendingEdit();
+    const now = Date.now();
+    if (
+      coalesceKey &&
+      lastStructRef.current &&
+      lastStructRef.current.key === coalesceKey &&
+      now - lastStructRef.current.at < 800
+    ) {
+      lastStructRef.current.at = now;
+      return;
+    }
+    pastRef.current.push(blocksRef.current);
+    futureRef.current = [];
+    lastStructRef.current = coalesceKey ? { key: coalesceKey, at: now } : null;
+    bumpHistory();
+  }, [commitPendingEdit]);
+
+  // Re-persist the diff between two whole-array snapshots so the database matches
+  // `target`. Restores reappear (soft-delete un-flag), removed blocks soft-delete,
+  // changed content saves, and the final order is re-applied.
+  const reconcileToServer = useCallback(async (target: ManualBlock[], current: ManualBlock[]) => {
+    const headers = { 'Content-Type': 'application/json' };
+    const curById = new Map(current.map((b) => [b.id, b]));
+    const targetIds = new Set(target.map((b) => b.id));
+    try {
+      for (const tb of target) {
+        const cb = curById.get(tb.id);
+        if (!cb) {
+          // Present in target, gone now → it was deleted; restore it by id and
+          // set its content in one PUT (is_deleted=false rides the save path).
+          await fetch(`/api/manuals/${manualId}/blocks`, {
+            method: 'PUT',
+            headers,
+            body: JSON.stringify({ id: tb.id, content: tb.content, is_deleted: false, updated_by: 'Editor' }),
+          });
+        } else if (JSON.stringify(cb.content) !== JSON.stringify(tb.content)) {
+          await fetch(`/api/manuals/${manualId}/blocks`, {
+            method: 'PUT',
+            headers,
+            body: JSON.stringify({ id: tb.id, content: tb.content, updated_by: 'Editor' }),
+          });
+        }
+      }
+      for (const cb of current) {
+        if (!targetIds.has(cb.id)) {
+          await fetch(`/api/manuals/${manualId}/blocks`, {
+            method: 'DELETE',
+            headers,
+            body: JSON.stringify({ id: cb.id }),
+          });
+        }
+      }
+      await fetch(`/api/manuals/${manualId}/blocks/reorder`, {
+        method: 'PUT',
+        headers,
+        body: JSON.stringify({ block_ids: target.map((b) => b.id), updated_by: 'Editor' }),
+      });
+      setSaveStatus('saved');
+      setLastEditInfo({ updated_by: 'Editor', updated_at: new Date().toISOString() });
+    } catch {
+      setSaveStatus('error');
+    }
+  }, [manualId]);
+
+  const undo = useCallback(() => {
+    commitPendingEdit();
+    if (pastRef.current.length === 0) return;
+    const current = blocksRef.current;
+    const target = pastRef.current.pop()!;
+    futureRef.current.push(current);
+    lastStructRef.current = null;
+    setBlocks(target);
+    void reconcileToServer(target, current);
+    bumpHistory();
+  }, [commitPendingEdit, reconcileToServer]);
+
+  const redo = useCallback(() => {
+    // An uncommitted edit invalidates the redo stack (standard editor behavior).
+    if (pendingEditRef.current) {
+      commitPendingEdit();
+      bumpHistory();
+      return;
+    }
+    if (futureRef.current.length === 0) return;
+    const current = blocksRef.current;
+    const target = futureRef.current.pop()!;
+    pastRef.current.push(current);
+    lastStructRef.current = null;
+    setBlocks(target);
+    void reconcileToServer(target, current);
+    bumpHistory();
+  }, [commitPendingEdit, reconcileToServer]);
+
+  const canUndo = pastRef.current.length > 0 || pendingEditRef.current !== null;
+  const canRedo = futureRef.current.length > 0;
+
+  // Keyboard: Ctrl/Cmd+Z = undo, Ctrl/Cmd+Shift+Z (or Ctrl+Y) = redo. The editor
+  // is block-level, so history is intercepted at the document level rather than
+  // deferring to per-character native undo inside a field (AC2).
+  useEffect(() => {
+    if (readOnly) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      const mod = e.metaKey || e.ctrlKey;
+      if (!mod) return;
+      const key = e.key.toLowerCase();
+      if (key === 'z' && !e.shiftKey) {
+        e.preventDefault();
+        undo();
+      } else if ((key === 'z' && e.shiftKey) || key === 'y') {
+        e.preventDefault();
+        redo();
+      }
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [readOnly, undo, redo]);
+
   // Drag reorder: update state immediately, debounce API call. The Reorder list
   // only carries top-level blocks (nested column children are pulled out), so
   // merge the children back before persisting to keep every position unique.
   const handleDragReorder = useCallback((newTop: ManualBlock[]) => {
+    snapshotStructural('reorder');
     const topIds = new Set(newTop.map((b) => b.id));
     const children = blocksRef.current.filter((b) => !topIds.has(b.id));
     const merged = [...newTop, ...children];
@@ -220,7 +366,7 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
         // Will self-correct on next page load
       }
     }, 300);
-  }, [manualId]);
+  }, [manualId, snapshotStructural]);
 
   // Fetch blocks
   useEffect(() => {
@@ -310,6 +456,20 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
   }, [manualId, lastEditInfo]);
 
   const handleContentChange = useCallback((blockId: string, content: BlockContent) => {
+    if (!readOnly) {
+      const pe = pendingEditRef.current;
+      if (!pe) {
+        pendingEditRef.current = { blockId, snapshot: blocksRef.current };
+        bumpHistory();
+      } else if (pe.blockId !== blockId) {
+        // Editing a different block commits the previous block's edit as its own
+        // undo step before starting a new one.
+        pastRef.current.push(pe.snapshot);
+        futureRef.current = [];
+        pendingEditRef.current = { blockId, snapshot: blocksRef.current };
+        bumpHistory();
+      }
+    }
     setBlocks((prev) => prev.map((b) => (b.id === blockId ? { ...b, content } : b)));
     if (!readOnly) saveBlock(blockId, content);
   }, [readOnly, saveBlock]);
@@ -322,6 +482,7 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
   // endpoint renumber every row to its final 0..N-1 position.
   const insertCreatedBlock = useCallback(
     async (afterIndex: number, payload: { block_type: BlockType; content: BlockContent }) => {
+      snapshotStructural();
       const current = blocksRef.current;
       const freePosition = current.length; // above every live position → never collides
       try {
@@ -361,7 +522,7 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
         // Failed — UI will self-correct on next load.
       }
     },
-    [manualId, language]
+    [manualId, language, snapshotStructural]
   );
 
   // Add block
@@ -381,8 +542,9 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
     [insertCreatedBlock]
   );
 
-  // Delete block
+  // Delete block (soft-delete server-side, T-002 + D-23, so undo restores it)
   const handleDeleteBlock = useCallback(async (blockId: string) => {
+    snapshotStructural();
     try {
       await fetch(`/api/manuals/${manualId}/blocks`, {
         method: 'DELETE',
@@ -393,13 +555,14 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
     } catch {
       // Failed
     }
-  }, [manualId]);
+  }, [manualId, snapshotStructural]);
 
   // Move block
   const handleMoveBlock = useCallback(async (index: number, direction: 'up' | 'down') => {
     const newIndex = direction === 'up' ? index - 1 : index + 1;
     if (newIndex < 0 || newIndex >= blocks.length) return;
 
+    snapshotStructural();
     const newBlocks = [...blocks];
     const [moved] = newBlocks.splice(index, 1);
     newBlocks.splice(newIndex, 0, moved);
@@ -414,7 +577,7 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
     } catch {
       setBlocks(blocks);
     }
-  }, [blocks, manualId]);
+  }, [blocks, manualId, snapshotStructural]);
 
   // ── In-column authoring (M5) ────────────────────────────────────────────────
   // A container (two-column-section / section) owns its children by id in its
@@ -440,6 +603,7 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
   const handleAddChild = useCallback(async (containerId: string, side: ChildSide, type: BlockType) => {
     const container = blocksRef.current.find((b) => b.id === containerId);
     if (!container) return;
+    snapshotStructural();
     const created = await createBlockRow(type);
     if (!created) return;
     const newContent = withChildArray(container, side, [...getChildArray(container, side), created.id]);
@@ -448,11 +612,12 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
       return withChild.map((b) => (b.id === containerId ? { ...b, content: newContent } : b));
     });
     if (!readOnly) saveBlock(containerId, newContent);
-  }, [createBlockRow, readOnly, saveBlock]);
+  }, [createBlockRow, readOnly, saveBlock, snapshotStructural]);
 
   const handleRemoveChild = useCallback(async (containerId: string, side: ChildSide, childId: string) => {
     const container = blocksRef.current.find((b) => b.id === containerId);
     if (!container) return;
+    snapshotStructural();
     const newContent = withChildArray(container, side, getChildArray(container, side).filter((id) => id !== childId));
     setBlocks((prev) => prev.filter((b) => b.id !== childId).map((b) => (b.id === containerId ? { ...b, content: newContent } : b)));
     if (!readOnly) saveBlock(containerId, newContent);
@@ -465,7 +630,7 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
     } catch {
       // Row delete is best-effort; the container no longer references it.
     }
-  }, [manualId, readOnly, saveBlock]);
+  }, [manualId, readOnly, saveBlock, snapshotStructural]);
 
   const handleMoveChild = useCallback((containerId: string, side: ChildSide, childId: string, direction: 'up' | 'down') => {
     const container = blocksRef.current.find((b) => b.id === containerId);
@@ -475,11 +640,12 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
     if (i < 0) return;
     const j = direction === 'up' ? i - 1 : i + 1;
     if (j < 0 || j >= arr.length) return;
+    snapshotStructural();
     [arr[i], arr[j]] = [arr[j], arr[i]];
     const newContent = withChildArray(container, side, arr);
     setBlocks((prev) => prev.map((b) => (b.id === containerId ? { ...b, content: newContent } : b)));
     if (!readOnly) saveBlock(containerId, newContent);
-  }, [readOnly, saveBlock]);
+  }, [readOnly, saveBlock, snapshotStructural]);
 
   // Nested layout: two-column / section blocks reference their children by id.
   // Those children must render INSIDE the parent container and be removed from
@@ -738,6 +904,15 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
       <div className="sticky top-0 z-20 bg-[var(--color-background)]/90 backdrop-blur-sm border-b border-[var(--color-border)]/50 -mx-6 px-6 py-2 mb-6">
         <div className="flex items-center justify-between text-xs">
           <div className="flex items-center gap-3 text-[var(--color-foreground-faint)]">
+            {/* Web view chip (T-006, AC7): names what the editor is — the website
+                view — so the downloaded print PDF reads as a separate artifact. */}
+            <span
+              className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[var(--color-background-subtle)] border border-[var(--color-border)] text-[var(--color-foreground-muted)] font-medium"
+              title="What you edit here drives the website pages. The downloaded PDF is the designed print master."
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-rose-clay)]" aria-hidden />
+              Web view
+            </span>
             {lastEditInfo && (
               <span>
                 Last edited{lastEditInfo.updated_by ? ` by ${lastEditInfo.updated_by}` : ''},{' '}
@@ -749,31 +924,63 @@ export default function BlockEditor({ manualId, language, readOnly, onBlocksChan
           </div>
 
           {!readOnly && (
-            <div className={cn(
-              'flex items-center gap-1.5 px-2.5 py-1 rounded-full transition-all duration-300',
-              saveStatus === 'saved' && 'text-[var(--color-success)]',
-              saveStatus === 'saving' && 'text-[var(--color-warning)]',
-              saveStatus === 'unsaved' && 'text-[var(--color-warning)]',
-              saveStatus === 'error' && 'text-[var(--color-error)] bg-[var(--color-error)]/10'
-            )}>
-              {saveStatus === 'saving' ? (
-                <svg className="w-3 h-3 animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
-                  <path d="M12 2v4m0 12v4m-7-7H2m20 0h-3M5.6 5.6l2.1 2.1m8.6 8.6l2.1 2.1M5.6 18.4l2.1-2.1m8.6-8.6l2.1-2.1" strokeLinecap="round" />
-                </svg>
-              ) : (
-                <span className={cn(
-                  'w-1.5 h-1.5 rounded-full',
-                  saveStatus === 'saved' && 'bg-[var(--color-success)]',
-                  saveStatus === 'unsaved' && 'bg-[var(--color-warning)]',
-                  saveStatus === 'error' && 'bg-[var(--color-error)]'
-                )} />
-              )}
-              <span className="font-medium">
-                {saveStatus === 'saved' && 'All changes saved'}
-                {saveStatus === 'saving' && 'Saving...'}
-                {saveStatus === 'unsaved' && 'Unsaved changes'}
-                {saveStatus === 'error' && 'Failed to save — will retry'}
-              </span>
+            <div className="flex items-center gap-3">
+              {/* Undo / redo controls (T-003, AC2). Disabled at the ends of the
+                  history stack; also reachable via Ctrl+Z / Ctrl+Shift+Z. */}
+              <div role="group" aria-label="History" className="flex items-center gap-0.5">
+                <button
+                  type="button"
+                  onClick={undo}
+                  disabled={!canUndo}
+                  aria-label="Undo (Ctrl+Z)"
+                  title="Undo (Ctrl+Z)"
+                  className="w-7 h-7 rounded flex items-center justify-center text-[var(--color-foreground-muted)] hover:text-[var(--color-foreground)] hover:bg-[var(--color-background-subtle)] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                >
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 14L4 9l5-5" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 9h11a5 5 0 015 5v0a5 5 0 01-5 5H9" />
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  onClick={redo}
+                  disabled={!canRedo}
+                  aria-label="Redo (Ctrl+Shift+Z)"
+                  title="Redo (Ctrl+Shift+Z)"
+                  className="w-7 h-7 rounded flex items-center justify-center text-[var(--color-foreground-muted)] hover:text-[var(--color-foreground)] hover:bg-[var(--color-background-subtle)] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                >
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 14l5-5-5-5" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M20 9H9a5 5 0 00-5 5v0a5 5 0 005 5h6" />
+                  </svg>
+                </button>
+              </div>
+              <div className={cn(
+                'flex items-center gap-1.5 px-2.5 py-1 rounded-full transition-all duration-300',
+                saveStatus === 'saved' && 'text-[var(--color-success)]',
+                saveStatus === 'saving' && 'text-[var(--color-warning)]',
+                saveStatus === 'unsaved' && 'text-[var(--color-warning)]',
+                saveStatus === 'error' && 'text-[var(--color-error)] bg-[var(--color-error)]/10'
+              )}>
+                {saveStatus === 'saving' ? (
+                  <svg className="w-3 h-3 animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
+                    <path d="M12 2v4m0 12v4m-7-7H2m20 0h-3M5.6 5.6l2.1 2.1m8.6 8.6l2.1 2.1M5.6 18.4l2.1-2.1m8.6-8.6l2.1-2.1" strokeLinecap="round" />
+                  </svg>
+                ) : (
+                  <span className={cn(
+                    'w-1.5 h-1.5 rounded-full',
+                    saveStatus === 'saved' && 'bg-[var(--color-success)]',
+                    saveStatus === 'unsaved' && 'bg-[var(--color-warning)]',
+                    saveStatus === 'error' && 'bg-[var(--color-error)]'
+                  )} />
+                )}
+                <span className="font-medium">
+                  {saveStatus === 'saved' && 'All changes saved'}
+                  {saveStatus === 'saving' && 'Saving...'}
+                  {saveStatus === 'unsaved' && 'Unsaved changes'}
+                  {saveStatus === 'error' && 'Failed to save — will retry'}
+                </span>
+              </div>
             </div>
           )}
         </div>

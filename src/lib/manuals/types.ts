@@ -271,6 +271,12 @@ export interface ManualBlock {
    * Render-only — the editor uses it to mark canon page boundaries.
    */
   source_page?: number | null;
+  /**
+   * Soft-delete flag (migration 0009, D-23): a deleted block keeps its row so the
+   * in-session undo stack can restore it by the same id. Reads filter
+   * `is_deleted = false`; absent on older payloads (parsed as live).
+   */
+  is_deleted?: boolean;
 }
 
 /** Role assigned after PIN verification */
