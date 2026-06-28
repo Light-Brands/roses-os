@@ -1,18 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { writeFile, mkdir } from 'fs/promises';
-import path from 'path';
+import { createServerSupabaseClient } from '@/lib/supabase/server';
 
 /**
  * POST /api/manuals/upload
  * Upload an image (file picker, drag-drop, or clipboard paste) for use in
  * manual blocks. Accepts multipart form data with a 'file' field.
  *
- * Storage model matches the extracted reconstruction figures: images are written
- * to `public/uploads/` and referenced by path (`/uploads/<file>`), exactly like
- * `public/reconstruction/l1/*.png`. No Supabase storage bucket is involved (none
- * is provisioned on this project). This persists in local/dev review; for a prod
- * deploy the uploaded files are committed/hosted the same way the reconstruction
- * figures are.
+ * Storage: the public Supabase Storage bucket `manual-uploads`. The previous
+ * implementation wrote to `public/uploads/` on the local filesystem, which works
+ * in dev but SILENTLY FAILS on Vercel — the serverless filesystem is read-only,
+ * so a replaced image never persisted in production (the editor's upload returned
+ * 500 and `content.src` never changed). Supabase Storage works in both dev and
+ * prod and returns a stable public URL. Upload rides the same anon key the rest
+ * of the manuals API uses (the bucket carries an anon-insert policy); reads are
+ * public via the bucket's public URL.
  */
 
 const MIME_EXT: Record<string, string> = {
@@ -21,6 +22,8 @@ const MIME_EXT: Record<string, string> = {
   'image/webp': 'webp',
   'image/gif': 'gif',
 };
+
+const BUCKET = 'manual-uploads';
 
 export async function POST(request: NextRequest) {
   try {
@@ -42,14 +45,24 @@ export async function POST(request: NextRequest) {
     }
 
     const filename = `upload-${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}`;
-    const dir = path.join(process.cwd(), 'public', 'uploads');
-    await mkdir(dir, { recursive: true });
-
     const buffer = Buffer.from(await file.arrayBuffer());
-    await writeFile(path.join(dir, filename), buffer);
 
-    const url = `/uploads/${filename}`;
-    return NextResponse.json({ data: { url, path: `uploads/${filename}`, filename } }, { status: 201 });
+    const supabase = await createServerSupabaseClient();
+    const { error } = await supabase.storage.from(BUCKET).upload(filename, buffer, {
+      contentType: file.type,
+      cacheControl: '31536000',
+      upsert: false,
+    });
+
+    if (error) {
+      return NextResponse.json({ error: `Upload failed: ${error.message}` }, { status: 500 });
+    }
+
+    const { data: pub } = supabase.storage.from(BUCKET).getPublicUrl(filename);
+    return NextResponse.json(
+      { data: { url: pub.publicUrl, path: `${BUCKET}/${filename}`, filename } },
+      { status: 201 },
+    );
   } catch {
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
