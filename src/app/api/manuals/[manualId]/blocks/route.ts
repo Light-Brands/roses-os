@@ -15,11 +15,14 @@ export async function GET(
     const language = request.nextUrl.searchParams.get('language') || 'en';
 
     const supabase = await createServerSupabaseClient();
+    // Reads exclude soft-deleted rows (migration 0009, D-23). A deleted block's
+    // row survives so undo can restore it, but it must not render.
     const { data, error } = await supabase
       .from('manual_blocks')
       .select('*')
       .eq('manual_id', manualId)
       .eq('language', language)
+      .eq('is_deleted', false)
       .order('position', { ascending: true });
 
     if (error) {
@@ -110,19 +113,24 @@ export async function POST(
 export async function PUT(request: NextRequest) {
   try {
     const body = await request.json();
-    const { id, content, updated_by } = body;
+    const { id, content, updated_by, is_deleted } = body;
 
     if (!id || content === undefined) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
     const supabase = await createServerSupabaseClient();
+    // `is_deleted` rides the existing save path so undo can restore a deleted
+    // block (is_deleted=false) through the same route it edits content with
+    // (D-23). When the field is absent the flag is left untouched.
+    const patch: { content: Json; updated_by: string | null; is_deleted?: boolean } = {
+      content: content as Json,
+      updated_by: updated_by ?? null,
+    };
+    if (typeof is_deleted === 'boolean') patch.is_deleted = is_deleted;
     const { data, error } = await supabase
       .from('manual_blocks')
-      .update({
-        content: content as Json,
-        updated_by: updated_by ?? null,
-      })
+      .update(patch)
       .eq('id', id)
       .select()
       .single();
@@ -152,9 +160,12 @@ export async function DELETE(request: NextRequest) {
     }
 
     const supabase = await createServerSupabaseClient();
+    // Soft-delete (migration 0009, D-23): flip the flag instead of removing the
+    // row, so undo can restore the same block by un-flagging it. Reads already
+    // filter is_deleted=false, so the block disappears from the editor at once.
     const { error } = await supabase
       .from('manual_blocks')
-      .delete()
+      .update({ is_deleted: true })
       .eq('id', id);
 
     if (error) {

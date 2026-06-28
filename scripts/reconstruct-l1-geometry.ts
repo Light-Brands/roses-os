@@ -40,6 +40,7 @@ import {
 import { mapToBlocks, summarizeBlocks, type PageInput, type MappedBlock } from '../src/lib/manuals/map-to-blocks';
 import { groupTwoColumns } from '../src/lib/manuals/columns';
 import { buildProvenanceSidecar, sidecarFileName } from '../src/lib/manuals/provenance';
+import { applyFigureOverrides, type FigureOverrideMap } from '../src/lib/manuals/figure-overrides';
 
 const require = createRequire(import.meta.url);
 const puppeteer = require('puppeteer-core');
@@ -566,6 +567,18 @@ async function main(): Promise<void> {
   const cachePath = path.join(OUT, 'region-cache.json');
   const cache: RegionCache = REUSE_CACHE && fs.existsSync(cachePath) ? JSON.parse(fs.readFileSync(cachePath, 'utf-8')) : {};
   const stub = new StubClassifier();
+
+  // Recipe figure-to-asset overrides (D-24, T-008): a human figure swap made in
+  // the editor is recorded here keyed by the stable <page>:<ordinal> anchor, and
+  // merged into the extracted figures below so this re-run preserves it instead of
+  // clobbering it. Absent file = no overrides (the common case).
+  const overridesPath = path.join(RECON, `${MANUAL}.${LANG}.figure-overrides.json`);
+  const figureOverrides: FigureOverrideMap = fs.existsSync(overridesPath)
+    ? JSON.parse(fs.readFileSync(overridesPath, 'utf-8'))
+    : {};
+  if (Object.keys(figureOverrides).length) {
+    console.log(`figure overrides: ${Object.keys(figureOverrides).length} human swap(s) from ${overridesPath}`);
+  }
   const gemini = new GeminiClassifier();
   const model: ModelClassifier = USE_GEMINI && gemini.key ? gemini : stub;
 
@@ -626,10 +639,14 @@ async function main(): Promise<void> {
         if (res.naturalWidth >= 32 && res.naturalHeight >= 32) figuresWhole += 1;
       }
 
+      // Apply any human figure swaps for this page (D-24, T-008): the recipe
+      // override wins over the freshly extracted asset, so the swap survives.
+      const mergedFigureFiles = applyFigureOverrides(figureFiles, figureOverrides, i);
+
       // classify (rule -> cache -> model) + counts (AC7), thumbnails null for stub.
       const { regions, counts } = await classifyPage(geo, { ctx: { pageIndex: i, isCoverPage: i === 1 }, cache, model, thumbnailFor: () => null });
 
-      pageInputs.push({ page: i, regions: regions as ClassifiedRegion[], figureFiles });
+      pageInputs.push({ page: i, regions: regions as ClassifiedRegion[], figureFiles: mergedFigureFiles });
       fs.writeFileSync(path.join(OUT, `geometry-page-${tag}.json`), JSON.stringify(geo, null, 2));
       console.log(`  page ${i}: ${geo.textRegions.length} text regions, ${geo.figures.length} figures | rules ${counts.rule}, model ${counts.model}, cache ${counts.cache}, undecided ${counts.undecided}`);
       perPage.push({ page: i, blocks: [], counts, heightPt: geo.heightPt, widthPt: geo.widthPt, regions: geo.textRegions });

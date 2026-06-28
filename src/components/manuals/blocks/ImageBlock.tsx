@@ -3,6 +3,7 @@
 import { useState, useRef, useCallback, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import type { ImageContent } from '@/lib/manuals/types';
+import { useImageUpload } from './useImageUpload';
 
 interface ImageBlockProps {
   content: ImageContent;
@@ -11,39 +12,20 @@ interface ImageBlockProps {
 }
 
 export default function ImageBlock({ content, onChange, readOnly }: ImageBlockProps) {
-  const [uploading, setUploading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const { upload, uploading, error } = useImageUpload();
   const [dragOver, setDragOver] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const dropRef = useRef<HTMLDivElement>(null);
 
   const handleUpload = useCallback(async (file: File) => {
-    setUploading(true);
-    setError(null);
-
-    try {
-      const formData = new FormData();
-      formData.append('file', file);
-
-      const res = await fetch('/api/manuals/upload', { method: 'POST', body: formData });
-      const json = await res.json();
-
-      if (json.error) {
-        setError(json.error);
-        return;
-      }
-
-      onChange({
-        ...content,
-        src: json.data.url,
-        alt: content.alt || file.name.replace(/\.[^.]+$/, ''),
-      });
-    } catch {
-      setError('Upload failed. Please try again.');
-    } finally {
-      setUploading(false);
-    }
-  }, [content, onChange]);
+    const result = await upload(file);
+    if (!result) return;
+    onChange({
+      ...content,
+      src: result.url,
+      alt: content.alt || file.name.replace(/\.[^.]+$/, ''),
+    });
+  }, [content, onChange, upload]);
 
   const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];

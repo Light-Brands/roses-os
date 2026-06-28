@@ -8,6 +8,7 @@
 import puppeteer from 'puppeteer-core';
 import * as path from 'path';
 import * as fs from 'fs';
+import { resolveChromeExecutable } from '../../src/lib/manuals/draft-pdf';
 
 async function htmlToPdf(htmlPath: string, outputPath: string) {
   console.log('=========================================================');
@@ -26,7 +27,9 @@ async function htmlToPdf(htmlPath: string, outputPath: string) {
   console.log(`  Output: ${absoluteOutput}\n`);
 
   const browser = await puppeteer.launch({
-    executablePath: process.env.CHROME_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+    // Portable across platforms (T-014): env first, then per-OS candidates,
+    // never the single Mac path this script used to hard-code.
+    executablePath: resolveChromeExecutable(),
     headless: true,
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });

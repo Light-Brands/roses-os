@@ -12,17 +12,45 @@ interface DownloadMenuProps {
   blocks: ManualBlock[];
   title: string;
   filename: string;
+  /** Manual id; used to POST the current blocks to the draft-PDF route (T-013). */
+  manualId: string;
   /** Manual slug; used to look up the canonical Final Version PDF. */
   slug: string;
   /** Selected language; the designed PDF is served in this language. */
   language: ManualLanguage;
 }
 
-export default function DownloadMenu({ blocks, title, filename, slug, language }: DownloadMenuProps) {
+export default function DownloadMenu({ blocks, title, filename, manualId, slug, language }: DownloadMenuProps) {
   const [open, setOpen] = useState(false);
   const [generating, setGenerating] = useState<string | null>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const finalPdf = getFinalPdfForSlug(slug, language);
+
+  // "Draft PDF from your edits" (D-22, T-013): render the CURRENT blocks server
+  // side, separate from and never replacing the canonical designed master.
+  const handleDownloadDraftPdf = async () => {
+    setGenerating('draft');
+    try {
+      const res = await fetch(`/api/manuals/${manualId}/draft-pdf`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ blocks, title, origin: window.location.origin }),
+      });
+      if (!res.ok) return;
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${filename}-draft.pdf`;
+      a.click();
+      URL.revokeObjectURL(url);
+      setOpen(false);
+    } catch {
+      // Failed — the canonical master download is unaffected.
+    } finally {
+      setGenerating(null);
+    }
+  };
 
   useEffect(() => {
     if (!open) return;
@@ -126,14 +154,39 @@ export default function DownloadMenu({ blocks, title, filename, slug, language }
                   {generating === 'pdf'
                     ? 'Generating...'
                     : finalPdf
-                      ? 'Download PDF'
+                      ? 'Designed print original'
                       : 'Print as PDF'}
                 </div>
                 <div className="text-xs text-[var(--color-foreground-faint)]">
-                  {finalPdf ? 'Designed print original' : 'US Letter, ready to print'}
+                  {finalPdf
+                    ? 'The hand-designed print master. Your edits do not change it.'
+                    : 'US Letter, ready to print'}
                 </div>
               </div>
             </button>
+
+            {/* Draft PDF from your edits (D-22, T-013) — only where a designed
+                master exists, so the two are clearly distinct (AC11). */}
+            {finalPdf && (
+              <button
+                type="button"
+                onClick={handleDownloadDraftPdf}
+                disabled={generating === 'draft'}
+                className="w-full flex items-center gap-3 px-4 py-3 hover:bg-[var(--color-background-subtle)] transition-colors text-left"
+              >
+                <span className="w-8 h-8 rounded-lg bg-amber-50 dark:bg-amber-950/30 flex items-center justify-center text-xs font-bold text-amber-600">
+                  PDF
+                </span>
+                <div>
+                  <div className="text-sm font-medium text-[var(--color-foreground)]">
+                    {generating === 'draft' ? 'Generating...' : 'Draft PDF from your edits'}
+                  </div>
+                  <div className="text-xs text-[var(--color-foreground-faint)]">
+                    Generated from what you see here. A draft, not the print master.
+                  </div>
+                </div>
+              </button>
+            )}
 
             <button
               type="button"
