@@ -1224,7 +1224,7 @@ export async function GET() {
     // =========================================================================
     {
       pageNum++;
-      let schedulePage = doc.addPage([PAGE_WIDTH, PAGE_HEIGHT]);
+      const schedulePage = doc.addPage([PAGE_WIDTH, PAGE_HEIGHT]);
       let y = setupContentPage(schedulePage, sansFont, pageNum, logoImage, COLORS.oliveBrass);
 
       y = drawSectionLabel(schedulePage, 'Aura for Life — 2026 Schedule', y, sansBold);
@@ -1323,7 +1323,7 @@ export async function GET() {
     // =========================================================================
     {
       pageNum++;
-      let schedulePage = doc.addPage([PAGE_WIDTH, PAGE_HEIGHT]);
+      const schedulePage = doc.addPage([PAGE_WIDTH, PAGE_HEIGHT]);
       let y = setupContentPage(schedulePage, sansFont, pageNum, logoImage, COLORS.roseClay);
 
       y = drawSectionLabel(schedulePage, 'Teachers Training — 2026 Schedule', y, sansBold);

@@ -7,6 +7,7 @@ import { Mail, Lock, ArrowRight, AlertCircle, Eye, EyeOff } from 'lucide-react';
 import { useAdminAuth, DEMO_CREDENTIALS } from '@/lib/admin/auth';
 import { cn } from '@/lib/utils';
 import { Logo } from '@/components/ui/Logo';
+import Link from 'next/link';
 
 export default function AdminLoginPage() {
   const router = useRouter();
@@ -93,7 +94,7 @@ export default function AdminLoginPage() {
           <div className="flex items-center gap-4 text-sm text-white/60">
             <span>© {new Date().getFullYear()} Oracle</span>
             <span>•</span>
-            <a href="/" className="hover:text-white transition-colors">Back to site</a>
+            <Link href="/" className="hover:text-white transition-colors">Back to site</Link>
           </div>
         </div>
       </div>
@@ -292,9 +293,9 @@ export default function AdminLoginPage() {
 
           {/* Footer */}
           <p className="text-center text-sm text-neutral-500 mt-8">
-            <a href="/" className="hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors">
+            <Link href="/" className="hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors">
               ← Back to website
-            </a>
+            </Link>
           </p>
         </motion.div>
       </div>

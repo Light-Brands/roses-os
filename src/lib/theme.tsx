@@ -70,6 +70,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     const resolved = storedTheme === 'system' ? getSystemTheme() : storedTheme;
     const storedStyle = getStoredStyle();
 
+    // Synchronous setState on mount is intentional here: theme + style are read
+    // from localStorage (unavailable during SSR), and the `mounted` flag below
+    // gates render until this runs, so there is no hydration mismatch.
     setThemeState(storedTheme);
     setResolvedTheme(resolved);
     setStyleVariantState(storedStyle);
