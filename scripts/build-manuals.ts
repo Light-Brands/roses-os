@@ -17,6 +17,8 @@
 import puppeteer from 'puppeteer-core';
 import * as path from 'path';
 import * as fs from 'fs';
+import { pathToFileURL } from 'url';
+import sharp from 'sharp';
 
 // ---------------------------------------------------------------------------
 // Configuration
@@ -28,6 +30,15 @@ const MANUAL_IMAGES_DIR = path.join(MANUAL_DIR, 'images');
 const TEACHING_IMAGES_DIR = path.join(ROOT, 'public', 'images', 'teaching');
 const ROSE_MED_IMAGES_DIR = path.join(ROOT, 'public', 'rose med images');
 const OUTPUT_DIR = path.join(ROOT, 'public', 'resources', 'manuals');
+
+// Image-heavy manuals (the Teachers-Aid set) are rendered against a downscaled
+// mirror of the build images so the output PDFs stay light. The source art is
+// full-res (5-7MB PNGs); embedding it at full size produced ~96MB PDFs that
+// could not render or be committed. Downscaling to this width keeps them ~12MB
+// with no visible loss at the printed display size. The mirror is gitignored
+// and rebuilt on demand.
+const OPTIMIZED_DIR = path.join(MANUAL_DIR, '.images-optimized');
+const MAX_OPTIMIZED_WIDTH = 1000;
 
 // Images that should NOT be synced from public/rose med images/ to the PDF
 // build directory. These have PDF-specific versions (e.g. close-crop chakra
@@ -49,6 +60,9 @@ interface ManualConfig {
   label: string;
   htmlFile: string;
   outputFile: string;
+  // Render against the downscaled image mirror (see OPTIMIZED_DIR). Set for the
+  // image-heavy Teachers-Aid manuals so their PDFs don't bloat back to ~96MB.
+  optimizeImages?: boolean;
 }
 
 const MANUALS: ManualConfig[] = [
@@ -75,24 +89,28 @@ const MANUALS: ManualConfig[] = [
     label: 'Rose Meditation — Teachers Aid',
     htmlFile: 'roses-teachers-aid.html',
     outputFile: 'ROSES-OS-Teachers-Aid-EN.pdf',
+    optimizeImages: true,
   },
   {
     id: 'ta-es',
     label: 'Rose Meditation — Teachers Aid (ES)',
     htmlFile: 'roses-teachers-aid-es.html',
     outputFile: 'ROSES-OS-Teachers-Aid-ES.pdf',
+    optimizeImages: true,
   },
   {
     id: 'ta-pt',
     label: 'Rose Meditation — Teachers Aid (PT)',
     htmlFile: 'roses-teachers-aid-pt.html',
     outputFile: 'ROSES-OS-Teachers-Aid-PT.pdf',
+    optimizeImages: true,
   },
   {
     id: 'ta-el',
     label: 'Rose Meditation — Teachers Aid (EL)',
     htmlFile: 'roses-teachers-aid-el.html',
     outputFile: 'ROSES-OS-Teachers-Aid-EL.pdf',
+    optimizeImages: true,
   },
 ];
 
@@ -163,7 +181,52 @@ function syncFile(src: string, dest: string): 'copied' | 'skipped' {
 // Helper: find Chrome / Chromium executable
 // ---------------------------------------------------------------------------
 
+// Discover the Playwright-installed Chromium across platforms. Preferred over a
+// system Chrome: on some boxes (Windows) puppeteer-core's CDP handshake against
+// system Chrome times out, while the Playwright build connects cleanly.
+function findPlaywrightChromium(): string | null {
+  const home = process.env.HOME || process.env.USERPROFILE || '';
+  const roots = [
+    process.env.LOCALAPPDATA ? path.join(process.env.LOCALAPPDATA, 'ms-playwright') : '',
+    path.join(home, 'AppData', 'Local', 'ms-playwright'),
+    path.join(home, 'Library', 'Caches', 'ms-playwright'),
+    path.join(home, '.cache', 'ms-playwright'),
+    '/root/.cache/ms-playwright',
+  ].filter(Boolean);
+
+  const exeRels = [
+    path.join('chrome-win64', 'chrome.exe'),
+    path.join('chrome-win', 'chrome.exe'),
+    path.join('chrome-mac', 'Chromium.app', 'Contents', 'MacOS', 'Chromium'),
+    path.join('chrome-linux', 'chrome'),
+  ];
+
+  for (const root of roots) {
+    if (!fs.existsSync(root)) continue;
+    // Prefer the highest chromium-<rev> build (full build, not headless_shell).
+    const builds = fs
+      .readdirSync(root)
+      .filter((d) => /^chromium-\d+$/.test(d))
+      .sort((a, b) => parseInt(b.split('-')[1], 10) - parseInt(a.split('-')[1], 10));
+    for (const build of builds) {
+      for (const rel of exeRels) {
+        const exe = path.join(root, build, rel);
+        if (fs.existsSync(exe)) return exe;
+      }
+    }
+  }
+  return null;
+}
+
 function findChrome(): string {
+  // Explicit override always wins.
+  if (process.env.CHROME_PATH && fs.existsSync(process.env.CHROME_PATH)) {
+    return process.env.CHROME_PATH;
+  }
+
+  const playwright = findPlaywrightChromium();
+  if (playwright) return playwright;
+
   const candidates = [
     // macOS
     '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
@@ -172,28 +235,66 @@ function findChrome(): string {
     '/usr/bin/google-chrome-stable',
     '/usr/bin/chromium',
     '/usr/bin/chromium-browser',
+    // Windows system Chrome (last resort — CDP handshake can be flaky here)
+    'C:/Program Files/Google/Chrome/Application/chrome.exe',
+    'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
   ];
-
-  // Also check Playwright headless shell
-  const playwrightGlob = '/root/.cache/ms-playwright/chromium_headless_shell-*/chrome-linux/headless_shell';
-  try {
-    const { execSync } = require('child_process');
-    const result = execSync(`ls ${playwrightGlob} 2>/dev/null`, { encoding: 'utf-8' }).trim();
-    if (result) candidates.push(result.split('\n')[0]);
-  } catch {}
-
-  // Allow override via env
-  if (process.env.CHROME_PATH && fs.existsSync(process.env.CHROME_PATH)) {
-    return process.env.CHROME_PATH;
-  }
 
   for (const p of candidates) {
     if (fs.existsSync(p)) return p;
   }
 
   throw new Error(
-    'Chrome/Chromium not found. Install Chrome or set CHROME_PATH env variable.',
+    'Chrome/Chromium not found. Install Playwright Chromium (npx playwright install chromium) or set CHROME_PATH.',
   );
+}
+
+// ---------------------------------------------------------------------------
+// Step 1.5: Build the downscaled image mirror (once per run, incremental)
+// ---------------------------------------------------------------------------
+
+let optimizedBuilt = false;
+
+function listImages(dir: string, base = ''): string[] {
+  const out: string[] = [];
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const rel = path.join(base, entry.name);
+    if (entry.isDirectory()) out.push(...listImages(path.join(dir, entry.name), rel));
+    else if (/\.(png|jpe?g|webp)$/i.test(entry.name)) out.push(rel);
+  }
+  return out;
+}
+
+async function buildOptimizedImages(): Promise<void> {
+  if (optimizedBuilt) return;
+  const outRoot = path.join(OPTIMIZED_DIR, 'images');
+  if (!fs.existsSync(MANUAL_IMAGES_DIR)) {
+    optimizedBuilt = true;
+    return;
+  }
+
+  let built = 0;
+  for (const rel of listImages(MANUAL_IMAGES_DIR)) {
+    const sp = path.join(MANUAL_IMAGES_DIR, rel);
+    const op = path.join(outRoot, rel); // keep the same name + extension so HTML refs resolve
+    if (fs.existsSync(op) && fs.statSync(op).mtimeMs >= fs.statSync(sp).mtimeMs) continue;
+
+    const meta = await sharp(sp, { failOn: 'none' }).metadata();
+    const resized = sharp(sp, { failOn: 'none' }).resize({
+      width: Math.min(meta.width ?? MAX_OPTIMIZED_WIDTH, MAX_OPTIMIZED_WIDTH),
+      withoutEnlargement: true,
+    });
+    const buf = /\.png$/i.test(rel)
+      ? await resized.png({ compressionLevel: 9, palette: true, quality: 88, effort: 8 }).toBuffer()
+      : await resized.jpeg({ quality: 82, mozjpeg: true }).toBuffer();
+    fs.mkdirSync(path.dirname(op), { recursive: true });
+    fs.writeFileSync(op, buf);
+    built++;
+  }
+  if (built > 0) {
+    console.log(`         optimized ${built} image(s) → ${path.relative(ROOT, outRoot)}/`);
+  }
+  optimizedBuilt = true;
 }
 
 // ---------------------------------------------------------------------------
@@ -201,7 +302,16 @@ function findChrome(): string {
 // ---------------------------------------------------------------------------
 
 async function buildManualPdf(config: ManualConfig): Promise<string> {
-  const htmlPath = path.join(MANUAL_DIR, config.htmlFile);
+  // Image-heavy manuals render against the downscaled mirror; the HTML is copied
+  // next to it so its relative `images/` refs resolve to the optimized set.
+  let renderDir = MANUAL_DIR;
+  if (config.optimizeImages) {
+    await buildOptimizedImages();
+    fs.copyFileSync(path.join(MANUAL_DIR, config.htmlFile), path.join(OPTIMIZED_DIR, config.htmlFile));
+    renderDir = OPTIMIZED_DIR;
+  }
+
+  const htmlPath = path.join(renderDir, config.htmlFile);
   const outputPath = path.join(OUTPUT_DIR, config.outputFile);
 
   if (!fs.existsSync(htmlPath)) {
@@ -222,9 +332,9 @@ async function buildManualPdf(config: ManualConfig): Promise<string> {
   try {
     const page = await browser.newPage();
 
-    await page.goto(`file://${htmlPath}`, {
+    await page.goto(pathToFileURL(htmlPath).href, {
       waitUntil: 'networkidle0',
-      timeout: 60000,
+      timeout: 120000,
     });
 
     await page.evaluateHandle('document.fonts.ready');
