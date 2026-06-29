@@ -451,7 +451,7 @@ export function groupLinesIntoRegions(lines: LineRegion[], startOrdinal = 0): Bl
       rect: unionRect(rects),
       fontSize: round(median(bucket.map((l) => l.fontSize))),
       fontName: mode(bucket.map((l) => l.fontName)),
-      color: dominantColor(bucket.map((l) => ({ color: l.color, weight: Math.max(1, l.text.trim().length) }))),
+      color: dominantColor(bucket.map((l) => ({ color: l.color ?? INK, weight: Math.max(1, l.text.trim().length) }))),
       serif: dominantSerif(bucket.map((l) => ({ serif: l.serif, weight: Math.max(1, l.text.trim().length) }))),
       lines: bucket,
     });
