@@ -154,8 +154,8 @@ export function mapToBlocks(pages: PageInput[], ctx: MapContext): MappedBlock[] 
       // Skip a standalone eyebrow region; it was absorbed into its heading.
       if (typeof raw.__eyebrowFor === 'number') continue;
 
-      let block_type = region.block_type;
-      let content = cleanContent(raw);
+      const block_type = region.block_type;
+      const content = cleanContent(raw);
 
       // Figure: fill src from the extracted pixel file. A cover image folds into
       // the cover block instead of emitting its own captioned-figure.

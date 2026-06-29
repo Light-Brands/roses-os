@@ -27,7 +27,7 @@ export function blocksToMarkdown(blocks: ManualBlock[], title: string, origin = 
       case 'text': {
         const t = block.content as TextContent;
         // Convert basic HTML to Markdown
-        let md = t.html
+        const md = t.html
           .replace(/<br\s*\/?>/gi, '\n')
           .replace(/<\/p>\s*<p>/gi, '\n\n')
           .replace(/<p>/gi, '')
