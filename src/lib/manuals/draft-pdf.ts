@@ -57,6 +57,41 @@ export function resolveChromeExecutable(): string {
   );
 }
 
+/** True when running inside a Vercel / AWS Lambda serverless function, where no
+ *  system Chrome exists and we must supply the bundled @sparticuz/chromium. */
+function isServerless(): boolean {
+  return Boolean(
+    process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME || process.env.AWS_EXECUTION_ENV,
+  );
+}
+
+/** Launch options for puppeteer-core. On a serverless host with no explicit
+ *  executable override, use the bundled @sparticuz/chromium (its own args +
+ *  runtime-extracted binary). Otherwise resolve a local/explicit Chrome. */
+async function resolveLaunchOptions(): Promise<{
+  executablePath: string;
+  args: string[];
+  headless: boolean;
+}> {
+  const explicit = process.env.PUPPETEER_EXECUTABLE_PATH || process.env.CHROME_PATH;
+  if (!explicit && isServerless()) {
+    const chromium = (await import('@sparticuz/chromium')).default;
+    // The manual renders plain HTML + images; no WebGL, so disable the graphics
+    // stack (skips the swiftshader extraction — smaller/faster cold start).
+    chromium.setGraphicsMode = false;
+    return {
+      executablePath: await chromium.executablePath(),
+      args: chromium.args,
+      headless: true,
+    };
+  }
+  return {
+    executablePath: resolveChromeExecutable(),
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    headless: true,
+  };
+}
+
 /**
  * Render the current blocks to a draft PDF (Buffer). Pure of any storage; the
  * caller (the API route) sets the response headers. `origin` resolves
@@ -64,15 +99,12 @@ export function resolveChromeExecutable(): string {
  */
 export async function blocksToPdf(blocks: ManualBlock[], title: string, origin = ''): Promise<Buffer> {
   const html = blocksToHtml(blocks, title, origin);
-  const executablePath = resolveChromeExecutable();
   // puppeteer-core is the only Puppeteer package installed; it needs an external
-  // executable, which resolveChromeExecutable provides.
+  // executable. On Vercel that comes from the bundled @sparticuz/chromium; locally
+  // from a resolved system Chrome. See resolveLaunchOptions.
+  const { executablePath, args, headless } = await resolveLaunchOptions();
   const puppeteer = (await import('puppeteer-core')).default;
-  const browser = await puppeteer.launch({
-    executablePath,
-    headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
-  });
+  const browser = await puppeteer.launch({ executablePath, headless, args });
   try {
     const page = await browser.newPage();
     await page.setContent(html, { waitUntil: 'networkidle0', timeout: 30000 });

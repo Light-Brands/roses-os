@@ -12,7 +12,10 @@ const nextConfig: NextConfig = {
     // Pre-existing type error in admin/page.tsx (framer-motion Variants typing)
     ignoreBuildErrors: true,
   },
-  serverExternalPackages: ['sharp'],
+  // sharp: native image lib. @sparticuz/chromium: ships a brotli-compressed
+  // Chromium the draft-PDF route unpacks at runtime — must stay external so its
+  // binary is traced into the serverless function rather than bundled.
+  serverExternalPackages: ['sharp', '@sparticuz/chromium'],
   async redirects() {
     return [
       // Manual PDFs were renamed from ROSES-OS-Level-* to Rose-Level-* (commit 2dddb20)
