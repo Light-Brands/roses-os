@@ -49,6 +49,17 @@ const nextConfig: NextConfig = {
       './public/models/**',
     ],
   },
+  outputFileTracingIncludes: {
+    // @sparticuz/chromium reads its brotli-packed binary from its own bin/ dir at
+    // runtime (fs, not require), so Next's tracer doesn't pull those files into the
+    // function. Without this the draft-PDF route throws "input directory .../bin
+    // does not exist". Force the bin/ into that function. The key is a glob (no
+    // literal [manualId] brackets — picomatch would read them as a char class).
+    '/api/manuals/**': [
+      './node_modules/.pnpm/@sparticuz+chromium@*/node_modules/@sparticuz/chromium/bin/**',
+      './node_modules/@sparticuz/chromium/bin/**',
+    ],
+  },
 };
 
 export default nextConfig;
