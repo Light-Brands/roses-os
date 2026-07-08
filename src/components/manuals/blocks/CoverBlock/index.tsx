@@ -113,12 +113,21 @@ export default function CoverBlock({ content, onChange, readOnly }: Props) {
         className="block mx-auto mt-2 w-2/3 text-base italic font-serif text-rose-700 text-center bg-transparent border-b border-stone-300 px-0 py-1 focus:outline-none"
         aria-label="Cover subtitle"
       />
+      {content.cover_image ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={content.cover_image}
+          alt=""
+          className="block mx-auto mt-4 mb-1"
+          style={{ maxWidth: '180px' }}
+        />
+      ) : null}
       <input
         type="text"
         value={content.cover_image ?? ''}
         onChange={(e) => onChange({ ...content, cover_image: e.target.value })}
         placeholder="Cover image URL (optional)"
-        className="block mx-auto my-3 w-3/4 text-xs bg-transparent border-b border-stone-300 px-0 py-1 text-center focus:outline-none"
+        className="block mx-auto my-2 w-3/4 text-xs text-stone-400 bg-transparent border-b border-stone-300 px-0 py-1 text-center focus:outline-none"
         aria-label="Cover image URL"
       />
       <input
