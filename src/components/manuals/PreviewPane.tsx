@@ -139,12 +139,15 @@ function PreviewBlockRow({ block }: { block: ManualBlock }) {
       return <blockquote>{c.attribution ? `— ${c.attribution}` : '“…”'}</blockquote>;
     }
     case 'cover': {
-      const c = block.content as { title: string; author?: string; illustrator?: string };
+      const c = block.content as { title: string; author?: string; illustrator?: string; credits?: string; edition?: string; notice?: string };
       return (
         <div className="text-center">
           <h1>{c.title}</h1>
           {c.author ? <p>By {c.author}</p> : null}
           {c.illustrator ? <p style={{ fontStyle: 'italic' }}>Illustrated by {c.illustrator}</p> : null}
+          {c.credits ? c.credits.split('\n').map((line, i) => <p key={i} style={{ fontSize: '0.72rem' }}>{line}</p>) : null}
+          {c.edition ? <p style={{ fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase' }}>{c.edition}</p> : null}
+          {c.notice ? <p style={{ maxWidth: '30rem', margin: '1rem auto 0', fontSize: '0.65rem', fontStyle: 'italic' }}>{c.notice}</p> : null}
         </div>
       );
     }

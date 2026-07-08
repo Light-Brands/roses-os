@@ -82,6 +82,23 @@ export default function CoverBlock({ content, onChange, readOnly }: Props) {
           {content.author ? <p style={{ margin: 0 }}>By {content.author}</p> : null}
           {content.illustrator ? <p style={{ margin: 0, fontStyle: 'italic' }}>Illustrated by {content.illustrator}</p> : null}
         </div>
+        {content.credits ? (
+          <div style={{ marginTop: '0.75rem', fontFamily: typography.fonts.sans, fontSize: '0.72rem', lineHeight: 1.8, color: typography.palette.terracotta, opacity: 0.85 }}>
+            {content.credits.split('\n').map((line, i) => (
+              <p key={i} style={{ margin: 0 }}>{line}</p>
+            ))}
+          </div>
+        ) : null}
+        {content.edition ? (
+          <div style={{ marginTop: '0.75rem', fontFamily: typography.fonts.sans, fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: typography.palette.terracotta, opacity: 0.8 }}>
+            {content.edition}
+          </div>
+        ) : null}
+        {content.notice ? (
+          <p style={{ maxWidth: '30rem', margin: '1.5rem auto 0', fontFamily: typography.fonts.sans, fontSize: '0.65rem', fontStyle: 'italic', lineHeight: 1.6, color: typography.palette.terracotta, opacity: 0.75 }}>
+            {content.notice}
+          </p>
+        ) : null}
       </div>
     );
   }
@@ -145,6 +162,30 @@ export default function CoverBlock({ content, onChange, readOnly }: Props) {
         placeholder="Illustrator (optional)"
         className="block mx-auto w-2/3 text-sm bg-transparent border-b border-stone-300 px-0 py-1 italic text-center focus:outline-none"
         aria-label="Cover illustrator"
+      />
+      <textarea
+        value={content.credits ?? ''}
+        onChange={(e) => onChange({ ...content, credits: e.target.value })}
+        placeholder="Credits (one line each: illustrations, editor, design)"
+        rows={2}
+        className="block mx-auto mt-3 w-3/4 text-xs text-stone-500 bg-transparent border-b border-stone-300 px-0 py-1 text-center focus:outline-none resize-none"
+        aria-label="Cover credits"
+      />
+      <input
+        type="text"
+        value={content.edition ?? ''}
+        onChange={(e) => onChange({ ...content, edition: e.target.value })}
+        placeholder="Edition (optional)"
+        className="block mx-auto mt-2 w-2/3 text-xs uppercase tracking-[0.2em] text-stone-500 bg-transparent border-b border-stone-300 px-0 py-1 text-center focus:outline-none"
+        aria-label="Cover edition"
+      />
+      <textarea
+        value={content.notice ?? ''}
+        onChange={(e) => onChange({ ...content, notice: e.target.value })}
+        placeholder="Protection notice (optional)"
+        rows={3}
+        className="block mx-auto mt-3 w-3/4 text-xs italic text-stone-400 bg-transparent border-b border-stone-300 px-0 py-1 text-center focus:outline-none resize-none"
+        aria-label="Cover protection notice"
       />
     </div>
   );

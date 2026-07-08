@@ -95,6 +95,9 @@ export const coverContentSchema = z.object({
   illustrator: z.string().optional(),
   cover_image: z.string().optional(),
   eyebrow: z.string().optional(),
+  credits: z.string().optional(),
+  edition: z.string().optional(),
+  notice: z.string().optional(),
 });
 
 export const contentsRowSchema = z.object({

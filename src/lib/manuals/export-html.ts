@@ -125,6 +125,9 @@ export function blocksToHtml(blocks: ManualBlock[], title: string, origin = ''):
           + (c.subtitle ? `<div class="cover-subtitle">${esc(c.subtitle)}</div>` : '')
           + (c.author ? `<div class="cover-credit">${esc(c.author)}</div>` : '')
           + (c.illustrator ? `<div class="cover-credit"><em>Illustrated by ${esc(c.illustrator)}</em></div>` : '')
+          + (c.credits ? `<div class="cover-credit">${esc(c.credits).replace(/\n/g, '<br>')}</div>` : '')
+          + (c.edition ? `<div class="cover-credit" style="letter-spacing:0.2em;text-transform:uppercase;font-size:0.7em;">${esc(c.edition)}</div>` : '')
+          + (c.notice ? `<div class="cover-credit" style="max-width:30rem;margin:1.25rem auto 0;font-style:italic;font-size:0.72em;line-height:1.6;opacity:0.8;">${esc(c.notice)}</div>` : '')
           + `</div>`;
       }
       case 'callout': {
