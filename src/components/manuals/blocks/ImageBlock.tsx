@@ -112,10 +112,25 @@ export default function ImageBlock({ content, onChange, readOnly }: ImageBlockPr
     );
   }
 
-  // Image with caption
+  // Image with caption. An explicit width_pct constrains the rendered width so a
+  // small decorative ornament shows small — in the editor and, via export-html,
+  // in the downloaded PDF. Omitted → full content-column width (prior behavior).
+  const widthPct = typeof content.width_pct === 'number'
+    ? Math.min(100, Math.max(2, content.width_pct))
+    : undefined;
+  const sizePresets: { label: string; pct: number }[] = [
+    { label: 'S', pct: 15 },
+    { label: 'M', pct: 40 },
+    { label: 'L', pct: 70 },
+    { label: 'Full', pct: 100 },
+  ];
+
   return (
     <div className="group/img relative">
-      <div className="rounded-xl overflow-hidden bg-[var(--color-background-muted)] mx-auto w-full max-w-prose">
+      <div
+        className="rounded-xl overflow-hidden bg-[var(--color-background-muted)] mx-auto w-full max-w-prose"
+        style={widthPct !== undefined ? { width: `${widthPct}%` } : undefined}
+      >
         <img
           src={content.src}
           alt={content.alt || ''}
@@ -144,9 +159,29 @@ export default function ImageBlock({ content, onChange, readOnly }: ImageBlockPr
         </div>
       )}
 
-      {/* Replace / alt text controls */}
+      {/* Size + replace controls */}
       {!readOnly && (
         <div className="absolute top-3 right-3 flex gap-2 opacity-0 group-hover/img:opacity-100 transition-opacity">
+          <div className="flex items-center rounded-lg bg-black/60 backdrop-blur-sm shadow-sm overflow-hidden" role="group" aria-label="Image size">
+            {sizePresets.map((p) => {
+              const active = p.pct === 100 ? widthPct === undefined || widthPct === 100 : widthPct === p.pct;
+              return (
+                <button
+                  key={p.label}
+                  type="button"
+                  onClick={() => onChange({ ...content, width_pct: p.pct })}
+                  aria-pressed={active}
+                  title={`${p.pct}% width`}
+                  className={cn(
+                    'text-xs px-2.5 py-1.5 transition-colors',
+                    active ? 'bg-white/25 text-white font-semibold' : 'text-white/80 hover:bg-white/15'
+                  )}
+                >
+                  {p.label}
+                </button>
+              );
+            })}
+          </div>
           <button
             type="button"
             onClick={() => fileInputRef.current?.click()}

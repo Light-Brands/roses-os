@@ -70,6 +70,10 @@ export interface ImageContent {
   src: string;
   alt: string;
   caption?: string;
+  /** Rendered width as a percentage of the content column (2–100). Lets a small
+   *  decorative ornament render small in both the editor and the exported PDF
+   *  instead of the flat full/80% default. Omitted → default width. */
+  width_pct?: number;
 }
 
 export interface ImageRowItem {

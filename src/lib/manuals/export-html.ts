@@ -91,7 +91,12 @@ export function blocksToHtml(blocks: ManualBlock[], title: string, origin = ''):
       case 'image': {
         const c = block.content as ImageContent;
         if (!c.src) return '';
-        return `<figure class="figure">${imgTag(c.src, c.alt, 'width:80%;border-radius:12px;')}${c.caption ? `<figcaption>${esc(c.caption)}</figcaption>` : ''}</figure>`;
+        // Honor an explicit width_pct so a small decorative ornament renders small
+        // instead of the flat 80% default (matches captioned-figure behavior).
+        const pct = typeof c.width_pct === 'number'
+          ? Math.min(100, Math.max(2, c.width_pct))
+          : 80;
+        return `<figure class="figure">${imgTag(c.src, c.alt, `width:${pct}%;height:auto;border-radius:12px;`)}${c.caption ? `<figcaption>${esc(c.caption)}</figcaption>` : ''}</figure>`;
       }
       case 'captioned-figure': {
         const c = block.content as CaptionedFigureContent;
