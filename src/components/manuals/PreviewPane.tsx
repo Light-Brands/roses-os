@@ -93,12 +93,17 @@ function PreviewBlockRow({ block }: { block: ManualBlock }) {
     }
     case 'image':
     case 'captioned-figure': {
-      const c = block.content as { src: string; alt: string; caption?: string };
+      const c = block.content as { src: string; alt: string; caption?: string; width_pct?: number };
       if (!c.src) return null;
+      // Honor width_pct so a small ornament previews small, matching the editor
+      // and the exported PDF.
+      const pct = typeof c.width_pct === 'number'
+        ? Math.min(100, Math.max(2, c.width_pct))
+        : undefined;
       return (
         <figure>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={c.src} alt={c.alt} />
+          <img src={c.src} alt={c.alt} style={pct !== undefined ? { width: `${pct}%`, height: 'auto' } : undefined} />
           {c.caption ? <figcaption>{c.caption}</figcaption> : null}
         </figure>
       );

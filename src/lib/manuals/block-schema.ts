@@ -69,6 +69,7 @@ export const imageContentSchema = z.object({
   src: z.string(),
   alt: z.string(),
   caption: z.string().optional(),
+  width_pct: z.number().min(2).max(100).optional(),
 });
 
 export const imageRowContentSchema = z.object({
