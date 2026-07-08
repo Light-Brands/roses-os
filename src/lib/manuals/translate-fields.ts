@@ -114,7 +114,7 @@ export function collectStrings(blockType: string, content: unknown): FieldString
       break;
     }
     case 'cover':
-      for (const k of ['title', 'subtitle', 'author', 'illustrator', 'eyebrow']) pushIfStr(c, [k], 'plain', out);
+      for (const k of ['title', 'subtitle', 'author', 'illustrator', 'eyebrow', 'credits', 'edition', 'notice']) pushIfStr(c, [k], 'plain', out);
       break;
     case 'contents': {
       pushIfStr(c, ['eyebrow'], 'plain', out);

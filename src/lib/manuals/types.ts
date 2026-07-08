@@ -103,6 +103,13 @@ export interface CoverContent {
   cover_image?: string;
   /** Small eyebrow line above the title (e.g., "ROSES OS · LEVEL 1"). */
   eyebrow?: string;
+  /** Front-matter credits below the author, one line per newline (e.g.
+   *  illustrations, editor, design). Restores the printed cover's credit block. */
+  credits?: string;
+  /** Edition line (e.g., "2026 · Review Edition"). */
+  edition?: string;
+  /** Protection / do-not-share notice printed at the foot of the cover page. */
+  notice?: string;
 }
 
 /** A single table-of-contents row: numeral | title | page. */
