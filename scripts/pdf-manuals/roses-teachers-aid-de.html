@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>International Aura and Dream School — Handbuch: Visuelle Hilfsmittel für Lehrkräfte</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+    :root {
+      --rose-clay: #9C6F6E;
+      --rose-400: #D4A09A;
+      --rose-300: #E8C4BF;
+      --rose-200: #F5E1DD;
+      --rose-100: #FAF0EE;
+      --rose-50: #FDF8F7;
+      --rose-700: #6E4A49;
+      --rose-800: #523737;
+      --rose-900: #3B2828;
+      --gold: #9E956B;
+      --warm-0: #F7F5F2;
+      --charcoal: #3F3E3C;
+      --soft-charcoal: #5A5856;
+      --font-serif: 'Cormorant Garamond', 'Georgia', serif;
+      --font-sans: 'Inter', -apple-system, sans-serif;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    @page { size: 8.5in 11in; margin: 0; }
+    html { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { font-family: var(--font-sans); color: var(--charcoal); line-height: 1.7; background: white; }
+
+    /* PAGE */
+    .page {
+      width: 8.5in;
+      height: 11in;
+      position: relative;
+      page-break-after: always;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .page:last-child { page-break-after: auto; }
+
+    /* Border frame */
+    .page::before {
+      content: '';
+      position: absolute;
+      top: 0.35in; left: 0.35in; right: 0.35in; bottom: 0.35in;
+      border: 0.5px solid var(--rose-200);
+      border-radius: 2px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Inner padding — all content lives here */
+    .inner {
+      position: relative;
+      z-index: 1;
+      margin: 0.55in 0.65in 0.55in 0.65in;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Corner ticks */
+    .ck { position: absolute; width: 16px; height: 16px; z-index: 2; }
+    .ck::before, .ck::after { content: ''; position: absolute; background: var(--rose-300); }
+    .ck-tl { top: 0.3in; left: 0.3in; }
+    .ck-tr { top: 0.3in; right: 0.3in; }
+    .ck-bl { bottom: 0.3in; left: 0.3in; }
+    .ck-br { bottom: 0.3in; right: 0.3in; }
+    .ck-tl::before { width: 16px; height: 0.5px; top: 0; left: 0; }
+    .ck-tl::after  { width: 0.5px; height: 16px; top: 0; left: 0; }
+    .ck-tr::before { width: 16px; height: 0.5px; top: 0; right: 0; }
+    .ck-tr::after  { width: 0.5px; height: 16px; top: 0; right: 0; }
+    .ck-bl::before { width: 16px; height: 0.5px; bottom: 0; left: 0; }
+    .ck-bl::after  { width: 0.5px; height: 16px; bottom: 0; left: 0; }
+    .ck-br::before { width: 16px; height: 0.5px; bottom: 0; right: 0; }
+    .ck-br::after  { width: 0.5px; height: 16px; bottom: 0; right: 0; }
+
+    /* Page number */
+    .pn {
+      position: absolute;
+      bottom: 0.38in; left: 0; right: 0;
+      text-align: center;
+      font-family: var(--font-sans);
+      font-size: 7pt;
+      color: var(--rose-400);
+      letter-spacing: 0.12em;
+      z-index: 2;
+    }
+    .pn span { display: inline-block; padding: 0 8px; background: white; }
+
+    /* ============================================================
+       IMAGES — full-width hero approach
+       ============================================================ */
+
+    /* Centered image — 80% width, centered */
+    .img-full {
+      width: 80%;
+      max-width: 480px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+    }
+    .img-full img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+      outline: 0.5px solid var(--rose-200);
+      outline-offset: -0.5px;
+    }
+
+    /* Centered image with max-width — maintains 1:1 ratio */
+    .img-center {
+      display: flex;
+      justify-content: center;
+    }
+    .img-center img {
+      height: auto;
+      display: block;
+      border-radius: 16px;
+      outline: 0.5px solid var(--rose-200);
+      outline-offset: -0.5px;
+    }
+
+    /* Circular image — always 1:1 by nature */
+    .img-circle {
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+      aspect-ratio: 1;
+      box-shadow: 0 0 0 0.5px var(--rose-200);
+    }
+    .img-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Side-by-side: image + text */
+    .split {
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+    }
+    .split-img {
+      flex: 1;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 0 0 0.5px var(--rose-200);
+    }
+    .split-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+    }
+    .split-text {
+      flex: 1;
+    }
+
+    /* ============================================================
+       TYPOGRAPHY
+       ============================================================ */
+
+    .label {
+      font-family: var(--font-sans);
+      font-size: 6.5pt; font-weight: 500;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .h-xl {
+      font-family: var(--font-serif);
+      font-size: 36pt; font-weight: 300;
+      color: var(--rose-800);
+      line-height: 1.12; letter-spacing: -0.02em;
+    }
+
+    .h-lg {
+      font-family: var(--font-serif);
+      font-size: 22pt; font-weight: 300;
+      color: var(--rose-800);
+      line-height: 1.2; letter-spacing: -0.015em;
+    }
+
+    .h-md {
+      font-family: var(--font-serif);
+      font-size: 15pt; font-weight: 400;
+      color: var(--rose-800);
+      line-height: 1.3;
+    }
+
+    .h-sm {
+      font-family: var(--font-serif);
+      font-size: 11.5pt; font-weight: 500;
+      font-style: italic;
+      color: var(--rose-clay);
+    }
+
+    .sub {
+      font-family: var(--font-serif);
+      font-size: 15pt; font-weight: 400;
+      font-style: italic;
+      color: var(--rose-clay);
+    }
+
+    .body {
+      font-family: var(--font-sans);
+      font-size: 9.5pt; line-height: 1.75;
+      color: var(--charcoal);
+    }
+
+    .body-sm {
+      font-family: var(--font-sans);
+      font-size: 8.5pt; line-height: 1.7;
+      color: var(--soft-charcoal);
+    }
+
+    em { font-family: var(--font-serif); color: var(--rose-700); }
+
+    .line { width: 36px; height: 0.5px; background: var(--rose-300); }
+    .line-c { width: 36px; height: 0.5px; background: var(--rose-300); margin: 0 auto; }
+
+    /* Callout */
+    .call {
+      background: var(--rose-50);
+      border-left: 2px solid var(--rose-clay);
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+    }
+    .call p {
+      font-family: var(--font-serif);
+      font-size: 10pt; font-style: italic;
+      line-height: 1.6; color: var(--rose-700);
+    }
+    .call-gold { border-left-color: var(--gold); background: linear-gradient(135deg, var(--rose-50), var(--warm-0)); }
+
+    /* Lists */
+    .bul { list-style: none; }
+    .bul li {
+      font-family: var(--font-sans); font-size: 9.5pt;
+      line-height: 1.75; color: var(--charcoal);
+      padding: 2px 0 2px 16px; position: relative;
+    }
+    .bul li::before {
+      content: ''; position: absolute;
+      left: 2px; top: 11px;
+      width: 5px; height: 5px;
+      background: var(--rose-clay); border-radius: 50%;
+    }
+
+    .num { list-style: none; counter-reset: n; }
+    .num li {
+      counter-increment: n;
+      font-family: var(--font-sans); font-size: 9.5pt;
+      line-height: 1.75; color: var(--charcoal);
+      padding: 3px 0 3px 26px; position: relative;
+    }
+    .num li::before {
+      content: counter(n) '.'; position: absolute; left: 0;
+      font-family: var(--font-serif); font-size: 12pt; font-weight: 400;
+      color: var(--rose-clay);
+    }
+
+    /* Step card */
+    .step { display: flex; gap: 14px; align-items: baseline; }
+    .sn {
+      font-family: var(--font-serif);
+      font-size: 28pt; font-weight: 300;
+      color: var(--rose-300); line-height: 1;
+      flex-shrink: 0; width: 34px; text-align: center;
+    }
+
+    /* Two columns */
+    .cols { display: flex; gap: 24px; }
+    .cols > div { flex: 1; }
+
+    /* Summary card */
+    .sum {
+      background: linear-gradient(135deg, var(--rose-50), var(--warm-0));
+      border: 0.5px solid var(--rose-200);
+      border-radius: 16px;
+      padding: 20px 24px;
+    }
+    .sum .bul li { font-size: 9pt; padding: 2px 0 2px 14px; }
+    .sum .bul li::before { top: 9px; width: 4px; height: 4px; }
+
+    /* Spacers */
+    .s4  { height: 4px; }
+    .s6  { height: 6px; }
+    .s8  { height: 8px; }
+    .s10 { height: 10px; }
+    .s12 { height: 12px; }
+    .s16 { height: 16px; }
+    .s20 { height: 20px; }
+    .s24 { height: 24px; }
+    .s28 { height: 28px; }
+    .s32 { height: 32px; }
+    .s40 { height: 40px; }
+    .grow { flex: 1; }
+
+    /* Cover specific */
+    .cover-bg {
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--rose-50) 40%, var(--warm-0) 100%);
+    }
+    .cover-bg::before { border-color: var(--rose-300); }
+
+    .closing-bg {
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--rose-50) 50%, var(--warm-0) 100%);
+    }
+
+    /* ============================================================
+       TEACHER AID — additional styles
+       ============================================================ */
+
+    /* Divider page for level sections */
+    .divider-bg {
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--rose-50) 60%, var(--warm-0) 100%);
+    }
+    .divider-bg::before { border-color: var(--rose-300); }
+
+    /* Slide card */
+    .slide-card {
+      background: var(--rose-50);
+      border: 0.5px solid var(--rose-200);
+      border-radius: 12px;
+      padding: 14px 16px;
+      flex: 1;
+    }
+    .slide-card .slide-badge {
+      display: inline-block;
+      width: 24px; height: 24px;
+      background: var(--rose-clay);
+      color: white;
+      font-family: var(--font-serif);
+      font-size: 11pt; font-weight: 500;
+      text-align: center; line-height: 24px;
+      border-radius: 50%;
+      margin-bottom: 6px;
+    }
+    .slide-card .slide-title {
+      font-family: var(--font-serif);
+      font-size: 11pt; font-weight: 500;
+      color: var(--rose-800);
+      margin-bottom: 6px;
+    }
+    .slide-card .img-full {
+      width: 60%;
+      max-width: 280px;
+    }
+    .slide-card .slide-text {
+      font-family: var(--font-sans);
+      font-size: 8pt; line-height: 1.65;
+      color: var(--soft-charcoal);
+      margin-top: 6px;
+    }
+
+    /* Chakra compact card */
+    .chakra-card {
+      background: var(--rose-50);
+      border: 0.5px solid var(--rose-200);
+      border-radius: 12px;
+      padding: 12px 14px;
+      flex: 1;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .chakra-card .chakra-img {
+      width: 90px; flex-shrink: 0;
+    }
+    .chakra-card .chakra-img img {
+      width: 100%; border-radius: 10px;
+      outline: 0.5px solid var(--rose-200);
+    }
+    .chakra-card .chakra-info {
+      flex: 1;
+    }
+    .chakra-dot {
+      display: inline-block;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- =====================================================
+       PAGE 1 — COVER
+       ===================================================== -->
+  <div class="page cover-bg">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="align-items: center; justify-content: center; text-align: center;">
+      <div class="label">International Aura and Dream School</div>
+      <div class="s28"></div>
+
+      <div class="img-circle" style="width: 320px; height: 320px;">
+        <img src="images/manual-l12-cover-l12.png" alt="Sacred Rose">
+      </div>
+      <div class="s32"></div>
+
+      <h1 class="h-xl">International Aura and Dream School &middot; Handbuch: Visuelle Hilfsmittel für Lehrkräfte</h1>
+      <div class="s6"></div>
+      <p class="sub">Rose Meditation &mdash; All Levels</p>
+      <div class="s32"></div>
+
+      <div class="line-c"></div>
+      <div class="s28"></div>
+
+      <div style="font-family: var(--font-sans); font-size: 8.5pt; color: var(--soft-charcoal); line-height: 1.8; letter-spacing: 0.04em;">
+        <strong style="font-weight: 500; color: var(--charcoal); font-size: 9pt;">Teachings by Angelina Ata&iacute;de</strong><br>
+        International Aura and Dream School
+      </div>
+      <div class="s16"></div>
+      <div style="font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400); letter-spacing: 0.2em;">2026 &nbsp;&middot;&nbsp; REVIEW EDITION</div>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 2 — TABLE OF CONTENTS
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="padding-top: 0.3in;">
+      <div class="label">Handbuch: Visuelle Hilfsmittel für Lehrkräfte</div>
+      <div class="s6"></div>
+      <h2 class="h-lg" style="font-size: 26pt;">Handbuch: Visuelle Hilfsmittel für Lehrkräfte</h2>
+      <div class="s4"></div>
+      <p class="sub" style="font-size: 13pt;">Rose Meditation &mdash; All Levels</p>
+      <div class="s20"></div>
+      <div class="line"></div>
+      <div class="s12"></div>
+
+      <!-- Rose icon on TOC -->
+      <div style="text-align: center; margin-bottom: 8px;">
+        <svg style="width: 28px; height: 28px;" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="18" fill="none" stroke="#9C6F6E" stroke-width="1.5"/>
+          <ellipse cx="50" cy="32" rx="8" ry="14" fill="none" stroke="#D4A09A" stroke-width="1" transform="rotate(0 50 50)"/>
+          <ellipse cx="50" cy="32" rx="8" ry="14" fill="none" stroke="#D4A09A" stroke-width="1" transform="rotate(72 50 50)"/>
+          <ellipse cx="50" cy="32" rx="8" ry="14" fill="none" stroke="#D4A09A" stroke-width="1" transform="rotate(144 50 50)"/>
+          <ellipse cx="50" cy="32" rx="8" ry="14" fill="none" stroke="#D4A09A" stroke-width="1" transform="rotate(216 50 50)"/>
+          <ellipse cx="50" cy="32" rx="8" ry="14" fill="none" stroke="#D4A09A" stroke-width="1" transform="rotate(288 50 50)"/>
+          <circle cx="50" cy="50" r="5" fill="#9C6F6E" opacity="0.3"/>
+        </svg>
+      </div>
+
+      <table style="width: 100%; border-collapse: collapse;">
+        <tbody>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="width: 26px; padding: 6px 0; font-family: var(--font-serif); font-size: 13pt; color: var(--rose-clay); vertical-align: baseline;"></td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Vereinbarungen &amp; Tugenden</td>
+            <td style="width: 24px; padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">3</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 13pt; color: var(--rose-clay);"></td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Level 1: Grundlagen &mdash; Kernpraktiken</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">4</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 13pt; color: var(--rose-clay);"></td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Level 2: Vertiefung &mdash; Energetisch &amp; Beziehungsbezogen</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">13</td>
+          </tr>
+          <tr>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 13pt; color: var(--rose-clay);"></td>
+            <td style="padding: 6px 0; font-family: var(--font-serif); font-size: 10.5pt; font-weight: 500; color: var(--charcoal);">Level 3: Lehre &mdash; Übertragung &amp; Anleitung</td>
+            <td style="padding: 6px 0; text-align: right; font-family: var(--font-sans); font-size: 7.5pt; color: var(--rose-400);">23</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="grow"></div>
+
+      <div class="call">
+        <p>Ein visueller Begleiter für Kursleiter beim Lehren der Rose Meditation.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>Handbuch: Visuelle Hilfsmittel für Lehrkräfte &nbsp;&middot;&nbsp; Alle Stufen</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 3 — OPENING SECTIONS
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="label">Vereinbarungen &amp; Tugenden</div>
+      <div class="s8"></div>
+      <h2 class="h-lg">Vereinbarungen &amp; Tugenden</h2>
+      <div class="s10"></div>
+
+      <p class="body">Vor Beginn erkennen alle Teilnehmenden diese Vereinbarungen an:</p>
+      <div class="s6"></div>
+      <p class="body" style="font-style: italic; color: var(--rose-clay);">Pünktlichkeit, Vertraulichkeit, Mitverantwortung, Vertrauen, Geduld, Empathie und Mitgefühl.</p>
+
+      <div class="s16"></div>
+      <div class="line"></div>
+      <div class="s16"></div>
+
+      <h2 class="h-md">Es ist wichtig zu wissen</h2>
+      <div class="s8"></div>
+      <ul class="bul">
+        <li>Du erhältst das Handbuch als PDF.</li>
+        <li>Diese Lehren sind Teil einer lebendigen energetischen Tradition, die durch direkte Praxis und Übertragung offenbart wurde.</li>
+        <li>Du solltest nicht versuchen, die Rose Meditation zu unterrichten (nur deinen Kindern unter 14 Jahren).</li>
+        <li>Wenn du ein Rose Meditation Facilitator werden möchtest, ist es notwendig, einen Ausbildungsweg durch Aura Reading zu absolvieren.</li>
+        <li>Die Rose Meditation kann nicht bei anderen Menschen angewendet werden.</li>
+      </ul>
+
+      <div class="s16"></div>
+      <div class="line"></div>
+      <div class="s16"></div>
+
+      <h2 class="h-md">Geschichte &amp; Tradition</h2>
+      <div class="s8"></div>
+      <p class="body">Aura Reading entstand in den 1960er Jahren in Kalifornien, gechannelt von einem Nordamerikaner namens Lewis S. Bostwick. Als Gründer des Berkeley Psychic Institute und der Church of the Divine Man channelte und systematisierte er die von den Engeln gesendeten Techniken und Werkzeuge, um den Evolutionsprozess der Menschheit zu unterstützen.</p>
+      <div class="s10"></div>
+      <p class="body-sm" style="font-style: italic; color: var(--rose-clay);">Tradition: Berkeley Psychic Institute &rarr; Anastasia Plunk &rarr; Angelina Ataide &rarr; Escola da Aura &rarr; International Aura and Dream School</p>
+
+      <div class="s16"></div>
+      <div style="text-align: center;">
+        <img src="images/rose-emblem.png" alt="International Aura and Dream School Emblem" style="width: 120px; height: auto; border-radius: 8px;">
+      </div>
+    </div>
+
+    <div class="pn"><span>3</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 4 — LEVEL 1 DIVIDER
+       ===================================================== -->
+  <div class="page divider-bg">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="align-items: center; justify-content: center; text-align: center;">
+      <div class="label">Stufe 1</div>
+      <div class="s20"></div>
+      <h1 class="h-xl">Kernpraktiken</h1>
+      <div class="s8"></div>
+      <p class="sub">Folies 1&ndash;18</p>
+      <div class="s32"></div>
+      <div class="line-c"></div>
+      <div class="s32"></div>
+      <div class="img-circle" style="width: 200px; height: 200px;">
+        <img src="images/teaching-the-rose.png" alt="Rose">
+      </div>
+    </div>
+
+    <div class="pn"><span>4</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 5 — SLIDES 1 & 2
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="cols" style="gap: 16px;">
+        <div class="slide-card">
+          <div class="slide-badge">1</div>
+          <div class="slide-title">Die Rose</div>
+          <div class="img-full" style="width: 60%; max-width: 240px;">
+            <img src="images/teaching-the-rose.png" alt="The Rose">
+          </div>
+          <p class="slide-text">Die Rose ist das grundlegende Symbol und Werkzeug dieser Praxis &mdash; ein lebendiges energetisches Instrument, das auf allen Ebenen der Arbeit verwendet wird.</p>
+        </div>
+        <div class="slide-card">
+          <div class="slide-badge">2</div>
+          <div class="slide-title">Meditationshaltung</div>
+          <div class="img-full" style="width: 60%; max-width: 240px;">
+            <img src="images/teaching-posture.png" alt="Meditation Posture">
+          </div>
+          <p class="slide-text">Die richtige Meditationshaltung ist aufrecht sitzend auf einem Stuhl. Die Füße stehen flach auf dem Boden, die Hände ruhen sanft auf den Oberschenkeln oder Knien, die Wirbelsäule ist aufrecht, die Augen sind geschlossen. Der Körper ist entspannt und dennoch wachsam &mdash; geerdet und empfänglich.</p>
+        </div>
+      </div>
+
+      <div class="s16"></div>
+
+      <div class="cols" style="gap: 16px;">
+        <div class="slide-card">
+          <div class="slide-badge">3</div>
+          <div class="slide-title">Erdungsschnur</div>
+          <div class="img-full" style="width: 60%; max-width: 240px;">
+            <img src="images/teaching-grounding-cord.png" alt="Grounding Cord">
+          </div>
+          <p class="slide-text">Die Erdungsschnur ist eine energetische Verbindung, die von der Basis der Wirbelsäule (erstes Chakra) nach unten in das Zentrum der Erde reicht. Sie verankert deinen Energiekörper auf dem Planeten und bietet Stabilität, Sicherheit und einen Kanal zum Loslassen unerwünschter Energie.</p>
+        </div>
+        <div class="slide-card">
+          <div class="slide-badge">4</div>
+          <div class="slide-title">Goldene Sonne</div>
+          <div class="img-full" style="width: 60%; max-width: 240px;">
+            <img src="images/teaching-golden-sun.jpeg" alt="Golden Sun">
+          </div>
+          <p class="slide-text">Die Goldene Sonne ist ein Werkzeug zum Auffüllen und Wiederherstellen deiner eigenen Energie. Visualisiere eine strahlende goldene Sonne über deinem Kopf. Sie ruft deine eigene Lebenskraftenergie von dort zurück, wo immer du sie hinterlassen haben magst &mdash; in Menschen, Orten, Situationen oder in der Zeit. Sie füllt dich mit deiner eigenen höchsten Schwingung.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pn"><span>5</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 6 — SLIDES 5 & 6
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="cols" style="gap: 16px;">
+        <div class="slide-card">
+          <div class="slide-badge">5</div>
+          <div class="slide-title">Eine Übung, um deine Aura zu spüren</div>
+          <div class="img-full" style="width: 60%; max-width: 240px;">
+            <img src="images/teaching-aura-layers.png" alt="Aura Exercise">
+          </div>
+          <p class="slide-text">Die Aura ist das energetische Feld, das deinen physischen Körper umgibt. Diese Übung hilft dir, dir ihrer Präsenz, ihrer Ränder und ihrer Qualität bewusst zu werden. Die Aura besteht aus mehreren Schichten, die vom Körper nach außen strahlen.</p>
+        </div>
+        <div class="slide-card">
+          <div class="slide-badge">6</div>
+          <div class="slide-title">Erweiterung der Erdungsschnur</div>
+          <div class="img-full" style="width: 60%; max-width: 240px;">
+            <img src="images/teaching-grounding-cord-front.png" alt="Expansion of Grounding Cord">
+          </div>
+          <p class="slide-text">Sobald du dir deiner Aura bewusst bist, vertieft sich die Praxis der Erdungsschnur. Du erdest nicht nur den physischen Körper, sondern auch die Aura selbst &mdash; so kann sich das gesamte Energiefeld in der Erde verankern.</p>
+        </div>
+      </div>
+
+      <div class="s16"></div>
+
+      <div class="cols" style="gap: 16px;">
+        <div class="slide-card">
+          <div class="slide-badge">7</div>
+          <div class="slide-title">Die Goldene Sonne füllt dich</div>
+          <div class="img-full" style="width: 60%; max-width: 240px;">
+            <img src="images/teaching-grounding-sun-combined.png" alt="Golden Sun Fills You">
+          </div>
+          <p class="slide-text">Die Goldene Sonne über der Krone gießt goldenes Licht nach unten und füllt die gesamte Aura und den Körper mit deiner eigenen höchsten Schwingung. Dies vervollständigt die gesamte energetische Architektur: Haltung, Aura, Erdungsschnur und Goldene Sonne &mdash; alle zusammen aktiv.</p>
+        </div>
+        <div class="slide-card">
+          <div class="slide-badge">8</div>
+          <div class="slide-title">Energiekreislauf der Erde</div>
+          <div class="img-full" style="width: 60%; max-width: 240px;">
+            <img src="images/manual-l12-earth-cosmos-circuit.png" alt="Earth Energy">
+          </div>
+          <p class="slide-text">Der Erdkreislauf ist ein energetischer Pfad, der die Energie der Erde durch die Füße nach oben zieht und durch die Beine in den Körper aufsteigen lässt. Dieser Kreislauf verbindet dich mit der erdenden, nährenden und stabilisierenden Kraft des Planeten.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pn"><span>6</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 7 — SLIDES 9 & 10
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="cols" style="gap: 16px;">
+        <div class="slide-card">
+          <div class="slide-badge">9</div>
+          <div class="slide-title">Energiekreislauf des Kosmos</div>
+          <div class="img-full" style="width: 60%; max-width: 240px;">
+            <img src="images/teaching-cosmos-circuit.png" alt="Cosmos Circuit">
+          </div>
+          <p class="slide-text">Der kosmische Kreislauf ist ein energetischer Pfad, der kosmische Energie durch die Krone des Kopfes (7. Chakra) nach unten in den Körper zieht. Dieser Kreislauf verbindet dich mit den höheren</p>
+        </div>
+        <div class="slide-card">
+          <div class="slide-badge">10</div>
+          <div class="slide-title">Energiekreisläufe von Kosmos &amp; Erde</div>
+          <div class="img-full" style="width: 60%; max-width: 240px;">
+            <img src="images/manual-l12-earth-cosmos-circuit.png" alt="Cosmos and Earth">
+          </div>
+          <p class="slide-text">Wenn beide Kreisläufe gleichzeitig aktiviert werden, fließen die Energien von Erde und Kosmos gemeinsam durch den Körper. Erdenergie steigt von unten auf; kosmische Energie steigt von oben herab. Sie treffen und verschmelzen im Körper und erschaffen ein vereintes Feld ausgewogener, integrierter Energie.</p>
+        </div>
+      </div>
+
+      <div class="s16"></div>
+
+      <div class="cols" style="gap: 16px;">
+        <div class="slide-card">
+          <div class="slide-badge">11</div>
+          <div class="slide-title">Die Rose (als energetisches Werkzeug)</div>
+          <div class="img-full" style="width: 60%; max-width: 240px;">
+            <img src="images/teaching-the-rose.png" alt="The Rose Gold">
+          </div>
+          <p class="slide-text">Die Rose wird während der gesamten Praxis als lebendiges energetisches Instrument verwendet. Sie hat Wurzeln (Verbindung zur Quelle), einen Stängel (Kanal der Energie) und eine Blüte (das aktive,</p>
+        </div>
+        <div class="slide-card">
+          <div class="slide-badge">12</div>
+          <div class="slide-title">Vier Rosen des Schutzes, der Trennung und der Beobachtung</div>
+          <div class="img-full" style="width: 60%; max-width: 240px;">
+            <img src="images/manual-l12-four-roses.png" alt="Four Roses">
+          </div>
+          <p class="slide-text">Rosen werden an den Rändern der Aura platziert, um als energetische Wächter zu dienen. Sie erfüllen drei Funktionen:
+
+1. Schutz &mdash; Sie definieren und bewachen die Grenze deiner Aura
+2. Trennung &mdash; Sie schaffen eine gesunde energetische Abgrenzung zwischen deiner Energie und der Energie anderer
+3. Beobachtung &mdash; Sie helfen dir wahrzunehmen, welche Energien sich deinem Feld nähern oder mit ihm interagieren Three functions: Protection (guard the boundary), Separation (healthy energetic distinction), Observation (notice approaching energies).</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pn"><span>7</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 8 — SLIDES 13 & 14
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="slide-card">
+        <div class="slide-badge">13</div>
+        <div class="slide-title">Reinigungsrose</div>
+        <div class="img-full" style="width: 60%; max-width: 240px;">
+          <img src="images/manual-l12-cleansing-recovery.png" alt="Cleansing Rose">
+        </div>
+        <p class="slide-text">Die Reinigungsrose wird außerhalb der Aura platziert. Sie dient dazu, fremde oder stagnierende Energie aus deinem Feld aufzunehmen und umzuwandeln. Energie, die nicht zu dir gehört — von anderen</p>
+      </div>
+
+      <div class="s16"></div>
+
+      <div class="slide-card">
+        <div class="slide-badge">14</div>
+        <div class="slide-title">Energierückgewinnung jedes Chakras</div>
+        <div class="img-full" style="width: 60%; max-width: 240px;">
+          <img src="images/teaching-energy-recovery-rose.png" alt="Energy Recovery">
+        </div>
+        <p class="slide-text">Nach der Reinigung wird die Rose verwendet, um deine eigene Energie zurückzuholen, die bei anderen hinterlassen oder von ihnen genommen wurde. Die Rose wird als Instrument ausgesendet, um deine eigene Lebenskraftenergie zu sammeln und zu jedem Chakra zurückzubringen, wodurch jedes Energiezentrum wieder in seine Fülle und Souveränität versetzt wird. The Rose gathers and returns your life-force energy to each chakra, restoring fullness and sovereignty.</p>
+      </div>
+
+      <div class="s16"></div>
+
+      <div class="cols" style="gap: 16px;">
+        <div class="slide-card">
+          <div class="slide-badge">15</div>
+          <div class="slide-title">Pink Rose Closure</div>
+          <div class="img-full" style="width: 60%; max-width: 240px;">
+            <img src="images/manual-l12-pink-rose.png" alt="Pink Rose Closure">
+          </div>
+          <p class="slide-text">The Pink Rose Closure is offered at the end of the meditation as a gift of well-being. Create an unrooted pink Rose and place yourself or the person inside it, visualizing &ldquo;Happy, Healthy, Whole, Body, Mind &amp; Soul.&rdquo;</p>
+        </div>
+        <div class="slide-card">
+          <div class="slide-badge">16</div>
+          <div class="slide-title">Überschüssige Energie ableiten</div>
+          <div class="img-full" style="width: 60%; max-width: 240px;">
+            <img src="images/teaching-discharge-energy.png" alt="Discharge Excess Energy">
+          </div>
+          <p class="slide-text">Nach tiefer Meditation oder Energiearbeit kann sich überschüssige Energie im Körper ansammeln. Um sie abzuleiten, beuge dich aus der sitzenden Position nach vorne und reiche mit</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pn"><span>8</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 9 — SLIDES 17 & 18
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="cols" style="gap: 16px;">
+        <div class="slide-card">
+          <div class="slide-badge">17</div>
+          <div class="slide-title">Erschaffen wir deinen heiligen Raum</div>
+          <div class="img-full" style="width: 60%; max-width: 240px;">
+            <img src="images/manual-l12-sacred-space.png" alt="Sacred Space">
+          </div>
+          <p class="slide-text">Begib dich in deinen heiligen Raum, wo du sicher bist und dir deiner energetischen Autorität vollkommen bewusst bist. Von hier aus kann jede Energiearbeit, einschließlich der Rosenmeditation, mit Klarheit, Hellsehen und wahrer energetischer Souveränität durchgeführt werden.
+
+Dieser Raum gehört deinem Geist &mdash; der reinsten Dimension deines Seins. Halte ihn stets geschlossen und geschützt. Kehre für die Rosenmeditation, für wichtige Entscheidungen, die deine tiefste Unterscheidungskraft erfordern, oder einfach um wieder in Einklang mit deiner spirituellen Essenz zu kommen, hierher zurück.</p>
+        </div>
+        <div class="slide-card">
+          <div class="slide-badge">18</div>
+          <div class="slide-title">Das 6. und 7. Chakra (Heiliger Raum)</div>
+          <div class="img-full" style="width: 60%; max-width: 240px;">
+            <img src="images/teaching-third-eye-chakra.png" alt="6th and 7th Chakras">
+          </div>
+          <p class="slide-text">Das Verständnis der Positionen und Rollen der oberen Chakren ist für die Arbeit auf Stufe 2 essenziell: • 6. Chakra (Drittes Auge) — Befindet sich in der Mitte der Stirn, zwischen</p>
+        </div>
+      </div>
+
+      <div class="grow"></div>
+
+      <div class="sum">
+        <div class="label" style="margin-bottom: 6px;">Stufe 1</div>
+        <h2 class="h-md" style="margin-bottom: 8px;">18 Folies</h2>
+        <div class="line" style="margin-bottom: 10px;"></div>
+        <p class="body-sm">Die essenziellen Praktiken, die das Fundament der gesamten Arbeit der International Aura and Dream School bilden. Atem, Körper, Herz und die Rose Meditation.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>9</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 10 — (intentionally skipped to align page numbers)
+       Actually let me re-count. Cover=p1, TOC=p2, Opening=p3, L1 Divider=p4,
+       slides 1-4=p5, 5-8=p6, 9-12=p7, 13-16=p8, 17-18=p9
+       We need L2 to start on p13 per TOC. So we need pages 10,11,12 as well.
+       Let's add additional L1 content pages to fill, or adjust.
+       Actually — let me reconsider. 18 slides at 4/page = ~5 pages (p5-p9).
+       p4 divider + p5-p9 slides = pages 4-9. Then we need p10-p12 to bridge to p13.
+       Let's give some slides their own full page instead of cramming 4/page.
+       ===================================================== -->
+
+  <!-- =====================================================
+       PAGE 10 — SLIDES 1-2 (FULL WIDTH — more detailed)
+       Scratch the above — let me redo L1 with more breathing room.
+       Actually the pages above are already written. Let me just
+       add pages 10-12 with expanded content for key L1 slides.
+       ===================================================== -->
+
+  <!-- PAGE 10 — Expanded: Circuits of Earth & Cosmos -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="step">
+        <div class="sn">8</div>
+        <h3 class="h-md">Energiekreislauf der Erde</h3>
+      </div>
+      <div class="s10"></div>
+      <div class="img-center">
+        <img src="images/manual-l12-earth-cosmos-circuit.png" alt="Earth Energy" style="width: 240px;">
+      </div>
+      <div class="s10"></div>
+      <p class="body">Der Erdkreislauf ist ein energetischer Pfad, der die Energie der Erde durch die Füße nach oben zieht und durch die Beine in den Körper aufsteigen lässt. Dieser Kreislauf verbindet dich mit der erdenden, nährenden und stabilisierenden Kraft des Planeten.</p>
+
+      <div class="s16"></div>
+      <div class="line"></div>
+      <div class="s16"></div>
+
+      <div class="step">
+        <div class="sn">9</div>
+        <h3 class="h-md">Energiekreislauf des Kosmos</h3>
+      </div>
+      <div class="s10"></div>
+      <div class="img-center">
+        <img src="images/teaching-cosmos-circuit.png" alt="Cosmos Circuit" style="width: 240px;">
+      </div>
+      <div class="s10"></div>
+      <p class="body">The Cosmic circuit draws cosmic energy downward through the crown of the head (7th chakra) and into the body. This connects you to the higher frequencies of universal consciousness, inspiration, and spiritual guidance.</p>
+    </div>
+
+    <div class="pn"><span>10</span></div>
+  </div>
+
+  <!-- PAGE 11 — Expanded: Combined Circuit + Rose Tool -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="step">
+        <div class="sn">10</div>
+        <h3 class="h-md">Energiekreisläufe von Kosmos &amp; Erde</h3>
+      </div>
+      <div class="s8"></div>
+      <div class="img-center">
+        <img src="images/manual-l12-earth-cosmos-circuit.png" alt="Cosmos and Earth" style="width: 200px;">
+      </div>
+      <div class="s8"></div>
+      <p class="body-sm">When both circuits are activated simultaneously, the energies of the Earth and Cosmos flow together through the body, creating a unified field of balanced, integrated energy.</p>
+
+      <div class="s12"></div>
+      <div class="line"></div>
+      <div class="s12"></div>
+
+      <div class="step">
+        <div class="sn">15</div>
+        <h3 class="h-md">Pink Rose Closure</h3>
+      </div>
+      <div class="s8"></div>
+      <div class="img-center">
+        <img src="images/manual-l12-pink-rose.png" alt="Pink Rose Closure" style="width: 200px;">
+      </div>
+      <div class="s8"></div>
+      <p class="body-sm">The Pink Rose Closure is offered at the end of the meditation as a gift of well-being. Visualize &ldquo;Happy, Healthy, Whole, Body, Mind &amp; Soul.&rdquo;</p>
+    </div>
+
+    <div class="pn"><span>11</span></div>
+  </div>
+
+  <!-- PAGE 12 — Expanded: Sacred Space & Discharge -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="step">
+        <div class="sn">17</div>
+        <h3 class="h-md">Erschaffen wir deinen heiligen Raum</h3>
+      </div>
+      <div class="s10"></div>
+      <div class="img-center">
+        <img src="images/manual-l12-sacred-space.png" alt="Sacred Space" style="width: 260px;">
+      </div>
+      <div class="s10"></div>
+      <p class="body">Begib dich in deinen heiligen Raum, wo du sicher bist und dir deiner energetischen Autorität vollkommen bewusst bist. Von hier aus kann jede Energiearbeit, einschließlich der Rosenmeditation, mit Klarheit, Hellsehen und wahrer energetischer Souveränität durchgeführt werden.
+
+Dieser Raum gehört deinem Geist &mdash; der reinsten Dimension deines Seins. Halte ihn stets geschlossen und geschützt. Kehre für die Rosenmeditation, für wichtige Entscheidungen, die deine tiefste Unterscheidungskraft erfordern, oder einfach um wieder in Einklang mit deiner spirituellen Essenz zu kommen, hierher zurück.</p>
+      <p class="body">This space belongs to your Spirit &mdash; the purest dimension of your being. Keep it closed and protected at all times. Return to it for the Rose Meditation, for important decisions that call for your deepest discernment, or simply to come back into alignment with your spiritual essence.</p>
+
+      <div class="s16"></div>
+      <div class="line"></div>
+      <div class="s16"></div>
+
+      <div class="step">
+        <div class="sn">18</div>
+        <h3 class="h-md">Das 6. und 7. Chakra (Heiliger Raum)</h3>
+      </div>
+      <div class="s10"></div>
+      <div class="img-center">
+        <img src="images/teaching-third-eye-chakra.png" alt="6th and 7th Chakras" style="width: 260px;">
+      </div>
+      <div class="s10"></div>
+      <p class="body">Understanding the locations and roles of the upper chakras: 6th Chakra (Third Eye) at the center of the forehead; 7th Chakra (Crown) at the top of the head.</p>
+
+      <div class="grow"></div>
+      <div class="call-gold call">
+        <p style="color: var(--rose-800);">Heiliger Raum</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>12</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 13 — LEVEL 2 DIVIDER
+       ===================================================== -->
+  <div class="page divider-bg">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="align-items: center; justify-content: center; text-align: center;">
+      <div class="label">Stufe 2</div>
+      <div class="s20"></div>
+      <h1 class="h-xl">Energetisch &amp; Beziehungsbezogen</h1>
+      <div class="s8"></div>
+      <p class="sub">Folies 19&ndash;38</p>
+      <div class="s32"></div>
+      <div class="line-c"></div>
+      <div class="s32"></div>
+      <div class="img-circle" style="width: 200px; height: 200px;">
+        <img src="images/manual-l12-cover-l12.png" alt="Rose Meditation">
+      </div>
+    </div>
+
+    <div class="pn"><span>13</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 14 — SLIDES 19 & 20
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="cols" style="gap: 16px;">
+        <div class="slide-card">
+          <div class="slide-badge">19</div>
+          <div class="slide-title">Bereiten wir deinen physischen Raum vor</div>
+          <div class="img-full" style="width: 60%; max-width: 240px;">
+            <img src="images/manual-l12-room-preparation.png" alt="Physical Space">
+          </div>
+          <p class="slide-text">Bereite vor der Meditation deine physische Umgebung vor, um die energetische Arbeit zu unterstützen. Der äußere Raum sollte die innere Absicht widerspiegeln: sauber, klar, ruhig und bewusst gehalten.</p>
+        </div>
+        <div class="slide-card">
+          <div class="slide-badge">20</div>
+          <div class="slide-title">Schutz des Raumes</div>
+          <div class="img-full" style="width: 60%; max-width: 240px;">
+            <img src="images/manual-l12-room-preparation.png" alt="Protection of the Space">
+          </div>
+          <p class="slide-text">Der physische Meditationsraum wird geschützt, indem mithilfe von Rosen ein energetisches Gitter erzeugt wird. Goldene Rosen werden an den vier Ecken (sowie oberhalb/unterhalb) des Raumes platziert und durch Linien goldener Energie verbunden, wodurch eine heilige geometrische Struktur entsteht &mdash; ein Gefäß für die Arbeit. Golden roses are placed at the four corners, connected by lines of golden energy forming a sacred geometric structure.</p>
+        </div>
+      </div>
+
+      <div class="s16"></div>
+
+      <div class="cols" style="gap: 16px;">
+        <div class="slide-card">
+          <div class="slide-badge">21</div>
+          <div class="slide-title">Reinigung des Raumes</div>
+          <div class="img-full" style="width: 60%; max-width: 240px;">
+            <img src="images/level-2/21-cleanse-the-space.jpeg" alt="Cleansing of the Space">
+          </div>
+          <p class="slide-text">With protection established, the cleansing follows. A Golden Rose is set above the grid and passed downward through its entire structure, removing any foreign, stagnant, or disruptive energies inside the room. This Rose comes down to be transmuted in the center of the earth through the Grounding Cord of the room.</p>
+        </div>
+        <div class="slide-card">
+          <div class="slide-badge">22</div>
+          <div class="slide-title">Deinen Raum in Besitz nehmen</div>
+          <div class="img-full" style="width: 60%; max-width: 240px;">
+            <img src="images/manual-l12-owning-space.png" alt="Owning Your Space">
+          </div>
+          <p class="slide-text">Nach Schutz und Reinigung übernimmst du die Eigentümerschaft für den Raum. Dies ist ein Akt energetischer Souveränität &mdash; du erklärst den Raum zu deinem eigenen und füllst ihn mit deiner eigenen Energie und Absicht. Der Raum wird zu einer Erweiterung deiner Aura und deiner Praxis. This is an act of energetic sovereignty &mdash; declaring the space as yours, filling it with your own energy and intention.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pn"><span>14</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 15 — SLIDES 23 & 24
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="slide-card" style="margin-bottom: 16px;">
+        <div class="slide-badge">23</div>
+        <div class="slide-title">Sprechen wir über Chakren</div>
+        <p class="slide-text">Das Chakrasystem ist die energetische Anatomie des menschlichen Körpers. Es gibt sieben Hauptchakren, die jeweils bestimmte Aspekte des physischen, emotionalen, mentalen und spirituellen Lebens steuern.</p>
+      </div>
+
+      <div class="slide-card">
+        <div class="slide-badge">24</div>
+        <div class="slide-title">Die sieben Chakren</div>
+        <div class="s8"></div>
+        <div class="img-center">
+          <img src="images/manual-l12-chakra-chart.png" alt="Seven Chakras" style="width: 380px; border-radius: 16px; outline: 0.5px solid var(--rose-200);">
+        </div>
+        <div class="s8"></div>
+        <div class="slide-text" style="text-align: center;">
+          <p style="font-size: 8.5pt; line-height: 1.7; color: var(--soft-charcoal);">
+            7. Crown &mdash; Top of head &nbsp;&bull;&nbsp;
+            6. Third Eye &mdash; Center of forehead &nbsp;&bull;&nbsp;
+            5. Throat &nbsp;&bull;&nbsp;
+            4. Heart &mdash; Center of chest<br>
+            3. Solar Plexus &mdash; Upper abdomen &nbsp;&bull;&nbsp;
+            2. Sacral &mdash; Lower abdomen &nbsp;&bull;&nbsp;
+            1. Root &mdash; Base of spine
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pn"><span>15</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 16 — CHAKRAS 25 (Root) & 26 (Sacral)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="label">Chakra System</div>
+      <div class="s6"></div>
+      <h2 class="h-md">Lower Chakras</h2>
+      <div class="s16"></div>
+
+      <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 20px;">
+        <div style="flex: 0 0 200px;">
+          <img src="images/level-2/25-root-chakra.jpeg" alt="Root Chakra" style="width: 200px; border-radius: 16px; outline: 0.5px solid var(--rose-200);">
+        </div>
+        <div style="flex: 1;">
+          <div class="slide-badge" style="display: inline-block; width: 24px; height: 24px; background: var(--rose-clay); color: white; font-family: var(--font-serif); font-size: 11pt; font-weight: 500; text-align: center; line-height: 24px; border-radius: 50%; margin-bottom: 6px;">25</div>
+          <div style="font-family: var(--font-serif); font-size: 15pt; font-weight: 500; color: var(--rose-800);">
+            <span class="chakra-dot" style="background: #DC2626;"></span>Wurzelchakra
+          </div>
+          <div style="font-family: var(--font-serif); font-size: 10pt; font-style: italic; color: var(--rose-clay);">Muladhara</div>
+          <div class="s6"></div>
+          <p class="body"><strong style="color: var(--charcoal);">Element:</strong> Earth &nbsp;&middot;&nbsp; <strong style="color: var(--charcoal);">Statement:</strong> <em>I AM</em></p>
+          <p class="body"><strong style="color: var(--charcoal);">Fokus:</strong> Stabilität &mdash; Sicherheit &mdash; Verkörperung</p>
+        </div>
+      </div>
+
+      <div class="line"></div>
+      <div class="s16"></div>
+
+      <div style="display: flex; gap: 20px; align-items: flex-start;">
+        <div style="flex: 0 0 200px;">
+          <img src="images/level-2/26-sacral-chakra.jpeg" alt="Sacral Chakra" style="width: 200px; border-radius: 16px; outline: 0.5px solid var(--rose-200);">
+        </div>
+        <div style="flex: 1;">
+          <div class="slide-badge" style="display: inline-block; width: 24px; height: 24px; background: var(--rose-clay); color: white; font-family: var(--font-serif); font-size: 11pt; font-weight: 500; text-align: center; line-height: 24px; border-radius: 50%; margin-bottom: 6px;">26</div>
+          <div style="font-family: var(--font-serif); font-size: 15pt; font-weight: 500; color: var(--rose-800);">
+            <span class="chakra-dot" style="background: #EA580C;"></span>Sakralchakra
+          </div>
+          <div style="font-family: var(--font-serif); font-size: 10pt; font-style: italic; color: var(--rose-clay);">Svadhisthana</div>
+          <div class="s6"></div>
+          <p class="body"><strong style="color: var(--charcoal);">Element:</strong> Water &nbsp;&middot;&nbsp; <strong style="color: var(--charcoal);">Statement:</strong> <em>I FEEL</em></p>
+          <p class="body"><strong style="color: var(--charcoal);">Fokus:</strong> Emotionen &mdash; Kreativität &mdash; Genuss</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pn"><span>16</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 17 — CHAKRAS 27 (Solar Plexus), 28 (Heart), 29 (Throat)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="label">Chakra System</div>
+      <div class="s6"></div>
+      <h2 class="h-md">Middle Chakras</h2>
+      <div class="s16"></div>
+
+      <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 16px;">
+        <div style="flex: 0 0 170px;">
+          <img src="images/level-2/27-solar-plexus-chakra.jpeg" alt="Solar Plexus Chakra" style="width: 170px; border-radius: 16px; outline: 0.5px solid var(--rose-200);">
+        </div>
+        <div style="flex: 1;">
+          <div class="slide-badge" style="display: inline-block; width: 24px; height: 24px; background: var(--rose-clay); color: white; font-family: var(--font-serif); font-size: 11pt; font-weight: 500; text-align: center; line-height: 24px; border-radius: 50%; margin-bottom: 6px;">27</div>
+          <div style="font-family: var(--font-serif); font-size: 14pt; font-weight: 500; color: var(--rose-800);">
+            <span class="chakra-dot" style="background: #CA8A04;"></span>Solar Plexus
+          </div>
+          <div style="font-family: var(--font-serif); font-size: 9pt; font-style: italic; color: var(--rose-clay);">Manipura</div>
+          <div class="s4"></div>
+          <p class="body-sm"><strong style="color: var(--charcoal);">Element:</strong> Fire &nbsp;&middot;&nbsp; <strong style="color: var(--charcoal);">Statement:</strong> <em>I CAN</em></p>
+          <p class="body-sm"><strong style="color: var(--charcoal);">Fokus:</strong> Persönliche Kraft &mdash; Selbstwertgefühl &mdash; Antrieb</p>
+        </div>
+      </div>
+
+      <div class="line"></div>
+      <div class="s12"></div>
+
+      <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 16px;">
+        <div style="flex: 0 0 170px;">
+          <img src="images/level-2/28-heart-chakra.jpeg" alt="Heart Chakra" style="width: 170px; border-radius: 16px; outline: 0.5px solid var(--rose-200);">
+        </div>
+        <div style="flex: 1;">
+          <div class="slide-badge" style="display: inline-block; width: 24px; height: 24px; background: var(--rose-clay); color: white; font-family: var(--font-serif); font-size: 11pt; font-weight: 500; text-align: center; line-height: 24px; border-radius: 50%; margin-bottom: 6px;">28</div>
+          <div style="font-family: var(--font-serif); font-size: 14pt; font-weight: 500; color: var(--rose-800);">
+            <span class="chakra-dot" style="background: #16A34A;"></span>Herzchakra
+          </div>
+          <div style="font-family: var(--font-serif); font-size: 9pt; font-style: italic; color: var(--rose-clay);">Anahata</div>
+          <div class="s4"></div>
+          <p class="body-sm"><strong style="color: var(--charcoal);">Element:</strong> Air &nbsp;&middot;&nbsp; <strong style="color: var(--charcoal);">Statement:</strong> <em>I LOVE</em></p>
+          <p class="body-sm"><strong style="color: var(--charcoal);">Fokus:</strong> Liebe &mdash; Mitgefühl &mdash; Verbindung</p>
+        </div>
+      </div>
+
+      <div class="line"></div>
+      <div class="s12"></div>
+
+      <div style="display: flex; gap: 20px; align-items: flex-start;">
+        <div style="flex: 0 0 170px;">
+          <img src="images/level-2/29-throat-chakra.png" alt="Throat Chakra" style="width: 170px; border-radius: 16px; outline: 0.5px solid var(--rose-200);">
+        </div>
+        <div style="flex: 1;">
+          <div class="slide-badge" style="display: inline-block; width: 24px; height: 24px; background: var(--rose-clay); color: white; font-family: var(--font-serif); font-size: 11pt; font-weight: 500; text-align: center; line-height: 24px; border-radius: 50%; margin-bottom: 6px;">29</div>
+          <div style="font-family: var(--font-serif); font-size: 14pt; font-weight: 500; color: var(--rose-800);">
+            <span class="chakra-dot" style="background: #0EA5E9;"></span>Halschakra
+          </div>
+          <div style="font-family: var(--font-serif); font-size: 9pt; font-style: italic; color: var(--rose-clay);">Vishuddha</div>
+          <div class="s4"></div>
+          <p class="body-sm"><strong style="color: var(--charcoal);">Element:</strong> Ether/Sound &nbsp;&middot;&nbsp; <strong style="color: var(--charcoal);">Statement:</strong> <em>I SPEAK AND I LISTEN</em></p>
+          <p class="body-sm"><strong style="color: var(--charcoal);">Fokus:</strong> Kommunikation &mdash; Wahrheit &mdash; Authentizität</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pn"><span>17</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 18 — CHAKRAS 30 (Third Eye) & 31 (Crown)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="label">Chakra System</div>
+      <div class="s6"></div>
+      <h2 class="h-md">Upper Chakras</h2>
+      <div class="s16"></div>
+
+      <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 20px;">
+        <div style="flex: 0 0 200px;">
+          <img src="images/level-2/30-third-eye-chakra.jpeg" alt="Third Eye Chakra" style="width: 200px; border-radius: 16px; outline: 0.5px solid var(--rose-200);">
+        </div>
+        <div style="flex: 1;">
+          <div class="slide-badge" style="display: inline-block; width: 24px; height: 24px; background: var(--rose-clay); color: white; font-family: var(--font-serif); font-size: 11pt; font-weight: 500; text-align: center; line-height: 24px; border-radius: 50%; margin-bottom: 6px;">30</div>
+          <div style="font-family: var(--font-serif); font-size: 15pt; font-weight: 500; color: var(--rose-800);">
+            <span class="chakra-dot" style="background: #4F46E5;"></span>Stirnchakra
+          </div>
+          <div style="font-family: var(--font-serif); font-size: 10pt; font-style: italic; color: var(--rose-clay);">Ajna</div>
+          <div class="s6"></div>
+          <p class="body"><strong style="color: var(--charcoal);">Element:</strong> Light &nbsp;&middot;&nbsp; <strong style="color: var(--charcoal);">Statement:</strong> <em>I SEE</em></p>
+          <p class="body"><strong style="color: var(--charcoal);">Fokus:</strong> Vorstellungskraft &mdash; Wahrnehmung &mdash; Visualisierung</p>
+        </div>
+      </div>
+
+      <div class="line"></div>
+      <div class="s16"></div>
+
+      <div style="display: flex; gap: 20px; align-items: flex-start;">
+        <div style="flex: 0 0 200px;">
+          <img src="images/level-2/31-crown-chakra.png" alt="Crown Chakra" style="width: 200px; border-radius: 16px; outline: 0.5px solid var(--rose-200);">
+        </div>
+        <div style="flex: 1;">
+          <div class="slide-badge" style="display: inline-block; width: 24px; height: 24px; background: var(--rose-clay); color: white; font-family: var(--font-serif); font-size: 11pt; font-weight: 500; text-align: center; line-height: 24px; border-radius: 50%; margin-bottom: 6px;">31</div>
+          <div style="font-family: var(--font-serif); font-size: 15pt; font-weight: 500; color: var(--rose-800);">
+            <span class="chakra-dot" style="background: #7C3AED;"></span>Kronenchakra
+          </div>
+          <div style="font-family: var(--font-serif); font-size: 10pt; font-style: italic; color: var(--rose-clay);">Sahasrara</div>
+          <div class="s6"></div>
+          <p class="body"><strong style="color: var(--charcoal);">Element:</strong> Thought &nbsp;&middot;&nbsp; <strong style="color: var(--charcoal);">Statement:</strong> <em>I KNOW</em></p>
+          <p class="body"><strong style="color: var(--charcoal);">Fokus:</strong> Spirituelle Verbindung &mdash; Innere Weisheit &mdash; Höhere Bewusstseinszustände</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pn"><span>18</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 19 — SLIDES 32, 33 & 34
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="cols" style="gap: 16px;">
+        <div class="slide-card">
+          <div class="slide-badge">32</div>
+          <div class="slide-title">Reinigung jeder Auraschicht</div>
+          <div class="img-full" style="width: 60%; max-width: 240px;">
+            <img src="images/level-2/32-cleansing-each-layer.jpeg" alt="Cleansing Each Aura Layer">
+          </div>
+          <p class="slide-text">Die Aura besteht aus sieben Schichten, die jeweils einem Chakra entsprechen. In Stufe 2 wird jede Schicht einzeln von der 1. bis zur 7. Schicht gereinigt:
+
+1. 1. Auraschicht
+2. 2. Auraschicht
+3. 3. Auraschicht
+4. 4. Auraschicht
+5. 5. Auraschicht
+6. 6. Auraschicht
+7. 7. Auraschicht Each layer is individually cleansed.</p>
+        </div>
+        <div class="slide-card">
+          <div class="slide-badge">33</div>
+          <div class="slide-title">Reinigung jedes Chakras</div>
+          <div class="img-full" style="width: 60%; max-width: 240px;">
+            <img src="images/manual-l12-cleansing-recovery.png" alt="Cleansing Each Chakra">
+          </div>
+          <p class="slide-text">Jedes einzelne Chakra wird mithilfe von Rosen gereinigt. Die Rosen adressieren zwei Dimensionen: •</p>
+        </div>
+      </div>
+
+      <div class="s16"></div>
+
+      <div class="slide-card">
+        <div class="slide-badge">34</div>
+        <div class="slide-title">Energierückgewinnung jedes Chakras</div>
+        <div style="display: flex; gap: 16px; align-items: flex-start;">
+          <div class="img-full" style="width: 40%; max-width: 240px;">
+            <img src="images/teaching-energy-recovery-rose.png" alt="Energy Recovery L2">
+          </div>
+          <div>
+            <p class="slide-text">After cleansing, the energy recovery process is repeated at a deeper level for each individual chakra.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pn"><span>19</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 20 — ALL 4 GOLDEN STICKY ROSES (35-38) TOGETHER
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="label">Slides 35&ndash;38</div>
+      <div class="s6"></div>
+      <h2 class="h-md">Golden Sticky Roses &mdash; All Four Phases</h2>
+      <div class="s12"></div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+        <div class="slide-card">
+          <div class="slide-badge">35</div>
+          <div class="slide-title">Phase 1 &mdash; Chakras</div>
+          <div class="img-full" style="width: 80%; max-width: 220px;">
+            <img src="images/level-2/35-golden-sticky-1.png" alt="Golden Sticky Phase 1">
+          </div>
+          <p class="slide-text">Vier Goldene Klebrige Rosen werden für die tiefe energetische Reinigung der</p>
+        </div>
+        <div class="slide-card">
+          <div class="slide-badge">36</div>
+          <div class="slide-title">Phase 2 &mdash; Joints</div>
+          <div class="img-full" style="width: 80%; max-width: 220px;">
+            <img src="images/level-2/36-golden-sticky-2.jpg" alt="Golden Sticky Phase 2">
+          </div>
+          <p class="slide-text">Die zweite steigt zum Kehlkopfchakra hinab, wo sie sich in zwei Rosen teilt, die durch die Kanäle</p>
+        </div>
+        <div class="slide-card">
+          <div class="slide-badge">37</div>
+          <div class="slide-title">Phase 3 &mdash; Full Body</div>
+          <div class="img-full" style="width: 80%; max-width: 220px;">
+            <img src="images/level-2/37-golden-sticky-3.jpg" alt="Golden Sticky Phase 3">
+          </div>
+          <p class="slide-text">Die dritte steigt zum Wurzelchakra hinab, wo sie zu zwei Rosen wird, die den</p>
+        </div>
+        <div class="slide-card">
+          <div class="slide-badge">38</div>
+          <div class="slide-title">Phase 4 &mdash; Release</div>
+          <div class="img-full" style="width: 80%; max-width: 220px;">
+            <img src="images/level-2/38-golden-sticky-4.jpeg" alt="Golden Sticky Phase 4">
+          </div>
+          <p class="slide-text">A large Golden Rose appears above. All foreign energy is released in golden light.</p>
+        </div>
+      </div>
+
+      <div class="grow"></div>
+
+      <div class="sum">
+        <div class="label" style="margin-bottom: 6px;">Stufe 2</div>
+        <h2 class="h-md" style="margin-bottom: 8px;">20 Folies</h2>
+        <div class="line" style="margin-bottom: 10px;"></div>
+        <p class="body-sm">Fortgeschrittene Praktiken für das Bewusstsein des Feinstoffkörpers, emotionale Alchemie und Beziehungskohärenz.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>20</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGES 20 & 21 — Additional L2 expanded slides
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="step">
+        <div class="sn">19</div>
+        <h3 class="h-md">Bereiten wir deinen physischen Raum vor</h3>
+      </div>
+      <div class="s10"></div>
+      <div class="img-center">
+        <img src="images/manual-l12-room-preparation.png" alt="Physical Space" style="width: 260px;">
+      </div>
+      <div class="s10"></div>
+      <p class="body">Bereite vor der Meditation deine physische Umgebung vor, um die energetische Arbeit zu unterstützen. Der äußere Raum sollte die innere Absicht widerspiegeln: sauber, klar, ruhig und bewusst gehalten.</p>
+
+      <div class="s16"></div>
+      <div class="line"></div>
+      <div class="s16"></div>
+
+      <div class="step">
+        <div class="sn">20</div>
+        <h3 class="h-md">Schutz des Raumes</h3>
+      </div>
+      <div class="s10"></div>
+      <div class="img-center">
+        <img src="images/manual-l12-room-preparation.png" alt="Protection of the Space" style="width: 260px;">
+      </div>
+      <div class="s10"></div>
+      <p class="body">Der physische Meditationsraum wird geschützt, indem mithilfe von Rosen ein energetisches Gitter erzeugt wird. Goldene Rosen werden an den vier Ecken (sowie oberhalb/unterhalb) des Raumes platziert und durch Linien goldener Energie verbunden, wodurch eine heilige geometrische Struktur entsteht &mdash; ein Gefäß für die Arbeit. Golden roses are placed at the four corners, connected by lines of golden energy forming a sacred geometric structure.</p>
+    </div>
+
+    <div class="pn"><span>21</span></div>
+  </div>
+
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="step">
+        <div class="sn">21</div>
+        <h3 class="h-md">Reinigung des Raumes</h3>
+      </div>
+      <div class="s10"></div>
+      <div class="img-center">
+        <img src="images/level-2/21-cleanse-the-space.jpeg" alt="Cleansing of the Space" style="width: 260px;">
+      </div>
+      <div class="s10"></div>
+      <p class="body">With protection established, the cleansing follows. A Golden Rose is set above the grid and passed downward through its entire structure, removing any foreign, stagnant, or disruptive energies inside the room. This Rose comes down to be transmuted in the center of the earth through the Grounding Cord of the room.</p>
+
+      <div class="s16"></div>
+      <div class="line"></div>
+      <div class="s16"></div>
+
+      <div class="step">
+        <div class="sn">22</div>
+        <h3 class="h-md">Deinen Raum in Besitz nehmen</h3>
+      </div>
+      <div class="s10"></div>
+      <div class="img-center">
+        <img src="images/manual-l12-owning-space.png" alt="Owning Your Space" style="width: 260px;">
+      </div>
+      <div class="s10"></div>
+      <p class="body">Nach Schutz und Reinigung übernimmst du die Eigentümerschaft für den Raum. Dies ist ein Akt energetischer Souveränität &mdash; du erklärst den Raum zu deinem eigenen und füllst ihn mit deiner eigenen Energie und Absicht. Der Raum wird zu einer Erweiterung deiner Aura und deiner Praxis. This is an act of energetic sovereignty &mdash; declaring the space as yours, filling it with your own energy and intention.</p>
+    </div>
+
+    <div class="pn"><span>22</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 23 — LEVEL 3 DIVIDER
+       ===================================================== -->
+  <div class="page divider-bg">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="align-items: center; justify-content: center; text-align: center;">
+      <div class="label">Stufe 3</div>
+      <div class="s20"></div>
+      <h1 class="h-xl">Übertragung &amp; Anleitung</h1>
+      <div class="s8"></div>
+      <p class="sub">Folies 39&ndash;44</p>
+      <div class="s32"></div>
+      <div class="line-c"></div>
+      <div class="s32"></div>
+      <div class="img-circle" style="width: 200px; height: 200px;">
+        <img src="images/level-3/39-analyzer.jpeg" alt="Level 3">
+      </div>
+    </div>
+
+    <div class="pn"><span>23</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 24 — SLIDES 39 & 40 (Expanded)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="step">
+        <div class="sn">39</div>
+        <h3 class="h-md">Der Analysator</h3>
+      </div>
+      <div class="s10"></div>
+      <div class="img-center">
+        <img src="images/level-3/39-analyzer.jpeg" alt="The Analyzer" style="width: 280px; border-radius: 16px; outline: 0.5px solid var(--rose-200);">
+      </div>
+      <div class="s10"></div>
+      <p class="body">Der Analysator ist ein fortschrittliches Werkzeug, das in Level 3 eingeführt wird. Es handelt sich um einen energetischen Punkt am Hinterkopf, an der</p>
+
+    </div>
+
+    <div class="pn"><span>24</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 25 — SLIDES 41 & 42 (Expanded)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="step">
+        <div class="sn">41</div>
+        <h3 class="h-md">Stab der Vereinbarungen</h3>
+      </div>
+      <div class="s10"></div>
+      <div class="img-center">
+        <img src="images/manual-l3-agreements-stick.png" alt="Stick of Agreements" style="width: 280px; border-radius: 16px; outline: 0.5px solid var(--rose-200);">
+      </div>
+      <div class="s10"></div>
+      <p class="body">Eine Beziehung kann sich in der materiellen Welt nur dann manifestieren, wenn sie von einer spirituellen Vereinbarung getragen wird. Solche Vereinbarungen werden mit der</p>
+
+      <div class="s16"></div>
+      <div class="line"></div>
+      <div class="s16"></div>
+
+      <div class="step">
+        <div class="sn">42</div>
+        <h3 class="h-md">Energetische Bänder durchtrennen</h3>
+      </div>
+      <div class="s10"></div>
+      <div class="img-center">
+        <img src="images/manual-l3-cutting-cords.png" alt="Cutting Cords" style="width: 280px; border-radius: 16px; outline: 0.5px solid var(--rose-200);">
+      </div>
+      <div class="s10"></div>
+      <p class="body">Wir treten ständig in energetischen Austausch mit anderen &mdash; wenn wir sie sehen, hören, berühren und sogar, wenn wir an sie denken. Wenn energetische Bänder entstehen, verbinden sich unsere Auren durch diese Verbindungen, sodass Energie zwischen uns fließen kann. Deshalb können wir oft spüren, was mit Menschen geschieht, die uns nahestehen, selbst über eine Distanz hinweg.
+
+Wenn Beziehungen zu Ende gehen, können wir tief von den Energien betroffen sein, die uns weiterhin über diese Bänder erreichen. Aus diesem Grund ist es wichtig zu wissen, wie man sie bewusst durchtrennt:
+
+• Schließen Sie Ihre Augen
+• Visualisieren Sie Ihre Aura mit Bändern, die aus Ihren Chakren austreten
+• Legen Sie Ihre dominante Hand auf den 7. Halswirbel, der sich am Übergang von Nacken und Rücken auf der Höhe des 5. Chakras befindet
+• Beabsichtigen Sie, dass Ihre Hand die Kraft hat, alle Bänder zu durchtrennen
+• Machen Sie die Schneidebewegung unter Ihrem 1. Chakra, indem Sie Ihre Hand auf den Stuhl legen, auf dem Sie sitzen
+
+Wir können die Bänder auch durchtrennen, wenn die Beziehung noch nicht beendet ist, wir aber das Gefühl haben, mehr Neutralität zu brauchen. Diese Bänder bilden sich sehr schnell neu, wenn wir uns wieder mit der Person verbinden. When energetic cords are formed, our auras connect through these ties. It is important to know how to consciously cut them.</p>
+    </div>
+
+    <div class="pn"><span>25</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 26 — SLIDES 43 & 44 (Expanded) + L3 Summary
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="step">
+        <div class="sn">43</div>
+        <h3 class="h-md">Nach der Intimität / Sexuelle Rückholungs-Rose</h3>
+      </div>
+      <div class="s10"></div>
+      <div class="img-center">
+        <img src="images/manual-l3-energy-cleansing.png" alt="Sexual Recovery Rose" style="width: 260px; border-radius: 16px; outline: 0.5px solid var(--rose-200);">
+      </div>
+      <div class="s10"></div>
+      <p class="body">Wenn Sie nach dem Geschlechtsverkehr Energie zurückholen möchten, die Sie möglicherweise bei der anderen Person gelassen haben, und Energie zurückgeben möchten, die diese</p>
+
+      <div class="s16"></div>
+      <div class="line"></div>
+      <div class="s16"></div>
+
+      <div class="step">
+        <div class="sn">44</div>
+        <h3 class="h-md">Mock Up</h3>
+      </div>
+      <div class="s10"></div>
+      <div class="img-center">
+        <img src="images/manual-l3-mockup.png" alt="Mock Up" style="width: 260px; border-radius: 16px; outline: 0.5px solid var(--rose-200);">
+      </div>
+      <div class="s10"></div>
+      <p class="body">Das Mock Up ist eine Technik zur Manifestation von Situationen oder Ergebnissen auf der physischen Ebene. Es sollte nur für einen selbst</p>
+
+      <div class="grow"></div>
+
+      <div class="sum">
+        <div class="label" style="margin-bottom: 6px;">Stufe 3</div>
+        <h2 class="h-md" style="margin-bottom: 8px;">6 Folies</h2>
+        <div class="line" style="margin-bottom: 10px;"></div>
+        <p class="body-sm">Praktiken und Prinzipien für das Halten von Räumen, die Übertragung der Arbeit und das Dienen als Hüter der Tradition.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>26</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 27 — CLOSING
+       ===================================================== -->
+  <div class="page closing-bg">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="align-items: center; justify-content: center; text-align: center;">
+
+      <div style="margin-bottom: 36px;">
+        <img src="images/rose-emblem.png" alt="International Aura and Dream School Emblem" style="width: 160px; height: auto;">
+      </div>
+
+      <p style="font-family: var(--font-serif); font-size: 15pt; font-weight: 300; font-style: italic; color: var(--rose-700); line-height: 1.65; max-width: 4.2in;">
+        The Rose is a technology of remembrance &mdash;<br>
+        a living practice that reconnects you<br>
+        with the intelligence already present<br>
+        within your body, your breath,<br>
+        and your being.
+      </p>
+
+      <div class="s40"></div>
+
+      <div style="font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400); line-height: 1.8; letter-spacing: 0.03em;">
+        Teachings by Angelina Ata&iacute;de &nbsp;&middot;&nbsp; Rosesos.com
+      </div>
+      <div class="s20"></div>
+      <div style="font-family: var(--font-sans); font-size: 6.5pt; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold);">Rosesos.com</div>
+    </div>
+  </div>
+
+</body>
+</html>

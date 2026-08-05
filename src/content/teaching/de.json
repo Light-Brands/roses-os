@@ -1,0 +1,370 @@
+{
+  "ui": {
+    "teacherVisualAidManual": "Handbuch: Visuelle Hilfsmittel für Lehrkräfte",
+    "facilitatorCompanion": "Ein visueller Begleiter für Kursleiter beim Lehren der Rosenmeditation.",
+    "selectTeachingLevel": "Unterrichtsstufe auswählen",
+    "allLevels": "Alle Stufen",
+    "level": "Stufe",
+    "slide": "Folie",
+    "designerNote": "Designer-Hinweis",
+    "downloadPdf": "Schülerhandbuch herunterladen",
+    "sacredSpace": "Heiliger Raum",
+    "theChakraSystem": "Das Chakrensystem",
+    "cleansingAndRecovery": "Reinigung & Regeneration",
+    "goldenStickyRoses": "Goldene klebrige Rosen",
+    "balancedExpression": "Ausgewogener Ausdruck",
+    "unbalancedExpression": "Unausgewogener Ausdruck",
+    "primaryBlockages": "Hauptblockaden",
+    "color": "Farbe",
+    "element": "Element",
+    "location": "Position",
+    "energy": "Energie",
+    "focus": "Fokus",
+    "lineage": "Tradition",
+    "rosesOs": "International Aura and Dream School",
+    "exportTeachersAidPdf": "Lehrerhilfe-PDF exportieren",
+    "downloadImages": "Bilder herunterladen",
+    "preparingDownload": "Download wird vorbereitet…",
+    "nextLevel": "Weiter",
+    "previousLevel": "Zurück",
+    "printPage": "Seite drucken"
+  },
+  "opening": {
+    "agreements": {
+      "title": "Vereinbarungen & Tugenden",
+      "text": "Vor Beginn erkennen alle Teilnehmenden diese Vereinbarungen an:",
+      "items": [
+        "Pünktlichkeit",
+        "Vertraulichkeit",
+        "Mitverantwortung",
+        "Vertrauen",
+        "Geduld, Empathie und Mitgefühl"
+      ]
+    },
+    "importantToKnow": {
+      "title": "Es ist wichtig zu wissen",
+      "paragraphs": [
+        "Du erhältst das Handbuch als PDF.",
+        "Diese Lehren sind Teil einer lebendigen energetischen Tradition, die durch direkte Praxis und Übertragung offenbart wurde."
+      ],
+      "guidelinesTitle": "Bitte beachte:",
+      "guidelinesItems": [
+        "Du solltest nicht versuchen, die Rosenmeditation zu unterrichten (nur deinen Kindern unter 14 Jahren).",
+        "Wenn du ein Rosenmeditation Facilitator werden möchtest, ist es notwendig, einen Ausbildungsweg durch Aura Reading zu absolvieren.",
+        "Die Rosenmeditation kann nicht bei anderen Menschen angewendet werden."
+      ],
+      "closing": ""
+    },
+    "history": {
+      "title": "Geschichte & Tradition",
+      "text": "Aura Reading entstand in den 1960er Jahren in Kalifornien, gechannelt von einem Nordamerikaner namens Lewis S. Bostwick. Als Gründer des Berkeley Psychic Institute und der Church of the Divine Man channelte und systematisierte er die von den Engeln gesendeten Techniken und Werkzeuge, um den Evolutionsprozess der Menschheit zu unterstützen.",
+      "lineage": "Berkeley Psychic Institute → Anastasia Plunk → Angelina Ataide → Escola da Aura → International Aura and Dream School"
+    }
+  },
+  "levels": {
+    "1": {
+      "title": "Stufe 1: Grundlagen",
+      "subtitle": "Kernpraktiken",
+      "description": "Die essenziellen Praktiken, die das Fundament der gesamten Arbeit der International Aura and Dream School bilden. Atem, Körper, Herz und die Rosenmeditation."
+    },
+    "2": {
+      "title": "Stufe 2: Vertiefung",
+      "subtitle": "Energetisch & Beziehungsbezogen",
+      "description": "Fortgeschrittene Praktiken für das Bewusstsein des Feinstoffkörpers, emotionale Alchemie und Beziehungskohärenz."
+    },
+    "3": {
+      "title": "Stufe 3: Lehre",
+      "subtitle": "Übertragung & Anleitung",
+      "description": "Praktiken und Prinzipien für das Halten von Räumen, die Übertragung der Arbeit und das Dienen als Hüter der Tradition."
+    }
+  },
+  "slides": {
+    "l1-the-rose": {
+      "concept": "Die Rose",
+      "teachingText": "Die Rose ist das grundlegende Symbol und Werkzeug dieser Praxis — ein lebendiges energetisches Instrument, das auf allen Ebenen der Arbeit verwendet wird."
+    },
+    "l1-posture": {
+      "concept": "Meditationshaltung",
+      "teachingText": "Die richtige Meditationshaltung ist aufrecht sitzend auf einem Stuhl. Die Füße stehen flach auf dem Boden, die Hände ruhen sanft auf den Oberschenkeln oder Knien, die Wirbelsäule ist aufrecht, die Augen sind geschlossen. Der Körper ist entspannt und dennoch wachsam — geerdet und empfänglich."
+    },
+    "l1-grounding-cord": {
+      "concept": "Erdungsschnur",
+      "teachingText": "Die Erdungsschnur ist eine energetische Verbindung, die von der Basis der Wirbelsäule (erstes Chakra) nach unten in das Zentrum der Erde reicht. Sie verankert deinen Energiekörper auf dem Planeten und bietet Stabilität, Sicherheit und einen Kanal zum Loslassen unerwünschter Energie."
+    },
+    "l1-golden-sun": {
+      "concept": "Goldene Sonne",
+      "teachingText": "Die Goldene Sonne ist ein Werkzeug zum Auffüllen und Wiederherstellen deiner eigenen Energie. Visualisiere eine strahlende goldene Sonne über deinem Kopf. Sie ruft deine eigene Lebenskraftenergie von dort zurück, wo immer du sie hinterlassen haben magst — in Menschen, Orten, Situationen oder in der Zeit. Sie füllt dich mit deiner eigenen höchsten Schwingung."
+    },
+    "l1-aura-exercise": {
+      "concept": "Eine Übung, um deine Aura zu spüren",
+      "teachingText": "Die Aura ist das energetische Feld, das deinen physischen Körper umgibt. Diese Übung hilft dir, dir ihrer Präsenz, ihrer Ränder und ihrer Qualität bewusst zu werden. Die Aura besteht aus mehreren Schichten, die vom Körper nach außen strahlen."
+    },
+    "l1-grounding-expansion": {
+      "concept": "Erweiterung der Erdungsschnur",
+      "teachingText": "Sobald du dir deiner Aura bewusst bist, vertieft sich die Praxis der Erdungsschnur. Du erdest nicht nur den physischen Körper, sondern auch die Aura selbst — so kann sich das gesamte Energiefeld in der Erde verankern."
+    },
+    "l1-golden-sun-fills": {
+      "concept": "Die Goldene Sonne füllt dich",
+      "teachingText": "Die Goldene Sonne über der Krone gießt goldenes Licht nach unten und füllt die gesamte Aura und den Körper mit deiner eigenen höchsten Schwingung. Dies vervollständigt die gesamte energetische Architektur: Haltung, Aura, Erdungsschnur und Goldene Sonne — alle zusammen aktiv."
+    },
+    "l1-earth-circuit": {
+      "concept": "Energiekreislauf der Erde",
+      "teachingText": "Der Erdkreislauf ist ein energetischer Pfad, der die Energie der Erde durch die Füße nach oben zieht und durch die Beine in den Körper aufsteigen lässt. Dieser Kreislauf verbindet dich mit der erdenden, nährenden und stabilisierenden Kraft des Planeten."
+    },
+    "l1-cosmos-circuit": {
+      "concept": "Energiekreislauf des Kosmos",
+      "teachingText": "Der kosmische Kreislauf ist ein energetischer Pfad, der kosmische Energie durch die Krone des Kopfes (7. Chakra) nach unten in den Körper zieht. Dieser Kreislauf verbindet dich mit den höheren Frequenzen des universellen Bewusstseins, der Inspiration und der spirituellen Führung."
+    },
+    "l1-combined-circuit": {
+      "concept": "Energiekreisläufe von Kosmos & Erde",
+      "teachingText": "Wenn beide Kreisläufe gleichzeitig aktiviert werden, fließen die Energien von Erde und Kosmos gemeinsam durch den Körper. Erdenergie steigt von unten auf; kosmische Energie steigt von oben herab. Sie treffen und verschmelzen im Körper und erschaffen ein vereintes Feld ausgewogener, integrierter Energie."
+    },
+    "l1-rose-tool": {
+      "concept": "Die Rose (als energetisches Werkzeug)",
+      "teachingText": "Die Rose wird während der gesamten Praxis als lebendiges energetisches Instrument verwendet. Sie hat Wurzeln (Verbindung zur Quelle), einen Stängel (Kanal der Energie) und eine Blüte (das aktive, strahlende Werkzeug). Die Rose kann je nach den Bedürfnissen der Meditation platziert, bewegt, geöffnet, geschlossen und losgelassen werden."
+    },
+    "l1-four-roses": {
+      "concept": "Vier Rosen des Schutzes, der Trennung und der Beobachtung",
+      "teachingText": "Rosen werden an den Rändern der Aura platziert, um als energetische Wächter zu dienen. Sie erfüllen drei Funktionen:\n\n1. Schutz — Sie definieren und bewachen die Grenze deiner Aura\n2. Trennung — Sie schaffen eine gesunde energetische Abgrenzung zwischen deiner Energie und der Energie anderer\n3. Beobachtung — Sie helfen dir wahrzunehmen, welche Energien sich deinem Feld nähern oder mit ihm interagieren"
+    },
+    "l1-cleansing-rose": {
+      "concept": "Reinigungsrose",
+      "teachingText": "Die Reinigungsrose wird außerhalb der Aura platziert. Sie dient dazu, fremde oder stagnierende Energie aus deinem Feld aufzunehmen und umzuwandeln. Energie, die nicht zu dir gehört — von anderen Menschen, Umgebungen oder Erfahrungen —, wird aus der Aura in die Reinigungsrose gezogen, wo sie neutralisiert wird."
+    },
+    "l1-energy-recovery": {
+      "concept": "Energierückgewinnung jedes Chakras",
+      "teachingText": "Nach der Reinigung wird die Rose verwendet, um deine eigene Energie zurückzuholen, die bei anderen hinterlassen oder von ihnen genommen wurde. Die Rose wird als Instrument ausgesendet, um deine eigene Lebenskraftenergie zu sammeln und zu jedem Chakra zurückzubringen, wodurch jedes Energiezentrum wieder in seine Fülle und Souveränität versetzt wird."
+    },
+    "l1-discharge": {
+      "concept": "Überschüssige Energie ableiten",
+      "teachingText": "Nach tiefer Meditation oder Energiearbeit kann sich überschüssige Energie im Körper ansammeln. Um sie abzuleiten, beuge dich aus der sitzenden Position nach vorne und reiche mit den Händen zum Boden. Lass die überschüssige Energie durch die Hände in die Erde abfließen und bringe den Körper so in einen ruhigen, ausgewogenen Zustand zurück."
+    },
+    "l1-sacred-space": {
+      "concept": "Erschaffen wir deinen heiligen Raum",
+      "teachingText": "Begib dich in deinen heiligen Raum, wo du sicher bist und dir deiner energetischen Autorität vollkommen bewusst bist. Von hier aus kann jede Energiearbeit, einschließlich der Rosenmeditation, mit Klarheit, Hellsehen und wahrer energetischer Souveränität durchgeführt werden.\n\nDieser Raum gehört deinem Geist — der reinsten Dimension deines Seins. Halte ihn stets geschlossen und geschützt. Kehre für die Rosenmeditation, für wichtige Entscheidungen, die deine tiefste Unterscheidungskraft erfordern, oder einfach um wieder in Einklang mit deiner spirituellen Essenz zu kommen, hierher zurück."
+    },
+    "l1-6th-7th-chakras": {
+      "concept": "Das 6. und 7. Chakra (Heiliger Raum)",
+      "teachingText": "Das Verständnis der Positionen und Rollen der oberen Chakren ist für die Arbeit auf Stufe 2 essenziell:\n\n• 6. Chakra (Drittes Auge) — Befindet sich in der Mitte der Stirn, zwischen und leicht oberhalb der Augenbrauen\n• 7. Chakra (Krone) — Befindet sich auf dem Scheitel des Kopfes"
+    },
+    "l2-physical-space": {
+      "concept": "Bereiten wir deinen physischen Raum vor",
+      "teachingText": "Bereite vor der Meditation deine physische Umgebung vor, um die energetische Arbeit zu unterstützen. Der äußere Raum sollte die innere Absicht widerspiegeln: sauber, klar, ruhig und bewusst gehalten."
+    },
+    "l2-protection-space": {
+      "concept": "Schutz des Raumes",
+      "teachingText": "Der physische Meditationsraum wird geschützt, indem mithilfe von Rosen ein energetisches Gitter erzeugt wird. Goldene Rosen werden an den vier Ecken (sowie oberhalb/unterhalb) des Raumes platziert und durch Linien goldener Energie verbunden, wodurch eine heilige geometrische Struktur entsteht — ein Gefäß für die Arbeit."
+    },
+    "l2-cleansing-space": {
+      "concept": "Reinigung des Raumes",
+      "teachingText": "Sobald der Schutz aufgebaut ist, folgt die Reinigung. Eine Goldene Rose wird oberhalb des Gitters platziert und durch dessen gesamte Struktur nach unten geführt, wobei alle fremden, stagnierenden oder störenden Energien im Raum entfernt werden. Diese Rose steigt nach unten ab, um im Zentrum der Erde durch die Erdungsschnur des Raumes umgewandelt zu werden."
+    },
+    "l2-owning-space": {
+      "concept": "Deinen Raum in Besitz nehmen",
+      "teachingText": "Nach Schutz und Reinigung übernimmst du die Eigentümerschaft für den Raum. Dies ist ein Akt energetischer Souveränität — du erklärst den Raum zu deinem eigenen und füllst ihn mit deiner eigenen Energie und Absicht. Der Raum wird zu einer Erweiterung deiner Aura und deiner Praxis."
+    },
+    "l2-chakras-intro": {
+      "concept": "Sprechen wir über Chakren",
+      "teachingText": "Das Chakrasystem ist die energetische Anatomie des menschlichen Körpers. Es gibt sieben Hauptchakren, die jeweils bestimmte Aspekte des physischen, emotionalen, mentalen und spirituellen Lebens steuern."
+    },
+    "l2-seven-chakras": {
+      "concept": "Die sieben Chakren",
+      "teachingText": "Die sieben Hauptchakren, von der Krone bis zur Wurzel:\n\n7. Krone — Scheitel des Kopfes\n6. Drittes Auge — Mitte der Stirn\n5. Kehle — Kehle\n4. Herz — Mitte der Brust\n3. Solarplexus — Oberbauch\n2. Sakral — Unterbauch\n1. Wurzel — Basis der Wirbelsäule"
+    },
+    "l2-cleansing-aura-layers": {
+      "concept": "Reinigung jeder Auraschicht",
+      "teachingText": "Die Aura besteht aus sieben Schichten, die jeweils einem Chakra entsprechen. In Stufe 2 wird jede Schicht einzeln von der 1. bis zur 7. Schicht gereinigt:\n\n1. 1. Auraschicht\n2. 2. Auraschicht\n3. 3. Auraschicht\n4. 4. Auraschicht\n5. 5. Auraschicht\n6. 6. Auraschicht\n7. 7. Auraschicht"
+    },
+    "l2-cleansing-each-chakra": {
+      "concept": "Reinigung jedes Chakras",
+      "teachingText": "Jedes einzelne Chakra wird mithilfe von Rosen gereinigt. Die Rosen adressieren zwei Dimensionen:\n\n• Dynamiken der Vergangenheit — Energetische Muster, Prägungen und Blockaden aus vergangenen Erfahrungen\n• Dynamiken der Gegenwart — Aktuelle energetische Einflüsse, Beziehungen und Situationen, die das Chakra betreffen"
+    },
+    "l2-energy-recovery": {
+      "concept": "Energierückholung-Rose im Detail",
+      "teachingText": "Sobald die Reinigung des Chakras und der entsprechenden Auraschicht abgeschlossen ist, kann sich der Energierückholungsprozess auf deren Schwingung entfalten, wenn du dich dazu berufen fühlst. Eine Rückholungs-Rose kann erschaffen werden, die auf diese spezifische Frequenz eingestimmt ist, deine Energie zurückzieht und sie auf genau dieser Ebene wiederherstellt. Du kannst dies vom 1. bis zum 7. Chakra tun."
+    },
+    "l2-golden-sticky-1": {
+      "concept": "Goldene Klebrige Rosen — Erste Rose (Krone bis Wurzel)",
+      "teachingText": "Vier Goldene Klebrige Rosen werden für die tiefe energetische Reinigung der Aura verwendet und ziehen alle Fremdenergien heraus, die nach der vorherigen Reinigung noch vorhanden sind. Die erste tritt durch das Kronenchakra ein und reinigt nacheinander jedes Chakra bis hinunter zur Wurzel."
+    },
+    "l2-golden-sticky-2": {
+      "concept": "Goldene Klebrige Rosen — Zweite Rose (Arme)",
+      "teachingText": "Die zweite steigt zum Halschakra hinab, wo sie sich in zwei Rosen teilt, die durch die Kanäle der Arme wandern und durch die Handchakren austreten."
+    },
+    "l2-golden-sticky-3": {
+      "concept": "Goldene Klebrige Rosen — Dritte Rose (Beine)",
+      "teachingText": "Die dritte steigt zum Wurzelchakra hinab, wo sie zu zwei Rosen wird, die den Kanälen der Beine folgen und durch die Fußchakren austreten."
+    },
+    "l2-golden-sticky-4": {
+      "concept": "Goldene Klebrige Rosen — Vierte Rose (Gesamte Aura)",
+      "teachingText": "Die vierte erstreckt sich über die gesamte Breite der Aura und steigt durch das gesamte energetische Feld hinab. Nach Abschluss explodieren alle vier entweder außerhalb der Aura oder treten durch die Erdungsschnur aus und wandeln die gesammelten Energien mit sich um."
+    },
+    "l3-analyzer": {
+      "concept": "Der Analysator",
+      "teachingText": "Der Analysator ist ein fortschrittliches Werkzeug, das in Stufe 3 eingeführt wird. Es handelt sich um einen energetischen Punkt am Hinterkopf, an der Schädelbasis (Bereich des Hinterhauptkamms / Hirnstamms). Der Analysator wird für eine tiefere Wahrnehmung, das Lesen und das Unterscheiden von Energie verwendet — ein Werkzeug für eine präzise energetische Analyse."
+    },
+    "l3-analyzer-sacred-space": {
+      "concept": "Heiliger-Raum-Analysator",
+      "teachingText": "Eine kombinierte Referenz, die den Analysator in Beziehung zum heiligen Raum zeigt. Dieses Bild veranschaulicht, wie der Analysator — der energetische Punkt an der Schädelbasis — im Kontext des geschützten, gereinigten heiligen Raums arbeitet, der in Stufe 2 etabliert wurde. Die beiden arbeiten zusammen: Der heilige Raum bietet den Behälter, und der Analysator liefert das wahrnehmende Werkzeug für ein tieferes energetisches Lesen und Unterscheiden."
+    },
+    "l3-stick-of-agreements": {
+      "concept": "Stab der Vereinbarungen",
+      "teachingText": "Eine Beziehung kann sich in der materiellen Welt nur dann manifestieren, wenn sie von einer spirituellen Vereinbarung getragen wird. Solche Vereinbarungen werden mit der Zustimmung beider Parteien auf spiritueller Ebene geschlossen und können von jeder Partei durch bewussten Willen aufgelöst werden.\n\nJedes Mal, wenn eine spirituelle Vereinbarung getroffen wird, entsteht ein „Stab der Vereinbarungen“ zwischen den beteiligten Personen. Durch diese Rosenmeditationstechnik ist es jederzeit möglich, diese Stäbe der Vereinbarungen aufzulösen. Dieser Prozess sollte mit großer Bewusstheit angegangen werden, da er sehr spürbare Konsequenzen für unser Leben hat.\n\nUm diese Vereinbarungen zu brechen:\n\n• Erschaffe eine hochschwingende Situation, zum Beispiel direkt nach der Rosenmeditation\n• Visualisiere den Stab der Vereinbarungen, der alle Vereinbarungen enthält, die du brechen möchtest\n• Brich diesen Stab in drei Teile\n• Erschaffe eine geerdete Rose\n• Lege die drei Teile des Stabs in diese Rose\n• Lass die Rose außerhalb der Aura explodieren"
+    },
+    "l3-cutting-cords": {
+      "concept": "Energetische Bänder durchtrennen",
+      "teachingText": "Wir treten ständig in energetischen Austausch mit anderen — wenn wir sie sehen, hören, berühren und sogar, wenn wir an sie denken. Wenn energetische Bänder entstehen, verbinden sich unsere Auren durch diese Verbindungen, sodass Energie zwischen uns fließen kann. Deshalb können wir oft spüren, was mit Menschen geschieht, die uns nahestehen, selbst über eine Distanz hinweg.\n\nWenn Beziehungen zu Ende gehen, können wir tief von den Energien betroffen sein, die uns weiterhin über diese Bänder erreichen. Aus diesem Grund ist es wichtig zu wissen, wie man sie bewusst durchtrennt:\n\n• Schließe deine Augen\n• Visualisiere deine Aura mit Bändern, die aus deinen Chakren austreten\n• Lege deine dominante Hand auf den 7. Halswirbel, der sich am Übergang von Nacken und Rücken auf der Höhe des 5. Chakras befindet\n• Beabsichtige, dass deine Hand die Kraft hat, alle Bänder zu durchtrennen\n• Mache die Schneidebewegung unter deinem 1. Chakra, indem du deine Hand auf den Stuhl legst, auf dem du sitzt\n\nWir können die Bänder auch durchtrennen, wenn die Beziehung noch nicht beendet ist, wir aber das Gefühl haben, mehr Neutralität zu brauchen. Diese Bänder bilden sich sehr schnell neu, wenn wir uns wieder mit der Person verbinden."
+    },
+    "l3-sexual-recovery-rose": {
+      "concept": "Nach der Intimität / Sexuelle Rückholungs-Rose",
+      "teachingText": "Wenn du nach dem Geschlechtsverkehr Energie zurückholen möchtest, die du möglicherweise bei der anderen Person gelassen hast, und Energie zurückgeben möchtest, die diese möglicherweise bei dir gelassen hat, folge diesen Schritten:\n\n• Führe die Vorbereitungstechniken durch (Erdungsschnur, Goldene Sonne, Erd- und Kosmosenergie, heiliger Raum)\n• Erschaffe eine orangefarbene Rose und lege die Energie der Person hinein mit ihrem physischen Körper, ihren Emotionen und Gefühlen, die in diesem Moment auftauchen können — du kannst visualisieren, wie die Person die Rose betritt, die Situation, die du gerade erlebt hast; explodieren lassen (du kannst diesen Schritt so oft wie nötig wiederholen)\n• Erschaffe eine ungeerdete orangefarbene Rose, die jegliche Energie der Person reinigt, die in irgendeiner Schicht deiner Aura verblieben sein könnte; explodieren lassen\n• Erschaffe eine geerdete orangefarbene Rose und beabsichtige, dass diese Rose Energie zurückholt, die bei dieser Person verblieben ist; explodieren lassen\n• Wenn du energetisch von dieser Person getrennt bleiben möchtest, führe die Bewegung des Durchtrennens der energetischen Bänder aus\n• Erschaffe eine ungeerdete rosa Rose, setze die Person hinein und visualisiere sie glücklich und in voller Gesundheit von Körper, Geist und Seele. Wiederhole gedanklich: \"Glücklich, gesund, ganz, Körper, Geist und Seele.\" Lass die Rose zum Zentrum des Universums aufsteigen und wünsche ihr das Beste\n• Erneuere deine Erdungsschnur\n• Fülle dich mit dem Licht der Goldenen Sonne\n• Lege deine Hände auf den Boden, um überschüssige Energie abzuleiten\n\nDu kannst diese Technik auch für Beziehungen verwenden, die lange zurückliegen, oder wenn du eine Beziehung beendest."
+    },
+    "l3-mock-up": {
+      "concept": "Mock Up",
+      "teachingText": "Das Mock Up ist eine Technik zur Manifestation von Situationen oder Ergebnissen auf der physischen Ebene. Es sollte nur für einen selbst verwendet werden; es kann nicht im Namen einer anderen Person durchgeführt werden. Damit es wirksam ist, muss es an sieben aufeinanderfolgenden Tagen praktiziert und auf ein Ziel nach dem anderen ausgerichtet werden. Je höher dein Schwingungszustand beim Erstellen des Mock-ups ist, desto effektiver wird der Prozess sein.\n\n• Erschaffe eine geerdete Rose und stelle dir in dieser Rose vor, was du möchtest, indem du das Bild mit so vielen Details wie möglich gestaltest\n• Erschaffe eine zweite geerdete Rose rechts von der ersten Rose. Beabsichtige, dass diese Rose alle Energie reinigt, die nicht zur ersten Rose gehört, jede Art von Blockade, die die Realisierung deines Wunsches stört\n• Erschaffe eine dritte rosa geerdete Rose (die Farbe der Göttlichen Liebe). Bringe in dieser Rose das Bild von etwas in dein Inneres, das du sehr liebst, etwas, das dir große Genugtuung und Freude bereitet, sodass du deine Schwingung maximal anheben kannst\n• Inspiriert von der vorherigen Rose, stelle dir vor, wie die Energie der Göttlichen Liebe in Rosa aus deinem Herzen strömt und die erste Rose einhüllt, indem sie sie in einen wunderschönen rosa Kreis, wie eine Blase, setzt\n• Schneide die Wurzeln der ersten Rose ab und lass sie zum Zentrum des Universums aufsteigen. Bitte immer darum, dass es geschieht, wenn es zum Wohle aller ist\n• Lass die dritte Rose explodieren (die rosa Rose)\n• Lass die zweite Rose explodieren (die Reinigungsrose)\n\nDenke daran, diese Technik 7 Tage hintereinander zu wiederholen. Wenn du vor Abschluss des 7-Tage-Zyklus einen Tag verpasst, gehe zurück zum Anfang."
+    }
+  },
+  "chakras": {
+    "l2-chakra-root": {
+      "concept": "Wurzelchakra",
+      "teachingText": "Muladhara — Erdung & Sicherheit",
+      "focus": "Stabilität — Sicherheit — Verkörperung",
+      "energy": "Männlich — Überleben / Fundament",
+      "bodyLocation": "Basis der Wirbelsäule, Beine, Füße",
+      "balanced": [
+        "Geerdete Präsenz",
+        "Physische Vitalität",
+        "Vertrauen ins Leben",
+        "Sich im Körper sicher fühlen"
+      ],
+      "unbalanced": [
+        "Angst und Unsicherheit",
+        "Überlebensangst",
+        "Entkopplung vom Körper",
+        "Mangeldenken"
+      ],
+      "blockages": "Angst — Unsicherheit — Überlebenstrauma"
+    },
+    "l2-chakra-sacral": {
+      "concept": "Sakralchakra",
+      "teachingText": "Svadhisthana — Emotion & Kreativität",
+      "focus": "Emotionen — Kreativität — Genuss",
+      "energy": "Weiblich — Fluss & Flexibilität",
+      "bodyLocation": "Unterleib, Sexualorgane",
+      "balanced": [
+        "Emotionales Wohlbefinden",
+        "Sinnlichkeit und Intimität",
+        "Leidenschaft und Genuss",
+        "Anpassungsfähigkeit"
+      ],
+      "unbalanced": [
+        "Depression und Taubheitsgefühl",
+        "Sexuelle Funktionsstörung",
+        "Emotionale Instabilität",
+        "Angst vor Veränderung"
+      ],
+      "blockages": "Scham — Emotionale Unterdrückung — Schuld"
+    },
+    "l2-chakra-solar-plexus": {
+      "concept": "Solarplexus-Chakra",
+      "teachingText": "Manipura — Willenskraft & Selbstvertrauen",
+      "focus": "Persönliche Kraft — Selbstwertgefühl — Antrieb",
+      "energy": "Männlich — Kraft & Transformation",
+      "bodyLocation": "Oberbauch, Zwerchfell",
+      "balanced": [
+        "Selbstvertrauen und Motivation",
+        "Verantwortungsbewusst und diszipliniert",
+        "Gesundes Selbstgefühl",
+        "Autonomie"
+      ],
+      "unbalanced": [
+        "Geringes Selbstwertgefühl",
+        "Aggression oder Kontrollzwang",
+        "Stur und dominant",
+        "Mangel an Orientierung oder Sinn"
+      ],
+      "blockages": "Selbstzweifel — Unsicherheit — Angst vor Ablehnung"
+    },
+    "l2-chakra-heart": {
+      "concept": "Herzchakra",
+      "teachingText": "Anahata — Liebe & Integration",
+      "focus": "Liebe — Mitgefühl — Verbindung",
+      "energy": "Weiblich — Brücke zwischen Physischem & Spirituellem",
+      "bodyLocation": "Brustmitte, Herz, Lunge",
+      "balanced": [
+        "Mitgefühl und Empathie",
+        "Emotionale Offenheit",
+        "Vergebung",
+        "Gesunde Intimität und Selbstliebe"
+      ],
+      "unbalanced": [
+        "Emotionaler Rückzug oder übermäßiges Geben",
+        "Angst vor Intimität",
+        "Kälte oder Distanziertheit",
+        "Schwierigkeiten zu vergeben"
+      ],
+      "blockages": "Trauer — Verrat — Herzschmerz",
+      "extraContent": "Menschliche Liebe & Göttliche Liebe:\n\nMenschliche Liebe — Aussage: ICH LIEBE — Bedingte Liebe, Empathie, Vergebung, gesunde Beziehungen.\n\nGöttliche Liebe — Aussage: ICH BIN LIEBE — Bedingungslose Liebe, Mitgefühl, Verbundenheit, göttliche und universelle Liebe."
+    },
+    "l2-chakra-throat": {
+      "concept": "Halschakra",
+      "teachingText": "Vishuddha — Kommunikation & Ausdruck",
+      "focus": "Kommunikation — Wahrheit — Authentizität",
+      "energy": "Männlich — Lernen, den Willen mit der göttlichen Wahrheit auszurichten",
+      "bodyLocation": "Hals, Nacken, Kiefer, Mund",
+      "balanced": [
+        "Klare, ehrliche Kommunikation",
+        "Authentischer Selbstausdruck",
+        "Guter Zuhörer",
+        "Starke Stimme und ausgewogene Sprache"
+      ],
+      "unbalanced": [
+        "Angst, sich zu Wort zu melden",
+        "Nicht gehört oder missverstanden werden",
+        "People-Pleasing",
+        "Unterdrückte Gefühle oder Lügen"
+      ],
+      "blockages": "Unterdrückte Wahrheit — Angst vor Ausdruck — Misskommunikation"
+    },
+    "l2-chakra-third-eye": {
+      "concept": "Stirnchakra",
+      "teachingText": "Ajna — Intuition & Einsicht",
+      "focus": "Vorstellungskraft — Wahrnehmung — Visualisierung",
+      "energy": "Weibliche Aspekte des Bewusstseins",
+      "bodyLocation": "Stirn, Augenbraue, Augenzentrum",
+      "balanced": [
+        "Klares Sehen und Intuition",
+        "Gutes Gedächtnis und Vorstellungskraft",
+        "Innere Verortung",
+        "Weisheit und Vision"
+      ],
+      "unbalanced": [
+        "Grübeln",
+        "Geistiger Nebel",
+        "Trennung von der inneren Führung",
+        "Flucht vor der Realität oder spirituelles Bypassing"
+      ],
+      "blockages": "Illusion — Angst vorm Hinsehen — Mentale Starrheit"
+    },
+    "l2-chakra-crown": {
+      "concept": "Kronenchakra",
+      "teachingText": "Sahasrara — Spiritualität & Bewusstsein",
+      "focus": "Spirituelle Verbindung — Innere Weisheit — Höhere Bewusstseinszustände",
+      "energy": "Keine Dualität — Ego transzendieren, mit der Quelle verschmelzen",
+      "bodyLocation": "Scheitelpunkt",
+      "balanced": [
+        "Spiritueller Glaube und Verbindung",
+        "Innerer Frieden, Vertrauen und Weisheit",
+        "Offenheit und Bewusstheit",
+        "Gefühl von Lebenssinn"
+      ],
+      "unbalanced": [
+        "Spirituelle Leere",
+        "Existenzielle Zweifel",
+        "Sich isoliert oder allein fühlen",
+        "Fehlender Lebenssinn"
+      ],
+      "blockages": "Verbindungslosigkeit — Zynismus — Sinnverlust"
+    }
+  }
+}

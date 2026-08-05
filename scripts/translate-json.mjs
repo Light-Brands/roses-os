@@ -19,7 +19,8 @@ async function translateChunk(strings) {
   const sys = `Translate each string in the JSON array from English to ${NAME}.
 Rules: preserve ALL HTML tags, {placeholders}, punctuation and numbers; proper names and brand names stay as-is; do not add or drop array items.
 Return ONLY a JSON array of the same length, translations in the same order.`;
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${KEY}`;
+  const MODEL = env.GEMINI_MODEL || process.env.GEMINI_MODEL || 'gemini-flash-latest';
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${KEY}`;
   const body = { contents: [{ parts: [{ text: `${sys}\n\n${JSON.stringify(strings)}` }] }], generationConfig: { responseMimeType: 'application/json', temperature: 0 } };
   for (let attempt = 0; attempt < 3; attempt++) {
     try {
