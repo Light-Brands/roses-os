@@ -16,13 +16,14 @@ const MANUAL_DIR = path.join(ROOT, 'scripts', 'pdf-manuals');
 const TEMPLATE_PATH = path.join(MANUAL_DIR, 'roses-teachers-aid.html');
 const TRANSLATIONS_DIR = path.join(ROOT, 'src', 'content', 'teaching');
 
-const LOCALES = ['es', 'pt', 'el'] as const;
+const LOCALES = ['es', 'pt', 'el', 'de'] as const;
 
 // Locale display names for titles
 const LOCALE_NAMES: Record<string, string> = {
   es: 'ES',
   pt: 'PT',
   el: 'EL',
+  de: 'DE',
 };
 
 interface Translation {

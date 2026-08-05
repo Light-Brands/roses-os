@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rosenmeditation — Stufe 2</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+    :root {
+      --rose-clay: #9C6F6E;
+      --rose-400: #D4A09A;
+      --rose-300: #E8C4BF;
+      --rose-200: #F5E1DD;
+      --rose-100: #FAF0EE;
+      --rose-50: #FDF8F7;
+      --rose-700: #6E4A49;
+      --rose-800: #523737;
+      --rose-900: #3B2828;
+      --gold: #9E956B;
+      --gold-light: #B8B08A;
+      --warm-0: #F7F5F2;
+      --cream: #FFF8E7;
+      --charcoal: #3F3E3C;
+      --soft-charcoal: #5A5856;
+      --font-serif: 'Cormorant Garamond', 'Georgia', serif;
+      --font-sans: 'Inter', -apple-system, sans-serif;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    @page { size: 8.5in 11in; margin: 0; }
+    html { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { font-family: var(--font-sans); color: var(--charcoal); line-height: 1.7; background: white; }
+
+    /* PAGE */
+    .page {
+      width: 8.5in;
+      height: 11in;
+      position: relative;
+      page-break-after: always;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .page:last-child { page-break-after: auto; }
+
+    /* Border frame */
+    .page::before {
+      content: '';
+      position: absolute;
+      top: 0.35in; left: 0.35in; right: 0.35in; bottom: 0.35in;
+      border: 0.5px solid var(--rose-200);
+      border-radius: 2px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Inner padding */
+    .inner {
+      position: relative;
+      z-index: 1;
+      margin: 0.55in 0.65in 0.55in 0.65in;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Corner ticks */
+    .ck { position: absolute; width: 16px; height: 16px; z-index: 2; }
+    .ck::before, .ck::after { content: ''; position: absolute; background: var(--rose-300); }
+    .ck-tl { top: 0.3in; left: 0.3in; }
+    .ck-tr { top: 0.3in; right: 0.3in; }
+    .ck-bl { bottom: 0.3in; left: 0.3in; }
+    .ck-br { bottom: 0.3in; right: 0.3in; }
+    .ck-tl::before { width: 16px; height: 0.5px; top: 0; left: 0; }
+    .ck-tl::after  { width: 0.5px; height: 16px; top: 0; left: 0; }
+    .ck-tr::before { width: 16px; height: 0.5px; top: 0; right: 0; }
+    .ck-tr::after  { width: 0.5px; height: 16px; top: 0; right: 0; }
+    .ck-bl::before { width: 16px; height: 0.5px; bottom: 0; left: 0; }
+    .ck-bl::after  { width: 0.5px; height: 16px; bottom: 0; left: 0; }
+    .ck-br::before { width: 16px; height: 0.5px; bottom: 0; right: 0; }
+    .ck-br::after  { width: 0.5px; height: 16px; bottom: 0; right: 0; }
+
+    /* Page number */
+    .pn {
+      position: absolute;
+      bottom: 0.38in; left: 0; right: 0;
+      text-align: center;
+      font-family: var(--font-sans);
+      font-size: 7pt;
+      color: var(--rose-400);
+      letter-spacing: 0.12em;
+      z-index: 2;
+    }
+    .pn span { display: inline-block; padding: 0 8px; background: white; }
+
+    /* ============================================================
+       IMAGES
+       ============================================================ */
+
+    .img-full {
+      width: 80%;
+      max-width: 480px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+    }
+    .img-full img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+    }
+
+    .img-circle {
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+      aspect-ratio: 1;
+    }
+    .img-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ============================================================
+       TYPOGRAPHY
+       ============================================================ */
+
+    .label {
+      font-family: var(--font-sans);
+      font-size: 6.5pt; font-weight: 500;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .h-xl {
+      font-family: var(--font-serif);
+      font-size: 36pt; font-weight: 300;
+      color: var(--rose-800);
+      line-height: 1.12; letter-spacing: -0.02em;
+    }
+
+    .h-lg {
+      font-family: var(--font-serif);
+      font-size: 22pt; font-weight: 300;
+      color: var(--rose-800);
+      line-height: 1.2; letter-spacing: -0.015em;
+    }
+
+    .h-md {
+      font-family: var(--font-serif);
+      font-size: 15pt; font-weight: 400;
+      color: var(--rose-800);
+      line-height: 1.3;
+    }
+
+    .h-sm {
+      font-family: var(--font-serif);
+      font-size: 11.5pt; font-weight: 500;
+      font-style: italic;
+      color: var(--rose-clay);
+    }
+
+    .sub {
+      font-family: var(--font-serif);
+      font-size: 15pt; font-weight: 400;
+      font-style: italic;
+      color: var(--rose-clay);
+    }
+
+    .body {
+      font-family: var(--font-sans);
+      font-size: 9.5pt; line-height: 1.75;
+      color: var(--charcoal);
+    }
+
+    .body-sm {
+      font-family: var(--font-sans);
+      font-size: 8.5pt; line-height: 1.7;
+      color: var(--soft-charcoal);
+    }
+
+    em { font-family: var(--font-serif); color: var(--rose-700); }
+
+    .line { width: 36px; height: 0.5px; background: var(--rose-300); }
+    .line-c { width: 36px; height: 0.5px; background: var(--rose-300); margin: 0 auto; }
+
+    /* Callout */
+    .call {
+      background: var(--rose-50);
+      border-left: 2px solid var(--rose-clay);
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+    }
+    .call p {
+      font-family: var(--font-serif);
+      font-size: 10pt; font-style: italic;
+      line-height: 1.6; color: var(--rose-700);
+    }
+    .call-gold { border-left-color: var(--gold); background: linear-gradient(135deg, var(--rose-50), var(--warm-0)); }
+
+    /* Lists */
+    .bul { list-style: none; }
+    .bul li {
+      font-family: var(--font-sans); font-size: 9.5pt;
+      line-height: 1.75; color: var(--charcoal);
+      padding: 2px 0 2px 16px; position: relative;
+    }
+    .bul li::before {
+      content: ''; position: absolute;
+      left: 2px; top: 11px;
+      width: 5px; height: 5px;
+      background: var(--rose-clay); border-radius: 50%;
+    }
+
+    .num { list-style: none; counter-reset: n; }
+    .num li {
+      counter-increment: n;
+      font-family: var(--font-sans); font-size: 9.5pt;
+      line-height: 1.75; color: var(--charcoal);
+      padding: 3px 0 3px 26px; position: relative;
+    }
+    .num li::before {
+      content: counter(n) '.'; position: absolute; left: 0;
+      font-family: var(--font-serif); font-size: 12pt; font-weight: 400;
+      color: var(--rose-clay);
+    }
+
+    /* Step card */
+    .step { display: flex; gap: 14px; align-items: baseline; }
+    .sn {
+      font-family: var(--font-serif);
+      font-size: 28pt; font-weight: 300;
+      color: var(--rose-300); line-height: 1;
+      flex-shrink: 0; width: 34px; text-align: center;
+    }
+
+    /* Two columns */
+    .cols { display: flex; gap: 24px; }
+    .cols > div { flex: 1; }
+
+    /* Summary card */
+    .sum {
+      background: linear-gradient(135deg, var(--rose-50), var(--warm-0));
+      border: 0.5px solid var(--rose-200);
+      border-radius: 16px;
+      padding: 20px 24px;
+    }
+    .sum .bul li { font-size: 9pt; padding: 2px 0 2px 14px; }
+    .sum .bul li::before { top: 9px; width: 4px; height: 4px; }
+
+    /* Spacers */
+    .s4  { height: 4px; }
+    .s6  { height: 6px; }
+    .s8  { height: 8px; }
+    .s10 { height: 10px; }
+    .s12 { height: 12px; }
+    .s16 { height: 16px; }
+    .s20 { height: 20px; }
+    .s24 { height: 24px; }
+    .s28 { height: 28px; }
+    .s32 { height: 32px; }
+    .s40 { height: 40px; }
+    .grow { flex: 1; }
+
+    /* Cover */
+    .cover-bg {
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--rose-50) 40%, var(--warm-0) 100%);
+    }
+    .cover-bg::before { border-color: var(--rose-300); }
+
+    /* Closing */
+    .closing-bg {
+      background: linear-gradient(180deg, #FFFFFF 0%, var(--rose-50) 50%, var(--warm-0) 100%);
+    }
+
+    /* Phase badge */
+    .phase-badge {
+      display: inline-block;
+      font-family: var(--font-sans);
+      font-size: 7pt; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold-light);
+      padding: 4px 14px;
+      border-radius: 20px;
+    }
+
+    /* ============================================================
+       CHAKRA CARDS
+       ============================================================ */
+
+    .chakra-card {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .chakra-img {
+      width: 160px;
+      height: auto;
+      border-radius: 12px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .chakra-img img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .chakra-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .chakra-name {
+      font-family: var(--font-serif);
+      font-size: 14pt;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .chakra-sanskrit {
+      font-family: var(--font-serif);
+      font-size: 9.5pt;
+      font-style: italic;
+      color: var(--soft-charcoal);
+    }
+
+    .chakra-statement {
+      font-family: var(--font-serif);
+      font-size: 13pt;
+      font-weight: 500;
+      font-style: italic;
+      margin: 4px 0;
+    }
+
+    .chakra-meta {
+      font-family: var(--font-sans);
+      font-size: 7.5pt;
+      line-height: 1.6;
+      color: var(--soft-charcoal);
+    }
+
+    .chakra-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .chakra-cols h5 {
+      font-family: var(--font-sans);
+      font-size: 7pt;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 3px;
+    }
+
+    .chakra-cols .bul li {
+      font-size: 7.5pt;
+      line-height: 1.55;
+      padding: 1px 0 1px 12px;
+    }
+    .chakra-cols .bul li::before {
+      top: 7px;
+      width: 3px;
+      height: 3px;
+    }
+
+    .chakra-blockages {
+      font-family: var(--font-sans);
+      font-size: 7.5pt;
+      font-style: italic;
+      color: var(--soft-charcoal);
+    }
+
+    .chakra-divider {
+      height: 1.5px;
+      margin: 10px 0;
+      border-radius: 1px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- =====================================================
+       PAGE 1 — COVER
+       ===================================================== -->
+  <div class="page cover-bg">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="align-items: center; justify-content: center; text-align: center;">
+      <div class="label">Internationale Schule für Aura und Träume</div>
+      <div class="s28"></div>
+
+      <div class="img-circle" style="width: 320px; height: 320px;">
+        <img src="images/manual-l12-cover-l12.png" alt="Sacred Rose — Stufe 2">
+      </div>
+      <div class="s32"></div>
+
+      <h1 class="h-xl">Rosenmeditation</h1>
+      <div class="s6"></div>
+      <p class="sub">Stufe 2 — Vertiefte Praxis</p>
+      <div class="s32"></div>
+
+      <div class="line-c"></div>
+      <div class="s28"></div>
+
+      <div style="font-family: var(--font-sans); font-size: 8.5pt; color: var(--soft-charcoal); line-height: 1.8; letter-spacing: 0.04em;">
+        <strong style="font-weight: 500; color: var(--charcoal); font-size: 9pt;">Lehren von Angelina Ataíde</strong><br>
+        Internationale Schule für Aura und Träume<br><br>
+        <span style="font-size: 7.5pt; color: var(--rose-400);">
+          Illustrationen: Saraswati Noemi, Cecilia Lynch &amp; Drica Voivodic<br>
+          Rotaktion: Dara Ayoub &nbsp;·&nbsp; Gestaltung: Jennifer Lawless
+        </span>
+      </div>
+      <div class="s16"></div>
+      <div style="font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400); letter-spacing: 0.2em;">2026 &nbsp;·&nbsp; PRÜFAUSGABE</div>
+    </div>
+
+    <div style="position: absolute; bottom: 0.55in; left: 0.8in; right: 0.8in; text-align: center; font-family: var(--font-sans); font-size: 6.5pt; color: var(--rose-400); line-height: 1.6; font-style: italic;">
+      Kein Teil dieses Handbuchs darf vervielfältigt und/oder Personen gezeigt werden, die keinen Rosenmeditation-Kurs der Stufe 2 besucht haben. Zu deinem eigenen Schutz teile diese Informationen bitte nicht.
+    </div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 2 — TABLE OF CONTENTS
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="padding-top: 0.3in;">
+      <div class="label">Inhalt</div>
+      <div class="s6"></div>
+      <h2 class="h-lg" style="font-size: 26pt;">Rosenmeditation</h2>
+      <div class="s4"></div>
+      <p class="sub" style="font-size: 13pt;">Stufe 2 — Vertiefte Praxis</p>
+      <div class="s20"></div>
+      <div class="line"></div>
+      <div class="s16"></div>
+
+      <!-- Rose icon on TOC -->
+      <div class="img-circle" style="width: 36px; height: 36px; margin: 0 auto 8px auto;">
+        <img src="images/level-1/01-the-rose.jpeg" alt="The Rose" style="object-position: top;">
+      </div>
+
+      <table style="width: 100%; border-collapse: collapse;">
+        <tbody>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="width: 26px; padding: 5px 0; font-family: var(--font-serif); font-size: 12pt; color: var(--rose-clay);">1</td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Den Raum vorbereiten</td>
+            <td style="width: 24px; padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">3</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 5px 0;"></td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Deinen Raum reinigen &amp; in Besitz nehmen</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">4</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 12pt; color: var(--rose-clay);">2</td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Einführung in die Chakren</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">5</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 5px 0;"></td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Die einzelnen Chakren</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400); white-space: nowrap;">6–9</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 12pt; color: var(--rose-clay);">3</td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Die Auraschichten reinigen</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">10</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 5px 0;"></td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Jedes Chakra reinigen</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">11</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 5px 0;"></td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Energierückgewinnung</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">12</td>
+          </tr>
+          <tr style="border-bottom: 0.5px solid var(--rose-100);">
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 12pt; color: var(--rose-clay);">4</td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Goldene Klebrige Rosen</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">13</td>
+          </tr>
+          <tr>
+            <td style="padding: 5px 0;"></td>
+            <td style="padding: 5px 0; font-family: var(--font-serif); font-size: 10pt; font-weight: 500; color: var(--charcoal);">Elemente der Stufe 2</td>
+            <td style="padding: 5px 0; text-align: right; font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400);">14</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="grow"></div>
+
+      <div class="call">
+        <p>Stufe 2 baut auf dem Fundament der Rosenmeditation auf. Hier lernst du, physische Räume vorzubereiten und zu schützen, deine Chakren und Auraschichten zu reinigen und auszugleichen und mit den Goldenen Klebrigen Rosen für eine tiefe energetische Reinigung zu arbeiten.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>Rosenmeditation &nbsp;·&nbsp; Stufe 2</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 3 — PREPARING THE SPACE (slides 19-20)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="phase-badge">Phase B &nbsp;·&nbsp; Den Raum vorbereiten</div>
+      <div class="s12"></div>
+
+      <h2 class="h-lg">Deinen physischen Raum vorbereiten</h2>
+      <div class="s8"></div>
+      <p class="body">Bereite vor der Meditation deine physische Umgebung vor, um die energetische Arbeit zu unterstützen. Der äußere Raum sollte die innere Absicht widerspiegeln: sauber, klar, ruhig und bewusst gehalten.</p>
+      <div class="s16"></div>
+
+      <div style="text-align: center;">
+        <div class="img-full" style="max-width: 360px;">
+          <img src="images/level-2/20-create-the-room.jpeg" alt="Schutz des Raumes">
+        </div>
+        <div class="s6"></div>
+        <p class="body-sm" style="text-align: center; font-style: italic;">Schutz des Raumes</p>
+      </div>
+      <div class="s16"></div>
+
+      <p class="body" style="margin-bottom: 8px;">Bereite nun den Raum, in dem du dich befindest, so vor, dass er sauber und geschützt ist:</p>
+
+      <ul class="bul">
+        <li>Erschaffe 4 Goldene Rosen, jede mit einem goldenen Stiel und geerdet.</li>
+        <li>Erschaffe 4 goldene Linien von den oberen vier Ecken des Raumes, die sich in der Mitte der Decke vereinen.</li>
+        <li>Erschaffe 4 goldene Linien von den vier unteren Ecken, die sich in der Mitte des Bodens vereinen.</li>
+        <li>Erschaffe eine goldene Linie vom oberen Punkt zum unteren Punkt, die die Energie vereint.</li>
+        <li>Erschaffe von der Mitte des Bodens, wo sich die 4 Linien treffen, eine transparente Erdungsschnur bis zum Mittelpunkt der Erde und erweitere sie bis zu den Rändern des Raumes.</li>
+        <li>Sieh den ganzen Raum in Gold schwingen.</li>
+      </ul>
+    </div>
+
+    <div class="pn"><span>3</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 4 — CLEANSING & OWNING YOUR SPACE (slides 21-22)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="label">Den Raum reinigen</div>
+      <div class="s8"></div>
+      <h2 class="h-md" style="font-size: 17pt;">Reinigung des Raumes</h2>
+      <div class="s10"></div>
+
+      <div style="display: flex; gap: 20px; align-items: flex-start;">
+        <div class="img-full" style="width: 200px; max-width: 200px; flex-shrink: 0;">
+          <img src="images/level-2/21-cleanse-the-space.jpeg" alt="Den Raum reinigen">
+        </div>
+        <div>
+          <p class="body">Nachdem der Schutz errichtet ist, folgt die Reinigung. Eine Goldene Rose wird über dem Gitter platziert und durch dessen gesamte Struktur nach unten geführt, wobei sie alle fremden, stagnierenden oder störenden Energien im Raum entfernt. Diese Rose steigt hinab, um im Mittelpunkt der Erde durch die Erdungsschnur des Raumes transmutiert zu werden.</p>
+        </div>
+      </div>
+
+      <div class="s20"></div>
+      <div class="line"></div>
+      <div class="s16"></div>
+
+      <div class="label">Energetische Autorität</div>
+      <div class="s8"></div>
+      <h2 class="h-md" style="font-size: 17pt;">Deinen Raum in Besitz nehmen</h2>
+      <div class="s10"></div>
+
+      <div style="display: flex; gap: 20px; align-items: flex-start;">
+        <div class="img-full" style="width: 200px; max-width: 200px; flex-shrink: 0;">
+          <img src="images/level-2/22-owning-space.jpeg" alt="Deinen Raum in Besitz nehmen">
+        </div>
+        <div>
+          <p class="body" style="margin-bottom: 8px;">Nimm den Raum in Besitz, um Autorität über den Ort zu haben, an dem du meditierst:</p>
+          <ul class="bul">
+            <li>Erschaffe 4 goldene Linien vom Kronenchakra zu den oberen 4 Ecken des Raumes.</li>
+            <li>Erschaffe 4 goldene Linien vom Wurzelchakra zu den vier unteren Ecken des Raumes.</li>
+            <li>Wenn du unter freiem Himmel meditierst, erschaffe eine Kuppel oder einen goldenen Raum um dich herum und führe alle Techniken so aus, als wärst du drinnen.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="s16"></div>
+
+      <div class="label" style="margin-bottom: 8px;">Wichtige Anmerkungen</div>
+      <p class="body" style="font-size: 8.5pt;">Wenn du in einem Raum meditierst, der nicht unter deiner energetischen Autorität steht, beschränke deinen Schutz auf den unmittelbaren Bereich um dich herum und lass die vier Goldenen Rosen zum Abschluss nach außen zerplatzen. Wenn der Raum dir gehört &mdash; oder in deine energetische Autorität fällt &mdash; können die vier Goldenen Rosen bleiben und ihn weiterhin halten und schützen.</p>
+    </div>
+
+    <div class="pn"><span>4</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 5 — CHAKRAS INTRO + SEVEN CHAKRAS (slides 23-24)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="phase-badge">Phase C &nbsp;·&nbsp; Chakrensystem</div>
+      <div class="s12"></div>
+
+      <h2 class="h-lg">Sprechen wir über Chakren</h2>
+      <div class="s8"></div>
+      <p class="body">Das Chakrensystem ist die energetische Anatomie des menschlichen Körpers. Es gibt sieben Hauptchakren, die jeweils bestimmte Aspekte des physischen, emotionalen, mentalen und spirituellen Lebens bestimmen.</p>
+      <div class="s16"></div>
+
+      <div class="img-full" style="max-width: 200px;">
+        <img src="images/level-2/23-chakras-intro.jpeg" alt="Chakras Introduction">
+      </div>
+      <div class="s12"></div>
+
+      <div class="label" style="margin-bottom: 6px;">Referenz</div>
+      <h3 class="h-md">Die sieben Chakren</h3>
+      <div class="s8"></div>
+
+      <div class="sum" style="padding: 14px 20px;">
+        <table style="width: 100%; border-collapse: collapse;">
+          <tbody>
+            <tr style="border-bottom: 0.5px solid var(--rose-200);">
+              <td style="padding: 4px 0; font-family: var(--font-serif); font-size: 9.5pt; font-weight: 500; color: #7B2D8E; width: 30px;">7th</td>
+              <td style="padding: 4px 0; font-family: var(--font-serif); font-size: 9.5pt; color: var(--charcoal);">Krone — <span style="color: #7B2D8E;">Violett</span></td>
+            </tr>
+            <tr style="border-bottom: 0.5px solid var(--rose-200);">
+              <td style="padding: 4px 0; font-family: var(--font-serif); font-size: 9.5pt; font-weight: 500; color: #2E3192;">6th</td>
+              <td style="padding: 4px 0; font-family: var(--font-serif); font-size: 9.5pt; color: var(--charcoal);">Drittes Auge — <span style="color: #2E3192;">Indigoblau</span></td>
+            </tr>
+            <tr style="border-bottom: 0.5px solid var(--rose-200);">
+              <td style="padding: 4px 0; font-family: var(--font-serif); font-size: 9.5pt; font-weight: 500; color: #29ABE2;">5th</td>
+              <td style="padding: 4px 0; font-family: var(--font-serif); font-size: 9.5pt; color: var(--charcoal);">Hals / Kommunikation — <span style="color: #29ABE2;">Himmelblau</span></td>
+            </tr>
+            <tr style="border-bottom: 0.5px solid var(--rose-200);">
+              <td style="padding: 4px 0; font-family: var(--font-serif); font-size: 9.5pt; font-weight: 500; color: #D4669A;">4th</td>
+              <td style="padding: 4px 0; font-family: var(--font-serif); font-size: 9.5pt; color: var(--charcoal);">Heart — <span style="color: #D4669A;">Rosa</span> and <span style="color: #4CAF50;">Grün</span> <span style="font-size: 7.5pt; color: var(--soft-charcoal);">(beide Schwingungen ausführen)</span></td>
+            </tr>
+            <tr style="border-bottom: 0.5px solid var(--rose-200);">
+              <td style="padding: 4px 0; font-family: var(--font-serif); font-size: 9.5pt; font-weight: 500; color: #F7C948;">3rd</td>
+              <td style="padding: 4px 0; font-family: var(--font-serif); font-size: 9.5pt; color: var(--charcoal);">Solarplexus — <span style="color: #F7C948;">Gelb</span></td>
+            </tr>
+            <tr style="border-bottom: 0.5px solid var(--rose-200);">
+              <td style="padding: 4px 0; font-family: var(--font-serif); font-size: 9.5pt; font-weight: 500; color: #F7931E;">2nd</td>
+              <td style="padding: 4px 0; font-family: var(--font-serif); font-size: 9.5pt; color: var(--charcoal);">Sakral / Nabel — <span style="color: #F7931E;">Orange</span></td>
+            </tr>
+            <tr>
+              <td style="padding: 4px 0; font-family: var(--font-serif); font-size: 9.5pt; font-weight: 500; color: #C1272D;">1st</td>
+              <td style="padding: 4px 0; font-family: var(--font-serif); font-size: 9.5pt; color: var(--charcoal);">Wurzel / Basis — <span style="color: #C1272D;">Rot</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="pn"><span>5</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 6 — ROOT + SACRAL CHAKRAS (slides 25-26)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="label">Die einzelnen Chakren</div>
+      <div class="s10"></div>
+
+      <!-- Wurzelchakra -->
+      <div class="chakra-card">
+        <div class="chakra-img">
+          <img class="nadi-full" src="images/level-2/25-pdf-root-chakra.jpeg" alt="Wurzelchakra">
+        </div>
+        <div class="chakra-info">
+          <div class="chakra-name" style="color: #DC2626;">Wurzelchakra</div>
+          <div class="chakra-sanskrit">Muladhara &nbsp;·&nbsp; Erde</div>
+          <div class="chakra-statement" style="color: #DC2626;">"ICH BIN"</div>
+          <div class="chakra-meta">
+            <strong>Fokus:</strong> Stabilität — Sicherheit — Verkörperung<br>
+            <strong>Körper:</strong> Basis der Wirbelsäule, Beine, Füße<br>
+            <strong>Energie:</strong> Vorherrschaft der männlichen Energie — Überleben / Fundament
+          </div>
+        </div>
+      </div>
+      <div class="s8"></div>
+      <div class="chakra-cols">
+        <div>
+          <h5 style="color: #4CAF50;">Wenn ausgeglichen</h5>
+          <ul class="bul">
+            <li>Geerdete Präsenz</li>
+            <li>Physische Vitalität</li>
+            <li>Vertrauen in das Leben</li>
+            <li>Sich im Körper sicher fühlen</li>
+          </ul>
+        </div>
+        <div>
+          <h5 style="color: #C1272D;">Wenn unausgeglichen</h5>
+          <ul class="bul">
+            <li>Angst und Unsicherheit</li>
+            <li>Überlebensangst</li>
+            <li>Trennung vom Körper</li>
+            <li>Mangeldenken</li>
+          </ul>
+        </div>
+      </div>
+      <div class="s4"></div>
+      <p class="chakra-blockages"><strong>Blockaden:</strong> Angst — Unsicherheit — Überlebenstrauma</p>
+
+      <div class="chakra-divider" style="background: linear-gradient(90deg, #DC2626, #EA580C);"></div>
+
+      <!-- Sakralchakra -->
+      <div class="chakra-card">
+        <div class="chakra-img">
+          <img class="nadi-full" src="images/level-2/26-pdf-sacral-chakra.jpeg" alt="Sakralchakra">
+        </div>
+        <div class="chakra-info">
+          <div class="chakra-name" style="color: #EA580C;">Sakralchakra</div>
+          <div class="chakra-sanskrit">Svadhisthana &nbsp;·&nbsp; Wasser</div>
+          <div class="chakra-statement" style="color: #EA580C;">"ICH FÜHLE"</div>
+          <div class="chakra-meta">
+            <strong>Fokus:</strong> Emotionen — Kreativität — Genuss<br>
+            <strong>Körper:</strong> Unterbauch, Geschlechtsorgane<br>
+            <strong>Energie:</strong> Vorherrschaft der weiblichen Energie — Fluss &amp; Flexibilität
+          </div>
+        </div>
+      </div>
+      <div class="s8"></div>
+      <div class="chakra-cols">
+        <div>
+          <h5 style="color: #4CAF50;">Wenn ausgeglichen</h5>
+          <ul class="bul">
+            <li>Emotionales Wohlbefinden</li>
+            <li>Sinnlichkeit und Intimität</li>
+            <li>Leidenschaft und Genuss</li>
+            <li>Anpassungsfähigkeit</li>
+          </ul>
+        </div>
+        <div>
+          <h5 style="color: #C1272D;">Wenn unausgeglichen</h5>
+          <ul class="bul">
+            <li>Depression und Taubheit</li>
+            <li>Sexuelle Dysfunktion</li>
+            <li>Emotionale Instabilität</li>
+            <li>Angst vor Veränderung</li>
+          </ul>
+        </div>
+      </div>
+      <div class="s4"></div>
+      <p class="chakra-blockages"><strong>Blockaden:</strong> Scham — Emotionale Unterdrückung — Schuld</p>
+    </div>
+
+    <div class="pn"><span>6</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 7 — SOLAR PLEXUS + HEART CHAKRAS (slides 27-28)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <!-- Solarplexus-Chakra -->
+      <div class="chakra-card">
+        <div class="chakra-img" style="width: 140px;">
+          <img src="images/level-2/27-pdf-solar-plexus-chakra.jpeg" alt="Solarplexus-Chakra">
+        </div>
+        <div class="chakra-info">
+          <div class="chakra-name" style="color: #CA8A04;">Solarplexus-Chakra</div>
+          <div class="chakra-sanskrit">Manipura &nbsp;·&nbsp; Feuer</div>
+          <div class="chakra-statement" style="color: #CA8A04;">"ICH KANN"</div>
+          <div class="chakra-meta">
+            <strong>Fokus:</strong> Persönliche Kraft — Selbstwertgefühl — Antrieb<br>
+            <strong>Körper:</strong> Oberbauch, Zwerchfell<br>
+            <strong>Energie:</strong> Vorherrschaft der männlichen Energie — Kraft &amp; Transformation
+          </div>
+        </div>
+      </div>
+      <div class="s6"></div>
+      <div class="chakra-cols">
+        <div>
+          <h5 style="color: #4CAF50;">Wenn ausgeglichen</h5>
+          <ul class="bul">
+            <li>Selbstvertrauen und Motivation</li>
+            <li>Verantwortungsbewusst und diszipliniert</li>
+            <li>Gesundes Selbstgefühl</li>
+            <li>Autonomie</li>
+          </ul>
+        </div>
+        <div>
+          <h5 style="color: #C1272D;">Wenn unausgeglichen</h5>
+          <ul class="bul">
+            <li>Geringes Selbstwertgefühl</li>
+            <li>Aggression oder Kontrollverhalten</li>
+            <li>Stur und herrschsüchtig</li>
+            <li>Mangel an Richtung oder Sinn</li>
+          </ul>
+        </div>
+      </div>
+      <div class="s4"></div>
+      <p class="chakra-blockages"><strong>Blockaden:</strong> Selbstzweifel — Unsicherheit — Angst vor Ablehnung</p>
+
+      <div class="chakra-divider" style="background: linear-gradient(90deg, #CA8A04, #16A34A);"></div>
+
+      <!-- Herzchakra -->
+      <div class="chakra-card">
+        <div class="chakra-img" style="width: 140px;">
+          <img src="images/level-2/28-pdf-heart-chakra.jpeg" alt="Herzchakra">
+        </div>
+        <div class="chakra-info">
+          <div class="chakra-name" style="color: #16A34A;">Herzchakra</div>
+          <div class="chakra-sanskrit">Anahata &nbsp;·&nbsp; Luft</div>
+          <div class="chakra-statement" style="color: #16A34A;">"ICH LIEBE"</div>
+          <div class="chakra-meta">
+            <strong>Fokus:</strong> Liebe — Mitgefühl — Verbindung<br>
+            <strong>Körper:</strong> Brustmitte, Herz, Lungen<br>
+            <strong>Energie:</strong> Vorherrschaft der weiblichen Energie — Brücke zwischen Physischem &amp; Spirituellem
+          </div>
+        </div>
+      </div>
+      <div class="s6"></div>
+      <div class="chakra-cols">
+        <div>
+          <h5 style="color: #4CAF50;">Wenn ausgeglichen</h5>
+          <ul class="bul">
+            <li>Mitgefühl und Empathie</li>
+            <li>Emotionale Offenheit</li>
+            <li>Vergebung</li>
+            <li>Gesunde Intimität und Selbstliebe</li>
+          </ul>
+        </div>
+        <div>
+          <h5 style="color: #C1272D;">Wenn unausgeglichen</h5>
+          <ul class="bul">
+            <li>Emotionaler Rückzug oder übermäßiges Geben</li>
+            <li>Angst vor Intimität</li>
+            <li>Kälte oder Distanziertheit</li>
+            <li>Schwierigkeit zu vergeben</li>
+          </ul>
+        </div>
+      </div>
+      <div class="s4"></div>
+      <p class="chakra-blockages"><strong>Blockaden:</strong> Trauer — Verrat — Herzschmerz</p>
+      <div class="s4"></div>
+      <div class="call" style="padding: 6px 14px;">
+        <p style="font-size: 8pt;"><span style="color: #4CAF50;">Grün — Menschliche Liebe</span> — "ICH LIEBE" — Bedingte Liebe, Empathie, Vergebung, gesunde Beziehungen.</p>
+      </div>
+      <div class="s4"></div>
+      <div class="call" style="padding: 6px 14px;">
+        <p style="font-size: 8pt;"><span style="color: #D4669A;">Rosa — Göttliche Liebe</span> — "ICH BIN LIEBE" — Bedingungslose Liebe, Mitgefühl, Verbundenheit, göttliche und universelle Liebe.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>7</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 8 — THROAT + THIRD EYE CHAKRAS (slides 29-30)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <!-- Halschakra -->
+      <div class="chakra-card">
+        <div class="chakra-img">
+          <img src="images/level-2/29-pdf-throat-chakra.jpeg" alt="Halschakra">
+        </div>
+        <div class="chakra-info">
+          <div class="chakra-name" style="color: #0EA5E9;">Halschakra</div>
+          <div class="chakra-sanskrit">Vishuddha &nbsp;·&nbsp; Äther / Klang</div>
+          <div class="chakra-statement" style="color: #0EA5E9;">"ICH SPRECHE UND ICH HÖRE"</div>
+          <div class="chakra-meta">
+            <strong>Fokus:</strong> Kommunikation — Wahrheit — Authentizität<br>
+            <strong>Körper:</strong> Hals, Nacken, Kiefer, Mund<br>
+            <strong>Energie:</strong> Vorherrschaft der männlichen Energie — Den Willen mit der göttlichen Wahrheit in Einklang bringen lernen
+          </div>
+        </div>
+      </div>
+      <div class="s8"></div>
+      <div class="chakra-cols">
+        <div>
+          <h5 style="color: #4CAF50;">Wenn ausgeglichen</h5>
+          <ul class="bul">
+            <li>Klare, ehrliche Kommunikation</li>
+            <li>Authentischer Selbstausdruck</li>
+            <li>Guter Zuhörer</li>
+            <li>Starke Stimme und ausgewogene Sprache</li>
+          </ul>
+        </div>
+        <div>
+          <h5 style="color: #C1272D;">Wenn unausgeglichen</h5>
+          <ul class="bul">
+            <li>Angst, sich zu äußern</li>
+            <li>Ungehört oder missverstanden werden</li>
+            <li>Gefallenwollen</li>
+            <li>Unterdrückte Gefühle oder Lügen</li>
+          </ul>
+        </div>
+      </div>
+      <div class="s4"></div>
+      <p class="chakra-blockages"><strong>Blockaden:</strong> Unterdrückte Wahrheit — Angst vor dem Ausdruck — Missverständnis</p>
+
+      <div class="chakra-divider" style="background: linear-gradient(90deg, #0EA5E9, #4F46E5);"></div>
+
+      <!-- Drittes-Auge-Chakra -->
+      <div class="chakra-card">
+        <div class="chakra-img">
+          <img src="images/level-2/30-pdf-third-eye-chakra.jpeg" alt="Drittes-Auge-Chakra">
+        </div>
+        <div class="chakra-info">
+          <div class="chakra-name" style="color: #4F46E5;">Drittes-Auge-Chakra</div>
+          <div class="chakra-sanskrit">Ajna &nbsp;·&nbsp; Licht</div>
+          <div class="chakra-statement" style="color: #4F46E5;">"ICH SEHE"</div>
+          <div class="chakra-meta">
+            <strong>Fokus:</strong> Vorstellungskraft — Wahrnehmung — Visualisierung<br>
+            <strong>Körper:</strong> Stirn, Augenbraue, Augenmitte<br>
+            <strong>Energie:</strong> Vorherrschaft der weiblichen Energie — Aspekte des Bewusstseins
+          </div>
+        </div>
+      </div>
+      <div class="s8"></div>
+      <div class="chakra-cols">
+        <div>
+          <h5 style="color: #4CAF50;">Wenn ausgeglichen</h5>
+          <ul class="bul">
+            <li>Klares Sehen und Intuition</li>
+            <li>Gutes Gedächtnis und Vorstellungskraft</li>
+            <li>Innere Verortung</li>
+            <li>Weisheit und Vision</li>
+          </ul>
+        </div>
+        <div>
+          <h5 style="color: #C1272D;">Wenn unausgeglichen</h5>
+          <ul class="bul">
+            <li>Grübeln</li>
+            <li>Geistiger Nebel</li>
+            <li>Trennung von der inneren Führung</li>
+            <li>Realitätsflucht oder spirituelles Umgehen</li>
+          </ul>
+        </div>
+      </div>
+      <div class="s4"></div>
+      <p class="chakra-blockages"><strong>Blockaden:</strong> Illusion — Angst vor dem Sehen — Geistige Starrheit</p>
+    </div>
+
+    <div class="pn"><span>8</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 9 — CROWN CHAKRA (slide 31) + TRANSITION
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <!-- Kronenchakra — larger solo layout -->
+      <div style="display: flex; gap: 24px; align-items: flex-start;">
+        <div style="width: 160px; flex-shrink: 0; border-radius: 12px; overflow: hidden;">
+          <img src="images/level-2/31-pdf-crown-chakra.jpeg" alt="Kronenchakra" style="width: 100%; height: auto; border-radius: 12px;">
+        </div>
+        <div>
+          <div class="chakra-name" style="color: #7C3AED; font-size: 18pt;">Kronenchakra</div>
+          <div class="chakra-sanskrit" style="font-size: 10.5pt;">Sahasrara &nbsp;·&nbsp; Gedanke &amp; Universelle Verbindung</div>
+          <div class="chakra-statement" style="color: #7C3AED; font-size: 16pt;">"ICH WEISS"</div>
+          <div class="s6"></div>
+          <div class="chakra-meta" style="font-size: 8.5pt;">
+            <strong>Fokus:</strong> Spirituelle Verbindung — Innere Weisheit — Höhere Bewusstseinszustände<br>
+            <strong>Körper:</strong> Scheitel<br>
+            <strong>Energie:</strong> Keine Dualität — Das Ego transzendieren, mit der Quelle verschmelzen
+          </div>
+        </div>
+      </div>
+      <div class="s16"></div>
+
+      <div class="chakra-cols" style="gap: 20px;">
+        <div>
+          <h5 style="color: #4CAF50; font-size: 7.5pt;">Wenn ausgeglichen</h5>
+          <ul class="bul">
+            <li style="font-size: 8.5pt; padding: 2px 0 2px 14px;">Spiritueller Glaube und Verbindung</li>
+            <li style="font-size: 8.5pt; padding: 2px 0 2px 14px;">Innerer Frieden, Vertrauen und Weisheit</li>
+            <li style="font-size: 8.5pt; padding: 2px 0 2px 14px;">Offenheit und Bewusstheit</li>
+            <li style="font-size: 8.5pt; padding: 2px 0 2px 14px;">Gefühl von Lebenssinn</li>
+          </ul>
+        </div>
+        <div>
+          <h5 style="color: #C1272D; font-size: 7.5pt;">Wenn unausgeglichen</h5>
+          <ul class="bul">
+            <li style="font-size: 8.5pt; padding: 2px 0 2px 14px;">Spirituelle Leere</li>
+            <li style="font-size: 8.5pt; padding: 2px 0 2px 14px;">Existenzieller Zweifel</li>
+            <li style="font-size: 8.5pt; padding: 2px 0 2px 14px;">Sich isoliert oder allein fühlen</li>
+            <li style="font-size: 8.5pt; padding: 2px 0 2px 14px;">Mangel an Sinn</li>
+          </ul>
+        </div>
+      </div>
+      <div class="s6"></div>
+      <p class="chakra-blockages" style="font-size: 8.5pt;"><strong>Blockaden:</strong> Trennung — Zynismus — Verlust von Sinn</p>
+
+      <div class="grow"></div>
+
+      <div class="call-gold call">
+        <p style="color: var(--rose-800);">Nun, da du jedes Chakra verstehst, lernst du, sie einzeln zu reinigen — beginnend mit den Auraschichten, dann jedem Chakra und schließlich einer vollständigen Energierückgewinnung.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>9</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 10 — CLEANSING EACH CHAKRA (slide 32)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="phase-badge">Phase C &nbsp;·&nbsp; Chakra-Reinigung</div>
+      <div class="s12"></div>
+
+      <h2 class="h-lg">Reinigung jedes Chakras</h2>
+      <div class="s8"></div>
+      <p class="body">Jedes einzelne Chakra wird mithilfe von Rosen gereinigt. Die Rosen behandeln zwei Dimensionen: <em>Dynamiken der Vergangenheit</em> — energetische Muster, Prägungen und Blockaden, die aus vergangenen Erfahrungen mitgetragen werden, und <em>Dynamiken der Gegenwart</em> — aktuelle energetische Einflüsse, Beziehungen und Situationen, die das Chakra betreffen.</p>
+      <div class="s16"></div>
+
+      <div class="img-full" style="max-width: 480px;">
+        <img src="images/level-2/33-cleansing-each-chakra.png" alt="Chakra-Reinigung">
+      </div>
+      <div class="s10"></div>
+
+      <ul class="bul">
+        <li>Erschaffe an der Außenseite der Aura zwei geerdete Rosen (in der Farbe des Chakras), eine hinter dir und eine vor dir, auf Höhe des Chakras. Die vordere Rose reinigt Energien aus der Gegenwart; die hintere Rose reinigt Energien aus der Vergangenheit.</li>
+        <li>Erschaffe und zerplatze mehrere Rosen, um das Chakra tief zu reinigen.</li>
+        <li>Erschaffe eine ungeerdete Rose (in der Farbe des Chakras), um die entsprechende Auraschicht auf Höhe des Chakras zu reinigen.</li>
+        <li>Erschaffe und zerplatze mehrere Rosen, um die Auraschichten zu reinigen.</li>
+        <li>Erschaffe eine geerdete Rose auf Chakra-Höhe außerhalb der Aura, um deine gesamte verstreute Energie in dieser Schwingung aufzunehmen. Lass sie zerplatzen — deine Energie kehrt erhöht und gereinigt zurück.</li>
+      </ul>
+
+      <div class="s10"></div>
+      <div class="call">
+        <p>Dieses Verfahren sollte für alle Chakren gleichermaßen durchgeführt werden, beginnend beim ersten und der Reihe nach aufsteigend bis zum siebten.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>10</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 11 — CLEANSING EACH AURA LAYER (slide 33)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="label">Auraschicht-Reinigung</div>
+      <div class="s8"></div>
+      <h2 class="h-lg">Reinigung jeder Auraschicht</h2>
+      <div class="s8"></div>
+      <p class="body">Die Aura besteht aus sieben Schichten, von denen jede einem Chakra entspricht. In Stufe 2 wird jede Schicht einzeln von der 1. bis zur 7. Schicht gereinigt.</p>
+      <div class="s16"></div>
+
+      <div class="img-full" style="max-width: 300px;">
+        <img src="images/level-2/32-cleansing-each-layer.jpeg" alt="Cleansing Each Aura Layer">
+      </div>
+      <div class="s12"></div>
+
+      <div class="label" style="margin-bottom: 6px;">Die sieben Auraschichten</div>
+      <ol class="num">
+        <li>1st Aura layer — Root</li>
+        <li>2nd Aura layer — Sacral</li>
+        <li>3rd Aura layer — Solarplexus</li>
+        <li>4th Aura layer — Heart</li>
+        <li>5th Aura layer — Throat</li>
+        <li>6th Aura layer — Drittes Auge</li>
+        <li>7th Aura layer — Krone</li>
+      </ol>
+
+      <div class="s12"></div>
+      <div class="call">
+        <p>Reinige jede Auraschicht mit einer ungeerdeten Rose in der entsprechenden Chakra-Farbe. Erschaffe und zerplatze mehrere Rosen für jede Schicht und arbeite dich von der 1. Schicht bis zur 7. vor.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>11</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 12 — ENERGY RECOVERY (slide 34)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="justify-content: center;">
+      <div class="label">Rückgewinnung</div>
+      <div class="s8"></div>
+      <h2 class="h-lg">Die Energierückgewinnungsrose im Detail</h2>
+      <div class="s8"></div>
+      <p class="body">Sobald die Reinigung des Chakras und seiner entsprechenden Auraschicht abgeschlossen ist, kann sich der Prozess der Energierückgewinnung in deren Schwingung entfalten, wenn du dich dazu berufen fühlst. Eine Rückgewinnungsrose kann auf diese spezifische Frequenz abgestimmt erschaffen werden, die deine Energie zurückzieht und sie genau auf dieser Ebene wiederherstellt. Du kannst dies vom 1. bis zum 7. Chakra tun.</p>
+      <div class="s20"></div>
+
+      <div class="img-full" style="max-width: 320px;">
+        <img src="images/level-2/34-energy-recovery-rose.png" alt="Energierückgewinnung Rose">
+      </div>
+    </div>
+
+    <div class="pn"><span>12</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 13 — GOLDEN STICKY ROSES Roses 1 & 2 (slides 35-36)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="label">Tiefenreinigung</div>
+      <div class="s8"></div>
+      <h2 class="h-lg">Goldene Klebrige Rosen</h2>
+      <div style="height: 4px;"></div>
+      <p class="body" style="margin-bottom: 6px; font-size: 8.5pt;">Vier Goldene Klebrige Rosen werden für die tiefe energetische Reinigung der Aura verwendet und ziehen alle fremden Energien heraus, die nach der vorherigen Reinigung noch verbleiben.</p>
+
+      <!-- Side-by-side: Roses 1 & 2 -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+
+        <!-- Rose 1 -->
+        <div style="display: flex; flex-direction: column;">
+          <div style="border-radius: 10px; overflow: hidden; margin-bottom: 4px;">
+            <img src="images/level-2/35-golden-sticky-1.png" alt="Golden Sticky Rose — First Rose: Krone to Root" style="width: 100%; height: auto; display: block; border-radius: 10px;">
+          </div>
+          <p class="h-sm" style="font-size: 8.5pt; margin-bottom: 2px; color: var(--gold);">Erste Rose — Krone zur Wurzel</p>
+          <p class="body" style="font-size: 7.5pt; line-height: 1.4;">Die erste tritt durch das Kronenchakra ein und reinigt der Reihe nach jedes Chakra bis hinunter zur Wurzel.</p>
+        </div>
+
+        <!-- Rose 2 -->
+        <div style="display: flex; flex-direction: column;">
+          <div style="border-radius: 10px; overflow: hidden; margin-bottom: 4px;">
+            <img src="images/level-2/36-golden-sticky-2.jpg" alt="Golden Sticky Rose — Second Rose: Arms" style="width: 100%; height: auto; display: block; border-radius: 10px;">
+          </div>
+          <p class="h-sm" style="font-size: 8.5pt; margin-bottom: 2px; color: var(--gold);">Zweite Rose — Arme</p>
+          <p class="body" style="font-size: 7.5pt; line-height: 1.4;">Die zweite steigt bis zum Halschakra hinab, wo sie sich in zwei Rosen aufteilt, die durch die Kanäle der Arme wandern und durch die Handchakren austreten.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="pn"><span>13</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 14 — GOLDEN STICKY ROSES Roses 3 & 4 (slides 37-38)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner">
+      <div class="label">Tiefenreinigung</div>
+      <div class="s8"></div>
+      <h2 class="h-lg">Goldene Klebrige Rosen <span style="font-weight: 400; font-size: 0.75em;">(Fortsetzung)</span></h2>
+      <div style="height: 4px;"></div>
+
+      <!-- Side-by-side: Roses 3 & 4 -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+
+        <!-- Rose 3 -->
+        <div style="display: flex; flex-direction: column;">
+          <div style="border-radius: 10px; overflow: hidden; margin-bottom: 4px;">
+            <img src="images/level-2/37-golden-sticky-3.jpg" alt="Golden Sticky Rose — Third Rose: Legs" style="width: 100%; height: auto; display: block; border-radius: 10px;">
+          </div>
+          <p class="h-sm" style="font-size: 8.5pt; margin-bottom: 2px; color: var(--gold);">Dritte Rose — Beine</p>
+          <p class="body" style="font-size: 7.5pt; line-height: 1.4;">Die dritte steigt bis zum Wurzelchakra hinab, wo sie zu zwei Rosen wird, die den Kanälen der Beine folgen und durch die Fußchakren austreten.</p>
+        </div>
+
+        <!-- Rose 4 -->
+        <div style="display: flex; flex-direction: column;">
+          <div style="border-radius: 10px; overflow: hidden; margin-bottom: 4px;">
+            <img src="images/level-2/38-golden-sticky-4.jpeg" alt="Golden Sticky Rose — Fourth Rose: Full Aura" style="width: 100%; height: auto; display: block; border-radius: 10px;">
+          </div>
+          <p class="h-sm" style="font-size: 8.5pt; margin-bottom: 2px; color: var(--gold);">Vierte Rose — Ganze Aura</p>
+          <p class="body" style="font-size: 7.5pt; line-height: 1.4;">Die vierte erstreckt sich über die gesamte Breite der Aura und steigt durch das gesamte Energiefeld hinab.</p>
+        </div>
+
+      </div>
+
+      <div style="height: 6px;"></div>
+      <div class="call-gold call">
+        <p style="color: var(--rose-800); font-size: 8pt;">Nach Abschluss zerplatzen alle vier entweder außerhalb der Aura oder treten durch die Erdungsschnur aus und transmutieren die gesammelten Energien mit sich fort.</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>14</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 15 — ELEMENTS SUMMARY (Stufe 2)
+       ===================================================== -->
+  <div class="page">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="justify-content: center;">
+      <div class="img-full">
+        <img src="images/level-2/19-physical-space-abstract.png" alt="Elements of Rosenmeditation Stufe 2">
+      </div>
+      <div class="s20"></div>
+
+      <div class="sum">
+        <div class="label" style="margin-bottom: 6px;">Kurzreferenz</div>
+        <h2 class="h-md" style="margin-bottom: 12px;">Elemente der Rosenmeditation — Stufe 2</h2>
+        <div class="line" style="margin-bottom: 14px;"></div>
+
+        <div class="cols">
+          <div>
+            <h4 class="h-sm" style="margin-bottom: 6px;">Raumvorbereitung</h4>
+            <ul class="bul">
+              <li>Den Raum vorbereiten und schützen</li>
+              <li>Den Raum mit goldener Rose reinigen</li>
+              <li>Den Raum in Besitz nehmen (Krone + Wurzel zu den Ecken)</li>
+              <li>Goldene Kuppel für öffentliche Räume</li>
+            </ul>
+            <div class="s10"></div>
+            <h4 class="h-sm" style="margin-bottom: 6px;">Die sieben Chakren</h4>
+            <ul class="bul">
+              <li>Wurzel, Sakral, Solarplexus, Herz</li>
+              <li>Hals, Drittes Auge, Krone</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="h-sm" style="margin-bottom: 6px;">Chakra- &amp; Aura-Reinigung</h4>
+            <ul class="bul">
+              <li>Jede Auraschicht reinigen (7 Schichten)</li>
+              <li>Jedes Chakra reinigen (vordere + hintere Rosen)</li>
+              <li>Rückgewinnungsrose pro Chakra</li>
+            </ul>
+            <div class="s10"></div>
+            <h4 class="h-sm" style="margin-bottom: 6px;">Goldene Klebrige Rosen</h4>
+            <ul class="bul">
+              <li>Erste Rose — Krone zur Wurzel</li>
+              <li>Zweite Rose — Arme</li>
+              <li>Dritte Rose — Beine</li>
+              <li>Vierte Rose — Ganze Aura</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="s16"></div>
+      <div class="call-gold call">
+        <p style="color: var(--rose-800); font-size: 11pt;">JA! JETZT BIST DU BEREIT FÜR EINEN WUNDERSCHÖNEN TAG!</p>
+      </div>
+    </div>
+
+    <div class="pn"><span>15</span></div>
+  </div>
+
+  <!-- =====================================================
+       PAGE 15 — CLOSING
+       ===================================================== -->
+  <div class="page closing-bg">
+    <div class="ck ck-tl"></div><div class="ck ck-tr"></div>
+    <div class="ck ck-bl"></div><div class="ck ck-br"></div>
+
+    <div class="inner" style="align-items: center; justify-content: center; text-align: center;">
+
+      <div class="img-circle" style="width: 180px; height: 180px; margin-bottom: 36px;">
+        <img src="images/manual-l12-cover-l12.png" alt="Sacred Rose">
+      </div>
+
+      <div style="font-family: var(--font-sans); font-size: 7pt; color: var(--rose-400); line-height: 1.8; letter-spacing: 0.03em;">
+        Lehren von Angelina Ataíde<br>
+        Illustrationen: Saraswati Noemi, Cecilia Lynch &amp; Drica Voivodic<br>
+        Rotaktion: Dara Ayoub &nbsp;·&nbsp; Gestaltung: Jennifer Lawless
+      </div>
+      <div class="s20"></div>
+      <div style="font-family: var(--font-sans); font-size: 6.5pt; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold);">Internationale Schule für Aura und Träume</div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -30,7 +30,7 @@ const PDF_MANUALS: Record<string, { level: number; name: string }> = {
 };
 
 /** Languages with a designed PDF, mapped to the prod filename code. Others fall back. */
-const LANG_CODE: Record<string, string> = { en: 'EN', es: 'ES', pt: 'PT' };
+const LANG_CODE: Record<string, string> = { en: 'EN', es: 'ES', pt: 'PT', de: 'DE' };
 
 export function getFinalPdfForSlug(
   slug: string | null | undefined,

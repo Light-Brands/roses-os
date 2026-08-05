@@ -27,6 +27,7 @@ const manualLabelBuilders: Partial<Record<Locale, (level: number) => string>> = 
   el: (level) => `Λήψη Εγχειριδίου Επιπέδου ${level}`,
   ru: (level) => `Скачать руководство уровня ${level}`,
   uk: (level) => `Завантажити посібник рівня ${level}`,
+  de: (level) => `Handbuch Stufe ${level} herunterladen`,
 };
 
 function manualLabels(level: number): Partial<Record<Locale, string>> {
@@ -45,6 +46,7 @@ export const manualPdfConfigs: ManualPdfConfig[] = [
       el: '/resources/manuals/Rose-Level-1-Manual-EL.pdf',
       ru: '/resources/manuals/Rose-Level-1-Manual-RU.pdf',
       uk: '/resources/manuals/Rose-Level-1-Manual-UK.pdf',
+      de: '/resources/manuals/Rose-Level-1-Manual-DE.pdf',
     },
     labels: manualLabels(1),
   },
@@ -56,6 +58,7 @@ export const manualPdfConfigs: ManualPdfConfig[] = [
       pt: '/resources/manuals/Rose-Level-2-Manual-PT.pdf',
       ru: '/resources/manuals/Rose-Level-2-Manual-RU.pdf',
       uk: '/resources/manuals/Rose-Level-2-Manual-UK.pdf',
+      de: '/resources/manuals/Rose-Level-2-Manual-DE.pdf',
     },
     labels: manualLabels(2),
   },
@@ -67,6 +70,7 @@ export const manualPdfConfigs: ManualPdfConfig[] = [
       pt: '/resources/manuals/Rose-Level-3-Manual-PT.pdf',
       ru: '/resources/manuals/Rose-Level-3-Manual-RU.pdf',
       uk: '/resources/manuals/Rose-Level-3-Manual-UK.pdf',
+      de: '/resources/manuals/Rose-Level-3-Manual-DE.pdf',
     },
     labels: manualLabels(3),
   },
@@ -79,12 +83,14 @@ export const teachersAidPdfConfig: Omit<ManualPdfConfig, 'level'> = {
     es: '/resources/manuals/ROSES-OS-Teachers-Aid-ES.pdf',
     pt: '/resources/manuals/ROSES-OS-Teachers-Aid-PT.pdf',
     el: '/resources/manuals/ROSES-OS-Teachers-Aid-EL.pdf',
+    de: '/resources/manuals/ROSES-OS-Teachers-Aid-DE.pdf',
   },
   labels: {
     en: 'Download Teachers Aid PDF',
     es: 'Descargar PDF de Ayuda para Profesores',
     pt: 'Baixar PDF de Auxílio ao Professor',
     el: 'Λήψη PDF Βοηθήματος Δασκάλου',
+    de: 'Lehrerhandbuch-PDF herunterladen',
   },
 };
 

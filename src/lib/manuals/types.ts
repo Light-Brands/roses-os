@@ -3,7 +3,7 @@
 // =============================================================================
 
 /** Supported languages for manual editing */
-export type ManualLanguage = 'en' | 'pt' | 'es' | 'el' | 'ru' | 'uk';
+export type ManualLanguage = 'en' | 'pt' | 'es' | 'el' | 'ru' | 'uk' | 'de';
 
 export const MANUAL_LANGUAGES: { code: ManualLanguage; label: string }[] = [
   { code: 'en', label: 'English' },
@@ -12,6 +12,7 @@ export const MANUAL_LANGUAGES: { code: ManualLanguage; label: string }[] = [
   { code: 'el', label: 'Ellinika' },
   { code: 'ru', label: 'Russkij' },
   { code: 'uk', label: "Ukrains'ka" },
+  { code: 'de', label: 'Deutsch' },
 ];
 
 /** Block types available in the manual editor (schema v1 ↔ v2).

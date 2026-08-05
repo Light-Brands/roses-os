@@ -4,13 +4,14 @@ import { readFileSync, writeFileSync } from 'fs';
 const env={}; for(const l of readFileSync('.env.local','utf-8').split('\n')){const m=l.match(/^([^#=]+)=(.*)$/);if(m)env[m[1].trim()]=m[2].trim().replace(/^["']|["']$/g,'');}
 const KEY=env.GOOGLE_GEMINI_API_KEY||env.GEMINI_API_KEY;
 const PATH='scripts/pdf-manuals/student-manual-translations.json';
-const NAMES={ru:'Russian',uk:'Ukrainian'};
+const NAMES={ru:'Russian',uk:'Ukrainian',de:'German'};
 
 async function translateChunk(strings,name){
   const sys=`Translate each string in the JSON array from English to ${name}.
 Rules: preserve &-entities (&amp; &nbsp; &mdash; etc.), placeholders, punctuation and numbers exactly; proper names (Angelina Ataíde and other people's names) stay as-is in Latin; do not add or drop items.
 Return ONLY a JSON array of the same length, same order.`;
-  const url=`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${KEY}`;
+  const MODEL=env.GEMINI_MODEL||process.env.GEMINI_MODEL||'gemini-flash-latest';
+  const url=`https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${KEY}`;
   const body={contents:[{parts:[{text:`${sys}\n\n${JSON.stringify(strings)}`}]}],generationConfig:{responseMimeType:'application/json',temperature:0}};
   for(let a=0;a<3;a++){try{
     const res=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
