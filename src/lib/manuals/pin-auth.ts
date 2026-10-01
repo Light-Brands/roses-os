@@ -37,25 +37,3 @@ export function clearManualAuth(): void {
     // sessionStorage unavailable
   }
 }
-
-/** Verify a PIN against the API and store the result */
-export async function verifyPin(pin: string): Promise<{ success: boolean; role?: ManualRole }> {
-  try {
-    const res = await fetch('/api/manuals/pin', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ pin }),
-    });
-
-    const data = await res.json();
-
-    if (data.success && data.role) {
-      setManualAuth(data.role);
-      return { success: true, role: data.role };
-    }
-
-    return { success: false };
-  } catch {
-    return { success: false };
-  }
-}

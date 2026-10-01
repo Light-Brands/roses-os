@@ -1,10 +1,10 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback, createContext, useContext } from 'react';
+import { useState, useEffect, createContext, useContext } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import { getManualAuth, verifyPin } from '@/lib/manuals/pin-auth';
+import { getManualAuth, setManualAuth } from '@/lib/manuals/pin-auth';
 import type { ManualRole } from '@/lib/manuals/types';
 
 // =============================================================================
@@ -32,11 +32,6 @@ export function useManualAuth() {
 export default function ManualPinGate({ children }: { children: React.ReactNode }) {
   const [role, setRole] = useState<ManualRole | null>(null);
   const [isChecking, setIsChecking] = useState(true);
-  const [pin, setPin] = useState('');
-  const [error, setError] = useState(false);
-  const [shake, setShake] = useState(false);
-  const [isVerifying, setIsVerifying] = useState(false);
-  const inputRef = useRef<HTMLInputElement>(null);
 
   // Check existing auth on mount
   useEffect(() => {
@@ -45,37 +40,9 @@ export default function ManualPinGate({ children }: { children: React.ReactNode 
     setIsChecking(false);
   }, []);
 
-  const handleSubmit = useCallback(
-    async (submittedPin: string) => {
-      if (isVerifying) return;
-      setIsVerifying(true);
-
-      const result = await verifyPin(submittedPin);
-
-      if (result.success && result.role) {
-        setRole(result.role);
-        setError(false);
-      } else {
-        setError(true);
-        setShake(true);
-        setPin('');
-        inputRef.current?.focus();
-        setTimeout(() => setShake(false), 600);
-      }
-
-      setIsVerifying(false);
-    },
-    [isVerifying]
-  );
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value.replace(/\D/g, '').slice(0, 4);
-    setPin(value);
-    setError(false);
-
-    if (value.length === 4) {
-      setTimeout(() => handleSubmit(value), 150);
-    }
+  const choose = (chosen: ManualRole) => {
+    setManualAuth(chosen);
+    setRole(chosen);
   };
 
   // Still checking stored auth
@@ -132,81 +99,48 @@ export default function ManualPinGate({ children }: { children: React.ReactNode 
           <h2 className="font-serif text-2xl font-semibold text-[var(--color-foreground)] mb-2">
             Teaching Manuals
           </h2>
-          <p className="text-sm text-[var(--color-foreground-muted)] mb-2 leading-relaxed">
-            Enter your 4-digit PIN to access the manuals.
-          </p>
-          <p className="text-xs text-[var(--color-foreground-faint)] mb-8">
-            <Link href="/" className="text-[var(--color-rose-clay)] underline underline-offset-2 hover:text-[var(--color-rose-500)] transition-colors">
-              Back to Home
-            </Link>
+          <p className="text-sm text-[var(--color-foreground-muted)] mb-8 leading-relaxed">
+            Which brings you here today?
           </p>
 
-          {/* PIN input */}
-          <form onSubmit={(e) => { e.preventDefault(); if (pin.length === 4) handleSubmit(pin); }} className="w-full">
-            <motion.div
-              animate={shake ? { x: [-12, 12, -8, 8, -4, 4, 0] } : {}}
-              transition={{ duration: 0.5 }}
-            >
-              <input
-                ref={inputRef}
-                type="text"
-                inputMode="numeric"
-                pattern="[0-9]*"
-                maxLength={4}
-                value={pin}
-                onChange={handleChange}
-                autoFocus
-                placeholder="----"
-                aria-label="Access code"
-                disabled={isVerifying}
-                className={cn(
-                  'w-full text-center',
-                  'text-3xl font-serif tracking-[0.4em] font-semibold',
-                  'bg-transparent',
-                  'border-b-2 pb-3',
-                  'outline-none',
-                  'transition-colors duration-200',
-                  'placeholder:text-[var(--color-foreground-faint)]/40',
-                  'text-[var(--color-foreground)]',
-                  isVerifying && 'opacity-50',
-                  error
-                    ? 'border-[var(--color-error)]'
-                    : 'border-[var(--color-border)] focus:border-[var(--color-rose-clay)]'
-                )}
-              />
-            </motion.div>
-
-            <AnimatePresence>
-              {error && (
-                <motion.p
-                  initial={{ opacity: 0, y: -4 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -4 }}
-                  transition={{ duration: 0.2 }}
-                  className="mt-4 text-sm text-[var(--color-error)]"
-                  role="alert"
-                >
-                  Incorrect PIN. Please try again.
-                </motion.p>
-              )}
-            </AnimatePresence>
-
+          {/* Role choice */}
+          <div className="w-full flex flex-col gap-3">
             <button
-              type="submit"
-              disabled={isVerifying || pin.length < 4}
+              type="button"
+              onClick={() => choose('teacher')}
               className={cn(
-                'mt-8 w-full py-3 rounded-xl',
+                'w-full py-3.5 rounded-xl',
                 'text-sm font-medium',
                 'bg-[var(--color-accent)] text-[var(--color-accent-foreground)]',
                 'hover:bg-[var(--color-accent-hover)]',
                 'transition-colors duration-200',
-                'disabled:opacity-50 disabled:cursor-not-allowed',
                 'focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-rose-clay)] focus-visible:ring-offset-2'
               )}
             >
-              {isVerifying ? 'Verifying...' : 'Enter'}
+              For Teachers
             </button>
-          </form>
+            <button
+              type="button"
+              onClick={() => choose('editor')}
+              className={cn(
+                'w-full py-3.5 rounded-xl',
+                'text-sm font-medium',
+                'bg-transparent border border-[var(--color-border)]',
+                'text-[var(--color-foreground)]',
+                'hover:border-[var(--color-rose-clay)] hover:text-[var(--color-rose-clay)]',
+                'transition-colors duration-200',
+                'focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-rose-clay)] focus-visible:ring-offset-2'
+              )}
+            >
+              For Editors
+            </button>
+          </div>
+
+          <p className="text-xs text-[var(--color-foreground-faint)] mt-8">
+            <Link href="/" className="text-[var(--color-rose-clay)] underline underline-offset-2 hover:text-[var(--color-rose-500)] transition-colors">
+              Back to Home
+            </Link>
+          </p>
         </motion.div>
       </motion.div>
     </AnimatePresence>
