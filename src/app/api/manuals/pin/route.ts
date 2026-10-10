@@ -1,5 +1,21 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createServerSupabaseClient } from '@/lib/supabase/server';
+import { createServerSupabaseClient, getServerUser } from '@/lib/supabase/server';
+
+// Same gate as /api/pdf/edit: a signed-in Supabase user whose profile role is admin.
+async function requireAdmin() {
+  const supabase = await createServerSupabaseClient();
+  const user = await getServerUser();
+  if (!user) return null;
+
+  const { data: profile } = await supabase
+    .from('profiles')
+    .select('role')
+    .eq('id', user.id)
+    .single();
+
+  if (profile?.role !== 'admin') return null;
+  return user;
+}
 
 /**
  * POST /api/manuals/pin
@@ -59,11 +75,16 @@ export async function POST(request: NextRequest) {
 
 /**
  * PUT /api/manuals/pin
- * Update a PIN (admin only — for now, no auth check; will add admin gate later)
+ * Update a PIN (admin only: requires a signed-in Supabase admin)
  * Body: { type: 'editor' | 'teacher', pin: string }
  */
 export async function PUT(request: NextRequest) {
   try {
+    const admin = await requireAdmin();
+    if (!admin) {
+      return NextResponse.json({ error: 'Not authorized' }, { status: 401 });
+    }
+
     const body = await request.json();
     const { type, pin } = body;
 
